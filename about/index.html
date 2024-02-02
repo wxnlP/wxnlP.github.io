@@ -471,10 +471,6 @@
 
 
 
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
 
                                 </div>
                             </div>
@@ -508,10 +504,6 @@
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 
                         </div>
@@ -621,7 +613,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"STM32","value":1},{"name":"PID","value":1}],
+                data: [{"name":"PID","value":1},{"name":"STM32","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -645,7 +637,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["STM32","I2C","SPI","USART","CAN","PID"]
+                data: ["STM32","PID","I2C","SPI","USART","CAN"]
             }
         ],
         yAxis: [
@@ -828,6 +820,12 @@
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/PID/">
+                <span class="chip center-align waves-effect waves-light chip-default">PID</span>
+            </a>
+            
+            
+            
             <a href="/tags/STM32/">
                 <span class="chip center-align waves-effect waves-light chip-default">STM32</span>
             </a>
@@ -854,12 +852,6 @@
             
             <a href="/tags/CAN/">
                 <span class="chip center-align waves-effect waves-light chip-default">CAN</span>
-            </a>
-            
-            
-            
-            <a href="/tags/PID/">
-                <span class="chip center-align waves-effect waves-light chip-default">PID</span>
             </a>
             
             
@@ -957,14 +949,14 @@
     
     <div class="row">
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
+                   server="tencent"
                    type="playlist"
-                   id="503838841"
+                   id="9139508587"
                    fixed='true'
                    autoplay='false'
                    theme='#42b983'
                    loop='all'
-                   order='random'
+                   order='list'
                    preload='auto'
                    volume='0.7'
                    list-folded='true'
@@ -1039,10 +1031,6 @@
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>
