@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>STM32定时器与PID算法</title>
+    <url>/2024/01/30/STM32%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPID%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<p><img src="/2024/01/30/STM32%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPID%E7%AE%97%E6%B3%95/USB%E8%BD%AC%E4%B8%B2%E5%8F%A3.png" alt="USB转串口"></p>
+<span id="more"></span>
+
+<h2 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h2><h3 id="好"><a href="#好" class="headerlink" title="好"></a>好</h3><p>p</p>
+<h2 id="你"><a href="#你" class="headerlink" title="你"></a>你</h2><h3 id="nknk"><a href="#nknk" class="headerlink" title="nknk"></a>nknk</h3>]]></content>
+      <categories>
+        <category>PID</category>
+      </categories>
+      <tags>
+        <tag>PID</tag>
+        <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>STM32四大通信协议</title>
     <url>/2024/01/30/STM32%E5%9B%9B%E5%A4%A7%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</url>
     <content><![CDATA[<h2 id="1-USART串口通信"><a href="#1-USART串口通信" class="headerlink" title="1. USART串口通信"></a>1. USART串口通信</h2><blockquote>
@@ -64,7 +80,7 @@
 </tbody></table>
 <blockquote>
 <p>双工：指通信双方是否可以同时进行双向通信（发送和接收）。</p>
-<p>#单工：数据只能从一个设备到另一个设备，不能反着来。</p>
+<p>单工：数据只能从一个设备到另一个设备，不能反着来。</p>
 <p>时钟： I2C 和 SPI 有单独的时钟线，所以是同步。</p>
 <p>电平：单端信号，即引脚的高低电平是相对GND的电压差，所以需要共地。</p>
 </blockquote>
@@ -463,22 +479,6 @@
         <tag>SPI</tag>
         <tag>USART</tag>
         <tag>CAN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>STM32定时器与PID算法</title>
-    <url>/2024/01/30/STM32%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPID%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<p><img src="/2024/01/30/STM32%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%8EPID%E7%AE%97%E6%B3%95/USB%E8%BD%AC%E4%B8%B2%E5%8F%A3.png" alt="USB转串口"></p>
-<span id="more"></span>
-
-<h2 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h2><h3 id="好"><a href="#好" class="headerlink" title="好"></a>好</h3><p>p</p>
-<h2 id="你"><a href="#你" class="headerlink" title="你"></a>你</h2><h3 id="nknk"><a href="#nknk" class="headerlink" title="nknk"></a>nknk</h3>]]></content>
-      <categories>
-        <category>PID</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-        <tag>PID</tag>
       </tags>
   </entry>
 </search>
