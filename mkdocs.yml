@@ -14,10 +14,11 @@ nav:
   - yolo系列: 
     - yolov5训练: study/yolov5.md
     - 工创赛: study/competition.md
+  - STM32系列:
+    - 定时器与PID: study/TimerPID.md
+    - 通信协议: study/Serial.md
+
   
-
- 
-
 
 
 theme:
