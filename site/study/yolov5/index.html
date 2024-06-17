@@ -1239,7 +1239,7 @@
 <li>Ctrl+u：选择标注的图片文件夹</li>
 <li>Ctrl+r：选择标注好的label标签存在的文件夹</li>
 </ul>
-<p><img alt="1715782773911" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715782773911.png"></p>
+<p><img alt="1715782773911" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715782773911.png"></p>
 <h2 id="_12">划分数据集<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>这一步需要将标记好的照片和标签按一定比例划分为测试集和训练集，用于后续模型训练。</p>
@@ -1395,29 +1395,29 @@
 </span><span id="__span-10-146"><a id="__codelineno-10-146" name="__codelineno-10-146" href="#__codelineno-10-146"></a><span class="n">test_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div>
 <p>需要修改的参数如下图：</p>
-<p><img alt="1715783424367" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783424367.png"></p>
+<p><img alt="1715783424367" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783424367.png"></p>
 <h3 id="_14">划分数据集<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>将代码放在<code>select.py</code>文件中，并且**与VOCdevkit文件夹处于同级目录**，然后直接运行代码即可：</p>
-<p><img alt="1715783557898" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783557898.png"></p>
+<p><img alt="1715783557898" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783557898.png"></p>
 <p>划分结果：</p>
-<p><img alt="1715783836032" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783836032.png"></p>
+<p><img alt="1715783836032" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783836032.png"></p>
 <h3 id="_15">移动至工程文件夹<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <p>将VOCdevkit整个文件夹的内容复制到yolo工程的根目录下：</p>
-<p><img alt="1715783914410" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783914410.png"></p>
+<p><img alt="1715783914410" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783914410.png"></p>
 <h2 id="yolo">修改yolo文件参数<a class="headerlink" href="#yolo" title="Permanent link">&para;</a></h2>
 <p>找到<code>data</code>文件夹下的<code>coco128.yaml</code>文件</p>
-<p><img alt="1715784046921" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784046921.png"></p>
+<p><img alt="1715784046921" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784046921.png"></p>
 <p>修改文件参数</p>
-<p><img alt="1715784158206" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784158206.png"></p>
+<p><img alt="1715784158206" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784158206.png"></p>
 <p>找到<code>models</code>文件夹下的yolov5s.yaml文件</p>
 <blockquote>
 <p>这里还有n、x等类型的，具体区别可以参考Github的数据曲线。</p>
 </blockquote>
-<p><img alt="1715784224796" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784224796.png"></p>
+<p><img alt="1715784224796" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784224796.png"></p>
 <p>修改标签数量参数：</p>
-<p><img alt="1715784376823" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784376823.png"></p>
+<p><img alt="1715784376823" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784376823.png"></p>
 <p>打开<code>train.py</code>文件</p>
-<p><img alt="1715784461867" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784461867.png"></p>
+<p><img alt="1715784461867" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784461867.png"></p>
 <p>找到<code>parse_opt</code>函数，这里面有模型的主要参数：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">def</span> <span class="nf">parse_opt</span><span class="p">(</span><span class="n">known</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Parses command-line arguments for YOLOv5 training, validation, and testing.&quot;&quot;&quot;</span>
@@ -1523,19 +1523,19 @@
 </span></code></pre></div>
 <h2 id="_17">训练模型<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
 <p>直接运行<code>train.py</code></p>
-<p><img alt="1715785697877" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715785697877.png"></p>
+<p><img alt="1715785697877" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715785697877.png"></p>
 <h3 id="_18">训练结果<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <p>这里文件夹下有测试结果，训练结果曲线等信息。</p>
-<p><img alt="1716220655982" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220655982.png"></p>
+<p><img alt="1716220655982" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220655982.png"></p>
 <p><strong>权重文件</strong>（最后要获得就是这个文件，取**best.pt**做推理使用的权重）</p>
-<p><img alt="1715785770478" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715785770478.png"></p>
+<p><img alt="1715785770478" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715785770478.png"></p>
 <h3 id="tensorbord">用tensorbord查看训练结果<a class="headerlink" href="#tensorbord" title="Permanent link">&para;</a></h3>
 <p>打开pycharm终端，输入如下命令：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">tensorboard</span> <span class="o">--</span><span class="n">logdir</span><span class="o">=</span><span class="n">runs</span><span class="o">/</span><span class="n">train</span>
 </span></code></pre></div>
-<p><img alt="1716220466965" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220466965.png"></p>
+<p><img alt="1716220466965" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220466965.png"></p>
 <p>ctrl点击网址，跳转浏览器：</p>
-<p><img alt="1716220527191" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220527191.png"></p>
+<p><img alt="1716220527191" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220527191.png"></p>
 
 
 
