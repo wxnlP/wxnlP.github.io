@@ -1129,7 +1129,7 @@
 <p><a href="https://github.com/ultralytics/yolov5?tab=readme-ov-file"> YOLOv5 🚀</a>是一种深度学习模型，用于物体检测任务。它的全称是“你只看一次”（You Only Look Once），可以快速且准确地识别图像中的物体并标记它们的位置。</p>
 </blockquote>
 <h2 id="yolov5_1">Yolov5的配置使用思路<a class="headerlink" href="#yolov5_1" title="Permanent link">&para;</a></h2>
-<p><img alt="1715738894097" src="yolo训练/1715738894097.png" /></p>
+<p><img alt="1715738894097" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715738894097.png"></p>
 <h2 id="_1">安装显卡驱动<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>电脑版本不同可能有些名称不一样，主要是找到设备管理器。</p>
@@ -1137,17 +1137,17 @@
 <h3 id="_2">确定显卡版本<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>找到控制面板&rarr;硬件与声音&rarr;<strong>设备管理器</strong>&rarr;显示适配器&rarr;显卡版本</p>
 <p>这里显示版本，说明电脑有英伟达的显卡</p>
-<p><img alt="1715739135356" src="yolo训练/1715739135356.png" /></p>
+<p><img alt="1715739135356" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715739135356.png"></p>
 <p>然后可以去英伟达驱动控制面板，再查看一下具体版本号。</p>
-<p><img alt="1715739492856" src="yolo训练/1715739492856.png" /></p>
+<p><img alt="1715739492856" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715739492856.png"></p>
 <h3 id="_3">安装显卡驱动<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>下载地址L：<a href="https://www.nvidia.cn/Download/index.aspx?lang=cn#">官方驱动 | NVIDIA</a></p>
-<p><img alt="1715739635564" src="yolo训练/1715739635564.png" /></p>
-<p><img alt="1715739700051" src="yolo训练/1715739700051.png" /></p>
+<p><img alt="1715739635564" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715739635564.png"></p>
+<p><img alt="1715739700051" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715739700051.png"></p>
 <p>安装（更新）好了显卡驱动以后。按下win+R组合键，打开cmd命令窗口，查看最高支持的CUDA版本</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nvidia-smi
 </span></code></pre></div>
-<p><img alt="1715739847591" src="yolo训练/1715739847591.png" /></p>
+<p><img alt="1715739847591" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715739847591.png"></p>
 <h2 id="anaconda">Anaconda环境配置<a class="headerlink" href="#anaconda" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Python环境配置：</p>
@@ -1155,28 +1155,28 @@
 提取码：cmzz</p>
 </blockquote>
 <p><strong>添加解释器</strong></p>
-<p><img alt="1715740149077" src="yolo训练/1715740149077.png" /></p>
-<p><img alt="1715740219475" src="yolo训练/1715740219475.png" /></p>
-<p><img alt="1715740272867" src="yolo训练/1715740272867.png" /></p>
+<p><img alt="1715740149077" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740149077.png"></p>
+<p><img alt="1715740219475" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740219475.png"></p>
+<p><img alt="1715740272867" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740272867.png"></p>
 <h2 id="_4">创建虚拟环境<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="_5">查看虚拟环境<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><img alt="1715740331312" src="yolo训练/1715740331312.png" /></p>
+<p><img alt="1715740331312" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740331312.png"></p>
 <p>这里有一个重要命令，查看当前的虚拟环境数量，默认只有一个<code>base</code>(我这里安装过其他虚拟环境)</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>env<span class="w"> </span>list
 </span></code></pre></div>
-<p><img alt="1715740465753" src="yolo训练/1715740465753.png" /></p>
+<p><img alt="1715740465753" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740465753.png"></p>
 <h3 id="pytorch">创建pytorch虚拟环境<a class="headerlink" href="#pytorch" title="Permanent link">&para;</a></h3>
 <p>！！！首先查看一下自己python版本</p>
-<p><img alt="1715740640863" src="yolo训练/1715740640863.png" /></p>
+<p><img alt="1715740640863" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740640863.png"></p>
 <p>输入以下代码退出python</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">quit</span><span class="p">()</span>
 </span></code></pre></div>
-<p><img alt="1715740721033" src="yolo训练/1715740721033.png" /></p>
+<p><img alt="1715740721033" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740721033.png"></p>
 <p>创建虚拟环境，输入以下命令，注意python版本和自己的一致</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>pytorch<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11.9
 </span></code></pre></div>
 <p>输入y</p>
-<p><img alt="img" src="yolo训练/20210818192201248.png" /></p>
+<p><img alt="img" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/20210818192201248.png"></p>
 <p>再次用前面的命令查看会多一个环境，使用下面命令激活环境</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>pytorch
 </span></code></pre></div>
@@ -1191,19 +1191,19 @@
 <blockquote>
 <p>官网：<a href="https://pytorch.org/">PyTorch</a></p>
 </blockquote>
-<p><img alt="1715741096130" src="yolo训练/1715741096130.png" /></p>
+<p><img alt="1715741096130" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715741096130.png"></p>
 <p>等待下载完成即可。</p>
 <h3 id="_7">切换解释器<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>使用<code>Anaconda环境配置</code>部分内容添加解释器，并切换到pytorch解释器。</p>
 <h2 id="yolov5_2">安装yolov5依赖<a class="headerlink" href="#yolov5_2" title="Permanent link">&para;</a></h2>
 <h3 id="yolov5_3">下载yolov5源代码<a class="headerlink" href="#yolov5_3" title="Permanent link">&para;</a></h3>
 <p>yolov5下载地址：<a href="https://github.com/ultralytics/yolov5"> YOLOv5 🚀</a></p>
-<p><img alt="1715741590849" src="yolo训练/1715741590849.png" /></p>
+<p><img alt="1715741590849" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715741590849.png"></p>
 <h3 id="_8">安装依赖<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>以工程打开yolov5文件夹</p>
-<p><img alt="1715742381469" src="yolo训练/1715742381469.png" /></p>
+<p><img alt="1715742381469" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715742381469.png"></p>
 <p>安装依赖</p>
-<p><img alt="1715742517367" src="yolo训练/1715742517367.png" /></p>
+<p><img alt="1715742517367" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715742517367.png"></p>
 <p>如果下载比较慢，可以使用中科大镜像源，永久替换</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>global.index-url<span class="w"> </span>https://pypi.mirrors.ustc.edu.cn/simple
 </span></code></pre></div>
@@ -1211,12 +1211,12 @@
 <p>终端输入命令</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>detect.py<span class="w"> </span>--source<span class="w"> </span><span class="m">0</span>
 </span></code></pre></div>
-<p><img alt="1715742758603" src="yolo训练/1715742758603.png" /></p>
+<p><img alt="1715742758603" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715742758603.png"></p>
 <h2 id="_10">标记数据集<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <h3 id="labelimg">安装labelimg<a class="headerlink" href="#labelimg" title="Permanent link">&para;</a></h3>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip<span class="w"> </span>install<span class="w"> </span>labelimg
 </span></code></pre></div>
-<p><img alt="1715782550393" src="yolo训练/1715782550393.png" /></p>
+<p><img alt="1715782550393" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715782550393.png"></p>
 <h3 id="_11">标记数据集<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>创建文件夹结构---创建文件夹VOCdevkit，再次文件夹下新建VOC2007，其他如下</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>├── VOC2007
@@ -1224,12 +1224,12 @@
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>│├── Annotations  存放标注的标签文件
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>│├── predefined_classes.txt  定义自己要标注的所有类别
 </span></code></pre></div>
-<p><img alt="1715742994148" src="yolo训练/1715742994148.png" /></p>
+<p><img alt="1715742994148" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715742994148.png"></p>
 <p>根据上面标注，把照片放到<code>JPEGImages</code>文件夹</p>
 <p>将要标注的所有类别放在<code>predefined_classes.txt</code>文件</p>
-<p><img alt="1715781741270" src="yolo训练/1715781741270.png" /></p>
+<p><img alt="1715781741270" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715781741270.png"></p>
 <p>在终端中打开labelimg</p>
-<p><img alt="1715782631265" src="yolo训练/1715782631265.png" /></p>
+<p><img alt="1715782631265" src="../../assets/external/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715782631265.png"></p>
 <p><strong>一些常用快捷键：</strong></p>
 <ul>
 <li>A：切换到上一张图片</li>
@@ -1239,7 +1239,7 @@
 <li>Ctrl+u：选择标注的图片文件夹</li>
 <li>Ctrl+r：选择标注好的label标签存在的文件夹</li>
 </ul>
-<p><img alt="1715782773911" src="yolo训练/1715782773911.png" /></p>
+<p><img alt="1715782773911" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715782773911.png"></p>
 <h2 id="_12">划分数据集<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>这一步需要将标记好的照片和标签按一定比例划分为测试集和训练集，用于后续模型训练。</p>
@@ -1395,29 +1395,29 @@
 </span><span id="__span-10-146"><a id="__codelineno-10-146" name="__codelineno-10-146" href="#__codelineno-10-146"></a><span class="n">test_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div>
 <p>需要修改的参数如下图：</p>
-<p><img alt="1715783424367" src="yolo训练/1715783424367.png" /></p>
+<p><img alt="1715783424367" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783424367.png"></p>
 <h3 id="_14">划分数据集<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>将代码放在<code>select.py</code>文件中，并且**与VOCdevkit文件夹处于同级目录**，然后直接运行代码即可：</p>
-<p><img alt="1715783557898" src="yolo训练/1715783557898.png" /></p>
+<p><img alt="1715783557898" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783557898.png"></p>
 <p>划分结果：</p>
-<p><img alt="1715783836032" src="yolo训练/1715783836032.png" /></p>
+<p><img alt="1715783836032" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783836032.png"></p>
 <h3 id="_15">移动至工程文件夹<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <p>将VOCdevkit整个文件夹的内容复制到yolo工程的根目录下：</p>
-<p><img alt="1715783914410" src="yolo训练/1715783914410.png" /></p>
+<p><img alt="1715783914410" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783914410.png"></p>
 <h2 id="yolo">修改yolo文件参数<a class="headerlink" href="#yolo" title="Permanent link">&para;</a></h2>
 <p>找到<code>data</code>文件夹下的<code>coco128.yaml</code>文件</p>
-<p><img alt="1715784046921" src="yolo训练/1715784046921.png" /></p>
+<p><img alt="1715784046921" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784046921.png"></p>
 <p>修改文件参数</p>
-<p><img alt="1715784158206" src="yolo训练/1715784158206.png" /></p>
+<p><img alt="1715784158206" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784158206.png"></p>
 <p>找到<code>models</code>文件夹下的yolov5s.yaml文件</p>
 <blockquote>
 <p>这里还有n、x等类型的，具体区别可以参考Github的数据曲线。</p>
 </blockquote>
-<p><img alt="1715784224796" src="yolo训练/1715784224796.png" /></p>
+<p><img alt="1715784224796" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784224796.png"></p>
 <p>修改标签数量参数：</p>
-<p><img alt="1715784376823" src="yolo训练/1715784376823.png" /></p>
+<p><img alt="1715784376823" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784376823.png"></p>
 <p>打开<code>train.py</code>文件</p>
-<p><img alt="1715784461867" src="yolo训练/1715784461867.png" /></p>
+<p><img alt="1715784461867" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784461867.png"></p>
 <p>找到<code>parse_opt</code>函数，这里面有模型的主要参数：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">def</span> <span class="nf">parse_opt</span><span class="p">(</span><span class="n">known</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Parses command-line arguments for YOLOv5 training, validation, and testing.&quot;&quot;&quot;</span>
@@ -1523,19 +1523,19 @@
 </span></code></pre></div>
 <h2 id="_17">训练模型<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
 <p>直接运行<code>train.py</code></p>
-<p><img alt="1715785697877" src="yolo训练/1715785697877.png" /></p>
+<p><img alt="1715785697877" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715785697877.png"></p>
 <h3 id="_18">训练结果<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <p>这里文件夹下有测试结果，训练结果曲线等信息。</p>
-<p><img alt="1716220655982" src="yolo训练/1716220655982.png" /></p>
+<p><img alt="1716220655982" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220655982.png"></p>
 <p><strong>权重文件</strong>（最后要获得就是这个文件，取**best.pt**做推理使用的权重）</p>
-<p><img alt="1715785770478" src="yolo训练/1715785770478.png" /></p>
+<p><img alt="1715785770478" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715785770478.png"></p>
 <h3 id="tensorbord">用tensorbord查看训练结果<a class="headerlink" href="#tensorbord" title="Permanent link">&para;</a></h3>
 <p>打开pycharm终端，输入如下命令：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">tensorboard</span> <span class="o">--</span><span class="n">logdir</span><span class="o">=</span><span class="n">runs</span><span class="o">/</span><span class="n">train</span>
 </span></code></pre></div>
-<p><img alt="1716220466965" src="yolo训练/1716220466965.png" /></p>
+<p><img alt="1716220466965" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220466965.png"></p>
 <p>ctrl点击网址，跳转浏览器：</p>
-<p><img alt="1716220527191" src="yolo训练/1716220527191.png" /></p>
+<p><img alt="1716220527191" src="../../https:/raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220527191.png"></p>
 
 
 

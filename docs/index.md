@@ -21,7 +21,7 @@ git checkout main
 python -m mkdocs gh-deploy
 ```
 ### 试点
-```nginx
+```shell
 python -m mkdocs serve
 ```
 # 刘佳盼
