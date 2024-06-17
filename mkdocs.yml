@@ -7,7 +7,7 @@ nav:
     - 工创赛: study/competition.md
   - 博客:
     - blog/index.md
-    - blog/posts/first.md
+    - first: blog/posts/first.md
 
  
 
@@ -113,9 +113,6 @@ markdown_extensions:
   - pymdownx.tilde
 
 plugins:
-  - privacy
-  - search
-  - tags
   - blog
 
 
