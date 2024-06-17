@@ -1,9 +1,11 @@
 # 小李
-你好
+### 你好
+
 ```python
 print("hello word")
 ```
 ### 部署网站
+
 ```shell
 python -m mkdocs build
 # main分支
@@ -19,8 +21,10 @@ git checkout main
 python -m mkdocs gh-deploy
 ```
 ### 试点
-```shell
+```nginx
 python -m mkdocs serve
 ```
 # 刘佳盼
-##love##
+
+**love**
+
