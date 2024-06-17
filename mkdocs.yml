@@ -7,7 +7,8 @@ nav:
     - 工创赛: study/competition.md
   - 博客:
     - blog/index.md
-    # - blog/posts/first.md
+    - blog/posts/first.md
+    - blog/posts/second.md
 
  
 
