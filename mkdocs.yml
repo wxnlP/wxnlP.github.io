@@ -6,10 +6,10 @@ site_name: 小李的破站☮
 #     - study/index.md
 #     - yolov5: study/yolo.md
 nav:
-  - Home: index.md
-  - Getting started:
-    - Installation: study/index.md
-    - Creating your site: study/yolo.md
+    - Home: index.md
+    - Getting started:
+      - Installation: study/index.md
+      - Creating your site: study/yolo.md
  
 
 
