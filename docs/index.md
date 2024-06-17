@@ -1,9 +1,7 @@
 # 小李
-### 你好
 
-```python
-print("hello word")
-```
+![](index/刘佳盼-1718636723473.jpg)
+
 ### 部署网站
 
 ```python
@@ -20,11 +18,10 @@ git checkout main
 # 部署
 python -m mkdocs gh-deploy
 ```
-### 试点
+### 本地测试
+
 ```python
 python -m mkdocs serve
 ```
-# 刘佳盼
 
-**love**
 
