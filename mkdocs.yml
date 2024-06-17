@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: 小李的破站☮
+nav:
+    - 主页: basic/index.md
+    - yolo系列: study/yolo.md
+theme: material
