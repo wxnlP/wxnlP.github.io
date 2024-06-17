@@ -1,10 +1,10 @@
-# SM32通信方式总结 #
+# STM32通信方式总结
 
-## 一、USART串口通信 ##
+## 一、USART串口通信
 
 > STM32--串口通信
 
-### 1.1 通信协议 ###
+### 1.1 通信协议
 
 - **通信的目的：**将一个设备的数据传送到另一个设备，扩展硬件系统
 - **通信协议：**制定通信的规则，通信双方按照协议规则进行数据收发
@@ -25,23 +25,23 @@
 >
 > 电平：单端信号，即引脚的高低电平是相对GND的电压差，所以需要共地。
 
-### 1.2 串口通信简介 ###
+### 1.2 串口通信简介
 
 - 串口是一种应用十分广泛的通讯接口，串口成本低、容易使用、通信线路简单，可实现两个设备的互相通信
 - 单片机的串口可以使单片机与单片机、单片机与电脑、单片机与各式各样的模块互相通信，极大地扩展了单片机的应用范围，增强了单片机系统的硬件实力
 
-![1706363962945](https://raw.githubusercontent.com/wxnlP/pic/main/STM32 Serial/1706363962945.png)
+![1706363962945](https://raw.githubusercontent.com/wxnlP/pic/main/STM32Serial/1706363962945.png)
 
-![USB转串口](https://raw.githubusercontent.com/wxnlP/pic/main/STM32 Serial/USB转串口.png)
+![USB转串口](https://raw.githubusercontent.com/wxnlP/pic/main/STM32Serial/USB转串口.png)
 
-#### 1.2.1硬件电路 ####
+#### 1.2.1硬件电路 
 
 - 简单双向串口通信有两根通信线（发送端TX和接收端RX）
 - TX与RX要交叉连接
 - 当只需单向的数据传输时，可以只接一根通信线
 - 当电平标准不一致时，需要加电平转换芯片
 
-![1706364052710](https://raw.githubusercontent.com/wxnlP/pic/main/STM32 Serial/1706364052710.png)
+![1706364052710](https://raw.githubusercontent.com/wxnlP/pic/main/STM32Serial/1706364052710.png)
 
 #### 1.2.2 电平标准 ####
 
