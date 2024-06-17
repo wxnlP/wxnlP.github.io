@@ -3,8 +3,8 @@
 ```python
 print("hello word")
 ```
-`yolo`
-```python
+### 部署网站
+```shell
 python -m mkdocs build
 # main分支
 git add .
@@ -18,6 +18,9 @@ git checkout main
 # 部署
 python -m mkdocs gh-deploy
 ```
-
+### 试点
+```shell
+python -m mkdocs serve
+```
 # 刘佳盼
-## love ##
+##love##
