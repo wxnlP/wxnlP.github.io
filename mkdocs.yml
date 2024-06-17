@@ -4,3 +4,5 @@ nav:
     - yolo系列: 
          - yolov5: study/yolo.md
 theme: material
+include:
+  - CNAME
