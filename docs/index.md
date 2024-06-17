@@ -6,7 +6,7 @@ print("hello word")
 ```
 ### 部署网站
 
-```shell
+```python
 python -m mkdocs build
 # main分支
 git add .
@@ -21,7 +21,7 @@ git checkout main
 python -m mkdocs gh-deploy
 ```
 ### 试点
-```shell
+```python
 python -m mkdocs serve
 ```
 # 刘佳盼
