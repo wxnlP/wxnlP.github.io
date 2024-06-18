@@ -22,4 +22,15 @@ python -m mkdocs gh-deploy
 python -m mkdocs serve
 ```
 
+## 图床
+
+```shell
+https://cdn.jsdelivr.net/gh/wxnlP/pic
+```
+
+| ✅  Do this                                                   |                       ❌  Don't do this                       |
+| ------------------------------------------------------------ | :----------------------------------------------------------: |
+| ![1718710398073](https://cdn.jsdelivr.net/gh/wxnlP/pic/Home/1718710398073.png) | ![1718710431154](https://cdn.jsdelivr.net/gh/wxnlP/pic/Home/1718710431154.png) |
+
+​	
 
