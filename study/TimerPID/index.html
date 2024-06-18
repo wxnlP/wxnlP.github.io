@@ -1573,28 +1573,27 @@
 </blockquote>
 <h4 id="112">1.1.2 定时器框架<a class="headerlink" href="#112" title="Permanent link">&para;</a></h4>
 <h5 id="1">1、高级定时器框图<a class="headerlink" href="#1" title="Permanent link">&para;</a></h5>
-<p><img alt="1" src="https://raw.codehub.cn/p/pictures/d/pics/git/raw/master/STM32Serial/1705736375374.png?token=M6XqHYPDRNYD6fsvwaPTtS8nLZlY1Rgd5PYGEEqDyB" /></p>
-<p><img alt="1706255487441" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706255487441.png" /></p>
+<p><img alt="1706255487441" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255487441.png" /></p>
 <h5 id="2">2、通用定时器<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
-<p><img alt="1706255081006" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706255081006.png" /></p>
+<p><img alt="1706255081006" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255081006.png" /></p>
 <ul>
 <li>通用定时器有多种时钟选择（外部时钟模式1、2，内部时钟）</li>
 <li>定时器级联与主从模式相关。（参考：<a href="#1.3.4 主从触发模式">1.3.4 主从触发模式</a>）</li>
 </ul>
 <h5 id="3">3、基本定时器<a class="headerlink" href="#3" title="Permanent link">&para;</a></h5>
-<p><img alt="1706254347422" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706254347422.png" /></p>
+<p><img alt="1706254347422" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706254347422.png" /></p>
 <blockquote>
 <p>⚠：--基本定时器仅支持向上计数--时钟选择也仅支持内部时钟，为72MHZ</p>
 </blockquote>
 <h4 id="113">1.1.3 定时中断基本结构<a class="headerlink" href="#113" title="Permanent link">&para;</a></h4>
-<p><img alt="1706255701792" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706255701792.png" /></p>
+<p><img alt="1706255701792" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255701792.png" /></p>
 <h4 id="114">1.1.4 时序图<a class="headerlink" href="#114" title="Permanent link">&para;</a></h4>
-<p><img alt="1706256017333" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706256017333.png" /></p>
-<p><img alt="1706256032654" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706256032654.png" /></p>
-<p><img alt="1706256043889" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706256043889.png" /></p>
-<p><img alt="1706256059025" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706256059025.png" /></p>
+<p><img alt="1706256017333" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256017333.png" /></p>
+<p><img alt="1706256032654" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256032654.png" /></p>
+<p><img alt="1706256043889" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256043889.png" /></p>
+<p><img alt="1706256059025" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256059025.png" /></p>
 <h4 id="115-rcc">1.1.5 RCC时钟树<a class="headerlink" href="#115-rcc" title="Permanent link">&para;</a></h4>
-<p><img alt="1706255928324" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706255928324.png" /></p>
+<p><img alt="1706255928324" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255928324.png" /></p>
 <h4 id="116">1.1.6 代码示例<a class="headerlink" href="#116" title="Permanent link">&para;</a></h4>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -1679,12 +1678,12 @@
 </li>
 </ul>
 <p>​      ⭐频率 = 1 / T_S            ⭐占空比 = T_ON / T_S           分辨率 = 占空比变化步距</p>
-<p><img alt="1706197859960" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706197859960.png" /></p>
+<p><img alt="1706197859960" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706197859960.png" /></p>
 <h4 id="123">1.2.3 输出比较通道<a class="headerlink" href="#123" title="Permanent link">&para;</a></h4>
 <p><strong>高级定时器输出比较通道：</strong></p>
-<p><img alt="1706198238483" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706198238483.png" /></p>
+<p><img alt="1706198238483" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706198238483.png" /></p>
 <p><strong>通用定时器输出比较通道：</strong></p>
-<p><img alt="1706199429609" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706199429609.png" /></p>
+<p><img alt="1706199429609" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706199429609.png" /></p>
 <blockquote>
 <p>关于定时器主模式控制器参考<a href="#1.3.4 主从触发模式">1.3.4 主从触发模式</a></p>
 </blockquote>
@@ -1732,7 +1731,7 @@
 </tbody>
 </table>
 <h4 id="125-pwm">1.2.5 PWM基本结构<a class="headerlink" href="#125-pwm" title="Permanent link">&para;</a></h4>
-<p><img alt="1706200055360" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706200055360.png" /></p>
+<p><img alt="1706200055360" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200055360.png" /></p>
 <ul>
 <li>PWM频率：  Freq = CK_PSC / (PSC + 1) / (ARR + 1)</li>
 <li>PWM占空比：  Duty = CCR / (ARR + 1)</li>
@@ -1749,12 +1748,12 @@
 <ul>
 <li><strong>舵机</strong></li>
 </ul>
-<p><img alt="1706200565288" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706200565288.png" /></p>
+<p><img alt="1706200565288" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200565288.png" /></p>
 <ul>
 <li><strong>TB6612直流电机驱动</strong></li>
 </ul>
-<p><img alt="1706200648810" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706200648810.png" /></p>
-<p><img alt="1706200615939" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706200615939.png" /></p>
+<p><img alt="1706200648810" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200648810.png" /></p>
+<p><img alt="1706200615939" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200615939.png" /></p>
 <h4 id="127">1.2.7 代码示例<a class="headerlink" href="#127" title="Permanent link">&para;</a></h4>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -1831,10 +1830,10 @@
 <li>测周法---在两个上升沿之间，以标准频率<span class="arithmatex">\(<span class="arithmatex">\(f_c\)</span>\)</span>计次<span class="arithmatex">\(<span class="arithmatex">\(N\)</span>\)</span>，标准频率的周期为<span class="arithmatex">\(<span class="arithmatex">\(1/f_c\)</span>\)</span>,到周期T为<span class="arithmatex">\(<span class="arithmatex">\(N/f_c\)</span>\)</span>，取周期的倒数即可得到频率：<span class="arithmatex">\(<span class="arithmatex">\(f_x=f_c/N\)</span>\)</span></li>
 <li>中界频率---令<span class="arithmatex">\(<span class="arithmatex">\(f_x=N/T\)</span>\)</span>和<span class="arithmatex">\(<span class="arithmatex">\(f_x=f_c/N\)</span>\)</span>中的<span class="arithmatex">\(<span class="arithmatex">\(N\)</span>\)</span>相等解出<span class="arithmatex">\(<span class="arithmatex">\(f_x\)</span>\)</span> 得到测频法与测周法误差相等的频率点：<span class="arithmatex">\(<span class="arithmatex">\(f_m=\sqrt(f_c/T)\)</span>\)</span></li>
 </ul>
-<p><img alt="1705737398459" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705737398459.png" /></p>
+<p><img alt="1705737398459" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705737398459.png" /></p>
 <h4 id="133">1.3.3 输入捕获框架<a class="headerlink" href="#133" title="Permanent link">&para;</a></h4>
 <p>下面是通用定时器的框架：</p>
-<p><img alt="1705743432415" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705743432415.png" /></p>
+<p><img alt="1705743432415" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705743432415.png" /></p>
 <ul>
 <li>**工作流程：**经过输入滤波器和极性选择进入预分频器，可以选择进行触发信号分频，然后触发信号进入捕获电路工作，每来一个触发信号，CNT的值向CCR转运一次，同时触发捕获事件，在状态寄存器置标志位触发中断，可以设置中断处理。</li>
 <li>**测周法实现：**以上升沿为触发信号，CNT计数器由内部标准时钟驱动（驱动时钟为<span class="arithmatex">\(<span class="arithmatex">\(f_c\)</span>\)</span> ），CNT数值即可记录两个上升沿的事件间隔，即为周期，取倒数可获得测周法的频率。</li>
@@ -1847,22 +1846,22 @@
 <li>主模式：将定时器内部的信号映射到TRGO引脚，用于触发别的外设。</li>
 <li>从模式：接收其他外设或自身外设的一些信号用于控制自身定时器的运行。<strong>(被其他信号控制)</strong></li>
 </ul>
-<p><img alt="1705746225685" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705746225685.png" /></p>
+<p><img alt="1705746225685" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705746225685.png" /></p>
 <p><strong>从模式的触发源选择：</strong></p>
-<p><img alt="1705745717717" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705745717717.png" /></p>
+<p><img alt="1705745717717" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705745717717.png" /></p>
 <p><strong>通用定时器内部触发的连接：</strong></p>
-<p><img alt="1705746412968" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705746412968.png" /></p>
+<p><img alt="1705746412968" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705746412968.png" /></p>
 <blockquote>
 <p>高级定时器的内部触发连接需要自己查stm32开发手册。</p>
 </blockquote>
 <p><strong>从模式选择(与上表的顺序一致):</strong></p>
-<p><img alt="1705745521282" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705745521282.png" /></p>
+<p><img alt="1705745521282" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705745521282.png" /></p>
 <h4 id="135">1.3.5 输入捕获基本结构<a class="headerlink" href="#135" title="Permanent link">&para;</a></h4>
 <p>测周法读取频率</p>
-<p><img alt="1705747154895" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705747154895.png" /></p>
+<p><img alt="1705747154895" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705747154895.png" /></p>
 <h4 id="136-pwmi">1.3.6 PWMI模式<a class="headerlink" href="#136-pwmi" title="Permanent link">&para;</a></h4>
 <p>同时读取频率和占空比</p>
-<p><img alt="1705747401629" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705747401629.png" /></p>
+<p><img alt="1705747401629" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705747401629.png" /></p>
 <h4 id="137">1.3.7 代码示例<a class="headerlink" href="#137" title="Permanent link">&para;</a></h4>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">IC_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
@@ -1938,9 +1937,9 @@
 <li><strong>定时器的通道1和通道2作为编码器接口</strong></li>
 </ul>
 <p>如下图，为正交编码器（A相与B相相差90°），通过观察A相高低电平时B相的电平判断正反转，同时脉冲频率即体现电机的转速。</p>
-<p><img alt="1705690112223" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705690112223.png" /></p>
+<p><img alt="1705690112223" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705690112223.png" /></p>
 <h4 id="142">1.4.2 编码器接口基本结构<a class="headerlink" href="#142" title="Permanent link">&para;</a></h4>
-<p><img alt="1705734851593" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705734851593.png" /></p>
+<p><img alt="1705734851593" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705734851593.png" /></p>
 <p>说明一下极性选择：</p>
 <ul>
 <li>
@@ -1960,25 +1959,25 @@
 <li>仅在B相上升沿和下降沿计数</li>
 <li>在AB相都计数（精度最高，一些资料会称为四倍频）</li>
 </ul>
-<p><img alt="1705735207132" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705735207132.png" /></p>
+<p><img alt="1705735207132" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705735207132.png" /></p>
 <blockquote>
 <p>工作模式表格要对应**<a href="#1.4.1 编码器接口介绍">1.4.1编码器接口介绍</a>**的表格看，即通过看A相B相对应电平判断正反转。</p>
 </blockquote>
 <h4 id="144">1.4.4 #四倍频法<a class="headerlink" href="#144" title="Permanent link">&para;</a></h4>
 <p>四倍频是通过程序提升我们的编码器的精度的一种数据处理方法， 可以有效的最大化我们的编码器的精度和测量精度。 </p>
-<p><img alt="1705690390565" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705690390565.png" /></p>
+<p><img alt="1705690390565" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705690390565.png" /></p>
 <p>上图是一个我们编码器输出的波形图， 正常我们一般的处理方式是通过 A 相去计数， B 相去判断目前的转动方向。 具体实现比如： A 相的上升沿计数或者下降沿计数， 同时在 A 相的上升沿或者下降沿来根据 B 相此时的电平状态来判断转向。四倍频则是同时计算 AB 两相的每个跳边沿， 这样子原本在 A 相计数的一个脉冲周期内就实现了四次计数， 从而实现了精度的提升。 </p>
 <h4 id="145">1.4.5 计数示例（极性选择）<a class="headerlink" href="#145" title="Permanent link">&para;</a></h4>
 <ul>
 <li>正常不反相，正转自增，反转自减。</li>
 </ul>
-<p><img alt="1705736375374" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705736375374.png" /></p>
-<p><img alt="1705736385998" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705736385998.png" /></p>
+<p><img alt="1705736375374" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736375374.png" /></p>
+<p><img alt="1705736385998" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736385998.png" /></p>
 <ul>
 <li>TI1极性反转（需要将TI1的**高低电平反转**，在对应表格找正反转）</li>
 </ul>
-<p><img alt="1705736505835" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705736505835.png" /></p>
-<p><img alt="1705736511255" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1705736511255.png" /></p>
+<p><img alt="1705736505835" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736505835.png" /></p>
+<p><img alt="1705736511255" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736511255.png" /></p>
 <h4 id="146">1.4.6 代码示例<a class="headerlink" href="#146" title="Permanent link">&para;</a></h4>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Encoder_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
@@ -2042,9 +2041,9 @@
 </blockquote>
 <p>PID 实指“比例 proportional”、“积分 integral”、“微分 derivative”，这三项构 成 PID 基本要素。每一项完成不同任务，对系统功能产生不同的影响。它的结构简单，参数易 于调整，是控制系统中经常采用的控制算法。</p>
 <p><strong>PID：比例单元（P）、积分单元（I）和微分单元（D）组成</strong></p>
-<p><img alt="1707463945385" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1707463945385.png" /></p>
+<p><img alt="1707463945385" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463945385.png" /></p>
 <p><strong>PID控制公式：</strong></p>
-<p><img alt="1707463962759" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1707463962759.png" /></p>
+<p><img alt="1707463962759" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463962759.png" /></p>
 <p>其中：**u(t)**为控制器输出的控制量；（输出）</p>
 <p>**e(t)**为偏差信号，它等于给定量与输出量之差；（输入）</p>
 <p><strong>KP</strong> 为比例系数；（对应参数 P）</p>
@@ -2052,7 +2051,7 @@
 <p><strong>TD</strong> 为微分时间常数。(对应参数 D) </p>
 <p>数字 PID 控制算法通常分为位置式 PID 控制算法和增量式 PID 控制算法。 </p>
 <h4 id="211-pid">2.1.1 位置式 PID 算法<a class="headerlink" href="#211-pid" title="Permanent link">&para;</a></h4>
-<p><img alt="1707463978757" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1707463978757.png" /></p>
+<p><img alt="1707463978757" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463978757.png" /></p>
 <p>e(k): <strong>用户设定的值（目标值） -  控制对象的当前的状态值</strong> </p>
 <p><strong>比例P :</strong>    e(k)</p>
 <p><strong>积分I :</strong>   ∑e(i)     误差的累加</p>
@@ -2063,7 +2062,7 @@
 <p>所以在使用位置式PID时，一般我们直接使用PD控制</p>
 <p>而位置式 PID 适用于执行机构不带积分部件的对象，如舵机和平衡小车的直立和温控系统的控制</p>
 <h4 id="212-pid">2.1.2 增量式PID算法<a class="headerlink" href="#212-pid" title="Permanent link">&para;</a></h4>
-<p><img alt="1707463993099" src="https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1707463993099.png" /></p>
+<p><img alt="1707463993099" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463993099.png" /></p>
 <p>比例P :    e(k)-e(k-1)   这次误差-上次误差</p>
 <p>积分I :   e(i)     误差   </p>
 <p>微分D :  e(k) - 2e(k-1)+e(k-2)   这次误差-2*上次误差+上上次误差</p>
