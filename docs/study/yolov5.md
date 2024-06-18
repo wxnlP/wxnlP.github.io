@@ -4,7 +4,7 @@
 
 ## Yolov5的配置使用思路
 
-![1715738894097](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715738894097.png)
+![1715738894097](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715738894097.png)
 
 ## 安装显卡驱动
 
@@ -16,19 +16,19 @@
 
 这里显示版本，说明电脑有英伟达的显卡
 
-![1715739135356](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715739135356.png)
+![1715739135356](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715739135356.png)
 
 然后可以去英伟达驱动控制面板，再查看一下具体版本号。
 
-![1715739492856](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715739492856.png)
+![1715739492856](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715739492856.png)
 
 ### 安装显卡驱动
 
 下载地址L：[官方驱动 | NVIDIA](https://www.nvidia.cn/Download/index.aspx?lang=cn#)
 
-![1715739635564](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715739635564.png)
+![1715739635564](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715739635564.png)
 
-![1715739700051](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715739700051.png)
+![1715739700051](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715739700051.png)
 
    安装（更新）好了显卡驱动以后。按下win+R组合键，打开cmd命令窗口，查看最高支持的CUDA版本
 
@@ -36,7 +36,7 @@
 nvidia-smi
 ```
 
-![1715739847591](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715739847591.png)
+![1715739847591](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715739847591.png)
 
 ## Anaconda环境配置
 
@@ -47,19 +47,19 @@ nvidia-smi
 
 **添加解释器**
 
-![1715740149077](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740149077.png)
+![1715740149077](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715740149077.png)
 
 
 
-![1715740219475](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740219475.png)
+![1715740219475](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715740219475.png)
 
-![1715740272867](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740272867.png)
+![1715740272867](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715740272867.png)
 
 ## 创建虚拟环境
 
 ### 查看虚拟环境
 
-![1715740331312](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740331312.png)
+![1715740331312](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715740331312.png)
 
 这里有一个重要命令，查看当前的虚拟环境数量，默认只有一个`base`(我这里安装过其他虚拟环境)
 
@@ -67,13 +67,13 @@ nvidia-smi
 conda env list
 ```
 
-![1715740465753](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740465753.png)
+![1715740465753](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715740465753.png)
 
 ### 创建pytorch虚拟环境
 
 ！！！首先查看一下自己python版本
 
-![1715740640863](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740640863.png)
+![1715740640863](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715740640863.png)
 
 输入以下代码退出python
 
@@ -81,7 +81,7 @@ conda env list
 quit()
 ```
 
-![1715740721033](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715740721033.png)
+![1715740721033](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715740721033.png)
 
 创建虚拟环境，输入以下命令，注意python版本和自己的一致
 
@@ -91,7 +91,7 @@ conda create -n pytorch python=3.11.9
 
 输入y
 
-![img](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/20210818192201248.png)
+![img](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/20210818192201248.png)
 
 再次用前面的命令查看会多一个环境，使用下面命令激活环境
 
@@ -114,7 +114,7 @@ conda config --set show_channel_urls yes
 
 > 官网：[PyTorch](https://pytorch.org/)
 
-![1715741096130](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715741096130.png)
+![1715741096130](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715741096130.png)
 
 等待下载完成即可。
 
@@ -128,17 +128,17 @@ conda config --set show_channel_urls yes
 
 yolov5下载地址：[ YOLOv5 🚀](https://github.com/ultralytics/yolov5)
 
-![1715741590849](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715741590849.png)
+![1715741590849](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715741590849.png)
 
 ### 安装依赖
 
 以工程打开yolov5文件夹
 
-![1715742381469](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715742381469.png)
+![1715742381469](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715742381469.png)
 
 安装依赖
 
-![1715742517367](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715742517367.png)
+![1715742517367](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715742517367.png)
 
 如果下载比较慢，可以使用中科大镜像源，永久替换
 
@@ -154,7 +154,7 @@ pip config set global.index-url https://pypi.mirrors.ustc.edu.cn/simple
 python detect.py --source 0
 ```
 
-![1715742758603](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715742758603.png)
+![1715742758603](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715742758603.png)
 
 ## 标记数据集
 
@@ -164,7 +164,7 @@ python detect.py --source 0
 pip install labelimg
 ```
 
-![1715782550393](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715782550393.png)
+![1715782550393](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715782550393.png)
 
 ### 标记数据集
 
@@ -177,17 +177,17 @@ pip install labelimg
 │├── predefined_classes.txt  定义自己要标注的所有类别
 ```
 
-![1715742994148](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715742994148.png)
+![1715742994148](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715742994148.png)
 
 根据上面标注，把照片放到`JPEGImages`文件夹
 
 将要标注的所有类别放在`predefined_classes.txt`文件
 
-![1715781741270](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715781741270.png)
+![1715781741270](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715781741270.png)
 
 在终端中打开labelimg
 
-![1715782631265](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715782631265.png)
+![1715782631265](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715782631265.png)
 
 **一些常用快捷键：**
 
@@ -198,7 +198,7 @@ pip install labelimg
 - Ctrl+u：选择标注的图片文件夹
 - Ctrl+r：选择标注好的label标签存在的文件夹
 
-![1715782773911](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715782773911.png)
+![1715782773911](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715782773911.png)
 
 ## 划分数据集
 
@@ -361,47 +361,47 @@ test_file.close()
 
 需要修改的参数如下图：
 
-![1715783424367](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783424367.png)
+![1715783424367](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715783424367.png)
 
 ### 划分数据集
 
 将代码放在`select.py`文件中，并且**与VOCdevkit文件夹处于同级目录**，然后直接运行代码即可：
 
-![1715783557898](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783557898.png)
+![1715783557898](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715783557898.png)
 
 划分结果：
 
-![1715783836032](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783836032.png)
+![1715783836032](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715783836032.png)
 
 ### 移动至工程文件夹
 
 将VOCdevkit整个文件夹的内容复制到yolo工程的根目录下：
 
-![1715783914410](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715783914410.png)
+![1715783914410](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715783914410.png)
 
 ## 修改yolo文件参数
 
 找到`data`文件夹下的`coco128.yaml`文件
 
-![1715784046921](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784046921.png)
+![1715784046921](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715784046921.png)
 
 修改文件参数
 
-![1715784158206](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784158206.png)
+![1715784158206](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715784158206.png)
 
 找到`models`文件夹下的yolov5s.yaml文件
 
 > 这里还有n、x等类型的，具体区别可以参考Github的数据曲线。
 
-![1715784224796](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784224796.png)
+![1715784224796](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715784224796.png)
 
 修改标签数量参数：
 
-![1715784376823](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784376823.png)
+![1715784376823](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715784376823.png)
 
 打开`train.py`文件
 
-![1715784461867](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715784461867.png)
+![1715784461867](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715784461867.png)
 
 找到`parse_opt`函数，这里面有模型的主要参数：
 
@@ -532,17 +532,17 @@ parser.add_argument("--workers", type=int, default=8, help="max dataloader worke
 
 直接运行`train.py`
 
-![1715785697877](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715785697877.png)
+![1715785697877](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715785697877.png)
 
 ### 训练结果
 
 这里文件夹下有测试结果，训练结果曲线等信息。
 
-![1716220655982](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220655982.png)
+![1716220655982](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1716220655982.png)
 
 **权重文件**（最后要获得就是这个文件，取**best.pt**做推理使用的权重）
 
-![1715785770478](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1715785770478.png)
+![1715785770478](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715785770478.png)
 
 ### 用tensorbord查看训练结果
 
@@ -552,9 +552,9 @@ parser.add_argument("--workers", type=int, default=8, help="max dataloader worke
 tensorboard --logdir=runs/train
 ```
 
-![1716220466965](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220466965.png)
+![1716220466965](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1716220466965.png)
 
 ctrl点击网址，跳转浏览器：
 
-![1716220527191](https://raw.githubusercontent.com/wxnlP/pic/main/yolov5/1716220527191.png)
+![1716220527191](https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1716220527191.png)
 

@@ -45,7 +45,7 @@
 
 **各大赛道参加情况：**
 
-![工创赛赛道](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708161574423.png)
+![工创赛赛道](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708161574423.png)
 
 工创赛主要分以上六个赛道，其中“智能+”赛道分为物流小车和生活垃圾分类，主要考察嵌入式、视觉、目标检测、机械结构设计等技术。“新能源车”赛道分为太阳能和温差，主要考察凸轮设计、RFID等。其他赛道不太了解，可以去[官网](http://www.gcxl.edu.cn/new/index.html)看介绍文档。2023年我校参加的主要就是标注的四个赛道，其中太阳能、生活垃圾分类、飞行器仿真都各有一队进入国赛，取得两铜一银的[成绩](https://www.sspu.edu.cn/2023/1226/c2964a146806/page.htm)。
 
@@ -53,11 +53,11 @@
 
 **首先**，全国大学生工程实践与创新能力大赛即工创赛的**国赛**，属于大学生竞赛中的[A类赛事](https://blog.csdn.net/qq_42898149/article/details/130682821)。大学生竞赛主要分为ABCD类竞赛，A类竞赛含金量和认可度为最高，如大家了解比较多的**互联网+、挑战杯、数学建模、电赛**等等同属A类竞赛，我们学校对于A类竞赛同样有说明：
 
-![A类竞赛表](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708172385150.png)
+![A类竞赛表](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708172385150.png)
 
 这个表格来源于学习**上海第二工业大学创新创业学分管理办法** 文档，在大四每个专业都有一门创新创业课程需要上，而这门课有一种免修办法，只要满足条件的同学便可以提出免修申请，条件如下：
 
-![1708172566513](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708172566513.png)
+![1708172566513](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708172566513.png)
 
 ⚠⚠⚠--这里需要注意一点，A类赛事指的是某类赛事的国赛，该赛事的市赛只是C类或者是B类。例如**上海第二工业大学创新创业学分管理办法** 文档明确指出**全国大学生机械创新设计大赛**为A类，而**上海市大学生机械工程创新大赛**是C类赛事。
 
@@ -74,7 +74,7 @@
 
 后面是现场决赛，跟初赛一样完成**指定任务**，会比初赛难。-----**占分70%**
 
-![1708175264070](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708175264070.png)
+![1708175264070](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708175264070.png)
 
 **关于现场初赛与现场决赛**：
 
@@ -96,11 +96,11 @@
 
 首先看一下**作品要求：**
 
-![1708177074464](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708177074464.png)
+![1708177074464](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708177074464.png)
 
 **比赛场地：**
 
-![1708177434452](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708177434452.png)
+![1708177434452](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708177434452.png)
 
 物流的比赛过程大致如下：
 
@@ -122,13 +122,13 @@
 
 轮子是[麦克纳姆轮](https://baike.baidu.com/item/%E9%BA%A6%E5%85%8B%E7%BA%B3%E5%A7%86%E8%BD%AE/3827219)或[全向轮](https://baike.baidu.com/item/%E5%85%A8%E5%90%91%E8%BD%AE/10635596)，两种轮子都可以进行多方向自由移动，**推荐**使用**麦克纳姆轮**，好上手，也是我们学校同学都使用的方案。
 
-![img](https://raw.githubusercontent.com/wxnlP/pic/main/competition/9a504fc2d56285354e2f2a2f9fef76c6a6ef63f5.jpg)
+![img](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/9a504fc2d56285354e2f2a2f9fef76c6a6ef63f5.jpg)
 
-![img](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1f178a82b9014a90f4558b25a3773912b31bee3b.jpg)
+![img](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1f178a82b9014a90f4558b25a3773912b31bee3b.jpg)
 
 电机选择，直流减速电机和步进电机，推荐**直流减速电机**即可，配合PID算法做闭环控制。选择减速电机要注意一个参数：**减速比**，30即可不要太低和太高。
 
-![1708179037254](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708179037254.png)
+![1708179037254](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708179037254.png)
 
 > **推荐商家**：[亚博智能 ](https://detail.tmall.com/item.htm?abbucket=11&id=609082685065&ns=1&spm=a21n57.1.0.0.1e08523cq3ZLQM)和 [轮趣科技](https://detail.tmall.com/item.htm?abbucket=11&id=645920794388&ns=1&spm=a21n57.1.0.0.1e08523cq3ZLQM)
 
@@ -138,9 +138,9 @@ stm32可以选用**stm32f103c8t6**和**stm32f103ZET6**两种芯片，满足四�
 
 arduino选型就简单很多，怕资源不够就用**arduino mega**，或者**arduino uno**，资源少一些。
 
-![1708179801996](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708179801996.png)
+![1708179801996](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708179801996.png)
 
-![1708179849308](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708179849308.png)
+![1708179849308](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708179849308.png)
 
 ##### 机械臂：
 
@@ -150,11 +150,11 @@ arduino选型就简单很多，怕资源不够就用**arduino mega**，或者**a
 
 基本机构大差不差，有一些同学会对机械进行简单改造，第一个自由度舵机最后用一个扭矩大一些防止突然烧坏。同时机械爪部分最后自己设计，根据物料和自己设计的机械臂运动方式。
 
-![1708180164128](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708180164128.png)
+![1708180164128](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708180164128.png)
 
 2.四自由度
 
-![1708180530493](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708180530493.png)
+![1708180530493](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708180530493.png)
 
 
 
@@ -166,7 +166,7 @@ arduino选型就简单很多，怕资源不够就用**arduino mega**，或者**a
 
 1、2方案都需要多个舵机，建议买一个[舵机拓展板](https://item.taobao.com/item.htm?ali_refid=a3_430582_1006:1104166432:N:Df97QAFv155N5cA0zdwOaHVxV3dNIHPA:4956869d531a473180413af89bd8570a&ali_trackid=1_4956869d531a473180413af89bd8570a&id=19214924650&spm=a21n57.1.0.0)
 
-![1708181153870](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708181153870.png)
+![1708181153870](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708181153870.png)
 
 ##### 视觉
 
@@ -174,17 +174,17 @@ arduino选型就简单很多，怕资源不够就用**arduino mega**，或者**a
 
 [openmv购买链接](https://item.taobao.com/item.htm?abbucket=11&id=612497720394&ns=1&spm=a21n57.1.0.0.1e08523cq3ZLQM)
 
-![1708180921426](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708180921426.png)
+![1708180921426](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708180921426.png)
 
 > **硬件方案都是其次的，重要的是定位算法和机械臂路径规划的准确性。**
 
 #### 3.1.3 注意事项
 
-![1708181319625](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708181319625.png)
+![1708181319625](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708181319625.png)
 
-![1708181378802](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708181378802.png)
+![1708181378802](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708181378802.png)
 
-![1708181443508](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708181443508.png)
+![1708181443508](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708181443508.png)
 
 ### 3.2 生活垃圾分类
 
@@ -194,7 +194,7 @@ arduino选型就简单很多，怕资源不够就用**arduino mega**，或者**a
 
 > 这一部分是对作品功能的总体概括，看看就行，重点都已经加深标注了。需要注意的就是分类标签、压缩装置，后面会详细说明。
 
-![1708238068702](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708238068702.png)
+![1708238068702](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708238068702.png)
 
 ##### **功能要求：**
 
@@ -206,31 +206,31 @@ arduino选型就简单很多，怕资源不够就用**arduino mega**，或者**a
 - **高亮显示屏**，可以播放宣传视频，显示投放垃圾的信息、满载情况。
 - **待机**时**循环播放**宣传视频。
 
-![1708238221030](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708238221030.png)
+![1708238221030](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708238221030.png)
 
 ##### **驱动要求：**
 
 > 注意电压要求，不大于24伏，我们国赛因为高了0.03V没有给成绩排序😭😭😭(这里不吐槽了，刘老师比赛前肯定会嘱咐你们的，**不要报有侥幸心理，严格按照规则**)。
 
-![1708238242954](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708238242954.png)
+![1708238242954](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708238242954.png)
 
 ##### **机械结构要求：**
 
 > 这里不用被自主设计吓到，只要不是整理全买的成品就行，能用3D打印就用，毕竟经费有限哈哈哈。
 
-![1708238282657](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708238282657.png)
+![1708238282657](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708238282657.png)
 
 ##### **外形尺寸要求：**
 
 > 作品制作时一定要考虑高度，特别是校赛，因为后面要考虑决赛的多种垃圾分类，肯定会或多或少加高。
 
-![1708238312134](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708238312134.png)
+![1708238312134](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708238312134.png)
 
 **投放的物料：**
 
 > 物料这里不细说，后面的程序部分会详细说，我们国赛也是踩了坑的。
 
-![1708238345013](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708238345013.png)
+![1708238345013](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708238345013.png)
 
 **生活垃圾分类赛道最重要的除了视觉方面就是结构搭建方面，最耗时间的也是结构设计和搭建，搭建以后调试程序就是很方便和快乐的。**
 
@@ -266,17 +266,17 @@ arduino选型就简单很多，怕资源不够就用**arduino mega**，或者**a
 
 **铝材：**结构一定要稳定，因为要考虑后续去其他学校比赛的时候要长途运输，特别是国赛跨省运过去会掉很多螺丝。所以作品**”骨骼“**框架用欧标20的铝材，最好不要用30或40以上除非结构需要，因为真的很重。长度不对可以使用工训中心一楼的铣床钻断。
 
-![1708242805223](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708242805223.png)
+![1708242805223](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708242805223.png)
 
 **铝材连接键**：建议使用这种直角角码；我们也用过一些内置的连接件并不好用，当时考虑装亚克力板好装但恰恰相反，所以不推荐，直角角码相对安装更简单。
 
-![1708242924344](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708242924344.png)
+![1708242924344](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708242924344.png)
 
-![1708243045701](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708243045701.png)
+![1708243045701](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708243045701.png)
 
 前面提到运输过程中螺丝容易掉，所以在铝材底部用直角铁固定，防止结构变型。
 
-![1708243175301](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708243175301.png)
+![1708243175301](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708243175301.png)
 
 **亚克力板**，根据不同用处对于亚克力板的厚度选择有一点选择：
 
@@ -284,7 +284,7 @@ arduino选型就简单很多，怕资源不够就用**arduino mega**，或者**a
 - **4mm以上**，--->用于需要支撑重量较大的地方。
 - **8mm以上**，--->用于压缩抵挡面，需要承受1000N以上的力。
 
-![1708243391533](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708243391533.png)
+![1708243391533](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708243391533.png)
 
 #### 4.1.2 结构设计
 
@@ -292,13 +292,13 @@ arduino选型就简单很多，怕资源不够就用**arduino mega**，或者**a
 
 装配图：
 
-![1708260715405](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708260715405.png)
+![1708260715405](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708260715405.png)
 
 **垃圾桶**，四个桶尺寸一样，比规定尺寸要大一些具体多少忘记了，可以量一量。建议比我们的桶小一些。
 
 **压缩装置**，使用[路易24V电动推杆平底座](https://item.taobao.com/item.htm?id=545827512337&spm=pc_detail.27183998/evo365560b447259.202206.2.29c67dd6VCTesE)，有很多速度和推力可选，结合需求选购。
 
-![1708244316987](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708244316987.png)
+![1708244316987](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708244316987.png)
 
 **分类装置**，用亚克力板拼装的，尺寸看我的UG图纸就好，表面铺的A4纸。做的比较简陋，这里**不建议继续采用**，国赛吉大给的土豆很小而且是湿的(必须吐槽一下吉大🤣)，很容易沾上面。
 
@@ -316,7 +316,7 @@ arduino选型就简单很多，怕资源不够就用**arduino mega**，或者**a
 
 Arduino Mega 2560是基于ATmega2560的主控开发板。Arduino Mega2560是采用USB接口的核心电路板。具有54路数字输入输出，适合需要大量IO接口的设计。处理器核心是ATmega2560,同时具有54路数字输入/输出口，16路模拟输入，4路UART接口，一个16MHz晶体振荡器，一个USB口，一个电源插座，一个ICSP header和一个复位按钮。板上有支持一个主控板的所有资源。Arduino Mega2560也能兼容为Arduino NUO设计的扩展板。可以自动选择3中供电方式：外部直流电源通过电源插座供电；电池连接电源连接器的GND和VIN引脚；USB接口直流供电。
 
-![1708249530582](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708249530582.png)
+![1708249530582](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708249530582.png)
 
 ##### 分类装置控制选择
 
@@ -324,17 +324,17 @@ Arduino Mega 2560是基于ATmega2560的主控开发板。Arduino Mega2560是采�
 
 可以试试亚博智能的舵机：[亚博智能15/20/25kg金属数字舵机](https://detail.tmall.com/item.htm?abbucket=11&id=624218042549&ns=1&spm=a21n57.1.0.0.1d60523ckabwS6)
 
-![1708250207978](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708250207978.png)
+![1708250207978](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708250207978.png)
 
 2.**多种垃圾**是采用两个步进电机控制机械臂x、y轴运动，然后由4个舵机控制抓取。步进电机选用好一些的但也不需要很大，这里推荐我们使用的步进电机：[42步进电机](https://item.taobao.com/item.htm?abbucket=11&id=582210006047&ns=1&spm=a21n57.1.0.0.1d60523ckabwS6) ，经过使用测试，质量是够用的。防止步进电机丢步情况，步进电机须配备闭环控制器：[42步进闭环电机驱动器模块](https://item.taobao.com/item.htm?abbucket=11&id=635439412574&ns=1&spm=a21n57.1.0.0.1d60523ckabwS6)，选用**3D打印套餐**即可。
 
-![1708250513291](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708250513291.png)
+![1708250513291](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708250513291.png)
 
 ##### 满载检测
 
 选用超声波，根据测距判断是否满载。因为垃圾桶规定为透明，红外测距会受到影响，超声波则不会受到影响。
 
-![1708261211492](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708261211492.png)
+![1708261211492](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708261211492.png)
 
 #### 4.2.2 驱动选择
 
@@ -451,7 +451,7 @@ python export.py --weights best.pt
 
 访问Github的yolov5-lite地址(记得使用魔法)：[下载YOLOv5-Lite](https://github.com/ppogg/YOLOv5-Lite)
 
-![1708330842223](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708330842223.png)
+![1708330842223](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708330842223.png)
 
 **推荐**直接下载压缩包把压缩包传到树莓派，直接右键解压或**终端解压**，图示的文件将都会存在于文件夹。
 
@@ -461,15 +461,15 @@ unzip your_file.zip # 解压
 
 解压以后的文件结构如下图，YOLO-Lite-master是文件夹名称，后续就称之为**yolov5-lite文件夹**
 
-![1708343507323](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708343507323.png)
+![1708343507323](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708343507323.png)
 
 解释一下**文件夹下打开终端**，例如：在**yolov5-lite文件夹**下打开终端，即终端位置在**yolov5-lite文件夹**位置。
 
-![1708343830872](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708343830872.png)
+![1708343830872](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708343830872.png)
 
 操作方法为默认终端输入`cd + your_path`，例如：
 
-![1708343950823](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708343950823.png)
+![1708343950823](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708343950823.png)
 
 > 可以敲前几个字母，用Tab键补齐。**后续会直接说在某一个文件夹下打开终端，找到路径自行操作。**
 
@@ -488,9 +488,9 @@ pip3 install torch-1.8.0a0+56b43f4-cp37-cp37m-linux_armv7l.whl
 pip3 install torchvision-0.9.0a0+8fb5838-cp37-cp37m-linux_armv7l.whl
 ```
 
-![1708332404336](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708332404336.png)
+![1708332404336](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708332404336.png)
 
-![1708329910522](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708329910522.png)
+![1708329910522](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708329910522.png)
 
 3. **安装依赖**
 
@@ -500,17 +500,17 @@ pip3 install torchvision-0.9.0a0+8fb5838-cp37-cp37m-linux_armv7l.whl
 pip3 install -r requirements.txt
 ```
 
-![1708331536097](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708331536097.png)
+![1708331536097](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708331536097.png)
 
 将**v5lite-s.pt**文件转移到树莓派下**yolov5-lite文件夹**下
 
-![1708332518118](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708332518118.png)
+![1708332518118](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708332518118.png)
 
 4. **摄像头配置**
 
 检测树莓派是否有**opencv**，打开终端，输入`python3`调出python终端，输入`import cv2`不报错即可
 
-![1708330217813](./https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708330217813.png)
+![1708330217813](./https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708330217813.png)
 
 新建PyProjects文件夹，文件夹下新建文件cv_test.py
 
@@ -520,7 +520,7 @@ cd PyProjects
 touch cv_test.py
 ```
 
-![1708344562343](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708344562343.png)
+![1708344562343](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708344562343.png)
 
 复制下面代码到cv_test.py文件。
 
@@ -568,11 +568,11 @@ cv2.destroyAllWindows()
 python3 cv_test.py
 ```
 
-![1708344698894](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708344698894.png)
+![1708344698894](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708344698894.png)
 
 Ctrl+c退出，输入`ls /dev/video*`查看摄像头设备，一般是0/1
 
-![1708334429106](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708334429106.png)
+![1708334429106](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708334429106.png)
 
 5. **推理**
 
@@ -600,7 +600,7 @@ pip3 install onnxruntime-1.9.1-cp37-none-linux_armv7l.whl
 pip3 install numpy # 安装numpy
 ```
 
-![1708333928679](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708333928679.png)
+![1708333928679](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708333928679.png)
 
 **onnx推理**
 
@@ -858,7 +858,7 @@ if __name__ == "__main__":
 
 ```
 
-![1708345128636](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708345128636.png)
+![1708345128636](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708345128636.png)
 
 > 如果可以正常识别检测目标，环境搭建就没有问题，后续根据比赛要求添加通信代码就可以了。
 
@@ -866,7 +866,7 @@ if __name__ == "__main__":
 
 打开终端，输入`sudo nano /etc/rc.local`，修改代码为一下形式，其中`#my codes`为主要添加代码，`autoboot.sh`为启动程序文件，自己命名即可。
 
-![1708946094611](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708946094611.png)
+![1708946094611](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708946094611.png)
 
 根据目录创建`autoboot.sh`文件，并添加一下内容
 
@@ -899,7 +899,7 @@ Python环境配置：
 链接：https://pan.baidu.com/s/1WBBtduC-grJw9ZM88HqXfg?pwd=cmzz 
 提取码：cmzz
 
-![1708503608585](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708503608585.png)
+![1708503608585](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708503608585.png)
 
 PyQt5环境配置：[界面开发（1） --- PyQt5环境配置_pyqt5 配置-CSDN博客](https://blog.csdn.net/WYKB_Mr_Q/article/details/129265121)
 
@@ -1157,7 +1157,7 @@ if __name__ == "__main__":
 
 下面展示一下我后面写的一个粗糙版QT登录界面，展示一下函数库运用：
 
-![1708947182342](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708947182342.png)
+![1708947182342](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708947182342.png)
 
 **函数库：**
 
@@ -2173,9 +2173,9 @@ if __name__ == "__main__":
 
 ### 5.1 重要说明
 
-![1708949657516](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708949657516.png)
+![1708949657516](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708949657516.png)
 
-![confusion_matrix](https://raw.githubusercontent.com/wxnlP/pic/main/competition/confusion_matrix.png)
+![confusion_matrix](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/confusion_matrix.png)
 
 **重点说明：**
 
@@ -2189,7 +2189,7 @@ if __name__ == "__main__":
 
 1. 小米橙色电池，很容易识别成胡萝卜。
 
-![1708952756713](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1708952756713.png)
+![1708952756713](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1708952756713.png)
 
 2. 纯白色瓷片
 3. 小土豆，很小，且是湿的。
@@ -2200,7 +2200,7 @@ if __name__ == "__main__":
 
 > 这些任务中，我们当时基本都已经准备好了，除了纸杯和废纸是文档中没有说明的，不过问题不大，其他组准备的也不完美。
 
-![1715655628050](https://raw.githubusercontent.com/wxnlP/pic/main/competition/1715655628050.png)
+![1715655628050](https://cdn.jsdelivr.net/gh/wxnlP/pic/competition/1715655628050.png)
 
 ## 6 联系方式
 
