@@ -26,6 +26,8 @@
 
 ##### 1、高级定时器框图 #####
 
+![1](https://raw.codehub.cn/p/pictures/d/pics/git/raw/master/STM32Serial/1705736375374.png?token=M6XqHYPDRNYD6fsvwaPTtS8nLZlY1Rgd5PYGEEqDyB)
+
 ![1706255487441](https://raw.githubusercontent.com/wxnlP/pic/main/STM32TimerPID/1706255487441.png)
 
 ##### 2、通用定时器 #####
