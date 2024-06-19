@@ -11,12 +11,27 @@ repo_url: https://github.com/wxnlP/wxnlP.github.io
 
 nav:
   - 主页: index.md
-  - yolo系列: 
-    - yolov5训练: study/yolov5.md
-    - 工创赛: study/competition.md
+  - yolov5模型训练: 
+    - 基础环境配置: study/yolov5/1.md
+    - yolo环境配置: study/yolov5/2.md
+    - 数据集划分: study/yolov5/3.md
+    - 模型训练: study/yolov5/4.md
+  - 工创赛: 
+    - 比赛介绍:
+      - 内容简介: study/competition/1.md
+      - 比赛介绍: study/competition/2.md
+      - 赛道介绍: study/competition/3.md
+    - 方案设计:
+      - 方案介绍: study/competition/4.md
+      - 优化建议: study/competition/5.md
   - STM32系列:
-    - 定时器与PID: study/TimerPID.md
-    - 通信协议: study/Serial.md
+    - 通信协议: 
+      - USART: study/serial/1.md
+      - I2C: study/serial/2.md
+      - SPI: study/serial/3.md
+    - 定时器与PID: 
+      - Timer: study/Timer/Timer.md 
+      - PID: study/PID/PID.md
 
   
 

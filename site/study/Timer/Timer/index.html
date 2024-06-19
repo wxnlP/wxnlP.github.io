@@ -1,0 +1,2142 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="If we could meet again in our next life, I would be more mature and marry you.">
+      
+      
+        <meta name="author" content="XiaoLi">
+      
+      
+        <link rel="canonical" href="https://wxnlP.github.io/study/Timer/Timer/">
+      
+      
+        <link rel="prev" href="../../serial/3/">
+      
+      
+        <link rel="next" href="../../PID/PID/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>Timer - 小李的破站☮</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11-timer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="小李的破站☮" class="md-header__button md-logo" aria-label="小李的破站☮" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            小李的破站☮
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Timer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wxnlP/wxnlP.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wxnlP/wxnlP.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../yolov5/1/" class="md-tabs__link">
+          
+  
+    
+  
+  yolov5模型训练
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../competition/1/" class="md-tabs__link">
+          
+  
+    
+  
+  工创赛
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../serial/1/" class="md-tabs__link">
+          
+  
+    
+  
+  STM32系列
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="小李的破站☮" class="md-nav__button md-logo" aria-label="小李的破站☮" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    小李的破站☮
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wxnlP/wxnlP.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wxnlP/wxnlP.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../yolov5/1/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    yolov5模型训练
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../competition/1/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    工创赛
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    STM32系列
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            STM32系列
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    通信协议
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            通信协议
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../serial/1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    USART
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../serial/2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    I2C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../serial/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    定时器与PID
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            定时器与PID
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Timer
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Timer
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-timer" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 定时器与定时中断（Timer）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 定时器与定时中断（Timer）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-tim" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.1 TIM简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.2 定时器框架
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1.2 定时器框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1、高级定时器框图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2、通用定时器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3、基本定时器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.3 定时中断基本结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.4 时序图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-rcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.5 RCC时钟树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.6 代码示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-output-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 输出比较（Output Compare）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 输出比较（Output Compare）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1 输出比较介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-pwm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2 PWM简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.3 输出比较通道
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.4 输出比较模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-pwm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.5 PWM基本结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#126-tb6612" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.6 硬件介绍（舵机、TB6612芯片）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#127" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.7 代码示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-input-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 输入捕获（Input Capture）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 输入捕获（Input Capture）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1 输入捕获介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.2 频率测量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.3 输入捕获框架
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.4 主从触发模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.5 输入捕获基本结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136-pwmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.6 PWMI模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#137" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.7 代码示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 编码器接口（Encoder）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 编码器接口（Encoder）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 编码器接口介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.2 编码器接口基本结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.3 编码器接口工作模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.4 #四倍频法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.5 计数示例（极性选择）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#146" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.6 代码示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PID/PID/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PID
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-timer" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 定时器与定时中断（Timer）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 定时器与定时中断（Timer）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-tim" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.1 TIM简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.2 定时器框架
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1.2 定时器框架">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1、高级定时器框图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2、通用定时器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3、基本定时器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.3 定时中断基本结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.4 时序图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-rcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.5 RCC时钟树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.6 代码示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-output-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 输出比较（Output Compare）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 输出比较（Output Compare）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1 输出比较介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-pwm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2 PWM简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.3 输出比较通道
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.4 输出比较模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-pwm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.5 PWM基本结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#126-tb6612" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.6 硬件介绍（舵机、TB6612芯片）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#127" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.7 代码示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-input-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 输入捕获（Input Capture）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 输入捕获（Input Capture）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1 输入捕获介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.2 频率测量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.3 输入捕获框架
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.4 主从触发模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#135" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.5 输入捕获基本结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#136-pwmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.6 PWMI模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#137" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.7 代码示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 编码器接口（Encoder）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 编码器接口（Encoder）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 编码器接口介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.2 编码器接口基本结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.3 编码器接口工作模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.4 #四倍频法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.5 计数示例（极性选择）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#146" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.6 代码示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/wxnlP/wxnlP.github.io/edit/master/docs/study/Timer/Timer.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/wxnlP/wxnlP.github.io/raw/master/docs/study/Timer/Timer.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+  <h1>Timer</h1>
+
+<h3 id="11-timer">1.1 定时器与定时中断（Timer）<a class="headerlink" href="#11-timer" title="Permanent link">&para;</a></h3>
+<h4 id="111-tim">1.1.1 TIM简介<a class="headerlink" href="#111-tim" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>TIM（Timer）定时器</strong></li>
+<li><strong>定时器可以对输入的时钟进行计数，并在计数值达到设定值时触发中断</strong></li>
+<li><strong>16位计数器、预分频器、自动重装寄存器的时基单元，在72MHz计数时钟下可以实现最大59.65s的定时</strong></li>
+<li><strong>不仅具备基本的定时中断功能，而且还包含内外时钟源选择、输入捕获、输出比较、编码器接口、主从触发模式等多种功能</strong></li>
+<li><strong>根据复杂度和应用场景分为了高级定时器、通用定时器、基本定时器三种类型</strong></li>
+</ul>
+<p><strong>定时器类型</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类型</th>
+<th><strong>编号</strong></th>
+<th><strong>总线</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">高级定时器</td>
+<td>TIM1、TIM8</td>
+<td>APB2</td>
+<td>拥有通用定时器全部功能，并额外具有重复计数器、死区生成、互补输出、刹车输入等功能</td>
+</tr>
+<tr>
+<td style="text-align: left;">通用定时器</td>
+<td>TIM2、TIM3、TIM4、TIM5</td>
+<td>APB1</td>
+<td>拥有基本定时器全部功能，并额外具有内外时钟源选择、输入捕获、输出比较、编码器接口、主从触发模式等功能</td>
+</tr>
+<tr>
+<td style="text-align: left;">基本定时器</td>
+<td>TIM6、TIM7</td>
+<td>APB1</td>
+<td>拥有定时中断、主模式触发DAC的功能</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>不同的芯片拥有的定时器资源不同，例如STM32F103C8T6定时器资源：TIM1、TIM2、TIM3、TIM4</p>
+</blockquote>
+<h4 id="112">1.1.2 定时器框架<a class="headerlink" href="#112" title="Permanent link">&para;</a></h4>
+<h5 id="1">1、高级定时器框图<a class="headerlink" href="#1" title="Permanent link">&para;</a></h5>
+<p><img alt="1706255487441" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255487441.png" /></p>
+<h5 id="2">2、通用定时器<a class="headerlink" href="#2" title="Permanent link">&para;</a></h5>
+<p><img alt="1706255081006" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255081006.png" /></p>
+<ul>
+<li>通用定时器有多种时钟选择（外部时钟模式1、2，内部时钟）</li>
+<li>定时器级联与主从模式相关。（参考：<a href="#1.3.4 主从触发模式">1.3.4 主从触发模式</a>）</li>
+</ul>
+<h5 id="3">3、基本定时器<a class="headerlink" href="#3" title="Permanent link">&para;</a></h5>
+<p><img alt="1706254347422" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706254347422.png" /></p>
+<blockquote>
+<p>⚠：--基本定时器仅支持向上计数--时钟选择也仅支持内部时钟，为72MHZ</p>
+</blockquote>
+<h4 id="113">1.1.3 定时中断基本结构<a class="headerlink" href="#113" title="Permanent link">&para;</a></h4>
+<p><img alt="1706255701792" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255701792.png" /></p>
+<h4 id="114">1.1.4 时序图<a class="headerlink" href="#114" title="Permanent link">&para;</a></h4>
+<p><img alt="1706256017333" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256017333.png" /></p>
+<p><img alt="1706256032654" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256032654.png" /></p>
+<p><img alt="1706256043889" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256043889.png" /></p>
+<p><img alt="1706256059025" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256059025.png" /></p>
+<h4 id="115-rcc">1.1.5 RCC时钟树<a class="headerlink" href="#115-rcc" title="Permanent link">&para;</a></h4>
+<p><img alt="1706255928324" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255928324.png" /></p>
+<h4 id="116">1.1.6 代码示例<a class="headerlink" href="#116" title="Permanent link">&para;</a></h4>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm">/**</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm">  * 函    数：定时中断初始化</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cm">  * 参    数：无</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cm">  * 返 回 值：无</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="cm">  */</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Timer_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="cm">/*开启时钟*/</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">RCC_APB1PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB1Periph_TIM2</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">            </span><span class="c1">//开启TIM2的时钟</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="cm">/*配置时钟源*/</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="n">TIM_InternalClockConfig</span><span class="p">(</span><span class="n">TIM2</span><span class="p">);</span><span class="w">      </span><span class="c1">//选择TIM2为内部时钟，若不调用此函数，TIM默认也为内部时钟</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="cm">/*时基单元初始化*/</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitTypeDef</span><span class="w"> </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">;</span><span class="w">              </span><span class="c1">//定义结构体变量</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_ClockDivision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_CKD_DIV1</span><span class="p">;</span><span class="w">     </span><span class="c1">//时钟分频，选择不分频</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_CounterMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_CounterMode_Up</span><span class="p">;</span><span class="c1">//计数器模式，选择向上计数</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_Period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">               </span><span class="c1">//计数周期，即ARR的值</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_Prescaler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7200</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">             </span><span class="c1">//预分频器，即PSC的值</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_RepetitionCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">//重复计数器，高级定时器才会用到</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="n">TIM_TimeBaseInit</span><span class="p">(</span><span class="n">TIM2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">);</span><span class="w">             </span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="cm">/*中断输出配置*/</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="n">TIM_ClearFlag</span><span class="p">(</span><span class="n">TIM2</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_FLAG_Update</span><span class="p">);</span><span class="w">                       </span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="cm">/*清除定时器更新标志位TIM_TimeBaseInit函数末尾，</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="cm">    手动产生了更新事件若不清除此标志位，则开启中断后，</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="cm">    会立刻进入一次中断如果不介意此问题，则不清除此标志位也可*/</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="n">TIM_ITConfig</span><span class="p">(</span><span class="n">TIM2</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_IT_Update</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">                  </span><span class="c1">//开启TIM2的更新中断</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="cm">/*NVIC中断分组*/</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="n">NVIC_PriorityGroupConfig</span><span class="p">(</span><span class="n">NVIC_PriorityGroup_2</span><span class="p">);</span><span class="w">             </span><span class="c1">//配置NVIC为分组2</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="cm">/*即抢占优先级范围：0~3，响应优先级范围：0~3</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="cm">    此分组配置在整个工程中仅需调用一次</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="cm">    若有多个中断，可以把此代码放在main函数内，while循环之前</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="cm">    若调用多次配置分组的代码，则后执行的配置会覆盖先执行的配置*/</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span><span class="cm">/*NVIC配置*/</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">    </span><span class="n">NVIC_InitTypeDef</span><span class="w"> </span><span class="n">NVIC_InitStructure</span><span class="p">;</span><span class="w">                        </span><span class="c1">//定义结构体变量</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">    </span><span class="n">NVIC_InitStructure</span><span class="p">.</span><span class="n">NVIC_IRQChannel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM2_IRQn</span><span class="p">;</span><span class="w">             </span><span class="c1">//选择配置NVIC的TIM2线</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">    </span><span class="n">NVIC_InitStructure</span><span class="p">.</span><span class="n">NVIC_IRQChannelCmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">;</span><span class="w">             </span><span class="c1">//指定NVIC线路使能</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">    </span><span class="n">NVIC_InitStructure</span><span class="p">.</span><span class="n">NVIC_IRQChannelPreemptionPriority</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">   </span><span class="c1">//指定NVIC线路的抢占优先级为2</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">    </span><span class="n">NVIC_InitStructure</span><span class="p">.</span><span class="n">NVIC_IRQChannelSubPriority</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">          </span><span class="c1">//指定NVIC线路的响应优先级为1</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="n">NVIC_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">NVIC_InitStructure</span><span class="p">);</span><span class="w">                         </span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">    </span><span class="cm">/*TIM使能*/</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">    </span><span class="n">TIM_Cmd</span><span class="p">(</span><span class="n">TIM2</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">          </span><span class="c1">//使能TIM2，定时器开始运行</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="p">}</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="cm">/* 定时器中断函数，可以复制到使用它的地方</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="cm">void TIM2_IRQHandler(void)</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="cm">{</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="cm">    if (TIM_GetITStatus(TIM2, TIM_IT_Update) == SET)</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="cm">    {</span>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="cm">        TIM_ClearITPendingBit(TIM2, TIM_IT_Update);</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="cm">    }</span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="cm">}</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="cm">*/</span>
+</span></code></pre></div>
+<h3 id="12-output-compare">1.2 输出比较（Output Compare）<a class="headerlink" href="#12-output-compare" title="Permanent link">&para;</a></h3>
+<h4 id="121">1.2.1 输出比较介绍<a class="headerlink" href="#121" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>OC（Output Compare）输出比较</strong></li>
+<li><strong>输出比较可以通过比较CNT与CCR寄存器值的关系，来对输出电平进行置1、置0或翻转的操作，用于输出一定频率和占空比的PWM波形</strong></li>
+<li><strong>每个高级定时器和通用定时器都拥有4个输出比较通道</strong></li>
+<li><strong>高级定时器的前3个通道额外拥有死区生成和互补输出的功能</strong>（用于驱动三相无刷电机）</li>
+</ul>
+<h4 id="122-pwm">1.2.2 PWM简介<a class="headerlink" href="#122-pwm" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>PWM（Pulse Width Modulation）脉冲宽度调制</p>
+</li>
+<li>
+<p>在具有惯性的系统中，可以通过对一系列脉冲的宽度进行调制，来等效地获得所需要的模拟参量，常应用于电机控速等领域</p>
+</li>
+<li>
+<p>PWM参数：</p>
+</li>
+</ul>
+<p>​      ⭐频率 = 1 / T_S            ⭐占空比 = T_ON / T_S           分辨率 = 占空比变化步距</p>
+<p><img alt="1706197859960" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706197859960.png" /></p>
+<h4 id="123">1.2.3 输出比较通道<a class="headerlink" href="#123" title="Permanent link">&para;</a></h4>
+<p><strong>高级定时器输出比较通道：</strong></p>
+<p><img alt="1706198238483" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706198238483.png" /></p>
+<p><strong>通用定时器输出比较通道：</strong></p>
+<p><img alt="1706199429609" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706199429609.png" /></p>
+<blockquote>
+<p>关于定时器主模式控制器参考<a href="#1.3.4 主从触发模式">1.3.4 主从触发模式</a></p>
+</blockquote>
+<h4 id="124">1.2.4 输出比较模式<a class="headerlink" href="#124" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>模式</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">冻结</td>
+<td>CNT=CCR时，REF保持为原状态</td>
+</tr>
+<tr>
+<td style="text-align: left;">匹配时置有效电平</td>
+<td>CNT=CCR时，REF置有效电平</td>
+</tr>
+<tr>
+<td style="text-align: left;">匹配时置无效电平</td>
+<td>CNT=CCR时，REF置无效电平</td>
+</tr>
+<tr>
+<td style="text-align: left;">匹配时电平翻转</td>
+<td>CNT=CCR时，REF电平翻转</td>
+</tr>
+<tr>
+<td style="text-align: left;">强制为无效电平</td>
+<td>CNT与CCR无效，REF强制为无效电平</td>
+</tr>
+<tr>
+<td style="text-align: left;">强制为有效电平</td>
+<td>CNT与CCR无效，REF强制为有效电平</td>
+</tr>
+<tr>
+<td style="text-align: left;">PWM模式1</td>
+<td>向上计数：CNT<CCR时，REF置有效电平，CNT≥CCR时，REF置无效电平   向下计数：CNT>CCR时，REF置无效电平，CNT≤CCR时，REF置有效电平</td>
+</tr>
+<tr>
+<td style="text-align: left;">PWM模式2</td>
+<td>向上计数：CNT<CCR时，REF置无效电平，CNT≥CCR时，REF置有效电平   向下计数：CNT>CCR时，REF置有效电平，CNT≤CCR时，REF置无效电平</td>
+</tr>
+</tbody>
+</table>
+<h4 id="125-pwm">1.2.5 PWM基本结构<a class="headerlink" href="#125-pwm" title="Permanent link">&para;</a></h4>
+<p><img alt="1706200055360" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200055360.png" /></p>
+<ul>
+<li>PWM频率：  Freq = CK_PSC / (PSC + 1) / (ARR + 1)</li>
+<li>PWM占空比：  Duty = CCR / (ARR + 1)</li>
+<li>PWM分辨率： Reso = 1 / (ARR+ 1)</li>
+</ul>
+<blockquote>
+<p>关于参数介绍---</p>
+<p>CK_PSC--时钟频率：APB1为36MHZ，APB2为72MHZ</p>
+<p>PSC --预分频值：代码设置</p>
+<p>ARR --自动重装值：代码设置</p>
+<p>CNT--定时器计数值：按时钟频率计数</p>
+</blockquote>
+<h4 id="126-tb6612">1.2.6 硬件介绍（舵机、TB6612芯片）<a class="headerlink" href="#126-tb6612" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>舵机</strong></li>
+</ul>
+<p><img alt="1706200565288" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200565288.png" /></p>
+<ul>
+<li><strong>TB6612直流电机驱动</strong></li>
+</ul>
+<p><img alt="1706200648810" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200648810.png" /></p>
+<p><img alt="1706200615939" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200615939.png" /></p>
+<h4 id="127">1.2.7 代码示例<a class="headerlink" href="#127" title="Permanent link">&para;</a></h4>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cm">/**</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cm">  * 函    数：PWM初始化</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="cm">  * 参    数：无</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="cm">  * 返 回 值：无</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="cm">  */</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">PWM_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">{</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="cm">/*开启时钟*/</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">RCC_APB1PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB1Periph_TIM2</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">            </span><span class="c1">//开启TIM2的时钟</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="n">RCC_APB2PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB2Periph_GPIOA</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">           </span><span class="c1">//开启GPIOA的时钟</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="cm">/*GPIO初始化*/</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="n">GPIO_InitTypeDef</span><span class="w"> </span><span class="n">GPIO_InitStructure</span><span class="p">;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GPIO_Mode_AF_PP</span><span class="p">;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GPIO_Pin_1</span><span class="p">;</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GPIO_Speed_50MHz</span><span class="p">;</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="n">GPIO_Init</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">GPIO_InitStructure</span><span class="p">);</span><span class="w">                          </span><span class="c1">//将PA1引脚初始化为复用推挽输出  </span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">                                                                    </span><span class="c1">//受外设控制的引脚，均需要配置为复用模式</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="cm">/*配置时钟源*/</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="n">TIM_InternalClockConfig</span><span class="p">(</span><span class="n">TIM2</span><span class="p">);</span><span class="w">      </span><span class="c1">//选择TIM2为内部时钟，若不调用此函数，TIM默认也为内部时钟</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="cm">/*时基单元初始化*/</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitTypeDef</span><span class="w"> </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">;</span><span class="w">              </span><span class="c1">//定义结构体变量</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_ClockDivision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_CKD_DIV1</span><span class="p">;</span><span class="w">     </span><span class="c1">//时钟分频，选择不分频</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_CounterMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_CounterMode_Up</span><span class="p">;</span><span class="w"> </span><span class="c1">//选择向上计数</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_Period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20000</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">               </span><span class="c1">//计数周期，即ARR的值</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_Prescaler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">72</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">               </span><span class="c1">//预分频器，即PSC的值</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_RepetitionCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">      </span><span class="c1">//重复计数器，高级定时器才会用到</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">    </span><span class="n">TIM_TimeBaseInit</span><span class="p">(</span><span class="n">TIM2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">);</span><span class="w">          </span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">    </span><span class="cm">/*输出比较初始化*/</span><span class="w"> </span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">    </span><span class="n">TIM_OCInitTypeDef</span><span class="w"> </span><span class="n">TIM_OCInitStructure</span><span class="p">;</span><span class="w">                    </span><span class="c1">//定义结构体变量</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">    </span><span class="n">TIM_OCStructInit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">TIM_OCInitStructure</span><span class="p">);</span><span class="w">                   </span><span class="c1">//给结构体所有成员都赋一个默认值 </span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">    </span><span class="n">TIM_OCInitStructure</span><span class="p">.</span><span class="n">TIM_OCMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_OCMode_PWM1</span><span class="p">;</span><span class="w">            </span><span class="c1">//输出比较模式，选择PWM模式1</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">    </span><span class="n">TIM_OCInitStructure</span><span class="p">.</span><span class="n">TIM_OCPolarity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_OCPolarity_High</span><span class="p">;</span><span class="w">    </span><span class="c1">//输出极性，选择为高，若选择极性为低，则输出高低电平取反</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">    </span><span class="n">TIM_OCInitStructure</span><span class="p">.</span><span class="n">TIM_OutputState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_OutputState_Enable</span><span class="p">;</span><span class="w">   </span><span class="c1">//输出使能</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">    </span><span class="n">TIM_OCInitStructure</span><span class="p">.</span><span class="n">TIM_Pulse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">                              </span><span class="c1">//初始的CCR比较值</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">    </span><span class="n">TIM_OC2Init</span><span class="p">(</span><span class="n">TIM2</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TIM_OCInitStructure</span><span class="p">);</span><span class="w">                        </span><span class="c1">//配置输出比较通道2</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">    </span><span class="cm">/*TIM使能*/</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">    </span><span class="n">TIM_Cmd</span><span class="p">(</span><span class="n">TIM2</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">          </span><span class="c1">//使能TIM2，定时器开始运行</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="p">}</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="cm">/**</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="cm">  * 函    数：PWM设置CCR</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="cm">  * 参    数：Compare 要写入的CCR的值，范围：0~100</span>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="cm">  * 返 回 值：无</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="cm">  * 注意事项：CCR和ARR共同决定占空比，此函数仅设置CCR的值，并不直接是占空比</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="cm">  *           占空比Duty = CCR / (ARR + 1)</span>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="cm">  */</span>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="kt">void</span><span class="w"> </span><span class="nf">PWM_SetCompare2</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">Compare</span><span class="p">)</span>
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="p">{</span>
+</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="w">    </span><span class="n">TIM_SetCompare2</span><span class="p">(</span><span class="n">TIM2</span><span class="p">,</span><span class="w"> </span><span class="n">Compare</span><span class="p">);</span><span class="w">     </span><span class="c1">//设置CCR的值</span>
+</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="13-input-capture">1.3 输入捕获（Input Capture）<a class="headerlink" href="#13-input-capture" title="Permanent link">&para;</a></h3>
+<h4 id="131">1.3.1 输入捕获介绍<a class="headerlink" href="#131" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>IC（Input Capture）输入捕获</strong></li>
+<li><strong>输入捕获模式下，当通道输入引脚出现指定电平跳变时，当前CNT的值将被锁存到CCR中，可用于测量PWM波形的频率、占空比、脉冲间隔、电平持续时间等参数</strong></li>
+<li><strong>每个高级定时器和通用定时器都拥有4个输入捕获通道</strong></li>
+<li><strong>可配置为PWMI模式，同时测量频率和占空比</strong></li>
+<li><strong>可配合主从触发模式，实现硬件全自动测量</strong></li>
+</ul>
+<h4 id="132">1.3.2 频率测量<a class="headerlink" href="#132" title="Permanent link">&para;</a></h4>
+<p>频率测量分为测频法和测周法：</p>
+<ul>
+<li>测频法---一定闸门时间T内，记上升沿的次数<span class="arithmatex">\(<span class="arithmatex">\(N\)</span>\)</span>，取周期的倒数得可到频率：<span class="arithmatex">\(<span class="arithmatex">\(f_x=N/T\)</span>\)</span></li>
+<li>测周法---在两个上升沿之间，以标准频率<span class="arithmatex">\(<span class="arithmatex">\(f_c\)</span>\)</span>计次<span class="arithmatex">\(<span class="arithmatex">\(N\)</span>\)</span>，标准频率的周期为<span class="arithmatex">\(<span class="arithmatex">\(1/f_c\)</span>\)</span>,到周期T为<span class="arithmatex">\(<span class="arithmatex">\(N/f_c\)</span>\)</span>，取周期的倒数即可得到频率：<span class="arithmatex">\(<span class="arithmatex">\(f_x=f_c/N\)</span>\)</span></li>
+<li>中界频率---令<span class="arithmatex">\(<span class="arithmatex">\(f_x=N/T\)</span>\)</span>和<span class="arithmatex">\(<span class="arithmatex">\(f_x=f_c/N\)</span>\)</span>中的<span class="arithmatex">\(<span class="arithmatex">\(N\)</span>\)</span>相等解出<span class="arithmatex">\(<span class="arithmatex">\(f_x\)</span>\)</span> 得到测频法与测周法误差相等的频率点：<span class="arithmatex">\(<span class="arithmatex">\(f_m=\sqrt(f_c/T)\)</span>\)</span></li>
+</ul>
+<p><img alt="1705737398459" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705737398459.png" /></p>
+<h4 id="133">1.3.3 输入捕获框架<a class="headerlink" href="#133" title="Permanent link">&para;</a></h4>
+<p>下面是通用定时器的框架：</p>
+<p><img alt="1705743432415" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705743432415.png" /></p>
+<ul>
+<li>**工作流程：**经过输入滤波器和极性选择进入预分频器，可以选择进行触发信号分频，然后触发信号进入捕获电路工作，每来一个触发信号，CNT的值向CCR转运一次，同时触发捕获事件，在状态寄存器置标志位触发中断，可以设置中断处理。</li>
+<li>**测周法实现：**以上升沿为触发信号，CNT计数器由内部标准时钟驱动（驱动时钟为<span class="arithmatex">\(<span class="arithmatex">\(f_c\)</span>\)</span> ），CNT数值即可记录两个上升沿的事件间隔，即为周期，取倒数可获得测周法的频率。</li>
+</ul>
+<blockquote>
+<p>每次捕获以后要将CNT清零，可以用主从触发模式自动完成。</p>
+</blockquote>
+<h4 id="134">1.3.4 主从触发模式<a class="headerlink" href="#134" title="Permanent link">&para;</a></h4>
+<ul>
+<li>主模式：将定时器内部的信号映射到TRGO引脚，用于触发别的外设。</li>
+<li>从模式：接收其他外设或自身外设的一些信号用于控制自身定时器的运行。<strong>(被其他信号控制)</strong></li>
+</ul>
+<p><img alt="1705746225685" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705746225685.png" /></p>
+<p><strong>从模式的触发源选择：</strong></p>
+<p><img alt="1705745717717" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705745717717.png" /></p>
+<p><strong>通用定时器内部触发的连接：</strong></p>
+<p><img alt="1705746412968" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705746412968.png" /></p>
+<blockquote>
+<p>高级定时器的内部触发连接需要自己查stm32开发手册。</p>
+</blockquote>
+<p><strong>从模式选择(与上表的顺序一致):</strong></p>
+<p><img alt="1705745521282" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705745521282.png" /></p>
+<h4 id="135">1.3.5 输入捕获基本结构<a class="headerlink" href="#135" title="Permanent link">&para;</a></h4>
+<p>测周法读取频率</p>
+<p><img alt="1705747154895" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705747154895.png" /></p>
+<h4 id="136-pwmi">1.3.6 PWMI模式<a class="headerlink" href="#136-pwmi" title="Permanent link">&para;</a></h4>
+<p>同时读取频率和占空比</p>
+<p><img alt="1705747401629" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705747401629.png" /></p>
+<h4 id="137">1.3.7 代码示例<a class="headerlink" href="#137" title="Permanent link">&para;</a></h4>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">IC_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="cm">/*开启时钟*/</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">RCC_APB1PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB1Periph_TIM3</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">            </span><span class="c1">//开启TIM3的时钟</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">RCC_APB2PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB2Periph_GPIOA</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">           </span><span class="c1">//开启GPIOA的时钟</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="cm">/*GPIO初始化*/</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">GPIO_InitTypeDef</span><span class="w"> </span><span class="n">GPIO_InitStructure</span><span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GPIO_Mode_IPU</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GPIO_Pin_6</span><span class="p">;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GPIO_Speed_50MHz</span><span class="p">;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="n">GPIO_Init</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">GPIO_InitStructure</span><span class="p">);</span><span class="w">                      </span><span class="c1">//将PA6引脚初始化为上拉输入</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="cm">/*配置时钟源*/</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="n">TIM_InternalClockConfig</span><span class="p">(</span><span class="n">TIM3</span><span class="p">);</span><span class="w">      </span><span class="c1">//选择TIM3为内部时钟，若不调用此函数，TIM默认也为内部时钟</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="cm">/*时基单元初始化*/</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitTypeDef</span><span class="w"> </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">;</span><span class="w">              </span><span class="c1">//定义结构体变量</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_ClockDivision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_CKD_DIV1</span><span class="p">;</span><span class="w">     </span><span class="c1">//时钟分频，选择不分频</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_CounterMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_CounterMode_Up</span><span class="p">;</span><span class="w"> </span><span class="c1">//计数器模式，向上计数</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_Period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">65536</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">               </span><span class="c1">//计数周期，即ARR的值</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_Prescaler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">72</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">               </span><span class="c1">//预分频器，即PSC的值</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_RepetitionCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">      </span><span class="c1">//重复计数器，高级定时器才会用到</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="n">TIM_TimeBaseInit</span><span class="p">(</span><span class="n">TIM3</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">);</span><span class="w">             </span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="cm">/*PWMI模式初始化*/</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="n">TIM_ICInitTypeDef</span><span class="w"> </span><span class="n">TIM_ICInitStructure</span><span class="p">;</span><span class="w">                          </span><span class="c1">//定义结构体变量</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="n">TIM_ICInitStructure</span><span class="p">.</span><span class="n">TIM_Channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_Channel_1</span><span class="p">;</span><span class="w">                </span><span class="c1">//选择配置定时器通道1</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="n">TIM_ICInitStructure</span><span class="p">.</span><span class="n">TIM_ICFilter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xF</span><span class="p">;</span><span class="w">                 </span><span class="c1">//输入滤波器参数，可以过滤信号抖动</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">    </span><span class="n">TIM_ICInitStructure</span><span class="p">.</span><span class="n">TIM_ICPolarity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_ICPolarity_Rising</span><span class="p">;</span><span class="w">  </span><span class="c1">//极性，选择为上升沿触发捕获</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">    </span><span class="c1">//捕获预分频，选择不分频，每次信号都触发捕获</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">    </span><span class="n">TIM_ICInitStructure</span><span class="p">.</span><span class="n">TIM_ICPrescaler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_ICPSC_DIV1</span><span class="p">;</span><span class="w">   </span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">    </span><span class="c1">//输入信号交叉，选择直通，不交叉</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">    </span><span class="n">TIM_ICInitStructure</span><span class="p">.</span><span class="n">TIM_ICSelection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_ICSelection_DirectTI</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">    </span><span class="n">TIM_PWMIConfig</span><span class="p">(</span><span class="n">TIM3</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TIM_ICInitStructure</span><span class="p">);</span><span class="w">                     </span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="c1">//此函数同时会把另一个通道配置为相反的配置，实现PWMI模式</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">    </span><span class="cm">/*选择触发源及从模式*/</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">    </span><span class="n">TIM_SelectInputTrigger</span><span class="p">(</span><span class="n">TIM3</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_TS_TI1FP1</span><span class="p">);</span><span class="w">        </span><span class="c1">//触发源选择TI1FP1</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">    </span><span class="n">TIM_SelectSlaveMode</span><span class="p">(</span><span class="n">TIM3</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_SlaveMode_Reset</span><span class="p">);</span><span class="w">     </span><span class="c1">//从模式选择复位</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">                                                        </span><span class="c1">//即TI1产生上升沿时，会触发CNT归零</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">    </span><span class="cm">/*TIM使能*/</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">    </span><span class="n">TIM_Cmd</span><span class="p">(</span><span class="n">TIM3</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">          </span><span class="c1">//使能TIM3，定时器开始运行</span>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="p">}</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="cm">/**</span>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="cm">  * 函    数：获取输入捕获的频率</span>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="cm">  * 参    数：无</span>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="cm">  * 返 回 值：捕获得到的频率</span>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="cm">  */</span>
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="kt">uint32_t</span><span class="w"> </span><span class="nf">IC_GetFreq</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="p">{</span>
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1000000</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_GetCapture1</span><span class="p">(</span><span class="n">TIM3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">       </span><span class="c1">//测周法得到频率fx = fc / N，这里不执行+1的操作也可</span>
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="p">}</span>
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>
+</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="cm">/**</span>
+</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="cm">  * 函    数：获取输入捕获的占空比</span>
+</span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="cm">  * 参    数：无</span>
+</span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="cm">  * 返 回 值：捕获得到的占空比</span>
+</span><span id="__span-2-60"><a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="cm">  */</span>
+</span><span id="__span-2-61"><a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="kt">uint32_t</span><span class="w"> </span><span class="nf">IC_GetDuty</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-2-62"><a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="p">{</span>
+</span><span id="__span-2-63"><a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_GetCapture2</span><span class="p">(</span><span class="n">TIM3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_GetCapture1</span><span class="p">(</span><span class="n">TIM3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">//占空比Duty = CCR2 / CCR1 * 100，这里不执行+1的操作也可</span>
+</span><span id="__span-2-64"><a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="14-encoder">1.4 编码器接口（Encoder）<a class="headerlink" href="#14-encoder" title="Permanent link">&para;</a></h3>
+<h4 id="141">1.4.1 编码器接口介绍<a class="headerlink" href="#141" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>（Encoder Interface ）编码器接口</strong></li>
+<li><strong>编码器接口可接收增量（正交）编码器的信号，根据编码器旋转产生的正交信号脉冲，自动控制CNT自增或自减，从而指示编码器的位置、旋转方向和旋转速度</strong></li>
+<li><strong>每个高级定时器和通用定时器都拥有1个编码器接口（用于编码器接口的定时器无法再做其他事）</strong></li>
+<li><strong>定时器的通道1和通道2作为编码器接口</strong></li>
+</ul>
+<p>如下图，为正交编码器（A相与B相相差90°），通过观察A相高低电平时B相的电平判断正反转，同时脉冲频率即体现电机的转速。</p>
+<p><img alt="1705690112223" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705690112223.png" /></p>
+<h4 id="142">1.4.2 编码器接口基本结构<a class="headerlink" href="#142" title="Permanent link">&para;</a></h4>
+<p><img alt="1705734851593" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705734851593.png" /></p>
+<p>说明一下极性选择：</p>
+<ul>
+<li>
+<p>选择“上升沿”则正常波形</p>
+</li>
+<li>
+<p>选择“下降沿”则需要经过一个“非门”（逻辑）</p>
+</li>
+</ul>
+<blockquote>
+<p>详情可看<a href="#1.4.5 计数示例（极性选择）">1.4.5 计数示例（极性选择）</a></p>
+</blockquote>
+<h4 id="143">1.4.3 编码器接口工作模式<a class="headerlink" href="#143" title="Permanent link">&para;</a></h4>
+<p>编码器接口工作模式分三种：</p>
+<ul>
+<li>仅在A相上升沿和下降沿计数</li>
+<li>仅在B相上升沿和下降沿计数</li>
+<li>在AB相都计数（精度最高，一些资料会称为四倍频）</li>
+</ul>
+<p><img alt="1705735207132" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705735207132.png" /></p>
+<blockquote>
+<p>工作模式表格要对应**<a href="#1.4.1 编码器接口介绍">1.4.1编码器接口介绍</a>**的表格看，即通过看A相B相对应电平判断正反转。</p>
+</blockquote>
+<h4 id="144">1.4.4 #四倍频法<a class="headerlink" href="#144" title="Permanent link">&para;</a></h4>
+<p>四倍频是通过程序提升我们的编码器的精度的一种数据处理方法， 可以有效的最大化我们的编码器的精度和测量精度。 </p>
+<p><img alt="1705690390565" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705690390565.png" /></p>
+<p>上图是一个我们编码器输出的波形图， 正常我们一般的处理方式是通过 A 相去计数， B 相去判断目前的转动方向。 具体实现比如： A 相的上升沿计数或者下降沿计数， 同时在 A 相的上升沿或者下降沿来根据 B 相此时的电平状态来判断转向。四倍频则是同时计算 AB 两相的每个跳边沿， 这样子原本在 A 相计数的一个脉冲周期内就实现了四次计数， 从而实现了精度的提升。 </p>
+<h4 id="145">1.4.5 计数示例（极性选择）<a class="headerlink" href="#145" title="Permanent link">&para;</a></h4>
+<ul>
+<li>正常不反相，正转自增，反转自减。</li>
+</ul>
+<p><img alt="1705736375374" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736375374.png" /></p>
+<p><img alt="1705736385998" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736385998.png" /></p>
+<ul>
+<li>TI1极性反转（需要将TI1的**高低电平反转**，在对应表格找正反转）</li>
+</ul>
+<p><img alt="1705736505835" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736505835.png" /></p>
+<p><img alt="1705736511255" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736511255.png" /></p>
+<h4 id="146">1.4.6 代码示例<a class="headerlink" href="#146" title="Permanent link">&para;</a></h4>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Encoder_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="cm">/*开启时钟*/</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">RCC_APB1PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB1Periph_TIM3</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">            </span><span class="c1">//开启TIM3的时钟</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">RCC_APB2PeriphClockCmd</span><span class="p">(</span><span class="n">RCC_APB2Periph_GPIOA</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">           </span><span class="c1">//开启GPIOA的时钟</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="cm">/*GPIO初始化*/</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">GPIO_InitTypeDef</span><span class="w"> </span><span class="n">GPIO_InitStructure</span><span class="p">;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GPIO_Mode_IPU</span><span class="p">;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Pin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GPIO_Pin_6</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">GPIO_Pin_7</span><span class="p">;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="n">GPIO_InitStructure</span><span class="p">.</span><span class="n">GPIO_Speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GPIO_Speed_50MHz</span><span class="p">;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="n">GPIO_Init</span><span class="p">(</span><span class="n">GPIOA</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">GPIO_InitStructure</span><span class="p">);</span><span class="w">              </span><span class="c1">//将PA6和PA7引脚初始化为上拉输入</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="cm">/*时基单元初始化*/</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitTypeDef</span><span class="w"> </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">;</span><span class="w">             </span><span class="c1">//定义结构体变量</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="c1">//时钟分频，选择不分频，此参数用于配置滤波器时钟，不影响时基单元功能</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_ClockDivision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_CKD_DIV1</span><span class="p">;</span><span class="w">    </span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_CounterMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_CounterMode_Up</span><span class="p">;</span><span class="c1">//计数器模式，选择向上计数</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_Period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">65536</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">           </span><span class="c1">//计数周期，即ARR的值</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_Prescaler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">          </span><span class="c1">//预分频器，即PSC的值</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">.</span><span class="n">TIM_RepetitionCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">//重复计数器，高级定时器才会用到</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="n">TIM_TimeBaseInit</span><span class="p">(</span><span class="n">TIM3</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TIM_TimeBaseInitStructure</span><span class="p">);</span><span class="w">      </span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="cm">/*输入捕获初始化*/</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="n">TIM_ICInitTypeDef</span><span class="w"> </span><span class="n">TIM_ICInitStructure</span><span class="p">;</span><span class="w">              </span><span class="c1">//定义结构体变量</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span><span class="cm">/*结构体初始化，若结构体没有完整赋值</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="cm">    则最好执行此函数，给结构体所有成员都赋一个默认值</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="cm">    避免结构体初值不确定的问题*/</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">    </span><span class="n">TIM_ICStructInit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">TIM_ICInitStructure</span><span class="p">);</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">    </span><span class="n">TIM_ICInitStructure</span><span class="p">.</span><span class="n">TIM_Channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_Channel_1</span><span class="p">;</span><span class="w">    </span><span class="c1">//选择配置定时器通道1</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">    </span><span class="n">TIM_ICInitStructure</span><span class="p">.</span><span class="n">TIM_ICFilter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xF</span><span class="p">;</span><span class="w">             </span><span class="c1">//输入滤波器参数，可以过滤信号抖动</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">    </span><span class="n">TIM_ICInit</span><span class="p">(</span><span class="n">TIM3</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TIM_ICInitStructure</span><span class="p">);</span><span class="w">         </span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">    </span><span class="n">TIM_ICInitStructure</span><span class="p">.</span><span class="n">TIM_Channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_Channel_2</span><span class="p">;</span><span class="w">    </span><span class="c1">//选择配置定时器通道2</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">    </span><span class="n">TIM_ICInitStructure</span><span class="p">.</span><span class="n">TIM_ICFilter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xF</span><span class="p">;</span><span class="w">             </span><span class="c1">//输入滤波器参数，可以过滤信号抖动</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">    </span><span class="n">TIM_ICInit</span><span class="p">(</span><span class="n">TIM3</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">TIM_ICInitStructure</span><span class="p">);</span><span class="w">                         </span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">    </span><span class="cm">/*编码器接口配置*/</span>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">    </span><span class="cm">/*配置编码器模式以及两个输入通道是否反相</span>
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="cm">    注意此时参数的Rising和Falling已经不代表上升沿和下降沿了，而是代表是否反相</span>
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="cm">    此函数必须在输入捕获初始化之后进行，否则输入捕获的配置会覆盖此函数的部分配置*/</span>
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="w">    </span><span class="n">TIM_EncoderInterfaceConfig</span><span class="p">(</span><span class="n">TIM3</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_EncoderMode_TI12</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_ICPolarity_Rising</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_ICPolarity_Rising</span><span class="p">);</span>
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="w">    </span><span class="cm">/*TIM使能*/</span>
+</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">    </span><span class="n">TIM_Cmd</span><span class="p">(</span><span class="n">TIM3</span><span class="p">,</span><span class="w"> </span><span class="n">ENABLE</span><span class="p">);</span><span class="w">          </span><span class="c1">//使能TIM3，定时器开始运行</span>
+</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="p">}</span>
+</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="kt">int16_t</span><span class="w"> </span><span class="nf">Encoder_Get_</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="p">{</span>
+</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">    </span><span class="kt">int16_t</span><span class="w"> </span><span class="n">Temp</span><span class="p">;</span>
+</span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="w">    </span><span class="n">Temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_GetCounter</span><span class="p">(</span><span class="n">TIM3</span><span class="p">);</span>
+</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="w">    </span><span class="n">TIM_SetCounter</span><span class="p">(</span><span class="n">TIM3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Temp</span><span class="p">;</span>
+</span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="p">}</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../serial/3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SPI">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                SPI
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../PID/PID/" class="md-footer__link md-footer__link--next" aria-label="Next: PID">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                PID
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "header.autohide", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>

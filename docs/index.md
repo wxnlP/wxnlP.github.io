@@ -1,4 +1,7 @@
 # 小李
+| ✅  Do this                                                   |                       ❌  Don't do this                       |
+| ------------------------------------------------------------ | :----------------------------------------------------------: |
+| ![1718710398073](https://cdn.jsdelivr.net/gh/wxnlP/pic/Home/1718710398073.png) | ![1718710431154](https://cdn.jsdelivr.net/gh/wxnlP/pic/Home/1718710431154.png) |
 
 ### 部署网站
 
@@ -28,9 +31,6 @@ python -m mkdocs serve
 https://cdn.jsdelivr.net/gh/wxnlP/pic
 ```
 
-| ✅  Do this                                                   |                       ❌  Don't do this                       |
-| ------------------------------------------------------------ | :----------------------------------------------------------: |
-| ![1718710398073](https://cdn.jsdelivr.net/gh/wxnlP/pic/Home/1718710398073.png) | ![1718710431154](https://cdn.jsdelivr.net/gh/wxnlP/pic/Home/1718710431154.png) |
 
 ​	
 
