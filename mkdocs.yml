@@ -32,6 +32,9 @@ nav:
     - 定时器与PID: 
       - Timer: study/Timer/Timer.md 
       - PID: study/PID/PID.md
+  - 资料分析:
+    - Python数据分析: study/飞书文档/pythondata.md
+    - 期末复习: study/飞书文档/studydata.md
 
   
 
