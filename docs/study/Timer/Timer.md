@@ -22,38 +22,38 @@
 
 ##### 1、高级定时器框图
 
-![1706255487441](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255487441.png)
+![1706255487441](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706255487441.png)
 
 ##### 2、通用定时器
 
-![1706255081006](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255081006.png)
+![1706255081006](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706255081006.png)
 
 - 通用定时器有多种时钟选择（外部时钟模式1、2，内部时钟）
 - 定时器级联与主从模式相关。（参考：[1.3.4 主从触发模式](#1.3.4 主从触发模式)）
 
 ##### 3、基本定时器
 
-![1706254347422](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706254347422.png)
+![1706254347422](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706254347422.png)
 
 > ⚠：--基本定时器仅支持向上计数--时钟选择也仅支持内部时钟，为72MHZ
 
 #### 1.1.3 定时中断基本结构
 
-![1706255701792](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255701792.png)
+![1706255701792](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706255701792.png)
 
 #### 1.1.4 时序图
 
-![1706256017333](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256017333.png)
+![1706256017333](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706256017333.png)
 
-![1706256032654](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256032654.png)
+![1706256032654](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706256032654.png)
 
-![1706256043889](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256043889.png)
+![1706256043889](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706256043889.png)
 
-![1706256059025](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706256059025.png)
+![1706256059025](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706256059025.png)
 
 #### 1.1.5 RCC时钟树
 
-![1706255928324](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706255928324.png)
+![1706255928324](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706255928324.png)
 
 #### 1.1.6 代码示例
 
@@ -143,7 +143,7 @@ void TIM2_IRQHandler(void)
 
   ​      ⭐频率 = 1 / T_S            ⭐占空比 = T_ON / T_S           分辨率 = 占空比变化步距
 
-![1706197859960](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706197859960.png)
+![1706197859960](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706197859960.png)
 
 
 
@@ -151,11 +151,11 @@ void TIM2_IRQHandler(void)
 
 **高级定时器输出比较通道：**
 
-![1706198238483](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706198238483.png)
+![1706198238483](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706198238483.png)
 
 **通用定时器输出比较通道：**
 
-![1706199429609](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706199429609.png)
+![1706199429609](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706199429609.png)
 
 > 关于定时器主模式控制器参考[1.3.4 主从触发模式](#1.3.4 主从触发模式)
 
@@ -174,7 +174,7 @@ void TIM2_IRQHandler(void)
 
 #### 1.2.5 PWM基本结构
 
-![1706200055360](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200055360.png)
+![1706200055360](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706200055360.png)
 
 - PWM频率：  Freq = CK_PSC / (PSC + 1) / (ARR + 1)
 - PWM占空比：  Duty = CCR / (ARR + 1)
@@ -194,13 +194,13 @@ void TIM2_IRQHandler(void)
 
 - **舵机**
 
-![1706200565288](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200565288.png)
+![1706200565288](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706200565288.png)
 
 - **TB6612直流电机驱动**
 
-![1706200648810](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200648810.png)
+![1706200648810](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706200648810.png)
 
-![1706200615939](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1706200615939.png)
+![1706200615939](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1706200615939.png)
 
 #### 1.2.7 代码示例
 
@@ -286,13 +286,13 @@ void PWM_SetCompare2(uint16_t Compare)
 - 测周法---在两个上升沿之间，以标准频率$$f_c$$计次$$N$$，标准频率的周期为$$1/f_c$$,到周期T为$$N/f_c$$，取周期的倒数即可得到频率：$$f_x=f_c/N$$
 - 中界频率---令$$f_x=N/T$$和$$f_x=f_c/N$$中的$$N$$相等解出$$f_x$$ 得到测频法与测周法误差相等的频率点：$$f_m=\sqrt(f_c/T)$$
 
-![1705737398459](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705737398459.png)
+![1705737398459](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705737398459.png)
 
 #### 1.3.3 输入捕获框架
 
 下面是通用定时器的框架：
 
-![1705743432415](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705743432415.png)
+![1705743432415](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705743432415.png)
 
 - **工作流程：**经过输入滤波器和极性选择进入预分频器，可以选择进行触发信号分频，然后触发信号进入捕获电路工作，每来一个触发信号，CNT的值向CCR转运一次，同时触发捕获事件，在状态寄存器置标志位触发中断，可以设置中断处理。
 - **测周法实现：**以上升沿为触发信号，CNT计数器由内部标准时钟驱动（驱动时钟为$$f_c$$ ），CNT数值即可记录两个上升沿的事件间隔，即为周期，取倒数可获得测周法的频率。
@@ -304,33 +304,33 @@ void PWM_SetCompare2(uint16_t Compare)
 - 主模式：将定时器内部的信号映射到TRGO引脚，用于触发别的外设。
 - 从模式：接收其他外设或自身外设的一些信号用于控制自身定时器的运行。**(被其他信号控制)**
 
-![1705746225685](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705746225685.png)
+![1705746225685](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705746225685.png)
 
 **从模式的触发源选择：**
 
-![1705745717717](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705745717717.png)
+![1705745717717](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705745717717.png)
 
 **通用定时器内部触发的连接：**
 
-![1705746412968](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705746412968.png)
+![1705746412968](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705746412968.png)
 
 > 高级定时器的内部触发连接需要自己查stm32开发手册。
 
 **从模式选择(与上表的顺序一致):**
 
-![1705745521282](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705745521282.png)
+![1705745521282](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705745521282.png)
 
 #### 1.3.5 输入捕获基本结构
 
 测周法读取频率
 
-![1705747154895](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705747154895.png)
+![1705747154895](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705747154895.png)
 
 #### 1.3.6 PWMI模式
 
 同时读取频率和占空比
 
-![1705747401629](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705747401629.png)
+![1705747401629](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705747401629.png)
 
 #### 1.3.7 代码示例
 
@@ -413,11 +413,11 @@ uint32_t IC_GetDuty(void)
 
 如下图，为正交编码器（A相与B相相差90°），通过观察A相高低电平时B相的电平判断正反转，同时脉冲频率即体现电机的转速。
 
-![1705690112223](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705690112223.png)
+![1705690112223](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705690112223.png)
 
 #### 1.4.2 编码器接口基本结构
 
-![1705734851593](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705734851593.png)
+![1705734851593](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705734851593.png)
 
 说明一下极性选择：
 
@@ -435,7 +435,7 @@ uint32_t IC_GetDuty(void)
 - 仅在B相上升沿和下降沿计数
 - 在AB相都计数（精度最高，一些资料会称为四倍频）
 
-![1705735207132](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705735207132.png)
+![1705735207132](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705735207132.png)
 
 > 工作模式表格要对应**[1.4.1编码器接口介绍](#1.4.1 编码器接口介绍)**的表格看，即通过看A相B相对应电平判断正反转。
 
@@ -443,7 +443,7 @@ uint32_t IC_GetDuty(void)
 
 四倍频是通过程序提升我们的编码器的精度的一种数据处理方法， 可以有效的最大化我们的编码器的精度和测量精度。 
 
-![1705690390565](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705690390565.png)
+![1705690390565](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705690390565.png)
 
 上图是一个我们编码器输出的波形图， 正常我们一般的处理方式是通过 A 相去计数， B 相去判断目前的转动方向。 具体实现比如： A 相的上升沿计数或者下降沿计数， 同时在 A 相的上升沿或者下降沿来根据 B 相此时的电平状态来判断转向。四倍频则是同时计算 AB 两相的每个跳边沿， 这样子原本在 A 相计数的一个脉冲周期内就实现了四次计数， 从而实现了精度的提升。 
 
@@ -451,15 +451,15 @@ uint32_t IC_GetDuty(void)
 
 - 正常不反相，正转自增，反转自减。
 
-![1705736375374](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736375374.png)
+![1705736375374](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705736375374.png)
 
-![1705736385998](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736385998.png)
+![1705736385998](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705736385998.png)
 
 - TI1极性反转（需要将TI1的**高低电平反转**，在对应表格找正反转）
 
-![1705736505835](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736505835.png)
+![1705736505835](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705736505835.png)
 
-![1705736511255](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1705736511255.png)
+![1705736511255](https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1705736511255.png)
 
 #### 1.4.6 代码示例
 

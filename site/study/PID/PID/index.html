@@ -1170,9 +1170,9 @@
 </blockquote>
 <p>PID 实指“比例 proportional”、“积分 integral”、“微分 derivative”，这三项构 成 PID 基本要素。每一项完成不同任务，对系统功能产生不同的影响。它的结构简单，参数易 于调整，是控制系统中经常采用的控制算法。</p>
 <p><strong>PID：比例单元（P）、积分单元（I）和微分单元（D）组成</strong></p>
-<p><img alt="1707463945385" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463945385.png" /></p>
+<p><img alt="1707463945385" src="https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1707463945385.png" /></p>
 <p><strong>PID控制公式：</strong></p>
-<p><img alt="1707463962759" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463962759.png" /></p>
+<p><img alt="1707463962759" src="https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1707463962759.png" /></p>
 <p>其中：**u(t)**为控制器输出的控制量；（输出）</p>
 <p>**e(t)**为偏差信号，它等于给定量与输出量之差；（输入）</p>
 <p><strong>KP</strong> 为比例系数；（对应参数 P）</p>
@@ -1180,7 +1180,7 @@
 <p><strong>TD</strong> 为微分时间常数。(对应参数 D) </p>
 <p>数字 PID 控制算法通常分为位置式 PID 控制算法和增量式 PID 控制算法。 </p>
 <h3 id="pid_1">位置式 PID 算法<a class="headerlink" href="#pid_1" title="Permanent link">&para;</a></h3>
-<p><img alt="1707463978757" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463978757.png" /></p>
+<p><img alt="1707463978757" src="https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1707463978757.png" /></p>
 <p>e(k): <strong>用户设定的值（目标值） -  控制对象的当前的状态值</strong> </p>
 <p><strong>比例P :</strong>    e(k)</p>
 <p><strong>积分I :</strong>   ∑e(i)     误差的累加</p>
@@ -1191,7 +1191,7 @@
 <p>所以在使用位置式PID时，一般我们直接使用PD控制</p>
 <p>而位置式 PID 适用于执行机构不带积分部件的对象，如舵机和平衡小车的直立和温控系统的控制</p>
 <h3 id="pid_2">增量式PID算法<a class="headerlink" href="#pid_2" title="Permanent link">&para;</a></h3>
-<p><img alt="1707463993099" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463993099.png" /></p>
+<p><img alt="1707463993099" src="https://gitee.com/wxnlP/pic/raw/master/STM32TimerPID/1707463993099.png" /></p>
 <p>比例P :    e(k)-e(k-1)   这次误差-上次误差</p>
 <p>积分I :   e(i)     误差   </p>
 <p>微分D :  e(k) - 2e(k-1)+e(k-2)   这次误差-2*上次误差+上上次误差</p>
