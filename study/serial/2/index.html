@@ -1334,43 +1334,43 @@
 <li>设备的SCL和SDA均要配置成开漏输出模式</li>
 <li>SCL和SDA各添加一个上拉电阻，阻值一般为4.7KΩ左右</li>
 </ul>
-<p><img alt="1706263977088" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706263977088.png" /></p>
-<p><img alt="1706263989395" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706263989395.png" /></p>
+<p><img alt="1706263977088" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706263977088.png" /></p>
+<p><img alt="1706263989395" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706263989395.png" /></p>
 <h3 id="i2c_1">I2C时序基本单元<a class="headerlink" href="#i2c_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>**起始条件：**SCL高电平期间，SDA从高电平切换到低电平</li>
 <li>**终止条件：**SCL高电平期间，SDA从低电平切换到高电平</li>
 </ul>
-<p><img alt="1706264194346" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706264194346.png" /></p>
+<p><img alt="1706264194346" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706264194346.png" /></p>
 <ul>
 <li>**发送一个字节：**SCL低电平期间，主机将数据位依次放到SDA线上（高位先行），然后释放SCL，从机将在SCL高电平期间读取数据位，所以SCL高电平期间SDA不允许有数据变化，依次循环上述过程8次，即可发送一个字节</li>
 </ul>
-<p><img alt="1706264284743" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706264284743.png" /></p>
+<p><img alt="1706264284743" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706264284743.png" /></p>
 <ul>
 <li>**接收一个字节：**SCL低电平期间，从机将数据位依次放到SDA线上（高位先行），然后释放SCL，主机将在SCL高电平期间读取数据位，所以SCL高电平期间SDA不允许有数据变化，依次循环上述过程8次，即可接收一个字节（主机在接收之前，需要释放SDA）</li>
 </ul>
-<p><img alt="1706264383307" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706264383307.png" /></p>
+<p><img alt="1706264383307" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706264383307.png" /></p>
 <ul>
 <li>**发送应答：**主机在接收完一个字节之后，在下一个时钟发送一位数据，数据0表示应答，数据1表示非应答</li>
 <li>**接收应答：**主机在发送完一个字节之后，在下一个时钟接收一位数据，判断从机是否应答，数据0表示应答，数据1表示非应答（主机在接收之前，需要释放SDA）</li>
 </ul>
-<p><img alt="1706264434067" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706264434067.png" /></p>
+<p><img alt="1706264434067" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706264434067.png" /></p>
 <h3 id="i2c_2">I2C时序<a class="headerlink" href="#i2c_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>指定地址写</strong></li>
 <li>对于指定设备（Slave Address），在指定地址（Reg Address）下，写入指定数据（Data）</li>
 </ul>
-<p><img alt="1706264556589" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706264556589.png" /></p>
+<p><img alt="1706264556589" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706264556589.png" /></p>
 <ul>
 <li><strong>当前地址读</strong></li>
 <li>对于指定设备（Slave Address），在当前地址指针指示的地址下，读取从机数据（Data）</li>
 </ul>
-<p><img alt="1706265129206" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706265129206.png" /></p>
+<p><img alt="1706265129206" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706265129206.png" /></p>
 <ul>
 <li><strong>指定地址读</strong></li>
 <li>对于指定设备（Slave Address），在指定地址（Reg Address）下，读取从机数据（Data）</li>
 </ul>
-<p><img alt="1706265164365" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706265164365.png" /></p>
+<p><img alt="1706265164365" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706265164365.png" /></p>
 <h2 id="mpu6050">MPU6050简介<a class="headerlink" href="#mpu6050" title="Permanent link">&para;</a></h2>
 <h3 id="_2">陀螺仪介绍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1378,9 +1378,9 @@
 <li>3轴加速度计（Accelerometer）：测量X、Y、Z轴的加速度</li>
 <li>3轴陀螺仪传感器（Gyroscope）：测量X、Y、Z轴的角速度</li>
 </ul>
-<p><img alt="1706265567624" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706265567624.png" /></p>
-<p><img alt="1706265575585" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706265575585.png" /></p>
-<p><img alt="1706265587929" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706265587929.png" /></p>
+<p><img alt="1706265567624" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706265567624.png" /></p>
+<p><img alt="1706265575585" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706265575585.png" /></p>
+<p><img alt="1706265587929" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706265587929.png" /></p>
 <h3 id="mpu6050_1">MPU6050参数<a class="headerlink" href="#mpu6050_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>16位ADC采集传感器的模拟信号，量化范围：-32768~32767</li>
@@ -1422,8 +1422,8 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="1706265831995" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706265831995.png" /></p>
-<p><img alt="1706265861339" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706265861339.png" /></p>
+<p><img alt="1706265831995" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706265831995.png" /></p>
+<p><img alt="1706265861339" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706265861339.png" /></p>
 <h2 id="i2c_3">软件模拟I2C<a class="headerlink" href="#i2c_3" title="Permanent link">&para;</a></h2>
 <p>所谓软件模拟I2C即使用代码手动拉高拉低电平，实现I2C时序操作，可以随意选择SDA和SCL引脚使用更加灵活。</p>
 <h3 id="i2c_4">I2C文件<a class="headerlink" href="#i2c_4" title="Permanent link">&para;</a></h3>
@@ -1746,13 +1746,13 @@
 <li>STM32F103C8T6 硬件I2C资源：I2C1、I2C2</li>
 </ul>
 <h3 id="i2c_6">I2C框图<a class="headerlink" href="#i2c_6" title="Permanent link">&para;</a></h3>
-<p><img alt="1706267084943" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706267084943.png" /></p>
+<p><img alt="1706267084943" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706267084943.png" /></p>
 <h3 id="i2c_7">I2C基本结构<a class="headerlink" href="#i2c_7" title="Permanent link">&para;</a></h3>
-<p><img alt="1706267260181" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706267260181.png" /></p>
+<p><img alt="1706267260181" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706267260181.png" /></p>
 <h3 id="_4">主机发送<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><img alt="1706267294207" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706267294207.png" /></p>
+<p><img alt="1706267294207" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706267294207.png" /></p>
 <h3 id="_5">主机接收<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><img alt="1706267321796" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706267321796.png" /></p>
+<p><img alt="1706267321796" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706267321796.png" /></p>
 <h2 id="i2c_8">硬件I2C<a class="headerlink" href="#i2c_8" title="Permanent link">&para;</a></h2>
 <p>保持I2C文件代码不编，修改Mpu6050.c的配置代码</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>

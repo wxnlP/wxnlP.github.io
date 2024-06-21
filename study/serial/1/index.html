@@ -1462,8 +1462,8 @@
 <li>串口是一种应用十分广泛的通讯接口，串口成本低、容易使用、通信线路简单，可实现两个设备的互相通信</li>
 <li>单片机的串口可以使单片机与单片机、单片机与电脑、单片机与各式各样的模块互相通信，极大地扩展了单片机的应用范围，增强了单片机系统的硬件实力</li>
 </ul>
-<p><img alt="1706363962945" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706363962945.png" /></p>
-<p><img alt="USB转串口" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/USB转串口.png" /></p>
+<p><img alt="1706363962945" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706363962945.png" /></p>
+<p><img alt="USB转串口" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/USB转串口.png" /></p>
 <h3 id="_2">硬件电路<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>简单双向串口通信有两根通信线（发送端TX和接收端RX）</li>
@@ -1471,7 +1471,7 @@
 <li>当只需单向的数据传输时，可以只接一根通信线</li>
 <li>当电平标准不一致时，需要加电平转换芯片</li>
 </ul>
-<p><img alt="1706364052710" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706364052710.png" /></p>
+<p><img alt="1706364052710" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706364052710.png" /></p>
 <h3 id="_3">电平标准<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>电平标准是数据1和数据0的表达方式，是传输线缆中人为规定的电压与数据的对应关系，串口常用的电平标准有如下三种：</li>
@@ -1487,9 +1487,9 @@
 <li><strong>校验位：</strong> 用于数据验证，根据数据位计算得来(无校验、奇校验--即保持二进制数据1的个数为奇数、偶校验)</li>
 <li><strong>停止位：</strong> 用于数据帧间隔，<strong>固定为高电平</strong></li>
 </ul>
-<p><img alt="1706365185213" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706365185213.png" /></p>
+<p><img alt="1706365185213" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706365185213.png" /></p>
 <h3 id="_5">串口时序<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><img alt="1706364301642" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706364301642.png" /></p>
+<p><img alt="1706364301642" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706364301642.png" /></p>
 <h2 id="usart">USART简介<a class="headerlink" href="#usart" title="Permanent link">&para;</a></h2>
 <ul>
 <li>USART（Universal Synchronous/Asynchronous Receiver/Transmitter）通用同步/异步收发器</li>
@@ -1501,21 +1501,21 @@
 <li>STM32F103C8T6 USART资源： USART1、 USART2、 USART3</li>
 </ul>
 <h3 id="usart_1">USART框图<a class="headerlink" href="#usart_1" title="Permanent link">&para;</a></h3>
-<p><img alt="1706364443610" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706364443610.png" /></p>
+<p><img alt="1706364443610" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706364443610.png" /></p>
 <h3 id="usart_2">USART基本结构<a class="headerlink" href="#usart_2" title="Permanent link">&para;</a></h3>
-<p><img alt="1706365964060" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706365964060.png" /></p>
+<p><img alt="1706365964060" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706365964060.png" /></p>
 <h3 id="_6">数据帧<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p><img alt="1706366018154" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706366018154.png" /></p>
-<p><img alt="1706366029738" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706366029738.png" /></p>
+<p><img alt="1706366018154" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706366018154.png" /></p>
+<p><img alt="1706366029738" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706366029738.png" /></p>
 <h3 id="_7">起始位侦测<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p><img alt="1706366050574" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706366050574.png" /></p>
-<p><img alt="1706366062786" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706366062786.png" /></p>
+<p><img alt="1706366050574" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706366050574.png" /></p>
+<p><img alt="1706366062786" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706366062786.png" /></p>
 <h3 id="_8">波特率发生器<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ul>
 <li>发送器和接收器的波特率由波特率寄存器BRR里的DIV确定</li>
 <li>计算公式：波特率 = f_PCLK2/1 / (16 * DIV)​</li>
 </ul>
-<p><img alt="1706366102368" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706366102368.png" /></p>
+<p><img alt="1706366102368" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706366102368.png" /></p>
 <h2 id="usart_3">USART代码示例<a class="headerlink" href="#usart_3" title="Permanent link">&para;</a></h2>
 <div class="language-C highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
@@ -1723,29 +1723,29 @@
 <li>HEX模式/十六进制模式/二进制模式：以原始数据的形式显示</li>
 <li>文本模式/字符模式：以原始数据编码后的形式显示</li>
 </ul>
-<p><img alt="数据模式" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/数据模式.png" /></p>
+<p><img alt="数据模式" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/数据模式.png" /></p>
 <h3 id="hex">HEX数据包<a class="headerlink" href="#hex" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>固定包长，含包头包尾</strong></li>
 </ul>
-<p><img alt="1706366291211" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706366291211.png" /></p>
+<p><img alt="1706366291211" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706366291211.png" /></p>
 <ul>
 <li><strong>可变包长，含包头包尾</strong></li>
 </ul>
-<p><img alt="1706366317290" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706366317290.png" /></p>
+<p><img alt="1706366317290" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706366317290.png" /></p>
 <h3 id="_11">文本数据包<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>固定包长，含包头包尾</strong></li>
 </ul>
-<p><img alt="1706366411492" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706366411492.png" /></p>
+<p><img alt="1706366411492" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706366411492.png" /></p>
 <ul>
 <li><strong>可变包长，含包头包尾</strong></li>
 </ul>
-<p><img alt="1706366433207" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/1706366433207.png" /></p>
+<p><img alt="1706366433207" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/1706366433207.png" /></p>
 <h3 id="hex_1">HEX数据包接收<a class="headerlink" href="#hex_1" title="Permanent link">&para;</a></h3>
-<p><img alt="接收hex数据包" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/接收hex数据包.png" /></p>
+<p><img alt="接收hex数据包" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/接收hex数据包.png" /></p>
 <h3 id="_12">文本数据包接收<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p><img alt="接收文本数据包" src="https://gitee.com/wxnlP/pic/raw/master/STM32Serial/接收文本数据包.png" /></p>
+<p><img alt="接收文本数据包" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32Serial/接收文本数据包.png" /></p>
 <h2 id="_13">数据包代码示例<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <h3 id="hex_2">HEX数据包<a class="headerlink" href="#hex_2" title="Permanent link">&para;</a></h3>
 <div class="language-C highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">USART1_IRQHandler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
