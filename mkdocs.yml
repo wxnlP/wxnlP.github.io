@@ -1,4 +1,4 @@
-site_name: 小李的破站☮
+site_name: 小李的破站✨
 site_url: https://wxnlP.github.io/
 
 site_author: XiaoLi
@@ -10,10 +10,10 @@ repo_url: https://github.com/wxnlP/wxnlP.github.io
 
 
 nav:
-  - 主页: index.md
+  - 破站🌍: index.md
   - yolov5模型训练: 
     - 基础环境配置: study/yolov5/1.md
-    - yolo环境配置: study/yolov5/2.md
+    - yolov5环境配置: study/yolov5/2.md
     - 数据集划分: study/yolov5/3.md
     - 模型训练: study/yolov5/4.md
   - 工创赛: 
