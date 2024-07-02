@@ -26,7 +26,7 @@
     
     
       
-        <title>模型训练 - 小李的破站✨</title>
+        <title>模型训练 - 小李的破站🌏</title>
       
     
     
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="小李的破站✨" class="md-header__button md-logo" aria-label="小李的破站✨" data-md-component="logo">
+    <a href="../../.." title="小李的破站🌏" class="md-header__button md-logo" aria-label="小李的破站🌏" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -108,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            小李的破站✨
+            小李的破站🌏
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -227,7 +227,7 @@
   
     
   
-  破站🌍
+  破站📺
 
       </a>
     </li>
@@ -362,13 +362,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="小李的破站✨" class="md-nav__button md-logo" aria-label="小李的破站✨" data-md-component="logo">
+    <a href="../../.." title="小李的破站🌏" class="md-nav__button md-logo" aria-label="小李的破站🌏" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    小李的破站✨
+    小李的破站🌏
   </label>
   
     <div class="md-nav__source">
@@ -396,7 +396,7 @@
         
   
   <span class="md-ellipsis">
-    破站🌍
+    破站📺
   </span>
   
 
@@ -922,18 +922,18 @@
 
 <h2 id="yolo">修改yolo文件参数<a class="headerlink" href="#yolo" title="Permanent link">&para;</a></h2>
 <p>找到<code>data</code>文件夹下的<code>coco128.yaml</code>文件</p>
-<p><img alt="1715784046921" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715784046921.png" /></p>
+<p><img alt="1715784046921" src="../yolo%E8%AE%AD%E7%BB%83/1715784046921.png" /></p>
 <p>修改文件参数</p>
-<p><img alt="1715784158206" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715784158206.png" /></p>
+<p><img alt="1715784158206" src="../yolo%E8%AE%AD%E7%BB%83/1715784158206.png" /></p>
 <p>找到<code>models</code>文件夹下的yolov5s.yaml文件</p>
 <blockquote>
 <p>这里还有n、x等类型的，具体区别可以参考Github的数据曲线。</p>
 </blockquote>
-<p><img alt="1715784224796" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715784224796.png" /></p>
+<p><img alt="1715784224796" src="../yolo%E8%AE%AD%E7%BB%83/1715784224796.png" /></p>
 <p>修改标签数量参数：</p>
-<p><img alt="1715784376823" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715784376823.png" /></p>
+<p><img alt="1715784376823" src="../yolo%E8%AE%AD%E7%BB%83/1715784376823.png" /></p>
 <p>打开<code>train.py</code>文件</p>
-<p><img alt="1715784461867" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715784461867.png" /></p>
+<p><img alt="1715784461867" src="../yolo%E8%AE%AD%E7%BB%83/1715784461867.png" /></p>
 <p>找到<code>parse_opt</code>函数，这里面有模型的主要参数：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">parse_opt</span><span class="p">(</span><span class="n">known</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Parses command-line arguments for YOLOv5 training, validation, and testing.&quot;&quot;&quot;</span>
@@ -1039,19 +1039,19 @@
 </span></code></pre></div>
 <h2 id="_2">训练模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>直接运行<code>train.py</code></p>
-<p><img alt="1715785697877" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715785697877.png" /></p>
+<p><img alt="1715785697877" src="../yolo%E8%AE%AD%E7%BB%83/1715785697877.png" /></p>
 <h3 id="_3">训练结果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>这里文件夹下有测试结果，训练结果曲线等信息。</p>
-<p><img alt="1716220655982" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1716220655982.png" /></p>
+<p><img alt="1716220655982" src="../yolo%E8%AE%AD%E7%BB%83/1716220655982.png" /></p>
 <p><strong>权重文件</strong>（最后要获得就是这个文件，取**best.pt**做推理使用的权重）</p>
-<p><img alt="1715785770478" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1715785770478.png" /></p>
+<p><img alt="1715785770478" src="../yolo%E8%AE%AD%E7%BB%83/1715785770478.png" /></p>
 <h3 id="tensorbord">用tensorbord查看训练结果<a class="headerlink" href="#tensorbord" title="Permanent link">&para;</a></h3>
 <p>打开pycharm终端，输入如下命令：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">tensorboard</span> <span class="o">--</span><span class="n">logdir</span><span class="o">=</span><span class="n">runs</span><span class="o">/</span><span class="n">train</span>
 </span></code></pre></div>
-<p><img alt="1716220466965" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1716220466965.png" /></p>
+<p><img alt="1716220466965" src="../yolo%E8%AE%AD%E7%BB%83/1716220466965.png" /></p>
 <p>ctrl点击网址，跳转浏览器：</p>
-<p><img alt="1716220527191" src="https://cdn.jsdelivr.net/gh/wxnlP/pic/yolov5/1716220527191.png" /></p>
+<p><img alt="1716220527191" src="../yolo%E8%AE%AD%E7%BB%83/1716220527191.png" /></p>
 
 
 
