@@ -6,11 +6,11 @@ PID 实指“比例 proportional”、“积分 integral”、“微分 derivati
 
 **PID：比例单元（P）、积分单元（I）和微分单元（D）组成**
 
-![1707463945385](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463945385.png)
+![1707463945385](PID/1707463945385.png)
 
 **PID控制公式：**
 
-![1707463962759](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463962759.png)
+![1707463962759](PID/1707463962759.png)
 
 其中：**u(t)**为控制器输出的控制量；（输出）
 
@@ -26,7 +26,7 @@ PID 实指“比例 proportional”、“积分 integral”、“微分 derivati
 
 ### 位置式 PID 算法
 
-![1707463978757](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463978757.png)
+![1707463978757](PID/1707463978757.png)
 
 e(k): **用户设定的值（目标值） -  控制对象的当前的状态值** 
 
@@ -48,7 +48,7 @@ e(k): **用户设定的值（目标值） -  控制对象的当前的状态值**
 
 ### 增量式PID算法
 
-![1707463993099](https://cdn.jsdelivr.net/gh/wxnlP/pic/STM32TimerPID/1707463993099.png)
+![1707463993099](PID/1707463993099.png)
 
 比例P :    e(k)-e(k-1)   这次误差-上次误差
 
