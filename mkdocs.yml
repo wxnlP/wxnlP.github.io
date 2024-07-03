@@ -85,7 +85,7 @@ theme:
         name: Switch to light mode
   font:
     code: Roboto Mono
-  favicon: assets/favicon.png
+  # favicon: assets/favicon.png
   icon:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
