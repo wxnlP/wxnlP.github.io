@@ -960,7 +960,7 @@
 <h3 id="labelimg">安装labelimg<a class="headerlink" href="#labelimg" title="Permanent link">&para;</a></h3>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>labelimg
 </span></code></pre></div>
-<p><img alt="1715782550393" src="yolo训练/1715782550393.png" /></p>
+<p><img alt="1715782550393" src="../yolo%E8%AE%AD%E7%BB%83/1715782550393.png" /></p>
 <h3 id="_2">标记数据集<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>创建文件夹结构---创建文件夹VOCdevkit，再次文件夹下新建VOC2007，其他如下</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>├── VOC2007
@@ -968,12 +968,12 @@
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│├── Annotations  存放标注的标签文件
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│├── predefined_classes.txt  定义自己要标注的所有类别
 </span></code></pre></div>
-<p><img alt="1715742994148" src="yolo训练/1715742994148.png" /></p>
+<p><img alt="1715742994148" src="../yolo%E8%AE%AD%E7%BB%83/1715742994148.png" /></p>
 <p>根据上面标注，把照片放到<code>JPEGImages</code>文件夹</p>
 <p>将要标注的所有类别放在<code>predefined_classes.txt</code>文件</p>
-<p><img alt="1715781741270" src="yolo训练/1715781741270.png" /></p>
+<p><img alt="1715781741270" src="../yolo%E8%AE%AD%E7%BB%83/1715781741270.png" /></p>
 <p>在终端中打开labelimg</p>
-<p><img alt="1715782631265" src="yolo训练/1715782631265.png" /></p>
+<p><img alt="1715782631265" src="../yolo%E8%AE%AD%E7%BB%83/1715782631265.png" /></p>
 <p><strong>一些常用快捷键：</strong></p>
 <ul>
 <li>A：切换到上一张图片</li>
@@ -983,7 +983,7 @@
 <li>Ctrl+u：选择标注的图片文件夹</li>
 <li>Ctrl+r：选择标注好的label标签存在的文件夹</li>
 </ul>
-<p><img alt="1715782773911" src="yolo训练/1715782773911.png" /></p>
+<p><img alt="1715782773911" src="../yolo%E8%AE%AD%E7%BB%83/1715782773911.png" /></p>
 <h2 id="_3">划分数据集<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>这一步需要将标记好的照片和标签按一定比例划分为测试集和训练集，用于后续模型训练。</p>
@@ -1139,15 +1139,15 @@
 </span><span id="__span-2-146"><a id="__codelineno-2-146" name="__codelineno-2-146" href="#__codelineno-2-146"></a><span class="n">test_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div>
 <p>需要修改的参数如下图：</p>
-<p><img alt="1715783424367" src="yolo训练/1715783424367.png" /></p>
+<p><img alt="1715783424367" src="../yolo%E8%AE%AD%E7%BB%83/1715783424367.png" /></p>
 <h3 id="_5">划分数据集<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>将代码放在<code>select.py</code>文件中，并且**与VOCdevkit文件夹处于同级目录**，然后直接运行代码即可：</p>
-<p><img alt="1715783557898" src="yolo训练/1715783557898.png" /></p>
+<p><img alt="1715783557898" src="../yolo%E8%AE%AD%E7%BB%83/1715783557898.png" /></p>
 <p>划分结果：</p>
-<p><img alt="1715783836032" src="yolo训练/1715783836032.png" /></p>
+<p><img alt="1715783836032" src="../yolo%E8%AE%AD%E7%BB%83/1715783836032.png" /></p>
 <h3 id="_6">移动至工程文件夹<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>将VOCdevkit整个文件夹的内容复制到yolo工程的根目录下：</p>
-<p><img alt="1715783914410" src="yolo训练/1715783914410.png" /></p>
+<p><img alt="1715783914410" src="../yolo%E8%AE%AD%E7%BB%83/1715783914410.png" /></p>
 
 
 
