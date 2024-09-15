@@ -10,7 +10,11 @@ pip install mkdocs
 pip install mkdocs-material
 ```
 
+### 改分支
 
+```powershell
+git branch -m master main
+```
 
 ### 部署网站
 
@@ -34,7 +38,7 @@ python -m mkdocs gh-deploy
 python -m mkdocs serve
 ```
 
-## 图床
+### 图床
 
 ```shell
 https://cdn.jsdelivr.net/gh/wxnlP/pic
