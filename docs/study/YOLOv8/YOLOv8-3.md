@@ -8,7 +8,7 @@
 
 文件一览，主要配置文件在`ultralytics`文件夹
 
-<img src="YOLOv8-3/6.png" alt="6" style="zoom:67%;" />
+![6](YOLOv8-3/6.png)
 
 #### 安装依赖
 
@@ -40,7 +40,7 @@ VOCdevkit
 
 根据标签进行文件内容修改-- **添加数据集目录和标签** ，另将无用进行注释
 
-<img src="YOLOv8-3/8.png" alt="8" style="zoom:80%;" />
+![8](YOLOv8-3/8.png)
 
 #### 修改yolov8.yaml
 
@@ -50,7 +50,7 @@ VOCdevkit
 
 修改"number of classes"的数量，如下图所示
 
-<img src="YOLOv8-3/10.png" alt="10" style="zoom:80%;" />
+![10](YOLOv8-3/10.png)
 
 ### 模型训练
 
@@ -96,9 +96,9 @@ if __name__ == "__main__":
 
 #### 训练过程与结果
 
-<img src="YOLOv8-3/12.png" alt="12" style="zoom:80%;" />
+![12](YOLOv8-3/12.png)
 
-<img src="YOLOv8-3/13.png" alt="13" style="zoom:80%;" />
+![13](YOLOv8-3/13.png)
 
 #### 检测验证
 
@@ -166,7 +166,7 @@ for result in results:
 
 推理结果如下,同时返回**坐标**、**置信度**、**标签信息**：
 
-<img src="YOLOv8-3/16.png" alt="16" style="zoom:67%;" />
+![16](YOLOv8-3/16.png)
 
-<img src="YOLOv8-3/15.png" alt="15" style="zoom:67%;" />
+![15](YOLOv8-3/15.png)
 
