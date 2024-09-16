@@ -8,7 +8,7 @@
 
 文件一览，主要配置文件在`ultralytics`文件夹
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=NzE2ZTlhZDg1OWU1MWY4MWU4YjdjMjA4NWY3OGY4ZTVfQkJ6TTRuREdIU09QblR1Rms3ajBmVzlndG5jdFpGRDVfVG9rZW46TmRGY2JTTjhUb21pTnB4Q0hDdGNKTlpobktoXzE3MjY0NjMxMzY6MTcyNjQ2NjczNl9WNA)
+![6](YOLOv8-3/6.png)
 
 #### 安装依赖
 
@@ -36,21 +36,21 @@ VOCdevkit
 
 根据 **--ultralytics/cfg/datasets/coco8.yaml --** 目录，找到 **`coco8.yaml`** 文件
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=NjNhYjQwNjY1NmM0M2MzN2Q3MzViZWRmYjQ0YTBlYzZfS1hJMWlYN0piTjBvcDJ4V3pXYXNDTm83R0ZkTmtZV0RfVG9rZW46R3ZlNmIwZHZrb0t4NGN4ZVQ4OGNrNU1sbmNnXzE3MjY0NjMxMzc6MTcyNjQ2NjczN19WNA)
+![7](YOLOv8-3/7.png)
 
 根据标签进行文件内容修改-- **添加数据集目录和标签** ，另将无用进行注释
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=YTliMTcxOGQ0ZTZiNzA4YmVhYjQ1N2JhZTA1NTY1YmNfVkRXbmpXWjQ1ZmZ1bWFtZ1Q4UXoxUVBJaVJ2Sjg5YjNfVG9rZW46S0dmQWJXdlN5b0kwTnd4SDR2YmN6dnRObmFmXzE3MjY0NjMxMzc6MTcyNjQ2NjczN19WNA)
+![8](YOLOv8-3/8.png)
 
 #### 修改yolov8.yaml
 
 根据--**ultralytics/cfg/models/v8/yolov8.yaml**--找到`yolov8.yaml`文件
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=MGRmODU0MGQ4YjQ3YjY2NjNlYWY4YWM0YWQyMGY1N2JfNm1qMlVuRTVGdEQ4ZzZnMTBEREVNN1hPbm5YNDd1RXdfVG9rZW46UTNsWmJweTNKb0dPSHh4bjBQRWNRMXN3bm9lXzE3MjY0NjMxMzc6MTcyNjQ2NjczN19WNA)
+![9](YOLOv8-3/9.png)
 
 修改"number of classes"的数量，如下图所示
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=MWZlM2JhNDRmNDMxMTFmYzI4NDE4OWQyYjExNTY1YzZfSnF2Z3NJcnNmT1pMbkJRV2xuN0JEcEpMSE1rNzg4NU5fVG9rZW46TVBpSGJ1MVo4bzJmaWJ4ckZ0Z2NEd1VCbkpjXzE3MjY0NjMxMzc6MTcyNjQ2NjczN19WNA)
+![10](/YOLOv8-3/10.png)
 
 ### 模型训练
 
@@ -85,8 +85,6 @@ if __name__ == "__main__":
     main()
 ```
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=OTBjMDEzNDRiOTcxZTQzNjA2M2FlNzVjMzFiZTU3MWVfVDBKTndRTmY3eVRTMHpYNE1LZnZ2V0tLWkFMak9uTkhfVG9rZW46WFZWRWJ5anpFb3VLTWN4Y2FkOWNmVFVwbmZkXzE3MjY0NjMxMzc6MTcyNjQ2NjczN19WNA)
-
 关键参数介绍：
 
 | 参数   | 默认值 | 描述                                                         |
@@ -98,11 +96,9 @@ if __name__ == "__main__":
 
 #### 训练过程与结果
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=NjMzNTBmYTI5NTljZThlNGQyNzU4MmZkMWY1NDYzYjVfR1lVeFBaS3lNS3Bva2NRc2xlaWQ4b2FHd3BkR2Rka1VfVG9rZW46SlNQQWJrVDY2b3NoMjB4UGlOSmNqY01ablJkXzE3MjY0NjMxMzc6MTcyNjQ2NjczN19WNA)
+![12](/YOLOv8-3/12.png)
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=MjAxNzk1ODUwMmZkOGNmNzM0YmFkMWU3YjIwMDM2OTRfN0VJbTB3dVhFdUxwVzBZSERweDl6UlRJZlVYYUlsNnlfVG9rZW46S3ZYYWJFQ2lKbzdXaXN4SFlOamNLUzZFbnRmXzE3MjY0NjMxMzc6MTcyNjQ2NjczN19WNA)
-
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=M2E2N2MwOTJiOTE4YzBiZDUzNmVmYmM0YjY1YWRkZDRfalR0eXRZMXZMTVlaVVlhR2FUSWl0MmxONFlGU09pSzhfVG9rZW46TUJuTGJ2bkltbzlMbnZ4WUNaemNrbkhTblFmXzE3MjY0NjMxMzc6MTcyNjQ2NjczN19WNA)
+![13](/YOLOv8-3/13.png)
 
 #### 检测验证
 
@@ -168,10 +164,9 @@ for result in results:
     result.save(filename="result.jpg")
 ```
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=Mzg2YzQ0NjExNDVjNmI5NjZmZGVmYmU4YTYyMjQ3NmNfRGdHcnpsV2pTbEFpa3ptM1FHQ3ZNSHQyQ0tqaTZVODVfVG9rZW46TDJpVGJ0YkVkb09rc2h4V05TaGN4bzJObllkXzE3MjY0NjMxMzc6MTcyNjQ2NjczN19WNA)
-
 推理结果如下,同时返回**坐标**、**置信度**、**标签信息**：
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=MjU5YWQxMWJiYmI0MTJiN2EzN2NlNzMzZTI2MjQ4MjVfc1hsWXBUcU9IZmhtdXo4WXBFc2ZDSkxMMnk0WG5TZnZfVG9rZW46RFhtVmJVS0VSb082a1h4dXpWTmMyNHY1bnViXzE3MjY0NjMxMzc6MTcyNjQ2NjczN19WNA)
+![16](/YOLOv8-3/16.png)
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=MzRhY2JhYmVjOGY3YWQ4YTJkNjVjZWI3YzY5ODFmNTVfZVpUMFNnN2FyRzlEVXh0amxjVnhtQ0ZDdWx6NUlPbVlfVG9rZW46WFlHWmJyeGJJbzdjbHd4aWIwSmNBVjRybnBnXzE3MjY0NjMxMzc6MTcyNjQ2NjczN19WNA)
+![15](/YOLOv8-3/15.png)
+

@@ -29,7 +29,7 @@ pip install labelimg
 
 根据上面标注，把照片放到`JPEGImages`文件夹，将要标注的所有类别放在`predefined_classes.txt`文件
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=MGFhZmI0NzExN2RmYjgyNTIxMGZiNTYxYmYxOTQyMWFfVlQyUWt6ejJ1SmFHWjhsZUJGdnoyY1RGRm5FRHhId29fVG9rZW46WXE3c2JVOGZYb21hc0p4VTVqMWM3VzlQbmlCXzE3MjY0NjMxMzY6MTcyNjQ2NjczNl9WNA)
+![2](YOLOv8-2/2.PNG)
 
 **一些常用快捷键：**
 
@@ -40,7 +40,7 @@ pip install labelimg
 - Ctrl+u：选择标注的图片文件夹
 - Ctrl+r：选择标注好的label标签存在的文件夹
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=MDY1MTNmZmJmNDQ0N2MxYTAyMWQxMGViMzZlODgwMDFfSEpBY1VkaWI0SjhUY0xXSjFUb2JwcXhzenFJYkJkdXRfVG9rZW46TmxjZ2JKeXBBb3BBQkJ4WFAxY2NIWmp6bmZoXzE3MjY0NjMxMzY6MTcyNjQ2NjczNl9WNA)
+![3](YOLOv8-2/3.png)
 
 ### 划分数据集
 
@@ -62,10 +62,10 @@ pip install labelimg
 
 #### 修改参数
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=MmYyYzg5MjU1YTIzZjEyN2IzMGJmNThlNjQ4MWU3ZGRfZXpVTzdtcld4VnJVMUFJRkpUZG5vZFpaSFZUcXFFQXdfVG9rZW46UlRBaGJ3b3Rpb1ZyWDF4YTlhd2NMT3g2bm1mXzE3MjY0NjMxMzY6MTcyNjQ2NjczNl9WNA)
+![4](YOLOv8-2/4.png)
 
 #### 检验数据
 
 划分完成以后的目录结构：
 
-![img](https://l5mnyvgt3n.feishu.cn/space/api/box/stream/download/asynccode/?code=ZGJhMDEwZjk0NTAyODc4YzYwMTE0ZjhhZTNjZWZhMzdfS1pUem5MVHZSc0JyTVVsZU1rMk9mNUpDU0E4aWZGSUhfVG9rZW46R1RodmJPeUJsb2NqSk54eDZkWGNva0JnbjFlXzE3MjY0NjMxMzY6MTcyNjQ2NjczNl9WNA)
+![5](YOLOv8-2/5.png)
