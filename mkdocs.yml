@@ -11,11 +11,16 @@ repo_url: https://github.com/wxnlP/wxnlP.github.io
 
 nav:
   - 破站📺: index.md
-  - yolov5模型训练: 
-    - 基础环境配置: study/yolov5/1.md
-    - yolov5环境配置: study/yolov5/2.md
-    - 数据集划分: study/yolov5/3.md
-    - 模型训练: study/yolov5/4.md
+  - YOLO模型系列: 
+    - YOLOv5:
+      - 基础环境配置: study/yolov5/1.md
+      - yolov5环境配置: study/yolov5/2.md
+      - 数据集划分: study/yolov5/3.md
+      - 模型训练: study/yolov5/4.md
+    - YOLOv8:
+      - YOLOv8简介: study/YOLOv8/YOLOv8-1.md
+      - 数据集划分: study/YOLOv8/YOLOv8-2.md
+      - 模型训练: study/YOLOv8/YOLOv8-3.md
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
