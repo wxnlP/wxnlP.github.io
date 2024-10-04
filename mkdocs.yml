@@ -11,6 +11,14 @@ repo_url: https://github.com/wxnlP/wxnlP.github.io
 
 nav:
   - 小李之家: index.md
+  - 工创赛: 
+    - 比赛介绍:
+      - 内容简介: study/competition/1.md
+      - 比赛介绍: study/competition/2.md
+      - 赛道介绍: study/competition/3.md
+    - 方案设计:
+      - 方案介绍: study/competition/4.md
+      - 优化建议: study/competition/5.md
   - YOLO系列: 
     - YOLOv5:
       - 基础环境配置: study/YOLOv5/1.md
@@ -21,14 +29,6 @@ nav:
       - YOLOv8简介: study/YOLOv8/YOLOv8-1.md
       - 数据集划分: study/YOLOv8/YOLOv8-2.md
       - 模型训练: study/YOLOv8/YOLOv8-3.md
-  - 工创赛: 
-    - 比赛介绍:
-      - 内容简介: study/competition/1.md
-      - 比赛介绍: study/competition/2.md
-      - 赛道介绍: study/competition/3.md
-    - 方案设计:
-      - 方案介绍: study/competition/4.md
-      - 优化建议: study/competition/5.md
   - STM32系列:
     - 基础外设:
       - GPIO: study/STM32/GPIO/1.GPIO.md
