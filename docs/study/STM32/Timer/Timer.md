@@ -55,7 +55,7 @@
 
 ![1706255928324](Timer/1706255928324.png)
 
-#### 1.1.6 代码示例
+#### 1.1.6 代码示例(标准库)
 
 ```c
 #include "stm32f10x.h"                  // Device header
@@ -202,7 +202,7 @@ void TIM2_IRQHandler(void)
 
 ![1706200615939](Timer/1706200615939.png)
 
-#### 1.2.7 代码示例
+#### 1.2.7 代码示例(标准库)
 
 ```c
 #include "stm32f10x.h"                  // Device header
@@ -332,7 +332,7 @@ void PWM_SetCompare2(uint16_t Compare)
 
 ![1705747401629](Timer/1705747401629.png)
 
-#### 1.3.7 代码示例
+#### 1.3.7 代码示例(标准库)
 
 ```c
 void IC_Init(void)
@@ -461,7 +461,7 @@ uint32_t IC_GetDuty(void)
 
 ![1705736511255](Timer/1705736511255.png)
 
-#### 1.4.6 代码示例
+#### 1.4.6 代码示例(标准库)
 
 ```c
 void Encoder_Init(void)
