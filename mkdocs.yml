@@ -21,10 +21,10 @@ nav:
       - 优化建议: study/competition/5.md
   - YOLO系列: 
     - YOLOv5:
-      - 基础环境配置: study/YOLOv5/1.md
-      - YOLOv5环境配置: study/YOLOv5/2.md
-      - 数据集划分: study/YOLOv5/3.md
-      - 模型训练: study/YOLOv5/4.md
+      - 基础环境配置: study/yolov5/1.md
+      - YOLOv5环境配置: study/yolov5/2.md
+      - 数据集划分: study/yolov5/3.md
+      - 模型训练: study/yolov5/4.md
     - YOLOv8:
       - YOLOv8简介: study/YOLOv8/YOLOv8-1.md
       - 数据集划分: study/YOLOv8/YOLOv8-2.md
