@@ -40,6 +40,7 @@ nav:
     - 定时器与PID: 
       - Timer: study/STM32/Timer/Timer.md 
       - PID: study/STM32/PID/PID.md
+  - Git: study/Git/Git.md
   - 资料分析:
     - Python数据分析: study/飞书文档/pythondata.md
     - 期末复习: study/飞书文档/studydata.md
