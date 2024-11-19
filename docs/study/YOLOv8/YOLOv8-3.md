@@ -12,7 +12,7 @@
 
 #### 安装依赖
 
-```Python
+```shell
 pip install ultralytics
 ```
 
@@ -22,7 +22,7 @@ pip install ultralytics
 
 将数据集复制到`yolov8`的根目录，其中数据集目录为下：
 
-```Python
+```
 VOCdevkit
 |-images
 | |-train

@@ -13,6 +13,13 @@ nav:
   - 主页: index.md
   - OpenHarmony:
     - 开发环境: study/OpenHarmony/OpenHarmony-1.md
+  - ROS2:
+    - ROS2环境准备:
+      - 第一章 ROS与ROS2介绍: study/ROS2/第一章.md
+      - 第二章 ROS2系统环境安装: study/ROS2/第二章.md
+      - 第三章 ROS2工具准备: study/ROS2/第三章.md
+    - ROS2基础:
+      - 第四章 工作空间与功能包: study/ROS2/第四章.md
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
@@ -124,6 +131,7 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+      auto_title: true
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.magiclink:

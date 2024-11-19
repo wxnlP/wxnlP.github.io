@@ -127,11 +127,11 @@ directory mask = 0755
 
 指定共享账号
 
-```
+```shell
 sudo smbpasswd -a username   #用户名为Ubuntu用户名。输入命令后，根据提示设置密码。
 ```
 
-```
+```shell
 sudo service smbd restart
 ```
 

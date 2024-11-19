@@ -11,7 +11,7 @@
 
 #### 安装labelimg
 
-```Python
+```shell
 pip install labelimg
 ```
 
