@@ -20,7 +20,9 @@ nav:
       - 第三章 ROS2工具准备: study/ROS2/第三章.md
     - ROS2基础:
       - 第四章 工作空间与功能包: study/ROS2/第四章.md
-      - 特别篇 自定义接口数据: study/ROS2/特别篇-自定义接口.md
+      - 特别篇 自定义接口数据: study/ROS2/3-自定义接口.md
+      - 特别篇 面向对象C++: study/ROS2/3-面向对象C++.md
+      - 特别篇 ROS2中的C++新特性: study/ROS2/3-ROS2中的C++新特性.md
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
