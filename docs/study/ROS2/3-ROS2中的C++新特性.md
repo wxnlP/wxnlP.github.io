@@ -132,7 +132,7 @@ int main()
 // out: sum1:5--sum2:30
 ```
 
-## 4.函数包装器
+## 4. 函数包装器
 
 ```c++
 #include <iostream>

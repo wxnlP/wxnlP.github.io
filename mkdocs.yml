@@ -74,7 +74,7 @@ theme:
     # - content.tabs.link
     - content.tooltips
     - header.autohide
-    - navigation.expand
+    # - navigation.expand
     - navigation.footer
     - navigation.indexes
     - navigation.instant
@@ -89,8 +89,9 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
-    - toc.follow
-    # - toc.integrate
+    # - toc.integrate          # 集成右侧目录到侧边栏
+    #- toc.expand             # 默认展开所有目录（可选）
+    - toc.collapse           # 右侧目录支持折叠功能
 
   palette:
     - scheme: default
@@ -166,7 +167,6 @@ markdown_extensions:
 plugins:
   - search
   - blog
-
 
 
 include:
