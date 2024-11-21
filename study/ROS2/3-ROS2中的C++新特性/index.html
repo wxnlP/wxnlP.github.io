@@ -1373,7 +1373,8 @@
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="c1">// 函数体</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">};</span>
 </span></code></pre></div>
-<p><strong>capture</strong></p>
+<p>参数介绍：</p>
+<p><strong><code>capture</code></strong></p>
 <ul>
 <li>指定 Lambda 表达式如何捕获外部作用域的变量</li>
 </ul>
@@ -1390,11 +1391,11 @@
 </ul>
 </li>
 </ul>
-<p><strong>parameter_list</strong></p>
+<p><strong><code>parameter_list</code></strong></p>
 <ul>
 <li>传递给 Lambda 的参数</li>
 </ul>
-<p><strong>return_type</strong></p>
+<p><strong><code>return_type</code></strong></p>
 <ul>
 <li>返回类型</li>
 </ul>
@@ -1414,11 +1415,11 @@
 </span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="p">};</span>
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add2</span><span class="p">();</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sum1:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;--sum2&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sum1:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;--sum2:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sum2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
 </span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p">}</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1">// out: sum1:5--sum230</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1">// out: sum1:5--sum2:30</span>
 </span></code></pre></div>
 <h2 id="4">4.函数包装器<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -1473,7 +1474,7 @@
 </span><span id="__span-6-50"><a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-6-51"><a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>cout</p>
+<p>out：</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>自由函数aini.txt
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>lamada函数aini.txt
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>成员函数aini.txt
