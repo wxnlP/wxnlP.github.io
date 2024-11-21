@@ -84,7 +84,9 @@ int main()
 };
 ```
 
-**capture**
+参数介绍：
+
+**`capture`**
 
 - 指定 Lambda 表达式如何捕获外部作用域的变量
 
@@ -97,11 +99,11 @@ int main()
   - `[&]`：按引用捕获所有外部变量。
   - `[this]`：捕获当前类的 `this` 指针。
 
-**parameter_list**
+**`parameter_list`**
 
 - 传递给 Lambda 的参数
 
-**return_type**
+**`return_type`**
 
 - 返回类型
 
@@ -123,11 +125,11 @@ int main()
         return x + y;
     };
     int sum2 = add2();
-    std::cout << "sum1:" << sum1 << "--sum2" << sum2 << std::endl;
+    std::cout << "sum1:" << sum1 << "--sum2:" << sum2 << std::endl;
 
     return 0;
 }
-// out: sum1:5--sum230
+// out: sum1:5--sum2:30
 ```
 
 ## 4.函数包装器
@@ -186,7 +188,7 @@ int main()
 }
 ```
 
-cout
+out：
 
 ```
 自由函数aini.txt
