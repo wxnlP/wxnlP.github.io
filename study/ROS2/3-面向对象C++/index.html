@@ -1791,12 +1791,10 @@
 <p>3．默认拷贝构造函数，对属性进行值拷贝</p>
 <p>构造函数调用规则如下：</p>
 <ul>
-<li>
-<p>如果用户定义有参构造函数，c++不在提供默认无参构造，但是会提供默认拷贝构造</p>
-</li>
-<li>
-<p>如果用户定义拷贝构造函数，c++不会再提供其他构造函数</p>
-</li>
+<li>如果用户定义有参构造函数，c++不在提供默认无参构造，但是会提供默认拷贝构造</li>
+</ul>
+<ul>
+<li>如果用户定义拷贝构造函数，c++不会再提供其他构造函数</li>
 </ul>
 <h3 id="14">1.4 深浅拷贝⭐<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
 <p>浅拷贝：简单的赋值拷贝操作</p>
@@ -1843,13 +1841,17 @@
 <p>静态成员就是在成员变量和成员函数前加上关键字<code>static</code>，称为静态成员</p>
 <p>静态成员分为：</p>
 <ul>
-<li><strong>静态成员变量</strong></li>
+<li><strong>静态成员变量</strong><ul>
 <li>所有对象共享同一份数据</li>
 <li>在编译阶段分配内存</li>
 <li>类内声明，类外初始化</li>
-<li><strong>静态成员函数</strong></li>
+</ul>
+</li>
+<li><strong>静态成员函数</strong><ul>
 <li>所有对象共享同一个函数</li>
 <li>静态成员函数只能访问静态成员变量</li>
+</ul>
+</li>
 </ul>
 <p><strong>1.静态变量</strong></p>
 <div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span>

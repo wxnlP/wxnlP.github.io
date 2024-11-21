@@ -1287,12 +1287,10 @@
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>auto<span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>std::make_shared&lt;T&gt;<span class="o">(</span>constructor_args...<span class="o">)</span><span class="p">;</span>
 </span></code></pre></div>
 <ul>
-<li>
-<p><strong><code>T</code></strong>: 指定的对象类型。</p>
-</li>
-<li>
-<p><strong><code>constructor_args...</code></strong> : 传递给对象 <code>T</code> 的构造函数参数。</p>
-</li>
+<li><strong><code>T</code></strong>: 指定的对象类型。</li>
+</ul>
+<ul>
+<li><strong><code>constructor_args...</code></strong> : 传递给对象 <code>T</code> 的构造函数参数。</li>
 </ul>
 <p>后续最经常使用的一个场景就是，在初始化节点对象时：</p>
 <div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/*创建一个对象 node</span>
@@ -1377,19 +1375,21 @@
 </span></code></pre></div>
 <p><strong>capture</strong></p>
 <ul>
-<li>
-<p>指定 Lambda 表达式如何捕获外部作用域的变量</p>
-</li>
+<li>指定 Lambda 表达式如何捕获外部作用域的变量</li>
+</ul>
+<ul>
 <li>
 <p>捕获列表用于定义如何访问外部变量：</p>
+<ul>
+<li><code>[ ]</code>：不捕获任何外部变量。</li>
+<li><code>[x]</code>：按值捕获变量 <code>x</code>。</li>
+<li><code>[&amp;x]</code>：按引用捕获变量 <code>x</code>。</li>
+<li><code>[=]</code>：按值捕获所有外部变量。</li>
+<li><code>[&amp;]</code>：按引用捕获所有外部变量。</li>
+<li><code>[this]</code>：捕获当前类的 <code>this</code> 指针。</li>
+</ul>
 </li>
 </ul>
-<p><code>[ ]</code>：不捕获任何外部变量。</p>
-<p><code>[x]</code>：按值捕获变量 <code>x</code>。</p>
-<p><code>[&amp;x]</code>：按引用捕获变量 <code>x</code>。</p>
-<p><code>[=]</code>：按值捕获所有外部变量。</p>
-<p><code>[&amp;]</code>：按引用捕获所有外部变量。</p>
-<p><code>[this]</code>：捕获当前类的 <code>this</code> 指针。</p>
 <p><strong>parameter_list</strong></p>
 <ul>
 <li>传递给 Lambda 的参数</li>
