@@ -1377,15 +1377,19 @@
 </span></code></pre></div>
 <p><strong>capture</strong></p>
 <ul>
-<li>指定 Lambda 表达式如何捕获外部作用域的变量</li>
-<li>捕获列表用于定义如何访问外部变量：</li>
-<li><code>[ ]</code>：不捕获任何外部变量。</li>
-<li><code>[x]</code>：按值捕获变量 <code>x</code>。</li>
-<li><code>[&amp;x]</code>：按引用捕获变量 <code>x</code>。</li>
-<li><code>[=]</code>：按值捕获所有外部变量。</li>
-<li><code>[&amp;]</code>：按引用捕获所有外部变量。</li>
-<li><code>[this]</code>：捕获当前类的 <code>this</code> 指针。</li>
+<li>
+<p>指定 Lambda 表达式如何捕获外部作用域的变量</p>
+</li>
+<li>
+<p>捕获列表用于定义如何访问外部变量：</p>
+</li>
 </ul>
+<p><code>[ ]</code>：不捕获任何外部变量。</p>
+<p><code>[x]</code>：按值捕获变量 <code>x</code>。</p>
+<p><code>[&amp;x]</code>：按引用捕获变量 <code>x</code>。</p>
+<p><code>[=]</code>：按值捕获所有外部变量。</p>
+<p><code>[&amp;]</code>：按引用捕获所有外部变量。</p>
+<p><code>[this]</code>：捕获当前类的 <code>this</code> 指针。</p>
 <p><strong>parameter_list</strong></p>
 <ul>
 <li>传递给 Lambda 的参数</li>
