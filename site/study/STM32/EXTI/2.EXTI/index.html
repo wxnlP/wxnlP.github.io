@@ -1561,7 +1561,7 @@
 <h2 id="nvic">NVIC优先级分组<a class="headerlink" href="#nvic" title="Permanent link">&para;</a></h2>
 <ul>
 <li>NVIC的中断优先级由优先级寄存器的4位（0~15）决定，这4位可以进行切分，分为高n位的抢占优先级和低4-n位的响应优先级</li>
-<li><strong>抢占优先级</strong> 高的可以中断嵌套，**响应优先级**高的可以优先排队，抢占优先级和响应优先级均相同的按中断号排队</li>
+<li>**抢占优先级**高的可以中断嵌套，**响应优先级**高的可以优先排队，抢占优先级和响应优先级均相同的按中断号排队</li>
 </ul>
 <table>
 <thead>
@@ -1599,11 +1599,13 @@
 </tr>
 </tbody>
 </table>
-<p><kbd>STM32CubeMX</kbd>&gt;中对应 <strong>抢占优先级</strong> 和 <strong>响应优先级</strong> 参数配置</p>
+<p><kbd>STM32CubeMX</kbd>&gt;中对应**抢占优先级**和**响应优先级**参数配置</p>
 <p><img alt="image-20240919222424896" src="../2.EXTI%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/image-20240919222424896.png" /></p>
 <h2 id="stm32cubemx">STM32CubeMX配置<a class="headerlink" href="#stm32cubemx" title="Permanent link">&para;</a></h2>
 <h3 id="exti_1">EXTI配置<a class="headerlink" href="#exti_1" title="Permanent link">&para;</a></h3>
 <p><img alt="image-20240919222942930" src="../2.EXTI%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/image-20240919222942930.png" /></p>
+<p>使能中断触发，否则找不到<kbd>EXTI4_IRQHandler</kbd>等中断函数</p>
+<p><img alt="image-20241124180308221" src="2.EXTI%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/image-20241124180308221.png" /></p>
 <h3 id="nvic_1">NVIC优先级配置<a class="headerlink" href="#nvic_1" title="Permanent link">&para;</a></h3>
 <p><img alt="image-20240919223855861" src="../2.EXTI%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/image-20240919223855861.png" /></p>
 <h2 id="_3">代码介绍<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -1642,7 +1644,7 @@
 <p>判断是否触发中断，即不为<code>0x00u</code>则触发中断</p>
 <div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">__HAL_GPIO_EXTI_GET_IT</span><span class="p">(</span><span class="n">GPIO_Pin</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mh">0x00u</span>
 </span></code></pre></div>
-<p>清除触发中断的 <strong>标志位</strong></p>
+<p>清除触发中断的**标志位**</p>
 <div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">__HAL_GPIO_EXTI_CLEAR_IT</span><span class="p">(</span><span class="n">GPIO_Pin</span><span class="p">);</span>
 </span></code></pre></div>
 <p>这是一个“弱”回调函数，提供用户可以在自己的代码中重写函数，所以我们需要重写这个函数实现业务</p>
