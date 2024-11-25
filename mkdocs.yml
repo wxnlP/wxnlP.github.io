@@ -46,8 +46,8 @@ nav:
       - 模型训练: study/YOLOv8/YOLOv8-3.md
   - STM32系列:
     - 基础外设:
-      - 第一章 GPIO: study/STM32/GPIO/1.GPIO.md
-      - 第二章 EXTI: study/STM32/EXTI/2.EXTI.md
+      - 第一章 GPIO: study/STM32/1.GPIO.md
+      - 第二章 EXTI: study/STM32/2.EXTI.md
     - Timer定时器: 
       - Timer: study/STM32/Timer/Timer.md 
       - PID: study/STM32/PID/PID.md
