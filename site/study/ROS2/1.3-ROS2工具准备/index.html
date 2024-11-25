@@ -735,16 +735,25 @@
         <li class="md-nav__item">
   <a href="#31-terminator" class="md-nav__link">
     <span class="md-ellipsis">
-      3.1 安装Terminator
+      3.1 Terminator
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#32-terminator" class="md-nav__link">
+  <a href="#32-vscode" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2 Terminator 常用快捷键
+      3.2 Vscode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-mobaxterm" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 MobaXterm
     </span>
   </a>
   
@@ -1187,16 +1196,25 @@
         <li class="md-nav__item">
   <a href="#31-terminator" class="md-nav__link">
     <span class="md-ellipsis">
-      3.1 安装Terminator
+      3.1 Terminator
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#32-terminator" class="md-nav__link">
+  <a href="#32-vscode" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2 Terminator 常用快捷键
+      3.2 Vscode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-mobaxterm" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 MobaXterm
     </span>
   </a>
   
@@ -1234,15 +1252,16 @@
 
 
 <h1 id="ros2">第三章 ROS2工具准备<a class="headerlink" href="#ros2" title="Permanent link">&para;</a></h1>
+<h2 id="31-terminator">3.1 Terminator<a class="headerlink" href="#31-terminator" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>在 ROS 2中，需要频繁的使用到终端，且可能需要同时开启多个窗口，推荐一款较为好用的终端:<strong>Terminator。</strong></p>
 </blockquote>
-<p><img alt="image-20241120234615928" src="image-20241120234615928.png" /></p>
-<h2 id="31-terminator">3.1 安装Terminator<a class="headerlink" href="#31-terminator" title="Permanent link">&para;</a></h2>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>terminator
 </span></code></pre></div>
-<h2 id="32-terminator">3.2 Terminator 常用快捷键<a class="headerlink" href="#32-terminator" title="Permanent link">&para;</a></h2>
-<p><strong>第一部份：关于在同一个标签内的操作</strong></p>
+<p>下载完以后<kbd>Ctrl+Alt+T</kbd> 命令就可以打开terminator终端，替换了默认的系统终端，同时在终端右键可以选择上下左右分隔多个终端。</p>
+<p><img alt="image-20241125221219848" src="image-20241125221219848.png" /></p>
+<p><strong>Terminator 常用快捷键</strong></p>
+<p><strong>第一部分：关于在同一个标签内的操作</strong></p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Alt+Up                          //移动到上面的终端
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Alt+Down                        //移动到下面的终端
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Alt+Left                        //移动到左边的终端
@@ -1264,7 +1283,7 @@
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>Ctrl+Shift+N or Ctrl+Tab        //移动到下一个终端
 </span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>Ctrl+Shift+P or Ctrl+Shift+Tab  //Crtl+Shift+Tab 移动到之前的一个终端
 </span></code></pre></div>
-<p><strong>第二部份：有关各个标签之间的操作</strong></p>
+<p><strong>第二部分：有关各个标签之间的操作</strong></p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>F11<span class="w">                             </span>//全屏开关
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Ctrl+Shift+T<span class="w">                    </span>//打开一个新的标签
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Ctrl+PageDown<span class="w">                   </span>//移动到下一个标签
@@ -1283,6 +1302,37 @@
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>Ctrl+Shift+I<span class="w">                    </span>//打开一个窗口，新窗口与原来的窗口使用同一个进程
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Super+i<span class="w">                         </span>//打开一个新窗口，新窗口与原来的窗口使用不同的进程
 </span></code></pre></div>
+<blockquote>
+<p>其实这些命令很少有，使用虚拟机学习时，会开多个终端即可</p>
+</blockquote>
+<h2 id="32-vscode">3.2 Vscode<a class="headerlink" href="#32-vscode" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Vscode是ROS2开发必备的代码编辑工具</p>
+</blockquote>
+<p>ubuntu可以使用一键安装，选择vscode即可</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>wget<span class="w"> </span>http://fishros.com/install<span class="w"> </span>-O<span class="w"> </span>fishros<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>.<span class="w"> </span>fishros
+</span></code></pre></div>
+<p>Windows则需要手动安装（由于我采用Vscode和MobaXterm结合的远程连接开发模式，所以介绍windows安装）</p>
+<p>下载地址：<a href="https://code.visualstudio.com/Download">Visual Studio Code</a></p>
+<h2 id="33-mobaxterm">3.3 MobaXterm<a class="headerlink" href="#33-mobaxterm" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>MobaXterm是一个很方便的ssh连接工具，同时支持X11可以查看图形化程序结果。实际开发Linux开发板时，我一般喜欢使用Vscode和MobaXterm结合，均使用ssh远程连接，Vscode修改查看运行不需要图形化结果的程序，需要查看图形化结果的程序（如Qt、ROS的RVIZ等均可查看）则切换到MobaXterm运行。</p>
+</blockquote>
+<p>MobaXterm看自己开发需求，全程使用虚拟机则不需要一定安装。由于我自己的虚拟机比较卡，且不喜欢虚拟机ubuntu上使用Vscode，所以我继续采用Vscode和MobaXterm结合的远程连接开发模式。</p>
+<p>官方下载连接，选择免费版下载安装即可。</p>
+<p><strong>MobaXterm：</strong> <a href="https://mobaxterm.mobatek.net/download.html">MobaXterm下载地址</a></p>
+<p>ubuntu打开终端，配置远程连接服务</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">#安装SSH服务</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>openssh-server
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#启动SSH服务</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ssh
+</span></code></pre></div>
+<p>在ubuntu中输入命令查看 <strong>ip地址</strong>，缺少插件按照终端提示安装即可，</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ifconfig
+</span></code></pre></div>
+<p><img alt="image-20241125222518979" src="image-20241125222518979.png" /></p>
+<p>安装下图，输入自己的 <strong>IP</strong> 和 <strong>用户名</strong> 即可完成连接</p>
+<p><img alt="image-20241125222317630" src="image-20241125222317630.png" /></p>
 
 
 
