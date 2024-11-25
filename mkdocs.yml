@@ -19,10 +19,13 @@ nav:
       - 第二章 ROS2系统环境安装: study/ROS2/1.2-ROS2系统环境安装.md
       - 第三章 ROS2工具准备: study/ROS2/1.3-ROS2工具准备.md
     - ROS2基础:
-      - 第四章 工作空间与功能包: study/ROS2/2-工作空间与功能包.md
-      - 特别篇 自定义接口数据: study/ROS2/3-自定义接口.md
       - 特别篇 面向对象C++: study/ROS2/3-面向对象C++.md
       - 特别篇 ROS2中的C++新特性: study/ROS2/3-ROS2中的C++新特性.md
+      - 第四章 工作空间与功能包: study/ROS2/2-工作空间与功能包.md
+    - ROS2通信协议:
+      - 特别篇 自定义接口数据: study/ROS2/3-自定义接口.md
+      
+      
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
@@ -43,15 +46,16 @@ nav:
       - 模型训练: study/YOLOv8/YOLOv8-3.md
   - STM32系列:
     - 基础外设:
-      - GPIO: study/STM32/GPIO/1.GPIO.md
-      - EXTI: study/STM32/EXTI/2.EXTI.md
+      - 第一章 GPIO: study/STM32/GPIO/1.GPIO.md
+      - 第二章 EXTI: study/STM32/EXTI/2.EXTI.md
+    - Timer定时器: 
+      - Timer: study/STM32/Timer/Timer.md 
+      - PID: study/STM32/PID/PID.md
     - 通信协议:
       - USART: study/STM32/Serial/1.md
       - I2C: study/STM32/Serial/2.md
       - SPI: study/STM32/Serial/3.md
-    - 定时器与PID: 
-      - Timer: study/STM32/Timer/Timer.md 
-      - PID: study/STM32/PID/PID.md
+    
   - Git: study/Git/Git.md
   - 资料分析:
     - Python数据分析: study/飞书文档/pythondata.md
