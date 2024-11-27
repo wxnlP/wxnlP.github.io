@@ -90,9 +90,7 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../../.." title="小李的知识库🚊" class="md-header__button md-logo" aria-label="小李的知识库🚊" data-md-component="logo">
       
@@ -211,8 +209,14 @@
     
   </nav>
   
+</header>
     
+    <div class="md-container" data-md-component="container">
       
+      
+        
+          
+            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -414,13 +418,7 @@
     </ul>
   </div>
 </nav>
-    
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -782,7 +780,9 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
         
           
           <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="">
@@ -883,7 +883,9 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
         
           
           <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
@@ -1627,7 +1629,7 @@
 <li>SPI（Serial Peripheral Interface）是由Motorola公司开发的一种通用数据总线</li>
 <li>四根通信线：SCK（Serial Clock）、MOSI（Master Output Slave Input）、MISO（Master Input Slave Output）、SS（Slave Select）--</li>
 <li>同步，全双工</li>
-<li>支持总线挂载多设备（一主多从，**不支持**多主机）</li>
+<li>支持总线挂载多设备（一主多从，<strong>不支持</strong> 多主机）</li>
 </ul>
 <h3 id="_1">硬件电路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1643,31 +1645,31 @@
 <p><img alt="1706280036159" src="../STM32%E5%9B%9B%E5%A4%A7%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/1706280036159.png" /></p>
 <h3 id="spi_1">SPI时基单元<a class="headerlink" href="#spi_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>**起始条件：**SS从高电平切换到低电平</li>
-<li>**终止条件：**SS从低电平切换到高电平</li>
+<li><strong>起始条件：</strong> SS从高电平切换到低电平</li>
+<li><strong>终止条件：</strong> SS从低电平切换到高电平</li>
 </ul>
 <p><img alt="1706280340445" src="../STM32%E5%9B%9B%E5%A4%A7%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/1706280340445.png" /></p>
 <p>SPI交换字节有多种模式可以选择，主要取决于CPOL(时钟极性)和CPHA(时钟相位)，一个四种组合方式。</p>
 <ul>
-<li>交换一个字节**（模式0）**</li>
+<li>交换一个字节 <strong>（模式0）</strong></li>
 <li>CPOL=0：空闲状态时，SCK为低电平</li>
 <li>CPHA=0：SCK第一个边沿移入数据，第二个边沿移出数据</li>
 </ul>
 <p><img alt="1706280519452" src="../STM32%E5%9B%9B%E5%A4%A7%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/1706280519452.png" /></p>
 <ul>
-<li>交换一个字节**（模式1）**</li>
+<li>交换一个字节 <strong>（模式1）</strong></li>
 <li>CPOL=0：空闲状态时，SCK为低电平</li>
 <li>CPHA=1：SCK第一个边沿移出数据，第二个边沿移入数据</li>
 </ul>
 <p><img alt="1706280584972" src="../STM32%E5%9B%9B%E5%A4%A7%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/1706280584972.png" /></p>
 <ul>
-<li>交换一个字节**（模式2）**</li>
+<li>交换一个字节 <strong>（模式2）</strong></li>
 <li>CPOL=1：空闲状态时，SCK为高电平</li>
 <li>CPHA=0：SCK第一个边沿移入数据，第二个边沿移出数据</li>
 </ul>
 <p><img alt="1706280625411" src="../STM32%E5%9B%9B%E5%A4%A7%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/1706280625411.png" /></p>
 <ul>
-<li>交换一个字节**（模式3）**</li>
+<li>交换一个字节 <strong>（模式3）</strong></li>
 <li>CPOL=1：空闲状态时，SCK为高电平</li>
 <li>CPHA=1：SCK第一个边沿移出数据，第二个边沿移入数据</li>
 </ul>
@@ -2232,7 +2234,7 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "header.autohide", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.collapse"], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tooltips", "sticky_navigation", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>

@@ -24,8 +24,7 @@ nav:
       - 第四章 工作空间与功能包: study/ROS2/2-工作空间与功能包.md
     - ROS2通信协议:
       - 特别篇 自定义接口数据: study/ROS2/3-自定义接口.md
-      
-      
+
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
@@ -74,11 +73,12 @@ theme:
     - content.code.annotate
     - content.code.copy
     # - content.code.select
-    # - content.footnote.tooltips
+    - content.footnote.tooltips
     # - content.tabs.link
     - content.tooltips
-    - header.autohide
-    # - navigation.expand
+#    - header.autohide
+    - sticky_navigation
+    - navigation.expand
     - navigation.footer
     - navigation.indexes
     - navigation.instant
@@ -87,15 +87,15 @@ theme:
     - navigation.prune
     - navigation.sections
     - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
     - search.highlight
     - search.share
     - search.suggest
-    # - toc.integrate          # 集成右侧目录到侧边栏
-    #- toc.expand             # 默认展开所有目录（可选）
-    - toc.collapse           # 右侧目录支持折叠功能
+#    - toc.integrate          # 集成右侧目录到侧边栏
+#    - toc.expand             # 默认展开所有目录（可选）
+#    - toc.collapse           # 右侧目录支持折叠功能
+    - toc.follow
 
   palette:
     - scheme: default
