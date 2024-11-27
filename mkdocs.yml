@@ -1,4 +1,4 @@
-site_name: 小李的知识库🚊
+site_name: 小李 的知识库
 site_url: https://wxnlP.github.io/
 
 site_author: XiaoLi
@@ -7,6 +7,7 @@ site_description: >-
 
 repo_name: wxnlP/wxnlP.github.io
 repo_url: https://github.com/wxnlP/wxnlP.github.io
+copyright: Copyright &copy; 2024 # 版权声明
 
 
 nav:
@@ -98,24 +99,28 @@ theme:
     - toc.follow
 
   palette:
-    - scheme: default
-      primary: indigo
+    - scheme: LightDay
+      primary: white
       accent: indigo
       toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+        icon: material/weather-night
+        name: 切换至夜间模式
     - scheme: slate
-      primary: indigo
+      primary: black
       accent: indigo
       toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+        icon: material/weather-sunny
+        name: 切换至高亮模式
   font:
+    text: Roboto
     code: Roboto Mono
   # favicon: assets/favicon.png
   icon:
-    previous: fontawesome/solid/angle-left
-    next: fontawesome/solid/angle-right
+    font: true
+#    previous: fontawesome/solid/angle-left
+#    next: fontawesome/solid/angle-right
+    logo: material/book-open-page-variant
+    repo: fontawesome/brands/github
 
 markdown_extensions:
   - abbr
@@ -172,6 +177,8 @@ plugins:
   - search
   - blog
 
+extra_css:
+  - stylesheets/extra.css
 
 include:
   - CNAME
