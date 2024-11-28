@@ -1571,9 +1571,10 @@
 <p>简单提一下主从触发模式中的主模式自动触发DAC原理：</p>
 <p>主模式可以将定时的 “ 更新事件 ” 映射到<code>TRGO</code>引脚，然后<code>TRGO</code>接到DAC的触发转换引脚。这样就完成了定时自动触发DAC而不需要中断触发DAC。</p>
 <p><img alt="1706254347422" src="1706254347422.png" /></p>
-<blockquote>
-<p>⚠：--基本定时器仅支持向上计数--时钟选择也仅支持内部时钟，为72MHZ</p>
-</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>警告：--基本定时器仅支持向上计数--时钟选择也仅支持内部时钟，为72MHZ</p>
+</div>
 <p><strong>通用定时器</strong></p>
 <p>通用定时器的<kbd>时钟源</kbd>有多种选择</p>
 <blockquote>
@@ -1637,12 +1638,12 @@
 </li>
 <li>
 <p><strong>Clock mode</strong> ：时钟源，可以选择 <kbd>内部时钟</kbd> 和 <kbd>外部触发输入</kbd> 。</p>
+</li>
+</ol>
 <ul>
 <li>Internal Clock</li>
 <li>ETR2（TIMx_ETR引脚）</li>
 </ul>
-</li>
-</ol>
 <h2 id="32">3.2 定时中断<a class="headerlink" href="#32" title="Permanent link">&para;</a></h2>
 <h3 id="321">3.2.1 计数频率计算<a class="headerlink" href="#321" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
