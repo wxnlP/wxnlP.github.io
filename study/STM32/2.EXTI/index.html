@@ -18,7 +18,7 @@
         <link rel="prev" href="../1.GPIO/">
       
       
-        <link rel="next" href="../Timer/Timer/">
+        <link rel="next" href="../PID/PID/">
       
       
       <link rel="icon" href="../../../assets/icon.png">
@@ -921,18 +921,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#251-exti" class="md-nav__link">
+  <a href="#251-sys" class="md-nav__link">
     <span class="md-ellipsis">
-      2.5.1 EXTI配置
+      2.5.1 SYS配置
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#252-nvic" class="md-nav__link">
+  <a href="#252-rcc" class="md-nav__link">
     <span class="md-ellipsis">
-      2.5.2 NVIC优先级配置
+      2.5.2 RCC配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253-gpio" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.3 GPIO配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#254-exti" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.4 EXTI配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#255-nvic" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.5 NVIC优先级配置
     </span>
   </a>
   
@@ -1053,11 +1080,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Timer/Timer/" class="md-nav__link">
+      <a href="../Timer定时中断.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Timer
+    第三章 定时中断
   </span>
   
 
@@ -1370,18 +1397,45 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#251-exti" class="md-nav__link">
+  <a href="#251-sys" class="md-nav__link">
     <span class="md-ellipsis">
-      2.5.1 EXTI配置
+      2.5.1 SYS配置
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#252-nvic" class="md-nav__link">
+  <a href="#252-rcc" class="md-nav__link">
     <span class="md-ellipsis">
-      2.5.2 NVIC优先级配置
+      2.5.2 RCC配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253-gpio" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.3 GPIO配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#254-exti" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.4 EXTI配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#255-nvic" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.5 NVIC优先级配置
     </span>
   </a>
   
@@ -1558,12 +1612,12 @@
 </tbody>
 </table>
 <p>AFIO引脚复用，通过引脚编号直接映射，不论是<code>A0</code>还是<code>B0</code>均使用一个<kbd>EXTI0事件线</kbd>       </p>
-<p><img alt="image-20240916233559097" src="../2.EXTI%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/image-20240916233559097.png" /></p>
+<p><img alt="image-20240916233559097" src="image-20240916233559097.png" /></p>
 <h2 id="23">2.3 中断相关概念<a class="headerlink" href="#23" title="Permanent link">&para;</a></h2>
 <p><strong>中断</strong>：在主程序运行过程中，出现了特定的中断触发条件（中断源），使得CPU暂停当前正在运行的程序，转而去处理中断程序，处理完成后又返回原来被暂停的位置继续运行</p>
 <p><strong>中断优先级</strong>：当有多个中断源同时申请中断时，CPU会根据中断源的轻重缓急进行裁决，优先响应更加紧急的中断源</p>
 <p><strong>中断嵌套</strong>：当一个中断程序正在运行时，又有新的更高优先级的中断源申请中断，CPU再次暂停当前中断程序，转而去处理新的中断程序，处理完成后依次进行返回</p>
-<p><img alt="image-20240916233233740" src="../2.EXTI%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/image-20240916233233740.png" /></p>
+<p><img alt="image-20240916233233740" src="image-20240916233233740.png" /></p>
 <h2 id="24-nvic">2.4 NVIC优先级分组<a class="headerlink" href="#24-nvic" title="Permanent link">&para;</a></h2>
 <ul>
 <li>NVIC的中断优先级由优先级寄存器的4位（0~15）决定，这4位可以进行切分，分为高n位的抢占优先级和低4-n位的响应优先级</li>
@@ -1606,14 +1660,35 @@
 </tbody>
 </table>
 <p><kbd>STM32CubeMX</kbd>&gt;中对应**抢占优先级**和**响应优先级**参数配置</p>
-<p><img alt="image-20240919222424896" src="../2.EXTI%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/image-20240919222424896.png" /></p>
+<p><img alt="image-20240919222424896" src="image-20240919222424896.png" /></p>
 <h2 id="25-stm32cubemx">2.5 STM32CubeMX配置<a class="headerlink" href="#25-stm32cubemx" title="Permanent link">&para;</a></h2>
-<h3 id="251-exti">2.5.1 EXTI配置<a class="headerlink" href="#251-exti" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20240919222942930" src="../2.EXTI%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/image-20240919222942930.png" /></p>
+<h3 id="251-sys">2.5.1 SYS配置<a class="headerlink" href="#251-sys" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20241128110251249" src="image-20241128110251249.png" /></p>
+<p><img alt="image-20241128110340962" src="image-20241128110340962.png" /></p>
+<h3 id="252-rcc">2.5.2 RCC配置<a class="headerlink" href="#252-rcc" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20241128102746910" src="image-20241128102746910.png" /></p>
+<h3 id="253-gpio">2.5.3 GPIO配置<a class="headerlink" href="#253-gpio" title="Permanent link">&para;</a></h3>
+<p>PB0和PB1配置为LED1、LED2</p>
+<ul>
+<li>默认低电平</li>
+<li>PB0和PB1均配置推挽输出</li>
+<li>上拉或下拉电阻在输入模式使用，输出模式不配置</li>
+<li>输出速度按需配置</li>
+<li>用户标签，给引脚起别名，按需配置</li>
+</ul>
+<p><img alt="image-20241128111221030" src="image-20241128111221030.png" /></p>
+<p>PB6、PB7配置为KEY1、KEY2</p>
+<ul>
+<li>输入模式</li>
+<li>下拉电阻</li>
+</ul>
+<p><img alt="image-20241128111432549" src="image-20241128111432549.png" /></p>
+<h3 id="254-exti">2.5.4 EXTI配置<a class="headerlink" href="#254-exti" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20240919222942930" src="image-20240919222942930.png" /></p>
 <p>使能中断触发，否则找不到<kbd>EXTI4_IRQHandler</kbd>等中断函数</p>
-<p><img alt="image-20241124180308221" src="../2.EXTI%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/image-20241124180308221.png" /></p>
-<h3 id="252-nvic">2.5.2 NVIC优先级配置<a class="headerlink" href="#252-nvic" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20240919223855861" src="../2.EXTI%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/image-20240919223855861.png" /></p>
+<p><img alt="image-20241124180308221" src="image-20241124180308221.png" /></p>
+<h3 id="255-nvic">2.5.5 NVIC优先级配置<a class="headerlink" href="#255-nvic" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20240919223855861" src="image-20240919223855861.png" /></p>
 <h2 id="26">2.6 代码介绍<a class="headerlink" href="#26" title="Permanent link">&para;</a></h2>
 <h3 id="261">2.6.1 中断触发函数介绍<a class="headerlink" href="#261" title="Permanent link">&para;</a></h3>
 <p><kbd>stm32f1xx_it.c</kbd>文件找到中断触发函数，内容如下</p>
@@ -1728,13 +1803,13 @@
         
         
           
-          <a href="../Timer/Timer/" class="md-footer__link md-footer__link--next" aria-label="Next: Timer">
+          <a href="../PID/PID/" class="md-footer__link md-footer__link--next" aria-label="Next: PID">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Timer
+                PID
               </div>
             </div>
             <div class="md-footer__button md-icon">
