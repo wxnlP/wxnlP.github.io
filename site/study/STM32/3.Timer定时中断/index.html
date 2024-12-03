@@ -1657,10 +1657,10 @@
 <p class="admonition-title">Note</p>
 <p>例2：为什么说在72MHz计数时钟下可以实现最大59.65s的定时？</p>
 </div>
-<p>首先要是的Prescaler和ARR的值都是16位的，所以最大为 65536-1=65535
-$$
+<p>首先要是的Prescaler和ARR的值都是16位的，所以最大为 65536-1=65535</p>
+<div class="arithmatex">\[
 计数频率 = \frac{72000000}{65535}=1098.65HZ
-$$</p>
+\]</div>
 <div class="arithmatex">\[
 定时时间=\frac{1}{计数频率}({ARR-1})=\frac{1}{1098.65}{65535}=59.65s
 \]</div>
@@ -1716,7 +1716,7 @@ $$</p>
 </span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>函数内容很多，我们现只关注定时中断内容，即 <strong>定时器更新事件</strong> 部分的代码，具体如下 ：</p>
+<p>函数内容很多，我们现只关注定时中断内容，即 <strong>定时器更新事件</strong> 部分的代码，具体如下 ：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/* TIM Update event */</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itflag</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_UPDATE</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_UPDATE</span><span class="p">))</span><span class="w"> </span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">{</span>
@@ -1757,7 +1757,7 @@ $$</p>
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="cm">/* USER CODE END 1 */</span>
 </span></code></pre></div>
-<p>最后在<code>main.c</code>文件上方 <strong>使能TIM2</strong> ，中断中的内容就可以实现：</p>
+<p>最后在<code>main.c</code>文件上方 <strong>使能TIM2</strong> ，中断中的内容就可以实现：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">HAL_TIM_Base_Start_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim2</span><span class="p">);</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cm">/* USER CODE END 2 */</span>
