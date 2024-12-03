@@ -1650,14 +1650,12 @@
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>例1：时钟频率为 72 MHZ，预分频器Prescaler为 7199，则定时器计数频率为 10000HZ，也就是每 0.0001s 记 1 个数。  </p>
+<p>例1：时钟频率为 72 MHZ，预分频器Prescaler为 7199，则定时器计数频率为 10000HZ，也就是每 0.0001s 记 1 个数。若是自动重装值ARR为 1000 ，那么便是每 0.1s 生成一个 “ 更新中断 ”。</p>
 </div>
-<p>若是自动重装值ARR为 1000 ，那么便是每 0.1s 生成一个 “ 更新中断 ”。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>例2：为什么说在72MHz计数时钟下可以实现最大59.65s的定时？  </p>
+<p>例2：为什么说在72MHz计数时钟下可以实现最大59.65s的定时？首先要是的Prescaler和ARR的值都是16位的，所以最大为 65536-1=65535</p>
 </div>
-<p>首先要是的Prescaler和ARR的值都是16位的，所以最大为 65536-1=65535</p>
 <div class="arithmatex">\[
 计数频率 = \frac{72000000}{65535}=1098.65HZ
 \]</div>
