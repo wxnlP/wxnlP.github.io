@@ -18,7 +18,7 @@
         <link rel="prev" href="../2.EXTI/">
       
       
-        <link rel="next" href="../PID/PID/">
+        <link rel="next" href="../4.Timer%E8%BE%93%E5%87%BA%E6%AF%94%E8%BE%83/">
       
       
       <link rel="icon" href="../../../assets/icon.png">
@@ -870,6 +870,8 @@
       
         
       
+        
+      
     
     
       
@@ -1011,20 +1013,29 @@
           <li class="md-nav__item">
   <a href="#321" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2.1 计数频率计算
+      3.2.1 定时中断结构
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#322-stm32cubemx" class="md-nav__link">
+  <a href="#322" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2.2 STM32CubeMX配置
+      3.2.2 计数频率计算
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3.2.2 STM32CubeMX配置">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-stm32cubemx" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.3 STM32CubeMX配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.3 STM32CubeMX配置">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1069,9 +1080,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#323" class="md-nav__link">
+  <a href="#324" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2.3 工程代码编写
+      3.2.4 工程代码编写
     </span>
   </a>
   
@@ -1086,6 +1097,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.Timer%E8%BE%93%E5%87%BA%E6%AF%94%E8%BE%83/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第三章 输出比较
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1402,20 +1434,29 @@
           <li class="md-nav__item">
   <a href="#321" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2.1 计数频率计算
+      3.2.1 定时中断结构
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#322-stm32cubemx" class="md-nav__link">
+  <a href="#322" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2.2 STM32CubeMX配置
+      3.2.2 计数频率计算
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3.2.2 STM32CubeMX配置">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-stm32cubemx" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.3 STM32CubeMX配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.3 STM32CubeMX配置">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1460,9 +1501,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#323" class="md-nav__link">
+  <a href="#324" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2.3 工程代码编写
+      3.2.4 工程代码编写
     </span>
   </a>
   
@@ -1644,25 +1685,29 @@
 </li>
 </ol>
 <h2 id="32">3.2 定时中断<a class="headerlink" href="#32" title="Permanent link">&para;</a></h2>
-<h3 id="321">3.2.1 计数频率计算<a class="headerlink" href="#321" title="Permanent link">&para;</a></h3>
+<h3 id="321">3.2.1 定时中断结构<a class="headerlink" href="#321" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20241205205455076" src="3.Timer%E5%AE%9A%E6%97%B6%E4%B8%AD%E6%96%AD/image-20241205205455076.png" /></p>
+<h3 id="322">3.2.2 计数频率计算<a class="headerlink" href="#322" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
 计数频率 = \frac{时钟频率}{Prescaler + 1}
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>例1：时钟频率为 72 MHZ，预分频器Prescaler为 7199，则定时器计数频率为 10000HZ，也就是每 0.0001s 记 1 个数。若是自动重装值ARR为 1000 ，那么便是每 0.1s 生成一个 “ 更新中断 ”。</p>
+<p>例1：时钟频率为 72 MHZ，预分频器Prescaler为 7199，则定时器计数频率为 10000HZ，也就是每 0.0001s 记 1 个数。  </p>
 </div>
+<p>若是自动重装值ARR为 1000 ，那么便是每 0.1s 生成一个 “ 更新中断 ”。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>例2：为什么说在72MHz计数时钟下可以实现最大59.65s的定时？首先要是的Prescaler和ARR的值都是16位的，所以最大为 65536-1=65535</p>
+<p>例2：为什么说在72MHz计数时钟下可以实现最大59.65s的定时？  </p>
 </div>
+<p>首先要是的Prescaler和ARR的值都是16位的，所以最大为 65536-1=65535</p>
 <div class="arithmatex">\[
 计数频率 = \frac{72000000}{65535}=1098.65HZ
 \]</div>
 <div class="arithmatex">\[
 定时时间=\frac{1}{计数频率}({ARR-1})=\frac{1}{1098.65}{65535}=59.65s
 \]</div>
-<h3 id="322-stm32cubemx">3.2.2 STM32CubeMX配置<a class="headerlink" href="#322-stm32cubemx" title="Permanent link">&para;</a></h3>
+<h3 id="323-stm32cubemx">3.2.3 STM32CubeMX配置<a class="headerlink" href="#323-stm32cubemx" title="Permanent link">&para;</a></h3>
 <h4 id="1-sys">1. SYS配置<a class="headerlink" href="#1-sys" title="Permanent link">&para;</a></h4>
 <p><img alt="image-20241128110251249" src="image-20241128110251249.png" /></p>
 <p><img alt="image-20241128110340962" src="image-20241128110340962.png" /></p>
@@ -1677,7 +1722,7 @@
 <p><strong>auto-reload-preload</strong> ：定时器的预加载机制是否开启，即允许在计数器到达最大值之前，提前将新的值加载到 ARR 寄存器中，以便下一个计数周期可以使用新的自动重载值。这种机制可以避免定时器在溢出事件发生时出现不必要的延迟，确保定时准确度打开即可。</p>
 <p><img alt="image-20241127231307562" src="image-20241127231307562.png" /></p>
 <p><img alt="image-20241128112459137" src="image-20241128112459137.png" /></p>
-<h3 id="323">3.2.3 工程代码编写<a class="headerlink" href="#323" title="Permanent link">&para;</a></h3>
+<h3 id="324">3.2.4 工程代码编写<a class="headerlink" href="#324" title="Permanent link">&para;</a></h3>
 <p>完成配置以后，可以在<code>stm32f1xx_it.c</code>文件找到<code>TIM2_IRQHandler</code>函数</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">TIM2_IRQHandler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
@@ -1757,7 +1802,7 @@
 </span></code></pre></div>
 <p>最后在<code>main.c</code>文件上方 <strong>使能TIM2</strong> ，中断中的内容就可以实现：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">HAL_TIM_Base_Start_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim2</span><span class="p">);</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">HAL_TIM_Base_Start_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim2</span><span class="p">);</span><span class="w"> </span><span class="c1">//以中断模式启动TIM Base生成。</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cm">/* USER CODE END 2 */</span>
 </span></code></pre></div>
 <div class="admonition note">
@@ -1816,13 +1861,13 @@
         
         
           
-          <a href="../PID/PID/" class="md-footer__link md-footer__link--next" aria-label="Next: PID">
+          <a href="../4.Timer%E8%BE%93%E5%87%BA%E6%AF%94%E8%BE%83/" class="md-footer__link md-footer__link--next" aria-label="Next: 第三章 输出比较">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                PID
+                第三章 输出比较
               </div>
             </div>
             <div class="md-footer__button md-icon">
