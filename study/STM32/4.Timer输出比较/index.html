@@ -1598,10 +1598,10 @@
 <p>关于RCC、SYS、LED这里不做重复配置，详情可看GPIO章节。</p>
 </div>
 <p><img alt="image-20241205223226709" src="image-20241205223226709.png" /></p>
-<p><img alt="image-20241205223717325" src="image-20241205223717325.png" />
-$$
+<p><img alt="image-20241205223717325" src="image-20241205223717325.png" /></p>
+<div class="arithmatex">\[
 占空比=\frac{CCR}{ARR}
-$$</p>
+\]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>注意PSC和ARR的参数随意但要保持最后的频率不要太小，这样LED会是闪烁的，应把频率控制在100左右或以上为好，这样才能实现控制亮度，其余参数自行百度了解即可。</p>
