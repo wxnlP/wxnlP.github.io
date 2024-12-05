@@ -50,7 +50,7 @@ nav:
       - 第二章 EXTI: study/STM32/2.EXTI.md
     - Timer定时器: 
       - 第三章 定时中断: study/STM32/3.Timer定时中断.md 
-      - 第三章 输出比较: study/STM32/4.Timer输出比较.md 
+      - 第四章 输出比较: study/STM32/4.Timer输出比较.md 
       - PID: study/STM32/PID/PID.md
     - 通信协议:
       - USART: study/STM32/Serial/1.md
