@@ -1452,8 +1452,8 @@
 <h3 id="513">5.1.3 输入捕获框图<a class="headerlink" href="#513" title="Permanent link">&para;</a></h3>
 <p>下面是输入捕获的框架：</p>
 <ul>
-<li>**工作流程：**经过输入滤波器和极性选择进入预分频器，可以选择进行触发信号分频，然后触发信号进入捕获电路工作，每来一个触发信号，CNT的值向CCR转运一次，同时<kbd>触发捕获事件</kbd>，在状态寄存器置标志位触发中断，可以设置<kbd>中断处理</kbd>。</li>
-<li>**测周法实现：**以上升沿为触发信号，CNT计数器由内部标准时钟驱动（驱动时钟为<span class="arithmatex">\(<span class="arithmatex">\(f_c\)</span>\)</span> ），CNT数值即可记录两个上升沿的时间间隔，即为周期，取倒数可获得测周法的频率。</li>
+<li><strong>工作流程：</strong> 经过输入滤波器和极性选择进入预分频器，可以选择进行触发信号分频，然后触发信号进入捕获电路工作，每来一个触发信号，CNT的值向CCR转运一次，同时<kbd>触发捕获事件</kbd>，在状态寄存器置标志位触发中断，可以设置<kbd>中断处理</kbd>。</li>
+<li><strong>测周法实现：</strong> 以上升沿为触发信号，CNT计数器由内部标准时钟驱动（驱动时钟为<span class="arithmatex">\(<span class="arithmatex">\(f_c\)</span>\)</span> ），CNT数值即可记录两个上升沿的时间间隔，即为周期，取倒数可获得测周法的频率。</li>
 </ul>
 <p><img alt="image-20241211210550007" src="image-20241211210550007.png" /></p>
 <div class="admonition note">
@@ -1558,7 +1558,7 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Input Capture Triggered by TRC这个模式只有在触发源为ITRx时才可以选。</p>
+<p><code>Input Capture Triggered by TRC</code> 这个模式只有在触发源为ITRx时才可以选。</p>
 </div>
 <p><strong>主模式参数选择：</strong></p>
 <p><img alt="image-20241211235509397" src="image-20241211235509397.png" /></p>
@@ -1576,7 +1576,7 @@
 <p>那么在STM32CubeMX的配置流程如下：</p>
 <p><img alt="image-20241212000507208" src="image-20241212000507208.png" /></p>
 <p><img alt="image-20241212000612755" src="image-20241212000612755.png" /></p>
-<p>上升沿触发，其他无需改，<code>Input Filter</code>为滤波器参数默认即可</p>
+<p>上升沿触发，其他无需改，<code>Input Filter</code>为滤波器参数默认即可</p>
 <p><img alt="image-20241212000759737" src="image-20241212000759737.png" /></p>
 <h3 id="532-pwmi_1">5.3.2 PWMI模式<a class="headerlink" href="#532-pwmi_1" title="Permanent link">&para;</a></h3>
 <p>实现PWMI结构，结构图如下：</p>
