@@ -437,7 +437,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="小李 的知识库" class="md-nav__button md-logo" aria-label="小李 的知识库" data-md-component="logo">
       
@@ -1400,180 +1402,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#51" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1 输入捕获
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5.1 输入捕获">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#511" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1.1 输入捕获介绍
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#512" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1.2 频率测量
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#513" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1.3 输入捕获框图
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#52" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2 主从触发模式
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5.2 主从触发模式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#521" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2.1 主从触发模式简介
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#522" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2.2 主从模式选择
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#53" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.3 输入捕获基本结构
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5.3 输入捕获基本结构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#531" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.3.1 基础结构
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#532-pwmi" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.3.2 PWMI模式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#533-stm32cubemx" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.3.3 STM32CubeMX参数
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#54" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.4 输入捕获组合搭配
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5.4 输入捕获组合搭配">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#541" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.4.1 单输入捕获通道
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#532-pwmi_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.3.2 PWMI模式
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -1624,8 +1452,8 @@
 <h3 id="513">5.1.3 输入捕获框图<a class="headerlink" href="#513" title="Permanent link">&para;</a></h3>
 <p>下面是输入捕获的框架：</p>
 <ul>
-<li>**工作流程：**经过输入滤波器和极性选择进入预分频器，可以选择进行触发信号分频，然后触发信号进入捕获电路工作，每来一个触发信号，CNT的值向CCR转运一次，同时<kbd>触发捕获事件</kbd>，在状态寄存器置标志位触发中断，可以设置<kbd>中断处理</kbd>。</li>
-<li>**测周法实现：**以上升沿为触发信号，CNT计数器由内部标准时钟驱动（驱动时钟为<span class="arithmatex">\(<span class="arithmatex">\(f_c\)</span>\)</span> ），CNT数值即可记录两个上升沿的时间间隔，即为周期，取倒数可获得测周法的频率。</li>
+<li><strong>工作流程：</strong> 经过输入滤波器和极性选择进入预分频器，可以选择进行触发信号分频，然后触发信号进入捕获电路工作，每来一个触发信号，CNT的值向CCR转运一次，同时<kbd>触发捕获事件</kbd>，在状态寄存器置标志位触发中断，可以设置<kbd>中断处理</kbd>。</li>
+<li><strong>测周法实现：</strong> 以上升沿为触发信号，CNT计数器由内部标准时钟驱动（驱动时钟为<span class="arithmatex">\(<span class="arithmatex">\(f_c\)</span>\)</span> ），CNT数值即可记录两个上升沿的时间间隔，即为周期，取倒数可获得测周法的频率。</li>
 </ul>
 <p><img alt="image-20241211210550007" src="image-20241211210550007.png" /></p>
 <div class="admonition note">
@@ -1730,7 +1558,7 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Input Capture Triggered by TRC这个模式只有在触发源为ITRx时才可以选。</p>
+<p><code>Input Capture Triggered by TRC</code> 这个模式只有在触发源为ITRx时才可以选。</p>
 </div>
 <p><strong>主模式参数选择：</strong></p>
 <p><img alt="image-20241211235509397" src="image-20241211235509397.png" /></p>
@@ -1748,7 +1576,7 @@
 <p>那么在STM32CubeMX的配置流程如下：</p>
 <p><img alt="image-20241212000507208" src="image-20241212000507208.png" /></p>
 <p><img alt="image-20241212000612755" src="image-20241212000612755.png" /></p>
-<p>上升沿触发，其他无需改，<code>Input Filter</code>为滤波器参数默认即可</p>
+<p>上升沿触发，其他无需改，<code>Input Filter</code>为滤波器参数默认即可</p>
 <p><img alt="image-20241212000759737" src="image-20241212000759737.png" /></p>
 <h3 id="532-pwmi_1">5.3.2 PWMI模式<a class="headerlink" href="#532-pwmi_1" title="Permanent link">&para;</a></h3>
 <p>实现PWMI结构，结构图如下：</p>
@@ -1856,7 +1684,7 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tooltips", "sticky_navigation", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tooltips", "sticky_navigation", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.integrate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
