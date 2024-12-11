@@ -94,7 +94,7 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
-#    - toc.integrate          # 集成右侧目录到侧边栏
+   - toc.integrate          # 集成右侧目录到侧边栏
 #    - toc.expand             # 默认展开所有目录（可选）
 #    - toc.collapse           # 右侧目录支持折叠功能
     - toc.follow
