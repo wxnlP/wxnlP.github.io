@@ -1,0 +1,1509 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="If we could meet again in our next life, I would be more mature and marry you.">
+      
+      
+        <meta name="author" content="XiaoLi">
+      
+      
+        <link rel="canonical" href="https://wxnlP.github.io/study/STM32/9.URAT%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>9.URAT串口通信 - 小李 的知识库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="LightDay" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#91" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="小李 的知识库" class="md-header__button md-logo" aria-label="小李 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            小李 的知识库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9.URAT串口通信
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="LightDay" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至高亮模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至高亮模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wxnlP/wxnlP.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wxnlP/wxnlP.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../OpenHarmony/1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/" class="md-tabs__link">
+          
+  
+    
+  
+  OpenHarmony
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ROS2/1.1-ROS%E4%B8%8EROS2%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+          
+  
+    
+  
+  ROS2
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../competition/1/" class="md-tabs__link">
+          
+  
+    
+  
+  工创赛
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../yolov5/1/" class="md-tabs__link">
+          
+  
+    
+  
+  YOLO系列
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1.GPIO/" class="md-tabs__link">
+          
+  
+    
+  
+  STM32系列
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Git/Git/" class="md-tabs__link">
+        
+  
+    
+  
+  Git
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/pythondata/" class="md-tabs__link">
+          
+  
+    
+  
+  资料分析
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="小李 的知识库" class="md-nav__button md-logo" aria-label="小李 的知识库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
+
+    </a>
+    小李 的知识库
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wxnlP/wxnlP.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wxnlP/wxnlP.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../OpenHarmony/1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    OpenHarmony
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../ROS2/1.1-ROS%E4%B8%8EROS2%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    ROS2
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../competition/1/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    工创赛
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../../yolov5/1/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    YOLO系列
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    
+  
+  
+    <a href="../1.GPIO/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    STM32系列
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/pythondata/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    资料分析
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 通信协议
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 串口通信简介
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2 串口通信简介">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.1硬件电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.2电平标准
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#923" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.3 串口参数及时序
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-usart" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 USART外设
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 USART外设">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931-usart" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3.1 USART介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932-usart" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3.2 USART框图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#933-usart" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3.3 USART数据收发结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4 工程配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4 工程配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#941-stm32cubemx" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4.1 STM32CubeMX参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#942-usart" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4.2 USART标准示例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#943" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4.3 串口发送代码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#944" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4.4 串口接收代码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#945" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4.5 串口中断
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5 数据包接收
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5 数据包接收">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#951" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.1 数据模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#952-hex" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.2 HEX数据包
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#953" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.3 文本数据包
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#954-hex" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.4 HEX数据包接收
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#955" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.5 文本数据包接收
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/wxnlP/wxnlP.github.io/edit/master/docs/study/STM32/9.URAT串口通信.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/wxnlP/wxnlP.github.io/raw/master/docs/study/STM32/9.URAT串口通信.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+  <h1>9.URAT串口通信</h1>
+
+<h2 id="91">9.1 通信协议<a class="headerlink" href="#91" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>通信的目的：</strong> 将一个设备的数据传送到另一个设备，扩展硬件系统</li>
+<li><strong>通信协议：</strong> 制定通信的规则，通信双方按照协议规则进行数据收发</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>名称</strong></th>
+<th><strong>引脚</strong></th>
+<th><strong>双工</strong></th>
+<th><strong>时钟</strong></th>
+<th><strong>电平</strong></th>
+<th><strong>设备</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USART</td>
+<td>TX、RX</td>
+<td>全双工</td>
+<td>异步</td>
+<td>单端</td>
+<td>点对点</td>
+</tr>
+<tr>
+<td>I2C</td>
+<td>SCL、SDA</td>
+<td>半双工</td>
+<td>同步</td>
+<td>单端</td>
+<td>多设备</td>
+</tr>
+<tr>
+<td>SPI</td>
+<td>SCLK、MOSI、MISO、CS</td>
+<td>全双工</td>
+<td>同步</td>
+<td>单端</td>
+<td>多设备</td>
+</tr>
+<tr>
+<td>CAN</td>
+<td>CAN_H、CAN_L</td>
+<td>半双工</td>
+<td>异步</td>
+<td>差分</td>
+<td>多设备</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>DP、DM</td>
+<td>半双工</td>
+<td>异步</td>
+<td>差分</td>
+<td>点对点</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>双工：指通信双方是否可以同时进行双向通信（发送和接收）。</p>
+<p>单工：数据只能从一个设备到另一个设备，不能反着来。</p>
+<p>时钟： I2C 和 SPI 有单独的时钟线，所以是同步。</p>
+<p>电平：单端信号，即引脚的高低电平是相对GND的电压差，所以需要共地。</p>
+</blockquote>
+<h2 id="92">9.2 串口通信简介<a class="headerlink" href="#92" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>串口是一种应用十分广泛的通讯接口，串口成本低、容易使用、通信线路简单，可实现两个设备的互相通信</strong></li>
+<li><strong>单片机的串口可以使单片机与单片机、单片机与电脑、单片机与各式各样的模块互相通信，极大地扩展了单片机的应用范围，增强了单片机系统的硬件实力</strong></li>
+</ul>
+<p><img alt="1706363962945" src="1706363962945.png" /></p>
+<p><img alt="USB转串口" src="USB%E8%BD%AC%E4%B8%B2%E5%8F%A3.png" /></p>
+<h3 id="921">9.2.1硬件电路<a class="headerlink" href="#921" title="Permanent link">&para;</a></h3>
+<ul>
+<li>简单双向串口通信有两根通信线（发送端TX和接收端RX）</li>
+<li>TX与RX要交叉连接</li>
+<li>当只需单向的数据传输时，可以只接一根通信线</li>
+<li>当电平标准不一致时，需要加电平转换芯片</li>
+</ul>
+<p><img alt="1706364052710" src="1706364052710.png" /></p>
+<h3 id="922">9.2.2电平标准<a class="headerlink" href="#922" title="Permanent link">&para;</a></h3>
+<ul>
+<li>电平标准是数据1和数据0的表达方式，是传输线缆中人为规定的电压与数据的对应关系，串口常用的电平标准有如下三种：</li>
+<li>TTL电平：+3.3V 或 +5V 表示 1，0V 表示 0</li>
+<li>RS232电平：-3 至 -15V 表示 1，+3 至 +15V 表示 0</li>
+<li>RS485电平：两线压差 +2 至 +6V 表示 1，-2 至 -6V 表示 0（差分信号）</li>
+</ul>
+<h3 id="923">9.2.3 串口参数及时序<a class="headerlink" href="#923" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>波特率：</strong> 串口通信的速率</li>
+<li><strong>起始位：</strong> 标志一个数据帧的开始， <strong>固定为低电平</strong></li>
+<li><strong>数据位：</strong> 数据帧的有效载荷，1 为高电平，0 为低电平，低位先行</li>
+<li><strong>校验位：</strong> 用于数据验证，根据数据位计算得来(无校验、奇校验--即保持二进制数据1的个数为奇数、偶校验)</li>
+<li><strong>停止位：</strong> 用于数据帧间隔， <strong>固定为高电平</strong></li>
+</ul>
+<p><img alt="1706365185213" src="1706365185213.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>校验位分为--奇校验--偶校验--无校验--三种。无校验即为上图左侧效果，奇偶校验即为判断数据高电平的个数是为奇数或是偶数，在最后补一位校验位。例如，若为奇校验且数据中有奇数个高电平，则最后一位补一个 1 ，否则补一个 0 ，偶校验则同理类似。</p>
+</div>
+<h2 id="93-usart">9.3 USART外设<a class="headerlink" href="#93-usart" title="Permanent link">&para;</a></h2>
+<h3 id="931-usart">9.3.1 USART介绍<a class="headerlink" href="#931-usart" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>USART（Universal Synchronous/Asynchronous Receiver/Transmitter）通用同步/异步收发器</strong></li>
+<li><strong>USART是STM32内部集成的硬件外设，可根据数据寄存器的一个字节数据自动生成数据帧时序，从TX引脚发送出去，也可自动接收RX引脚的数据帧时序，拼接为一个字节数据，存放在数据寄存器里</strong></li>
+<li><strong>自带波特率发生器，最高达4.5Mbits/s</strong></li>
+<li><strong>可配置数据位长度（8/9）、停止位长度（0.5/1/1.5/2）</strong></li>
+<li><strong>可选校验位（无校验/奇校验/偶校验）</strong></li>
+<li><strong>支持同步模式、硬件流控制、DMA、智能卡、IrDA、LIN</strong></li>
+</ul>
+<blockquote>
+<p>STM32F103C8T6 USART资源： USART1、 USART2、 USART3</p>
+</blockquote>
+<h3 id="932-usart">9.3.2 USART框图<a class="headerlink" href="#932-usart" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20241225155702650" src="image-20241225155702650.png" /></p>
+<ul>
+<li><strong>硬件数据流控</strong><ul>
+<li><strong>RTS</strong>：发送端指示接收端是否准备好接收数据。</li>
+<li><strong>CTS</strong>：接收端指示发送端是否可以继续发送数据。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>SCLK 引脚</strong><ul>
+<li>USART 的 SCLK 引脚用于同步时钟，此模式需要主设备生成时钟信号，供从设备同步接收/发送数据。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>波特率发生器</strong><ul>
+<li>根据外设时钟频率（f_PCLK）和期望波特率，计算并设置波特率寄存器（BRR）的值。</li>
+<li>类似于分频器。</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>以上均简单了解即可。</p>
+</div>
+<h3 id="933-usart">9.3.3 USART数据收发结构<a class="headerlink" href="#933-usart" title="Permanent link">&para;</a></h3>
+<ol>
+<li>首先由波特率发生器配置发送和接受的频率</li>
+<li>开始写操作，把数据放到<kbd>发送数据寄存器</kbd>暂存，若<kbd>发送移位寄存器</kbd>为空，则将<kbd>发送数据寄存器</kbd>的数据转运到<kbd>发送移位寄存器</kbd>，最后通过<kbd>TX</kbd>引脚发送数据。</li>
+<li>开始读操作，把<kbd>RX</kbd>引脚接收的数据放到<kbd>接收移位寄存器</kbd>暂存，若<kbd>接收数据寄存器</kbd>为空，则将<kbd>接收移位寄存器</kbd>的数据转运到<kbd>接收数据寄存器</kbd></li>
+</ol>
+<p><img alt="image-20241225161839838" src="image-20241225161839838.png" /></p>
+<h2 id="94">9.4 工程配置<a class="headerlink" href="#94" title="Permanent link">&para;</a></h2>
+<h3 id="941-stm32cubemx">9.4.1 STM32CubeMX参数<a class="headerlink" href="#941-stm32cubemx" title="Permanent link">&para;</a></h3>
+<p>USART模式选择</p>
+<p><img alt="image-20241225184519950" src="image-20241225184519950.png" /></p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>特点</th>
+<th>应用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Asynchronous（异步模式）</strong></td>
+<td>无需同步时钟，简单、常用</td>
+<td>标准串口通信，如传感器和模块连接</td>
+</tr>
+<tr>
+<td><strong>Synchronous（同步模式）</strong></td>
+<td>使用时钟同步，支持更高传输速率</td>
+<td>高速通信，主设备与外设通信</td>
+</tr>
+<tr>
+<td><strong>Single Wire(Half-Duplex)（单线半双工）</strong></td>
+<td>收发共用一根线，节省引脚资源</td>
+<td>资源受限场景，带地址的多设备通信</td>
+</tr>
+<tr>
+<td><strong>Multiprocessor Communication（多处理器通信模式）</strong></td>
+<td>一主多从结构，主设备通过地址选择从设备</td>
+<td>复杂系统的一主多从通信，如网络通信</td>
+</tr>
+<tr>
+<td><strong>IrDA（红外通信）</strong></td>
+<td>短距离红外数据传输</td>
+<td>遥控器、短距离无线通信</td>
+</tr>
+<tr>
+<td><strong>SmartCard（智能卡模式）</strong></td>
+<td>支持 ISO 7816 标准，适用于安全通信</td>
+<td>银行系统、门禁卡读写器</td>
+</tr>
+</tbody>
+</table>
+<details class="danger">
+<summary>Danger</summary>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>只有 **Asynchronous** 为常用的，其他仅作为了解。
+</code></pre></div>
+</details>
+<p><img alt="image-20241225190418375" src="image-20241225190418375.png" /></p>
+<p><strong>Hardware Flow Control</strong> 即STM32 USART 的硬件数据流控选项</p>
+<table>
+<thead>
+<tr>
+<th>流控模式</th>
+<th>描述</th>
+<th>应用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Disable</strong></td>
+<td><strong>无流控，简单模式</strong></td>
+<td>低速通信、无可靠性要求场景</td>
+</tr>
+<tr>
+<td><strong>CTS Only</strong></td>
+<td><strong>发送端受接收端控制</strong></td>
+<td>接收端缓冲区可能较小的场景</td>
+</tr>
+<tr>
+<td><strong>RTS Only</strong></td>
+<td><strong>接收端控制发送端</strong></td>
+<td>发送端数据可能频繁产生的场景</td>
+</tr>
+<tr>
+<td><strong>CTS &amp; RTS</strong></td>
+<td><strong>双向流控</strong></td>
+<td>高速通信或可靠性要求高的场景</td>
+</tr>
+</tbody>
+</table>
+<details class="danger">
+<summary>Danger</summary>
+<p>作为了解，并不常用。</p>
+</details>
+<h3 id="942-usart">9.4.2 USART标准示例<a class="headerlink" href="#942-usart" title="Permanent link">&para;</a></h3>
+<p>STM32CubeMX参数：</p>
+<p><img alt="image-20241225191240836" src="image-20241225191240836.png" /></p>
+<p>串口软件参数参考：</p>
+<p><img alt="image-20241225191032348" src="image-20241225191032348.png" /></p>
+<h3 id="943">9.4.3 串口发送代码<a class="headerlink" href="#943" title="Permanent link">&para;</a></h3>
+<p><code>HAL_UART_Transmit(&amp;huart1, text, 1, 10);</code>为发送函数</p>
+<ul>
+<li><code>text</code>为发送的数据数组</li>
+<li>1 为数据长度</li>
+<li>100 为等待时间，ms</li>
+</ul>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">text</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x43</span><span class="p">};</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm">/* USER CODE END 2 */</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cm">/* Infinite loop */</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cm">/* USER CODE BEGIN WHILE */</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">HAL_Delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="cm">/* USER CODE END WHILE */</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="cm">/* USER CODE BEGIN 3 */</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="cm">/* USER CODE END 3 */</span>
+</span></code></pre></div>
+<p>经过使用示波器观察，从左向右数据为<code>11000010</code>，然注意串口是从低位先发，所以应该反过来读即实际数据为<code>01000011</code> ，也就是16进制所表示的<code>0x43</code></p>
+<p><img alt="image-20241225210400404" src="image-20241225210400404.png" /></p>
+<h3 id="944">9.4.4 串口接收代码<a class="headerlink" href="#944" title="Permanent link">&para;</a></h3>
+<p><code>HAL_UART_Receive(&amp;huart1, receiver, 2, HAL_MAX_DELAY);</code> 为接收函数，</p>
+<ul>
+<li><code>HAL_MAX_DELAY</code>表示一直等待指定收到数据</li>
+<li><code>receiver</code>接收的数据存储的数组</li>
+<li>2 表示数据长度</li>
+</ul>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">receiver</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cm">/* USER CODE END 2 */</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="cm">/* Infinite loop */</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="cm">/* USER CODE BEGIN WHILE */</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">HAL_UART_Receive</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">HAL_MAX_DELAY</span><span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cm">/* USER CODE END WHILE */</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="cm">/* USER CODE BEGIN 3 */</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="cm">/* USER CODE END 3 */</span>
+</span></code></pre></div>
+<h3 id="945">9.4.5 串口中断<a class="headerlink" href="#945" title="Permanent link">&para;</a></h3>
+<p>记得在STM32CubeMX打开中断</p>
+<p><img alt="image-20241225214115361" src="image-20241225214115361.png" /></p>
+<p>使用中断的接收和发送函数如下：</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// 以中断方式发送数据</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">HAL_UART_Transmit_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// 以中断方式接收数据</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">HAL_UART_Receive_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span></code></pre></div>
+<p>接收和发送后处理逻辑的中断：</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">//用户可以在此回调函数中处理发送完成后的逻辑</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_UART_TxCpltCallback</span><span class="p">(</span><span class="n">UART_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">huart</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">//用户可以在此回调函数中处理接收到的数据。</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_UART_RxCpltCallback</span><span class="p">(</span><span class="n">UART_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">huart</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<p>将接收数据的数组声明为全局变量：</p>
+<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/* USER CODE BEGIN PV */</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">receiver</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cm">/* USER CODE END PV */</span>
+</span></code></pre></div>
+<p><code>while</code> 循环前声明一次中断接收数据函数：</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">HAL_UART_Receive_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cm">/* USER CODE END 2 */</span>
+</span></code></pre></div>
+<p>使用接收到数据后的中断函数，在函数结束后再次声明中断接收数据函数，保证下次接收顺利并可以进入中断，放在<code>main</code>函数中:</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/* USER CODE BEGIN 4 */</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_UART_RxCpltCallback</span><span class="p">(</span><span class="n">UART_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">huart</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="n">HAL_UART_Transmit_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">HAL_UART_Receive_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cm">/* USER CODE END 4 */</span>
+</span></code></pre></div>
+<p><img alt="image-20241225220603969" src="image-20241225220603969.png" /></p>
+<h2 id="95">9.5 数据包接收<a class="headerlink" href="#95" title="Permanent link">&para;</a></h2>
+<h3 id="951">9.5.1 数据模式<a class="headerlink" href="#951" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HEX模式/十六进制模式/二进制模式：以原始数据的形式显示</li>
+<li>文本模式/字符模式：以原始数据编码后的形式显示</li>
+</ul>
+<p><img alt="asc" src="asc.png" /></p>
+<p><img alt="数据模式" src="%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%BC%8F.png" /></p>
+<h3 id="952-hex">9.5.2 HEX数据包<a class="headerlink" href="#952-hex" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>固定包长，含包头包尾</strong></li>
+</ul>
+<p><img alt="1706366291211" src="1706366291211.png" /></p>
+<ul>
+<li><strong>可变包长，含包头包尾</strong></li>
+</ul>
+<p><img alt="1706366317290" src="1706366317290.png" /></p>
+<h3 id="953">9.5.3 文本数据包<a class="headerlink" href="#953" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>固定包长，含包头包尾</strong></li>
+</ul>
+<p><img alt="1706366411492" src="1706366411492.png" /></p>
+<ul>
+<li><strong>可变包长，含包头包尾</strong></li>
+</ul>
+<p><img alt="1706366433207" src="1706366433207.png" /></p>
+<h3 id="954-hex">9.5.4 HEX数据包接收<a class="headerlink" href="#954-hex" title="Permanent link">&para;</a></h3>
+<p><img alt="接收hex数据包" src="%E6%8E%A5%E6%94%B6hex%E6%95%B0%E6%8D%AE%E5%8C%85.png" /></p>
+<h3 id="955">9.5.5 文本数据包接收<a class="headerlink" href="#955" title="Permanent link">&para;</a></h3>
+<p><img alt="接收文本数据包" src="%E6%8E%A5%E6%94%B6%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%8C%85.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tooltips", "sticky_navigation", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../js/math.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
