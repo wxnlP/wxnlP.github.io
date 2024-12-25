@@ -51,7 +51,7 @@ nav:
       - 第三章 定时中断: study/STM32/3.Timer定时中断.md 
       - 第四章 输出比较: study/STM32/4.Timer输出比较.md 
       - 第五章 输入捕获: study/STM32/5.Timer输入捕获.md 
-      - 第六章 编码器接口: study/STM32/5.Timer编码器接口.md 
+      - 第六章 编码器接口: study/STM32/6.Timer编码器接口.md 
     - 通信协议:
       - USART: study/STM32/Serial/1.md
       - I2C: study/STM32/Serial/2.md
