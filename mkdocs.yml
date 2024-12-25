@@ -25,7 +25,6 @@ nav:
       - 第四章 工作空间与功能包: study/ROS2/2-工作空间与功能包.md
     - ROS2通信协议:
       - 特别篇 自定义接口数据: study/ROS2/3-自定义接口.md
-
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
