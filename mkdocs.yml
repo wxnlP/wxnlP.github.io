@@ -14,15 +14,16 @@ nav:
   - 主页: index.md
   - OpenHarmony:
     - 第一章 命令行开发: study/OpenHarmony/1.OH命令行开发.md
+    - 第二章 IDE开发:study/OpenHarmony/2.OHIDE开发.md
   - ROS2:
     - ROS2环境准备:
       - 第一章 ROS与ROS2介绍: study/ROS2/1.1-ROS与ROS2介绍.md
       - 第二章 ROS2系统环境安装: study/ROS2/1.2-ROS2系统环境安装.md
       - 第三章 ROS2工具准备: study/ROS2/1.3-ROS2工具准备.md
+      - 第四章 工作空间与功能包: study/ROS2/2-工作空间与功能包.md
     - ROS2基础:
       - 特别篇 面向对象C++: study/ROS2/3-面向对象C++.md
       - 特别篇 ROS2中的C++新特性: study/ROS2/3-ROS2中的C++新特性.md
-      - 第四章 工作空间与功能包: study/ROS2/2-工作空间与功能包.md
     - ROS2通信协议:
       - 特别篇 自定义接口数据: study/ROS2/3-自定义接口.md
   - 工创赛: 
