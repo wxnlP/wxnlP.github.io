@@ -1838,7 +1838,7 @@
 </ul>
 <p>创建功能包以后会出现一个警告“未知的许可证”</p>
 <p><img alt="image-20241119174439848" src="image-20241119174439848.png" /></p>
-<p>这个经过不影响后续操作，根据不舒服，添加一个许可证即可消除警告</p>
+<p>这个经过不影响后续操作，感觉不舒服，添加一个许可证即可消除警告</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_py<span class="w"> </span>--build-type<span class="w"> </span>ament_python<span class="w">  </span>--dependencies<span class="w"> </span>rclpy<span class="w">  </span>--node-name<span class="w"> </span>helloworld<span class="w"> </span>--license<span class="w"> </span>Apache-2.0
 </span></code></pre></div>
 <h4 id="2">2. 程序源码<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
@@ -1916,7 +1916,7 @@
 </blockquote>
 <p><strong>参数介绍：</strong></p>
 <ul>
-<li><code>helloworld_py</code>----功能包的名称</li>
+<li><code>helloworld_cpp</code>----功能包的名称</li>
 <li><code>--build-type</code>----编译方式， <strong>ament_python</strong> 和 <strong>ament_cmake</strong> 分别用于python和C++</li>
 <li><code>--dependencies</code>----依赖名称，<strong>rclpy</strong> 和 <strong>rclcpp</strong> 分别用于python和C++</li>
 <li><code>--node-name</code>----节点名称 ，可以在创建功能包的时候创建一个节点，也可以选择自己手动添加</li>
