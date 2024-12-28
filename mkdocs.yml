@@ -13,6 +13,7 @@ copyright: Copyright &copy; 2024 # 版权声明
 nav:
   - 主页: index.md
   - OpenHarmony:
+    - 阅读声明: study/OpenHarmony/0.阅读前的声明.md
     - 第一章 命令行开发: study/OpenHarmony/1.OH命令行开发.md
     - 第二章 IDE开发: study/OpenHarmony/2.OHIDE开发.md
   - ROS2:
