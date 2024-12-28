@@ -56,6 +56,7 @@ nav:
       - 第六章 编码器接口: study/STM32/6.Timer编码器接口.md 
     - ADC与DMA:
       - 第七章 ADC: study/STM32/7.ADC数模转换.md
+      - 第八章 DMA: study/STM32/8.DMA.md
     - 通信协议:
       - 第九章 串口通信: study/STM32/9.URAT串口通信.md
       - I2C: study/STM32/Serial/2.md
