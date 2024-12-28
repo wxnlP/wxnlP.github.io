@@ -2006,7 +2006,11 @@
 <ol>
 <li>ADC模式一般使用单ADC，使用多ADC则需要同时打开ADC1和ADC2（多ADC不常用）</li>
 <li>ADC设置，依次为ADC数据对齐，扫描模式，连续转换，非连续转换</li>
-<li>ADC规则组转换模式，依次为规则组转换使能，转换通道数量，外部触发源（这里的参数一般默认即可）</li>
+<li>ADC规则组转换模式，依次为规则组转换使能，转换通道数量，外部触发源（这里的参数一般默认即可）<ul>
+<li>需注意<code>Number Of Conversions</code>参数，当采用扫描模式 <strong>前</strong> 需要将其数值提高至选用通道的数量，然后就会出现多个<code>Rank</code>。</li>
+<li><code>Rank</code>表示一个通道，下属参数有所属通道，采用周期，一般需参考手册调整采用周期，默认也可以。</li>
+</ul>
+</li>
 <li>模拟开门狗</li>
 </ol>
 <h2 id="75-adc">7.5 ADC读取电压值<a class="headerlink" href="#75-adc" title="Permanent link">&para;</a></h2>
