@@ -2087,8 +2087,10 @@
 </tr>
 </tbody>
 </table>
-<p>???danger"注意"<br />
-    这一段书中明确指出希望大家学会阅读源码和查看API，其实简单来说就是会查看函数的定义和声明位置，阅读函数注释，获得函数的参数、返回值、基本功能等信息。</p>
+<details class="danger">
+<summary>注意</summary>
+<p>这一段书中明确指出希望大家学会阅读源码和查看API，其实简单来说就是会查看函数的定义和声明位置，阅读函数注释，获得函数的参数、返回值、基本功能等信息。</p>
+</details>
 <p>我结合STM32HAL库的代码和OpenHarmony源码谈一谈自己的经验：</p>
 <p>首先，有一点代码规范不同，STM32的函数注释写在 <strong>函数的定义处</strong> ，而OpenHarmony的函数注释写在 <strong>函数声明处</strong> 。</p>
 <p><img alt="image-20241230201654849" src="image-20241230201654849.png" /></p>
@@ -2202,8 +2204,10 @@
 </span></code></pre></div>
 <p>编译烧录，重启开发板，键中无数据，再次重启 “openhamony.”被写入，且断电不丢失。</p>
 <p><img alt="image-20241230210027048" src="image-20241230210027048.png" /></p>
-<p>???danger"几点说明"<br />
-    关于数据定义为什么是<code>const char*</code>不是<code>char</code>，为什么是<code>int</code>而不是<code>uint16</code>等，均是根据源码定义的形参决定。</p>
+<details class="danger">
+<summary>几点说明</summary>
+<p>关于数据定义为什么是<code>const char*</code>不是<code>char</code>，为什么是<code>int</code>而不是<code>uint16</code>等，均是根据源码定义的形参决定。</p>
+</details>
 <h3 id="334">3.3.4 文件操作案例<a class="headerlink" href="#334" title="Permanent link">&para;</a></h3>
 <p>如果上一节注意到<code>kv_store.h</code>头文件的位置，就会发现这节需要用到的<code>utils_file.h</code>头文件和它在一个位置，故自行阅读源码理解函数作用。</p>
 <p>案例目标：若文件不存在，就创建文件、写入内容（ssid和passwd），若文件存在则读取内容并删除文件。</p>
