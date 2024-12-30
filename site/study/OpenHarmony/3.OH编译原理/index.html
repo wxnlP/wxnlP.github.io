@@ -843,6 +843,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 轻量系统的数据持久化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 轻量系统的数据持久化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1 数据持久化简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 键值存储与文件操作简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 键值存储案例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.4 文件操作案例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1374,6 +1425,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 轻量系统的数据持久化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 轻量系统的数据持久化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1 数据持久化简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 键值存储与文件操作简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 键值存储案例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#334" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.4 文件操作案例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1519,7 +1621,7 @@
 <li>IOT外围设备控制组件位置就在<code>base\iot_hardware\peripheral</code>目录。</li>
 </ul>
 <p><img alt="image-20241229225609808" src="image-20241229225609808.png" /></p>
-<p><strong>由此领域即子系统集、子系统、组件的目录结构就很明了了。</strong> 进一步剖析目录，在<code>interfaces</code>下有<code>kits</code>目录提供了应用接口，供应用开发者使用；注意<code>BUILD.gn</code>位于组件<code>peripheral</code>的根目录下，即为这个组件的编译脚本。</p>
+<p><strong>由此领域即子系统集、子系统、组件的目录结构就很明了了。</strong> 进一步剖析目录，在<code>interfaces</code>下有<code>kits</code>目录提供了应用接口，供应用开发者使用；注意<code>BUILD.gn</code>位于组件<code>peripheral</code>的根目录下，即为这个组件的编译脚本。</p>
 <h4 id="3"><strong>3. 组件的定义</strong><a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
 <ol>
 <li>新建好一个组件后，我们需要将其定义到OpenHarmony系统中。而组件定义的位置就在<code>build\lite\components</code>目录下的<code>.json</code>文件。</li>
@@ -1598,7 +1700,7 @@
 <p><img alt="image-20241230105050811" src="image-20241230105050811.png" /></p>
 <p>这个编译脚本负责整个<code>lite</code>子系统的编译，通过<code>subsystem_components</code>指向组件，其中<code>kv_store:kv_store</code>便是上一个示例所看的组件。</p>
 <h3 id="313">3.1.3 子系统构建模型<a class="headerlink" href="#313" title="Permanent link">&para;</a></h3>
-<p>除了<code>lite_component</code> 和 <code>lite_subsystem</code> ，从子系统定义追踪还可以找到如<code>group</code>这样的定义个人理解用法相似。然更多关于gn语法可以去<a href="https://docs.openharmony.cn/pages/v4.1/zh-cn/device-dev/subsystems/subsys-build-gn-coding-style-and-best-practice.md#编码实践">官方编译构建系统指导</a>了解学习。</p>
+<p>除了<code>lite_component</code> 和 <code>lite_subsystem</code> ，从子系统定义追踪还可以找到如<code>group</code>这样的定义个人理解用法相似。然更多关于gn语法可以去<a href="https://docs.openharmony.cn/pages/v4.1/zh-cn/device-dev/subsystems/subsys-build-gn-coding-style-and-best-practice.md#编码实践">官方编译构建系统指导</a>了解学习。</p>
 <p><img alt="image-20241230115633626" src="image-20241230115633626.png" /></p>
 <h3 id="314">3.1.4 芯片解决方案配置规则<a class="headerlink" href="#314" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -1642,7 +1744,7 @@
 <blockquote>
 <p><a href="https://docs.openharmony.cn/pages/v4.1/zh-cn/device-dev/subsystems/subsys-build-product.md">官方产品配置规则</a></p>
 </blockquote>
-<p>产品解决方案为基于开发板的完整产品，主要包含产品对OS的适配、部件拼装配置、启动配置和文件系统配置等。产品解决方案的源码路径规则为： <strong>vendor/{产品解决方案厂商}/{产品名称}</strong> 。</p>
+<p>产品解决方案为基于开发板的完整产品，主要包含产品对OS的适配、部件拼装配置、启动配置和文件系统配置等。产品解决方案的源码路径规则为： <strong>vendor/{产品解决方案厂商}/{产品名称}</strong> 。</p>
 <p>产品解决方案的目录树规则如下：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>vendor<span class="w">                              </span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>└──<span class="w"> </span>company<span class="w">                         </span><span class="c1"># 产品解决方案厂商</span>
@@ -1684,7 +1786,7 @@
 </span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">     </span><span class="o">}</span>
 </span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w"> </span><span class="o">}</span>
 </span></code></pre></div>
-<p>我们通过<code>hb set</code>就是选择产品解决方案。</p>
+<p>我们通过<code>hb set</code>就是选择产品解决方案。</p>
 <p><img alt="image-20241031160410039" src="image-20241031160410039.png" /></p>
 <h2 id="32">3.2 编译构建系统的使用<a class="headerlink" href="#32" title="Permanent link">&para;</a></h2>
 <h3 id="321-1">3.2.1 案例1：新增组件<a class="headerlink" href="#321-1" title="Permanent link">&para;</a></h3>
@@ -1760,7 +1862,7 @@
 <blockquote>
 <p><a href="https://docs.openharmony.cn/pages/v4.1/zh-cn/device-dev/subsystems/subsys-build-product.md#新增并编译产品">官方新增产品编译</a></p>
 </blockquote>
-<p>OpenHarmony的编译构建系统支持芯片解决方案和部件的灵活拼装，形成定制化的产品解决方案。在  <strong>vendor/{产品解决方案厂商}/{产品名称}</strong> 目录下，新建<code>vendor\cim\product1</code>目录，在<code>vendor\hisilicon\hispark_pegasus</code>基础上修改，复制<code>hispark_pegasus</code>下的<code>config.json</code>至<code>vendor\cim\product1</code>目录，按需裁剪子系统和组件，将最下方参数<code>product_adapter_dir</code>修改为 <code>//vendor/cim/product1/hals</code>。</p>
+<p>OpenHarmony的编译构建系统支持芯片解决方案和部件的灵活拼装，形成定制化的产品解决方案。在  <strong>vendor/{产品解决方案厂商}/{产品名称}</strong> 目录下，新建<code>vendor\cim\product1</code>目录，在<code>vendor\hisilicon\hispark_pegasus</code>基础上修改，复制<code>hispark_pegasus</code>下的<code>config.json</code>至<code>vendor\cim\product1</code>目录，按需裁剪子系统和组件，将最下方参数<code>product_adapter_dir</code>修改为 <code>//vendor/cim/product1/hals</code>。</p>
 <div class="language-json highlight"><span class="filename">JSON</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cim_product&quot;</span><span class="p">,</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&quot;ohos_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenHarmony 1.0&quot;</span><span class="p">,</span>
@@ -1812,14 +1914,14 @@
 <h4 id="1-app">1. APP架构与代码<a class="headerlink" href="#1-app" title="Permanent link">&para;</a></h4>
 <p>新建<code>\applications\sample\wifi-iot\app\gn_practice</code>目录，在gn_practice文件夹下新建application、driver、library，分别存放应用程序模块、驱动模块、库模块，最终目录结构：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>├──<span class="w"> </span>application
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>│<span class="w">   </span>├──<span class="w"> </span>app_main.c
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>│<span class="w">   </span>├──<span class="w"> </span>component_1.c
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>│<span class="w">   </span>├──<span class="w"> </span>component_1.h
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>│<span class="w">   </span>├──<span class="w"> </span>component_2.c
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>│<span class="w">   </span>└──<span class="w"> </span>component_2.h
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>│<span class="w">   </span>├──<span class="w"> </span>app_main.c
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>│<span class="w">   </span>├──<span class="w"> </span>component_1.c
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>│<span class="w">   </span>├──<span class="w"> </span>component_1.h
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>│<span class="w">   </span>├──<span class="w"> </span>component_2.c
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>│<span class="w">   </span>└──<span class="w"> </span>component_2.h
 </span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>├──<span class="w"> </span>driver
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>│<span class="w">   </span>├──<span class="w"> </span>drv_1.c
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>│<span class="w">   </span>└──<span class="w"> </span>drv_1.h
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>│<span class="w">   </span>├──<span class="w"> </span>drv_1.c
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>│<span class="w">   </span>└──<span class="w"> </span>drv_1.h
 </span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>└──<span class="w"> </span>library
 </span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span>├──<span class="w"> </span>lib_1.c
 </span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span>├──<span class="w"> </span>lib_1.h
@@ -1932,6 +2034,267 @@
 <p><img alt="image-20241230170116037" src="image-20241230170116037.png" /></p>
 <h3 id="324">3.2.4 系统启动阶段与宏命令<a class="headerlink" href="#324" title="Permanent link">&para;</a></h3>
 <p><img alt="image-20241230170407409" src="image-20241230170407409.png" /></p>
+<h2 id="33">3.3 轻量系统的数据持久化<a class="headerlink" href="#33" title="Permanent link">&para;</a></h2>
+<h3 id="331">3.3.1 数据持久化简介<a class="headerlink" href="#331" title="Permanent link">&para;</a></h3>
+<p><strong>数据持久化</strong> 是指将 <strong>内存中的数据模型</strong> 转换为 <strong>存储模型</strong> ，以及将 <strong>存储模型</strong> 转换回 <strong>内存数据模型</strong> 的过程。其主要目的是让数据在程序关闭或系统重启后依然可以保存和恢复。</p>
+<p><strong>数据模型</strong> ：通常是程序运行时使用的对象模型或数据结构（如类、对象、字典、数组）。</p>
+<p><strong>存储模型</strong> ：指数据在持久化介质上的表现形式，可以是：</p>
+<ul>
+<li><strong>关系模型</strong>（如数据库中的表）</li>
+<li><strong>XML</strong>、<strong>JSON</strong> 等格式化数据</li>
+<li><strong>键值对</strong>（如 Redis、分布式 KV 存储）</li>
+<li><strong>图形模型</strong>（如图数据库）</li>
+<li><strong>二进制流</strong> 或 <strong>自定义格式</strong></li>
+</ul>
+<p><strong>基本操作（CRUD）</strong>  数据持久化的核心操作包括：</p>
+<ul>
+<li><strong>Create</strong> （创建）：将数据存储到持久化介质。</li>
+<li><strong>Read</strong> （读取）：从持久化介质加载数据。</li>
+<li><strong>Update</strong> （更新）：修改存储中的数据。</li>
+<li><strong>Delete</strong> （删除）：移除存储中的数据。</li>
+</ul>
+<p>⚛️： <strong>OpenHarmony</strong> 的轻量系统提供了两种数据持久化的方法，即 <strong>键值存储</strong> 和 <strong>文件操作</strong> 。</p>
+<h3 id="332">3.3.2 键值存储与文件操作简介<a class="headerlink" href="#332" title="Permanent link">&para;</a></h3>
+<p><strong>键值存储</strong> ，键即 key ，值即 value ，所以又称 KV存储 。其中，key最大为 32 字节（包含字符串停止符），value最大为 128 字节（包含字符串停止符）。</p>
+<details class="danger">
+<summary>Danger</summary>
+<p>在 <strong>OpenHarmony</strong> 中，key是文件名，将value保存到对应的文件中。</p>
+</details>
+<p><strong>文件操作</strong> ，文件内容可以是XML、JSON、键值、自定义数据结构等。</p>
+<p>键值存储和文件操作组件位于公共基础库子系统，如图所示：</p>
+<p><img alt="image-20241230195001016" src="image-20241230195001016.png" /></p>
+<h3 id="333">3.3.3 键值存储案例<a class="headerlink" href="#333" title="Permanent link">&para;</a></h3>
+<p>键值存储相关API：</p>
+<table>
+<thead>
+<tr>
+<th>API名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UtilsGetValue</code></td>
+<td>从文件系统或缓存中读取与key想匹配的value</td>
+</tr>
+<tr>
+<td><code>UtilsSetValue</code></td>
+<td>从文件系统或缓存中更新或添加与key匹配的value</td>
+</tr>
+<tr>
+<td><code>UtilsDeleteValue</code></td>
+<td>从文件系统或缓存中删除与可以匹配的value</td>
+</tr>
+</tbody>
+</table>
+<p>???danger"注意"<br />
+    这一段书中明确指出希望大家学会阅读源码和查看API，其实简单来说就是会查看函数的定义和声明位置，阅读函数注释，获得函数的参数、返回值、基本功能等信息。</p>
+<p>我结合STM32HAL库的代码和OpenHarmony源码谈一谈自己的经验：</p>
+<p>首先，有一点代码规范不同，STM32的函数注释写在 <strong>函数的定义处</strong> ，而OpenHarmony的函数注释写在 <strong>函数声明处</strong> 。</p>
+<p><img alt="image-20241230201654849" src="image-20241230201654849.png" /></p>
+<p>在Vscode中函数位置右键，转到声明：</p>
+<p><img alt="image-20241230201748457" src="image-20241230201748457.png" /></p>
+<p>OpenHarmony源码注释与STM32类似，所以不在解释，自行阅读源码理解各参数。</p>
+<p><img alt="image-20241230201840703" src="image-20241230201840703.png" /></p>
+<blockquote>
+<p>API表格便是根据源码注释汇总，而非照搬书中，我们应更好的理解英文原意，特别是像key、value这种专业术语翻译是无法正确翻译出来的，这时最后就是不翻译，所以基础的英语功底是必须的。</p>
+</blockquote>
+<hr />
+<p>由于value和key涉及到字节数，这里补充一点C语言基础：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>字节数（32 位系统）</th>
+<th>字节数（64 位系统）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>char</code></td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>long long</code></td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr>
+<td>指针类型</td>
+<td>4</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意</strong>：实际大小可能因编译器实现或系统架构而异，单片机多为32位，可用 <code>sizeof()</code> 函数检查。</p>
+<p>案例目标：若键值不存在就写入一个键值对，若存在则打印这个键值对。</p>
+<p><code>\applications\sample\wifi-iot\app</code>目录下新建kv_store_demo文件夹，并在该文件夹下新建<code>demo.c</code>和<code>BUILD.gn</code>文件，源码如下：</p>
+<p><code>demo.c</code></p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;ohos_init.h&quot;</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;kv_store.h&quot;</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="n">C</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;name&quot;</span><span class="p">;</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">value</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">kv_storeTest</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="p">{</span>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">retGet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsGetValue</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">);</span>
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">retGet</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">valueToWrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;OpenHarmony.&quot;</span><span class="p">;</span>
+</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">retSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsSetValue</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">valueToWrite</span><span class="p">);</span>
+</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;SetValue --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">retSet</span><span class="p">);</span>
+</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-32-18"><a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-32-19"><a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-32-20"><a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;GetValue --&gt; result: %d value: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">retGet</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+</span><span id="__span-32-21"><a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-32-22"><a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a>
+</span><span id="__span-32-23"><a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a><span class="p">}</span>
+</span><span id="__span-32-24"><a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a>
+</span><span id="__span-32-25"><a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a>
+</span><span id="__span-32-26"><a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a><span class="n">APP_FEATURE_INIT</span><span class="p">(</span><span class="n">kv_storeTest</span><span class="p">);</span>
+</span></code></pre></div>
+<p><code>BUILD.gn</code></p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">static_library</span><span class="p">(</span><span class="s">&quot;kv_store_demo&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">    </span><span class="n">sources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">        </span><span class="s">&quot;demo.c&quot;</span><span class="p">,</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">    </span><span class="n">include_dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">        </span><span class="s">&quot;//utils/native/lite/include&quot;</span><span class="p">,</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>修改<code>\applications\sample\wifi-iot\app</code>目录下的<code>BUILD.gn</code>文件：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>import<span class="o">(</span><span class="s2">&quot;//build/lite/config/component/lite_component.gni&quot;</span><span class="o">)</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>lite_component<span class="o">(</span><span class="s2">&quot;app&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">    </span><span class="nv">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">        </span><span class="s2">&quot;gn_practice/application:gn_app&quot;</span>,
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="w">        </span><span class="s2">&quot;gn_practice/driver:gn_driver&quot;</span>,
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="w">        </span><span class="s2">&quot;gn_practice/library:gn_library&quot;</span>,
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="w">        </span><span class="s2">&quot;kv_store_demo:kv_store_demo&quot;</span>,<span class="w">   </span><span class="c1"># 新增内容</span>
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="w">    </span><span class="o">]</span>
+</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="o">}</span>
+</span></code></pre></div>
+<p>编译烧录，重启开发板，键中无数据，再次重启 “openhamony.”被写入，且断电不丢失。</p>
+<p><img alt="image-20241230210027048" src="image-20241230210027048.png" /></p>
+<p>???danger"几点说明"<br />
+    关于数据定义为什么是<code>const char*</code>不是<code>char</code>，为什么是<code>int</code>而不是<code>uint16</code>等，均是根据源码定义的形参决定。</p>
+<h3 id="334">3.3.4 文件操作案例<a class="headerlink" href="#334" title="Permanent link">&para;</a></h3>
+<p>如果上一节注意到<code>kv_store.h</code>头文件的位置，就会发现这节需要用到的<code>utils_file.h</code>头文件和它在一个位置，故自行阅读源码理解函数作用。</p>
+<p>案例目标：若文件不存在，就创建文件、写入内容（ssid和passwd），若文件存在则读取内容并删除文件。</p>
+<p><code>\applications\sample\wifi-iot\app</code>目录下新建file_demo文件夹，并在该文件夹下新建<code>demo.c</code>和<code>BUILD.gn</code>文件，源码如下：</p>
+<p><code>demo.c</code></p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1">     </span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ohos_init.h&quot;</span><span class="c1"> </span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;utils_file.h&quot;</span><span class="c1"> </span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">file_demo</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="p">{</span>
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">filename</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wifi_INFO&quot;</span><span class="p">;</span>
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fileslen</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileStat</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fileslen</span><span class="p">);</span>
+</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
+</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="w">        </span><span class="c1">// 创建写入的数据</span>
+</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">dataWrite</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;openharmony,123456789&quot;</span><span class="p">;</span>
+</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s文件不存在。</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">filename</span><span class="p">);</span>
+</span><span id="__span-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="w">        </span><span class="c1">// 打开文件</span>
+</span><span id="__span-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileOpen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">O_WRONLY_FS</span><span class="o">|</span><span class="n">O_CREAT_FS</span><span class="o">|</span><span class="n">O_TRUNC_FS</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-35-19"><a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;OpenFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fd</span><span class="p">);</span>
+</span><span id="__span-35-20"><a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="w">        </span><span class="c1">// 写入数据</span>
+</span><span id="__span-35-21"><a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">data_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileWrite</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">dataWrite</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">dataWrite</span><span class="p">));</span>
+</span><span id="__span-35-22"><a id="__codelineno-35-22" name="__codelineno-35-22" href="#__codelineno-35-22"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;WriteFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data_len</span><span class="p">);</span>
+</span><span id="__span-35-23"><a id="__codelineno-35-23" name="__codelineno-35-23" href="#__codelineno-35-23"></a><span class="w">        </span><span class="c1">// 关闭文件</span>
+</span><span id="__span-35-24"><a id="__codelineno-35-24" name="__codelineno-35-24" href="#__codelineno-35-24"></a><span class="w">        </span><span class="n">UtilsFileClose</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+</span><span id="__span-35-25"><a id="__codelineno-35-25" name="__codelineno-35-25" href="#__codelineno-35-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-35-26"><a id="__codelineno-35-26" name="__codelineno-35-26" href="#__codelineno-35-26"></a><span class="w">    </span><span class="k">else</span>
+</span><span id="__span-35-27"><a id="__codelineno-35-27" name="__codelineno-35-27" href="#__codelineno-35-27"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-35-28"><a id="__codelineno-35-28" name="__codelineno-35-28" href="#__codelineno-35-28"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s文件存在。</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">filename</span><span class="p">);</span>
+</span><span id="__span-35-29"><a id="__codelineno-35-29" name="__codelineno-35-29" href="#__codelineno-35-29"></a><span class="w">         </span><span class="c1">// 打开文件，读写模式</span>
+</span><span id="__span-35-30"><a id="__codelineno-35-30" name="__codelineno-35-30" href="#__codelineno-35-30"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileOpen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">O_RDWR_FS</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-35-31"><a id="__codelineno-35-31" name="__codelineno-35-31" href="#__codelineno-35-31"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;OpenFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fd</span><span class="p">);</span>
+</span><span id="__span-35-32"><a id="__codelineno-35-32" name="__codelineno-35-32" href="#__codelineno-35-32"></a><span class="w">        </span><span class="c1">// 定位读写偏移量</span>
+</span><span id="__span-35-33"><a id="__codelineno-35-33" name="__codelineno-35-33" href="#__codelineno-35-33"></a><span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileSeek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">SEEK_SET_FS</span><span class="p">);</span>
+</span><span id="__span-35-34"><a id="__codelineno-35-34" name="__codelineno-35-34" href="#__codelineno-35-34"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;SeekFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">);</span>
+</span><span id="__span-35-35"><a id="__codelineno-35-35" name="__codelineno-35-35" href="#__codelineno-35-35"></a><span class="w">        </span><span class="c1">// 读取数据</span>
+</span><span id="__span-35-36"><a id="__codelineno-35-36" name="__codelineno-35-36" href="#__codelineno-35-36"></a><span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">ssid</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+</span><span id="__span-35-37"><a id="__codelineno-35-37" name="__codelineno-35-37" href="#__codelineno-35-37"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">data_len1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileRead</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">ssid</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">);</span>
+</span><span id="__span-35-38"><a id="__codelineno-35-38" name="__codelineno-35-38" href="#__codelineno-35-38"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ReadFile --&gt; result: %d ssid: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data_len1</span><span class="p">,</span><span class="w"> </span><span class="n">ssid</span><span class="p">);</span>
+</span><span id="__span-35-39"><a id="__codelineno-35-39" name="__codelineno-35-39" href="#__codelineno-35-39"></a><span class="w">        </span><span class="c1">// 重新定位读写偏移量</span>
+</span><span id="__span-35-40"><a id="__codelineno-35-40" name="__codelineno-35-40" href="#__codelineno-35-40"></a><span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileSeek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">SEEK_CUR_FS</span><span class="p">);</span>
+</span><span id="__span-35-41"><a id="__codelineno-35-41" name="__codelineno-35-41" href="#__codelineno-35-41"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;SeekFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">);</span>
+</span><span id="__span-35-42"><a id="__codelineno-35-42" name="__codelineno-35-42" href="#__codelineno-35-42"></a><span class="w">        </span><span class="c1">// 读取数据</span>
+</span><span id="__span-35-43"><a id="__codelineno-35-43" name="__codelineno-35-43" href="#__codelineno-35-43"></a><span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">passwd</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+</span><span id="__span-35-44"><a id="__codelineno-35-44" name="__codelineno-35-44" href="#__codelineno-35-44"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">data_len2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileRead</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">passwd</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">);</span>
+</span><span id="__span-35-45"><a id="__codelineno-35-45" name="__codelineno-35-45" href="#__codelineno-35-45"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ReadFile --&gt; result: %d passwd: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data_len2</span><span class="p">,</span><span class="w"> </span><span class="n">passwd</span><span class="p">);</span>
+</span><span id="__span-35-46"><a id="__codelineno-35-46" name="__codelineno-35-46" href="#__codelineno-35-46"></a><span class="w">        </span><span class="c1">// 关闭文件</span>
+</span><span id="__span-35-47"><a id="__codelineno-35-47" name="__codelineno-35-47" href="#__codelineno-35-47"></a><span class="w">        </span><span class="n">UtilsFileClose</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+</span><span id="__span-35-48"><a id="__codelineno-35-48" name="__codelineno-35-48" href="#__codelineno-35-48"></a>
+</span><span id="__span-35-49"><a id="__codelineno-35-49" name="__codelineno-35-49" href="#__codelineno-35-49"></a><span class="w">        </span><span class="c1">// 删除文件</span>
+</span><span id="__span-35-50"><a id="__codelineno-35-50" name="__codelineno-35-50" href="#__codelineno-35-50"></a><span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileDelete</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+</span><span id="__span-35-51"><a id="__codelineno-35-51" name="__codelineno-35-51" href="#__codelineno-35-51"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;DeleteFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">);</span>
+</span><span id="__span-35-52"><a id="__codelineno-35-52" name="__codelineno-35-52" href="#__codelineno-35-52"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-35-53"><a id="__codelineno-35-53" name="__codelineno-35-53" href="#__codelineno-35-53"></a>
+</span><span id="__span-35-54"><a id="__codelineno-35-54" name="__codelineno-35-54" href="#__codelineno-35-54"></a>
+</span><span id="__span-35-55"><a id="__codelineno-35-55" name="__codelineno-35-55" href="#__codelineno-35-55"></a><span class="p">}</span>
+</span><span id="__span-35-56"><a id="__codelineno-35-56" name="__codelineno-35-56" href="#__codelineno-35-56"></a>
+</span><span id="__span-35-57"><a id="__codelineno-35-57" name="__codelineno-35-57" href="#__codelineno-35-57"></a>
+</span><span id="__span-35-58"><a id="__codelineno-35-58" name="__codelineno-35-58" href="#__codelineno-35-58"></a><span class="n">APP_FEATURE_INIT</span><span class="p">(</span><span class="n">file_demo</span><span class="p">);</span>
+</span></code></pre></div>
+<p><code>BUILD.gn</code></p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>static_library<span class="o">(</span><span class="s2">&quot;file_demo&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">    </span><span class="nv">sources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">        </span><span class="s2">&quot;demo.c&quot;</span>,
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">    </span><span class="o">]</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="w">    </span><span class="nv">include_dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="w">        </span><span class="s2">&quot;//utils/native/lite/include&quot;</span>,
+</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="w">    </span><span class="o">]</span>
+</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="o">}</span>
+</span></code></pre></div>
+<p>修改<code>\applications\sample\wifi-iot\app</code>目录下的<code>BUILD.gn</code>文件：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>import<span class="o">(</span><span class="s2">&quot;//build/lite/config/component/lite_component.gni&quot;</span><span class="o">)</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>lite_component<span class="o">(</span><span class="s2">&quot;app&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="nv">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">        </span><span class="s2">&quot;gn_practice/application:gn_app&quot;</span>,
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">        </span><span class="s2">&quot;gn_practice/driver:gn_driver&quot;</span>,
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">        </span><span class="s2">&quot;gn_practice/library:gn_library&quot;</span>,
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">        </span><span class="s2">&quot;kv_store_demo:kv_store_demo&quot;</span>,
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">        </span><span class="s2">&quot;file_demo:file_demo&quot;</span>,
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="w">    </span><span class="o">]</span>
+</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="o">}</span>
+</span></code></pre></div>
+<p>编译烧录运行，复位，文件为空，写入文件。</p>
+<p><img alt="image-20241230222237353" src="image-20241230222237353.png" /></p>
+<p>再次复位，读取文件内容。</p>
+<p><img alt="image-20241230222333920" src="image-20241230222333920.png" /></p>
 
 
 
