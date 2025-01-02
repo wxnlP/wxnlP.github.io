@@ -47,6 +47,7 @@ nav:
       - 数据集划分: study/YOLOv8/YOLOv8-2.md
       - 模型训练: study/YOLOv8/YOLOv8-3.md
   - STM32系列:
+    - 阅读声明: study/STM32/0.阅读声明.md
     - 基础外设:
       - 第一章 GPIO: study/STM32/1.GPIO.md
       - 第二章 EXTI: study/STM32/2.EXTI.md
