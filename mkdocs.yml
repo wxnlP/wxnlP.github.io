@@ -59,8 +59,8 @@ nav:
       - 第七章 ADC: study/STM32/7.ADC数模转换.md
       - 第八章 DMA: study/STM32/8.DMA.md
     - 通信协议:
-      - 第九章 串口通信: study/STM32/9.URAT串口通信.md
-      - I2C: study/STM32/Serial/2.md
+      - 第九章 UART: study/STM32/9.URAT串口通信.md
+      - 第十章 I2C: study/STM32/10.I2C通信.md
       - SPI: study/STM32/Serial/3.md
     
   - Git: study/Git/Git.md

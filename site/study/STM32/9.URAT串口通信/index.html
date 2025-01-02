@@ -18,7 +18,7 @@
         <link rel="prev" href="../8.DMA/">
       
       
-        <link rel="next" href="../Serial/2/">
+        <link rel="next" href="../10.I2C%E9%80%9A%E4%BF%A1/">
       
       
       <link rel="icon" href="../../../assets/icon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>第九章 串口通信 - 小李 的知识库</title>
+        <title>第九章 UART - 小李 的知识库</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第九章 串口通信
+              第九章 UART
             
           </span>
         </div>
@@ -1188,7 +1188,7 @@
           
   
   <span class="md-ellipsis">
-    第九章 串口通信
+    第九章 UART
   </span>
   
 
@@ -1199,7 +1199,7 @@
         
   
   <span class="md-ellipsis">
-    第九章 串口通信
+    第九章 UART
   </span>
   
 
@@ -1447,11 +1447,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Serial/2/" class="md-nav__link">
+      <a href="../10.I2C%E9%80%9A%E4%BF%A1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    I2C
+    第十章 I2C
   </span>
   
 
@@ -1835,7 +1835,7 @@
   
 
 
-  <h1>第九章 串口通信</h1>
+  <h1>第九章 UART</h1>
 
 <h2 id="91">9.1 通信协议<a class="headerlink" href="#91" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1979,8 +1979,9 @@
 <h3 id="933-usart">9.3.3 USART数据收发结构<a class="headerlink" href="#933-usart" title="Permanent link">&para;</a></h3>
 <ol>
 <li>首先由波特率发生器配置发送和接受的频率</li>
-<li>开始写操作，把数据放到<kbd>发送数据寄存器</kbd>暂存，若<kbd>发送移位寄存器</kbd>为空，则将<kbd>发送数据寄存器</kbd>的数据转运到<kbd>发送移位寄存器</kbd>，最后通过<kbd>TX</kbd>引脚发送数据。</li>
-<li>开始读操作，把<kbd>RX</kbd>引脚接收的数据放到<kbd>接收移位寄存器</kbd>暂存，若<kbd>接收数据寄存器</kbd>为空，则将<kbd>接收移位寄存器</kbd>的数据转运到<kbd>接收数据寄存器</kbd></li>
+<li>开始写操作，把数据放到发送数据寄存器暂存，若发送移位寄存器为空，则将发送数据寄存器的数据转运到发送移位寄存器，最后通过<kbd>TX</kbd>引脚发送数据。</li>
+<li>开始读操作，把<kbd>RX</kbd>引脚接收的数据放到接收移位寄存器暂存，若接收数据寄存器为空，则将接收移位寄存器的数据转运到接收数据寄存器。</li>
+<li>当一个字节的数据发送或接收完成后，会置标志位。</li>
 </ol>
 <p><img alt="image-20241225161839838" src="image-20241225161839838.png" /></p>
 <h2 id="94">9.4 工程配置<a class="headerlink" href="#94" title="Permanent link">&para;</a></h2>
@@ -2030,7 +2031,7 @@
 </table>
 <details class="danger">
 <summary>Danger</summary>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>只有 **Asynchronous** 为常用的，其他仅作为了解。
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>只有Asynchronous为常用的，其他仅作为了解。
 </code></pre></div>
 </details>
 <p><img alt="image-20241225190418375" src="image-20241225190418375.png" /></p>
@@ -2097,7 +2098,7 @@
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="cm">/* USER CODE END 3 */</span>
 </span></code></pre></div>
-<p>经过使用示波器观察，从左向右数据为<code>11000010</code>，然注意串口是从低位先发，所以应该反过来读即实际数据为<code>01000011</code> ，也就是16进制所表示的<code>0x43</code></p>
+<p>经过使用示波器观察，从左向右数据为<code>11000010</code>，然注意串口是从低位先发，所以应该反过来读即实际数据为<code>01000011</code> ，也就是16进制所表示的<code>0x43</code></p>
 <p><img alt="image-20241225210400404" src="image-20241225210400404.png" /></p>
 <h3 id="944">9.4.4 串口接收代码<a class="headerlink" href="#944" title="Permanent link">&para;</a></h3>
 <p><code>HAL_UART_Receive(&amp;huart1, receiver, 2, HAL_MAX_DELAY);</code> 为接收函数，</p>
@@ -2238,13 +2239,13 @@
         
         
           
-          <a href="../Serial/2/" class="md-footer__link md-footer__link--next" aria-label="Next: I2C">
+          <a href="../10.I2C%E9%80%9A%E4%BF%A1/" class="md-footer__link md-footer__link--next" aria-label="Next: 第十章 I2C">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                I2C
+                第十章 I2C
               </div>
             </div>
             <div class="md-footer__button md-icon">
