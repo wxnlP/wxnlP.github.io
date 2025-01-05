@@ -28,6 +28,26 @@ nav:
       - 特别篇 ROS2中的C++新特性: study/ROS2/3-ROS2中的C++新特性.md
     - ROS2通信协议:
       - 特别篇 自定义接口数据: study/ROS2/3-自定义接口.md
+  - STM32系列:
+    - 阅读声明: study/STM32/0.阅读声明.md
+    - 基础外设:
+      - 第一章 GPIO: study/STM32/1.GPIO.md
+      - 第二章 EXTI: study/STM32/2.EXTI.md
+    - Timer定时器:
+      - 第三章 定时中断: study/STM32/3.Timer定时中断.md 
+      - 第四章 输出比较: study/STM32/4.Timer输出比较.md 
+      - 第五章 输入捕获: study/STM32/5.Timer输入捕获.md 
+      - 第六章 编码器接口: study/STM32/6.Timer编码器接口.md 
+    - ADC与DMA:
+      - 第七章 ADC: study/STM32/7.ADC数模转换.md
+      - 第八章 DMA: study/STM32/8.DMA.md
+    - 通信协议:
+      - 第九章 UART: study/STM32/9.URAT串口通信.md
+      - 第十章 I2C: study/STM32/10.I2C通信.md
+      - 第十一章 SPI: study/STM32/11.SPI通信.md
+  - FreeRTOS:
+    - 理论基础:
+      - ARM架构简介: study/FreeRTOS/0.ARM架构简明教程.md
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
@@ -46,23 +66,6 @@ nav:
       - YOLOv8简介: study/YOLOv8/YOLOv8-1.md
       - 数据集划分: study/YOLOv8/YOLOv8-2.md
       - 模型训练: study/YOLOv8/YOLOv8-3.md
-  - STM32系列:
-    - 阅读声明: study/STM32/0.阅读声明.md
-    - 基础外设:
-      - 第一章 GPIO: study/STM32/1.GPIO.md
-      - 第二章 EXTI: study/STM32/2.EXTI.md
-    - Timer定时器:
-      - 第三章 定时中断: study/STM32/3.Timer定时中断.md 
-      - 第四章 输出比较: study/STM32/4.Timer输出比较.md 
-      - 第五章 输入捕获: study/STM32/5.Timer输入捕获.md 
-      - 第六章 编码器接口: study/STM32/6.Timer编码器接口.md 
-    - ADC与DMA:
-      - 第七章 ADC: study/STM32/7.ADC数模转换.md
-      - 第八章 DMA: study/STM32/8.DMA.md
-    - 通信协议:
-      - 第九章 UART: study/STM32/9.URAT串口通信.md
-      - 第十章 I2C: study/STM32/10.I2C通信.md
-      - 第十一章 SPI: study/STM32/11.SPI通信.md
     
   - Git: study/Git/Git.md
   - 资料分析:
