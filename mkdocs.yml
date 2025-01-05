@@ -62,7 +62,7 @@ nav:
     - 通信协议:
       - 第九章 UART: study/STM32/9.URAT串口通信.md
       - 第十章 I2C: study/STM32/10.I2C通信.md
-      - SPI: study/STM32/Serial/3.md
+      - 第十一章 SPI: study/STM32/11.SPI通信.md
     
   - Git: study/Git/Git.md
   - 资料分析:
