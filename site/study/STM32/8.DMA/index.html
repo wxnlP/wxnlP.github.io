@@ -1889,46 +1889,50 @@
 <p><img alt="image-20241227130438600" src="image-20241227130438600.png" /></p>
 <p><img alt="image-20241226222231023" src="image-20241226222231023.png" /></p>
 <p><strong>定义测试数组为全局变量</strong></p>
-<pre class="highlight"><code class="language-C">/* USER CODE BEGIN PV */
-uint8_t DataA[4] = {0x01, 0x02, 0x03, 0x04};                //定义测试数组DataA
-uint8_t DataB[4] = {1, 1, 1, 1};                            //定义测试数组DataB
-/* USER CODE END PV */</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/* USER CODE BEGIN PV */</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">DataA</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x01</span><span class="p">,</span><span class="w"> </span><span class="mh">0x02</span><span class="p">,</span><span class="w"> </span><span class="mh">0x03</span><span class="p">,</span><span class="w"> </span><span class="mh">0x04</span><span class="p">};</span><span class="w">                </span><span class="c1">//定义测试数组DataA</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">DataB</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span><span class="w">                            </span><span class="c1">//定义测试数组DataB</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm">/* USER CODE END PV */</span>
+</span></code></pre></div>
 <details class="danger">
 <summary>Danger</summary>
 <p>这里数据类型必须为<code>uint8_t</code> ，因为<code>uint8_t</code>正好是一个字节</p>
 </details>
 <p><strong>建立一个DMA转运函数</strong>，将转运数组和目标数组填进去，最后一个参数是数据长度为 4</p>
-<pre class="highlight"><code class="language-C">/* USER CODE BEGIN 0 */
-void MyDMA_Transfer(void) {
-    HAL_DMA_Start(&amp;hdma_memtomem_dma1_channel2, (uint32_t)DataA, (uint32_t)DataB, 4);
-    HAL_DMA_PollForTransfer(&amp;hdma_memtomem_dma1_channel2, HAL_DMA_FULL_TRANSFER, HAL_MAX_DELAY);
-}
-/* USER CODE END 0 */</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/* USER CODE BEGIN 0 */</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MyDMA_Transfer</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">HAL_DMA_Start</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hdma_memtomem_dma1_channel2</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">)</span><span class="n">DataA</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint32_t</span><span class="p">)</span><span class="n">DataB</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">HAL_DMA_PollForTransfer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hdma_memtomem_dma1_channel2</span><span class="p">,</span><span class="w"> </span><span class="n">HAL_DMA_FULL_TRANSFER</span><span class="p">,</span><span class="w"> </span><span class="n">HAL_MAX_DELAY</span><span class="p">);</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="cm">/* USER CODE END 0 */</span>
+</span></code></pre></div>
 <p><strong>串口发送缓冲区</strong></p>
-<pre class="highlight"><code class="language-C">/* USER CODE BEGIN 2 */
-char buffer[64];
-/* USER CODE END 2 */</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cm">/* USER CODE END 2 */</span>
+</span></code></pre></div>
 <p><strong>主循环代码</strong> ，转换数组自增，调用转换函数，串口发送转换前后的数据</p>
-<pre class="highlight"><code class="language-C">/* USER CODE BEGIN WHILE */
-while (1) {
-    DataA[0]++;        //变换测试数据
-    DataA[1]++;
-    DataA[2]++;
-    DataA[3]++;
-    MyDMA_Transfer();
-    for (uint8_t i = 0; i &lt; 4; i++) {
-    int len1 = snprintf(buffer, sizeof(buffer), "Array[%d] = %hhu\r\n", i, DataA[i]);
-    HAL_UART_Transmit(&amp;huart1, (uint8_t *) buffer, len1, HAL_MAX_DELAY);  // 串口发送
-    int len2 = snprintf(buffer, sizeof(buffer), "Array[%d] = %hhu\r\n", i, DataB[i]);
-    HAL_UART_Transmit(&amp;huart1, (uint8_t *) buffer, len2, HAL_MAX_DELAY);  // 串口发送
-}
-
-    HAL_Delay(2000);
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-}
-/* USER CODE END 3 */</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/* USER CODE BEGIN WHILE */</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">DataA</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="w">        </span><span class="c1">//变换测试数据</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">DataA</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">DataA</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">DataA</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">MyDMA_Transfer</span><span class="p">();</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">len1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">snprintf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buffer</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;Array[%d] = %hhu</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">DataA</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">len1</span><span class="p">,</span><span class="w"> </span><span class="n">HAL_MAX_DELAY</span><span class="p">);</span><span class="w">  </span><span class="c1">// 串口发送</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">len2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">snprintf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">buffer</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;Array[%d] = %hhu</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">DataB</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">len2</span><span class="p">,</span><span class="w"> </span><span class="n">HAL_MAX_DELAY</span><span class="p">);</span><span class="w">  </span><span class="c1">// 串口发送</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="n">HAL_Delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="cm">/* USER CODE END WHILE */</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="cm">/* USER CODE BEGIN 3 */</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="p">}</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="cm">/* USER CODE END 3 */</span>
+</span></code></pre></div>
 <p>测试结果：</p>
 <p><img alt="image-20241227131121937" src="image-20241227131121937.png" /></p>
 <h3 id="842-adcdma">8.4.2 ADC单次转换扫描模式DMA转运<a class="headerlink" href="#842-adcdma" title="Permanent link">&para;</a></h3>
@@ -1943,36 +1947,39 @@ while (1) {
 <p>配置时钟</p>
 <p><img alt="image-20241228230840274" src="image-20241228230840274.png" /></p>
 <p><strong>定义数据接收数组全局变量</strong></p>
-<pre class="highlight"><code class="language-C">/* USER CODE BEGIN PV */
-//接收数组
-uint16_t values[2];
-//串口缓存
-char buffer[64];
-/* USER CODE END PV */</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/* USER CODE BEGIN PV */</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">//接收数组</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">uint16_t</span><span class="w"> </span><span class="n">values</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">//串口缓存</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="cm">/* USER CODE END PV */</span>
+</span></code></pre></div>
 <p>在非连续模式下，一次ADC数据全部转换完成会触发中断，所以在 <strong>中断中读取数据</strong> ：</p>
-<pre class="highlight"><code class="language-C">/* USER CODE BEGIN 4 */
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
-    if (hadc == &amp;hadc1) {
-        sprintf(buffer, "%d %d", values[0], values[1]);
-        HAL_UART_Transmit(&amp;huart1, (uint8_t *)buffer, strlen(buffer), HAL_MAX_DELAY);
-    }
-}
-/* USER CODE END 4 */</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/* USER CODE BEGIN 4 */</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_ADC_ConvCpltCallback</span><span class="p">(</span><span class="n">ADC_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hadc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hadc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hadc1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="n">sprintf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">buffer</span><span class="p">),</span><span class="w"> </span><span class="n">HAL_MAX_DELAY</span><span class="p">);</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="cm">/* USER CODE END 4 */</span>
+</span></code></pre></div>
 <p>主函数，调用ADC校准和开始，因为非连续模式， <strong>ADC开始放循环中</strong></p>
-<pre class="highlight"><code class="language-C">/* USER CODE BEGIN 2 */
-HAL_ADCEx_Calibration_Start(&amp;hadc1);
-/* USER CODE END 2 */
-
-/* Infinite loop */
-/* USER CODE BEGIN WHILE */
-while (1) {
-    HAL_ADC_Start_DMA(&amp;hadc1, (uint32_t *) values, 2);
-    HAL_Delay(500);
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-}
-/* USER CODE END 3 */</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">HAL_ADCEx_Calibration_Start</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hadc1</span><span class="p">);</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cm">/* USER CODE END 2 */</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="cm">/* Infinite loop */</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cm">/* USER CODE BEGIN WHILE */</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="n">HAL_ADC_Start_DMA</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hadc1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="n">HAL_Delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="cm">/* USER CODE END WHILE */</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="cm">/* USER CODE BEGIN 3 */</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="p">}</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="cm">/* USER CODE END 3 */</span>
+</span></code></pre></div>
 <p><img alt="image-20241228233920303" src="image-20241228233920303.png" /></p>
 <h3 id="843-adcdma">8.4.3 ADC连续转换扫描模式DMA循环转运<a class="headerlink" href="#843-adcdma" title="Permanent link">&para;</a></h3>
 <p>开启ADC连续模式，经测试这里需要把 <strong>采样时间提高</strong> ，不然采不到数据。</p>
@@ -1980,23 +1987,24 @@ while (1) {
 <p>DMA循环模式，其余与上个工程一致</p>
 <p><img alt="image-20241228234124020" src="image-20241228234124020.png" /></p>
 <p>只需将ADC开始拿出循环，删除中断并把中断的程序放主循环，因为连续模式可以随时读取ADC值。</p>
-<pre class="highlight"><code class="language-C">/* USER CODE BEGIN 2 */
-HAL_ADCEx_Calibration_Start(&amp;hadc1);
-HAL_ADC_Start_DMA(&amp;hadc1, (uint32_t *) values, 2);
-/* USER CODE END 2 */
-
-/* Infinite loop */
-/* USER CODE BEGIN WHILE */
-while (1) {
-    HAL_Delay(500);
-    sprintf(buffer, "%d %d", values[0], values[1]);
-    HAL_UART_Transmit(&amp;huart1, (uint8_t *) buffer, strlen(buffer), HAL_MAX_DELAY);
-
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-}
-/* USER CODE END 3 */</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">HAL_ADCEx_Calibration_Start</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hadc1</span><span class="p">);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">HAL_ADC_Start_DMA</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hadc1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="cm">/* USER CODE END 2 */</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="cm">/* Infinite loop */</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="cm">/* USER CODE BEGIN WHILE */</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="n">HAL_Delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="n">sprintf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">buffer</span><span class="p">),</span><span class="w"> </span><span class="n">HAL_MAX_DELAY</span><span class="p">);</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="cm">/* USER CODE END WHILE */</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="cm">/* USER CODE BEGIN 3 */</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="p">}</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="cm">/* USER CODE END 3 */</span>
+</span></code></pre></div>
 
 
 

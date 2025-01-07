@@ -1952,82 +1952,87 @@
 <p><img alt="image-20241128112459137" src="image-20241128112459137.png" /></p>
 <h3 id="324">3.2.4 工程代码编写<a class="headerlink" href="#324" title="Permanent link">&para;</a></h3>
 <p>完成配置以后，可以在<code>stm32f1xx_it.c</code>文件找到<code>TIM2_IRQHandler</code>函数</p>
-<pre class="highlight"><code class="language-C">void TIM2_IRQHandler(void)
-{
-  /* USER CODE BEGIN TIM2_IRQn 0 */
-
-  /* USER CODE END TIM2_IRQn 0 */
-  HAL_TIM_IRQHandler(&amp;htim2);
-  /* USER CODE BEGIN TIM2_IRQn 1 */
-
-  /* USER CODE END TIM2_IRQn 1 */
-}</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">TIM2_IRQHandler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="cm">/* USER CODE BEGIN TIM2_IRQn 0 */</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="cm">/* USER CODE END TIM2_IRQn 0 */</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="n">HAL_TIM_IRQHandler</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim2</span><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="cm">/* USER CODE BEGIN TIM2_IRQn 1 */</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="cm">/* USER CODE END TIM2_IRQn 1 */</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>总览一下中断处理函数：<code>HAL_TIM_IRQHandler(&amp;htim2)</code>；这里包含了所以的定时器更新中断和事件处理内容，比如输出比较、输入捕获、定时中断等。</p>
-<pre class="highlight"><code class="language-C">void HAL_TIM_IRQHandler(TIM_HandleTypeDef *htim)
-{
-    uint32_t itsource = htim-&gt;Instance-&gt;DIER;
-    uint32_t itflag   = htim-&gt;Instance-&gt;SR;
-    /* 捕获/比较通道 1  */
-    if ((itflag &amp; (TIM_FLAG_CC1)) == (TIM_FLAG_CC1)) {...}
-    /* 捕获/比较通道 2  */
-    if ((itflag &amp; (TIM_FLAG_CC2)) == (TIM_FLAG_CC2)) {...}
-    /* 捕获/比较通道 3  */
-    if ((itflag &amp; (TIM_FLAG_CC3)) == (TIM_FLAG_CC3)) {...}
-    /* 捕获/比较通道 4  */
-    if ((itflag &amp; (TIM_FLAG_CC4)) == (TIM_FLAG_CC4)) {...}
-    /* 定时器更新事件 */
-    if ((itflag &amp; (TIM_FLAG_UPDATE)) == (TIM_FLAG_UPDATE)) {...}
-    /* Break 输入事件 */
-    if ((itflag &amp; (TIM_FLAG_BREAK)) == (TIM_FLAG_BREAK)) {...}
-    /* 触发事件 */
-    if ((itflag &amp; (TIM_FLAG_TRIGGER)) == (TIM_FLAG_TRIGGER)) {...}
-    /* 通讯事件 */
-    if ((itflag &amp; (TIM_FLAG_COM)) == (TIM_FLAG_COM)) {...}    
-
-}</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_TIM_IRQHandler</span><span class="p">(</span><span class="n">TIM_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">htim</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">itsource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">Instance</span><span class="o">-&gt;</span><span class="n">DIER</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">itflag</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">Instance</span><span class="o">-&gt;</span><span class="n">SR</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="cm">/* 捕获/比较通道 1  */</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itflag</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_CC1</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_CC1</span><span class="p">))</span><span class="w"> </span><span class="p">{...}</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="cm">/* 捕获/比较通道 2  */</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itflag</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_CC2</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_CC2</span><span class="p">))</span><span class="w"> </span><span class="p">{...}</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="cm">/* 捕获/比较通道 3  */</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itflag</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_CC3</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_CC3</span><span class="p">))</span><span class="w"> </span><span class="p">{...}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="cm">/* 捕获/比较通道 4  */</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itflag</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_CC4</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_CC4</span><span class="p">))</span><span class="w"> </span><span class="p">{...}</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="cm">/* 定时器更新事件 */</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itflag</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_UPDATE</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_UPDATE</span><span class="p">))</span><span class="w"> </span><span class="p">{...}</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="cm">/* Break 输入事件 */</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itflag</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_BREAK</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_BREAK</span><span class="p">))</span><span class="w"> </span><span class="p">{...}</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="cm">/* 触发事件 */</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itflag</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_TRIGGER</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_TRIGGER</span><span class="p">))</span><span class="w"> </span><span class="p">{...}</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="cm">/* 通讯事件 */</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itflag</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_COM</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_COM</span><span class="p">))</span><span class="w"> </span><span class="p">{...}</span><span class="w">    </span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>函数内容很多，我们现只关注定时中断内容，即 <strong>定时器更新事件</strong> 部分的代码，具体如下 ：</p>
-<pre class="highlight"><code class="language-C">/* TIM Update event */
-if ((itflag &amp; (TIM_FLAG_UPDATE)) == (TIM_FLAG_UPDATE)) 
-{
-    if ((itsource &amp; (TIM_IT_UPDATE)) == (TIM_IT_UPDATE)) 
-    {
-        // 清除更新中断标志
-        __HAL_TIM_CLEAR_FLAG(htim, TIM_FLAG_UPDATE);
-
-        // 调用定时器更新回调函数
-        #if (USE_HAL_TIM_REGISTER_CALLBACKS == 1)
-            htim-&gt;PeriodElapsedCallback(htim);  // 用户自定义的回调函数
-        #else
-            HAL_TIM_PeriodElapsedCallback(htim);  // 默认回调函数
-        #endif
-    }
-}
-</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/* TIM Update event */</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itflag</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_UPDATE</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_UPDATE</span><span class="p">))</span><span class="w"> </span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itsource</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_IT_UPDATE</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_IT_UPDATE</span><span class="p">))</span><span class="w"> </span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="c1">// 清除更新中断标志</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="n">__HAL_TIM_CLEAR_FLAG</span><span class="p">(</span><span class="n">htim</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_FLAG_UPDATE</span><span class="p">);</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="c1">// 调用定时器更新回调函数</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="cp">#if (USE_HAL_TIM_REGISTER_CALLBACKS == 1)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">            </span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">PeriodElapsedCallback</span><span class="p">(</span><span class="n">htim</span><span class="p">);</span><span class="w">  </span><span class="c1">// 用户自定义的回调函数</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="cp">#else</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">            </span><span class="n">HAL_TIM_PeriodElapsedCallback</span><span class="p">(</span><span class="n">htim</span><span class="p">);</span><span class="w">  </span><span class="c1">// 默认回调函数</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="cp">#endif</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>重要函数和参数介绍，了解即可：</p>
-<pre class="highlight"><code class="language-C">TIM_FLAG_UPDATE                                /* 更新中断标志位 */
-TIM_IT_UPDATE                                  /* 更新中断是否使能 */
-__HAL_TIM_CLEAR_FLAG(htim, TIM_FLAG_UPDATE)    /* 清除中断标志位 */
-USE_HAL_TIM_REGISTER_CALLBACKS                 /* 判断用户是否重写了HAL_TIM_PeriodElapsedCallback(htim)函数 */
-htim-&gt;PeriodElapsedCallback(htim)              /* 用户自定义中断函数 */
-HAL_TIM_PeriodElapsedCallback(htim)            /* 默认函数 */</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">TIM_FLAG_UPDATE</span><span class="w">                                </span><span class="cm">/* 更新中断标志位 */</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">TIM_IT_UPDATE</span><span class="w">                                  </span><span class="cm">/* 更新中断是否使能 */</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">__HAL_TIM_CLEAR_FLAG</span><span class="p">(</span><span class="n">htim</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_FLAG_UPDATE</span><span class="p">)</span><span class="w">    </span><span class="cm">/* 清除中断标志位 */</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">USE_HAL_TIM_REGISTER_CALLBACKS</span><span class="w">                 </span><span class="cm">/* 判断用户是否重写了HAL_TIM_PeriodElapsedCallback(htim)函数 */</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">htim</span><span class="o">-&gt;</span><span class="n">PeriodElapsedCallback</span><span class="p">(</span><span class="n">htim</span><span class="p">)</span><span class="w">              </span><span class="cm">/* 用户自定义中断函数 */</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">HAL_TIM_PeriodElapsedCallback</span><span class="p">(</span><span class="n">htim</span><span class="p">)</span><span class="w">            </span><span class="cm">/* 默认函数 */</span>
+</span></code></pre></div>
 <p>完成自己的中断服务，我们需要在<code>stm32f1xx_it.c</code>文件中重写中断处理函数<code>HAL_TIM_PeriodElapsedCallback</code>，示例如下：</p>
-<pre class="highlight"><code class="language-c">/* USER CODE BEGIN 1 */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-    static unsigned char ledState = 0;
-    if (htim == (&amp;htim2))
-    {
-        if (ledState == 0)
-            HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_RESET);
-        else
-            HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_SET);
-        ledState = !ledState;
-    }
-}
-/* USER CODE END 1 */</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/* USER CODE BEGIN 1 */</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_TIM_PeriodElapsedCallback</span><span class="p">(</span><span class="n">TIM_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">htim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">ledState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">htim</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim2</span><span class="p">))</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ledState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">            </span><span class="n">HAL_GPIO_WritePin</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span><span class="n">GPIO_PIN_0</span><span class="p">,</span><span class="n">GPIO_PIN_RESET</span><span class="p">);</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="k">else</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">            </span><span class="n">HAL_GPIO_WritePin</span><span class="p">(</span><span class="n">GPIOB</span><span class="p">,</span><span class="n">GPIO_PIN_0</span><span class="p">,</span><span class="n">GPIO_PIN_SET</span><span class="p">);</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="n">ledState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">ledState</span><span class="p">;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="cm">/* USER CODE END 1 */</span>
+</span></code></pre></div>
 <p>最后在<code>main.c</code>文件上方 <strong>使能TIM2</strong> ，中断中的内容就可以实现：</p>
-<pre class="highlight"><code class="language-C">/* USER CODE BEGIN 2 */
-HAL_TIM_Base_Start_IT(&amp;htim2); //以中断模式启动TIM Base生成。
-/* USER CODE END 2 */</code></pre>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">HAL_TIM_Base_Start_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim2</span><span class="p">);</span><span class="w"> </span><span class="c1">//以中断模式启动TIM Base生成。</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cm">/* USER CODE END 2 */</span>
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code>htim2</code>是在<code>tim.h</code>上方定义的</p>

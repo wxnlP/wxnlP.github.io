@@ -1837,20 +1837,25 @@
 <p><img alt="节点-主题与服务" src="https://fishros.com/d2lros2foxy/chapt3/3.1ROS2%E8%8A%82%E7%82%B9%E4%BB%8B%E7%BB%8D/imgs/Nodes-TopicandService.gif" /></p>
 <h3 id="412">4.1.2 启动节点<a class="headerlink" href="#412" title="Permanent link">&para;</a></h3>
 <p>终端指令：</p>
-<pre class="highlight"><code class="language-shell">ros2 run &lt;package_name&gt; &lt;executable_name&gt;</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>&lt;package_name&gt;<span class="w"> </span>&lt;executable_name&gt;
+</span></code></pre></div>
 <p>package_name--功能包的名称       executable_name--可执行文件（即功能包下的 <strong>节点</strong> ）</p>
 <p>举例：启动小乌龟节点</p>
-<pre class="highlight"><code class="language-shell">ros2 run turtlesim turtlesim_node</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node
+</span></code></pre></div>
 <h3 id="413">4.1.3 节点常用的命令行指令<a class="headerlink" href="#413" title="Permanent link">&para;</a></h3>
 <p>查看节点列表(<strong>已经启用的节点</strong>)：</p>
-<pre class="highlight"><code class="language-shell">ros2 node list</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>node<span class="w"> </span>list
+</span></code></pre></div>
 <p>如下图，打开<kbd>turtlesim</kbd>下的<kbd>turtlesim_node</kbd>节点，可以查看到节点<kbd>turtlesim</kbd></p>
 <p><img alt="image-20241119164325908" src="image-20241119164325908.png" /></p>
 <p>查看节点信息，注意节点名称有<code>/</code>：</p>
-<pre class="highlight"><code class="language-shell">ros2 node info &lt;node_name&gt; </code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>node<span class="w"> </span>info<span class="w"> </span>&lt;node_name&gt;<span class="w"> </span>
+</span></code></pre></div>
 <p><img alt="image-20241119165011698" src="image-20241119165011698.png" /></p>
 <p>重映射节点名称：</p>
-<pre class="highlight"><code class="language-shell">ros2 run turtlesim turtlesim_node --ros-args --remap __node:=my_turtle</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node<span class="w"> </span>--ros-args<span class="w"> </span>--remap<span class="w"> </span>__node:<span class="o">=</span>my_turtle
+</span></code></pre></div>
 <h2 id="42-ros2">4.2 ROS2工作空间与编译工具<a class="headerlink" href="#42-ros2" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><strong>注意：一个工作空间下可以有多个功能包，一个功能包可以有多个节点存在</strong></p>
@@ -1861,35 +1866,43 @@
 <p>colcon想当于ros1中的catkin编译工具。</p>
 </blockquote>
 <p><strong>安装colcon工具</strong></p>
-<pre class="highlight"><code class="language-shell">sudo apt-get install python3-colcon-common-extensions</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-colcon-common-extensions
+</span></code></pre></div>
 <p><strong>colcon相关指令</strong></p>
 <blockquote>
 <p>pkg_name属于 <strong>变量</strong> ，即功能包的名称</p>
 </blockquote>
 <p>只编译一个包</p>
-<pre class="highlight"><code class="language-shell">colcon build --packages-select 'pkg_name' </code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span><span class="s1">&#39;pkg_name&#39;</span><span class="w"> </span>
+</span></code></pre></div>
 <p>不编译测试单元</p>
-<pre class="highlight"><code class="language-shell">colcon build --packages-select 'pkg_name'  --cmake-args -DBUILD_TESTING=0</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span><span class="s1">&#39;pkg_name&#39;</span><span class="w">  </span>--cmake-args<span class="w"> </span>-DBUILD_TESTING<span class="o">=</span><span class="m">0</span>
+</span></code></pre></div>
 <p>运行编译的包的测试</p>
-<pre class="highlight"><code class="language-shell">colcon test</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>colcon<span class="w"> </span><span class="nb">test</span>
+</span></code></pre></div>
 <p>允许通过更改src下的部分文件来改变install（重要），每次调整 python 脚本时都不必重新build了</p>
-<pre class="highlight"><code class="language-shell">colcon build --symlink-install</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install
+</span></code></pre></div>
 <h3 id="422">4.2.2 创建工作空间<a class="headerlink" href="#422" title="Permanent link">&para;</a></h3>
 <p>创建 <strong>工作空间</strong> 文件夹，并编译文件夹，编译以后，会多出<code>build</code> 、<code>install</code>、 <code>log</code> 三个文件夹</p>
 <blockquote>
 <p>mkdir： 创建一个目录，mkdir -p ：递归创建目录，即使上级目录不存在，会按目录层级自动创建目录</p>
 </blockquote>
-<pre class="highlight"><code class="language-shell">mkdir -p wkspace1/src # 递归创建目录
-cd wkspace1 # 进入文件夹
-colcon build # 编译</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>wkspace1/src<span class="w"> </span><span class="c1"># 递归创建目录</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">cd</span><span class="w"> </span>wkspace1<span class="w"> </span><span class="c1"># 进入文件夹</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>colcon<span class="w"> </span>build<span class="w"> </span><span class="c1"># 编译</span>
+</span></code></pre></div>
 <p>准备好工作空间以后就可以进行功能包的创建和程序的编写，分别使用C++和Python编程语言</p>
 <h2 id="43">4.3 功能包示例<a class="headerlink" href="#43" title="Permanent link">&para;</a></h2>
 <h3 id="433-python">4.3.3 Python示例<a class="headerlink" href="#433-python" title="Permanent link">&para;</a></h3>
 <p>！！！进入<code>wkspace1/src</code>目录</p>
-<pre class="highlight"><code class="language-shell">cd src</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span>src
+</span></code></pre></div>
 <p><img alt="image-20241119174905522" src="image-20241119174905522.png" /></p>
 <h4 id="1">1. 创建功能包<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
-<pre class="highlight"><code class="language-shell">ros2 pkg create helloworld_py --build-type ament_python  --dependencies rclpy  --node-name helloworld</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_py<span class="w"> </span>--build-type<span class="w"> </span>ament_python<span class="w">  </span>--dependencies<span class="w"> </span>rclpy<span class="w">  </span>--node-name<span class="w"> </span>helloworld
+</span></code></pre></div>
 <p><strong>参数介绍：</strong></p>
 <ul>
 <li><code>helloworld_py</code>----功能包的名称</li>
@@ -1900,70 +1913,78 @@ colcon build # 编译</code></pre>
 <p>创建功能包以后会出现一个警告“未知的许可证”</p>
 <p><img alt="image-20241119174439848" src="image-20241119174439848.png" /></p>
 <p>这个经过不影响后续操作，感觉不舒服，添加一个许可证即可消除警告</p>
-<pre class="highlight"><code class="language-shell">ros2 pkg create helloworld_py --build-type ament_python  --dependencies rclpy  --node-name helloworld --license Apache-2.0</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_py<span class="w"> </span>--build-type<span class="w"> </span>ament_python<span class="w">  </span>--dependencies<span class="w"> </span>rclpy<span class="w">  </span>--node-name<span class="w"> </span>helloworld<span class="w"> </span>--license<span class="w"> </span>Apache-2.0
+</span></code></pre></div>
 <h4 id="2">2. 程序源码<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
-<pre class="highlight"><code class="language-python">import rclpy
-
-def main():
-    # 初始化 ROS2
-    rclpy.init()
-    # 创建节点
-    node = rclpy.create_node("helloworld_node")
-    # 输出文本
-    node.get_logger().error("damage world!")
-    rclpy.spin(node)
-    # 释放资源
-    rclpy.shutdown()
-
-
-if __name__ == '__main__':
-    main()</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span> <span class="nn">rclpy</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="c1"># 初始化 ROS2</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="c1"># 创建节点</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    <span class="n">node</span> <span class="o">=</span> <span class="n">rclpy</span><span class="o">.</span><span class="n">create_node</span><span class="p">(</span><span class="s2">&quot;helloworld_node&quot;</span><span class="p">)</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="c1"># 输出文本</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="n">node</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;damage world!&quot;</span><span class="p">)</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="c1"># 释放资源</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>    <span class="n">main</span><span class="p">()</span>
+</span></code></pre></div>
 <h4 id="3-setuppy">3. 修改setup.py<a class="headerlink" href="#3-setuppy" title="Permanent link">&para;</a></h4>
 <p><code>helloworld = helloworld_py.helloworld:main</code> 即 <kbd>映射名称 = 功能包名称.源代码文件名称:函数名称</kbd>，”映射名称“是在终端运行可执行文件时后使用的名称。</p>
-<pre class="highlight"><code class="language-python">from setuptools import setup
-
-package_name = 'pkg02_helloworld_py'
-
-setup(
-    name=package_name,
-    version='0.0.0',
-    packages=[package_name],
-    data_files=[
-        ('share/ament_index/resource_index/packages',
-            ['resource/' + package_name]),
-        ('share/' + package_name, ['package.xml']),
-    ],
-    install_requires=['setuptools'],
-    zip_safe=True,
-    maintainer='ros2',
-    maintainer_email='ros2@todo.todo',
-    description='TODO: Package description',
-    license='TODO: License declaration',
-    tests_require=['pytest'],
-    entry_points={
-        'console_scripts': [
-            # 映射源文件与可执行文件
-            'helloworld = helloworld_py.helloworld:main'
-        ],
-    },
-)</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">package_name</span> <span class="o">=</span> <span class="s1">&#39;pkg02_helloworld_py&#39;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="n">setup</span><span class="p">(</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    <span class="n">name</span><span class="o">=</span><span class="n">package_name</span><span class="p">,</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.0.0&#39;</span><span class="p">,</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="n">package_name</span><span class="p">],</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    <span class="n">data_files</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>        <span class="p">(</span><span class="s1">&#39;share/ament_index/resource_index/packages&#39;</span><span class="p">,</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>            <span class="p">[</span><span class="s1">&#39;resource/&#39;</span> <span class="o">+</span> <span class="n">package_name</span><span class="p">]),</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>        <span class="p">(</span><span class="s1">&#39;share/&#39;</span> <span class="o">+</span> <span class="n">package_name</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;package.xml&#39;</span><span class="p">]),</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>    <span class="p">],</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;setuptools&#39;</span><span class="p">],</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>    <span class="n">zip_safe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>    <span class="n">maintainer</span><span class="o">=</span><span class="s1">&#39;ros2&#39;</span><span class="p">,</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>    <span class="n">maintainer_email</span><span class="o">=</span><span class="s1">&#39;ros2@todo.todo&#39;</span><span class="p">,</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;TODO: Package description&#39;</span><span class="p">,</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>    <span class="n">license</span><span class="o">=</span><span class="s1">&#39;TODO: License declaration&#39;</span><span class="p">,</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>    <span class="n">tests_require</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;pytest&#39;</span><span class="p">],</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>    <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>        <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>            <span class="c1"># 映射源文件与可执行文件</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>            <span class="s1">&#39;helloworld = helloworld_py.helloworld:main&#39;</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>        <span class="p">],</span>
+</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>    <span class="p">},</span>
+</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="p">)</span>
+</span></code></pre></div>
 <h4 id="4">4. 编译运行节点<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
 <p>打开vscode或终端，进入<code>wkspace1</code>目录：</p>
 <p><strong>编译功能包</strong></p>
-<pre class="highlight"><code class="language-shell">colcon build</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>colcon<span class="w"> </span>build
+</span></code></pre></div>
 <p><strong>source环境</strong></p>
-<pre class="highlight"><code class="language-shell">source install/setup.bash</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
+</span></code></pre></div>
 <p><strong>运行节点</strong></p>
-<pre class="highlight"><code class="language-shell">ros2 run helloworld_py hello_node</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>helloworld_py<span class="w"> </span>hello_node
+</span></code></pre></div>
 <h4 id="5">5. 节点混淆错误解释<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
 <p>初学者很容易弄混，<code>setup.py</code>中的 <strong>映射名称</strong> <code>helloworld</code>，和源代码中的<code>rclpy.create_node("helloworld_node")</code>中的<code>helloworld_node</code>都是节点。但事实上，<code>helloworld</code>是映射源文件与可执行文件的一个别称，仅用于终端运行可执行文件时使用；而<code>helloworld_node</code>才是真正的节点名称，即可以用<kbd>ros2 node list</kbd>查到的节点，如下图：</p>
 <p><img alt="image-20241119182644318" src="image-20241119182644318.png" /></p>
 <h3 id="434-c">4.3.4 C++示例<a class="headerlink" href="#434-c" title="Permanent link">&para;</a></h3>
 <p>！！！进入<code>wkspace1/src</code>目录</p>
-<pre class="highlight"><code class="language-shell">cd src</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">cd</span><span class="w"> </span>src
+</span></code></pre></div>
 <p><img alt="image-20241119174905522" src="image-20241119174905522.png" /></p>
 <h4 id="1_1">1. 创建功能包<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
-<pre class="highlight"><code class="language-shell">ros2 pkg create helloworld_cpp --build-type ament_cmake  --dependencies rclcpp  --node-name helloworld --license Apache-2.0</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_cpp<span class="w"> </span>--build-type<span class="w"> </span>ament_cmake<span class="w">  </span>--dependencies<span class="w"> </span>rclcpp<span class="w">  </span>--node-name<span class="w"> </span>helloworld<span class="w"> </span>--license<span class="w"> </span>Apache-2.0
+</span></code></pre></div>
 <blockquote>
 <p>为什么添加<code>license</code>参数在python那一章有介绍，可以往上翻一翻</p>
 </blockquote>
@@ -1975,131 +1996,138 @@ setup(
 <li><code>--node-name</code>----节点名称 ，可以在创建功能包的时候创建一个节点，也可以选择自己手动添加</li>
 </ul>
 <h4 id="2_1">2. 程序源码<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
-<pre class="highlight"><code class="language-c++">#include "rclcpp/rclcpp.hpp"
-
-int main(int argc, char ** argv)
-{
-  // 初始化 ROS2
-  rclcpp::init(argc,argv);
-  // 创建节点
-  auto node = rclcpp::Node::make_shared("helloworld_node");
-  // 输出文本
-  RCLCPP_INFO(node-&gt;get_logger(),"hello world!");
-  // 释放资源
-  rclcpp::shutdown();
-  return 0;
-}</code></pre>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;rclcpp/rclcpp.hpp&quot;</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="p">{</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">  </span><span class="c1">// 初始化 ROS2</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">  </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="n">argv</span><span class="p">);</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">  </span><span class="c1">// 创建节点</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span><span class="o">::</span><span class="n">make_shared</span><span class="p">(</span><span class="s">&quot;helloworld_node&quot;</span><span class="p">);</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">  </span><span class="c1">// 输出文本</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">  </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="s">&quot;hello world!&quot;</span><span class="p">);</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">  </span><span class="c1">// 释放资源</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">  </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">shutdown</span><span class="p">();</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="p">}</span>
+</span></code></pre></div>
 <h4 id="3-cmakeliststxt">3. 修改CMakeLists.txt<a class="headerlink" href="#3-cmakeliststxt" title="Permanent link">&para;</a></h4>
-<pre class="highlight"><code class="language-cmake">cmake_minimum_required(VERSION 3.8)
-project(pkg01_helloworld_cpp)
-
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
-endif()
-
-# find dependencies
-find_package(ament_cmake REQUIRED)
-# 引入外部依赖包
-find_package(rclcpp REQUIRED)
-
-# 映射源文件与可执行文件
-add_executable(helloworld src/helloworld.cpp)
-# 设置目标依赖库
-ament_target_dependencies(
-  helloworld
-  "rclcpp"
-)
-# 定义安装规则
-install(TARGETS helloworld
-  DESTINATION lib/${PROJECT_NAME})
-
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # comment the line when a copyright and license is added to all source files
-  set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # comment the line when this package is in a git repo and when
-  # a copyright and license is added to all source files
-  set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-endif()
-
-ament_package()</code></pre>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.8</span><span class="p">)</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">project</span><span class="p">(</span><span class="s">pkg01_helloworld_cpp</span><span class="p">)</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="nb">if</span><span class="p">(</span><span class="s">CMAKE_COMPILER_IS_GNUCXX</span><span class="w"> </span><span class="s">OR</span><span class="w"> </span><span class="s">CMAKE_CXX_COMPILER_ID</span><span class="w"> </span><span class="s">MATCHES</span><span class="w"> </span><span class="s2">&quot;Clang&quot;</span><span class="p">)</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">  </span><span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-Wall</span><span class="w"> </span><span class="s">-Wextra</span><span class="w"> </span><span class="s">-Wpedantic</span><span class="p">)</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="nb">endif</span><span class="p">()</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="c"># find dependencies</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">ament_cmake</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="c"># 引入外部依赖包</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">rclcpp</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="c"># 映射源文件与可执行文件</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="nb">add_executable</span><span class="p">(</span><span class="s">helloworld</span><span class="w"> </span><span class="s">src/helloworld.cpp</span><span class="p">)</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="c"># 设置目标依赖库</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="nb">ament_target_dependencies</span><span class="p">(</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">  </span><span class="s">helloworld</span>
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="w">  </span><span class="s2">&quot;rclcpp&quot;</span>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="p">)</span>
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="c"># 定义安装规则</span>
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="nb">install</span><span class="p">(</span><span class="s">TARGETS</span><span class="w"> </span><span class="s">helloworld</span>
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="w">  </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">lib/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="p">)</span>
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span class="nb">if</span><span class="p">(</span><span class="s">BUILD_TESTING</span><span class="p">)</span>
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a><span class="w">  </span><span class="nb">find_package</span><span class="p">(</span><span class="s">ament_lint_auto</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a><span class="w">  </span><span class="c"># the following line skips the linter which checks for copyrights</span>
+</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="w">  </span><span class="c"># comment the line when a copyright and license is added to all source files</span>
+</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a><span class="w">  </span><span class="nb">set</span><span class="p">(</span><span class="s">ament_cmake_copyright_FOUND</span><span class="w"> </span><span class="s">TRUE</span><span class="p">)</span>
+</span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a><span class="w">  </span><span class="c"># the following line skips cpplint (only works in a git repo)</span>
+</span><span id="__span-22-30"><a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="w">  </span><span class="c"># comment the line when this package is in a git repo and when</span>
+</span><span id="__span-22-31"><a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a><span class="w">  </span><span class="c"># a copyright and license is added to all source files</span>
+</span><span id="__span-22-32"><a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a><span class="w">  </span><span class="nb">set</span><span class="p">(</span><span class="s">ament_cmake_cpplint_FOUND</span><span class="w"> </span><span class="s">TRUE</span><span class="p">)</span>
+</span><span id="__span-22-33"><a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a><span class="w">  </span><span class="nb">ament_lint_auto_find_test_dependencies</span><span class="p">()</span>
+</span><span id="__span-22-34"><a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a><span class="nb">endif</span><span class="p">()</span>
+</span><span id="__span-22-35"><a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a>
+</span><span id="__span-22-36"><a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a><span class="nb">ament_package</span><span class="p">()</span>
+</span></code></pre></div>
 <h4 id="4_1">4. 编译运行节点<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h4>
 <p>打开vscode或终端，进入<code>wkspace1</code>目录：</p>
 <p><strong>编译单个功能包</strong></p>
-<pre class="highlight"><code class="language-shell">colcon build --packages-select 'helloworld_cpp'</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span><span class="s1">&#39;helloworld_cpp&#39;</span>
+</span></code></pre></div>
 <p><img alt="image-20241119191755520" src="image-20241119191755520.png" /></p>
 <p><strong>source环境</strong></p>
-<pre class="highlight"><code class="language-shell">source install/setup.bash</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
+</span></code></pre></div>
 <p><strong>运行节点</strong></p>
-<pre class="highlight"><code class="language-shell">ros2 run helloworld_py hello_node</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>helloworld_py<span class="w"> </span>hello_node
+</span></code></pre></div>
 <h3 id="435">4.3.5 运行优化<a class="headerlink" href="#435" title="Permanent link">&para;</a></h3>
 <p>每次终端中执行工作空间下的节点时，都需要调用<code>. install/setup.bash</code>指令，使用不便，优化策略是，可以将该指令的调用添加进<code>~/setup.bash</code>，操作格式如下：</p>
-<pre class="highlight"><code class="language-shell">echo "source /{工作空间路径}/install/setup.bash" &gt;&gt; ~/.bashrc</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /{工作空间路径}/install/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span></code></pre></div>
 <p>示例：</p>
-<pre class="highlight"><code class="language-shell">echo "source /home/lzh/wkspace1/install/setup.bash" &gt;&gt; ~/.bashrc</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /home/lzh/wkspace1/install/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span></code></pre></div>
 <h3 id="436">4.3.6 面向过程编程<a class="headerlink" href="#436" title="Permanent link">&para;</a></h3>
 <p>面向过程编程即是C++和Python的一大特点，同时也是ROS2区分于ROS的编程风格差异。</p>
 <h4 id="1-python">1. Python<a class="headerlink" href="#1-python" title="Permanent link">&para;</a></h4>
-<pre class="highlight"><code class="language-python">#!/usr/bin/env python3
-import rclpy
-from rclpy.node import Node
-
-
-class TestNode(Node):
-    """
-    继承Node类,并创建一个节点,打印节点名称
-    """
-    def __init__(self, node):
-        super().__init__(node)
-        self.node = node
-        self.get_logger().info(f"节点名称为{self.node}")
-
-
-def main(args=None):
-    """
-    ros2运行该节点的入口函数
-    """
-    rclpy.init(args=args) # 初始化rclpy
-    node = TestNode("helloworld_node")  # 新建一个节点
-    rclpy.spin(node) # 保持节点运行，检测是否收到退出指令（Ctrl+C）
-    rclpy.shutdown() # 关闭rclpy
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="ch">#!/usr/bin/env python3</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kn">import</span> <span class="nn">rclpy</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="k">class</span> <span class="nc">TestNode</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="sd">    继承Node类,并创建一个节点,打印节点名称</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">node</span> <span class="o">=</span> <span class="n">node</span>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;节点名称为</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>
+</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>
+</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="sd">    ros2运行该节点的入口函数</span>
+</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-28-20"><a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a>    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span> <span class="c1"># 初始化rclpy</span>
+</span><span id="__span-28-21"><a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>    <span class="n">node</span> <span class="o">=</span> <span class="n">TestNode</span><span class="p">(</span><span class="s2">&quot;helloworld_node&quot;</span><span class="p">)</span>  <span class="c1"># 新建一个节点</span>
+</span><span id="__span-28-22"><a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a>    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="c1"># 保持节点运行，检测是否收到退出指令（Ctrl+C）</span>
+</span><span id="__span-28-23"><a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a>    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span> <span class="c1"># 关闭rclpy</span>
+</span></code></pre></div>
 <p><img alt="image-20241119192952557" src="image-20241119192952557.png" /></p>
 <h4 id="2-c">2. C++<a class="headerlink" href="#2-c" title="Permanent link">&para;</a></h4>
-<pre class="highlight"><code class="language-cpp">#include "rclcpp/rclcpp.hpp"
-#include &lt;string&gt;
-
-using  namespace std;
-/*
-    创建一个类节点，名字叫做TestNode,继承自Node.
-*/
-class TestNode : public rclcpp::Node
-{
-
-public:
-    // 构造函数,有一个参数为节点名称
-    TestNode(string name) : Node(name)
-    {
-        // 打印一句自我介绍
-        RCLCPP_INFO(this-&gt;get_logger(), "节点的名称为:%s.",name.c_str());
-    }
-
-};
-
-int main(int argc, char **argv)
-{
-    rclcpp::init(argc, argv);
-    /*产生一个Wang2的节点*/
-    auto node = make_shared&lt;TestNode&gt;("helloworld_node");
-    /* 运行节点，并检测退出信号*/
-    rclcpp::spin(node);
-    rclcpp::shutdown();
-    return 0;
-}
-</code></pre>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;rclcpp/rclcpp.hpp&quot;</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">using</span><span class="w">  </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="cm">/*</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="cm">    创建一个类节点，名字叫做TestNode,继承自Node.</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="cm">*/</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="k">class</span><span class="w"> </span><span class="nc">TestNode</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="p">{</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="w">    </span><span class="c1">// 构造函数,有一个参数为节点名称</span>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="w">    </span><span class="n">TestNode</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="w">        </span><span class="c1">// 打印一句自我介绍</span>
+</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="w">        </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;节点的名称为:%s.&quot;</span><span class="p">,</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-29-18"><a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>
+</span><span id="__span-29-19"><a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a><span class="p">};</span>
+</span><span id="__span-29-20"><a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a>
+</span><span id="__span-29-21"><a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+</span><span id="__span-29-22"><a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a><span class="p">{</span>
+</span><span id="__span-29-23"><a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a><span class="w">    </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+</span><span id="__span-29-24"><a id="__codelineno-29-24" name="__codelineno-29-24" href="#__codelineno-29-24"></a><span class="w">    </span><span class="cm">/*产生一个Wang2的节点*/</span>
+</span><span id="__span-29-25"><a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">TestNode</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;helloworld_node&quot;</span><span class="p">);</span>
+</span><span id="__span-29-26"><a id="__codelineno-29-26" name="__codelineno-29-26" href="#__codelineno-29-26"></a><span class="w">    </span><span class="cm">/* 运行节点，并检测退出信号*/</span>
+</span><span id="__span-29-27"><a id="__codelineno-29-27" name="__codelineno-29-27" href="#__codelineno-29-27"></a><span class="w">    </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">spin</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+</span><span id="__span-29-28"><a id="__codelineno-29-28" name="__codelineno-29-28" href="#__codelineno-29-28"></a><span class="w">    </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">shutdown</span><span class="p">();</span>
+</span><span id="__span-29-29"><a id="__codelineno-29-29" name="__codelineno-29-29" href="#__codelineno-29-29"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-29-30"><a id="__codelineno-29-30" name="__codelineno-29-30" href="#__codelineno-29-30"></a><span class="p">}</span>
+</span></code></pre></div>
 <p><img alt="image-20241119193813842" src="image-20241119193813842.png" /></p>
 
 

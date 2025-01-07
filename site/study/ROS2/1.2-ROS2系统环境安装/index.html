@@ -1470,28 +1470,36 @@
 <p>了解知道有这种方法即可，2.3的一键安装更便捷</p>
 </blockquote>
 <p>打开终端</p>
-<pre class="highlight"><code class="language-shell">Ctrl+Alt+T  #ubuntu系统中打开终端的快捷键</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Ctrl+Alt+T<span class="w">  </span><span class="c1">#ubuntu系统中打开终端的快捷键</span>
+</span></code></pre></div>
 <p>添加源</p>
-<pre class="highlight"><code class="language-shell">echo "deb [arch=$(dpkg --print-architecture)] https://repo.huaweicloud.com/ros2/ubuntu/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list &gt; /dev/null
-</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2">] https://repo.huaweicloud.com/ros2/ubuntu/ </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/ros2.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+</span></code></pre></div>
 <p>添加源对应的秘钥</p>
-<pre class="highlight"><code class="language-shell">sudo apt install curl gnupg2 -y
-curl -s https://gitee.com/ohhuo/rosdistro/raw/master/ros.asc | sudo apt-key add -</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl<span class="w"> </span>gnupg2<span class="w"> </span>-y
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>curl<span class="w"> </span>-s<span class="w"> </span>https://gitee.com/ohhuo/rosdistro/raw/master/ros.asc<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
+</span></code></pre></div>
 <p>更新</p>
-<pre class="highlight"><code class="language-shell">sudo apt update </code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span>
+</span></code></pre></div>
 <p>安装ROS2</p>
-<pre class="highlight"><code class="language-shell">sudo apt install ros-humble-desktop</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-desktop
+</span></code></pre></div>
 <p>安装额外依赖</p>
-<pre class="highlight"><code class="language-shell">sudo apt install python3-argcomplete -y</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-argcomplete<span class="w"> </span>-y
+</span></code></pre></div>
 <p>配置环境变量</p>
-<pre class="highlight"><code class="language-shell">source /opt/ros/humble/setup.bash</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">source</span><span class="w"> </span>/opt/ros/humble/setup.bash
+</span></code></pre></div>
 <p>防止每次都需要进行source，把ros2加入bashrc中。就是每次启动终端都让它自动的输入这句话。</p>
-<pre class="highlight"><code class="language-shell">echo "source /opt/ros/humble/setup.bash" &gt;&gt; ~/.bashrc</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/ros/humble/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span></code></pre></div>
 <h2 id="23">2.3 一键安装(推荐)<a class="headerlink" href="#23" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>最后介绍最简单快捷不容易出错的一键安装。</p>
 </blockquote>
-<pre class="highlight"><code class="language-shell">wget http://fishros.com/install -O fishros &amp;&amp; . fishros</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>wget<span class="w"> </span>http://fishros.com/install<span class="w"> </span>-O<span class="w"> </span>fishros<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>.<span class="w"> </span>fishros
+</span></code></pre></div>
 <p>输入密码，在选项界面选择1-一键安装ROS，接着根据你的情况选择是否更换系统源（基础篇更换了就不用了），接着就会让你选择要安装的ROS2版本了。这里选择humble版本的ROS2即可。</p>
 <p>最后会问你安装桌面版还是基础版，我们选择桌面版，包含可视化工具，如果是在树莓派上装可以使用基础版。</p>
 <p><strong>更多的一键安装详情在鱼香ROS网址：</strong></p>
@@ -1499,11 +1507,13 @@ curl -s https://gitee.com/ohhuo/rosdistro/raw/master/ros.asc | sudo apt-key add 
 <h2 id="24-ros2">2.4 ROS2初体验<a class="headerlink" href="#24-ros2" title="Permanent link">&para;</a></h2>
 <h3 id="241">2.4.1 启动海龟模拟器<a class="headerlink" href="#241" title="Permanent link">&para;</a></h3>
 <p>打开一个终端</p>
-<pre class="highlight"><code class="language-shell">ros2 run turtlesim turtlesim_node</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node
+</span></code></pre></div>
 <p><img alt="image-20241114224406551" src="image-20241114224527438.png" /></p>
 <h3 id="242">2.4.2 启动海龟键盘控制<a class="headerlink" href="#242" title="Permanent link">&para;</a></h3>
 <p>打开一个新的终端</p>
-<pre class="highlight"><code class="language-shell">ros2 run turtlesim turtle_teleop_key</code></pre>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtle_teleop_key
+</span></code></pre></div>
 <p><img alt="image-20241114224527438" src="image-20241114224406551.png" /></p>
 <blockquote>
 <p>可以看到我有一次是输错命令，自己敲命令合理使用<code>Tab</code>键可以便捷敲出命令。</p>
