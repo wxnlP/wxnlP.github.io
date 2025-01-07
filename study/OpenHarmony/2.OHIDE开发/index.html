@@ -1371,17 +1371,17 @@
 <p><img alt="image-20241226132410424" src="image-20241226132410424.png" /></p>
 <h3 id="222-ubuntu">2.2.2 配置Ubuntu环境<a class="headerlink" href="#222-ubuntu" title="Permanent link">&para;</a></h3>
 <p>将Ubuntu Shell环境修改为bash</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>/bin/sh
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>/bin/sh
 </span></code></pre></div>
 <p><img alt="image-20241226132741762" src="image-20241226132741762.png" /></p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>dash
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>dash
 </span></code></pre></div>
 <p><img alt="image-20241226132824430" src="image-20241226132824430.png" /></p>
 <p>修改结果：</p>
 <p><img alt="image-20241226132851553" src="image-20241226132851553.png" /></p>
 <p>下载<a href="https://device.harmonyos.com/cn/ide#download">DevEco Device Tool</a>最新Linux版本软件包，注意和Windows的版本一样</p>
 <p>解压DevEco Device Tool软件包并安装，第三步需要签署同意用户协议和隐私声明才能进行下一步的安装</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">#解压</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">#解压</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>unzip<span class="w"> </span>devicetool-linux-tool-<span class="o">{</span>Version<span class="o">}</span>.zip
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">#赋权</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>chmod<span class="w"> </span>u+x<span class="w"> </span>devicetool-linux-tool-<span class="o">{</span>Version<span class="o">}</span>.sh
@@ -1391,11 +1391,11 @@
 <h2 id="23">2.3 配置远程访问环境<a class="headerlink" href="#23" title="Permanent link">&para;</a></h2>
 <h3 id="231-ubuntussh">2.3.1 Ubuntu配置SSH服务<a class="headerlink" href="#231-ubuntussh" title="Permanent link">&para;</a></h3>
 <p>安装ssh服务</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>openssh-server
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>openssh-server
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ssh
 </span></code></pre></div>
 <p>查看虚拟机IP地址</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">#安装插件</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">#安装插件</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>net-tools
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#查看IP</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>ifconfig
@@ -1420,7 +1420,7 @@
 <h2 id="25-hi3861">2.5 第一个程序（基于HI3861）<a class="headerlink" href="#25-hi3861" title="Permanent link">&para;</a></h2>
 <h3 id="251">2.5.1 编写程序<a class="headerlink" href="#251" title="Permanent link">&para;</a></h3>
 <p>找到目录<code>./applications/sample/wifi-iot/app</code>，在app文件夹下一个文件夹<code>my_first_app</code>，代码文件<code>hello_world.c</code>，编译脚本<code>BUILD.gn</code>。具体目录结构如下：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>.
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>.
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>└── applications
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    └── sample
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        └── wifi-iot
@@ -1434,7 +1434,7 @@
 <p>官方称呼：新增业务my_first_app，其中hello_world.c为业务代码，BUILD.gn为编译脚本。</p>
 </details>
 <p>在<code>hello_world.c</code>文件中添加代码</p>
-<div class="language-C highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ohos_init.h&quot;</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ohos_types.h&quot;</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
@@ -1445,7 +1445,7 @@
 </span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">SYS_RUN</span><span class="p">(</span><span class="n">HelloWorld</span><span class="p">);</span>
 </span></code></pre></div>
 <p>在编译脚本<code>BUILD.gn</code>中添加编译配置</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>static_library(&quot;myapp&quot;) {
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>static_library(&quot;myapp&quot;) {
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    sources = [
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        &quot;hello_world.c&quot;
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    ]
@@ -1459,7 +1459,7 @@
 <summary>Danger</summary>
 <p>若源码版本大于等于OpenHarmony 3.2 Beta2时，组件配置文件为<code>build/lite/components/communication.json</code>。</p>
 </details>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+<div class="language-json highlight"><span class="filename">JSON</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="p">{</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="nt">&quot;component&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;camera_sample_communication&quot;</span><span class="p">,</span>
@@ -1516,7 +1516,7 @@
 </span><span id="__span-8-55"><a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a><span class="w">      </span><span class="p">],</span>
 </span></code></pre></div>
 <p>修改单板配置文件<code>vendor/hisilicon/hispark_pegasus/config.json</code>，新增hello_world_app组件的条目</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">      </span><span class="p">{</span>
+<div class="language-json highlight"><span class="filename">JSON</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">      </span><span class="p">{</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">        </span><span class="nt">&quot;subsystem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;applications&quot;</span><span class="p">,</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">        </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="err">##s</span><span class="kc">tart</span><span class="err">##</span>
@@ -1552,7 +1552,7 @@
 <p>打开串口检测器，并复位开发板。</p>
 <p><img alt="image-20241228140439463" src="image-20241228140439463.png" /></p>
 <p>在串口中端依次输入下列命令，注意命令前后均不可以有多余空格，返回ok即单个命令执行正确。</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>AT+STARTSTA             # 启动STA模式
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>AT+STARTSTA             # 启动STA模式
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>AT+SCAN                     # 扫描周边AP
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>AT+SCANRESULT               # 显示扫描结果
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>AT+CONN=&quot;OpenHarmony&quot;,,2,&quot;123456789&quot; # 连接指定AP(修改自己热点即可)

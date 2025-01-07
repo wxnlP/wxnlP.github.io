@@ -1275,7 +1275,7 @@
 <h2 id="4">4. 常见汇编指令<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="_1">栈操作指令<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><strong>PUSH</strong> ：压栈，将寄存器的内容压入栈中。</p>
-<p>例如：<code>PUSH {r2, lr}</code> 为将<code>r2</code>、<code>lr</code>寄存器的值压入栈空间</p>
+<p>例如：<code>PUSH {r2, lr}</code> 为将<code>r2</code>、<code>lr</code>寄存器的值压入栈空间</p>
 <p><strong>POP</strong> ：出栈，将 <strong>栈顶</strong> 的数据弹出，并恢复寄存器的值。</p>
 <p>例如：<code>POP {r2-r3, pc}</code> </p>
 <h3 id="_2">数据传输指令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -1311,10 +1311,10 @@
 <p>例如：<code>SUB sp, sp, #0x68</code>
 将栈指针<code>sp</code>减去<code>0x68</code>，即<code>sp = sp - 0x68</code>，用于在栈上分配或释放空间。</p>
 <h3 id="_4">跳转与调用指令<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>**B **：无条件跳转。</p>
+<p><strong>B</strong> ：无条件跳转。</p>
 <p>例如：<code>B label</code>
 跳转到标签<code>label</code>，执行该位置的代码。</p>
-<p><strong>BL</strong> ：带返回地址的跳转（用于函数调用）。</p>
+<p><strong>BL</strong> ：带返回地址的跳转（用于函数调用）。</p>
 <p>例如：<code>BL subroutine</code>
 跳转到<code>subroutine</code>函数，并将返回地址（跳转指令后的地址）保存到<code>lr</code>（链接寄存器）。函数执行完毕后，通过<code>POP</code>或其他机制恢复<code>pc</code>来返回。</p>
 <h3 id="_5">其他常见指令<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>

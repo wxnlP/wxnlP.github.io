@@ -1067,7 +1067,7 @@
 
 <h2 id="_1">用户配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>右键任意一文件夹内空白处打开<kbd>Git bash here</kbd>进行配置</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># &lt;your_name&gt;是你的自定义用户名</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># &lt;your_name&gt;是你的自定义用户名</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;&lt;your_name&gt;&quot;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 配置用户邮箱, 在电脑上提交代码用的就是这个信息</span>
@@ -1078,7 +1078,7 @@
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>git<span class="w"> </span>config<span class="w"> </span>--list
 </span></code></pre></div>
 <h2 id="github">密钥配置（Github）<a class="headerlink" href="#github" title="Permanent link">&para;</a></h2>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>//1.输入以下命令不断回车
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>//1.输入以下命令不断回车
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>//2.获取公钥
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
@@ -1087,10 +1087,10 @@
 <p>复制上述内容至GitHub</p>
 <p><img alt="image-20240915204855019" src="../Git.assets/image-20240915204855019.png" /></p>
 <p>检查配置是否完成</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
 </span></code></pre></div>
 <h2 id="_2">仓库配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 初始化生成Git仓库, 此操作会生成一个.git的文件夹, 用于存放git的相关配置信息</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 初始化生成Git仓库, 此操作会生成一个.git的文件夹, 用于存放git的相关配置信息</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git<span class="w"> </span>init
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 将远程仓库链接到本地, 而且仅仅是链接, 不做任何下载上传操作</span>
@@ -1098,7 +1098,7 @@
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;your_repository_url&gt;
 </span></code></pre></div>
 <h2 id="_3">基础应用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 克隆代码</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 克隆代码</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>clone<span class="w"> </span>仓库地址
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># 进入本地仓库</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">cd</span><span class="w"> </span>本地仓库名称

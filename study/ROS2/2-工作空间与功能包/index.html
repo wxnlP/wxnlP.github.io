@@ -1837,24 +1837,24 @@
 <p><img alt="节点-主题与服务" src="https://fishros.com/d2lros2foxy/chapt3/3.1ROS2%E8%8A%82%E7%82%B9%E4%BB%8B%E7%BB%8D/imgs/Nodes-TopicandService.gif" /></p>
 <h3 id="412">4.1.2 启动节点<a class="headerlink" href="#412" title="Permanent link">&para;</a></h3>
 <p>终端指令：</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>&lt;package_name&gt;<span class="w"> </span>&lt;executable_name&gt;
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>&lt;package_name&gt;<span class="w"> </span>&lt;executable_name&gt;
 </span></code></pre></div>
 <p>package_name--功能包的名称       executable_name--可执行文件（即功能包下的 <strong>节点</strong> ）</p>
 <p>举例：启动小乌龟节点</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node
 </span></code></pre></div>
 <h3 id="413">4.1.3 节点常用的命令行指令<a class="headerlink" href="#413" title="Permanent link">&para;</a></h3>
 <p>查看节点列表(<strong>已经启用的节点</strong>)：</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>node<span class="w"> </span>list
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>node<span class="w"> </span>list
 </span></code></pre></div>
 <p>如下图，打开<kbd>turtlesim</kbd>下的<kbd>turtlesim_node</kbd>节点，可以查看到节点<kbd>turtlesim</kbd></p>
 <p><img alt="image-20241119164325908" src="image-20241119164325908.png" /></p>
 <p>查看节点信息，注意节点名称有<code>/</code>：</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>node<span class="w"> </span>info<span class="w"> </span>&lt;node_name&gt;<span class="w"> </span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>node<span class="w"> </span>info<span class="w"> </span>&lt;node_name&gt;<span class="w"> </span>
 </span></code></pre></div>
 <p><img alt="image-20241119165011698" src="image-20241119165011698.png" /></p>
 <p>重映射节点名称：</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node<span class="w"> </span>--ros-args<span class="w"> </span>--remap<span class="w"> </span>__node:<span class="o">=</span>my_turtle
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node<span class="w"> </span>--ros-args<span class="w"> </span>--remap<span class="w"> </span>__node:<span class="o">=</span>my_turtle
 </span></code></pre></div>
 <h2 id="42-ros2">4.2 ROS2工作空间与编译工具<a class="headerlink" href="#42-ros2" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -1866,30 +1866,30 @@
 <p>colcon想当于ros1中的catkin编译工具。</p>
 </blockquote>
 <p><strong>安装colcon工具</strong></p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-colcon-common-extensions
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-colcon-common-extensions
 </span></code></pre></div>
 <p><strong>colcon相关指令</strong></p>
 <blockquote>
 <p>pkg_name属于 <strong>变量</strong> ，即功能包的名称</p>
 </blockquote>
 <p>只编译一个包</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span><span class="s1">&#39;pkg_name&#39;</span><span class="w"> </span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span><span class="s1">&#39;pkg_name&#39;</span><span class="w"> </span>
 </span></code></pre></div>
 <p>不编译测试单元</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span><span class="s1">&#39;pkg_name&#39;</span><span class="w">  </span>--cmake-args<span class="w"> </span>-DBUILD_TESTING<span class="o">=</span><span class="m">0</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span><span class="s1">&#39;pkg_name&#39;</span><span class="w">  </span>--cmake-args<span class="w"> </span>-DBUILD_TESTING<span class="o">=</span><span class="m">0</span>
 </span></code></pre></div>
 <p>运行编译的包的测试</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>colcon<span class="w"> </span><span class="nb">test</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>colcon<span class="w"> </span><span class="nb">test</span>
 </span></code></pre></div>
 <p>允许通过更改src下的部分文件来改变install（重要），每次调整 python 脚本时都不必重新build了</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install
 </span></code></pre></div>
 <h3 id="422">4.2.2 创建工作空间<a class="headerlink" href="#422" title="Permanent link">&para;</a></h3>
 <p>创建 <strong>工作空间</strong> 文件夹，并编译文件夹，编译以后，会多出<code>build</code> 、<code>install</code>、 <code>log</code> 三个文件夹</p>
 <blockquote>
 <p>mkdir： 创建一个目录，mkdir -p ：递归创建目录，即使上级目录不存在，会按目录层级自动创建目录</p>
 </blockquote>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>wkspace1/src<span class="w"> </span><span class="c1"># 递归创建目录</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>wkspace1/src<span class="w"> </span><span class="c1"># 递归创建目录</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">cd</span><span class="w"> </span>wkspace1<span class="w"> </span><span class="c1"># 进入文件夹</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>colcon<span class="w"> </span>build<span class="w"> </span><span class="c1"># 编译</span>
 </span></code></pre></div>
@@ -1897,11 +1897,11 @@
 <h2 id="43">4.3 功能包示例<a class="headerlink" href="#43" title="Permanent link">&para;</a></h2>
 <h3 id="433-python">4.3.3 Python示例<a class="headerlink" href="#433-python" title="Permanent link">&para;</a></h3>
 <p>！！！进入<code>wkspace1/src</code>目录</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span>src
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span>src
 </span></code></pre></div>
 <p><img alt="image-20241119174905522" src="image-20241119174905522.png" /></p>
 <h4 id="1">1. 创建功能包<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_py<span class="w"> </span>--build-type<span class="w"> </span>ament_python<span class="w">  </span>--dependencies<span class="w"> </span>rclpy<span class="w">  </span>--node-name<span class="w"> </span>helloworld
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_py<span class="w"> </span>--build-type<span class="w"> </span>ament_python<span class="w">  </span>--dependencies<span class="w"> </span>rclpy<span class="w">  </span>--node-name<span class="w"> </span>helloworld
 </span></code></pre></div>
 <p><strong>参数介绍：</strong></p>
 <ul>
@@ -1913,10 +1913,10 @@
 <p>创建功能包以后会出现一个警告“未知的许可证”</p>
 <p><img alt="image-20241119174439848" src="image-20241119174439848.png" /></p>
 <p>这个经过不影响后续操作，感觉不舒服，添加一个许可证即可消除警告</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_py<span class="w"> </span>--build-type<span class="w"> </span>ament_python<span class="w">  </span>--dependencies<span class="w"> </span>rclpy<span class="w">  </span>--node-name<span class="w"> </span>helloworld<span class="w"> </span>--license<span class="w"> </span>Apache-2.0
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_py<span class="w"> </span>--build-type<span class="w"> </span>ament_python<span class="w">  </span>--dependencies<span class="w"> </span>rclpy<span class="w">  </span>--node-name<span class="w"> </span>helloworld<span class="w"> </span>--license<span class="w"> </span>Apache-2.0
 </span></code></pre></div>
 <h4 id="2">2. 程序源码<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span> <span class="nn">rclpy</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span> <span class="nn">rclpy</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 </span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="c1"># 初始化 ROS2</span>
@@ -1935,7 +1935,7 @@
 </span></code></pre></div>
 <h4 id="3-setuppy">3. 修改setup.py<a class="headerlink" href="#3-setuppy" title="Permanent link">&para;</a></h4>
 <p><code>helloworld = helloworld_py.helloworld:main</code> 即 <kbd>映射名称 = 功能包名称.源代码文件名称:函数名称</kbd>，”映射名称“是在终端运行可执行文件时后使用的名称。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">package_name</span> <span class="o">=</span> <span class="s1">&#39;pkg02_helloworld_py&#39;</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
@@ -1966,24 +1966,24 @@
 <h4 id="4">4. 编译运行节点<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
 <p>打开vscode或终端，进入<code>wkspace1</code>目录：</p>
 <p><strong>编译功能包</strong></p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>colcon<span class="w"> </span>build
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>colcon<span class="w"> </span>build
 </span></code></pre></div>
 <p><strong>source环境</strong></p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span></code></pre></div>
 <p><strong>运行节点</strong></p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>helloworld_py<span class="w"> </span>hello_node
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>helloworld_py<span class="w"> </span>hello_node
 </span></code></pre></div>
 <h4 id="5">5. 节点混淆错误解释<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
 <p>初学者很容易弄混，<code>setup.py</code>中的 <strong>映射名称</strong> <code>helloworld</code>，和源代码中的<code>rclpy.create_node("helloworld_node")</code>中的<code>helloworld_node</code>都是节点。但事实上，<code>helloworld</code>是映射源文件与可执行文件的一个别称，仅用于终端运行可执行文件时使用；而<code>helloworld_node</code>才是真正的节点名称，即可以用<kbd>ros2 node list</kbd>查到的节点，如下图：</p>
 <p><img alt="image-20241119182644318" src="image-20241119182644318.png" /></p>
 <h3 id="434-c">4.3.4 C++示例<a class="headerlink" href="#434-c" title="Permanent link">&para;</a></h3>
 <p>！！！进入<code>wkspace1/src</code>目录</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">cd</span><span class="w"> </span>src
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">cd</span><span class="w"> </span>src
 </span></code></pre></div>
 <p><img alt="image-20241119174905522" src="image-20241119174905522.png" /></p>
 <h4 id="1_1">1. 创建功能包<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_cpp<span class="w"> </span>--build-type<span class="w"> </span>ament_cmake<span class="w">  </span>--dependencies<span class="w"> </span>rclcpp<span class="w">  </span>--node-name<span class="w"> </span>helloworld<span class="w"> </span>--license<span class="w"> </span>Apache-2.0
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_cpp<span class="w"> </span>--build-type<span class="w"> </span>ament_cmake<span class="w">  </span>--dependencies<span class="w"> </span>rclcpp<span class="w">  </span>--node-name<span class="w"> </span>helloworld<span class="w"> </span>--license<span class="w"> </span>Apache-2.0
 </span></code></pre></div>
 <blockquote>
 <p>为什么添加<code>license</code>参数在python那一章有介绍，可以往上翻一翻</p>
@@ -1996,7 +1996,7 @@
 <li><code>--node-name</code>----节点名称 ，可以在创建功能包的时候创建一个节点，也可以选择自己手动添加</li>
 </ul>
 <h4 id="2_1">2. 程序源码<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;rclcpp/rclcpp.hpp&quot;</span>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;rclcpp/rclcpp.hpp&quot;</span>
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span>
 </span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="p">{</span>
@@ -2012,7 +2012,7 @@
 </span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="p">}</span>
 </span></code></pre></div>
 <h4 id="3-cmakeliststxt">3. 修改CMakeLists.txt<a class="headerlink" href="#3-cmakeliststxt" title="Permanent link">&para;</a></h4>
-<div class="language-cmake highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.8</span><span class="p">)</span>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.8</span><span class="p">)</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">project</span><span class="p">(</span><span class="s">pkg01_helloworld_cpp</span><span class="p">)</span>
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
 </span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="nb">if</span><span class="p">(</span><span class="s">CMAKE_COMPILER_IS_GNUCXX</span><span class="w"> </span><span class="s">OR</span><span class="w"> </span><span class="s">CMAKE_CXX_COMPILER_ID</span><span class="w"> </span><span class="s">MATCHES</span><span class="w"> </span><span class="s2">&quot;Clang&quot;</span><span class="p">)</span>
@@ -2052,26 +2052,26 @@
 <h4 id="4_1">4. 编译运行节点<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h4>
 <p>打开vscode或终端，进入<code>wkspace1</code>目录：</p>
 <p><strong>编译单个功能包</strong></p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span><span class="s1">&#39;helloworld_cpp&#39;</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span><span class="s1">&#39;helloworld_cpp&#39;</span>
 </span></code></pre></div>
 <p><img alt="image-20241119191755520" src="image-20241119191755520.png" /></p>
 <p><strong>source环境</strong></p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span></code></pre></div>
 <p><strong>运行节点</strong></p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>helloworld_py<span class="w"> </span>hello_node
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>helloworld_py<span class="w"> </span>hello_node
 </span></code></pre></div>
 <h3 id="435">4.3.5 运行优化<a class="headerlink" href="#435" title="Permanent link">&para;</a></h3>
 <p>每次终端中执行工作空间下的节点时，都需要调用<code>. install/setup.bash</code>指令，使用不便，优化策略是，可以将该指令的调用添加进<code>~/setup.bash</code>，操作格式如下：</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /{工作空间路径}/install/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /{工作空间路径}/install/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </span></code></pre></div>
 <p>示例：</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /home/lzh/wkspace1/install/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /home/lzh/wkspace1/install/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </span></code></pre></div>
 <h3 id="436">4.3.6 面向过程编程<a class="headerlink" href="#436" title="Permanent link">&para;</a></h3>
 <p>面向过程编程即是C++和Python的一大特点，同时也是ROS2区分于ROS的编程风格差异。</p>
 <h4 id="1-python">1. Python<a class="headerlink" href="#1-python" title="Permanent link">&para;</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="ch">#!/usr/bin/env python3</span>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="ch">#!/usr/bin/env python3</span>
 </span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kn">import</span> <span class="nn">rclpy</span>
 </span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
 </span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
@@ -2097,7 +2097,7 @@
 </span></code></pre></div>
 <p><img alt="image-20241119192952557" src="image-20241119192952557.png" /></p>
 <h4 id="2-c">2. C++<a class="headerlink" href="#2-c" title="Permanent link">&para;</a></h4>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;rclcpp/rclcpp.hpp&quot;</span>
+<div class="language-cpp highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;rclcpp/rclcpp.hpp&quot;</span>
 </span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 </span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
 </span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">using</span><span class="w">  </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
