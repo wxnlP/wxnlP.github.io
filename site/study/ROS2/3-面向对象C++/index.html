@@ -1801,7 +1801,7 @@
 <h1 id="c">特别篇 面向对象C++<a class="headerlink" href="#c" title="Permanent link">&para;</a></h1>
 <h2 id="1">1. 构造函数和析构函数<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <h3 id="11">1.1 构造函数的分类和析构函数<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//</span>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// Created by 李志豪 on 2024/3/30.</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">//</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -1869,10 +1869,10 @@
 <p><strong>初始化列表</strong></p>
 <p>C++提供了初始化列表语法，用来初始化属性</p>
 <p><strong>语法：</strong><code>构造函数()：属性1(值1),属性2（值2）... {}</code></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Person(int a, int b, int c) :m_A(a), m_B(b), m_C(c) {}
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Person(int a, int b, int c) :m_A(a), m_B(b), m_C(c) {}
 </span></code></pre></div>
 <h3 id="12">1.2 拷贝构造函数调用时机<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">COPY</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">COPY</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">COPY</span><span class="p">(){</span>
@@ -1938,7 +1938,7 @@
 <p>深拷贝：在堆区重新申请空间，进行拷贝操作</p>
 <p>当<code>new</code>一块堆区以后，调用默认的拷贝构造函数，会使得析构函数在重复释放内存，俗称**浅拷贝**。</p>
 <p>在拷贝指针变量时，<code>new</code>一块堆区存放参数，避免重复释放，俗称**深拷贝**。</p>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">COPY</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">COPY</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">COPY</span><span class="p">(){</span>
@@ -1991,7 +1991,7 @@
 </li>
 </ul>
 <p><strong>1.静态变量</strong></p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">{</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">public</span><span class="o">:</span>
@@ -2040,7 +2040,7 @@
 </span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="p">}</span>
 </span></code></pre></div>
 <p><strong>2.静态函数</strong></p>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">public</span><span class="o">:</span>
@@ -2095,7 +2095,7 @@
 </span></code></pre></div>
 <h2 id="2-cthis">2. C++对象模型和this指针<a class="headerlink" href="#2-cthis" title="Permanent link">&para;</a></h2>
 <h3 id="21">2.1 成员变量和成员函数分开存储<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="n">Person</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="n">mA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -2131,7 +2131,7 @@
 <li>当形参和成员变量同名时，可用this指针来区分</li>
 <li>在类的非静态成员函数中返回对象本身，可使用return *this</li>
 </ul>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
@@ -2182,7 +2182,7 @@
 <li>声明对象前加const称该对象为常对象</li>
 <li>常对象只能调用常函数</li>
 </ul>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">Person</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="n">m_A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -2245,7 +2245,7 @@
 <blockquote>
 <p>设计意图的更清晰表达，可以带来更好的可读性，方便编译器捕捉更多的错误，而且有时还会带来更多的优化机会)\</p>
 </blockquote>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">FriendShip</span><span class="p">;</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">FriendShip</span><span class="p">;</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">//成员函数做友元,成员函数所属的类要放在友元类的前面（不清楚为什么）</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">Friend2</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">{</span>
@@ -2340,7 +2340,7 @@
 <blockquote>
 <p>这里用的是<code>static</code>，<a href="#3. 友元">友元的实例</a>有的是<code>const</code></p>
 </blockquote>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
@@ -2374,7 +2374,7 @@
 </span></code></pre></div>
 <h3 id="52">5.2 继承类型<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
 <p><img alt="x" src="clip_image002.png" /></p>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">{</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">name</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -2442,7 +2442,7 @@
 </blockquote>
 <h3 id="53">5.3 继承中构造和析构顺序<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
 <p><strong>继承中 先调用父类构造函数，再调用子类构造函数，析构顺序与构造相反</strong></p>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">{</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="n">Base</span><span class="p">()</span>
@@ -2506,7 +2506,7 @@
 <p>​   这种继承被称为菱形继承，或者钻石继承</p>
 <p><strong>典型的菱形继承案例：</strong></p>
 <p><img alt="IMG_256" src="clip_image002.jpg" /></p>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_Age</span><span class="p">;</span>
@@ -2552,7 +2552,7 @@
 <li>静态多态的函数地址早绑定  -  编译阶段确定函数地址</li>
 <li>动态多态的函数地址晚绑定  -  运行阶段确定函数地址</li>
 </ul>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">{</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="c1">//Speak函数就是虚函数</span>
@@ -2629,7 +2629,7 @@
 </ul>
 <p>重写：函数返回值类型  函数名 参数列表 完全一致称为重写</p>
 <p>计算器案例</p>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">//普通实现</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">//普通实现</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Calculator</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">getResult</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">oper</span><span class="p">)</span>
@@ -2758,7 +2758,7 @@
 <li>子类必须重写抽象类中的纯虚函数，否则也属于抽象类</li>
 </ul>
 <p><strong>示例：</strong></p>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Base</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="p">{</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="c1">//纯虚函数</span>
@@ -2813,7 +2813,7 @@
 <p><code>virtual ~类名() = 0;</code></p>
 <p><code>类名::~类名(){}</code></p>
 <p><strong>示例：</strong></p>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">public</span><span class="o">:</span>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="n">Animal</span><span class="p">()</span>

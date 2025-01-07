@@ -1719,21 +1719,21 @@
 
 <h2 id="11">1.1 基础工具安装<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
 <h3 id="111">1.1.1 安装必要库与工具<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>gcc<span class="w"> </span>g++<span class="w"> </span>make<span class="w"> </span>zlib*<span class="w"> </span>libffi-dev
 </span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>e2fsprogs<span class="w"> </span>pkg-config<span class="w"> </span>flex<span class="w"> </span>bison<span class="w"> </span>perl<span class="w"> </span>bc<span class="w"> </span>openssl<span class="w"> </span>libssl-dev<span class="w"> </span>libelf-dev<span class="w"> </span>libc6-dev-amd64<span class="w"> </span>binutils<span class="w"> </span>binutils-dev<span class="w"> </span>libdwarf-dev<span class="w"> </span>u-boot-tools<span class="w"> </span>mtd-utils<span class="w"> </span>gcc-arm-linux-gnueabi<span class="w"> </span>cpio<span class="w"> </span>device-tree-compiler
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>e2fsprogs<span class="w"> </span>pkg-config<span class="w"> </span>flex<span class="w"> </span>bison<span class="w"> </span>perl<span class="w"> </span>bc<span class="w"> </span>openssl<span class="w"> </span>libssl-dev<span class="w"> </span>libelf-dev<span class="w"> </span>libc6-dev-amd64<span class="w"> </span>binutils<span class="w"> </span>binutils-dev<span class="w"> </span>libdwarf-dev<span class="w"> </span>u-boot-tools<span class="w"> </span>mtd-utils<span class="w"> </span>gcc-arm-linux-gnueabi<span class="w"> </span>cpio<span class="w"> </span>device-tree-compiler
 </span></code></pre></div>
 <h3 id="112-python">1.1.2 更改python源<a class="headerlink" href="#112-python" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>which<span class="w"> </span>python3.8
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>which<span class="w"> </span>python3.8
 </span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python3.8<span class="w"> </span><span class="m">1</span><span class="w">    </span><span class="c1">#/usr/bin/python3.8为上一步查看的Python 3.8的位置</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python3.8<span class="w"> </span><span class="m">1</span><span class="w">    </span><span class="c1">#/usr/bin/python3.8为上一步查看的Python 3.8的位置</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python3<span class="w"> </span>python3<span class="w"> </span>/usr/bin/python3.8<span class="w"> </span><span class="m">1</span><span class="w">   </span><span class="c1">#/usr/bin/python3.8为上一步查看的Python 3.8的位置</span>
 </span></code></pre></div>
 <h3 id="113-pip">1.1.3 配置华为云为pip的更新源<a class="headerlink" href="#113-pip" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
 </span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdir<span class="w"> </span>~/.pip
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mkdir<span class="w"> </span>~/.pip
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>pip3<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>global.index-url<span class="w"> </span>https://mirrors.huaweicloud.com/repository/pypi/simple
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>pip3<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>global.trusted-host<span class="w"> </span>mirrors.huaweicloud.com
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>pip3<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>global.timeout<span class="w"> </span><span class="m">120</span>
@@ -1764,42 +1764,42 @@
 </tbody>
 </table>
 <h3 id="122scons">1.2.2scons<a class="headerlink" href="#122scons" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>scons
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>scons
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">#添加环境变量</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=~/.local/bin:$PATH&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>~/.bashrc
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 验证</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 验证</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>scons<span class="w"> </span>-v
 </span></code></pre></div>
 <p><img alt="image-20241031132114479" src="image-20241031132114479.png" /></p>
 <h3 id="123-kconfiglib">1.2.3 kconfiglib<a class="headerlink" href="#123-kconfiglib" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip3<span class="w"> </span>install<span class="w">  </span>kconfiglib
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip3<span class="w"> </span>install<span class="w">  </span>kconfiglib
 </span></code></pre></div>
 <h3 id="124-pycryptodomeecdsa">1.2.4 pycryptodome和ecdsa<a class="headerlink" href="#124-pycryptodomeecdsa" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pip3<span class="w"> </span>install<span class="w"> </span>pycryptodome<span class="w"> </span>ecdsa
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pip3<span class="w"> </span>install<span class="w"> </span>pycryptodome<span class="w"> </span>ecdsa
 </span></code></pre></div>
 <h3 id="125-gcc-riscv32">1.2.5 gcc riscv32<a class="headerlink" href="#125-gcc-riscv32" title="Permanent link">&para;</a></h3>
 <p>下载</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>wget<span class="w"> </span>https://repo.huaweicloud.com/harmonyos/compiler/gcc_riscv32/7.3.0/linux/gcc_riscv32-linux-7.3.0.tar.gz
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>wget<span class="w"> </span>https://repo.huaweicloud.com/harmonyos/compiler/gcc_riscv32/7.3.0/linux/gcc_riscv32-linux-7.3.0.tar.gz
 </span></code></pre></div>
 <p>解压到<kbd>home</kbd>目录</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>tar<span class="w"> </span>-xvf<span class="w"> </span>gcc_riscv32-linux-7.3.0.tar.gz<span class="w"> </span>-C<span class="w"> </span>~/
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>tar<span class="w"> </span>-xvf<span class="w"> </span>gcc_riscv32-linux-7.3.0.tar.gz<span class="w"> </span>-C<span class="w"> </span>~/
 </span></code></pre></div>
 <p>删除压缩包</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>rm<span class="w"> </span>gcc_riscv32-linux-7.3.0.tar.gz
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>rm<span class="w"> </span>gcc_riscv32-linux-7.3.0.tar.gz
 </span></code></pre></div>
 <p>添加环境变量</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=~/gcc_riscv32/bin:$PATH&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>~/.bashrc
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=~/gcc_riscv32/bin:$PATH&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>~/.bashrc
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </span></code></pre></div>
 <h2 id="13-samba">1.3 安装Samba服务<a class="headerlink" href="#13-samba" title="Permanent link">&para;</a></h2>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>samba
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>samba
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1">#打开配置文件</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/samba/smb.conf<span class="w">   </span>
 </span></code></pre></div>
 <p>将下列信息填入<code>smb.conf</code>的最后一行</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>[home]
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>[home]
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>comment = User Homes
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>path = /home
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>guest ok = no
@@ -1809,28 +1809,28 @@
 </span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>directory mask = 0755
 </span></code></pre></div>
 <p>指定共享账号</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>smbpasswd<span class="w"> </span>-a<span class="w"> </span>username<span class="w">   </span><span class="c1">#用户名为Ubuntu用户名。输入命令后，根据提示设置密码。</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>smbpasswd<span class="w"> </span>-a<span class="w"> </span>username<span class="w">   </span><span class="c1">#用户名为Ubuntu用户名。输入命令后，根据提示设置密码。</span>
 </span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo<span class="w"> </span>service<span class="w"> </span>smbd<span class="w"> </span>restart
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sudo<span class="w"> </span>service<span class="w"> </span>smbd<span class="w"> </span>restart
 </span></code></pre></div>
 <h2 id="14">1.4 获取源码<a class="headerlink" href="#14" title="Permanent link">&para;</a></h2>
 <h3 id="141-gitgit-lfs">1.4.1 安装git和git-lfs<a class="headerlink" href="#141-gitgit-lfs" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">#更新软件列表</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">#更新软件列表</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c1">#安装git客户端和git-lfs</span>
 </span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>git-lfs
 </span></code></pre></div>
 <h3 id="142-git">1.4.2 git用户配置<a class="headerlink" href="#142-git" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;yourname&quot;</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;yourname&quot;</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your-email-address&quot;</span>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>store
 </span></code></pre></div>
 <h3 id="143-reporequests">1.4.3 安装repo和requests<a class="headerlink" href="#143-reporequests" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>wget<span class="w"> </span>https://gitee.com/oschina/repo/raw/fork_flow/repo-py3<span class="w"> </span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>wget<span class="w"> </span>https://gitee.com/oschina/repo/raw/fork_flow/repo-py3<span class="w"> </span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>sudo<span class="w"> </span>mv<span class="w"> </span>repo-py3<span class="w"> </span>/usr/local/bin/repo
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>a+x<span class="w"> </span>/usr/local/bin/repo
 </span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>pip<span class="w"> </span>install<span class="w"> </span>requests
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>pip<span class="w"> </span>install<span class="w"> </span>requests
 </span></code></pre></div>
 <h3 id="144-307lts">1.4.4 获取3.0.7LTS版本源码<a class="headerlink" href="#144-307lts" title="Permanent link">&para;</a></h3>
 <details class="danger">
@@ -1838,11 +1838,11 @@
 <p>关于初学者选择源码的标准，据了解先OpenHarmony的轻量系统已基本稳定，3.1之后版本更新多针对于小型系统和标准系统，故无需追求过高的源码，3.0.7为比较高的适合版本。（个人也喜欢新版本所以选择这个版本）</p>
 </details>
 <p>创建源码存放文件夹</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>mkdir<span class="w"> </span>~/OpenHarmony/3.0.7
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>mkdir<span class="w"> </span>~/OpenHarmony/3.0.7
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">cd</span><span class="w"> </span>~/OpenHarmony/3.0.7
 </span></code></pre></div>
 <p>获取OpenHarmony-3.0.7-LTS源代码</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1">#使用repo工具-初始化源码仓</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1">#使用repo工具-初始化源码仓</span>
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>repo<span class="w"> </span>init<span class="w"> </span>-u<span class="w"> </span>https://gitee.com/openharmony/manifest.git<span class="w"> </span>-b<span class="w"> </span>refs/tags/OpenHarmony-v3.0.7-LTS<span class="w"> </span>--no-repo-verify
 </span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1">#使用repo工具-同步源码仓</span>
 </span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>repo<span class="w"> </span>sync<span class="w"> </span>-c
@@ -1852,13 +1852,13 @@
 <h2 id="15">1.5 完善编译环境<a class="headerlink" href="#15" title="Permanent link">&para;</a></h2>
 <h3 id="151-hb">1.5.1 安装hb<a class="headerlink" href="#151-hb" title="Permanent link">&para;</a></h3>
 <p>在源码根目录打开终端</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>build/lite
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>build/lite
 </span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=~/.local/bin:$PATH&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>~/.bashrc
 </span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nb">source</span><span class="w"> </span>~/.bashrc
 </span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>hb<span class="w"> </span>-h
 </span></code></pre></div>
 <h3 id="152-gn">1.5.2 安装gn<a class="headerlink" href="#152-gn" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1">#建立目录</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1">#建立目录</span>
 </span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/OpenHarmony/3.0.7/prebuilts/build-tools/linux-x86/bin/
 </span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="c1">#下载</span>
 </span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>wget<span class="w"> </span>https://repo.huaweicloud.com/harmonyos/compiler/gn/1717/linux/gn-linux-x86-1717.tar.gz
@@ -1868,7 +1868,7 @@
 </span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>rm<span class="w"> </span>gn-linux-x86-1717.tar.gz
 </span></code></pre></div>
 <h3 id="153-ninja">1.5.3 安装ninja<a class="headerlink" href="#153-ninja" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1">#下载</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1">#下载</span>
 </span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>wget<span class="w"> </span>https://repo.huaweicloud.com/harmonyos/compiler/ninja/1.10.1/linux/ninja-linux-x86-1.10.1.tar.gz
 </span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="c1">#安装</span>
 </span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>tar<span class="w"> </span>-xvf<span class="w"> </span>ninja-linux-x86-1.10.1.tar.gz<span class="w"> </span>-C<span class="w"> </span>~/OpenHarmony/3.0.7/prebuilts/build-tools/linux-x86/bin/
@@ -1882,7 +1882,7 @@
 <p>添加vscode的头文件引用，将图中标红处添加即可。</p>
 <p><img alt="image-20241230135211456" src="image-20241230135211456.png" /></p>
 <p>找到目录<code>./applications/sample/wifi-iot/app</code>，在app文件夹下一个文件夹<code>my_first_app</code>，代码文件<code>hello_world.c</code>，编译脚本<code>BUILD.gn</code>。具体目录结构如下：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>.
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>.
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>└── applications
 </span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    └── sample
 </span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>        └── wifi-iot
@@ -1896,7 +1896,7 @@
 <p>官方称呼：新增业务my_first_app，其中hello_world.c为业务代码，BUILD.gn为编译脚本。</p>
 </details>
 <p>在<code>hello_world.c</code>文件中添加代码</p>
-<div class="language-C highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 </span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ohos_init.h&quot;</span>
 </span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ohos_types.h&quot;</span>
 </span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
@@ -1907,7 +1907,7 @@
 </span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="n">SYS_RUN</span><span class="p">(</span><span class="n">HelloWorld</span><span class="p">);</span>
 </span></code></pre></div>
 <p>在编译脚本<code>BUILD.gn</code>中添加编译配置</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>static_library(&quot;myapp&quot;) {
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>static_library(&quot;myapp&quot;) {
 </span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>    sources = [
 </span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>        &quot;hello_world.c&quot;
 </span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>    ]
@@ -1921,7 +1921,7 @@
 <summary>Danger</summary>
 <p>若源码版本大于等于OpenHarmony 3.2 Beta2时，组件配置文件为<code>build/lite/components/communication.json</code>。</p>
 </details>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">{</span>
+<div class="language-json highlight"><span class="filename">JSON</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">{</span>
 </span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="p">{</span>
 </span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">      </span><span class="nt">&quot;component&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;camera_sample_communication&quot;</span><span class="p">,</span>
@@ -1978,7 +1978,7 @@
 </span><span id="__span-30-55"><a id="__codelineno-30-55" name="__codelineno-30-55" href="#__codelineno-30-55"></a><span class="w">      </span><span class="p">],</span>
 </span></code></pre></div>
 <p>修改单板配置文件<code>vendor/hisilicon/hispark_pegasus/config.json</code>，新增hello_world_app组件的条目</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="w">      </span><span class="p">{</span>
+<div class="language-json highlight"><span class="filename">JSON</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="w">      </span><span class="p">{</span>
 </span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">        </span><span class="nt">&quot;subsystem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;applications&quot;</span><span class="p">,</span>
 </span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">        </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 </span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="err">##s</span><span class="kc">tart</span><span class="err">##</span>
@@ -1996,7 +1996,7 @@
 <p>在终端进入源代码的根目录，如下图所示：</p>
 <p><img alt="image-20241031160253242" src="image-20241031160253242.png" /></p>
 <p>选择开发板</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>hb<span class="w"> </span><span class="nb">set</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>hb<span class="w"> </span><span class="nb">set</span>
 </span></code></pre></div>
 <p>需要确认代码目录，我们已经在根目录，回车即可。然后，上下移动选择开发板</p>
 <p><img alt="image-20241031160410039" src="image-20241031160410039.png" /></p>
@@ -2005,7 +2005,7 @@
 <li><code>hb build</code>，增量编译</li>
 <li><code>hb build -f</code>，全量编译</li>
 </ul>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>hb<span class="w"> </span>build
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>hb<span class="w"> </span>build
 </span></code></pre></div>
 <p><img alt="image-20241224233922418" src="image-20241224233922418.png" /></p>
 <h3 id="163">1.6.3 烧录固件<a class="headerlink" href="#163" title="Permanent link">&para;</a></h3>
@@ -2040,7 +2040,7 @@
 <blockquote>
 <p>不要有多余的空格，否则容易错误</p>
 </blockquote>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>AT+STARTSTA<span class="w">             </span><span class="c1"># 启动STA模式</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>AT+STARTSTA<span class="w">             </span><span class="c1"># 启动STA模式</span>
 </span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>AT+SCAN<span class="w">                     </span><span class="c1"># 扫描周边AP</span>
 </span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>AT+SCANRESULT<span class="w">               </span><span class="c1"># 显示扫描结果</span>
 </span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>AT+CONN<span class="o">=</span><span class="s2">&quot;pi&quot;</span>,,2,<span class="s2">&quot;123456789&quot;</span><span class="w"> </span><span class="c1"># 连接指定AP，替换热点名称与密码即可</span>
@@ -2053,7 +2053,7 @@
 <blockquote>
 <p>说明：脚本非本人所写，而是在购买了《OpenHarmony轻量设备开发理论与实践》以后在配套资料中所得，希望可以帮助到阅读到此文档的开源鸿蒙学习者。为不侵占图书利益，网盘中仅存有两个便捷脚本，更多好用资源鼓励大家购买图书支持，网盘内容若有侵权请联系删除。</p>
 </blockquote>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>链接: https://pan.baidu.com/s/1o-FyN4wB-fxVT8XxQ5zhlQ?pwd=hj55 
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>链接: https://pan.baidu.com/s/1o-FyN4wB-fxVT8XxQ5zhlQ?pwd=hj55 
 </span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>提取码: hj55
 </span></code></pre></div>
 <h3 id="191">1.9.1 快速联网脚本<a class="headerlink" href="#191" title="Permanent link">&para;</a></h3>
@@ -2066,11 +2066,11 @@
 <p>文本编辑打开修改HiBurn.exe、串口号、虚拟机IP、虚拟机文件地址，双击即可完成烧录，无需来回点击HiBurn配置参数（切记先断开MobaXterm串口）</p>
 <p><img alt="image-20241228205834038" src="image-20241228205834038.png" /></p>
 <h2 id="_1">错误解析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>更换介质：请把标有<span class="w">                     </span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>更换介质：请把标有<span class="w">                     </span>
 </span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w"> </span>“Ubuntu<span class="w"> </span><span class="m">20</span>.04.6<span class="w"> </span>LTS<span class="w"> </span>_Focal<span class="w"> </span>Fossa_<span class="w"> </span>-<span class="w"> </span>Release<span class="w"> </span>amd64<span class="w"> </span><span class="o">(</span><span class="m">20230316</span><span class="o">)</span>”
 </span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>的盘片插入驱动器“/cdrom/”再按「回车」键
 </span></code></pre></div>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1"># 打开sources.list</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1"># 打开sources.list</span>
 </span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/apt/sources.list
 </span></code></pre></div>
 <p>注释第一行</p>

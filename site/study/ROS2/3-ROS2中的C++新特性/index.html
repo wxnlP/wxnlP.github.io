@@ -1414,14 +1414,14 @@
 </blockquote>
 <h2 id="1-auto">1. 自动类型判断（auto）<a class="headerlink" href="#1-auto" title="Permanent link">&para;</a></h2>
 <p><code>auto</code> 是一种关键字，允许编译器根据变量的初始值自动推导其类型。在一般的工程中，只有<code>int</code> 、 <code>float</code> 、 <code>char*</code> 等数据类型则体现不出来它的便捷，但是在ROS 2 中普遍存在名称很长的数据类型，比如 ：</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MiniPublisher</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;publisher_cpp_node&quot;</span><span class="p">);</span>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MiniPublisher</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;publisher_cpp_node&quot;</span><span class="p">);</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// 此时node的数据类型应该是 std::shared_ptr&lt;MiniPublisher&gt; </span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">// 若不使用auto，则应该写出下面这样，显然会麻烦很多。</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">MiniPublisher</span><span class="o">&gt;</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MiniPublisher</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;publisher_cpp_node&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 <h2 id="2-make_shared">2. 智能共享指针（make_shared）<a class="headerlink" href="#2-make_shared" title="Permanent link">&para;</a></h2>
 <p>智能共享指针 <code>std::make_shared</code> ，在C++ 11 标准时引入，创建一个对象并返回一个指向该对象的 <code>std::shared_ptr</code>。它简化了动态内存分配的过程，并具有性能和安全性上的优势。</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>auto<span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>std::make_shared&lt;T&gt;<span class="o">(</span>constructor_args...<span class="o">)</span><span class="p">;</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>auto<span class="w"> </span><span class="nv">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>std::make_shared&lt;T&gt;<span class="o">(</span>constructor_args...<span class="o">)</span><span class="p">;</span>
 </span></code></pre></div>
 <ul>
 <li><strong><code>T</code></strong>: 指定的对象类型。</li>
@@ -1430,7 +1430,7 @@
 <li><strong><code>constructor_args...</code></strong> : 传递给对象 <code>T</code> 的构造函数参数。</li>
 </ul>
 <p>后续最经常使用的一个场景就是，在初始化节点对象时：</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/*创建一个对象 node</span>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/*创建一个对象 node</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cm">  使用 auto 自动判断数据类型</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cm">  指向 MiniPublisher </span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cm">  传递一个参数，即节点名称</span>
@@ -1438,7 +1438,7 @@
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">auto</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MiniPublisher</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;publisher_cpp_node&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 <p>有对比才有伤害，共享指针与普通指针对比：</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
@@ -1506,7 +1506,7 @@
 </tbody>
 </table>
 <h2 id="3-lamada">3. Lamada表达式<a class="headerlink" href="#3-lamada" title="Permanent link">&para;</a></h2>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">[</span><span class="n">capture</span><span class="p">](</span><span class="n">parameter_list</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">return_type</span><span class="w"> </span><span class="p">{</span>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">[</span><span class="n">capture</span><span class="p">](</span><span class="n">parameter_list</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">return_type</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="c1">// 函数体</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">};</span>
 </span></code></pre></div>
@@ -1537,7 +1537,7 @@
 <li>返回类型</li>
 </ul>
 <p>示例:</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="c1">// 无捕获</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">add1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">int</span>
@@ -1559,7 +1559,7 @@
 </span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1">// out: sum1:5--sum2:30</span>
 </span></code></pre></div>
 <h2 id="4">4. 函数包装器<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">// 自由函数</span>
@@ -1612,7 +1612,7 @@
 </span><span id="__span-6-51"><a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>out：</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>自由函数aini.txt
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>自由函数aini.txt
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>lamada函数aini.txt
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>成员函数aini.txt
 </span></code></pre></div>

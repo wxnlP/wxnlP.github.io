@@ -1245,7 +1245,7 @@
 <p>所谓软件模拟I2C即使用代码手动拉高拉低电平，实现I2C时序操作，可以随意选择SDA和SCL引脚使用更加灵活。</p>
 <h3 id="i2c_4">I2C文件<a class="headerlink" href="#i2c_4" title="Permanent link">&para;</a></h3>
 <p>创建I2C.c文件，编写I2C基本时序</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
+<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MyI2C.h&quot;</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Delay.h&quot;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
@@ -1358,7 +1358,7 @@
 </span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>I2C.h文件定义引脚和函数声明</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#ifndef __MYI2C_H__</span>
+<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#ifndef __MYI2C_H__</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#define __MYI2C_H__</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1"> </span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
@@ -1382,7 +1382,7 @@
 </span></code></pre></div>
 <h3 id="mpu6050_2">Mpu6050文件<a class="headerlink" href="#mpu6050_2" title="Permanent link">&para;</a></h3>
 <p>创建Mpu6050.c文件，编写MPU6050操作函数</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
+<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MyI2C.h&quot;</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Mpu6050.h&quot;</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
@@ -1483,7 +1483,7 @@
 <p>MPU6050_GetData函数的使用方法见<a href="#2.3.3main主函数">主函数</a>代码，采用了指针做形参传递的方法。</p>
 </blockquote>
 <p>创建Mpu6050.h文件，定义MPU6050各个寄存器地址</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#ifndef __MPU6050_H__</span>
+<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#ifndef __MPU6050_H__</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">#define __MPU6050_H__</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">//#include &quot;stm32f10x.h&quot; </span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -1521,7 +1521,7 @@
 </span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="cp">#endif</span>
 </span></code></pre></div>
 <h3 id="main">main主函数<a class="headerlink" href="#main" title="Permanent link">&para;</a></h3>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
+<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Delay.h&quot;</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;OLED.h&quot;</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MPU6050.h&quot;</span>
@@ -1572,7 +1572,7 @@
 <p><img alt="1706267321796" src="../STM32%E5%9B%9B%E5%A4%A7%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/1706267321796.png" /></p>
 <h2 id="i2c_8">硬件I2C(标准库)<a class="headerlink" href="#i2c_8" title="Permanent link">&para;</a></h2>
 <p>保持I2C文件代码不编，修改Mpu6050.c的配置代码</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
+<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MyI2C.h&quot;</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Mpu6050.h&quot;</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
@@ -1752,7 +1752,7 @@
 </span><span id="__span-5-178"><a id="__codelineno-5-178" name="__codelineno-5-178" href="#__codelineno-5-178"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>main主函数代码</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
+<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;stm32f10x.h&quot;</span><span class="c1">                  // Device header</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Delay.h&quot;</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;OLED.h&quot;</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MPU6050.h&quot;</span>
