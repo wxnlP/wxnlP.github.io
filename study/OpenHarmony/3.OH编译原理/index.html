@@ -1630,19 +1630,18 @@
 <p>关于系统、子系统、组件的关系如下图，其中子系统和组件支持 <strong>裁剪</strong> 。</p>
 <p><img alt="image-20241229142621148" src="image-20241229142621148.png" /></p>
 <p><code>build/lite</code>是轻量级设备（如 IoT 设备）编译构建系统的核心部分，目录主要内容如下：</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>build/lite            
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── components        # 组件描述文件
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── config            # 编译配置文件
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>|   ├── component     # 组件相关模板定义
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>|   ├── kernel        # 内核的编译配置参数
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>|   └── subsystem     # 子系统的编译配置模板
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── figures           # readme的图片
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── hb                # hb的pip安装包源码
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── make_rootfs       # 文件系统镜像制作脚本
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── ndk               # Native API相关编译脚本与配置参数
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── testfwk           # 测试编译框架
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>└── toolchain         # 编译工具链配置
-</span></code></pre></div>
+<pre class="highlight"><code>build/lite            
+├── components        # 组件描述文件
+├── config            # 编译配置文件
+|   ├── component     # 组件相关模板定义
+|   ├── kernel        # 内核的编译配置参数
+|   └── subsystem     # 子系统的编译配置模板
+├── figures           # readme的图片
+├── hb                # hb的pip安装包源码
+├── make_rootfs       # 文件系统镜像制作脚本
+├── ndk               # Native API相关编译脚本与配置参数
+├── testfwk           # 测试编译框架
+└── toolchain         # 编译工具链配置</code></pre>
 <p>在轻量系统中，一个组件不能单独编译，必须加入一个产品或开发板方案。关于前面用到的编译指令：</p>
 <ul>
 <li><code>hb set</code>，用于选择OpenHarmony的源码目录和要编译的目标保存至相应的配置文件中。</li>
@@ -1673,14 +1672,13 @@
 <ol>
 <li>组件的目录结构应如下：</li>
 </ol>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>component
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── interfaces       # 接口
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>|   ├── innerkits    # 系统内接口，供组件开发者使用
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>|   └── kits         # 应用接口，供应用开发者使用
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├── frameworks       # framework的实现
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── services         # service的实现
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>└── BUILD.gn         # 组件的编译脚本
-</span></code></pre></div>
+<pre class="highlight"><code>component
+├── interfaces       # 接口
+|   ├── innerkits    # 系统内接口，供组件开发者使用
+|   └── kits         # 应用接口，供应用开发者使用
+├── frameworks       # framework的实现
+├── services         # service的实现
+└── BUILD.gn         # 组件的编译脚本</code></pre>
 <ol>
 <li>以IOT外围设备控制组件为例</li>
 </ol>
@@ -1701,27 +1699,27 @@
 <li>组件必须注册到 <strong>子系统</strong> 中。然后，需要把组件的基本信息告诉子系统就完成了组件的定义。</li>
 </ol>
 <p>以下就是<code>iot_hardware.json</code>文件的全部定义：</p>
-<div class="language-json highlight"><span class="filename">JSON</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                                               </span><span class="c1">// 全部组件</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="p">{</span><span class="w">                                                           </span><span class="c1">// 单个组件定义</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">&quot;component&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;iot_controller&quot;</span><span class="p">,</span><span class="w">                            </span><span class="c1">// 组件名称</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Iot peripheral controller.&quot;</span><span class="p">,</span><span class="w">              </span><span class="c1">// 组件的功能描述</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="nt">&quot;optional&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="w">                                      </span><span class="c1">// 组件是否为最小系统必选</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="nt">&quot;dirs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;base/iot_hardware/peripheral&quot;</span><span class="p">],</span><span class="w">                </span><span class="c1">// 组件源码目录</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="nt">&quot;targets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;//base/iot_hardware/peripheral:iothardware&quot;</span><span class="p">],</span><span class="c1">// 组件编译目标</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">                                             </span><span class="c1">// 组件编译输出</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="nt">&quot;rom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w">                                                </span><span class="c1">// 组件的ROM容量</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="nt">&quot;ram&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w">                                                </span><span class="c1">// 组件的RAM容量</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="nt">&quot;adapted_kernel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;liteos_m&quot;</span><span class="p">],</span><span class="w">                           </span><span class="c1">// 组件已适配的内核 </span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">                                           </span><span class="c1">// 组件可配置的特性</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">      </span><span class="nt">&quot;deps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                                                 </span><span class="c1">// 组件依赖  </span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">                                       </span><span class="c1">// 组件依赖的其他组件</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="nt">&quot;third_party&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">                                       </span><span class="c1">// 组件依赖的第三方开源软件</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span><span class="p">]</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">}</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-json">{
+  "components": [                                               // 全部组件
+    {                                                           // 单个组件定义
+      "component": "iot_controller",                            // 组件名称
+      "description": "Iot peripheral controller.",              // 组件的功能描述
+      "optional": "false",                                      // 组件是否为最小系统必选
+      "dirs": [ "base/iot_hardware/peripheral"],                // 组件源码目录
+      "targets": ["//base/iot_hardware/peripheral:iothardware"],// 组件编译目标
+      "output": [],                                             // 组件编译输出
+      "rom": "",                                                // 组件的ROM容量
+      "ram": "",                                                // 组件的RAM容量
+      "adapted_kernel": ["liteos_m"],                           // 组件已适配的内核 
+      "features": [],                                           // 组件可配置的特性
+      "deps": {                                                 // 组件依赖  
+        "components": [],                                       // 组件依赖的其他组件
+        "third_party": []                                       // 组件依赖的第三方开源软件
+      }
+    }
+  ]
+}
+</code></pre>
 <h4 id="4"><strong>4. 组件的编译目标</strong><a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
 <ol>
 <li>编译入口其实就是组件的<code>targets</code>参数，格式约束如此<code>"targets":["路径:目标名称"]</code>。其中 <strong>路径</strong> 以绝对路径表示，<code>//</code> 开头，以源码根目录开始， <strong>目标名称</strong> 由路径下的<code>BUILD.gn</code>文件定义。</li>
@@ -1745,19 +1743,18 @@
 <li>include_dirs：头文件的路径列表，即逗号隔开的头文件所在位置，绝对路径或相对路径。</li>
 </ul>
 <p><code>BUILD.gn</code>模板</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>类型(&quot;目标名称&quot;){
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    sources = [
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        &quot;.c&quot;,
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        &quot;.c&quot;,
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        ......
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    ]
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    include_dirs = [
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        &quot;路径&quot;,
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        &quot;路径&quot;,
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        ......
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    ]
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>}
-</span></code></pre></div>
+<pre class="highlight"><code>类型("目标名称"){
+    sources = [
+        ".c",
+        ".c",
+        ......
+    ]
+    include_dirs = [
+        "路径",
+        "路径",
+        ......
+    ]
+}</code></pre>
 <p>IOT外围设备控制组件为例，目标如下<code>"targets": ["//base/iot_hardware/peripheral:iothardware"]</code>，找到一个名为 <code>iothardware</code> 的目标组。</p>
 <p><img alt="image-20241229235814264" src="image-20241229235814264.png" /></p>
 <p>注意<code>$ohos_board_adapter_dir</code>代指的目录为<code>device\hisilicon\hispark_pegasus\hi3861_adapter</code>，则在<code>device\hisilicon\hispark_pegasus\hi3861_adapter\hals\iot_hardware\wifiiot_lite:hal_iothardware</code>下找到另一个<code>BUILD.gn</code>文件。编译类型为静态库，会编译<code>sources</code>下的<code>.c</code>文件，<code>include_dirs</code>为保护的头文件。</p>
@@ -1782,150 +1779,142 @@
 <li>芯片解决方案部件会随产品选择的开发板默认编译。</li>
 <li>芯片解决方案目录树规则如下：</li>
 </ul>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span>device<span class="w">                                      </span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>└──<span class="w"> </span>board<span class="w">                                   </span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span>└──<span class="w"> </span>company<span class="w">                            </span><span class="c1"># 芯片解决方案厂商</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">           </span>└──<span class="w">  </span>hispark_aries<span class="w">                </span><span class="c1"># 开发板名称</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">                 </span>├──<span class="w"> </span>BUILD.gn<span class="w">                </span><span class="c1"># 编译脚本</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">                 </span>├──<span class="w"> </span>hals<span class="w">                    </span><span class="c1"># OS南向接口适配</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">                 </span>├──<span class="w"> </span>linux<span class="w">                   </span><span class="c1"># 可选，linux内核版本</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">                 </span>│<span class="w">   </span>└──<span class="w"> </span>config.gni<span class="w">          </span><span class="c1"># linux版本编译配置</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">                 </span>└──<span class="w"> </span>liteos_a<span class="w">                </span><span class="c1"># 可选，liteos内核版本</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">                     </span>└──<span class="w"> </span>config.gni<span class="w">          </span><span class="c1"># liteos_a版本编译配置</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">  device                                      
+  └── board                                   
+      └── company                            # 芯片解决方案厂商
+           └──  hispark_aries                # 开发板名称
+                 ├── BUILD.gn                # 编译脚本
+                 ├── hals                    # OS南向接口适配
+                 ├── linux                   # 可选，linux内核版本
+                 │   └── config.gni          # linux版本编译配置
+                 └── liteos_a                # 可选，liteos内核版本
+                     └── config.gni          # liteos_a版本编译配置
+</code></pre>
 <blockquote>
 <p><strong>注意</strong>：config.gni为开发板编译相关的配置，编译时会采用该配置文件中的参数编译所有OS部件，编译阶段系统全局可见。</p>
 </blockquote>
 <ul>
 <li>config.gni的关键字段介绍如下：</li>
 </ul>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">  </span>kernel_type:<span class="w">            </span>开发板使用的内核类型，例如：“liteos_a”,<span class="w"> </span>“liteos_m”,<span class="w"> </span>“linux”。
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>kernel_version:<span class="w">         </span>开发使用的内核版本，例如：“4.19”。
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>board_cpu:<span class="w">              </span>开发板CPU类型，例如：“cortex-a7”,<span class="w"> </span>“riscv32”。
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span>board_arch:<span class="w">             </span>开发芯片arch,<span class="w"> </span>例如：<span class="w"> </span>“armv7-a”,<span class="w"> </span>“rv32imac”。
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span>board_toolchain:<span class="w">        </span>开发板自定义的编译工具链名称，例如：“gcc-arm-none-eabi”。若为空，则使用默认为ohos-clang。
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span>board_toolchain_prefix：编译工具链前缀，例如：“gcc-arm-none-eabi”。
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span>board_toolchain_type：<span class="w">  </span>编译工具链类型，目前支持gcc和clang。例如：“gcc”<span class="w"> </span>，“clang”。
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span>board_cflags：<span class="w">          </span>开发板配置的c文件编译选项。
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span>board_cxx_flags：<span class="w">       </span>开发板配置的cpp文件编译选项。
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span>board_ld_flags：<span class="w">        </span>开发板配置的链接选项。
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">  kernel_type:            开发板使用的内核类型，例如：“liteos_a”, “liteos_m”, “linux”。
+  kernel_version:         开发使用的内核版本，例如：“4.19”。
+  board_cpu:              开发板CPU类型，例如：“cortex-a7”, “riscv32”。
+  board_arch:             开发芯片arch, 例如： “armv7-a”, “rv32imac”。
+  board_toolchain:        开发板自定义的编译工具链名称，例如：“gcc-arm-none-eabi”。若为空，则使用默认为ohos-clang。
+  board_toolchain_prefix：编译工具链前缀，例如：“gcc-arm-none-eabi”。
+  board_toolchain_type：  编译工具链类型，目前支持gcc和clang。例如：“gcc” ，“clang”。
+  board_cflags：          开发板配置的c文件编译选项。
+  board_cxx_flags：       开发板配置的cpp文件编译选项。
+  board_ld_flags：        开发板配置的链接选项。</code></pre>
 <h3 id="315">3.1.5 产品解决方案配置规则<a class="headerlink" href="#315" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><a href="https://docs.openharmony.cn/pages/v4.1/zh-cn/device-dev/subsystems/subsys-build-product.md">官方产品配置规则</a></p>
 </blockquote>
 <p>产品解决方案为基于开发板的完整产品，主要包含产品对OS的适配、部件拼装配置、启动配置和文件系统配置等。产品解决方案的源码路径规则为： <strong>vendor/{产品解决方案厂商}/{产品名称}</strong> 。</p>
 <p>产品解决方案的目录树规则如下：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>vendor<span class="w">                              </span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>└──<span class="w"> </span>company<span class="w">                         </span><span class="c1"># 产品解决方案厂商</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span>├──<span class="w"> </span>product<span class="w">                     </span><span class="c1"># 产品名称</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>init_configs
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span>│<span class="w">   </span>│<span class="w">     </span>├──<span class="w"> </span>etc<span class="w">               </span><span class="c1"># init进程启动配置（可选，仅linux内核需要）</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span>│<span class="w">   </span>│<span class="w">     </span>└──<span class="w"> </span>init.cfg<span class="w">          </span><span class="c1"># 系统服务启动配置</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>hals<span class="w">                    </span><span class="c1"># 产品解决方案OS适配</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>BUILD.gn<span class="w">                </span><span class="c1"># 产品编译脚本</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>config.json<span class="w">             </span><span class="c1"># 产品配置文件</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>fs.yml<span class="w">                  </span><span class="c1"># 文件系统打包配置</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span>└──<span class="w"> </span>......
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">vendor                              
+└── company                         # 产品解决方案厂商
+    ├── product                     # 产品名称
+    │   ├── init_configs
+    │   │     ├── etc               # init进程启动配置（可选，仅linux内核需要）
+    │   │     └── init.cfg          # 系统服务启动配置
+    │   ├── hals                    # 产品解决方案OS适配
+    │   ├── BUILD.gn                # 产品编译脚本
+    │   └── config.json             # 产品配置文件
+    │   └── fs.yml                  # 文件系统打包配置
+    └── ......
+</code></pre>
 <p><code>vendor/company/product/config.json</code>为编译构建的主入口，包含了开发板、OS部件和内核等配置信息。</p>
 <p>以基于hispark_taurus开发板的ipcamera产品为例，配置文件如下：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">{</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">     </span><span class="s2">&quot;product_name&quot;</span>:<span class="w"> </span><span class="s2">&quot;ipcamera&quot;</span>,<span class="w">                       </span><span class="c1"># 产品名称</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">     </span><span class="s2">&quot;version&quot;</span>:<span class="w"> </span><span class="s2">&quot;3.0&quot;</span>,<span class="w">                                 </span><span class="c1"># config.json的版本号, 固定&quot;3.0&quot;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">     </span><span class="s2">&quot;type&quot;</span>:<span class="w"> </span><span class="s2">&quot;small&quot;</span>,<span class="w">                                  </span><span class="c1"># 系统类型, 可选[mini, small, standard]</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">     </span><span class="s2">&quot;ohos_version&quot;</span>:<span class="w"> </span><span class="s2">&quot;OpenHarmony 1.0&quot;</span>,<span class="w">                </span><span class="c1"># 选择的OS版本</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">     </span><span class="s2">&quot;device_company&quot;</span>:<span class="w"> </span><span class="s2">&quot;hisilicon&quot;</span>,<span class="w">                    </span><span class="c1"># 芯片厂商</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">     </span><span class="s2">&quot;board&quot;</span>:<span class="w"> </span><span class="s2">&quot;hispark_taurus&quot;</span>,<span class="w">                        </span><span class="c1"># 开发板名称</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">     </span><span class="s2">&quot;kernel_type&quot;</span>:<span class="w"> </span><span class="s2">&quot;liteos_a&quot;</span>,<span class="w">                        </span><span class="c1"># 选择的内核类型</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">     </span><span class="s2">&quot;kernel_version&quot;</span>:<span class="w"> </span><span class="s2">&quot;3.0.0&quot;</span>,<span class="w">                        </span><span class="c1"># 选择的内核版本</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">     </span><span class="s2">&quot;subsystems&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="w">                            </span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">       </span><span class="o">{</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">         </span><span class="s2">&quot;subsystem&quot;</span>:<span class="w"> </span><span class="s2">&quot;aafwk&quot;</span>,<span class="w">                         </span><span class="c1"># 选择的子系统</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">         </span><span class="s2">&quot;components&quot;</span>:<span class="w"> </span><span class="o">[</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">           </span><span class="o">{</span><span class="w"> </span>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">             </span><span class="s2">&quot;component&quot;</span>:<span class="w"> </span><span class="s2">&quot;ability&quot;</span>,<span class="w"> </span>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">             </span><span class="s2">&quot;features&quot;</span>:<span class="o">[</span><span class="w"> </span><span class="s2">&quot;enable_ohos_appexecfwk_feature_ability = true&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">}</span><span class="w">   </span><span class="c1"># 选择的部件和部件特性配置</span>
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">         </span><span class="o">]</span>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">       </span><span class="o">}</span>,
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">       </span><span class="o">{</span>
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">        </span>......
-</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">       </span><span class="o">}</span>
-</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">      </span>......
-</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">      </span>更多子系统和部件
-</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">     </span><span class="o">}</span>
-</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w"> </span><span class="o">}</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">{
+     "product_name": "ipcamera",                       # 产品名称
+     "version": "3.0",                                 # config.json的版本号, 固定"3.0"
+     "type": "small",                                  # 系统类型, 可选[mini, small, standard]
+     "ohos_version": "OpenHarmony 1.0",                # 选择的OS版本
+     "device_company": "hisilicon",                    # 芯片厂商
+     "board": "hispark_taurus",                        # 开发板名称
+     "kernel_type": "liteos_a",                        # 选择的内核类型
+     "kernel_version": "3.0.0",                        # 选择的内核版本
+     "subsystems": [                            
+       {
+         "subsystem": "aafwk",                         # 选择的子系统
+         "components": [
+           { 
+             "component": "ability", 
+             "features":[ "enable_ohos_appexecfwk_feature_ability = true" ] }   # 选择的部件和部件特性配置
+         ]
+       },
+       {
+        ......
+       }
+      ......
+      更多子系统和部件
+     }
+ }
+</code></pre>
 <p>我们通过<code>hb set</code>就是选择产品解决方案。</p>
 <p><img alt="image-20241031160410039" src="image-20241031160410039.png" /></p>
 <h2 id="32">3.2 编译构建系统的使用<a class="headerlink" href="#32" title="Permanent link">&para;</a></h2>
 <h3 id="321-1">3.2.1 案例1：新增组件<a class="headerlink" href="#321-1" title="Permanent link">&para;</a></h3>
 <p>在<code>applications\sample</code>目录新建<code>component_demo</code>文件夹，在该文件夹下新建<code>demo.c</code>和<code>BUILD.gn</code>文件，并编写下列源码：</p>
 <p><code>demo.c</code></p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">/* 新增组件示例 */</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">// OpenHarmony特有头文件</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;ohos_init.h&quot;</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1">// 定义函数</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">entry</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">{</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;This is a component.</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1">// 让entry函数在系统启动的第四阶段即system startup阶段，以优先级为 2 的级别执行</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="n">SYS_RUN</span><span class="p">(</span><span class="n">entry</span><span class="p">);</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">/* 新增组件示例 */
+
+# include &lt;stdio.h&gt;
+// OpenHarmony特有头文件
+# include "ohos_init.h"
+
+// 定义函数
+void entry(void)
+{
+    printf("This is a component.\r\n");
+}
+
+// 让entry函数在系统启动的第四阶段即system startup阶段，以优先级为 2 的级别执行
+SYS_RUN(entry);</code></pre>
 <p><code>BUILD.gn</code></p>
-<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">static_library</span><span class="p">(</span><span class="s">&quot;TestComponent&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">sources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">        </span><span class="s">&quot;demo.c&quot;</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="n">include_dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">        </span><span class="cp"># 保护 &quot;ohos_init.h&quot; 等头文件</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span><span class="s">&quot;//utils/native/lite/include&quot;</span><span class="p">,</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">}</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-c">static_library("TestComponent") {
+    sources = [
+        "demo.c"
+    ]
+    include_dirs = [
+        # 保护 "ohos_init.h" 等头文件
+        "//utils/native/lite/include",
+    ]
+}</code></pre>
 <p>单独编译该目标</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>hb<span class="w"> </span>build<span class="w"> </span>-f<span class="w"> </span>-T<span class="w"> </span>//applications/sample/component_demo:TestComponent
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">hb build -f -T //applications/sample/component_demo:TestComponent</code></pre>
 <p>添加组件到子系统中，在<code>\build\lite\components\applications.json</code>文件：</p>
 <p><img alt="image-20241230141729120" src="image-20241230141729120.png" /></p>
 <p>可以看到这里有我们的 ”第一个程序“ 时添加的hello_world_app组件，可以在其下方继续添加我们的示例组件：</p>
-<div class="language-json highlight"><span class="filename">JSON</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">      </span><span class="nt">&quot;component&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TestComponent&quot;</span><span class="p">,</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A test component.&quot;</span><span class="p">,</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">      </span><span class="nt">&quot;optional&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="p">,</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">      </span><span class="nt">&quot;dirs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="s2">&quot;applications/sample/component_demo&quot;</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">      </span><span class="p">],</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">      </span><span class="nt">&quot;targets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="s2">&quot;//applications/sample/component_demo:TestComponent&quot;</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">      </span><span class="p">],</span>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">      </span><span class="nt">&quot;rom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">      </span><span class="nt">&quot;ram&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">      </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">      </span><span class="nt">&quot;adapted_kernel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;liteos_m&quot;</span><span class="w"> </span><span class="p">],</span>
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">      </span><span class="nt">&quot;features&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">      </span><span class="nt">&quot;deps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">        </span><span class="nt">&quot;third_party&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
-</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">    </span><span class="p">},</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-json">{
+      "component": "TestComponent",
+      "description": "A test component.",
+      "optional": "true",
+      "dirs": [
+        "applications/sample/component_demo"
+      ],
+      "targets": [
+        "//applications/sample/component_demo:TestComponent"
+      ],
+      "rom": "",
+      "ram": "",
+      "output": [],
+      "adapted_kernel": [ "liteos_m" ],
+      "features": [],
+      "deps": {
+        "components": [],
+        "third_party": []
+      }
+    },</code></pre>
 <p>将组件配置到产品解决方案中，即<code>hispark_pegasus</code>，在<code>\vendor\hisilicon\hispark_pegasus\config.json</code>文件，找到<code>applications</code>子系统。</p>
 <p><img alt="image-20241230142459879" src="image-20241230142459879.png" /></p>
 <p>同样有我们 ”第一个程序“ 的身影，在下方添加测试组件：</p>
-<div class="language-json highlight"><span class="filename">JSON</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;component&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TestComponent&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;features&quot;</span><span class="p">:[]</span><span class="w"> </span><span class="p">},</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-json">{ "component": "TestComponent", "features":[] },</code></pre>
 <p>单独编译组件</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>hb<span class="w"> </span>build<span class="w"> </span>-f<span class="w"> </span>TestComponent
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">hb build -f TestComponent</code></pre>
 <p>单独编译的目标或组件不能独立运行，但容易发现错误，我们需要编译整个固件才能烧录运行。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>hb<span class="w"> </span>build<span class="w"> </span>-f
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">hb build -f</code></pre>
 <p>烧录运行，由于我有一个之前的程序没关，所以下方还有一个<code>[love].</code>输出</p>
 <p><img alt="image-20241230143145922" src="image-20241230143145922.png" /></p>
 <h3 id="322-2">3.2.2 案例2：新增产品解决方案<a class="headerlink" href="#322-2" title="Permanent link">&para;</a></h3>
@@ -1933,42 +1922,39 @@
 <p><a href="https://docs.openharmony.cn/pages/v4.1/zh-cn/device-dev/subsystems/subsys-build-product.md#新增并编译产品">官方新增产品编译</a></p>
 </blockquote>
 <p>OpenHarmony的编译构建系统支持芯片解决方案和部件的灵活拼装，形成定制化的产品解决方案。在  <strong>vendor/{产品解决方案厂商}/{产品名称}</strong> 目录下，新建<code>vendor\cim\product1</code>目录，在<code>vendor\hisilicon\hispark_pegasus</code>基础上修改，复制<code>hispark_pegasus</code>下的<code>config.json</code>至<code>vendor\cim\product1</code>目录，按需裁剪子系统和组件，将最下方参数<code>product_adapter_dir</code>修改为 <code>//vendor/cim/product1/hals</code>。</p>
-<div class="language-json highlight"><span class="filename">JSON</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nt">&quot;product_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cim_product&quot;</span><span class="p">,</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&quot;ohos_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OpenHarmony 1.0&quot;</span><span class="p">,</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">&quot;device_company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cim&quot;</span><span class="p">,</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="nt">&quot;board&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hispark_pegasus&quot;</span><span class="p">,</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="nt">&quot;kernel_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;liteos_m&quot;</span><span class="p">,</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="nt">&quot;kernel_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="nt">&quot;subsystems&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">        </span><span class="nt">&quot;subsystem&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;applications&quot;</span><span class="p">,</span>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">        </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">          </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;component&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hello_world_app&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;features&quot;</span><span class="p">:[]</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">        </span><span class="p">]</span>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">      </span><span class="err">...</span>
-</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">      </span><span class="p">{</span>
-</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">         </span><span class="err">更多子系统和部件</span>
-</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">    </span><span class="p">],</span>
-</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">    </span><span class="nt">&quot;third_party_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="w">    </span><span class="nt">&quot;product_adapter_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">  </span><span class="p">}</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-json">{
+    "product_name": "cim_product",
+    "ohos_version": "OpenHarmony 1.0",
+    "device_company": "cim",
+    "board": "hispark_pegasus",
+    "kernel_type": "liteos_m",
+    "kernel_version": "",
+    "subsystems": [
+      {
+        "subsystem": "applications",
+        "components": [
+          { "component": "hello_world_app", "features":[] }
+        ]
+      },
+      ...
+      {
+         更多子系统和部件
+      }
+    ],
+    "third_party_dir": "",
+    "product_adapter_dir": ""
+  }</code></pre>
 <details class="danger">
 <summary>Danger</summary>
 <p><strong>官方声明</strong>  ：编译构建系统编译前会对device_company，board，kernel_type，kernel_version、subsystem、component字段进行有效性检查，其中device_company，board，kernel_type，kernel_version应与已知的芯片解决方案匹配，subsystem、component应与<code>build/lite/components</code>下的部件描述匹配。</p>
 </details>
 <p>适配OS接口，在产品目录下创建hals目录，并将产品解决方案对OS适配的源码和编译脚本放入hals目录下。可以将复hispark_pegasus产品想应的文件夹，</p>
 <p>新建<code>vendor\cim\product1\BUILD.gn</code>文件，</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>group(&quot;product1&quot;) {
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>}
-</span></code></pre></div>
+<pre class="highlight"><code>group("product1") {
+}</code></pre>
 <p>编译产品</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>hb set
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>hb build -f 
-</span></code></pre></div>
+<pre class="highlight"><code>hb set
+hb build -f </code></pre>
 <p><img alt="image-20241230152948556" src="image-20241230152948556.png" /></p>
 <p>烧录运行一切正常</p>
 <p><img alt="image-20241230153820935" src="image-20241230153820935.png" /></p>
@@ -1983,123 +1969,109 @@
 <p><img alt="image-20241230160857556" src="image-20241230160857556.png" />zai</p>
 <h4 id="1-app">1. APP架构与代码<a class="headerlink" href="#1-app" title="Permanent link">&para;</a></h4>
 <p>新建<code>\applications\sample\wifi-iot\app\gn_practice</code>目录，在gn_practice文件夹下新建application、driver、library，分别存放应用程序模块、驱动模块、库模块，最终目录结构：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>├──<span class="w"> </span>application
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>│<span class="w">   </span>├──<span class="w"> </span>app_main.c
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>│<span class="w">   </span>├──<span class="w"> </span>component_1.c
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>│<span class="w">   </span>├──<span class="w"> </span>component_1.h
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>│<span class="w">   </span>├──<span class="w"> </span>component_2.c
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>│<span class="w">   </span>└──<span class="w"> </span>component_2.h
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>├──<span class="w"> </span>driver
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>│<span class="w">   </span>├──<span class="w"> </span>drv_1.c
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>│<span class="w">   </span>└──<span class="w"> </span>drv_1.h
-</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>└──<span class="w"> </span>library
-</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span>├──<span class="w"> </span>lib_1.c
-</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span>├──<span class="w"> </span>lib_1.h
-</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">    </span>├──<span class="w"> </span>lib_2.c
-</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">    </span>└──<span class="w"> </span>lib_2.h
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">├── application
+│   ├── app_main.c
+│   ├── component_1.c
+│   ├── component_1.h
+│   ├── component_2.c
+│   └── component_2.h
+├── driver
+│   ├── drv_1.c
+│   └── drv_1.h
+└── library
+    ├── lib_1.c
+    ├── lib_1.h
+    ├── lib_2.c
+    └── lib_2.h</code></pre>
 <p><code>component_1.c</code></p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;component_1.h&quot;</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C"># include "component_1.h"</code></pre>
 <p><code>component_2.c</code></p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;component_2.h&quot;</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C"># include "component_2.h"</code></pre>
 <p><code>drv_1.c</code></p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;drv_1.h&quot;</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C"># include "drv_1.h"</code></pre>
 <p><code>lib_1.c</code></p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;lib_1.h&quot;</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C"># include "lib_1.h"</code></pre>
 <p><code>lib_2.c</code></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a># include &quot;lib_2.h&quot;
-</span></code></pre></div>
+<pre class="highlight"><code># include "lib_2.h"</code></pre>
 <p><code>component_1.h</code>、<code>component_2.h</code>、<code>drv_1.h</code>、<code>lib_1.h</code>、<code>lib_2.h</code>均为空，无代码。</p>
 <p>最后，<code>app_main.c</code></p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;ohos_init.h&quot;</span>
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;component_1.h&quot;</span>
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;component_2.h&quot;</span>
-</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;../driver/drv_1.h&quot;</span>
-</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;../library/lib_1.h&quot;</span>
-</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;../library/lib_2.h&quot;</span>
-</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
-</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">myapp</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
-</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;app runs!</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="p">}</span>
-</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
-</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="c1">// 让myapp在系统启动的第八个阶段以优先级 2 执行</span>
-</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="n">APP_FEATURE_INIT</span><span class="p">(</span><span class="n">myapp</span><span class="p">);</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C"># include &lt;stdio.h&gt;
+# include "ohos_init.h"
+# include "component_1.h"
+# include "component_2.h"
+# include "../driver/drv_1.h"
+# include "../library/lib_1.h"
+# include "../library/lib_2.h"
+
+void myapp(void){
+    printf("app runs!\r\n");
+}
+
+// 让myapp在系统启动的第八个阶段以优先级 2 执行
+APP_FEATURE_INIT(myapp);</code></pre>
 <p>顺便将先前的“第一个程序”执行阶段改一下，最后看一下执行效果</p>
 <p><img alt="image-20241230163550544" src="image-20241230163550544.png" /></p>
 <h4 id="2_1">2. 编译脚本<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
 <p>新建<code>\applications\sample\wifi-iot\app\gn_practice\application\BUILD.gn</code>编译脚本，源码如下：</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>static_library(&quot;gn_app&quot;) {
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>    sources = [
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>        &quot;app_main.c&quot;,
-</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>        &quot;component_1.c&quot;,
-</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>        &quot;component_2.c&quot;,
-</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>    ]
-</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>    include_dirs = [
-</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>        &quot;../driver&quot;,
-</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>        &quot;../library&quot;,
-</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>        &quot;//utils/native/lite/include&quot;,
-</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>    ]
-</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>    cflags = [ &quot;-Wno-unused-variable&quot; ]
-</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>    cflags += [ &quot;-Wno-unused-but-set-variable&quot; ]
-</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>    cflags += [ &quot;-Wno-unused-parameter&quot; ]
-</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>}
-</span></code></pre></div>
+<pre class="highlight"><code>static_library("gn_app") {
+    sources = [
+        "app_main.c",
+        "component_1.c",
+        "component_2.c",
+    ]
+    include_dirs = [
+        "../driver",
+        "../library",
+        "//utils/native/lite/include",
+    ]
+    cflags = [ "-Wno-unused-variable" ]
+    cflags += [ "-Wno-unused-but-set-variable" ]
+    cflags += [ "-Wno-unused-parameter" ]
+}</code></pre>
 <p>看完编译构建系统部分后，sources和include_dirs部分应该不难理解，而后面三行是编译参数，意思分别为 “未使用的变量” 、 “以初始化未使用的变量” 、 “未使用的参数” ，这三种情况默认编译方式并不允许。</p>
 <p>新建<code>\applications\sample\wifi-iot\app\gn_practice\driver\BUILD.gn</code>编译脚本，源码如下：</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>static_library(&quot;gn_driver&quot;) {
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    sources = [
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>        &quot;drv_1.c&quot;,
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>    ]
-</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>    include_dirs = [
-</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>        &quot;//utils/native/lite/include&quot;,
-</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>    ]
-</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>}
-</span></code></pre></div>
+<pre class="highlight"><code>static_library("gn_driver") {
+    sources = [
+        "drv_1.c",
+    ]
+    include_dirs = [
+        "//utils/native/lite/include",
+    ]
+}</code></pre>
 <p>新建<code>\applications\sample\wifi-iot\app\gn_practice\library\BUILD.gn</code>编译脚本，源码如下：</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>static_library(&quot;gn_library&quot;) {
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    sources = [
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>        &quot;lib_1.c&quot;,
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>        &quot;lib_2.c&quot;
-</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>    ]
-</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>    include_dirs = [
-</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>        &quot;//utils/native/lite/include&quot;,
-</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>    ]
-</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>}
-</span></code></pre></div>
+<pre class="highlight"><code>static_library("gn_library") {
+    sources = [
+        "lib_1.c",
+        "lib_2.c"
+    ]
+    include_dirs = [
+        "//utils/native/lite/include",
+    ]
+}</code></pre>
 <p>以上编写的模块是基于<code>wifi_iot_sample_app</code>组件，在<code>\build\lite\components\applications.json</code>文件中找到组件。</p>
 <p><img alt="image-20241230155027849" src="image-20241230155027849.png" /></p>
 <p>通过参数<code>targets</code>可以看到编译目标是<code>/applications/sample/wifi-iot/app"</code>目录下的<code>BUILD.gn</code>文件，它的默认代码为：</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>import(&quot;//build/lite/config/component/lite_component.gni&quot;)
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>lite_component(&quot;app&quot;) {
-</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>    features = [
-</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>        &quot;startup&quot;,
-</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>    ]
-</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>}
-</span></code></pre></div>
+<pre class="highlight"><code>import("//build/lite/config/component/lite_component.gni")
+
+lite_component("app") {
+    features = [
+        "startup",
+    ]
+}</code></pre>
 <p>将其修改为如下内容，这样OpenHarmony的编译构建系统就会找到各个模块下的<code>BUILD.gn</code>文件，然后根据<code>BUILD.gn</code>文件目标编译。</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>import(&quot;//build/lite/config/component/lite_component.gni&quot;)
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>lite_component(&quot;app&quot;) {
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>    features = [
-</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>        &quot;gn_practice/application:gn_app&quot;,
-</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>        &quot;gn_practice/driver:gn_driver&quot;,
-</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>        &quot;gn_practice/library:gn_library&quot;,
-</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>    ]
-</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>}
-</span></code></pre></div>
+<pre class="highlight"><code>import("//build/lite/config/component/lite_component.gni")
+
+lite_component("app") {
+    features = [
+        "gn_practice/application:gn_app",
+        "gn_practice/driver:gn_driver",
+        "gn_practice/library:gn_library",
+    ]
+}</code></pre>
 <h4 id="3_1">3. 编译烧录运行<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h4>
 <p>编译产品</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>hb<span class="w"> </span><span class="nb">set</span>
-</span></code></pre></div>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>hb<span class="w"> </span>build<span class="w"> </span>-f
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">hb set</code></pre>
+<pre class="highlight"><code class="language-shell">hb build -f</code></pre>
 <p>烧录运行，可以看到，打印信息按照系统启动阶段正确划分。</p>
 <p><img alt="image-20241230170116037" src="image-20241230170116037.png" /></p>
 <h3 id="324">3.2.4 系统启动阶段与宏命令<a class="headerlink" href="#324" title="Permanent link">&para;</a></h3>
@@ -2223,55 +2195,52 @@
 <p>案例目标：若键值不存在就写入一个键值对，若存在则打印这个键值对。</p>
 <p><code>\applications\sample\wifi-iot\app</code>目录下新建kv_store_demo文件夹，并在该文件夹下新建<code>demo.c</code>和<code>BUILD.gn</code>文件，源码如下：</p>
 <p><code>demo.c</code></p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;ohos_init.h&quot;</span>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&quot;kv_store.h&quot;</span>
-</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="n">C</span>
-</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;name&quot;</span><span class="p">;</span>
-</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">value</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
-</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>
-</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
-</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">kv_storeTest</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="p">{</span>
-</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">retGet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsGetValue</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">);</span>
-</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">retGet</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">valueToWrite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;OpenHarmony.&quot;</span><span class="p">;</span>
-</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">retSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsSetValue</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">valueToWrite</span><span class="p">);</span>
-</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;SetValue --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">retSet</span><span class="p">);</span>
-</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-32-18"><a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a><span class="w">    </span><span class="k">else</span>
-</span><span id="__span-32-19"><a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-32-20"><a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;GetValue --&gt; result: %d value: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">retGet</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
-</span><span id="__span-32-21"><a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-32-22"><a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a>
-</span><span id="__span-32-23"><a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a><span class="p">}</span>
-</span><span id="__span-32-24"><a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a>
-</span><span id="__span-32-25"><a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a>
-</span><span id="__span-32-26"><a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a><span class="n">APP_FEATURE_INIT</span><span class="p">(</span><span class="n">kv_storeTest</span><span class="p">);</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C"># include &lt;stdio.h&gt;
+# include "ohos_init.h"
+# include "kv_store.h"
+C
+const char* key = "name";
+char* value[32] = {};
+
+
+void kv_storeTest(void)
+{
+    int retGet = UtilsGetValue(key, value, 32);
+    if (retGet &lt; 0)
+    {
+        const char* valueToWrite = "OpenHarmony.";
+        int retSet = UtilsSetValue(key, valueToWrite);
+        printf("SetValue --&gt; result: %d\n", retSet);
+    }
+    else
+    {
+        printf("GetValue --&gt; result: %d value: %s", retGet, value);
+    }
+
+}
+
+
+APP_FEATURE_INIT(kv_storeTest);</code></pre>
 <p><code>BUILD.gn</code></p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">static_library</span><span class="p">(</span><span class="s">&quot;kv_store_demo&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">    </span><span class="n">sources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">        </span><span class="s">&quot;demo.c&quot;</span><span class="p">,</span>
-</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">    </span><span class="n">include_dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">        </span><span class="s">&quot;//utils/native/lite/include&quot;</span><span class="p">,</span>
-</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="p">]</span>
-</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="p">}</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">static_library("kv_store_demo") {
+    sources = [
+        "demo.c",
+    ]
+    include_dirs = [
+        "//utils/native/lite/include",
+    ]
+}</code></pre>
 <p>修改<code>\applications\sample\wifi-iot\app</code>目录下的<code>BUILD.gn</code>文件：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>import<span class="o">(</span><span class="s2">&quot;//build/lite/config/component/lite_component.gni&quot;</span><span class="o">)</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>lite_component<span class="o">(</span><span class="s2">&quot;app&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
-</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">    </span><span class="nv">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">        </span><span class="s2">&quot;gn_practice/application:gn_app&quot;</span>,
-</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="w">        </span><span class="s2">&quot;gn_practice/driver:gn_driver&quot;</span>,
-</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="w">        </span><span class="s2">&quot;gn_practice/library:gn_library&quot;</span>,
-</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="w">        </span><span class="s2">&quot;kv_store_demo:kv_store_demo&quot;</span>,<span class="w">   </span><span class="c1"># 新增内容</span>
-</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="w">    </span><span class="o">]</span>
-</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="o">}</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">import("//build/lite/config/component/lite_component.gni")
+
+lite_component("app") {
+    features = [
+        "gn_practice/application:gn_app",
+        "gn_practice/driver:gn_driver",
+        "gn_practice/library:gn_library",
+        "kv_store_demo:kv_store_demo",   # 新增内容
+    ]
+}</code></pre>
 <p>编译烧录，重启开发板，键中无数据，再次重启 “openhamony.”被写入，且断电不丢失。</p>
 <p><img alt="image-20241230210027048" src="image-20241230210027048.png" /></p>
 <details class="danger">
@@ -2283,88 +2252,85 @@
 <p>案例目标：若文件不存在，就创建文件、写入内容（ssid和passwd），若文件存在则读取内容并删除文件。</p>
 <p><code>\applications\sample\wifi-iot\app</code>目录下新建file_demo文件夹，并在该文件夹下新建<code>demo.c</code>和<code>BUILD.gn</code>文件，源码如下：</p>
 <p><code>demo.c</code></p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1">     </span>
-</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ohos_init.h&quot;</span><span class="c1"> </span>
-</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;utils_file.h&quot;</span><span class="c1"> </span>
-</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>
-</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>
-</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">file_demo</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="p">{</span>
-</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">filename</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wifi_INFO&quot;</span><span class="p">;</span>
-</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fileslen</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileStat</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">fileslen</span><span class="p">);</span>
-</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span>
-</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="w">        </span><span class="c1">// 创建写入的数据</span>
-</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">dataWrite</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;openharmony,123456789&quot;</span><span class="p">;</span>
-</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s文件不存在。</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">filename</span><span class="p">);</span>
-</span><span id="__span-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="w">        </span><span class="c1">// 打开文件</span>
-</span><span id="__span-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileOpen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">O_WRONLY_FS</span><span class="o">|</span><span class="n">O_CREAT_FS</span><span class="o">|</span><span class="n">O_TRUNC_FS</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-35-19"><a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;OpenFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fd</span><span class="p">);</span>
-</span><span id="__span-35-20"><a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="w">        </span><span class="c1">// 写入数据</span>
-</span><span id="__span-35-21"><a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">data_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileWrite</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">dataWrite</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">dataWrite</span><span class="p">));</span>
-</span><span id="__span-35-22"><a id="__codelineno-35-22" name="__codelineno-35-22" href="#__codelineno-35-22"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;WriteFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data_len</span><span class="p">);</span>
-</span><span id="__span-35-23"><a id="__codelineno-35-23" name="__codelineno-35-23" href="#__codelineno-35-23"></a><span class="w">        </span><span class="c1">// 关闭文件</span>
-</span><span id="__span-35-24"><a id="__codelineno-35-24" name="__codelineno-35-24" href="#__codelineno-35-24"></a><span class="w">        </span><span class="n">UtilsFileClose</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
-</span><span id="__span-35-25"><a id="__codelineno-35-25" name="__codelineno-35-25" href="#__codelineno-35-25"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-35-26"><a id="__codelineno-35-26" name="__codelineno-35-26" href="#__codelineno-35-26"></a><span class="w">    </span><span class="k">else</span>
-</span><span id="__span-35-27"><a id="__codelineno-35-27" name="__codelineno-35-27" href="#__codelineno-35-27"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-35-28"><a id="__codelineno-35-28" name="__codelineno-35-28" href="#__codelineno-35-28"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s文件存在。</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">filename</span><span class="p">);</span>
-</span><span id="__span-35-29"><a id="__codelineno-35-29" name="__codelineno-35-29" href="#__codelineno-35-29"></a><span class="w">         </span><span class="c1">// 打开文件，读写模式</span>
-</span><span id="__span-35-30"><a id="__codelineno-35-30" name="__codelineno-35-30" href="#__codelineno-35-30"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileOpen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">O_RDWR_FS</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-35-31"><a id="__codelineno-35-31" name="__codelineno-35-31" href="#__codelineno-35-31"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;OpenFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fd</span><span class="p">);</span>
-</span><span id="__span-35-32"><a id="__codelineno-35-32" name="__codelineno-35-32" href="#__codelineno-35-32"></a><span class="w">        </span><span class="c1">// 定位读写偏移量</span>
-</span><span id="__span-35-33"><a id="__codelineno-35-33" name="__codelineno-35-33" href="#__codelineno-35-33"></a><span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileSeek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">SEEK_SET_FS</span><span class="p">);</span>
-</span><span id="__span-35-34"><a id="__codelineno-35-34" name="__codelineno-35-34" href="#__codelineno-35-34"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;SeekFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">);</span>
-</span><span id="__span-35-35"><a id="__codelineno-35-35" name="__codelineno-35-35" href="#__codelineno-35-35"></a><span class="w">        </span><span class="c1">// 读取数据</span>
-</span><span id="__span-35-36"><a id="__codelineno-35-36" name="__codelineno-35-36" href="#__codelineno-35-36"></a><span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">ssid</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
-</span><span id="__span-35-37"><a id="__codelineno-35-37" name="__codelineno-35-37" href="#__codelineno-35-37"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">data_len1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileRead</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">ssid</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">);</span>
-</span><span id="__span-35-38"><a id="__codelineno-35-38" name="__codelineno-35-38" href="#__codelineno-35-38"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ReadFile --&gt; result: %d ssid: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data_len1</span><span class="p">,</span><span class="w"> </span><span class="n">ssid</span><span class="p">);</span>
-</span><span id="__span-35-39"><a id="__codelineno-35-39" name="__codelineno-35-39" href="#__codelineno-35-39"></a><span class="w">        </span><span class="c1">// 重新定位读写偏移量</span>
-</span><span id="__span-35-40"><a id="__codelineno-35-40" name="__codelineno-35-40" href="#__codelineno-35-40"></a><span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileSeek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">SEEK_CUR_FS</span><span class="p">);</span>
-</span><span id="__span-35-41"><a id="__codelineno-35-41" name="__codelineno-35-41" href="#__codelineno-35-41"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;SeekFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">);</span>
-</span><span id="__span-35-42"><a id="__codelineno-35-42" name="__codelineno-35-42" href="#__codelineno-35-42"></a><span class="w">        </span><span class="c1">// 读取数据</span>
-</span><span id="__span-35-43"><a id="__codelineno-35-43" name="__codelineno-35-43" href="#__codelineno-35-43"></a><span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">passwd</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
-</span><span id="__span-35-44"><a id="__codelineno-35-44" name="__codelineno-35-44" href="#__codelineno-35-44"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">data_len2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileRead</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">passwd</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">);</span>
-</span><span id="__span-35-45"><a id="__codelineno-35-45" name="__codelineno-35-45" href="#__codelineno-35-45"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ReadFile --&gt; result: %d passwd: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data_len2</span><span class="p">,</span><span class="w"> </span><span class="n">passwd</span><span class="p">);</span>
-</span><span id="__span-35-46"><a id="__codelineno-35-46" name="__codelineno-35-46" href="#__codelineno-35-46"></a><span class="w">        </span><span class="c1">// 关闭文件</span>
-</span><span id="__span-35-47"><a id="__codelineno-35-47" name="__codelineno-35-47" href="#__codelineno-35-47"></a><span class="w">        </span><span class="n">UtilsFileClose</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
-</span><span id="__span-35-48"><a id="__codelineno-35-48" name="__codelineno-35-48" href="#__codelineno-35-48"></a>
-</span><span id="__span-35-49"><a id="__codelineno-35-49" name="__codelineno-35-49" href="#__codelineno-35-49"></a><span class="w">        </span><span class="c1">// 删除文件</span>
-</span><span id="__span-35-50"><a id="__codelineno-35-50" name="__codelineno-35-50" href="#__codelineno-35-50"></a><span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UtilsFileDelete</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
-</span><span id="__span-35-51"><a id="__codelineno-35-51" name="__codelineno-35-51" href="#__codelineno-35-51"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;DeleteFile --&gt; result: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">);</span>
-</span><span id="__span-35-52"><a id="__codelineno-35-52" name="__codelineno-35-52" href="#__codelineno-35-52"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-35-53"><a id="__codelineno-35-53" name="__codelineno-35-53" href="#__codelineno-35-53"></a>
-</span><span id="__span-35-54"><a id="__codelineno-35-54" name="__codelineno-35-54" href="#__codelineno-35-54"></a>
-</span><span id="__span-35-55"><a id="__codelineno-35-55" name="__codelineno-35-55" href="#__codelineno-35-55"></a><span class="p">}</span>
-</span><span id="__span-35-56"><a id="__codelineno-35-56" name="__codelineno-35-56" href="#__codelineno-35-56"></a>
-</span><span id="__span-35-57"><a id="__codelineno-35-57" name="__codelineno-35-57" href="#__codelineno-35-57"></a>
-</span><span id="__span-35-58"><a id="__codelineno-35-58" name="__codelineno-35-58" href="#__codelineno-35-58"></a><span class="n">APP_FEATURE_INIT</span><span class="p">(</span><span class="n">file_demo</span><span class="p">);</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;     
+#include "ohos_init.h" 
+#include "utils_file.h" 
+
+
+void file_demo(void)
+{
+    char filename[] = "wifi_INFO";
+    unsigned int fileslen=0;
+    int ret = UtilsFileStat(filename, &amp;fileslen);
+    if (ret == -1)
+    {
+        // 创建写入的数据
+        const char* dataWrite= "openharmony,123456789";
+        printf("%s文件不存在。\n", filename);
+        // 打开文件
+        int fd = UtilsFileOpen(filename, O_WRONLY_FS|O_CREAT_FS|O_TRUNC_FS, 0);
+        printf("OpenFile --&gt; result: %d\n", fd);
+        // 写入数据
+        int data_len = UtilsFileWrite(fd, dataWrite, strlen(dataWrite));
+        printf("WriteFile --&gt; result: %d\n", data_len);
+        // 关闭文件
+        UtilsFileClose(fd);
+    }
+    else
+    {
+        printf("%s文件存在。\n", filename);
+         // 打开文件，读写模式
+        int fd = UtilsFileOpen(filename, O_RDWR_FS, 0);
+        printf("OpenFile --&gt; result: %d\n", fd);
+        // 定位读写偏移量
+        ret = UtilsFileSeek(fd, 0, SEEK_SET_FS);
+        printf("SeekFile --&gt; result: %d\n", ret);
+        // 读取数据
+        char ssid[32] = {};
+        int data_len1 = UtilsFileRead(fd, ssid, 11);
+        printf("ReadFile --&gt; result: %d ssid: %s\n", data_len1, ssid);
+        // 重新定位读写偏移量
+        ret = UtilsFileSeek(fd, 1, SEEK_CUR_FS);
+        printf("SeekFile --&gt; result: %d\n", ret);
+        // 读取数据
+        char passwd[32] = {};
+        int data_len2 = UtilsFileRead(fd, passwd, 9);
+        printf("ReadFile --&gt; result: %d passwd: %s\n", data_len2, passwd);
+        // 关闭文件
+        UtilsFileClose(fd);
+
+        // 删除文件
+        ret = UtilsFileDelete(filename);
+        printf("DeleteFile --&gt; result: %d\n", ret);
+    }
+
+
+}
+
+
+APP_FEATURE_INIT(file_demo);</code></pre>
 <p><code>BUILD.gn</code></p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>static_library<span class="o">(</span><span class="s2">&quot;file_demo&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">    </span><span class="nv">sources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">        </span><span class="s2">&quot;demo.c&quot;</span>,
-</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">    </span><span class="o">]</span>
-</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="w">    </span><span class="nv">include_dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="w">        </span><span class="s2">&quot;//utils/native/lite/include&quot;</span>,
-</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="w">    </span><span class="o">]</span>
-</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="o">}</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">static_library("file_demo") {
+    sources = [
+        "demo.c",
+    ]
+    include_dirs = [
+        "//utils/native/lite/include",
+    ]
+}</code></pre>
 <p>修改<code>\applications\sample\wifi-iot\app</code>目录下的<code>BUILD.gn</code>文件：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>import<span class="o">(</span><span class="s2">&quot;//build/lite/config/component/lite_component.gni&quot;</span><span class="o">)</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>lite_component<span class="o">(</span><span class="s2">&quot;app&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="nv">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">        </span><span class="s2">&quot;gn_practice/application:gn_app&quot;</span>,
-</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">        </span><span class="s2">&quot;gn_practice/driver:gn_driver&quot;</span>,
-</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="w">        </span><span class="s2">&quot;gn_practice/library:gn_library&quot;</span>,
-</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="w">        </span><span class="s2">&quot;kv_store_demo:kv_store_demo&quot;</span>,
-</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="w">        </span><span class="s2">&quot;file_demo:file_demo&quot;</span>,
-</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="w">    </span><span class="o">]</span>
-</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a><span class="o">}</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">import("//build/lite/config/component/lite_component.gni")
+
+lite_component("app") {
+    features = [
+        "gn_practice/application:gn_app",
+        "gn_practice/driver:gn_driver",
+        "gn_practice/library:gn_library",
+        "kv_store_demo:kv_store_demo",
+        "file_demo:file_demo",
+    ]
+}</code></pre>
 <p>编译烧录运行，复位，文件为空，写入文件。</p>
 <p><img alt="image-20241230222237353" src="image-20241230222237353.png" /></p>
 <p>再次复位，读取文件内容。</p>

@@ -1815,153 +1815,152 @@
 <p><img alt="image-20250101160924761" src="image-20250101160924761.png" /></p>
 <p>新建<code>sw_I2C.c</code>和<code>sw_I2C.h</code>：</p>
 <p><code>sw_I2C.c</code></p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;swI2C.h&quot;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">delay_us</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">us</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="p">;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ticks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">us</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">HAL_RCC_GetHCLKFreq</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000000</span><span class="p">);</span><span class="w"> </span><span class="c1">// 计算微秒对应的时钟周期数</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">start</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ticks</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">start</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 如果发生回绕</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="n">start</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">LOAD</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="cm">/* 改变SDA电平 */</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="kt">void</span><span class="w"> </span><span class="nf">SDA_Write</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">BitValue</span><span class="p">)</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">{</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="n">HAL_GPIO_WritePin</span><span class="p">(</span><span class="n">SDA_GPIO_Port</span><span class="p">,</span><span class="w"> </span><span class="n">SDA_Pin</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">GPIO_PinState</span><span class="p">)</span><span class="w"> </span><span class="n">BitValue</span><span class="p">);</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="n">delay_us</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">}</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="cm">/* 改变SCL电平 */</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="kt">void</span><span class="w"> </span><span class="nf">SCL_Write</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">BitValue</span><span class="p">)</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">{</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="n">HAL_GPIO_WritePin</span><span class="p">(</span><span class="n">SCL_GPIO_Port</span><span class="p">,</span><span class="w"> </span><span class="n">SCL_Pin</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">GPIO_PinState</span><span class="p">)</span><span class="w"> </span><span class="n">BitValue</span><span class="p">);</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="n">delay_us</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="cm">/* 读取SDA电平*/</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">GPIO_PinState</span><span class="w"> </span><span class="nf">SDA_Read</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="p">{</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="n">GPIO_PinState</span><span class="w"> </span><span class="n">BitValue</span><span class="p">;</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="n">BitValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HAL_GPIO_ReadPin</span><span class="p">(</span><span class="n">SDA_GPIO_Port</span><span class="p">,</span><span class="w"> </span><span class="n">SDA_Pin</span><span class="p">);</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="n">delay_us</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">BitValue</span><span class="p">;</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="p">}</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="cm">/* brief: I2C开始条件,SCL高电平期,SDA从高电平切换到低电平</span>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="cm"> *</span>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="cm"> */</span>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="kt">void</span><span class="w"> </span><span class="nf">I2C_Start</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="p">{</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span><span class="c1">// 确保SDA为高电平</span>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">    </span><span class="n">SDA_Write</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">    </span><span class="c1">// 置SCL为高电平</span>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">    </span><span class="n">SCL_Write</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">    </span><span class="c1">// 置SDA为低电平,完成下降沿</span>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">    </span><span class="n">SDA_Write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="c1">// 置SCL为低电平,为放数据到SDA上做准备</span>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">    </span><span class="n">SCL_Write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="p">}</span>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="cm">/* brief: I2C终止条件,SCL高电平期间,SDA从低电平切换到高电平</span>
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="cm"> *</span>
-</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="cm"> */</span>
-</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="kt">void</span><span class="w"> </span><span class="nf">I2C_Stop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="p">{</span>
-</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">    </span><span class="c1">// 置SDA为低电平</span>
-</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="w">    </span><span class="n">SDA_Write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="w">    </span><span class="c1">// 置SCL为低电平</span>
-</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">    </span><span class="n">SCL_Write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="w">    </span><span class="c1">// 确保SDA为高电平,完成上升沿</span>
-</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="w">    </span><span class="n">SDA_Write</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="p">}</span>
-</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>
-</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="cm">/* brief: 发送一个字节,数据位依次放到SDA线上</span>
-</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="cm"> * 一个字节 8 bit,所以用uint8_t</span>
-</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="cm"> */</span>
-</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="kt">void</span><span class="w"> </span><span class="nf">I2C_WriteByte</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">Byte</span><span class="p">)</span>
-</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="p">{</span>
-</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a><span class="w">        </span><span class="c1">// 写数据到SDA</span>
-</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a><span class="w">        </span><span class="n">SDA_Write</span><span class="p">(</span><span class="n">Byte</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="mh">0x80</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">i</span><span class="p">));</span>
-</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="w">        </span><span class="c1">// 拉高SCL可以让从机读数据</span>
-</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="w">        </span><span class="n">SCL_Write</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a><span class="w">        </span><span class="c1">// 拉低SCL继续发送下一位</span>
-</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="w">        </span><span class="n">SCL_Write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="p">}</span>
-</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>
-</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a><span class="cm">/* brief: 接收一个字节,在SCL高电平期间读取数据位</span>
-</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="cm"> * 一个字节 8 bit,所以用uint8_t</span>
-</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a><span class="cm"> */</span>
-</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">I2C_ReadByte</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a><span class="p">{</span>
-</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">Byte</span><span class="o">=</span><span class="mh">0x00</span><span class="p">;</span>
-</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="w">    </span><span class="c1">// 主机释放SDA</span>
-</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a><span class="w">    </span><span class="n">SDA_Write</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="w">        </span><span class="c1">// 拉高SCL读数据</span>
-</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a><span class="w">        </span><span class="n">SCL_Write</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="w">        </span><span class="c1">// 高电平的位补 1 ，其余不变</span>
-</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">SDA_Read</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">Byte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Byte</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="mh">0x80</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">i</span><span class="p">);}</span>
-</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="w">        </span><span class="c1">// 拉低SCL继续发送下一位</span>
-</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="w">        </span><span class="n">SCL_Write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Byte</span><span class="p">;</span>
-</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a><span class="p">}</span>
-</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>
-</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a><span class="cm">/* brief: 发送应答</span>
-</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a><span class="cm"> * 就是发送 1 位数据</span>
-</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a><span class="cm"> */</span>
-</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a><span class="kt">void</span><span class="w"> </span><span class="nf">I2C_WriteAcK</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">Ack</span><span class="p">)</span>
-</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a><span class="p">{</span>
-</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a><span class="w">    </span><span class="n">SDA_Write</span><span class="p">((</span><span class="n">GPIO_PinState</span><span class="p">)</span><span class="n">Ack</span><span class="p">);</span>
-</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a><span class="w">    </span><span class="c1">// 拉高SCL可以让从机读数据</span>
-</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a><span class="w">    </span><span class="n">SCL_Write</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a><span class="w">    </span><span class="c1">// 拉低SCL继续发送下一位</span>
-</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a><span class="w">    </span><span class="n">SCL_Write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a><span class="p">}</span>
-</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="cm">/* brief: 接收应答</span>
-</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a><span class="cm"> * 就是接收 1 位数据</span>
-</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a><span class="cm"> */</span>
-</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">I2C_ReceiveAck</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-0-115"><a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a><span class="p">{</span>
-</span><span id="__span-0-116"><a id="__codelineno-0-116" name="__codelineno-0-116" href="#__codelineno-0-116"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">Ack</span><span class="p">;</span>
-</span><span id="__span-0-117"><a id="__codelineno-0-117" name="__codelineno-0-117" href="#__codelineno-0-117"></a><span class="w">    </span><span class="c1">// 主机释放SDA</span>
-</span><span id="__span-0-118"><a id="__codelineno-0-118" name="__codelineno-0-118" href="#__codelineno-0-118"></a><span class="w">    </span><span class="n">SDA_Write</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-0-119"><a id="__codelineno-0-119" name="__codelineno-0-119" href="#__codelineno-0-119"></a><span class="w">    </span><span class="c1">// 拉高SCL,读数据</span>
-</span><span id="__span-0-120"><a id="__codelineno-0-120" name="__codelineno-0-120" href="#__codelineno-0-120"></a><span class="w">    </span><span class="n">SCL_Write</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-0-121"><a id="__codelineno-0-121" name="__codelineno-0-121" href="#__codelineno-0-121"></a><span class="w">    </span><span class="n">Ack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SDA_Read</span><span class="p">();</span>
-</span><span id="__span-0-122"><a id="__codelineno-0-122" name="__codelineno-0-122" href="#__codelineno-0-122"></a><span class="w">    </span><span class="c1">// 拉低SCL继续发送下一位</span>
-</span><span id="__span-0-123"><a id="__codelineno-0-123" name="__codelineno-0-123" href="#__codelineno-0-123"></a><span class="w">    </span><span class="n">SCL_Write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-0-124"><a id="__codelineno-0-124" name="__codelineno-0-124" href="#__codelineno-0-124"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Ack</span><span class="p">;</span>
-</span><span id="__span-0-125"><a id="__codelineno-0-125" name="__codelineno-0-125" href="#__codelineno-0-125"></a><span class="p">}</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">#include "swI2C.h"
+
+void delay_us(uint32_t us) {
+    uint32_t start = SysTick-&gt;VAL;
+    uint32_t ticks = us * (HAL_RCC_GetHCLKFreq() / 1000000); // 计算微秒对应的时钟周期数
+
+    while ((start - SysTick-&gt;VAL) &lt; ticks) {
+        if (SysTick-&gt;VAL &gt; start) { // 如果发生回绕
+            start += SysTick-&gt;LOAD + 1;
+        }
+    }
+}
+
+/* 改变SDA电平 */
+void SDA_Write(uint8_t BitValue)
+{
+    HAL_GPIO_WritePin(SDA_GPIO_Port, SDA_Pin, (GPIO_PinState) BitValue);
+    delay_us(10);
+}
+/* 改变SCL电平 */
+void SCL_Write(uint8_t BitValue)
+{
+    HAL_GPIO_WritePin(SCL_GPIO_Port, SCL_Pin, (GPIO_PinState) BitValue);
+    delay_us(10);
+}
+/* 读取SDA电平*/
+GPIO_PinState SDA_Read(void)
+{
+    GPIO_PinState BitValue;
+    BitValue = HAL_GPIO_ReadPin(SDA_GPIO_Port, SDA_Pin);
+    delay_us(10);
+    return BitValue;
+}
+
+/* brief: I2C开始条件,SCL高电平期,SDA从高电平切换到低电平
+ *
+ */
+void I2C_Start(void)
+{
+    // 确保SDA为高电平
+    SDA_Write(1);
+    // 置SCL为高电平
+    SCL_Write(1);
+    // 置SDA为低电平,完成下降沿
+    SDA_Write(0);
+    // 置SCL为低电平,为放数据到SDA上做准备
+    SCL_Write(0);
+}
+
+/* brief: I2C终止条件,SCL高电平期间,SDA从低电平切换到高电平
+ *
+ */
+void I2C_Stop(void)
+{
+    // 置SDA为低电平
+    SDA_Write(0);
+    // 置SCL为低电平
+    SCL_Write(0);
+    // 确保SDA为高电平,完成上升沿
+    SDA_Write(1);
+}
+
+/* brief: 发送一个字节,数据位依次放到SDA线上
+ * 一个字节 8 bit,所以用uint8_t
+ */
+void I2C_WriteByte(uint8_t Byte)
+{
+    uint8_t i;
+    for (i=0; i&lt;8; i++)
+    {
+        // 写数据到SDA
+        SDA_Write(Byte &amp; (0x80 &gt;&gt; i));
+        // 拉高SCL可以让从机读数据
+        SCL_Write(1);
+        // 拉低SCL继续发送下一位
+        SCL_Write(0);
+    }
+}
+
+/* brief: 接收一个字节,在SCL高电平期间读取数据位
+ * 一个字节 8 bit,所以用uint8_t
+ */
+uint8_t I2C_ReadByte(void)
+{
+    uint8_t i, Byte=0x00;
+    // 主机释放SDA
+    SDA_Write(1);
+    for (i=0; i&lt;8; i++)
+    {
+        // 拉高SCL读数据
+        SCL_Write(1);
+        // 高电平的位补 1 ，其余不变
+        if (SDA_Read() == 1) {Byte = Byte | (0x80 &gt;&gt; i);}
+        // 拉低SCL继续发送下一位
+        SCL_Write(0);
+    }
+    return Byte;
+}
+
+/* brief: 发送应答
+ * 就是发送 1 位数据
+ */
+void I2C_WriteAcK(uint8_t Ack)
+{
+    SDA_Write((GPIO_PinState)Ack);
+    // 拉高SCL可以让从机读数据
+    SCL_Write(1);
+    // 拉低SCL继续发送下一位
+    SCL_Write(0);
+}
+/* brief: 接收应答
+ * 就是接收 1 位数据
+ */
+uint8_t I2C_ReceiveAck(void)
+{
+    uint8_t Ack;
+    // 主机释放SDA
+    SDA_Write(1);
+    // 拉高SCL,读数据
+    SCL_Write(1);
+    Ack = SDA_Read();
+    // 拉低SCL继续发送下一位
+    SCL_Write(0);
+    return Ack;
+}</code></pre>
 <p><code>sw_I2C.h</code></p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#ifndef SW_I2C_SWI2C_H</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#define SW_I2C_SWI2C_H</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">//</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gpio.h&quot;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">delay_us</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">us</span><span class="p">);</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">SDA_Write</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">BitValue</span><span class="p">);</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">SCL_Write</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">BitValue</span><span class="p">);</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">GPIO_PinState</span><span class="w"> </span><span class="nf">SDA_Read</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="kt">void</span><span class="w"> </span><span class="nf">I2C_Start</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="kt">void</span><span class="w"> </span><span class="nf">I2C_Stop</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="kt">void</span><span class="w"> </span><span class="nf">I2C_WriteByte</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">Byte</span><span class="p">);</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">I2C_ReadByte</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="kt">void</span><span class="w"> </span><span class="nf">I2C_WriteAcK</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">Ack</span><span class="p">);</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">I2C_ReceiveAck</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="cp">#endif </span><span class="c1">//SW_I2C_SWI2C_H</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">#ifndef SW_I2C_SWI2C_H
+#define SW_I2C_SWI2C_H
+
+//
+#include "gpio.h"
+
+void delay_us(uint32_t us);
+void SDA_Write(uint8_t BitValue);
+void SCL_Write(uint8_t BitValue);
+GPIO_PinState SDA_Read(void);
+void I2C_Start(void);
+void I2C_Stop(void);
+void I2C_WriteByte(uint8_t Byte);
+uint8_t I2C_ReadByte(void);
+void I2C_WriteAcK(uint8_t Ack);
+uint8_t I2C_ReceiveAck(void);
+
+
+#endif //SW_I2C_SWI2C_H
+</code></pre>
 <h2 id="103-i2c">10.3 I2C硬件外设<a class="headerlink" href="#103-i2c" title="Permanent link">&para;</a></h2>
 <h3 id="1031-i2c">10.3.1 I2C外设简介<a class="headerlink" href="#1031-i2c" title="Permanent link">&para;</a></h3>
 <ul>

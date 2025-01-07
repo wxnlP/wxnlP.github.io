@@ -2082,64 +2082,58 @@
 <p><img alt="image-20241213230155069" src="image-20241213230155069.png" /></p>
 <p><strong>下面时代码正文:</strong></p>
 <p>打开输入比较和输入捕获定时器，注意代码位置应该软件配置的初始化（xxx_Init）之后。</p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">HAL_TIM_IC_Start_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim3</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_CHANNEL_1</span><span class="p">);</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">HAL_TIM_PWM_Start</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim2</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_CHANNEL_1</span><span class="p">);</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm">/* USER CODE END 2 */</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">/* USER CODE BEGIN 2 */
+HAL_TIM_IC_Start_IT(&amp;htim3, TIM_CHANNEL_1);
+HAL_TIM_PWM_Start(&amp;htim2, TIM_CHANNEL_1);
+/* USER CODE END 2 */</code></pre>
 <p>我的OLED显示</p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// OLED静态显示</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">OLED_Init</span><span class="p">();</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">OLED_Clear</span><span class="p">();</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">OLED_ShowString</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CCR1:00000&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">OLED_ShowString</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Freq:00000HZ&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">// OLED静态显示
+OLED_Init();
+OLED_Clear();
+OLED_ShowString(0, 0, "CCR1:00000", 16, 1);
+OLED_ShowString(0, 2, "Freq:00000HZ", 16, 1);</code></pre>
 <p>在<code>While</code>循环中写测量代码，<code>HAL_TIM_ReadCapturedValue</code>读取捕获计数值 </p>
 <div class="arithmatex">\[
 频率=\frac{标准频率}{CCR1+1}
 \]</div>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/* USER CODE BEGIN 3 */</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HAL_TIM_ReadCapturedValue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim3</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_CHANNEL_1</span><span class="p">);</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// TI1FP1</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">OLED_ShowNum</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">OLED_ShowNum</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1000000</span><span class="o">/</span><span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="cm">/* USER CODE END 3 */</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">/* USER CODE BEGIN 3 */
+value = HAL_TIM_ReadCapturedValue(&amp;htim3, TIM_CHANNEL_1);
+// TI1FP1
+OLED_ShowNum(40, 0, value, 5, 16, 0);
+OLED_ShowNum(40, 2, 1000000/(value+1), 5, 16, 0);
+/* USER CODE END 3 */</code></pre>
 <h3 id="552-pwmi">5.5.2 PWMI模式<a class="headerlink" href="#552-pwmi" title="Permanent link">&para;</a></h3>
 <p><img alt="image-20241213231559442" src="image-20241213231559442.png" /></p>
 <p><img alt="image-20241213231628041" src="image-20241213231628041.png" /></p>
 <p>添加输入捕获通道 2 时钟，配置占空比，500/1000 即 50%</p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">HAL_TIM_IC_Start_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim3</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_CHANNEL_1</span><span class="p">);</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">HAL_TIM_IC_Start_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim3</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_CHANNEL_2</span><span class="p">);</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">HAL_TIM_PWM_Start</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim2</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_CHANNEL_1</span><span class="p">);</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">__HAL_TIM_SetCompare</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim2</span><span class="p">,</span><span class="n">TIM_CHANNEL_1</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">);</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="cm">/* USER CODE END 2 */</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">/* USER CODE BEGIN 2 */
+HAL_TIM_IC_Start_IT(&amp;htim3, TIM_CHANNEL_1);
+HAL_TIM_IC_Start_IT(&amp;htim3, TIM_CHANNEL_2);
+HAL_TIM_PWM_Start(&amp;htim2, TIM_CHANNEL_1);
+__HAL_TIM_SetCompare(&amp;htim2,TIM_CHANNEL_1, 500);
+/* USER CODE END 2 */</code></pre>
 <p>我的OLED显示</p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// OLED静态显示</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">OLED_Init</span><span class="p">();</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">OLED_Clear</span><span class="p">();</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">OLED_ShowString</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CCR1:00000&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">OLED_ShowString</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Freq:00000HZ&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">OLED_ShowString</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CCR2:00000&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">OLED_ShowString</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Duty:00000%&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">// OLED静态显示
+OLED_Init();
+OLED_Clear();
+OLED_ShowString(0, 0, "CCR1:00000", 16, 1);
+OLED_ShowString(0, 2, "Freq:00000HZ", 16, 1);
+OLED_ShowString(0, 4, "CCR2:00000", 16, 1);
+OLED_ShowString(0, 6, "Duty:00000%", 16, 1);</code></pre>
 <p>在<code>While</code>循环中添加通道 2 测量代码</p>
 <div class="arithmatex">\[
 占空比=\frac{CCR2+1}{CCR1+1}
 \]</div>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/* USER CODE BEGIN 3 */</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HAL_TIM_ReadCapturedValue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim3</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_CHANNEL_1</span><span class="p">);</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">value_h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HAL_TIM_ReadCapturedValue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim3</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_CHANNEL_2</span><span class="p">);</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">// TI1FP1</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">OLED_ShowNum</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">OLED_ShowNum</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1000000</span><span class="o">/</span><span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1">// TI1FP2</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">OLED_ShowNum</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">value_h</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">OLED_ShowNum</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">value_h</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="cm">/* USER CODE END 3 */</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">/* USER CODE BEGIN 3 */
+value = HAL_TIM_ReadCapturedValue(&amp;htim3, TIM_CHANNEL_1);
+value_h = HAL_TIM_ReadCapturedValue(&amp;htim3, TIM_CHANNEL_2);
+// TI1FP1
+OLED_ShowNum(40, 0, value, 5, 16, 0);
+OLED_ShowNum(40, 2, 1000000/(value+1), 5, 16, 0);
+// TI1FP2
+OLED_ShowNum(40, 4, value_h, 5, 16, 0);
+OLED_ShowNum(40, 6, (value_h+1)*100 / (value+1), 5, 16, 0);
+/* USER CODE END 3 */</code></pre>
 <h3 id="553">5.5.3 捕获中断介绍<a class="headerlink" href="#553" title="Permanent link">&para;</a></h3>
 <p>关于定时器中<kbd>输入捕获/输出比较</kbd>的中断函数，此为通道一，我们主要关注输入捕获部分即可：</p>
 <ul>
@@ -2149,46 +2143,44 @@
 <blockquote>
 <p>输出比较中断简单了解</p>
 </blockquote>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/* Capture compare 1 event */</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itflag</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_CC1</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_FLAG_CC1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">itsource</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_IT_CC1</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">TIM_IT_CC1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="p">{</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">            </span><span class="n">__HAL_TIM_CLEAR_FLAG</span><span class="p">(</span><span class="n">htim</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_FLAG_CC1</span><span class="p">);</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">            </span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">Channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HAL_TIM_ACTIVE_CHANNEL_1</span><span class="p">;</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">            </span><span class="cm">/* Input capture event */</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">Instance</span><span class="o">-&gt;</span><span class="n">CCMR1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">TIM_CCMR1_CC1S</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mh">0x00U</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">                </span><span class="cp">#if (USE_HAL_TIM_REGISTER_CALLBACKS == 1)</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">                </span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">IC_CaptureCallback</span><span class="p">(</span><span class="n">htim</span><span class="p">);</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">                </span><span class="cp">#else</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">                </span><span class="n">HAL_TIM_IC_CaptureCallback</span><span class="p">(</span><span class="n">htim</span><span class="p">);</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">                </span><span class="cp">#endif </span><span class="cm">/* USE_HAL_TIM_REGISTER_CALLBACKS */</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">            </span><span class="cm">/* Output compare event */</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">                </span><span class="cp">#if (USE_HAL_TIM_REGISTER_CALLBACKS == 1)</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">                </span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">OC_DelayElapsedCallback</span><span class="p">(</span><span class="n">htim</span><span class="p">);</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">                </span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">PWM_PulseFinishedCallback</span><span class="p">(</span><span class="n">htim</span><span class="p">);</span>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">                </span><span class="cp">#else</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">                </span><span class="n">HAL_TIM_OC_DelayElapsedCallback</span><span class="p">(</span><span class="n">htim</span><span class="p">);</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">                </span><span class="n">HAL_TIM_PWM_PulseFinishedCallback</span><span class="p">(</span><span class="n">htim</span><span class="p">);</span>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">                </span><span class="cp">#endif </span><span class="cm">/* USE_HAL_TIM_REGISTER_CALLBACKS */</span>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">            </span><span class="n">htim</span><span class="o">-&gt;</span><span class="n">Channel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HAL_TIM_ACTIVE_CHANNEL_CLEARED</span><span class="p">;</span>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="p">}</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">/* Capture compare 1 event */
+if ((itflag &amp; (TIM_FLAG_CC1)) == (TIM_FLAG_CC1)) {
+    if ((itsource &amp; (TIM_IT_CC1)) == (TIM_IT_CC1)) {
+        {
+            __HAL_TIM_CLEAR_FLAG(htim, TIM_FLAG_CC1);
+            htim-&gt;Channel = HAL_TIM_ACTIVE_CHANNEL_1;
+
+            /* Input capture event */
+            if ((htim-&gt;Instance-&gt;CCMR1 &amp; TIM_CCMR1_CC1S) != 0x00U) {
+                #if (USE_HAL_TIM_REGISTER_CALLBACKS == 1)
+                htim-&gt;IC_CaptureCallback(htim);
+                #else
+                HAL_TIM_IC_CaptureCallback(htim);
+                #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
+            }
+            /* Output compare event */
+            else {
+                #if (USE_HAL_TIM_REGISTER_CALLBACKS == 1)
+                htim-&gt;OC_DelayElapsedCallback(htim);
+                htim-&gt;PWM_PulseFinishedCallback(htim);
+                #else
+                HAL_TIM_OC_DelayElapsedCallback(htim);
+                HAL_TIM_PWM_PulseFinishedCallback(htim);
+                #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
+            }
+            htim-&gt;Channel = HAL_TIM_ACTIVE_CHANNEL_CLEARED;
+        }
+    }
+}</code></pre>
 <p>如果需要使用中断，在<code>stm32f1xx_it.c</code>文件下方重写输入捕获中断，当CNT转运到CCR寄存器时，触发改中断，此时我们读取CCR的值即可分析出输入信号的频率：</p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">/* USER CODE BEGIN 1 */</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_TIM_IC_CaptureCallback</span><span class="p">(</span><span class="n">TIM_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">htim</span><span class="p">)</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">{</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">htim</span><span class="o">==&amp;</span><span class="n">htim3</span><span class="p">)</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="cm">/* USER CODE END 1 */</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-C">/* USER CODE BEGIN 1 */
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim==&amp;htim3)
+    {
+    }
+}
+/* USER CODE END 1 */</code></pre>
 
 
 
