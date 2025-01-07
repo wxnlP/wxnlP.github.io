@@ -1794,24 +1794,22 @@
 </table>
 <p><strong>注1：</strong></p>
 <p>关于HAL和标准库的名称和配置区别：</p>
-<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">GPIO_Mode_IN_FLOATING</span><span class="o">--|</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">GPIO_Mode_IPU</span><span class="w">          </span><span class="o">|-----&gt;</span><span class="w"> </span><span class="n">GPIO_MODE_INPUT</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">GPIO_MODE_AF_INPUT</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">GPIO_Mode_IPD</span><span class="w">        </span><span class="o">--|</span><span class="w">  </span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-c">GPIO_Mode_IN_FLOATING--|
+GPIO_Mode_IPU          |-----&gt; GPIO_MODE_INPUT == GPIO_MODE_AF_INPUT
+GPIO_Mode_IPD        --|  </code></pre>
 <blockquote>
 <p>实质上<kbd>GPIO_MODE_AF_INPUT</kbd>和<kbd>GPIO_MODE_INPUT</kbd>用的是同一个地址，仅仅宏定义的名称不同；而本质上它们的使用和原理也是一样的。</p>
 </blockquote>
 <p>在HAL库中将GPIO数字输入模式均归到<kbd>GPIO_MODE_INPUT</kbd>一种模式，而上拉和下拉电阻需要单独配置：</p>
-<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#define  GPIO_NOPULL        0x00000000u   </span><span class="cm">/*!&lt; 既不上拉电阻，也不下拉电阻  */</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#define  GPIO_PULLUP        0x00000001u   </span><span class="cm">/*!&lt; 上拉电阻  */</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">#define  GPIO_PULLDOWN      0x00000002u   </span><span class="cm">/*!&lt; 下拉电阻  */</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// 配置方法</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">GPIO_InitTypeDef</span><span class="w"> </span><span class="n">GPIO_InitStruct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w">  </span><span class="c1">// 将结构体的所有成员变量初始化为 0</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">__HAL_RCC_GPIOX_CLK_ENABLE</span><span class="p">();</span><span class="w">            </span><span class="c1">// 开启GPIOX时钟,APB2总线</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">// -------------（省略若干配置）</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">GPIO_InitStruct</span><span class="p">.</span><span class="n">Pull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GPIO_NOPULL</span><span class="p">;</span><span class="w">      </span><span class="c1">// 既不上拉电阻，也不下拉电阻</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">HAL_GPIO_Init</span><span class="p">(</span><span class="n">GPIOX</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">GPIO_InitStruct</span><span class="p">);</span><span class="w">  </span><span class="c1">// 初始化</span>
-</span></code></pre></div>
+<pre class="highlight"><code class="language-c">#define  GPIO_NOPULL        0x00000000u   /*!&lt; 既不上拉电阻，也不下拉电阻  */
+#define  GPIO_PULLUP        0x00000001u   /*!&lt; 上拉电阻  */
+#define  GPIO_PULLDOWN      0x00000002u   /*!&lt; 下拉电阻  */
+// 配置方法
+GPIO_InitTypeDef GPIO_InitStruct = {0};  // 将结构体的所有成员变量初始化为 0
+__HAL_RCC_GPIOX_CLK_ENABLE();            // 开启GPIOX时钟,APB2总线
+// -------------（省略若干配置）
+GPIO_InitStruct.Pull = GPIO_NOPULL;      // 既不上拉电阻，也不下拉电阻
+HAL_GPIO_Init(GPIOX, &amp;GPIO_InitStruct);  // 初始化</code></pre>
 <blockquote>
 <p>这里配置还不完整，主要展示上拉和下拉电阻需要单独配置。</p>
 </blockquote>

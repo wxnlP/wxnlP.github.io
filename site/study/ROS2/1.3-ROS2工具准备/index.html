@@ -1395,52 +1395,50 @@
 <blockquote>
 <p>在 ROS 2中，需要频繁的使用到终端，且可能需要同时开启多个窗口，推荐一款较为好用的终端:<strong>Terminator。</strong></p>
 </blockquote>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>terminator
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">sudo apt install terminator</code></pre>
 <p>下载完以后<kbd>Ctrl+Alt+T</kbd> 命令就可以打开terminator终端，替换了默认的系统终端，同时在终端右键可以选择上下左右分隔多个终端。</p>
 <p><img alt="image-20241125221219848" src="image-20241125221219848.png" /></p>
 <p><strong>Terminator 常用快捷键</strong></p>
 <p><strong>第一部分：关于在同一个标签内的操作</strong></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Alt+Up                          //移动到上面的终端
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Alt+Down                        //移动到下面的终端
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Alt+Left                        //移动到左边的终端
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Alt+Right                       //移动到右边的终端
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Ctrl+Shift+O                    //水平分割终端
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Ctrl+Shift+E                    //垂直分割终端
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Ctrl+Shift+Right                //在垂直分割的终端中将分割条向右移动
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Ctrl+Shift+Left                 //在垂直分割的终端中将分割条向左移动
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Ctrl+Shift+Up                   //在水平分割的终端中将分割条向上移动
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Ctrl+Shift+Down                 //在水平分割的终端中将分割条向下移动
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Ctrl+Shift+S                    //隐藏/显示滚动条
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>Ctrl+Shift+F                    //搜索
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>Ctrl+Shift+C                    //复制选中的内容到剪贴板
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>Ctrl+Shift+V                    //粘贴剪贴板的内容到此处
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>Ctrl+Shift+W                    //关闭当前终端
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>Ctrl+Shift+Q                    //退出当前窗口，当前窗口的所有终端都将被关闭
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>Ctrl+Shift+X                    //最大化显示当前终端
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>Ctrl+Shift+Z                    //最大化显示当前终端并使字体放大
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>Ctrl+Shift+N or Ctrl+Tab        //移动到下一个终端
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>Ctrl+Shift+P or Ctrl+Shift+Tab  //Crtl+Shift+Tab 移动到之前的一个终端
-</span></code></pre></div>
+<pre class="highlight"><code>Alt+Up                          //移动到上面的终端
+Alt+Down                        //移动到下面的终端
+Alt+Left                        //移动到左边的终端
+Alt+Right                       //移动到右边的终端
+Ctrl+Shift+O                    //水平分割终端
+Ctrl+Shift+E                    //垂直分割终端
+Ctrl+Shift+Right                //在垂直分割的终端中将分割条向右移动
+Ctrl+Shift+Left                 //在垂直分割的终端中将分割条向左移动
+Ctrl+Shift+Up                   //在水平分割的终端中将分割条向上移动
+Ctrl+Shift+Down                 //在水平分割的终端中将分割条向下移动
+Ctrl+Shift+S                    //隐藏/显示滚动条
+Ctrl+Shift+F                    //搜索
+Ctrl+Shift+C                    //复制选中的内容到剪贴板
+Ctrl+Shift+V                    //粘贴剪贴板的内容到此处
+Ctrl+Shift+W                    //关闭当前终端
+Ctrl+Shift+Q                    //退出当前窗口，当前窗口的所有终端都将被关闭
+Ctrl+Shift+X                    //最大化显示当前终端
+Ctrl+Shift+Z                    //最大化显示当前终端并使字体放大
+Ctrl+Shift+N or Ctrl+Tab        //移动到下一个终端
+Ctrl+Shift+P or Ctrl+Shift+Tab  //Crtl+Shift+Tab 移动到之前的一个终端
+</code></pre>
 <p><strong>第二部分：有关各个标签之间的操作</strong></p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>F11<span class="w">                             </span>//全屏开关
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Ctrl+Shift+T<span class="w">                    </span>//打开一个新的标签
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Ctrl+PageDown<span class="w">                   </span>//移动到下一个标签
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Ctrl+PageUp<span class="w">                     </span>//移动到上一个标签
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Ctrl+Shift+PageDown<span class="w">             </span>//将当前标签与其后一个标签交换位置
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Ctrl+Shift+PageUp<span class="w">               </span>//将当前标签与其前一个标签交换位置
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Ctrl+Plus<span class="w"> </span><span class="o">(</span>+<span class="o">)</span><span class="w">                   </span>//增大字体
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Ctrl+Minus<span class="w"> </span><span class="o">(</span>-<span class="o">)</span><span class="w">                  </span>//减小字体
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Ctrl+Zero<span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="o">)</span><span class="w">                   </span>//恢复字体到原始大小
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Ctrl+Shift+R<span class="w">                    </span>//重置终端状态
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Ctrl+Shift+G<span class="w">                    </span>//重置终端状态并clear屏幕
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Super+g<span class="w">                         </span>//绑定所有的终端，以便向一个输入能够输入到所有的终端
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Super+Shift+G<span class="w">                   </span>//解除绑定
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Super+t<span class="w">                         </span>//绑定当前标签的所有终端，向一个终端输入的内容会自动输入到其他终端
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>Super+Shift+T<span class="w">                   </span>//解除绑定
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>Ctrl+Shift+I<span class="w">                    </span>//打开一个窗口，新窗口与原来的窗口使用同一个进程
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Super+i<span class="w">                         </span>//打开一个新窗口，新窗口与原来的窗口使用不同的进程
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">F11                             //全屏开关
+Ctrl+Shift+T                    //打开一个新的标签
+Ctrl+PageDown                   //移动到下一个标签
+Ctrl+PageUp                     //移动到上一个标签
+Ctrl+Shift+PageDown             //将当前标签与其后一个标签交换位置
+Ctrl+Shift+PageUp               //将当前标签与其前一个标签交换位置
+Ctrl+Plus (+)                   //增大字体
+Ctrl+Minus (-)                  //减小字体
+Ctrl+Zero (0)                   //恢复字体到原始大小
+Ctrl+Shift+R                    //重置终端状态
+Ctrl+Shift+G                    //重置终端状态并clear屏幕
+Super+g                         //绑定所有的终端，以便向一个输入能够输入到所有的终端
+Super+Shift+G                   //解除绑定
+Super+t                         //绑定当前标签的所有终端，向一个终端输入的内容会自动输入到其他终端
+Super+Shift+T                   //解除绑定
+Ctrl+Shift+I                    //打开一个窗口，新窗口与原来的窗口使用同一个进程
+Super+i                         //打开一个新窗口，新窗口与原来的窗口使用不同的进程</code></pre>
 <blockquote>
 <p>其实这些命令很少有，使用虚拟机学习时，会开多个终端即可</p>
 </blockquote>
@@ -1449,8 +1447,7 @@
 <p>Vscode是ROS2开发必备的代码编辑工具</p>
 </blockquote>
 <p>ubuntu可以使用一键安装，选择vscode即可</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>wget<span class="w"> </span>http://fishros.com/install<span class="w"> </span>-O<span class="w"> </span>fishros<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>.<span class="w"> </span>fishros
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">wget http://fishros.com/install -O fishros &amp;&amp; . fishros</code></pre>
 <p>Windows则需要手动安装（由于我采用Vscode和MobaXterm结合的远程连接开发模式，所以介绍windows安装）</p>
 <p>下载地址：<a href="https://code.visualstudio.com/Download">Visual Studio Code</a></p>
 <h2 id="33-mobaxterm">3.3 MobaXterm<a class="headerlink" href="#33-mobaxterm" title="Permanent link">&para;</a></h2>
@@ -1461,14 +1458,12 @@
 <p>官方下载连接，选择免费版下载安装即可。</p>
 <p><strong>MobaXterm：</strong> <a href="https://mobaxterm.mobatek.net/download.html">MobaXterm下载地址</a></p>
 <p>ubuntu打开终端，配置远程连接服务</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">#安装SSH服务</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>openssh-server
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#启动SSH服务</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ssh
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">#安装SSH服务
+sudo apt-get install openssh-server
+#启动SSH服务
+sudo systemctl start ssh</code></pre>
 <p>在ubuntu中输入命令查看 <strong>ip地址</strong>，缺少插件按照终端提示安装即可，</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ifconfig
-</span></code></pre></div>
+<pre class="highlight"><code class="language-shell">ifconfig</code></pre>
 <p><img alt="image-20241125222518979" src="image-20241125222518979.png" /></p>
 <p>安装下图，输入自己的 <strong>IP</strong> 和 <strong>用户名</strong> 即可完成连接</p>
 <p><img alt="image-20241125222317630" src="image-20241125222317630.png" /></p>

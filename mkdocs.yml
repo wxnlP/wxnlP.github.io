@@ -156,6 +156,7 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
       auto_title: true
+      use_pygments: false
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.magiclink:
