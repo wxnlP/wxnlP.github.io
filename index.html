@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              主页
+              你我有幸相会<->
             
           </span>
         </div>
@@ -233,7 +233,7 @@
   
     
   
-  主页
+  你我有幸相会<->
 
       </a>
     </li>
@@ -498,7 +498,7 @@
           
   
   <span class="md-ellipsis">
-    主页
+    你我有幸相会<->
   </span>
   
 
@@ -509,7 +509,7 @@
         
   
   <span class="md-ellipsis">
-    主页
+    你我有幸相会<->
   </span>
   
 
@@ -1085,7 +1085,7 @@
   
 
 
-<h1 id="_1">小李<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">为理想再拼搏几年！<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h3 id="_2">安装配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
@@ -1121,8 +1121,65 @@
 
 
 
+  
+  
 
 
+
+
+  <!-- <h2 id="__comments"> </h2> -->
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+        data-repo="wxnlP/wxnlP.github.io"
+        data-repo-id="R_kgDOMKIl5g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMKIl5s4Cl1nL"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+    
+  </script>
 
                 
               </article>
