@@ -11,7 +11,7 @@ copyright: Copyright &copy; 2024 # 版权声明
 
 
 nav:
-  - 主页: index.md
+  - 你我有幸相会<->: index.md
   - OpenHarmony:
     - 阅读声明: study/OpenHarmony/0.阅读前的声明.md
     - 第一章 命令行开发: study/OpenHarmony/1.OH命令行开发.md

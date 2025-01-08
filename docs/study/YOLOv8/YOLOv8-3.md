@@ -1,3 +1,8 @@
+---
+comments: true
+---
+
+
 ## YOLOV8模型训练
 
 ### YOLOv8简介
