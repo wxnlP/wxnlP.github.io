@@ -48,6 +48,7 @@ nav:
   - FreeRTOS:
     - 理论基础:
       - ARM架构简介: study/FreeRTOS/0.ARM架构简明教程.md
+      - C语言基础: study/FreeRTOS/0.C语言基础.md
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
