@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 特别篇 ROS2中的C++新特性
 
 > 此篇章对于后续ROS2语法的理解有很重要的帮助，一定仔细理解学习。该笔记是在听完fishros的ROS2书籍课程后总结，示例内容不完全一样，若有不懂，可以观看fishros的B站视频[《ROS 2机器人开发从入门到实践》2.5.2用得到的C++新特性](https://www.bilibili.com/video/BV1CRWWeoEso/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=9360af603fa540663a17ba65dbad6a7d)

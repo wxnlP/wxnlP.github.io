@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## 用户配置
 
 右键任意一文件夹内空白处打开<kbd>Git bash here</kbd>进行配置
