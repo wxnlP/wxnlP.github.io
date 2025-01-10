@@ -12,26 +12,24 @@
         <meta name="author" content="XiaoLi">
       
       
-        <link rel="canonical" href="https://wxnlP.github.io/">
+        <link rel="canonical" href="https://wxnlP.github.io/study/FreeRTOS/1.%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%A8%8B%E5%BA%8F/">
       
       
       
-        <link rel="next" href="study/OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/">
       
-      
-      <link rel="icon" href="assets/icon.png">
+      <link rel="icon" href="../../../assets/icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>小李 的知识库</title>
+        <title>1.第一个多任务程序 - 小李 的知识库</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#11-rtos" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="小李 的知识库" class="md-header__button md-logo" aria-label="小李 的知识库" data-md-component="logo">
+    <a href="../../.." title="小李 的知识库" class="md-header__button md-logo" aria-label="小李 的知识库" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
@@ -112,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              你我有幸相会！
+              1.第一个多任务程序
             
           </span>
         </div>
@@ -224,11 +222,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -247,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
+        <a href="../../OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
           
   
     
@@ -273,7 +269,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/ROS2/1.1-ROS%E4%B8%8EROS2%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+        <a href="../../ROS2/1.1-ROS%E4%B8%8EROS2%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
           
   
     
@@ -296,7 +292,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/STM32/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
+        <a href="../../STM32/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
           
   
     
@@ -322,7 +318,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/FreeRTOS/0.ARM%E6%9E%B6%E6%9E%84%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/" class="md-tabs__link">
+        <a href="../0.ARM%E6%9E%B6%E6%9E%84%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/" class="md-tabs__link">
           
   
     
@@ -351,7 +347,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/competition/1/" class="md-tabs__link">
+        <a href="../../competition/1/" class="md-tabs__link">
           
   
     
@@ -380,7 +376,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/yolov5/1/" class="md-tabs__link">
+        <a href="../../yolov5/1/" class="md-tabs__link">
           
   
     
@@ -401,7 +397,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="study/Git/Git/" class="md-tabs__link">
+      <a href="../../Git/Git/" class="md-tabs__link">
         
   
     
@@ -420,7 +416,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/pythondata/" class="md-tabs__link">
+        <a href="../../%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/pythondata/" class="md-tabs__link">
           
   
     
@@ -455,7 +451,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="小李 的知识库" class="md-nav__button md-logo" aria-label="小李 的知识库" data-md-component="logo">
+    <a href="../../.." title="小李 的知识库" class="md-nav__button md-logo" aria-label="小李 的知识库" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
@@ -482,30 +478,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    你我有幸相会！
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -514,71 +490,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      安装配置
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      改分支
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      部署网站
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      本地测试
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      图床
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -618,7 +529,7 @@
         
   
   
-    <a href="study/OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-nav__link">
+    <a href="../../OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -673,7 +584,7 @@
     
   
   
-    <a href="study/ROS2/1.1-ROS%E4%B8%8EROS2%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+    <a href="../../ROS2/1.1-ROS%E4%B8%8EROS2%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -731,7 +642,7 @@
         
   
   
-    <a href="study/STM32/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-nav__link">
+    <a href="../../STM32/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -784,7 +695,7 @@
     
   
   
-    <a href="study/FreeRTOS/0.ARM%E6%9E%B6%E6%9E%84%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/" class="md-nav__link">
+    <a href="../0.ARM%E6%9E%B6%E6%9E%84%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -839,7 +750,7 @@
     
   
   
-    <a href="study/competition/1/" class="md-nav__link">
+    <a href="../../competition/1/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -894,7 +805,7 @@
     
   
   
-    <a href="study/yolov5/1/" class="md-nav__link">
+    <a href="../../yolov5/1/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -922,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study/Git/Git/" class="md-nav__link">
+      <a href="../../Git/Git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,7 +877,7 @@
         
   
   
-    <a href="study/%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/pythondata/" class="md-nav__link">
+    <a href="../../%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/pythondata/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1002,8 +913,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1012,45 +921,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#11-rtos" class="md-nav__link">
     <span class="md-ellipsis">
-      安装配置
+      1.1 RTOS的统一接口
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#12-freertos" class="md-nav__link">
     <span class="md-ellipsis">
-      改分支
+      1.2 FreeRTOS默认任务
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#13-freertos" class="md-nav__link">
     <span class="md-ellipsis">
-      部署网站
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      本地测试
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      图床
+      1.3 创建一个原生FreeRTOS任务
     </span>
   </a>
   
@@ -1071,7 +962,7 @@
                   
 
   
-    <a href="https://github.com/wxnlP/wxnlP.github.io/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/wxnlP/wxnlP.github.io/edit/master/docs/study/FreeRTOS/1.第一个多任务程序.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1080,42 +971,89 @@
     
       
     
-    <a href="https://github.com/wxnlP/wxnlP.github.io/raw/master/docs/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/wxnlP/wxnlP.github.io/raw/master/docs/study/FreeRTOS/1.第一个多任务程序.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="_1">为理想再拼搏几年！<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h3 id="_2">安装配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
+  <h1>1.第一个多任务程序</h1>
+
+<h2 id="11-rtos">1.1 RTOS的统一接口<a class="headerlink" href="#11-rtos" title="Permanent link">&para;</a></h2>
+<p>在<code>cmsis_os2.c</code>文件中由一个<code>osThreadNew()</code>函数，用于统一各种操作系统的任务接口，我们学习FreeRTOS所以优先使用FreeRTOS原生代码函数。</p>
+<p><img alt="image-20250110214542412" src="image-20250110214542412.png" /></p>
+<h2 id="12-freertos">1.2 FreeRTOS默认任务<a class="headerlink" href="#12-freertos" title="Permanent link">&para;</a></h2>
+<p>在使用STM32CubeMX配置完FreeRTOS以后，会有一个默认任务生成，可以在<code>Core\Src\freertos.c</code>文件中找到：</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MX_FREERTOS_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="cm">/* creation of defaultTask */</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">defaultTaskHandle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">osThreadNew</span><span class="p">(</span><span class="n">StartDefaultTask</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">defaultTask_attributes</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="cm">/* USER CODE BEGIN RTOS_THREADS */</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="_3">改分支<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">git</span> <span class="n">branch</span> <span class="n">-m</span> <span class="n">master</span> <span class="n">main</span>
+<p>找到<code>osThreadNew()</code>函数的第一个参数，即<code>StartDefaultTask()</code>函数，并替换默认函数内容，我们就有第一个循环任务：</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/* USER CODE END Header_StartDefaultTask */</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">StartDefaultTask</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">argument</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="cm">/* USER CODE BEGIN StartDefaultTask */</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="cm">/* Infinite loop */</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="n">Bsp_Loop</span><span class="p">();</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">//        osDelay(1);</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="cm">/* USER CODE END StartDefaultTask */</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="_4">部署网站<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mkdocs</span> <span class="n">build</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># main分支</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;update&quot;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">main</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># 切换gh-pages分支</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">git</span> <span class="n">checkout</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># 切换main分支</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># 部署</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mkdocs</span> <span class="n">gh</span><span class="o">-</span><span class="n">deploy</span>
+<details class="danger">
+<summary>Danger</summary>
+<p><code>Bsp_Loop()</code>是一个蜂鸣器加LED的死循环函数。</p>
+</details>
+<p>此外，我们应知道，默认任务封装在<code>MX_FREERTOS_Init()</code>函数中（RTOS初始化函数），在<code>main.c</code>文件中约 126 行可以找到这个函数。</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/* Call init function for freertos objects (in cmsis_os2.c) */</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">MX_FREERTOS_Init</span><span class="p">();</span>
 </span></code></pre></div>
-<h3 id="_5">本地测试<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mkdocs</span> <span class="n">serve</span>
+<h2 id="13-freertos">1.3 创建一个原生FreeRTOS任务<a class="headerlink" href="#13-freertos" title="Permanent link">&para;</a></h2>
+<p>首先了解FreeRTOS的任务创建函数<code>xTaskCreate()</code>，然后参考默认任务<code>osThreadNew()</code>的传入参数。</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">BaseType_t</span><span class="w"> </span><span class="nf">xTaskCreate</span><span class="p">(</span><span class="w"> </span><span class="n">TaskFunction_t</span><span class="w"> </span><span class="n">pxTaskCode</span><span class="p">,</span><span class="w"> </span><span class="c1">// 函数指针, 任务函数</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">                        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pcName</span><span class="p">,</span><span class="w"> </span><span class="c1">// 任务的名字</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">                        </span><span class="k">const</span><span class="w"> </span><span class="n">configSTACK_DEPTH_TYPE</span><span class="w"> </span><span class="n">usStackDepth</span><span class="p">,</span><span class="w"> </span><span class="c1">// 栈大小,单位为word,10表示40字节</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">                        </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pvParameters</span><span class="p">,</span><span class="w"> </span><span class="c1">// 调用任务函数时传入的参数</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">                        </span><span class="n">UBaseType_t</span><span class="w"> </span><span class="n">uxPriority</span><span class="p">,</span><span class="w">    </span><span class="c1">// 优先级</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">                        </span><span class="n">TaskHandle_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pxCreatedTask</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">// 任务句柄, 以后使用它来操作这个任务</span>
 </span></code></pre></div>
-<h3 id="_6">图床<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://cdn.jsdelivr.net/gh/wxnlP/pic
+<p>关于默认任务的参数设置，找到<code>osThreadNew()</code>的第三参数<code>&amp;defaultTask_attributes</code>的定义位置：</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/* Definitions for defaultTask */</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">osThreadId_t</span><span class="w"> </span><span class="n">defaultTaskHandle</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">const</span><span class="w"> </span><span class="n">osThreadAttr_t</span><span class="w"> </span><span class="n">defaultTask_attributes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;defaultTask&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="p">.</span><span class="n">stack_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="p">.</span><span class="n">priority</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">osPriority_t</span><span class="p">)</span><span class="w"> </span><span class="n">osPriorityNormal</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">};</span>
 </span></code></pre></div>
-<p>​   </p>
+<p>接下来创建，我们的第一个原生任务：</p>
+<p>① 任务函数，位置在<code>freertos.c</code>文件的最下方，函数类型参数参考<code>void StartDefaultTask(void *argument)</code>，注意看注释找任务函数定义位置。</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/* Private application code --------------------------------------------------*/</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cm">/* USER CODE BEGIN Application */</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MyTask</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">argument</span><span class="p">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">{</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="n">motor_test</span><span class="p">();</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="cm">/* USER CODE END Application */</span>
+</span></code></pre></div>
+<p>② 声明任务函数，在C语言学习时我们就知道的知识点，位置紧挨着<code>void StartDefaultTask(void *argument);</code>。</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/* USER CODE END FunctionPrototypes */</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">StartDefaultTask</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">argument</span><span class="p">);</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MyTask</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">argument</span><span class="p">);</span>
+</span></code></pre></div>
+<p>③ 创建任务，位置在<code>MX_FREERTOS_Init()</code>函数中，根据注释找位置创建我们自己的任务。</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">/* USER CODE BEGIN RTOS_THREADS */</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="cm">/* add threads, ... */</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">xTaskCreate</span><span class="p">(</span><span class="n">MyTask</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;RbTask_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">124</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">osPriorityNormal</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="cm">/* USER CODE END RTOS_THREADS */</span>
+</span></code></pre></div>
 
 
 
@@ -1202,28 +1140,6 @@
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-        
-          
-          <a href="study/OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-footer__link md-footer__link--next" aria-label="Next: 阅读声明">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                阅读声明
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1253,12 +1169,12 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.action.edit", "navigation.tabs", "navigation.instant", "content.action.view", "content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tooltips", "sticky_navigation", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "navigation.tabs", "navigation.instant", "content.action.view", "content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tooltips", "sticky_navigation", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="js/math.js"></script>
+        <script src="../../../js/math.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
