@@ -1305,7 +1305,7 @@
 <p><strong>MOVS</strong> ：给寄存器赋值，并更新状态标志。</p>
 <p>例如：<code>MOVS r0, #0x0A</code>
 将常数<code>0x0A</code>赋值给<code>r0</code>寄存器，并更新条件码标志（如零标志、进位标志等）。</p>
-<p><strong>STR</strong> ：将寄存器中的数据写入内存。</p>
+<p><strong>STR</strong> ：将寄存器中的4个字节数据写入内存。</p>
 <p>例如：<code>STR r0, [sp, #0x00]</code>
 将<code>r0</code>寄存器的值写入栈指针<code>sp</code>偏移<code>0x00</code>位置的内存。</p>
 <p><strong>STRB</strong> ：将寄存器中的1个字节写入内存。</p>
