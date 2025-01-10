@@ -11,7 +11,7 @@ copyright: Copyright &copy; 2024 # 版权声明
 
 
 nav:
-  - 你我有幸相会<->: index.md
+  - 你我有幸相会！: index.md
   - OpenHarmony:
     - 阅读声明: study/OpenHarmony/0.阅读前的声明.md
     - 第一章 命令行开发: study/OpenHarmony/1.OH命令行开发.md
@@ -49,6 +49,7 @@ nav:
     - 理论基础:
       - ARM架构简介: study/FreeRTOS/0.ARM架构简明教程.md
       - C语言基础: study/FreeRTOS/0.C语言基础.md
+      - 堆和栈: study/FreeRTOS/0.堆和栈.md
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
