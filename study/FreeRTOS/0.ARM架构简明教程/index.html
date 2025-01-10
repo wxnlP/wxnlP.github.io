@@ -861,45 +861,63 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#41" class="md-nav__link">
     <span class="md-ellipsis">
-      栈操作指令
+      4.1 栈操作指令
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#42" class="md-nav__link">
     <span class="md-ellipsis">
-      数据传输指令
+      4.2 寄存器赋值
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#43" class="md-nav__link">
     <span class="md-ellipsis">
-      算术指令
+      4.3 写寄存器
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#44" class="md-nav__link">
     <span class="md-ellipsis">
-      跳转与调用指令
+      4.4 读寄存器
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#45" class="md-nav__link">
     <span class="md-ellipsis">
-      其他常见指令
+      4.5 加减指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 跳转与调用指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 其他常见指令
     </span>
   </a>
   
@@ -1218,45 +1236,63 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#41" class="md-nav__link">
     <span class="md-ellipsis">
-      栈操作指令
+      4.1 栈操作指令
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#42" class="md-nav__link">
     <span class="md-ellipsis">
-      数据传输指令
+      4.2 寄存器赋值
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#43" class="md-nav__link">
     <span class="md-ellipsis">
-      算术指令
+      4.3 写寄存器
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#44" class="md-nav__link">
     <span class="md-ellipsis">
-      跳转与调用指令
+      4.4 读寄存器
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#45" class="md-nav__link">
     <span class="md-ellipsis">
-      其他常见指令
+      4.5 加减指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 跳转与调用指令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7 其他常见指令
     </span>
   </a>
   
@@ -1319,15 +1355,20 @@
 <p>CPU计算 a=a+b 的过程：</p>
 <p><img alt="image-20250105220801754" src="image-20250105220801754.png" /></p>
 <h2 id="4">4. 常见汇编指令<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
-<h3 id="_1">栈操作指令<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="41">4.1 栈操作指令<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
 <p><strong>PUSH</strong> ：压栈，将寄存器的内容压入栈中。</p>
 <p>例如：<code>PUSH {r2, lr}</code> 为将<code>r2</code>、<code>lr</code>寄存器的值压入栈空间</p>
 <p><strong>POP</strong> ：出栈，将 <strong>栈顶</strong> 的数据弹出，并恢复寄存器的值。</p>
 <p>例如：<code>POP {r2-r3, pc}</code> </p>
-<h3 id="_2">数据传输指令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="42">4.2 寄存器赋值<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p><strong>MOV</strong> ：给寄存器赋值，不影响标志寄存器。</p>
+<p>例如：<code>MOV R0, #0x10</code> 将 <code>0x10</code> 传送到寄存器 <code>R0</code>。</p>
 <p><strong>MOVS</strong> ：给寄存器赋值，并更新状态标志。</p>
 <p>例如：<code>MOVS r0, #0x0A</code>
-将常数<code>0x0A</code>赋值给<code>r0</code>寄存器，并更新条件码标志（如零标志、进位标志等）。</p>
+将<code>0x0A</code>赋值给<code>r0</code>寄存器，并更新条件码标志（如零标志、进位标志等）。</p>
+<p><strong>MOVW</strong> ：将一个 16 位的立即数加载到寄存器中。</p>
+<p>例如：<code>MOVW R0, #0x1234</code> 将 <code>0x1234</code> 传送到 <code>R0</code>寄存器 的低 16 位。</p>
+<h3 id="43">4.3 写寄存器<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
 <p><strong>STR</strong> ：将寄存器中的4个字节数据写入内存。</p>
 <p>例如：<code>STR r0, [sp, #0x00]</code>
 将<code>r0</code>寄存器的值写入栈指针<code>sp</code>偏移<code>0x00</code>位置的内存。</p>
@@ -1337,6 +1378,7 @@
 <p><strong>STRH</strong> ：将寄存器中的2个字节写入内存。</p>
 <p>例如：<code>STRH r0, [sp, #0x00]</code>
 将<code>r0</code>寄存器的低16位写入栈指针<code>sp</code>偏移<code>0x00</code>位置的内存。</p>
+<h3 id="44">4.4 读寄存器<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
 <p><strong>LDR</strong> ：从内存读取4个字节数据到寄存器。</p>
 <p>例如：<code>LDR r0, [sp, #0x00]</code>
 将栈指针<code>sp</code>偏移<code>0x00</code>位置的4个字节数据读取到<code>r0</code>寄存器。</p>
@@ -1349,21 +1391,21 @@
 <p><strong>LDRD</strong> ：从内存读取8个字节数据到寄存器。</p>
 <p>例如：<code>LDRD r1, r0, [sp, #0x00]</code>
 将栈指针<code>sp</code>偏移<code>0x00</code>位置的8字节数据读取到<code>r0</code>和<code>r1</code>寄存器。</p>
-<h3 id="_3">算术指令<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="45">4.5 加减指令<a class="headerlink" href="#45" title="Permanent link">&para;</a></h3>
 <p><strong>ADD</strong> ：加法操作。</p>
 <p>例如：<code>ADD r0, r0, r1</code>
 将<code>r0 = r0 + r1</code>，将<code>r0</code>和<code>r1</code>寄存器的值相加，并将结果存入<code>r0</code>。</p>
 <p><strong>SUB</strong> ：减法操作。</p>
 <p>例如：<code>SUB sp, sp, #0x68</code>
 将栈指针<code>sp</code>减去<code>0x68</code>，即<code>sp = sp - 0x68</code>，用于在栈上分配或释放空间。</p>
-<h3 id="_4">跳转与调用指令<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="46">4.6 跳转与调用指令<a class="headerlink" href="#46" title="Permanent link">&para;</a></h3>
 <p><strong>B</strong> ：无条件跳转。</p>
 <p>例如：<code>B label</code>
 跳转到标签<code>label</code>，执行该位置的代码。</p>
 <p><strong>BL</strong> ：带返回地址的跳转（用于函数调用）。</p>
 <p>例如：<code>BL subroutine</code>
 跳转到<code>subroutine</code>函数，并将返回地址（跳转指令后的地址）保存到<code>lr</code>（链接寄存器）。函数执行完毕后，通过<code>POP</code>或其他机制恢复<code>pc</code>来返回。</p>
-<h3 id="_5">其他常见指令<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="47">4.7 其他常见指令<a class="headerlink" href="#47" title="Permanent link">&para;</a></h3>
 <p><strong>NOP</strong> ：空操作指令。不会做任何事情，仅用于占位或调试。</p>
 <p>例如：<code>NOP</code>
 占用一个时钟周期，但不改变任何寄存器或标志。</p>
