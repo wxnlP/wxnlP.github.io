@@ -1211,7 +1211,9 @@
 
   <h1>内存管理</h1>
 
-<p>FreeRTOS中内存管理的接口函数为：pvPortMalloc 、vPortFree，对应于C库的malloc、free。 文件在FreeRTOS/Source/portable/MemMang下，它也是放在portable目录下，表示你可以提供自己的函数。</p>
+<p>FreeRTOS内存管理的5种方法：</p>
+<p>内存管理的5种方法：</p>
+<p>内存管理的5种方法：</p>
 <p>源码中默认提供了5个文件，对应内存管理的5种方法。</p>
 <table>
 <thead>
@@ -1262,8 +1264,65 @@
 
 
 
+  
+  
 
 
+
+
+  <!-- <h2 id="__comments"> </h2> -->
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+        data-repo="wxnlP/wxnlP.github.io"
+        data-repo-id="R_kgDOMKIl5g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMKIl5s4Cl1nL"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+    
+  </script>
 
                 
               </article>
