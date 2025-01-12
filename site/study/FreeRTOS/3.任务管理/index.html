@@ -1071,45 +1071,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31_1" class="md-nav__link">
+  <a href="#321" class="md-nav__link">
     <span class="md-ellipsis">
-      3.1 修改优先级
+      3.2.1 任务状态
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#32_1" class="md-nav__link">
+  <a href="#322" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2 任务状态
+      3.2.2 优先级
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#33" class="md-nav__link">
+  <a href="#323-tick" class="md-nav__link">
     <span class="md-ellipsis">
-      3.3 优先级
+      3.2.3 Tick
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#34-tick" class="md-nav__link">
+  <a href="#324-tick" class="md-nav__link">
     <span class="md-ellipsis">
-      3.4 Tick
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35-tick" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.5 Tick中断示例
+      3.2.4 Tick中断示例
     </span>
   </a>
   
@@ -1143,6 +1134,15 @@
   <a href="#332" class="md-nav__link">
     <span class="md-ellipsis">
       3.3.2 空闲任务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 两个延时函数
     </span>
   </a>
   
@@ -1461,45 +1461,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31_1" class="md-nav__link">
+  <a href="#321" class="md-nav__link">
     <span class="md-ellipsis">
-      3.1 修改优先级
+      3.2.1 任务状态
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#32_1" class="md-nav__link">
+  <a href="#322" class="md-nav__link">
     <span class="md-ellipsis">
-      3.2 任务状态
+      3.2.2 优先级
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#33" class="md-nav__link">
+  <a href="#323-tick" class="md-nav__link">
     <span class="md-ellipsis">
-      3.3 优先级
+      3.2.3 Tick
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#34-tick" class="md-nav__link">
+  <a href="#324-tick" class="md-nav__link">
     <span class="md-ellipsis">
-      3.4 Tick
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35-tick" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.5 Tick中断示例
+      3.2.4 Tick中断示例
     </span>
   </a>
   
@@ -1533,6 +1524,15 @@
   <a href="#332" class="md-nav__link">
     <span class="md-ellipsis">
       3.3.2 空闲任务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.3 两个延时函数
     </span>
   </a>
   
@@ -1821,8 +1821,7 @@
 <p>频繁的创建和删除任务在动态分配内存时会导致内存碎片的存在，因此删除任务函数使用并不多，故简单了解使用方法即可。</p>
 </details>
 <h2 id="32">3.2 任务的优先级与状态<a class="headerlink" href="#32" title="Permanent link">&para;</a></h2>
-<h3 id="31_1">3.1 修改优先级<a class="headerlink" href="#31_1" title="Permanent link">&para;</a></h3>
-<h3 id="32_1">3.2 任务状态<a class="headerlink" href="#32_1" title="Permanent link">&para;</a></h3>
+<h3 id="321">3.2.1 任务状态<a class="headerlink" href="#321" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Running（运行）&rarr;任务运行时处于此状态。</li>
 <li>Ready（就绪）---&gt;未执行的任务处于此状态。</li>
@@ -1832,7 +1831,7 @@
 </ol>
 <p><strong>完整的状态转换图：</strong></p>
 <p><img alt="image-20250112135428803" src="image-20250112135428803.png" /></p>
-<p>逻辑示例：</p>
+<p>暂停逻辑示例：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="mo">01</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="mo">02</span><span class="w"> </span><span class="p">{</span>
@@ -1935,7 +1934,7 @@
 </span><span id="__span-22-100"><a id="__codelineno-22-100" name="__codelineno-22-100" href="#__codelineno-22-100"></a>
 </span><span id="__span-22-101"><a id="__codelineno-22-101" name="__codelineno-22-101" href="#__codelineno-22-101"></a><span class="mi">51</span><span class="w">  </span><span class="p">}</span>
 </span></code></pre></div>
-<h3 id="33">3.3 优先级<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<h3 id="322">3.2.2 优先级<a class="headerlink" href="#322" title="Permanent link">&para;</a></h3>
 <ul>
 <li>相同优先级任务轮流执行</li>
 <li>最高优先级任务先执行<ul>
@@ -1972,7 +1971,7 @@
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">prvAddNewTaskToReadyList</span><span class="p">(</span><span class="w"> </span><span class="n">pxNewTCB</span><span class="w"> </span><span class="p">);</span>
 </span></code></pre></div>
 <p>在该函数中有使用全局指针<code>pxCurrentTCB</code>。</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>PRIVILEGED_DATA TCB_t * volatile pxCurrentTCB = NULL;
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">PRIVILEGED_DATA</span><span class="w"> </span><span class="n">TCB_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">volatile</span><span class="w"> </span><span class="n">pxCurrentTCB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
 </span></code></pre></div>
 <p>使用方法如下，以两个任务的程序为例：</p>
 <p>一开始<code>pxCurrentTCB</code>指针指向第一个任务，创建第二个任务时，比较优先级，然后依次指向同一优先级的下一个任务；启动调度器时 0优先级的空闲任务，由于优先级较低所以停留在<code>osPriorityNormal</code>的最后创建的任务；当任务执行时，就从Task2开始。</p>
@@ -1993,7 +1992,7 @@
 </span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="p">}</span>
 </span></code></pre></div>
 <p><img alt="image-20250112172347746" src="image-20250112172347746.png" /></p>
-<h3 id="34-tick">3.4 Tick<a class="headerlink" href="#34-tick" title="Permanent link">&para;</a></h3>
+<h3 id="323-tick">3.2.3 Tick<a class="headerlink" href="#323-tick" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Tick 1ms 时钟中断（正常）<ul>
 <li>cnt++</li>
@@ -2019,7 +2018,7 @@
 <p>关于<kbd>就绪链表</kbd>、<kbd>Delay链表</kbd>、<kbd>暂停链表</kbd>均可以在源码中找到定义位置：</p>
 <p><img alt="image-20250112182204446" src="image-20250112182204446.png" /></p>
 <p><img alt="image-20250112182230238" src="image-20250112182230238.png" /></p>
-<h3 id="35-tick">3.5 Tick中断示例<a class="headerlink" href="#35-tick" title="Permanent link">&para;</a></h3>
+<h3 id="324-tick">3.2.4 Tick中断示例<a class="headerlink" href="#324-tick" title="Permanent link">&para;</a></h3>
 <p>示例：假设有 4 个自建任务，一个调度函数创建的空闲任务；其中Task4是高优先级任务，一旦进入就绪态（Ready）立即执行。同时，示例中会用到<kbd>延迟链表</kbd>和<kbd>暂停链表</kbd>，如图中绿色字体所示。</p>
 <p><img alt="image-20250112182904890" src="image-20250112182904890.png" /></p>
 <p>① 若无Task4，只有三个同优先级的任务，则任务时间轴如下：</p>
@@ -2027,7 +2026,7 @@
 <p>② 4 个任务，其中Task4中有<code>vTaskDelay(2);</code>程序，若Tick周期为1ms，则为等待 2 ms，此时Task4为阻塞态（Blocked），要从就绪链表(<code>pxReadyTasksLists</code>)删除，将任务放到延迟链表(<code>pxDelayedTaskList</code>)。</p>
 <p><img alt="image-20250112184704941" src="image-20250112184704941.png" /></p>
 <p>③ 在②地基础上，为Task4添加任务暂停和任务恢复，其中任务暂停时将Task4从就绪链表(<code>pxReadyTasksLists</code>)删除，将任务放到暂停链表(<code>xSuspendedTaskList</code>)。当恢复Task4到就绪态时，即使Task3地一个Tick周期还没有执行完，也会立刻停止去执行Task4。</p>
-<p><img alt="image-20250112194444903" src="image-20250112194444903.png" /></p>
+<p><img alt="image-20250112215917038" src="image-20250112215917038.png" /></p>
 <h2 id="33-delay">3.3 空闲任务与Delay函数<a class="headerlink" href="#33-delay" title="Permanent link">&para;</a></h2>
 <h3 id="331">3.3.1 任务的退出<a class="headerlink" href="#331" title="Permanent link">&para;</a></h3>
 <p>下面一个<code>for</code>循环任务执行结束，未正确退出任务，会导致Tick中断停止，从而无法切换其他任务，原因在于触发了<code>prvTaskExitError</code>函数。</p>
@@ -2055,6 +2054,36 @@
 </span></code></pre></div>
 <p>一个任务退出后，需要一个任务来“收尸”，其中<code>vTaskDelete(TaskHandle_t xTaskToDelete);</code>方式则是由杀死它的任务收尸，而<code>vTaskDelete(NULL);</code>方式则需要<kbd>空闲任务</kbd>"收尸"，从而引出本节重点。</p>
 <h3 id="332">3.3.2 空闲任务<a class="headerlink" href="#332" title="Permanent link">&para;</a></h3>
+<p>空闲任务的作用之一就是 <strong>释放被删除的任务的内存</strong> 。空闲任务只有就绪态和运行态两种状态，不会被阻塞；然而，空闲任务的优先级为 0 ，这意味着如果有任意一个任务处于就绪态，空闲任务都不会被执行，因此我们要有保持良好的编程规范：</p>
+<p><strong>我们日常逻辑开发使用的延时函数都是死循环，我们应该尽量将他们改为<code>vTaskDelay</code>，这样在延时阶段，任务会处于阻塞态，就有空闲事件去执行空闲任务，从而释放被删除的任务的内存。</strong></p>
+<p>在<code>FreeRTOS\Source\tasks.c</code>中我们可以在空闲任务中找到一个钩子函数<code>vApplicationIdleHook</code>，这个函数中可以自定义一些空闲任务时期执行的程序，在使用之前需要配置<code>configUSE_IDLE_HOOK</code>宏定义。</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="cp">#if ( configUSE_IDLE_HOOK == 1 )</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="p">{</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">    </span><span class="k">extern</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">vApplicationIdleHook</span><span class="p">(</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">    </span><span class="cm">/* Call the user defined function from within the idle task.  This</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="cm">    allows the application designer to add background functionality</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="cm">    without the overhead of a separate task.</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="cm">    NOTE: vApplicationIdleHook() MUST NOT, UNDER ANY CIRCUMSTANCES,</span>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="cm">    CALL A FUNCTION THAT MIGHT BLOCK. */</span>
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="w">    </span><span class="n">vApplicationIdleHook</span><span class="p">();</span>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="p">}</span>
+</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="cp">#endif </span><span class="cm">/* configUSE_IDLE_HOOK */</span>
+</span></code></pre></div>
+<h3 id="333">3.3.3 两个延时函数<a class="headerlink" href="#333" title="Permanent link">&para;</a></h3>
+<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">vTaskDelay</span><span class="p">(</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TickType_t</span><span class="w"> </span><span class="n">xTicksToDelay</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* xTicksToDelay: 等待多少给Tick */</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="cm">/* pxPreviousWakeTime: 上一次被唤醒的时间</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="cm"> * xTimeIncrement: 要阻塞到(pxPreviousWakeTime + xTimeIncrement)</span>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="cm"> * 单位都是Tick Count</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="cm"> */</span>
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="n">BaseType_t</span><span class="w"> </span><span class="nf">xTaskDelayUntil</span><span class="p">(</span><span class="w"> </span><span class="n">TickType_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pxPreviousWakeTime</span><span class="p">,</span>
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="n">TickType_t</span><span class="w"> </span><span class="n">xTimeIncrement</span><span class="w"> </span><span class="p">);</span>
+</span></code></pre></div>
+<p><code>vTaskDelay</code>严格延时3Tick，此期间为阻塞态，3Tick后恢复就绪态。</p>
+<p><img alt="image-20250112222231769" src="image-20250112222231769.png" /></p>
+<p><code>xTaskDelayUntil</code>则旨在实现周期运行，需要传入一个preTime，从preTime开始计时3Tick，后恢复就绪态。</p>
+<p><img alt="image-20250112222243320" src="image-20250112222243320.png" /></p>
 
 
 
