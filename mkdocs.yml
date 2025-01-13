@@ -54,6 +54,9 @@ nav:
       - 第一个多任务程序: study/FreeRTOS/1.第一个多任务程序.md
       - 内存管理: study/FreeRTOS/2.内存管理.md
       - 任务管理: study/FreeRTOS/3.任务管理.md
+      - 同步互斥: study/FreeRTOS/4.同步互斥.md
+    # - 同步互斥方法:
+
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
