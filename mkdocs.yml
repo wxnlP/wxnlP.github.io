@@ -57,6 +57,7 @@ nav:
       - 同步互斥: study/FreeRTOS/4.同步互斥.md
     - 同步互斥方法:
       - 队列: study/FreeRTOS/5.队列.md
+      - 信号量与互斥量: study/FreeRTOS/6.信号量.md
 
   - 工创赛: 
     - 比赛介绍:
