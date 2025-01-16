@@ -55,7 +55,7 @@ nav:
       - 内存管理: study/FreeRTOS/2.内存管理.md
       - 任务管理: study/FreeRTOS/3.任务管理.md
       - 同步互斥: study/FreeRTOS/4.同步互斥.md
-    - 同步互斥方法:
+    - 互斥方法:
       - 队列: study/FreeRTOS/5.队列.md
       - 信号量与互斥量: study/FreeRTOS/6.信号量.md
 
