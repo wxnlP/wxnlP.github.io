@@ -929,9 +929,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#262" class="md-nav__link">
+  <a href="#162" class="md-nav__link">
     <span class="md-ellipsis">
-      2.6.2 编写回调函数
+      1.6.2 编写回调函数
     </span>
   </a>
   
@@ -1715,9 +1715,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#262" class="md-nav__link">
+  <a href="#162" class="md-nav__link">
     <span class="md-ellipsis">
-      2.6.2 编写回调函数
+      1.6.2 编写回调函数
     </span>
   </a>
   
@@ -1763,11 +1763,11 @@
 
 <h2 id="21-exti">2.1 EXTI外设简介<a class="headerlink" href="#21-exti" title="Permanent link">&para;</a></h2>
 <ul>
-<li>EXTI可以监测指定GPIO口的电平信号，当其指定的GPIO口产生电平变化时，EXTI将立即向NVIC发出中断申请，经过NVIC裁决后即可中断CPU主程序，使CPU执行EXTI对应的中断程序</li>
-<li>支持的触发方式：上升沿/下降沿/双边沿/软件触发</li>
-<li>支持的GPIO口：所有GPIO口，但相同的Pin不能同时触发中断</li>
-<li>通道数：16个GPIO_Pin，外加PVD输出、RTC闹钟、USB唤醒、以太网唤醒</li>
-<li>触发响应方式：中断响应/事件响应</li>
+<li><strong>EXTI可以监测指定GPIO口的电平信号，当其指定的GPIO口产生电平变化时，EXTI将立即向NVIC发出中断申请，经过NVIC裁决后即可中断CPU主程序，使CPU执行EXTI对应的中断程序</strong></li>
+<li><strong>支持的触发方式：上升沿/下降沿/双边沿/软件触发</strong></li>
+<li><strong>支持的GPIO口：所有GPIO口，但相同的Pin不能同时触发中断</strong></li>
+<li><strong>通道数：16个GPIO_Pin，外加PVD输出、RTC闹钟、USB唤醒、以太网唤醒</strong></li>
+<li><strong>触发响应方式：中断响应/事件响应</strong></li>
 </ul>
 <h2 id="22">2.2 中断事件与中断线<a class="headerlink" href="#22" title="Permanent link">&para;</a></h2>
 <table>
@@ -1869,46 +1869,53 @@
 <p><img alt="image-20240916233233740" src="image-20240916233233740.png" /></p>
 <h2 id="24-nvic">2.4 NVIC优先级分组<a class="headerlink" href="#24-nvic" title="Permanent link">&para;</a></h2>
 <ul>
-<li>NVIC的中断优先级由优先级寄存器的4位（0~15）决定，这4位可以进行切分，分为高n位的抢占优先级和低4-n位的响应优先级</li>
-<li>**抢占优先级**高的可以中断嵌套，**响应优先级**高的可以优先排队，抢占优先级和响应优先级均相同的按中断号排队</li>
+<li>ARM Cortex-M 使用了 8 位宽的寄存器来配置中断的优先等级，这个寄存器就是<kbd>中断优先级配置寄存器</kbd>。但STM32，只用了中断优先级配置寄存器的高4位 [7 : 4]，所以STM32提供了最大16级的中断优先等级。</li>
+<li>STM32 的中断优先级可以分为抢占优先级和子优先级， <strong>抢占优先级</strong> 高的可以中断嵌套， <strong>子优先级</strong> 高的可以优先排队，抢占优先级和响应优先级均相同的按中断号排队。</li>
+<li>中断优先级数值越小越优先。</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th><strong>分组方式</strong></th>
-<th><strong>抢占优先级</strong></th>
-<th><strong>响应优先级</strong></th>
+<th>优先级分组</th>
+<th>抢占优先级</th>
+<th>子优先级</th>
+<th>优先级配置寄存器高 4 位</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>分组0</td>
-<td>0位，取值为0</td>
-<td>4位，取值为0~15</td>
+<td>NVIC_PriorityGroup_0</td>
+<td>0 级抢占优先级</td>
+<td>0-15 级子优先级</td>
+<td>0bit 用于抢占优先级，4bit 用于子优先级</td>
 </tr>
 <tr>
-<td>分组1</td>
-<td>1位，取值为0~1</td>
-<td>3位，取值为0~7</td>
+<td>NVIC_PriorityGroup_1</td>
+<td>0-1 级抢占优先级</td>
+<td>0-7 级子优先级</td>
+<td>1bit 用于抢占优先级，3bit 用于子优先级</td>
 </tr>
 <tr>
-<td>分组2</td>
-<td>2位，取值为0~3</td>
-<td>2位，取值为0~3</td>
+<td>NVIC_PriorityGroup_2</td>
+<td>0-3 级抢占优先级</td>
+<td>0-3 级子优先级</td>
+<td>2bit 用于抢占优先级，2bit 用于子优先级</td>
 </tr>
 <tr>
-<td>分组3</td>
-<td>3位，取值为0~7</td>
-<td>1位，取值为0~1</td>
+<td>NVIC_PriorityGroup_3</td>
+<td>0-7 级抢占优先级</td>
+<td>0-1 级子优先级</td>
+<td>3bit 用于抢占优先级，1bit 用于子优先级</td>
 </tr>
 <tr>
-<td>分组4</td>
-<td>4位，取值为0~15</td>
-<td>0位，取值为0</td>
+<td>NVIC_PriorityGroup_4</td>
+<td>0-15 级抢占优先级</td>
+<td>0 级子优先级</td>
+<td>4bit 用于抢占优先级，0bit 用于子优先级</td>
 </tr>
 </tbody>
 </table>
-<p><kbd>STM32CubeMX</kbd>&gt;中对应**抢占优先级**和**响应优先级**参数配置</p>
+<p><kbd>STM32CubeMX</kbd>&gt;中对应 <strong>抢占优先级</strong> 和 <strong>子优先级</strong> 参数配置</p>
 <p><img alt="image-20240919222424896" src="image-20240919222424896.png" /></p>
 <h2 id="25-stm32cubemx">2.5 STM32CubeMX配置<a class="headerlink" href="#25-stm32cubemx" title="Permanent link">&para;</a></h2>
 <h3 id="251-sys">2.5.1 SYS配置<a class="headerlink" href="#251-sys" title="Permanent link">&para;</a></h3>
@@ -1980,7 +1987,7 @@
 <p>这是一个“弱”回调函数，用户需要在自己的代码中重写函数，所以我们需要重写这个函数实现业务</p>
 <div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">HAL_GPIO_EXTI_Callback</span><span class="p">(</span><span class="n">GPIO_Pin</span><span class="p">);</span>
 </span></code></pre></div>
-<h3 id="262">2.6.2 编写回调函数<a class="headerlink" href="#262" title="Permanent link">&para;</a></h3>
+<h3 id="162">1.6.2 编写回调函数<a class="headerlink" href="#162" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>这个函数位置可以放在<kbd>stm32f1xx_it.c</kbd>或<kbd>main.c</kbd>均可</p>
 </blockquote>
@@ -2007,65 +2014,8 @@
 
 
 
-  
-  
 
 
-
-
-  <!-- <h2 id="__comments"> </h2> -->
-  <!-- Insert generated snippet here -->
-  <script src="https://giscus.app/client.js"
-        data-repo="wxnlP/wxnlP.github.io"
-        data-repo-id="R_kgDOMKIl5g"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOMKIl5s4Cl1nL"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-</script>
-  <!-- Synchronize Giscus theme with palette -->
-  <script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-      var theme = palette.color.scheme === "slate"
-        ? "transparent_dark"
-        : "light"
-
-      // Instruct Giscus to set theme
-      giscus.setAttribute("data-theme", theme) 
-    }
-
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
-
-          // Instruct Giscus to change theme
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
-    
-  </script>
 
                 
               </article>
