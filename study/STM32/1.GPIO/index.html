@@ -1815,12 +1815,12 @@
 </blockquote>
 <p><strong>注2：</strong></p>
 <p>关于开漏输出只能驱动低电平，不驱动高电平：</p>
-<p><strong>驱动低电平</strong>：当引脚输出低电平时（0），它会将引脚与地（GND）相连，从而拉低输出信号线的电压。</p>
-<p><strong>不驱动高电平</strong>：当引脚输出高电平时（1），它不会主动提供高电压（如VDD），而是处于高阻抗（Hi-Z）状态。此时，信号线的电平由外部电路（例如一个上拉电阻）决定。</p>
+<p><strong>驱动低电平</strong> ：当引脚输出低电平时（0），它会将引脚与地（GND）相连，从而拉低输出信号线的电压。</p>
+<p><strong>不驱动高电平</strong> ：当引脚输出高电平时（1），它不会主动提供高电压（如VDD），而是处于高阻抗（Hi-Z）状态。此时，信号线的电平由外部电路（例如一个上拉电阻）决定。</p>
 <blockquote>
 <p>在开漏模式下，<strong>引脚的输出端类似于开关</strong>，这个开关的另一端接地。如果开关关闭（引脚输出低电平），引脚就接地，输出低电平；如果开关打开（引脚输出高电平），引脚断开（高阻态），信号线上的电平将由外部上拉电阻决定。</p>
 </blockquote>
-<p><strong>I²C总线使用场景</strong>：I²C协议使用开漏输出的方式，允许多个设备共享同一条数据线，并且通过上拉电阻将数据线拉高。每个设备可以主动拉低电平，但不会主动拉高，避免了设备之间的电平冲突。</p>
+<p><strong>I²C总线使用场景</strong> ：I²C协议使用开漏输出的方式，允许多个设备共享同一条数据线，并且通过上拉电阻将数据线拉高。每个设备可以主动拉低电平，但不会主动拉高，避免了设备之间的电平冲突。</p>
 <blockquote>
 <p>显然，开漏输出主要利用低电平处理信号，可以避免高电平发生影响或出现电平冲突。</p>
 </blockquote>
@@ -1830,8 +1830,8 @@
 <li>
 <p>复用模式与不复用的区别：</p>
 <ul>
-<li><strong>复用模式</strong>：GPIO引脚<kbd>用于外设</kbd>（如UART、SPI、I²C）控制，不再作为普通的GPIO引脚使用。通过配置为复用开漏或复用推挽模式，外设的信号控制引脚的电平输出。</li>
-<li><strong>非复用模式</strong>：GPIO引脚由<kbd>用户程序直接控制</kbd>，可以手动设置引脚为高电平或低电平，用于普通的输入输出操作。</li>
+<li><strong>复用模式</strong> ：GPIO引脚<kbd>用于外设</kbd>（如UART、SPI、I²C）控制，不再作为普通的GPIO引脚使用。通过配置为复用开漏或复用推挽模式，外设的信号控制引脚的电平输出。</li>
+<li><strong>非复用模式</strong> ：GPIO引脚由<kbd>用户程序直接控制</kbd>，可以手动设置引脚为高电平或低电平，用于普通的输入输出操作。</li>
 </ul>
 </li>
 <li>
@@ -1889,65 +1889,8 @@
 
 
 
-  
-  
 
 
-
-
-  <!-- <h2 id="__comments"> </h2> -->
-  <!-- Insert generated snippet here -->
-  <script src="https://giscus.app/client.js"
-        data-repo="wxnlP/wxnlP.github.io"
-        data-repo-id="R_kgDOMKIl5g"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOMKIl5s4Cl1nL"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-</script>
-  <!-- Synchronize Giscus theme with palette -->
-  <script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-      var theme = palette.color.scheme === "slate"
-        ? "transparent_dark"
-        : "light"
-
-      // Instruct Giscus to set theme
-      giscus.setAttribute("data-theme", theme) 
-    }
-
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
-
-          // Instruct Giscus to change theme
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
-    
-  </script>
 
                 
               </article>
