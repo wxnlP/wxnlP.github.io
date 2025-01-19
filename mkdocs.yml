@@ -46,6 +46,7 @@ nav:
       - 第十章 I2C: study/STM32/10.I2C通信.md
       - 第十一章 SPI: study/STM32/11.SPI通信.md
   - FreeRTOS:
+    - 阅读声明: study/FreeRTOS/0.阅读声明.md
     - 理论基础:
       - ARM架构简介: study/FreeRTOS/0.ARM架构简明教程.md
       - C语言基础: study/FreeRTOS/0.C语言基础.md
