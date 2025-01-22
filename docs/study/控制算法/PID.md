@@ -31,6 +31,8 @@ $$
 out(t) = K_p \cdot error(t)
 $$
 
+
+
 - 比例项的输出值仅取决于 **当前时刻的误差** ，与历史时刻无关。
 - 当前存在误差时，比例项输出一个与误差呈正比的值，当前不存在误差时，比例项输出 0 。
 - 比例项权重越大，系统响应越快，但超调也会随之增加。
@@ -44,7 +46,7 @@ $$
 - 含有比例项和积分项的PID输出值：
 
 $$
-out(t) = K_p \cdot error(t) + K_i \int_0^t error(t) \, dt 
+out(t) = K_p \cdot error(t) + K_i \int_0^t error(t) \, dt
 $$
 
 - 积分项的输出值取决于0~t所有时刻误差的积分， **与历史时刻有关** 。
@@ -80,10 +82,14 @@ $$
 - D项：系数 × 第 k 个T时刻的误差斜率（ 即（本次误差 -上次误差） / 周期T ）
 
 因此，PID离散化后的公式如下：
+
+
 $$
 out(k) = K_p \cdot error(k) + K_i \cdot T \sum_{j=0}^k error(j) + K_d \cdot \frac{error(k) - error(k-1)}{T}
 $$
 若将T的值融入到各项系数中，则为另一个形式的公式：
+
+
 $$
 out(k) = K_p \cdot error(k) + K_i \cdot \sum_{j=0}^k error(j) + K_d \cdot ({error(k) - error(k-1)})
 $$
@@ -91,6 +97,8 @@ $$
 ### 2.2 位置式PID
 
 位置式PID就是PID离散化后的PID公式：
+
+
 $$
 out(k) = K_p \cdot error(k) + K_i \cdot \sum_{j=0}^k error(j) + K_d \cdot ({error(k) - error(k-1)})
 $$
@@ -98,14 +106,20 @@ $$
 ### 2.3 增量式PID
 
 第k个T时刻：
+
+
 $$
 out(k) = K_p \cdot error(k) + K_i \cdot \sum_{j=0}^k error(j) + K_d \cdot ({error(k) - error(k-1)})
 $$
 第k-1个T时刻：
+
+
 $$
 out(k-1) = K_p \cdot error(k-1) + K_i \cdot \sum_{j=0}^{k-1} error(j) + K_d \cdot ({error(k-1) - error(k-2)})
 $$
 两式相减，得到增量式PID：
+
+
 $$
 \Delta out(k) = K_p \cdot (error(k) - error(k-1)) + K_i\cdot error(k) + K_d \cdot (error(k) - 2 \cdot error(k-1) + error(k-2))
 $$
