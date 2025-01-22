@@ -63,6 +63,8 @@ nav:
       - 任务通知: study/FreeRTOS/8.任务通知.md
       - 软件定时器: study/FreeRTOS/9.软件定时器.md
       - 中断管理: study/FreeRTOS/10.中断管理.md
+  - 控制算法: 
+    - PID控制: study/控制算法/PID.md
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
