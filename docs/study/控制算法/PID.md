@@ -84,10 +84,14 @@ $$
 因此，PID离散化后的公式如下：
 
 
+
 $$
 out(k) = K_p \cdot error(k) + K_i \cdot T \sum_{j=0}^k error(j) + K_d \cdot \frac{error(k) - error(k-1)}{T}
 $$
+
+
 若将T的值融入到各项系数中，则为另一个形式的公式：
+
 
 
 $$
@@ -99,6 +103,7 @@ $$
 位置式PID就是PID离散化后的PID公式：
 
 
+
 $$
 out(k) = K_p \cdot error(k) + K_i \cdot \sum_{j=0}^k error(j) + K_d \cdot ({error(k) - error(k-1)})
 $$
@@ -108,16 +113,23 @@ $$
 第k个T时刻：
 
 
+
 $$
 out(k) = K_p \cdot error(k) + K_i \cdot \sum_{j=0}^k error(j) + K_d \cdot ({error(k) - error(k-1)})
 $$
+
+
 第k-1个T时刻：
+
 
 
 $$
 out(k-1) = K_p \cdot error(k-1) + K_i \cdot \sum_{j=0}^{k-1} error(j) + K_d \cdot ({error(k-1) - error(k-2)})
 $$
+
+
 两式相减，得到增量式PID：
+
 
 
 $$

@@ -1347,10 +1347,10 @@ out(t) = K_p \cdot error(t) + K_i \int_0^t error(t) \, dt + K_d \cdot \frac{d \,
 <li>D项：系数 × 第 k 个T时刻的误差斜率（ 即（本次误差 -上次误差） / 周期T ）</li>
 </ul>
 <p>因此，PID离散化后的公式如下：</p>
-<p>$$
+<div class="arithmatex">\[
 out(k) = K_p \cdot error(k) + K_i \cdot T \sum_{j=0}^k error(j) + K_d \cdot \frac{error(k) - error(k-1)}{T}
-$$
-若将T的值融入到各项系数中，则为另一个形式的公式：</p>
+\]</div>
+<p>若将T的值融入到各项系数中，则为另一个形式的公式：</p>
 <div class="arithmatex">\[
 out(k) = K_p \cdot error(k) + K_i \cdot \sum_{j=0}^k error(j) + K_d \cdot ({error(k) - error(k-1)})
 \]</div>
@@ -1361,14 +1361,14 @@ out(k) = K_p \cdot error(k) + K_i \cdot \sum_{j=0}^k error(j) + K_d \cdot ({erro
 \]</div>
 <h3 id="23-pid">2.3 增量式PID<a class="headerlink" href="#23-pid" title="Permanent link">&para;</a></h3>
 <p>第k个T时刻：</p>
-<p>$$
+<div class="arithmatex">\[
 out(k) = K_p \cdot error(k) + K_i \cdot \sum_{j=0}^k error(j) + K_d \cdot ({error(k) - error(k-1)})
-$$
-第k-1个T时刻：</p>
-<p>$$
+\]</div>
+<p>第k-1个T时刻：</p>
+<div class="arithmatex">\[
 out(k-1) = K_p \cdot error(k-1) + K_i \cdot \sum_{j=0}^{k-1} error(j) + K_d \cdot ({error(k-1) - error(k-2)})
-$$
-两式相减，得到增量式PID：</p>
+\]</div>
+<p>两式相减，得到增量式PID：</p>
 <div class="arithmatex">\[
 \Delta out(k) = K_p \cdot (error(k) - error(k-1)) + K_i\cdot error(k) + K_d \cdot (error(k) - 2 \cdot error(k-1) + error(k-2))
 \]</div>
