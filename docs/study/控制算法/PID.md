@@ -10,13 +10,21 @@
 ### 1.2 PID公式
 
 **误差：** 
+
+
 $$
- error(t) = target(t) - actual(t)
+error(t) = target(t) - actual(t)
 $$
+
+
 **输出值：**
+
+
 $$
 out(t) = K_p \cdot error(t) + K_i \int_0^t error(t) \, dt + K_d \cdot \frac{d \, error(t)}{dt}
 $$
+
+
 若用控制的语言表达则如下结构图：
 
 ![PID](PID/PID.png)
