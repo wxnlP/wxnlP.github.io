@@ -1857,6 +1857,8 @@
   <h1>信号量互斥锁</h1>
 
 <h2 id="61">6.1 信号量的本质<a class="headerlink" href="#61" title="Permanent link">&para;</a></h2>
+<p>信号量（Semaphore）是一种实现任务间通信的机制，可以实现任务间同步或共享资源的互斥访问。一个信号量的数据结构中，通常有一个计数值，用于对有效资源数的计数，表示剩下的可被使用的共享资源数。</p>
+<p><strong>信号量用于多任务的同步，而后面会讲的互斥量用于实现多任务的互斥。</strong></p>
 <p><img alt="" src="image-20250116212031058.png" /></p>
 <p>信号量本质上时特殊的队列，下面时对应的差异：</p>
 <p><strong>队列</strong></p>
@@ -1952,9 +1954,7 @@
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="n">xTaskCreate</span><span class="p">(</span><span class="n">OLED_PrintTask</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Task1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">g_car</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">osPriorityNormal</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="n">xTaskCreate</span><span class="p">(</span><span class="n">OLED_PrintTask</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Task2&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">g_car</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">osPriorityNormal</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="n">xTaskCreate</span><span class="p">(</span><span class="n">OLED_PrintTask</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Task3&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">g_car</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="n">osPriorityNormal</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1">//    xTaskCreate(OLED_PrintTask, &quot;Task4&quot;, 128, &amp;g_car[3], osPriorityNormal, NULL);</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">}</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">}</span>
 </span></code></pre></div>
 <p><strong>修改任务函数，取消队列，添加信号量获取与释放</strong></p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">OLED_PrintTask</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">params</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
