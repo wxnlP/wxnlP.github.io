@@ -14,9 +14,13 @@ nav:
   - 你我有幸相会！: index.md
   - OpenHarmony:
     - 阅读声明: study/OpenHarmony/0.阅读前的声明.md
-    - 第一章 命令行开发: study/OpenHarmony/1.OH命令行开发.md
-    - 第二章 IDE开发: study/OpenHarmony/2.OHIDE开发.md
-    - 第三章 编译原理: study/OpenHarmony/3.OH编译原理.md
+    - OHOS基础:
+      - 第一章 命令行开发: study/OpenHarmony/1.OH命令行开发.md
+      - 第二章 IDE开发: study/OpenHarmony/2.OHIDE开发.md
+      - 第三章 编译原理: study/OpenHarmony/3.OH编译原理.md
+    - OHOS内核:
+      - 第四章内核接口: study/OpenHarmony/4.内核接口.md
+    - OHOS驱动:
   - ROS2:
     - ROS2环境准备:
       - 第一章 ROS与ROS2介绍: study/ROS2/1.1-ROS与ROS2介绍.md
