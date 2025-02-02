@@ -56,9 +56,9 @@ nav:
       - 内存管理: study/FreeRTOS/2.内存管理.md
       - 任务管理: study/FreeRTOS/3.任务管理.md
       - 同步互斥: study/FreeRTOS/4.同步互斥.md
-    - 互斥实现方法:
+    - 同步机制:
       - 队列: study/FreeRTOS/5.队列.md
-      - 信号量与互斥量: study/FreeRTOS/6.信号量.md
+      - 信号量互斥锁: study/FreeRTOS/6.信号量.md
       - 事件组: study/FreeRTOS/7.事件组.md
       - 任务通知: study/FreeRTOS/8.任务通知.md
       - 软件定时器: study/FreeRTOS/9.软件定时器.md
