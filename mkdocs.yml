@@ -19,7 +19,9 @@ nav:
       - 第二章 IDE开发: study/OpenHarmony/2.OHIDE开发.md
       - 第三章 编译原理: study/OpenHarmony/3.OH编译原理.md
     - OHOS内核:
-      - 第四章内核接口: study/OpenHarmony/4.内核接口.md
+      - 第四章 内核接口: study/OpenHarmony/4.内核接口.md
+    - OHOS外设:
+      - 第五章 GPIO: study/OpenHarmony/5.GPIO.md
   - ROS2:
     - ROS2环境准备:
       - 第一章 ROS与ROS2介绍: study/ROS2/1.1-ROS与ROS2介绍.md
