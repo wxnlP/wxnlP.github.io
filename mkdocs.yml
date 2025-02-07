@@ -22,6 +22,8 @@ nav:
       - 第四章 内核接口: study/OpenHarmony/4.内核接口.md
     - OHOS外设:
       - 第五章 GPIO: study/OpenHarmony/5.GPIO.md
+      - 第六章 ADC: study/OpenHarmony/6.ADC.md
+      - 第七章 I2C: study/OpenHarmony/7.I2C.md
   - ROS2:
     - ROS2环境准备:
       - 第一章 ROS与ROS2介绍: study/ROS2/1.1-ROS与ROS2介绍.md

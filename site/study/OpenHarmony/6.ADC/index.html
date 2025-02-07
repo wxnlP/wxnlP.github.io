@@ -12,13 +12,13 @@
         <meta name="author" content="XiaoLi">
       
       
-        <link rel="canonical" href="https://wxnlP.github.io/study/OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/">
+        <link rel="canonical" href="https://wxnlP.github.io/study/OpenHarmony/6.ADC/">
       
       
-        <link rel="prev" href="../../..">
+        <link rel="prev" href="../5.GPIO/">
       
       
-        <link rel="next" href="../1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/">
+        <link rel="next" href="../7.I2C/">
       
       
       <link rel="icon" href="../../../assets/icon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>阅读声明 - 小李 的知识库</title>
+        <title>第六章 ADC - 小李 的知识库</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#61-hi3861adc" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              阅读声明
+              第六章 ADC
             
           </span>
         </div>
@@ -249,7 +249,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
           
   
     
@@ -572,28 +572,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    阅读声明
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -602,42 +584,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      参考声明
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      开发方式说明
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -849,6 +795,8 @@
                 
   
   
+    
+  
   
   
     
@@ -873,11 +821,11 @@
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
@@ -891,7 +839,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             OHOS外设
@@ -923,10 +871,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../6.ADC/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    第六章 ADC
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -935,6 +901,84 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-hi3861adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Hi3861的ADC外设
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 ADC读取模拟值
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-dht11" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 DHT11温湿度
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3 DHT11温湿度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631-dht11" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.1 DHT11单总线通信
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.2 单总线通信代码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#633" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.3 驱动程序
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1396,20 +1440,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#61-hi3861adc" class="md-nav__link">
     <span class="md-ellipsis">
-      参考声明
+      6.1 Hi3861的ADC外设
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#62-adc" class="md-nav__link">
     <span class="md-ellipsis">
-      开发方式说明
+      6.2 ADC读取模拟值
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-dht11" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 DHT11温湿度
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3 DHT11温湿度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631-dht11" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.1 DHT11单总线通信
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.2 单总线通信代码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#633" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3.3 驱动程序
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1428,7 +1514,7 @@
                   
 
   
-    <a href="https://github.com/wxnlP/wxnlP.github.io/edit/master/docs/study/OpenHarmony/0.阅读前的声明.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/wxnlP/wxnlP.github.io/edit/master/docs/study/OpenHarmony/6.ADC.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1437,28 +1523,140 @@
     
       
     
-    <a href="https://github.com/wxnlP/wxnlP.github.io/raw/master/docs/study/OpenHarmony/0.阅读前的声明.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/wxnlP/wxnlP.github.io/raw/master/docs/study/OpenHarmony/6.ADC.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>阅读声明</h1>
+  <h1>第六章 ADC</h1>
 
-<h2 id="_1">参考声明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>OpenHarmony系列文档内容参考来自<a href="https://docs.openharmony.cn/pages/v4.1/zh-cn/device-dev/device-dev-guide.md">OpenHarmony官方文档</a> 和 购买的书籍《OpenHarmony轻量设备开发理论与实践》，然均没有照抄搬运，主要内容为自己的学习总结记录。如若部分内容会表明来源，若有侵权请联系删除。愿此文档能给有缘人提供一些学习帮助。</p>
-<h2 id="_2">开发方式说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>先说观点，建议使用 <strong>命令行开发方式</strong> 学习，原因如下：</p>
-<ol>
-<li>网上多数资料为命令行教程。</li>
-<li>虽然环境配置繁琐，但有助于理解编译原理。</li>
-<li>基于Linux更符合公司和行业要求。</li>
-<li>书籍配套的快速烧录脚本具备多开发板烧录优势。</li>
-<li>.....（很多不继续列举）</li>
-</ol>
-<p>一开始我也是选择IDE开发，配置简单，编译烧录方便，后来我在《OpenHarmony轻量设备开发理论与实践》书友交流群请教了一下，结合个人理解总结了以上 4 条优势，但也不止 4 条。 </p>
-<p>当然若无Linux开发基础没有使用过Linux系统的人可以使用IDE开发。</p>
+<h2 id="61-hi3861adc">6.1 Hi3861的ADC外设<a class="headerlink" href="#61-hi3861adc" title="Permanent link">&para;</a></h2>
+<p>Hi3861V100 芯片的ADC具有以下功能特性
+。</p>
+<ul>
+<li>输入时钟频率：3MHZ
+  。</li>
+<li>采样精度：12bit。</li>
+<li>单通道采样频率：小于200kHz。</li>
+<li>买样顺序：从通道0到通道7，每个通道采样一个数据,循环采样。</li>
+<li>支持采样数据平均滤波处理：平均次数1、2、4、8。在多通道场景下,每个通道接收N个数据(平均滤波个数)再切换通道。</li>
+<li>数转换电压基准：支持自动识别模式、1.8V 基准模式、3.3V 基准模式。</li>
+</ul>
+<h2 id="62-adc">6.2 ADC读取模拟值<a class="headerlink" href="#62-adc" title="Permanent link">&para;</a></h2>
+<p><strong>源代码</strong></p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ohos_init.h&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cmsis_os2.h&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;iot_gpio.h&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hi_io.h&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hi_adc.h&quot;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="cm">/**</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="cm"> * adc_demo/adc_demo.c</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="cm"> * ADC读取模拟值案例</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="cm"> * HAL接口缺失ADC的API，故本节API均采用海思SDK接口。</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="cm"> * 利用ADC通道读取红外传感器的模拟值，信号引脚接传感器的AO(Analog)。</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="cm"> * 同时一些宏和函数参数，我们尽量使用API定义好的枚举或结构体，因此要学会阅读源码注释。</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="cm"> */</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="cp">#define SensorAdcChannel  HI_ADC_CHANNEL_4</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">SensorAdcTask</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">{</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="cm">/* 定义ADC读取的模拟值的存储地址 */</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hi_adc_read</span><span class="p">(</span><span class="n">SensorAdcChannel</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">HI_ADC_EQU_MODEL_4</span><span class="p">,</span><span class="w"> </span><span class="n">HI_ADC_CUR_BAIS_DEFAULT</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HI_ERR_SUCCESS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[INFO]ADC_VALUE = %d</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="n">osDelay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="p">}</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">AdcEntry</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p">{</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">     </span><span class="n">osThreadAttr_t</span><span class="w"> </span><span class="n">attr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;AdcThread&quot;</span><span class="p">,</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span><span class="p">.</span><span class="n">stack_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">        </span><span class="p">.</span><span class="n">priority</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">osPriorityNormal</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">osThreadNew</span><span class="p">(</span><span class="n">SensorAdcTask</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">attr</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[ERROR] Thread Create Faild.</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="p">}</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="n">SYS_RUN</span><span class="p">(</span><span class="n">AdcEntry</span><span class="p">);</span>
+</span></code></pre></div>
+<p><strong>模块编译脚本</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>static_library (&quot;adc_demo&quot;) {
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    sources = [
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        &quot;adc_demo.c&quot;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    ]
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    include_dirs = [
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        # include &quot;ohos_init.h&quot;
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        &quot;//utils/native/lite/include&quot;,
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        # include CMSIS-RTOS API V2 for OpenHarmony1.0+
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        &quot;//kernel/liteos_m/kal/cmsis&quot;,
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        # include IoT硬件设备操作接口 for OpenHarmony1.0+：
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        &quot;//base/iot_hardware/peripheral/interfaces/kits&quot;,
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    ]
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>}
+</span></code></pre></div>
+<p><strong>APP编译脚本</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>import(&quot;//build/lite/config/component/lite_component.gni&quot;)
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>lite_component(&quot;app&quot;) {
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    features = [
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        &quot;gn_practice/application:gn_app&quot;,
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        &quot;gn_practice/driver:gn_driver&quot;,
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        &quot;gn_practice/library:gn_library&quot;,
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        &quot;kv_store_demo:kv_store_demo&quot;,
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        &quot;file_demo:file_demo&quot;,
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        &quot;thread_demo:thread_demo&quot;,
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        &quot;timer_demo:timer_demo&quot;,
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        &quot;mutex_demo:mutex_demo&quot;,
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        # GPIO模块
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        &quot;gpio_demo:gpio_demo&quot;,
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        # ADC模块
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        &quot;adc_demo:adc_demo&quot;,
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    ]
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>}
+</span></code></pre></div>
+<h2 id="63-dht11">6.3 DHT11温湿度<a class="headerlink" href="#63-dht11" title="Permanent link">&para;</a></h2>
+<h3 id="631-dht11">6.3.1 DHT11单总线通信<a class="headerlink" href="#631-dht11" title="Permanent link">&para;</a></h3>
+<p>DHT11器件采用简化的单总线通信。单总线即只有一根数据线，系统中的数据交换、控制均由单总线完成。微处理器与DHT11之间的通讯和同步,采用单总线数据格式，一次传送40位数据， <strong>高位先出</strong> 。  </p>
+<p><strong>数据格式：</strong><br />
+8bit湿度整数数据+8bit湿度小数数据+8bit温度整数数据+8bit温度小数数据+8bit校验位。其中湿度小数部分为0，8bit校验位等于所得结果的末8位。  </p>
+<p>特殊说明：当温度低于0℃时温度数据的低8位的最高位置为1。</p>
+<p>示例：-10.1 ℃表示为 0000 1010 1000 0001 <br />
+0000 1010(整数) = 10℃  ，00000001(小数) = 0.1℃  ，低8位的最高位置为 1 所以温度数据为 -10.1℃</p>
+<p><strong>通信时序：</strong></p>
+<p>用户主机（MCU）发送一次开始信号后，DHT11从低功耗模式转换到高速模式，待主机开始信号结束后，DHT11发送响应信号，送出40bit的数据，并触发一次信息采集。  </p>
+<p><img alt="image-20250205135648973" src="image-20250205135648973.png" /></p>
+<h3 id="632">6.3.2 单总线通信代码<a class="headerlink" href="#632" title="Permanent link">&para;</a></h3>
+<p><strong>芯片手册</strong> 中读取DHT11温湿度流程：</p>
+<ul>
+<li>DHT11上电后（DHT11上电后要等待1S以越过不稳定状态在此期间不能发送任何指令），测试环境温湿度数据，并记录数据，同时DHT11的DATA数据线由 <strong>上拉电阻</strong> 拉高一直保持高电平；此时DHT11的DATA引脚处于 <strong>输入状态</strong> ，时刻检测外部信号。  </li>
+<li>微处理器的I/O设置为 <strong>输出</strong> 同时输出低电平，且低电平保持时间不能小于18ms（最大不得超过30ms），然后微处理器的I/O设置为 <strong>输入状态</strong> ，由于上拉电阻，微处理器的I/O即DHT11的DATA数据线也随之变高，等待DHT11作出回答信号。  </li>
+</ul>
+<p><img alt="image-20250205143535118" src="image-20250205143535118.png" /></p>
+<ul>
+<li>DHT11的DATA引脚检测到外部信号有低电平时，等待外部信号低电平结束，延迟后DHT11的DATA引脚处于输出状态，输出83微秒的低电平作为应答信号，紧接着输出87微秒的高电平通知外设准备接收数据，微处理器的I/O此时处于输入状态，检测到I/O有低电平（DHT11回应信号）后，等待87微秒的高电平后的数据接收 。</li>
+</ul>
+<p><img alt="image-20250205143546262" src="image-20250205143546262.png" /></p>
+<ul>
+<li>由DHT11的DATA引脚输出40位数据，微处理器根据I/O电平的变化接收40位数据，位数据“0”的格式为：54微秒的低电平和23-27微秒的高电平，位数据“1”的格式为：54微秒的低电平加68-74微秒的高电平。  </li>
+</ul>
+<ul>
+<li>结束信号：DHT11的DATA引脚输出40位数据后，继续输出低电平54微秒后转为输入状态，由于上拉电阻随之变为高电平。但DHT11内部重测环境温湿度数据，并记录数据，等待外部信号的到来。</li>
+</ul>
+<h3 id="633">6.3.3 驱动程序<a class="headerlink" href="#633" title="Permanent link">&para;</a></h3>
+<p>待更新。。。</p>
 
 
 
@@ -1466,65 +1664,8 @@
 
 
 
-  
-  
 
 
-
-
-  <!-- <h2 id="__comments"> </h2> -->
-  <!-- Insert generated snippet here -->
-  <script src="https://giscus.app/client.js"
-        data-repo="wxnlP/wxnlP.github.io"
-        data-repo-id="R_kgDOMKIl5g"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOMKIl5s4Cl1nL"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-</script>
-  <!-- Synchronize Giscus theme with palette -->
-  <script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-      var theme = palette.color.scheme === "slate"
-        ? "transparent_dark"
-        : "light"
-
-      // Instruct Giscus to set theme
-      giscus.setAttribute("data-theme", theme) 
-    }
-
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
-
-          // Instruct Giscus to change theme
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
-    
-  </script>
 
                 
               </article>
@@ -1549,7 +1690,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: 你我有幸相会！">
+          <a href="../5.GPIO/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第五章 GPIO">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1559,20 +1700,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                你我有幸相会！
+                第五章 GPIO
               </div>
             </div>
           </a>
         
         
           
-          <a href="../1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/" class="md-footer__link md-footer__link--next" aria-label="Next: 第一章 命令行开发">
+          <a href="../7.I2C/" class="md-footer__link md-footer__link--next" aria-label="Next: 第七章 I2C">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                第一章 命令行开发
+                第七章 I2C
               </div>
             </div>
             <div class="md-footer__button md-icon">
