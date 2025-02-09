@@ -151,6 +151,8 @@ $$
 
 ## 3. PID程序
 
+### 3.1 定速控制
+
 位置式PID程序，大量运用了结构体比全局变量更直观一些：
 
 `pid.h`
@@ -288,5 +290,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
         PID_SerialPlot(&duty, message);
     }
 }
+```
+
+### 3.2 位置控制
+
+只需要改动一点，`PID_GetDuty`函数中真实值的获取：
+
+```C
+// 定速控制
+pError.Actual = Encoder_Read_CNT(Hx);
+// 位置控制
+pError.Actual += Encoder_Read_CNT(Hx);
 ```
 

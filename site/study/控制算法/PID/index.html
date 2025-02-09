@@ -931,6 +931,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3. PID程序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 定速控制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 位置控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1253,6 +1277,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3. PID程序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 定速控制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 位置控制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1396,6 +1444,7 @@ out(k-1) = K_p \cdot error(k-1) + K_i \cdot \sum_{j=0}^{k-1} error(j) + K_d \cdo
 <li>增量式PID直接输出的为本次输出值相对于上一次输出值的增量；以占空比为例：+0%、+2%、-4%。</li>
 </ul>
 <h2 id="3-pid">3. PID程序<a class="headerlink" href="#3-pid" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 定速控制<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <p>位置式PID程序，大量运用了结构体比全局变量更直观一些：</p>
 <p><code>pid.h</code></p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#ifndef ROBOT_V1_0_PID_H</span>
@@ -1523,6 +1572,13 @@ out(k-1) = K_p \cdot error(k-1) + K_i \cdot \sum_{j=0}^{k-1} error(j) + K_d \cdo
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="n">PID_SerialPlot</span><span class="p">(</span><span class="o">&amp;</span><span class="n">duty</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="32">3.2 位置控制<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p>只需要改动一点，<code>PID_GetDuty</code>函数中真实值的获取：</p>
+<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// 定速控制</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">pError</span><span class="p">.</span><span class="n">Actual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Encoder_Read_CNT</span><span class="p">(</span><span class="n">Hx</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// 位置控制</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">pError</span><span class="p">.</span><span class="n">Actual</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Encoder_Read_CNT</span><span class="p">(</span><span class="n">Hx</span><span class="p">);</span>
 </span></code></pre></div>
 
 
