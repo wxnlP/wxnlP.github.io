@@ -24,6 +24,9 @@ nav:
       - 第五章 GPIO: study/OpenHarmony/5.GPIO.md
       - 第六章 ADC: study/OpenHarmony/6.ADC.md
       - 第七章 I2C: study/OpenHarmony/7.I2C.md
+      - 其他外设: study/OpenHarmony/others.md
+    - 无线通信:
+      - 第八章 Wi-Fi: study/OpenHarmony/8.wifi.md
   - ROS2:
     - ROS2环境准备:
       - 第一章 ROS与ROS2介绍: study/ROS2/1.1-ROS与ROS2介绍.md
