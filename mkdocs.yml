@@ -75,6 +75,9 @@ nav:
       - 中断管理: study/FreeRTOS/10.中断管理.md
   - 控制算法: 
     - PID控制: study/控制算法/PID.md
+  - 芯片学习系列:
+    - 阅读声明: study/芯片系列/0.阅读声明.md
+    - ICM20948: study/芯片系列/ICM20948.md
   - 工创赛: 
     - 比赛介绍:
       - 内容简介: study/competition/1.md
