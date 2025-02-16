@@ -27,6 +27,7 @@ nav:
       - 其他外设: study/OpenHarmony/others.md
     - 无线通信:
       - 第八章 Wi-Fi: study/OpenHarmony/8.wifi.md
+      - 第十章 MQTT: study/OpenHarmony/10.MQTT.md
   - ROS2:
     - ROS2环境准备:
       - 第一章 ROS与ROS2介绍: study/ROS2/1.1-ROS与ROS2介绍.md
