@@ -12,13 +12,13 @@
         <meta name="author" content="XiaoLi">
       
       
-        <link rel="canonical" href="https://wxnlP.github.io/study/STM32/9.URAT%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/">
+        <link rel="canonical" href="https://wxnlP.github.io/study/STM32/12.CAN%E9%80%9A%E4%BF%A1/">
       
       
-        <link rel="prev" href="../8.DMA/">
+        <link rel="prev" href="../11.SPI%E9%80%9A%E4%BF%A1/">
       
       
-        <link rel="next" href="../10.I2C%E9%80%9A%E4%BF%A1/">
+        <link rel="next" href="../../FreeRTOS/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/">
       
       
       <link rel="icon" href="../../../assets/icon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>第九章 UART - 小李 的知识库</title>
+        <title>第十二章 CAN - 小李 的知识库</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#91" class="md-skip">
+        <a href="#121-can" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第九章 UART
+              第十二章 CAN
             
           </span>
         </div>
@@ -1134,28 +1134,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    第九章 UART
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../9.URAT%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1164,246 +1146,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#91" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.1 通信协议
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#92" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.2 串口通信
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9.2 串口通信">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#921" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.2.1 串口通信简介
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#922" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.2.2 硬件电路
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#923" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.2.3 电平标准
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#924" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.2.4 串口参数及时序
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#93-usart" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.3 USART外设
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9.3 USART外设">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#931-usart" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.3.1 USART介绍
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#932-usart" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.3.2 USART框图
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#933-usart" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.3.3 USART数据收发结构
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#94" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.4 工程配置
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9.4 工程配置">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#941-stm32cubemx" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.4.1 STM32CubeMX参数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#942-usart" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.4.2 USART标准示例
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#943" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.4.3 串口发送代码
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#944" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.4.4 串口接收代码
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#945" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.4.5 串口中断
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#95" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5 数据包接收
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9.5 数据包接收">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#951" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5.1 数据模式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#952-hex" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5.2 HEX数据包
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#953" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5.3 文本数据包
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#954-hex" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5.4 HEX数据包接收
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#955" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5.5 文本数据包接收
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1455,10 +1197,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../12.CAN%E9%80%9A%E4%BF%A1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    第十二章 CAN
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1467,6 +1227,195 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#121-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.1 CAN总线基本概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.1 CAN总线基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1211-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.1.1 CAN总线简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1212-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.1.2 CAN硬件电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1213-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.1.3 CAN的电平标准
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1214-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.1.4 高低速CAN不同点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#122-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2 CAN总线协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.2 CAN总线协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1221" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2.1 帧格式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1222" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2.2 位填充
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1223" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2.3 位时序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1224" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2.4 硬件同步
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1225" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2.5 再同步
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1226" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2.6 仲裁
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1227" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2.7 错误处理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#123-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3 CAN总线外设
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.3 CAN总线外设">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1231-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3.1 CAN外设简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1232-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3.2 CAN框图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1233-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3.3 CAN基本结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1844,55 +1793,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#91" class="md-nav__link">
+  <a href="#121-can" class="md-nav__link">
     <span class="md-ellipsis">
-      9.1 通信协议
+      12.1 CAN总线基本概念
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#92" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.2 串口通信
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9.2 串口通信">
+    <nav class="md-nav" aria-label="12.1 CAN总线基本概念">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#921" class="md-nav__link">
+  <a href="#1211-can" class="md-nav__link">
     <span class="md-ellipsis">
-      9.2.1 串口通信简介
+      12.1.1 CAN总线简介
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#922" class="md-nav__link">
+  <a href="#1212-can" class="md-nav__link">
     <span class="md-ellipsis">
-      9.2.2 硬件电路
+      12.1.2 CAN硬件电路
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#923" class="md-nav__link">
+  <a href="#1213-can" class="md-nav__link">
     <span class="md-ellipsis">
-      9.2.3 电平标准
+      12.1.3 CAN的电平标准
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#924" class="md-nav__link">
+  <a href="#1214-can" class="md-nav__link">
     <span class="md-ellipsis">
-      9.2.4 串口参数及时序
+      12.1.4 高低速CAN不同点
     </span>
   </a>
   
@@ -1904,37 +1844,73 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#93-usart" class="md-nav__link">
+  <a href="#122-can" class="md-nav__link">
     <span class="md-ellipsis">
-      9.3 USART外设
+      12.2 CAN总线协议
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="9.3 USART外设">
+    <nav class="md-nav" aria-label="12.2 CAN总线协议">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#931-usart" class="md-nav__link">
+  <a href="#1221" class="md-nav__link">
     <span class="md-ellipsis">
-      9.3.1 USART介绍
+      12.2.1 帧格式
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#932-usart" class="md-nav__link">
+  <a href="#1222" class="md-nav__link">
     <span class="md-ellipsis">
-      9.3.2 USART框图
+      12.2.2 位填充
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#933-usart" class="md-nav__link">
+  <a href="#1223" class="md-nav__link">
     <span class="md-ellipsis">
-      9.3.3 USART数据收发结构
+      12.2.3 位时序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1224" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2.4 硬件同步
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1225" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2.5 再同步
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1226" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2.6 仲裁
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1227" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2.7 错误处理
     </span>
   </a>
   
@@ -1946,115 +1922,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#94" class="md-nav__link">
+  <a href="#123-can" class="md-nav__link">
     <span class="md-ellipsis">
-      9.4 工程配置
+      12.3 CAN总线外设
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="9.4 工程配置">
+    <nav class="md-nav" aria-label="12.3 CAN总线外设">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#941-stm32cubemx" class="md-nav__link">
+  <a href="#1231-can" class="md-nav__link">
     <span class="md-ellipsis">
-      9.4.1 STM32CubeMX参数
+      12.3.1 CAN外设简介
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#942-usart" class="md-nav__link">
+  <a href="#1232-can" class="md-nav__link">
     <span class="md-ellipsis">
-      9.4.2 USART标准示例
+      12.3.2 CAN框图
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#943" class="md-nav__link">
+  <a href="#1233-can" class="md-nav__link">
     <span class="md-ellipsis">
-      9.4.3 串口发送代码
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#944" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.4.4 串口接收代码
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#945" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.4.5 串口中断
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#95" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5 数据包接收
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="9.5 数据包接收">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#951" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5.1 数据模式
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#952-hex" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5.2 HEX数据包
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#953" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5.3 文本数据包
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#954-hex" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5.4 HEX数据包接收
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#955" class="md-nav__link">
-    <span class="md-ellipsis">
-      9.5.5 文本数据包接收
+      12.3.3 CAN基本结构
     </span>
   </a>
   
@@ -2080,7 +1978,7 @@
                   
 
   
-    <a href="https://github.com/wxnlP/wxnlP.github.io/edit/master/docs/study/STM32/9.URAT串口通信.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/wxnlP/wxnlP.github.io/edit/master/docs/study/STM32/12.CAN通信.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2089,20 +1987,35 @@
     
       
     
-    <a href="https://github.com/wxnlP/wxnlP.github.io/raw/master/docs/study/STM32/9.URAT串口通信.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/wxnlP/wxnlP.github.io/raw/master/docs/study/STM32/12.CAN通信.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>第九章 UART</h1>
+  <h1>第十二章 CAN</h1>
 
-<h2 id="91">9.1 通信协议<a class="headerlink" href="#91" title="Permanent link">&para;</a></h2>
+<h2 id="121-can">12.1 CAN总线基本概念<a class="headerlink" href="#121-can" title="Permanent link">&para;</a></h2>
+<h3 id="1211-can">12.1.1 CAN总线简介<a class="headerlink" href="#1211-can" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>通信的目的：</strong> 将一个设备的数据传送到另一个设备，扩展硬件系统</li>
-<li><strong>通信协议：</strong> 制定通信的规则，通信双方按照协议规则进行数据收发</li>
+<li><strong>CAN总线（Controller Area Network Bus）控制器局域网总线</strong></li>
+<li><strong>CAN总线是由BOSCH公司开发的一种简洁易用、传输速度快、易扩展、可靠性高的串行通信总线，广泛应用于汽车、嵌入式、工业控制等领域</strong></li>
+<li><strong>CAN总线特征：</strong><ul>
+<li><strong>两根通信线（CAN_H、CAN_L），线路少</strong>
+  <strong>差分信号通信，抗干扰能力强</strong></li>
+<li><strong>高速CAN（ISO11898）：125k~1Mbps, &lt;40m</strong></li>
+<li><strong>低速CAN（ISO11519）：10k~125kbps, &lt;1km</strong></li>
+<li><strong>异步，无需时钟线，通信速率由设备各自约定</strong></li>
+<li><strong>半双工，可挂载多设备，多设备同时发送数据时通过仲裁判断先后顺序</strong></li>
+<li><strong>11位/29位报文ID，用于区分消息功能，同时决定优先级</strong></li>
+<li><strong>可配置1~8字节的有效载荷</strong></li>
+<li><strong>可实现广播式和请求式两种传输方式</strong></li>
+<li><strong>应答、CRC校验、位填充、位同步、错误处理等特性</strong></li>
 </ul>
+</li>
+</ul>
+<p>各大主流通信协议对比：</p>
 <table>
 <thead>
 <tr>
@@ -2112,16 +2025,18 @@
 <th><strong>时钟</strong></th>
 <th><strong>电平</strong></th>
 <th><strong>设备</strong></th>
+<th><strong>应用场景</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>USART</td>
+<td>UART</td>
 <td>TX、RX</td>
 <td>全双工</td>
 <td>异步</td>
 <td>单端</td>
 <td>点对点</td>
+<td>两个设备互相通信</td>
 </tr>
 <tr>
 <td>I2C</td>
@@ -2130,14 +2045,16 @@
 <td>同步</td>
 <td>单端</td>
 <td>多设备</td>
+<td>一个主控外挂多个模块</td>
 </tr>
 <tr>
 <td>SPI</td>
-<td>SCLK、MOSI、MISO、CS</td>
+<td>SCK、MOSI、MISO、SS</td>
 <td>全双工</td>
 <td>同步</td>
 <td>单端</td>
 <td>多设备</td>
+<td>一个主控外挂多个模块（高速）</td>
 </tr>
 <tr>
 <td>CAN</td>
@@ -2146,309 +2063,314 @@
 <td>异步</td>
 <td>差分</td>
 <td>多设备</td>
-</tr>
-<tr>
-<td>USB</td>
-<td>DP、DM</td>
-<td>半双工</td>
-<td>异步</td>
-<td>差分</td>
-<td>点对点</td>
+<td>多个主控互相通信</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>双工：指通信双方是否可以同时进行双向通信（发送和接收）。</p>
-<p>单工：数据只能从一个设备到另一个设备，不能反着来。</p>
-<p>时钟： I2C 和 SPI 有单独的时钟线，所以是同步。</p>
-<p>电平：单端信号，即引脚的高低电平是相对GND的电压差，所以需要共地。</p>
-</blockquote>
-<h2 id="92">9.2 串口通信<a class="headerlink" href="#92" title="Permanent link">&para;</a></h2>
-<h3 id="921">9.2.1 串口通信简介<a class="headerlink" href="#921" title="Permanent link">&para;</a></h3>
+<h3 id="1212-can">12.1.2 CAN硬件电路<a class="headerlink" href="#1212-can" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>串口是一种应用十分广泛的通讯接口，串口成本低、容易使用、通信线路简单，可实现两个设备的互相通信</strong></li>
-<li><strong>单片机的串口可以使单片机与单片机、单片机与电脑、单片机与各式各样的模块互相通信，极大地扩展了单片机的应用范围，增强了单片机系统的硬件实力</strong></li>
+<li>每个设备通过CAN收发器挂载在CAN总线网络上</li>
+<li>CAN控制器引出的TX和RX与CAN收发器相连，CAN收发器引出的CAN_H和CAN_L分别与总线的CAN_H和CAN_L相连</li>
+<li>高速CAN使用闭环网络，CAN_H和CAN_L两端添加120Ω的终端电阻</li>
+<li>低速CAN使用开环网络，CAN_H和CAN_L其中一端添加2.2kΩ的终端电阻</li>
 </ul>
-<p><img alt="1706363962945" src="1706363962945.png" /></p>
-<p><img alt="USB转串口" src="USB%E8%BD%AC%E4%B8%B2%E5%8F%A3.png" /></p>
-<h3 id="922">9.2.2 硬件电路<a class="headerlink" href="#922" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20250215221756132" src="image-20250215221756132.png" /></p>
+<p><img alt="image-20250215221800648" src="image-20250215221800648.png" /></p>
+<h3 id="1213-can">12.1.3 CAN的电平标准<a class="headerlink" href="#1213-can" title="Permanent link">&para;</a></h3>
 <ul>
-<li>简单双向串口通信有两根通信线（发送端TX和接收端RX）</li>
-<li>TX与RX要交叉连接</li>
-<li>当只需单向的数据传输时，可以只接一根通信线</li>
-<li>当电平标准不一致时，需要加电平转换芯片</li>
+<li>CAN总线采用差分信号，即两线电压差（V_H - V_L）传输数据位</li>
+<li>
+<p>高速CAN规定：</p>
+<ul>
+<li>电压差为0V时表示逻辑1（隐性电平）</li>
 </ul>
-<p><img alt="1706364052710" src="1706364052710.png" /></p>
-<h3 id="923">9.2.3 电平标准<a class="headerlink" href="#923" title="Permanent link">&para;</a></h3>
 <ul>
-<li>电平标准是数据1和数据0的表达方式，是传输线缆中人为规定的电压与数据的对应关系，串口常用的电平标准有如下三种：</li>
-<li>TTL电平：+3.3V 或 +5V 表示 1，0V 表示 0</li>
-<li>RS232电平：-3 至 -15V 表示 1，+3 至 +15V 表示 0</li>
-<li>RS485电平：两线压差 +2 至 +6V 表示 1，-2 至 -6V 表示 0（差分信号）</li>
+<li>电压差为2V时表示逻辑0（显性电平）</li>
+<li>低速CAN规定：</li>
 </ul>
-<h3 id="924">9.2.4 串口参数及时序<a class="headerlink" href="#924" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>波特率：</strong> 串口通信的速率</li>
-<li><strong>起始位：</strong> 标志一个数据帧的开始， <strong>固定为低电平</strong></li>
-<li><strong>数据位：</strong> 数据帧的有效载荷，1 为高电平，0 为低电平，低位先行</li>
-<li><strong>校验位：</strong> 用于数据验证，根据数据位计算得来(无校验、奇校验--即保持二进制数据1的个数为奇数、偶校验)</li>
-<li><strong>停止位：</strong> 用于数据帧间隔， <strong>固定为高电平</strong></li>
+<li>电压差为-1.5V时表示逻辑1（隐性电平）</li>
 </ul>
-<p><img alt="1706365185213" src="1706365185213.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>校验位分为--奇校验--偶校验--无校验--三种。无校验即为上图左侧效果，奇偶校验即为判断数据高电平的个数是为奇数或是偶数，在最后补一位校验位。例如，若为奇校验且数据中有奇数个高电平，则最后一位补一个 1 ，否则补一个 0 ，偶校验则同理类似。</p>
-</div>
-<h2 id="93-usart">9.3 USART外设<a class="headerlink" href="#93-usart" title="Permanent link">&para;</a></h2>
-<h3 id="931-usart">9.3.1 USART介绍<a class="headerlink" href="#931-usart" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>USART（Universal Synchronous/Asynchronous Receiver/Transmitter）通用同步/异步收发器</strong></li>
-<li><strong>USART是STM32内部集成的硬件外设，可根据数据寄存器的一个字节数据自动生成数据帧时序，从TX引脚发送出去，也可自动接收RX引脚的数据帧时序，拼接为一个字节数据，存放在数据寄存器里</strong></li>
-<li><strong>自带波特率发生器，最高达4.5Mbits/s</strong></li>
-<li><strong>可配置数据位长度（8/9）、停止位长度（0.5/1/1.5/2）</strong></li>
-<li><strong>可选校验位（无校验/奇校验/偶校验）</strong></li>
-<li><strong>支持同步模式、硬件流控制、DMA、智能卡、IrDA、LIN</strong></li>
-</ul>
-<blockquote>
-<p>STM32F103C8T6 USART资源： USART1、 USART2、 USART3</p>
-</blockquote>
-<h3 id="932-usart">9.3.2 USART框图<a class="headerlink" href="#932-usart" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20241225155702650" src="image-20241225155702650.png" /></p>
-<ul>
-<li><strong>硬件数据流控</strong><ul>
-<li><strong>RTS</strong>：发送端指示接收端是否准备好接收数据。</li>
-<li><strong>CTS</strong>：接收端指示发送端是否可以继续发送数据。</li>
+<li>电压差为3V时表示逻辑0（显性电平）</li>
 </ul>
 </li>
 </ul>
-<ul>
-<li><strong>SCLK 引脚</strong><ul>
-<li>USART 的 SCLK 引脚用于同步时钟，此模式需要主设备生成时钟信号，供从设备同步接收/发送数据。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><strong>波特率发生器</strong><ul>
-<li>根据外设时钟频率（f_PCLK）和期望波特率，计算并设置波特率寄存器（BRR）的值。</li>
-<li>类似于分频器。</li>
-</ul>
-</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>以上均简单了解即可。</p>
-</div>
-<h3 id="933-usart">9.3.3 USART数据收发结构<a class="headerlink" href="#933-usart" title="Permanent link">&para;</a></h3>
-<ol>
-<li>首先由波特率发生器配置发送和接受的频率</li>
-<li>开始写操作，把数据放到发送数据寄存器暂存，若发送移位寄存器为空，则将发送数据寄存器的数据转运到发送移位寄存器，最后通过<kbd>TX</kbd>引脚发送数据。</li>
-<li>开始读操作，把<kbd>RX</kbd>引脚接收的数据放到接收移位寄存器暂存，若接收数据寄存器为空，则将接收移位寄存器的数据转运到接收数据寄存器。</li>
-<li>当一个字节的数据发送或接收完成后，会置标志位。</li>
-</ol>
-<p><img alt="image-20241225161839838" src="image-20241225161839838.png" /></p>
-<h2 id="94">9.4 工程配置<a class="headerlink" href="#94" title="Permanent link">&para;</a></h2>
-<h3 id="941-stm32cubemx">9.4.1 STM32CubeMX参数<a class="headerlink" href="#941-stm32cubemx" title="Permanent link">&para;</a></h3>
-<p>USART模式选择</p>
-<p><img alt="image-20241225184519950" src="image-20241225184519950.png" /></p>
+<p><img alt="image-20250215222004528" src="image-20250215222004528.png" /></p>
+<h3 id="1214-can">12.1.4 高低速CAN不同点<a class="headerlink" href="#1214-can" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20250215222427534" src="image-20250215222427534.png" /></p>
+<h2 id="122-can">12.2 CAN总线协议<a class="headerlink" href="#122-can" title="Permanent link">&para;</a></h2>
+<h3 id="1221">12.2.1 帧格式<a class="headerlink" href="#1221" title="Permanent link">&para;</a></h3>
+<p>CAN总线定义了 5 种帧格式：</p>
 <table>
 <thead>
 <tr>
-<th>模式</th>
-<th>特点</th>
-<th>应用场景</th>
+<th><strong>帧类型</strong></th>
+<th><strong>用途</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Asynchronous（异步模式）</strong></td>
-<td>无需同步时钟，简单、常用</td>
-<td>标准串口通信，如传感器和模块连接</td>
+<td>数据帧</td>
+<td>发送设备主动发送数据（广播式）</td>
 </tr>
 <tr>
-<td><strong>Synchronous（同步模式）</strong></td>
-<td>使用时钟同步，支持更高传输速率</td>
-<td>高速通信，主设备与外设通信</td>
+<td>遥控帧</td>
+<td>接收设备主动请求数据（请求式）</td>
 </tr>
 <tr>
-<td><strong>Single Wire(Half-Duplex)（单线半双工）</strong></td>
-<td>收发共用一根线，节省引脚资源</td>
-<td>资源受限场景，带地址的多设备通信</td>
+<td>错误帧</td>
+<td>某个设备检测出错误时向其他设备通知错误</td>
 </tr>
 <tr>
-<td><strong>Multiprocessor Communication（多处理器通信模式）</strong></td>
-<td>一主多从结构，主设备通过地址选择从设备</td>
-<td>复杂系统的一主多从通信，如网络通信</td>
+<td>过载帧</td>
+<td>接收设备通知其尚未做好接收准备</td>
 </tr>
 <tr>
-<td><strong>IrDA（红外通信）</strong></td>
-<td>短距离红外数据传输</td>
-<td>遥控器、短距离无线通信</td>
-</tr>
-<tr>
-<td><strong>SmartCard（智能卡模式）</strong></td>
-<td>支持 ISO 7816 标准，适用于安全通信</td>
-<td>银行系统、门禁卡读写器</td>
+<td>帧间隔</td>
+<td>用于将数据帧及遥控帧与前面的帧分离开</td>
 </tr>
 </tbody>
 </table>
 <details class="danger">
 <summary>Danger</summary>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>只有Asynchronous为常用的，其他仅作为了解。
-</code></pre></div>
+<p>其中 <strong>数据帧</strong> 最为重要且复杂，遥控帧与数据帧类似，其他了解即可。</p>
 </details>
-<p><img alt="image-20241225190418375" src="image-20241225190418375.png" /></p>
-<p><strong>Hardware Flow Control</strong> 即STM32 USART 的硬件数据流控选项</p>
-<table>
-<thead>
-<tr>
-<th>流控模式</th>
-<th>描述</th>
-<th>应用场景</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Disable</strong></td>
-<td><strong>无流控，简单模式</strong></td>
-<td>低速通信、无可靠性要求场景</td>
-</tr>
-<tr>
-<td><strong>CTS Only</strong></td>
-<td><strong>发送端受接收端控制</strong></td>
-<td>接收端缓冲区可能较小的场景</td>
-</tr>
-<tr>
-<td><strong>RTS Only</strong></td>
-<td><strong>接收端控制发送端</strong></td>
-<td>发送端数据可能频繁产生的场景</td>
-</tr>
-<tr>
-<td><strong>CTS &amp; RTS</strong></td>
-<td><strong>双向流控</strong></td>
-<td>高速通信或可靠性要求高的场景</td>
-</tr>
-</tbody>
-</table>
-<details class="danger">
-<summary>Danger</summary>
-<p>作为了解，并不常用。</p>
-</details>
-<h3 id="942-usart">9.4.2 USART标准示例<a class="headerlink" href="#942-usart" title="Permanent link">&para;</a></h3>
-<p>STM32CubeMX参数：</p>
-<p><img alt="image-20241225191240836" src="image-20241225191240836.png" /></p>
-<p>串口软件参数参考：</p>
-<p><img alt="image-20241225191032348" src="image-20241225191032348.png" /></p>
-<h3 id="943">9.4.3 串口发送代码<a class="headerlink" href="#943" title="Permanent link">&para;</a></h3>
-<p><code>HAL_UART_Transmit(&amp;huart1, text, 1, 10);</code>为发送函数</p>
-<ul>
-<li><code>text</code>为发送的数据数组</li>
-<li>1 为数据长度</li>
-<li>100 为等待时间，ms</li>
-</ul>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">text</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x43</span><span class="p">};</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm">/* USER CODE END 2 */</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cm">/* Infinite loop */</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cm">/* USER CODE BEGIN WHILE */</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">HAL_Delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="cm">/* USER CODE END WHILE */</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="cm">/* USER CODE BEGIN 3 */</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="cm">/* USER CODE END 3 */</span>
-</span></code></pre></div>
-<p>经过使用示波器观察，从左向右数据为<code>11000010</code>，然注意串口是从低位先发，所以应该反过来读即实际数据为<code>01000011</code> ，也就是16进制所表示的<code>0x43</code></p>
-<p><img alt="image-20241225210400404" src="image-20241225210400404.png" /></p>
-<h3 id="944">9.4.4 串口接收代码<a class="headerlink" href="#944" title="Permanent link">&para;</a></h3>
-<p><code>HAL_UART_Receive(&amp;huart1, receiver, 2, HAL_MAX_DELAY);</code> 为接收函数，</p>
-<ul>
-<li><code>HAL_MAX_DELAY</code>表示一直等待指定收到数据</li>
-<li><code>receiver</code>接收的数据存储的数组</li>
-<li>2 表示数据长度</li>
-</ul>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">receiver</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cm">/* USER CODE END 2 */</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="cm">/* Infinite loop */</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="cm">/* USER CODE BEGIN WHILE */</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">HAL_UART_Receive</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">HAL_MAX_DELAY</span><span class="p">);</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">HAL_UART_Transmit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cm">/* USER CODE END WHILE */</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="cm">/* USER CODE BEGIN 3 */</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="cm">/* USER CODE END 3 */</span>
-</span></code></pre></div>
-<h3 id="945">9.4.5 串口中断<a class="headerlink" href="#945" title="Permanent link">&para;</a></h3>
-<p>记得在STM32CubeMX打开中断</p>
-<p><img alt="image-20241225214115361" src="image-20241225214115361.png" /></p>
-<p>使用中断的接收和发送函数如下：</p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// 以中断方式发送数据</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">HAL_UART_Transmit_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">// 以中断方式接收数据</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">HAL_UART_Receive_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span></code></pre></div>
-<p>接收和发送后处理逻辑的中断：</p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">//用户可以在此回调函数中处理发送完成后的逻辑</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_UART_TxCpltCallback</span><span class="p">(</span><span class="n">UART_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">huart</span><span class="p">);</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">//用户可以在此回调函数中处理接收到的数据。</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_UART_RxCpltCallback</span><span class="p">(</span><span class="n">UART_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">huart</span><span class="p">);</span>
-</span></code></pre></div>
 <hr />
-<p>将接收数据的数组声明为全局变量：</p>
-<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/* USER CODE BEGIN PV */</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">receiver</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="cm">/* USER CODE END PV */</span>
-</span></code></pre></div>
-<p><code>while</code> 循环前声明一次中断接收数据函数：</p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">HAL_UART_Receive_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cm">/* USER CODE END 2 */</span>
-</span></code></pre></div>
-<p>使用接收到数据后的中断函数，在函数结束后再次声明中断接收数据函数，保证下次接收顺利并可以进入中断，放在<code>main</code>函数中:</p>
-<div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">/* USER CODE BEGIN 4 */</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_UART_RxCpltCallback</span><span class="p">(</span><span class="n">UART_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">huart</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="n">HAL_UART_Transmit_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">HAL_UART_Receive_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cm">/* USER CODE END 4 */</span>
-</span></code></pre></div>
-<p><img alt="image-20241225220603969" src="image-20241225220603969.png" /></p>
-<h2 id="95">9.5 数据包接收<a class="headerlink" href="#95" title="Permanent link">&para;</a></h2>
-<h3 id="951">9.5.1 数据模式<a class="headerlink" href="#951" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>数据帧</strong></li>
+</ol>
+<p>数据帧的构成如下图，其中灰色部分(D)表示 Dominant：<kbd>显性电平 0 </kbd>；白色部分(R)表示 Recessive：<kbd>隐性电平 1 </kbd>；紫色部分为发送数据，电平高低按实际数据；数字表示该字段的数据位数(bit)。</p>
+<p>扩展格式是对标准格式的升级，用于解决ID位数不够用的情况，然标准格式的优先级要高于扩展格式。</p>
+<p><img alt="image-20250217162917605" src="image-20250217162917605.png" /></p>
+<p>上图中的一些重要名称含义如下：</p>
 <ul>
-<li>HEX模式/十六进制模式/二进制模式：以原始数据的形式显示</li>
-<li>文本模式/字符模式：以原始数据编码后的形式显示</li>
+<li>SOF（Start of Frame）：帧起始，表示后面一段波形为传输的数据位。</li>
+<li>ID（Identify）：标识符，区分功能，同时决定优先级。</li>
+<li>RTR（Remote Transmission Request ）：远程请求位，区分数据帧和遥控帧。</li>
+<li>IDE（Identifier Extension）：扩展标志位，区分标准格式和扩展格式。</li>
+<li>SRR（Substitute Remote Request）：替代RTR，协议升级时留下的无意义位。</li>
+<li>r0/r1（Reserve）：保留位，为后续协议升级留下空间。</li>
+<li>DLC（Data Length Code）：数据长度，指示数据段有几个字节。</li>
+<li>Data：数据段的1~8个字节有效数据。</li>
+<li>CRC（Cyclic Redundancy Check）：循环冗余校验，校验数据是否正确。</li>
+<li>ACK（Acknowledgement）：应答位，判断数据有没有被接收方接收。</li>
+<li>CRC/ACK界定符：为应答位前后发送方和接收方释放总线留下时间。</li>
+<li>EOF（End of Frame ）：帧结束，表示数据位已经传输完毕。</li>
 </ul>
-<p><img alt="asc" src="asc.png" /></p>
-<p><img alt="数据模式" src="%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%BC%8F.png" /></p>
-<h3 id="952-hex">9.5.2 HEX数据包<a class="headerlink" href="#952-hex" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>遥控帧</strong></li>
+</ol>
+<p>遥控帧用于请求式，其中与数据帧不同在于 <strong>RTR</strong> 为 <kbd>隐性电平 1 </kbd> ，接收方收到后以遥控帧格式解析，然后发送相同数据ID的数据帧。当遥控帧请求和数据帧反馈同时发生时，数据帧优先级更高。</p>
+<p><img alt="image-20250217165058377" src="image-20250217165058377.png" /></p>
+<ol>
+<li><strong>错误帧</strong></li>
+</ol>
+<p>总线上所有设备都会监督总线的数据，一旦发现 “位错误” 或 “填充错误” 或 “CRC错误” 或 “格式错误” 或 “应答错误” ，这些设备便会发出错误帧来破坏数据，同时终止当前的发送设备。</p>
+<p>错误标志包括主动错误标志和被动错误标志两种，最后还有错误界定符：</p>
 <ul>
-<li><strong>固定包长，含包头包尾</strong></li>
+<li>主动错误标志： 6 个位的显性位。</li>
+<li>被动错误标志： 6 个位的隐性位。  </li>
 </ul>
-<p><img alt="1706366291211" src="1706366291211.png" /></p>
 <ul>
-<li><strong>可变包长，含包头包尾</strong></li>
+<li>错误标志后还有 6 位用于延时。</li>
+<li>错误界定符由 8 个位的隐性位构成。  </li>
 </ul>
-<p><img alt="1706366317290" src="1706366317290.png" /></p>
-<h3 id="953">9.5.3 文本数据包<a class="headerlink" href="#953" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20250217170152684" src="image-20250217170152684.png" /></p>
+<ol>
+<li><strong>过载帧</strong></li>
+</ol>
+<p>当接收方收到大量数据而无法处理时，其可以发出过载帧，延缓发送方的数据发送，以平衡总线负载，避免数据丢失。</p>
+<p><img alt="image-20250217170659392" src="image-20250217170659392.png" /></p>
+<ol>
+<li><strong>帧间隔</strong></li>
+</ol>
+<p>帧间隔是用于分隔数据帧和遥控帧的帧。数据帧和遥控帧可通过插入帧间隔将本帧与前面的任何帧（数据帧、遥控帧、错误帧、过载帧）分开。</p>
+<p><strong>过载帧和错误帧前不能插入帧间隔。</strong>  </p>
+<p><img alt="image-20250217171236044" src="image-20250217171236044.png" /></p>
+<h3 id="1222">12.2.2 位填充<a class="headerlink" href="#1222" title="Permanent link">&para;</a></h3>
+<p><strong>位填充规则</strong> ：发送方每发送5个相同电平后，自动追加一个相反电平的填充位，接收方会自动移除填充位，恢复原始数据。</p>
+<p><img alt="image-20250217172236233" src="image-20250217172236233.png" /></p>
+<p><strong>位填充的作用</strong> ：</p>
 <ul>
-<li><strong>固定包长，含包头包尾</strong></li>
+<li>增加波形的定时信息，利于接收方执行 <strong>再同步</strong> ，防止波形长时间无变化，导致接收方不能精确掌握数据采样时机。</li>
+<li>将正常数据流与“错误帧”和“过载帧”区分开，标志“错误帧”和“过载帧”的特异性。</li>
+<li>保持CAN总线在发送正常数据流时的活跃状态，防止被误认为总线空闲。</li>
 </ul>
-<p><img alt="1706366411492" src="1706366411492.png" /></p>
+<h3 id="1223">12.2.3 位时序<a class="headerlink" href="#1223" title="Permanent link">&para;</a></h3>
+<p>关于CAN总线的位时序如下，而理想情况： <strong>接收方能依次采样到发送方发出的每个数据位，且采样点位于数据位中心附近</strong> ，这也是<kbd>位同步</kbd>要做的事情。</p>
 <ul>
-<li><strong>可变包长，含包头包尾</strong></li>
+<li>CAN总线没有时钟线，总线上的所有设备通过约定波特率的方式确定每一个数据位的时长。</li>
+<li>发送方以约定的位时长每隔固定时间输出一个数据位。</li>
+<li>接收方以约定的位时长每隔固定时间采样总线的电平，输入一个数据位。</li>
 </ul>
-<p><img alt="1706366433207" src="1706366433207.png" /></p>
-<h3 id="954-hex">9.5.4 HEX数据包接收<a class="headerlink" href="#954-hex" title="Permanent link">&para;</a></h3>
-<p><img alt="接收hex数据包" src="%E6%8E%A5%E6%94%B6hex%E6%95%B0%E6%8D%AE%E5%8C%85.png" /></p>
-<h3 id="955">9.5.5 文本数据包接收<a class="headerlink" href="#955" title="Permanent link">&para;</a></h3>
-<p><img alt="接收文本数据包" src="%E6%8E%A5%E6%94%B6%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%8C%85.png" /></p>
+<p><strong>接收方数据采样遇到的问题</strong> ：</p>
+<ul>
+<li>接收方以约定的位时长进行采样，但是采样点没有对齐数据位中心附近。</li>
+<li>接收方刚开始采样正确，但是时钟有误差，随着误差积累，采样点逐渐偏离。</li>
+</ul>
+<p>为了灵活调整每个采样点的位置，使采样点对齐数据位中心附近，CAN总线对每一个数据位的时长进行了更细的划分。</p>
+<ol>
+<li><strong>同步段（ SS: Synchronization Segment）</strong> </li>
+<li><strong>传播时间段（ PTS: Propagation Time Segment）</strong> </li>
+<li><strong>相位缓冲段 1（PBS1: Phase Buffer Segment 1）</strong></li>
+<li><strong>相位缓冲段 2（PBS1: Phase Buffer Segment 2）</strong> </li>
+<li><strong>在同步补偿宽度（SJW: reSynchronization Jump Width）</strong> </li>
+</ol>
+<p>一个数据位的构成如下图：</p>
+<p><img alt="image-20250217175323310" src="image-20250217175323310.png" /></p>
+<table>
+<thead>
+<tr>
+<th>段名称（缩写）</th>
+<th>作用描述</th>
+<th>Tq数范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>同步段（SS）</strong></td>
+<td>实现总线单元时序同步，调整收发同步性。信号边沿应优先出现在此段。</td>
+<td>固定 1Tq</td>
+</tr>
+<tr>
+<td><strong>传播时间段（PTS）</strong></td>
+<td>补偿网络物理延迟（发送延迟+传播延迟+接收延迟），总延迟时间为各延迟和的两倍。</td>
+<td>1~8Tq</td>
+</tr>
+<tr>
+<td><strong>相位缓冲段1（PBS1）</strong></td>
+<td>吸收各单元独立时钟的累积微小误差。</td>
+<td>1~8Tq</td>
+</tr>
+<tr>
+<td><strong>相位缓冲段2（PBS2）</strong></td>
+<td>通过调整SJW（再同步补偿宽度）进一步吸收时钟误差，SJW增大会降低通信速度。</td>
+<td>2~8Tq</td>
+</tr>
+<tr>
+<td><strong>再同步补偿宽度（SJW）</strong></td>
+<td>补偿时钟频率偏差和传输延迟导致的最大同步误差值。</td>
+<td>1~4Tq（可配置）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1224">12.2.4 硬件同步<a class="headerlink" href="#1224" title="Permanent link">&para;</a></h3>
+<p>前面讲过，CAN总线把一位数据分成 5 段，相当于每个设备都有一个位的时序计时周期。</p>
+<ul>
+<li>当总线上有一个设备要发数据，那么它将再 SS 段发送 SOF 帧起始，即一个逻辑电平下降沿。</li>
+<li>而正常情况下，此时所以接收方应都处于 SS 段。</li>
+<li>异常情况下，接收方会将自己的位时序计时周期拨到 SS 段的位置，这就是 <strong>硬件同步</strong> 。</li>
+</ul>
+<p>需要注意：</p>
+<ul>
+<li>硬同步只在帧的第一个下降沿（SOF下降沿）有效。</li>
+<li>经过硬同步后，若发送方和接收方的时钟没有误差，则后续所有数据位的采样点必然都会对齐数据位中心附近。</li>
+<li>若后续再出现误差，则需要使用后面的 <strong>再同步</strong> 。</li>
+</ul>
+<p><img alt="image-20250217191646820" src="image-20250217191646820.png" /></p>
+<h3 id="1225">12.2.5 再同步<a class="headerlink" href="#1225" title="Permanent link">&para;</a></h3>
+<p>若发送方或接收方的时钟有误差，随着误差积累，数据位边沿逐渐偏离 SS 段，则此时接收方根据再同步补偿宽度值（SJW）通过加长  PBS1 段，或缩短 PBS2 段，以调整同步。</p>
+<p>如下图：</p>
+<ul>
+<li>第一中情况（上半部分）<ul>
+<li>接收方时序快于发送方，增加 PBS1 段 2 个Tq，以确保下一位数据时时序同步。</li>
+</ul>
+</li>
+<li>第二种情况（下半部分）<ul>
+<li>接收方时序慢于发送方，增少 PBS2 段 2 个Tq，以确保下一位数据时时序同步。</li>
+</ul>
+</li>
+<li>注意<ul>
+<li>SJW = 2，表示最多增加或减少 2 个Tq，具体减少或增加几个Tq需要根据误差和SJW值分析。</li>
+</ul>
+</li>
+</ul>
+<p><img alt="image-20250217191728127" src="image-20250217191728127.png" /></p>
+<h3 id="1226">12.2.6 仲裁<a class="headerlink" href="#1226" title="Permanent link">&para;</a></h3>
+<p>当多个设备同时操作总线时，会出现冲突情况，主要分为两种：</p>
+<ol>
+<li>在一个设备A发送数据帧/遥控帧过程中，另一个设备B也想要发送数据帧/遥控帧。(①使用先占先得)</li>
+<li>两个设备同时准备发送数据帧/遥控帧。(②非破坏性仲裁)</li>
+</ol>
+<p><strong>①使用先占先得</strong></p>
+<p>⭐核心规则：任何设备检测到连续11个隐性电平，即认为总线空闲，只有在总线空闲时，设备才能发送数据帧/遥控帧。</p>
+<p>有此规则后便会解决所以非同时操作总线的情况：</p>
+<ul>
+<li>若当前已经有设备正在操作总线发送数据帧/遥控帧，则其他任何设备不能再同时发送数据帧/遥控帧（可以发送错误帧/过载帧破坏当前数据）。</li>
+<li>同一时间只会有一个设备可以发送数据帧/遥控帧。</li>
+</ul>
+<p><strong>②非破坏性仲裁</strong></p>
+<p>⭐核心规则：若多个设备的发送需求同时到来或因等待而同时到来，则CAN总线协议会根据ID号（仲裁段）进行非破坏性仲裁，ID号小的（优先级高）取到总线控制权，ID号大的（优先级低）仲裁失利后将转入接收状态，等待下一次总线空闲时再尝试发送。</p>
+<p>实现非破坏性仲裁需要的两个要求：</p>
+<ul>
+<li><strong>线与特性</strong> ：总线上任何一个设备发送显性电平0时，总线就会呈现显性电平0状态，只有当所有设备都发送隐性电平1时，总线才呈现隐性电平1状态。</li>
+<li><strong>回读机制</strong> ：每个设备发出一个数据位后，都会读回总线当前的电平状态，以确认自己发出的电平是否被真实地发送出去了。</li>
+</ul>
+<p>非破坏性仲裁过程：</p>
+<ol>
+<li>总线时所有要发送数据帧/遥控帧的设备( <strong>同时发送</strong> )发送一位数据并回读总线电平。</li>
+<li>在仲裁段一定会逐渐出现回读的总线电平与自己发送的电平不一致的设备，这些设备都会 “意识到” 有其他设备使用总线，因此仲裁失利推出发送，转为接收状态。</li>
+</ol>
+<details class="danger">
+<summary>Danger</summary>
+<p>将非破坏性仲裁过程普遍化，就会得到 <strong>ID号小的设备优先级高</strong> 的结论。</p>
+</details>
+<p><img alt="image-20250217203332832" src="image-20250217203332832.png" /></p>
+<p>数据帧和遥控帧ID号一样时，数据帧的优先级高于遥控帧（看完图就明白了）。</p>
+<p><img alt="image-20250217204501745" src="image-20250217204501745.png" /></p>
+<p>标准格式11位ID号和扩展格式29位ID号的高11位一样时，标准格式的优先级高于扩展格式（SRR必须始终为1，以保证此要求）</p>
+<p><img alt="image-20250217204601726" src="image-20250217204601726.png" /></p>
+<h3 id="1227">12.2.7 错误处理<a class="headerlink" href="#1227" title="Permanent link">&para;</a></h3>
+<p><strong>错误类型</strong></p>
+<p><img alt="image-20250217230705683" src="image-20250217230705683.png" /></p>
+<p><strong>错误状态</strong></p>
+<ul>
+<li>主动错误状态的设备正常参与通信并在检测到错误时发出 <kbd>主动错误帧</kbd> 。</li>
+<li>被动错误状态的设备正常参与通信但检测到错误时只能发出 <kbd>被动错误帧</kbd> 。</li>
+<li>总线关闭状态的设备不能参与通信。</li>
+<li>每个设备内部管理一个 TEC 和 REC ，根据 TEC 和 REC 的值确定自己的状态。</li>
+</ul>
+<p><img alt="image-20250217231344951" src="image-20250217231344951.png" /></p>
+<p><strong>错误计数器</strong></p>
+<p><img alt="image-20250217231429738" src="image-20250217231429738.png" /></p>
+<h2 id="123-can">12.3 CAN总线外设<a class="headerlink" href="#123-can" title="Permanent link">&para;</a></h2>
+<h3 id="1231-can">12.3.1 CAN外设简介<a class="headerlink" href="#1231-can" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>STM32内置bxCAN外设（CAN控制器），支持CAN2.0A和2.0B，可以自动发送CAN报文和按照过滤器自动接收指定CAN报文，程序只需处理报文数据而无需关注总线的电平细节</strong></li>
+<li><strong>波特率最高可达1兆位/秒</strong></li>
+<li><strong>3个可配置优先级的发送邮箱</strong></li>
+<li><strong>2个3级深度的接收FIFO</strong></li>
+<li><strong>14个过滤器组（互联型28个）</strong></li>
+<li><strong>时间触发通信、自动离线恢复、自动唤醒、禁止自动重传、接收FIFO溢出处理方式可配置、发送优先级可配置、双CAN模式</strong></li>
+</ul>
+<blockquote>
+<p>STM32F103C8T6 CAN资源：CAN1</p>
+</blockquote>
+<p>STM32芯片内部仅集成了 <kbd>CAN控制器</kbd> ，但我们仍然需要外接一个 <kbd>CAN收发器</kbd> 将逻辑电平转化为CAN需要的差分信号。</p>
+<p><img alt="image-20250217235221741" src="image-20250217235221741.png" /></p>
+<h3 id="1232-can">12.3.2 CAN框图<a class="headerlink" href="#1232-can" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20250217235619200" src="image-20250217235619200.png" /></p>
+<h3 id="1233-can">12.3.3 CAN基本结构<a class="headerlink" href="#1233-can" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20250218001440672" src="image-20250218001440672.png" /></p>
+<ul>
+<li><strong>发送邮箱</strong><ul>
+<li>可以配置 <strong>先占先行</strong> 或 <strong>报文ID小的先行</strong> 。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>接收过滤器</strong><ul>
+<li>用于过滤报文ID。</li>
+</ul>
+</li>
+<li><strong>接收FIFO</strong><ul>
+<li>两个FIFO没有优先级区别，可自行分配。</li>
+<li>过滤后的报文ID存储在邮箱 0、1、2 这样的顺序，CPU处理邮箱 0 后，其余报文ID前移一位(和现实生活排队一样)。</li>
+<li>当邮箱满了以后，来了新的报文ID，可以配置 <strong>舍弃新ID</strong> 或 <strong>舍弃末尾(邮箱2)ID</strong> 。</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -2456,65 +2378,8 @@
 
 
 
-  
-  
 
 
-
-
-  <!-- <h2 id="__comments"> </h2> -->
-  <!-- Insert generated snippet here -->
-  <script src="https://giscus.app/client.js"
-        data-repo="wxnlP/wxnlP.github.io"
-        data-repo-id="R_kgDOMKIl5g"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOMKIl5s4Cl1nL"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-</script>
-  <!-- Synchronize Giscus theme with palette -->
-  <script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-      var theme = palette.color.scheme === "slate"
-        ? "transparent_dark"
-        : "light"
-
-      // Instruct Giscus to set theme
-      giscus.setAttribute("data-theme", theme) 
-    }
-
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
-
-          // Instruct Giscus to change theme
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
-    
-  </script>
 
                 
               </article>
@@ -2539,7 +2404,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../8.DMA/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第八章 DMA">
+          <a href="../11.SPI%E9%80%9A%E4%BF%A1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 第十一章 SPI">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2549,20 +2414,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                第八章 DMA
+                第十一章 SPI
               </div>
             </div>
           </a>
         
         
           
-          <a href="../10.I2C%E9%80%9A%E4%BF%A1/" class="md-footer__link md-footer__link--next" aria-label="Next: 第十章 I2C">
+          <a href="../../FreeRTOS/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-footer__link md-footer__link--next" aria-label="Next: 阅读声明">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                第十章 I2C
+                阅读声明
               </div>
             </div>
             <div class="md-footer__button md-icon">
