@@ -1407,6 +1407,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#1234-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3.4 CAN收发过程
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1958,6 +1967,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#1234-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3.4 CAN收发过程
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2367,10 +2385,73 @@
 <li><strong>接收FIFO</strong><ul>
 <li>两个FIFO没有优先级区别，可自行分配。</li>
 <li>过滤后的报文ID存储在邮箱 0、1、2 这样的顺序，CPU处理邮箱 0 后，其余报文ID前移一位(和现实生活排队一样)。</li>
-<li>当邮箱满了以后，来了新的报文ID，可以配置 <strong>舍弃新ID</strong> 或 <strong>舍弃末尾(邮箱2)ID</strong> 。</li>
+<li>当邮箱满了以后，来了新的报文ID，可以配置 <strong>舍弃新ID</strong> (启用了FIFO锁定功能 )或 <strong>舍弃末尾(邮箱2)ID</strong> (禁用FIFO锁定功能 )。</li>
 </ul>
 </li>
 </ul>
+<h3 id="1234-can">12.3.4 CAN收发过程<a class="headerlink" href="#1234-can" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>发送过程</strong></li>
+</ol>
+<p>发送过程的 <kbd>发送邮箱状态</kbd> 如下图所示，图中几个重要寄存器位可以在 <kbd>STM32F10xxx参考手册</kbd> 中查到：</p>
+<ul>
+<li><code>CAN_TIxR</code>寄存器的<code>TXRQ</code> 位：由软件对其置 1 ，来请求发送邮箱的数据。当数据发送完成，邮箱为空时，硬件对其清 0 。</li>
+<li><code>CAN_TSR</code>寄存器的 <code>RQCP0</code> 、<code>RQCP1</code> 、 <code>RQCP2</code> 位：邮箱 x 请求完成，硬件接收到发送请求时对该位清 0 ；同时<code>TXOKx</code> 、<code>ALSTx</code>和<code>TERRx</code> 也被清 0 。</li>
+<li><code>CAN_TSR</code>寄存器的 <code>TXOK0</code> 、<code>TXOK1</code> 、 <code>TXOK2</code> 位：邮箱 x 发送成功，硬件对该位置 1 。</li>
+<li><code>CAN_TSR</code>寄存器的 <code>TME0</code> 、<code>TME1</code> 、 <code>TME2</code> 位：发送邮箱 x 空，硬件对该位置 1 。</li>
+<li><code>CAN_TSR</code>寄存器的 <code>ABRQ0</code> 、<code>ABRQ1</code> 、 <code>ABRQ2</code> 位：邮箱 x 终止发送，软件对该位置 1 ，可以中止邮箱 x 的发送请求。</li>
+<li><code>CAN_TSR</code>寄存器的 <code>ALST0</code> 、<code>ALST1</code> 、 <code>ALST2</code> 位：邮箱 x 仲裁丢失而导致发送失败，对该位置 1 。</li>
+<li><code>CAN_TSR</code>寄存器的 <code>TERR0</code> 、<code>TERR1</code> 、 <code>TERR2</code> 位：邮箱 x 因为出错而导致发送失败，对该位置 1 。</li>
+</ul>
+<p>而理想的发送流程大致分为如下几步：</p>
+<ul>
+<li><strong>空置 -&gt; 挂号</strong> ：应用程序选择1个空置的发送邮箱，设置标识符，数据长度和待发送数据；然后<code>TXRQ</code> 置 1 请求发送，请求完成 <code>RQCP</code> 清 0 ，<code>TXOK</code>同时清零，邮箱非空 <code>TME</code> 也被清 0 。<code>TXRQ</code> 置 1 邮箱马上进入挂号状态，并等待成为最高优先级的邮箱。 </li>
+<li><strong>挂号 -&gt; 预定</strong> ：一旦邮箱成为最高优先级的邮箱，其状态就变为预定发送状态。  </li>
+<li><strong>预定 -&gt; 发送</strong> ：一旦CAN总线进入空闲状态，预定发送邮箱中的报文就马上被发送(进入发送状态)。</li>
+<li><strong>发送 -&gt; 空置</strong> ：一旦邮箱中的报文被成功发送后，它马上变为空置邮箱，然后 <code>RQCP</code>、<code>TXOK</code>置 1 表示一次成功发送，同时发送邮箱空 <code>TME</code> 被硬件置 1 。</li>
+</ul>
+<p>一些发送中的特殊情况：</p>
+<ul>
+<li><strong>发送失败</strong> ：如果发送失败，由于仲裁引起的将<code>ALST</code>位置 1 ，由于错误引起的就对<code>TERR</code>位置 1 。</li>
+<li><strong>发送优先级</strong> ：挂号 -&gt; 预定期间，优先级的判定可以是 <strong>报文ID大小</strong> 或 <strong>先占先得</strong> 。 </li>
+<li><strong>终止发送请求</strong> ：ABRQ位置 1 可以终止发送请求，如果处于挂号或预定状态，发送请求马上就被中止了。如果邮箱处于发送状态，那么中止请求可能导致2种结果。  <ul>
+<li>如果邮箱中的报文被成功发送，那么邮箱变为空置邮箱，并且<code>TXOK</code>位被硬件置 1 。</li>
+<li>如果邮箱中的报文发送失败了，那么邮箱变为预定状态，然后发送请求被中止，邮箱变为空置邮箱且<code>TXOK</code>位被硬件清 0 。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>禁止自动重传</strong> ：通过对<code>CAN_MCR</code>寄存器的<code>NART</code>位置 1 ，来让硬件工作在该模式。  在该模式下，发送操作只会执行一次。如果发送操作失败了，不管是由于仲裁丢失或出错，硬件都不会再自动发送该报文。  </li>
+</ul>
+<p><img alt="image-20250218145836821" src="image-20250218145836821.png" /></p>
+<ol>
+<li><strong>接收过程</strong></li>
+</ol>
+<p>接收到的报文，被存储在3级邮箱深度的FIFO中。 FIFO完全由硬件来管理，从而节省了CPU的处理负荷，简化了软件并保证了数据的一致性。应用程序只能通过读取FIFO输出邮箱，来读取FIFO中最先收到的报文。  </p>
+<ul>
+<li><strong>有效报文</strong> ：根据CAN协议， 当报文被正确接收(直到EOF域的最后一位都没有错误)， 且通过了标识符过滤，那么该报文被认为是有效报文。  </li>
+</ul>
+<p>FIFO管理流程：</p>
+<ul>
+<li>FIFO从空状态开始，在接收到第一个有效的报文后， FIFO状态变为挂号 1，硬件把<code>CAN_RFR</code>寄存器的<code>FMP[1:0]</code>设置为 0x01。 </li>
+<li>软件可以读取FIFO输出邮箱来读出邮箱中的报文，然后通过对<code>CAN_RFR</code>寄存器的<code>RFOM</code>位置 1 来释放邮箱，这样FIFO为空状态。</li>
+<li>如果在释放邮箱的同时，又收到了一个有效的报文，那么FIFO仍然保留在挂号 1 状态；如果应用程序不释放邮箱，在接收到下一个有效的报文后， FIFO状态变为挂号 2 ，同时把<code>FMP[1:0]</code>设置为 0x02（ <strong>此处图中画错了，应是二进制的10</strong> ）。 </li>
+</ul>
+<p>异常情况：</p>
+<ul>
+<li><strong>溢出</strong> ：当FIFO处于挂号 3 状态，此时邮箱已满，下一个有效的报文就会导致溢出，并且一个报文会丢失。丢失会有两种情况，前面CAN基本结构讲过。  <ul>
+<li>启用FIFO锁定功能：FIFO中最后收到的报文就被新报文所覆盖。  </li>
+<li>禁用FIFO锁定功能：FIFO新收到的报文就被丢弃。</li>
+</ul>
+</li>
+<li><strong>中断</strong> <ul>
+<li>一旦往FIFO存入一个报文，硬件就会更新<code>FMP[1:0]</code>位，并且如果<code>CAN_IER</code>寄存器的<code>FMPIE</code>置为 1 ，那么就会产生一个中断请求。</li>
+<li>当FIFO变满 时(即 第3个 报 文 被 存 入)， <code>CAN_RFR</code>寄存器的<code>FULL</code>位就被置 1 ， 并且如果<code>CAN_IER</code>寄存器的<code>FFIE</code>置为 1 ，那么就会产生一个满中断请求。</li>
+<li>在溢出的情况下，<code>FOVR</code>位被置 1 ，并且如果<code>CAN_IER</code>寄存器的<code>FOVIE</code>置为 1 ，那么就会产生一个溢出中断请求。  </li>
+</ul>
+</li>
+</ul>
+<p><img alt="image-20250218173648736" src="image-20250218173648736.png" /></p>
 
 
 
