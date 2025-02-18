@@ -1799,7 +1799,7 @@
 </details>
 <h3 id="512">5.1.2 后续开发流程(必看)<a class="headerlink" href="#512" title="Permanent link">&para;</a></h3>
 <ul>
-<li>后续的外设驱动程序均放在<code>applications\sample\wifi-iot\app</code>目录下，仅需新建 <strong>模块文件夹</strong> 添加源代码文件和编译脚本文件。</li>
+<li>后续的外设驱动程序均放在<code>applications\sample\wifi-iot\app</code>目录下，仅需新建 <strong>模块文件夹</strong> 添加源代码文件和编译脚本文件。</li>
 <li>编写完源程序，编写 <strong>模块文件夹</strong> 下的编译脚本并修改<code>applications\sample\wifi-iot\app</code>目录下的编译脚本。</li>
 <li>选择开发板，编译。</li>
 <li>使用快速烧录，将程序下载至开发板。</li>
@@ -2135,7 +2135,7 @@
 </span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>}
 </span></code></pre></div>
 <h3 id="524-pwm">5.2.4 PWM<a class="headerlink" href="#524-pwm" title="Permanent link">&para;</a></h3>
-<p>默认情况下，hi3861_sdk中，PWM的CONFIG选项没有打开，我们需要在<code>device\hisilicon\hispark_pegasus\sdk_liteos\build\config</code>目录下找到<code>user_config.mk</code>文件，添加PWM的CONFIG选项<code>CONFIG_PWM_SUPPORT=y</code> ，同时可以看到UART、SPI等默认也是没有开启，都需要我们手动开启。</p>
+<p>默认情况下，hi3861_sdk中，PWM的CONFIG选项没有打开，我们需要在<code>device\hisilicon\hispark_pegasus\sdk_liteos\build\config</code>目录下找到<code>user_config.mk</code>文件，添加PWM的CONFIG选项<code>CONFIG_PWM_SUPPORT=y</code> ，同时可以看到UART、SPI等默认也是没有开启，都需要我们手动开启。</p>
 <div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c">#</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c"># BSP Settings</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c">#</span>
@@ -2338,8 +2338,65 @@
 
 
 
+  
+  
 
 
+
+
+  <!-- <h2 id="__comments"> </h2> -->
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+        data-repo="wxnlP/wxnlP.github.io"
+        data-repo-id="R_kgDOMKIl5g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMKIl5s4Cl1nL"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+    
+  </script>
 
                 
               </article>

@@ -1959,7 +1959,7 @@
 </span></code></pre></div>
 <h3 id="725">7.2.5 显存寻址模式<a class="headerlink" href="#725" title="Permanent link">&para;</a></h3>
 <p><strong>页寻址模式(0x20)</strong></p>
-<p>页寻址模式将整个显存划分为多个 “页”，每一页包含 8 行像素。同一页内的像素按列组织，写完一列的 8 个像素后，列地址自动加 1。当列地址达到该页的最大列数时，列地址会回到起始列，但页地址不会自动改变，需要通过专门的命令来切换页。对于 128x64 的 SSD1306 显示屏，会被划分为 8 页（编号 0 - 7），每页有 128 列。同时也寻址模式是 <strong>默认的寻址模式</strong> 。</p>
+<p>页寻址模式将整个显存划分为多个 “页”，每一页包含 8 行像素。同一页内的像素按列组织，写完一列的 8 个像素后，列地址自动加 1。当列地址达到该页的最大列数时，列地址会回到起始列，但页地址不会自动改变，需要通过专门的命令来切换页。对于 128x64 的 SSD1306 显示屏，会被划分为 8 页（编号 0 - 7），每页有 128 列。同时也寻址模式是 <strong>默认的寻址模式</strong> 。</p>
 <p><img alt="image-20250206215725939" src="image-20250206215725939.png" /></p>
 <p><strong>水平寻址模式(0x21)</strong></p>
 <p>在水平寻址模式下，显存的读写操作是按照从左到右、从上到下的顺序逐列进行的。当写完一行的所有列后，会自动跳到下一行的起始列继续进行操作。如果到达了显存的最后一列，地址指针会自动回到第一列，同时行地址加 1；若到达最后一行，则地址指针回到第一行第一列。</p>
@@ -2002,7 +2002,7 @@
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="mh">0x10</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">((</span><span class="mh">0xF0</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">0001</span><span class="w"> </span><span class="mo">0101</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x15</span>
 </span></code></pre></div>
 <h3 id="727-i2c">7.2.7 I2C写模式<a class="headerlink" href="#727-i2c" title="Permanent link">&para;</a></h3>
-<p>需要特别注意的是，在发送完从机地址后我们需要发送一个 <strong>控制字节</strong> 指定要发送 <strong>命令</strong> 还是 <strong>数据</strong> ，控制字节由<kbd>Co</kbd>位、<kbd>D/C#</kbd>位和六个0组成：</p>
+<p>需要特别注意的是，在发送完从机地址后我们需要发送一个 <strong>控制字节</strong> 指定要发送 <strong>命令</strong> 还是 <strong>数据</strong> ，控制字节由<kbd>Co</kbd>位、<kbd>D/C#</kbd>位和六个0组成：</p>
 <p><kbd>Co</kbd>位，当<code>C0=0</code>表示后续传输的信息将仅包含数据字节，即不含控制字节。</p>
 <p><kbd>D/C#</kbd>位，其中<code>D/C#=0</code>则下一个字节为命令，<code>D/C#=1</code>则下一个字节为数据。</p>
 <p>因此，发送命令的控制字节为 <strong>0x00</strong> (<code>C0=0</code>且<code>D/C#=0</code>)；发送数据的控制字节为 <strong>0x40</strong> (<code>C0=0</code>且<code>D/C#=1</code>)。</p>
@@ -2573,8 +2573,65 @@
 
 
 
+  
+  
 
 
+
+
+  <!-- <h2 id="__comments"> </h2> -->
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+        data-repo="wxnlP/wxnlP.github.io"
+        data-repo-id="R_kgDOMKIl5g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMKIl5s4Cl1nL"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+    
+  </script>
 
                 
               </article>
