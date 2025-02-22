@@ -38,8 +38,9 @@ nav:
     - ROS2基础:
       - 特别篇 面向对象C++: study/ROS2/3-面向对象C++.md
       - 特别篇 ROS2中的C++新特性: study/ROS2/3-ROS2中的C++新特性.md
-    - ROS2通信协议:
       - 特别篇 自定义接口数据: study/ROS2/3-自定义接口.md
+    - ROS2通信协议:
+      - 第五章 ROS2话题通信: study/ROS2/4-话题通信.md
   - STM32系列:
     - 阅读声明: study/STM32/0.阅读声明.md
     - 基础外设:
