@@ -41,6 +41,8 @@ nav:
       - 特别篇 自定义接口数据: study/ROS2/3-自定义接口.md
     - ROS2通信协议:
       - 第五章 ROS2话题通信: study/ROS2/4-话题通信.md
+    - ROS2番外篇:
+      - New.ROS2与CAN总线: study/ROS2/New.ROS2使用CAN.md
   - STM32系列:
     - 阅读声明: study/STM32/0.阅读声明.md
     - 基础外设:
