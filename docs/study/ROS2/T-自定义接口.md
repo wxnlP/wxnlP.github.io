@@ -173,11 +173,11 @@ string EXAMPLE='bar'
 ros2 pkg create base_interfaces_demo --build-type ament_cmake 
 ```
 
-![image-20241119230216346](3-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A5%E5%8F%A3/image-20241119230216346.png)
+![image-20241119230216346](T-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A5%E5%8F%A3/image-20241119230216346.png)
 
 在功能包`base_interfaces_demo`根目录下新建<kbd>msg</kbd>、<kbd>srv</kbd>、<kbd>action</kbd>文件夹，用于后续存放各类型的自定义接口数据文件。
 
-![image-20241119230558158](3-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A5%E5%8F%A3/image-20241119230558158.png)
+![image-20241119230558158](T-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A5%E5%8F%A3/image-20241119230558158.png)
 
 
 
