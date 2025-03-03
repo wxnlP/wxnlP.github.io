@@ -42,6 +42,7 @@ nav:
     - ROS2通信协议:
       - 第五章 ROS2话题通信: study/ROS2/5-话题通信.md
       - 第六章 ROS2服务通信: study/ROS2/6-服务通信.md
+      - 第七章 ROS2参数通信: study/ROS2/7-参数通信.md
     - ROS2番外篇:
       - New.ROS2与CAN总线: study/ROS2/New.ROS2使用CAN.md
   - STM32系列:
