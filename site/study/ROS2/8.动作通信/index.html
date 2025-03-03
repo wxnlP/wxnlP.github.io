@@ -12,26 +12,24 @@
         <meta name="author" content="XiaoLi">
       
       
-        <link rel="canonical" href="https://wxnlP.github.io/">
+        <link rel="canonical" href="https://wxnlP.github.io/study/ROS2/8.%E5%8A%A8%E4%BD%9C%E9%80%9A%E4%BF%A1/">
       
       
       
-        <link rel="next" href="study/OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/">
       
-      
-      <link rel="icon" href="assets/icon.png">
+      <link rel="icon" href="../../../assets/icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>小李 的知识库</title>
+        <title>8.动作通信 - 小李 的知识库</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#81" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="小李 的知识库" class="md-header__button md-logo" aria-label="小李 的知识库" data-md-component="logo">
+    <a href="../../.." title="小李 的知识库" class="md-header__button md-logo" aria-label="小李 的知识库" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
@@ -112,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              你我有幸相会！
+              8.动作通信
             
           </span>
         </div>
@@ -224,11 +222,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -247,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
+        <a href="../../OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
           
   
     
@@ -273,7 +269,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/ROS2/1-ROS%E4%B8%8EROS2%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
+        <a href="../1-ROS%E4%B8%8EROS2%E4%BB%8B%E7%BB%8D/" class="md-tabs__link">
           
   
     
@@ -296,7 +292,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/STM32/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
+        <a href="../../STM32/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
           
   
     
@@ -316,7 +312,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/FreeRTOS/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
+        <a href="../../FreeRTOS/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
           
   
     
@@ -336,7 +332,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95/PID/" class="md-tabs__link">
+        <a href="../../%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95/PID/" class="md-tabs__link">
           
   
     
@@ -356,7 +352,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/%E8%8A%AF%E7%89%87%E7%B3%BB%E5%88%97/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
+        <a href="../../%E8%8A%AF%E7%89%87%E7%B3%BB%E5%88%97/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-tabs__link">
           
   
     
@@ -382,7 +378,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/competition/1/" class="md-tabs__link">
+        <a href="../../competition/1/" class="md-tabs__link">
           
   
     
@@ -411,7 +407,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/yolov5/1/" class="md-tabs__link">
+        <a href="../../yolov5/1/" class="md-tabs__link">
           
   
     
@@ -432,7 +428,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="study/Git/Git/" class="md-tabs__link">
+      <a href="../../Git/Git/" class="md-tabs__link">
         
   
     
@@ -451,7 +447,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="study/%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/pythondata/" class="md-tabs__link">
+        <a href="../../%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/pythondata/" class="md-tabs__link">
           
   
     
@@ -486,7 +482,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="小李 的知识库" class="md-nav__button md-logo" aria-label="小李 的知识库" data-md-component="logo">
+    <a href="../../.." title="小李 的知识库" class="md-nav__button md-logo" aria-label="小李 的知识库" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5zM6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5"/></svg>
@@ -513,28 +509,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    你我有幸相会！
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -543,93 +521,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      为理想再拼搏几年！
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      现实啊，莫要打击我
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="现实啊，莫要打击我">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      安装配置
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      改分支
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      部署网站
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      本地测试
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      图床
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -671,7 +562,7 @@
         
   
   
-    <a href="study/OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-nav__link">
+    <a href="../../OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -730,7 +621,7 @@
     
   
   
-    <a href="study/ROS2/1-ROS%E4%B8%8EROS2%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+    <a href="../1-ROS%E4%B8%8EROS2%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -788,7 +679,7 @@
         
   
   
-    <a href="study/STM32/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-nav__link">
+    <a href="../../STM32/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -842,7 +733,7 @@
         
   
   
-    <a href="study/FreeRTOS/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-nav__link">
+    <a href="../../FreeRTOS/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -890,7 +781,7 @@
         
   
   
-    <a href="study/%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95/PID/" class="md-nav__link">
+    <a href="../../%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95/PID/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -940,7 +831,7 @@
         
   
   
-    <a href="study/%E8%8A%AF%E7%89%87%E7%B3%BB%E5%88%97/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-nav__link">
+    <a href="../../%E8%8A%AF%E7%89%87%E7%B3%BB%E5%88%97/0.%E9%98%85%E8%AF%BB%E5%A3%B0%E6%98%8E/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -993,7 +884,7 @@
     
   
   
-    <a href="study/competition/1/" class="md-nav__link">
+    <a href="../../competition/1/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1048,7 +939,7 @@
     
   
   
-    <a href="study/yolov5/1/" class="md-nav__link">
+    <a href="../../yolov5/1/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1076,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="study/Git/Git/" class="md-nav__link">
+      <a href="../../Git/Git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1120,7 +1011,7 @@
         
   
   
-    <a href="study/%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/pythondata/" class="md-nav__link">
+    <a href="../../%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/pythondata/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -1164,71 +1055,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#81" class="md-nav__link">
     <span class="md-ellipsis">
-      为理想再拼搏几年！
+      8.1 动作通信
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      现实啊，莫要打击我
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="现实啊，莫要打击我">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      安装配置
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      改分支
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      部署网站
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      本地测试
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      图床
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1247,7 +1078,7 @@
                   
 
   
-    <a href="https://github.com/wxnlP/wxnlP.github.io/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/wxnlP/wxnlP.github.io/edit/master/docs/study/ROS2/8.动作通信.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1256,62 +1087,19 @@
     
       
     
-    <a href="https://github.com/wxnlP/wxnlP.github.io/raw/master/docs/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/wxnlP/wxnlP.github.io/raw/master/docs/study/ROS2/8.动作通信.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>你我有幸相会！</h1>
+  <h1>8.动作通信</h1>
 
-<h2 id="_1">为理想再拼搏几年！<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>网站学习资源分布：</p>
-<p><a href="https://tonmoon.top/study/OpenHarmony/0.阅读前的声明/">OpenHarmony(持续更新中)</a></p>
-<p><a href="https://tonmoon.top/study/ROS2/1.1-ROS与ROS2介绍/">ROS2(持续更新中)</a></p>
-<p><a href="https://tonmoon.top/study/STM32/0.阅读声明/">STM32</a></p>
-<p><a href="https://tonmoon.top/study/FreeRTOS/0.阅读声明/">FreeRTOS</a></p>
-<p><a href="https://tonmoon.top/study/控制算法/PID/">控制算法合集(持续更新中)</a></p>
-<p><a href="https://tonmoon.top/study/competition/1/">全国大学生工程实践与创新能力大赛指导</a></p>
-<p><a href="https://tonmoon.top/study/yolov5/1/">YOLO模型训练</a></p>
-<p><a href="https://tonmoon.top/study/Git/Git/">Git简单使用</a></p>
-<p><a href="https://tonmoon.top/study/飞书文档/pythondata/">飞书学习资料分析</a></p>
-<p>Github开源仓库：</p>
-<p><a href="https://github.com/wxnlP/competition2023">工程实践与创新能力大赛源代码</a></p>
-<p><a href="https://github.com/wxnlP/optimization">yolov8和yolov5-lite的部署程序优化</a></p>
-<p><a href="https://github.com/wxnlP/ESP32">基于Arduino框架的ESP32代码参考</a></p>
-<p><a href="https://github.com/wxnlP/FreeRTOS?tab=readme-ov-file">FreeRTOS对应源码</a></p>
-<p>国内Gitee仓库：</p>
-<p><a href="https://gitee.com/wxnlP/projects?sort=&amp;scope=&amp;state=public">仓库 - wxnlP (wxnlP) - Gitee.com</a></p>
-<h2 id="_2">现实啊，莫要打击我<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">安装配置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
-</span></code></pre></div>
-<h3 id="_4">改分支<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">git</span> <span class="n">branch</span> <span class="n">-m</span> <span class="n">master</span> <span class="n">main</span>
-</span></code></pre></div>
-<h3 id="_5">部署网站<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mkdocs</span> <span class="n">build</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># main分支</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;update&quot;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">main</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># 切换gh-pages分支</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">git</span> <span class="n">checkout</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># 切换main分支</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># 部署</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mkdocs</span> <span class="n">gh</span><span class="o">-</span><span class="n">deploy</span>
-</span></code></pre></div>
-<h3 id="_6">本地测试<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mkdocs</span> <span class="n">serve</span>
-</span></code></pre></div>
-<h3 id="_7">图床<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://cdn.jsdelivr.net/gh/wxnlP/pic
-</span></code></pre></div>
-<p>​   </p>
+<h2 id="81">8.1 动作通信<a class="headerlink" href="#81" title="Permanent link">&para;</a></h2>
+<p>动作通信基于话题和服务通信，适用于长时间运行的任务，动作通信由目标、反馈和结果三部分组成，与服务一样是基于请求响应式的模式。与服务不同的是，动作通信连续反馈当前节点的状态信息，当任务完成时，再返回最终的执行结果，因此更适用于长时间运行的任务。</p>
+<p><img alt="../../../_images/Action-SingleActionClient.gif" src="Action-SingleActionClient.gif" /></p>
+<p>待更新。。。</p>
 
 
 
@@ -1398,28 +1186,6 @@
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-        
-          
-          <a href="study/OpenHarmony/0.%E9%98%85%E8%AF%BB%E5%89%8D%E7%9A%84%E5%A3%B0%E6%98%8E/" class="md-footer__link md-footer__link--next" aria-label="Next: 阅读声明">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                阅读声明
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1449,12 +1215,12 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.action.edit", "navigation.tabs", "navigation.instant", "content.action.view", "content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tooltips", "sticky_navigation", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "navigation.tabs", "navigation.instant", "content.action.view", "content.code.annotate", "content.code.copy", "content.footnote.tooltips", "content.tooltips", "sticky_navigation", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="js/math.js"></script>
+        <script src="../../../js/math.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
