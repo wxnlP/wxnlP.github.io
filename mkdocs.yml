@@ -108,6 +108,7 @@ nav:
       - YOLOv8简介: study/YOLOv8/YOLOv8-1.md
       - 数据集划分: study/YOLOv8/YOLOv8-2.md
       - 模型训练: study/YOLOv8/YOLOv8-3.md
+    - BPU模型量化(RDK X5): study/YOLOv8/BPU模型转换.md
     
   - Git: study/Git/Git.md
   - 资料分析:
