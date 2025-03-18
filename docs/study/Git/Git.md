@@ -2,88 +2,22 @@
 comments: true
 ---
 
-## 使用Git上传Github项目
-
-### 用户配置
-
-右键任意一文件夹内空白处打开<kbd>Git bash here</kbd>进行配置
-
-```shell
-# <your_name>是你的自定义用户名
-git config --global user.name "<your_name>"
-
-# 配置用户邮箱, 在电脑上提交代码用的就是这个信息
-# <your_email>是你的邮箱
-git config --global user.email "<your_email>"
-
-# 显示配置信息是否正确, 检查一下
-git config --list
-```
-
-### 密钥配置（Github）
-
-```shell
-//1.输入以下命令不断回车
-ssh-keygen -t rsa
-//2.获取公钥
-cat ~/.ssh/id_rsa.pub
-
-```
-
-![image-20240915204625351](Git/image-20240915204625351.png)
-
-复制上述内容至GitHub
-
-![image-20240915204855019](Git/image-20240915204855019.png)
-
-检查配置是否完成
-
-```shell
-ssh -T git@github.com
-```
-
-### 仓库配置
-
-```shell
-# 初始化生成Git仓库, 此操作会生成一个.git的文件夹, 用于存放git的相关配置信息
-git init
-
-# 将远程仓库链接到本地, 而且仅仅是链接, 不做任何下载上传操作
-# <your_repository_url>是你的GitHub仓库链接（https）z
-git remote add origin <your_repository_url>
-
-# 若是仓库已经在Github创建则只需要克隆到本地，无需额外链接
-git clone <your_repository_url>
-```
-
-### 基础应用
-
-```shell
-# 克隆代码
-git clone <仓库地址>
-# 进入本地仓库
-cd <本地仓库名称>
-# 上传修改文件
-git add .
-git commit -m "update"
-git push origin main
-# 拉取仓库最新内容
-git pull origin main
-#-------------------------------------------
-# 修改分支名称
-git branch -m master main
-```
-
 ## 使用Git管理个人项目
 
 ### 绑定账户
 
+绑定用户名和邮箱。
+
 ```shell
+# <your_name>是你的自定义用户名
 git config --global user.name "<your_name>"
+# <your_email>是你的邮箱
 git config --global user.email "<your_email>"
 ```
 
 ### 配置默认分支
+
+默认分支一般命名为`main`或`master`，如果项目要上传到GitHub可以使用`main`好一些。
 
 ```shell
 git config --global init.defaultBranch master
@@ -103,7 +37,7 @@ git config -l
 git init
 ```
 
-如果想要删除仓库使用`rm -rf .git`(Linux)删除目录就可以了。
+如果想要删除仓库使用`rm -rf .git`(Linux)删除目录就可以了。
 
 ### 提交代码
 
@@ -165,3 +99,60 @@ log/
 .vscode/
 ```
 
+## Git绑定远程仓库(Github)
+
+### 密钥配置（Github）
+
+想要在当前设备上传git仓库到远程仓库(Github)必要绑定Github的密钥，以获得权限。
+
+```shell
+# 1.输入以下命令不断回车
+ssh-keygen -t rsa
+# 2.获取公钥
+cat ~/.ssh/id_rsa.pub
+```
+
+![image-20240915204625351](Git/image-20240915204625351.png)
+
+复制上述内容至GitHub
+
+![image-20240915204855019](Git/image-20240915204855019.png)
+
+检查配置是否完成
+
+```shell
+ssh -T git@github.com
+```
+
+### 绑定仓库
+
+```shell
+# <your_repository_url>是你的GitHub仓库链接（https）
+git remote add origin <your_repository_url>
+```
+
+### 管理远程仓库
+
+若是在另一台设备维护同一个项目，一定先拉取仓库的最新内容，然后再添加新内容。
+
+```shell
+# 推送仓库最新内容
+git push origin main
+# 拉取仓库最新内容
+git pull origin main
+#-------------------------------------------
+# 修改分支名称
+git branch -m master main
+```
+
+### 克隆代码
+
+克隆代码后，在本地也可以看到作者的上传过程，特别再vscode可以看的比较清楚。因此，若是自己的项目可以克隆后在其他设备维护，但前提是当前设备具有权限。
+
+```shell
+git clone <repository_url>
+```
+
+若下图所示的ROS2仓库管理，前部分是我在RDKX5实机上做的维护，后面是用虚拟机做的维护，可以说是无缝衔接。
+
+![image-20250318203551039](Git/image-20250318203551039.png)
