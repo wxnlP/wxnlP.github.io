@@ -156,3 +156,96 @@ git clone <repository_url>
 若下图所示的ROS2仓库管理，前部分是我在RDKX5实机上做的维护，后面是用虚拟机做的维护，可以说是无缝衔接。
 
 ![image-20250318203551039](Git/image-20250318203551039.png)
+
+## Git进阶使用
+
+### 查看文件修改状态
+
+```shell
+git status
+```
+
+![image-20250318211322820](Git/image-20250318211322820.png)
+
+同时可以查看具体的修改位置
+
+```shell
+git diff 
+```
+
+![image-20250318211502529](Git/image-20250318211502529.png)
+
+### 撤销代码
+
+① 并未添加到缓冲区，即未进行`git add`。
+
+```shell
+git checkout <文件>
+```
+
+② 已经添加到缓冲区，但为提交更改。
+
+```shell
+git reset 
+```
+
+③ 已经提交更改，为上传服务器。
+
+使用`git log`查看日志
+
+```shell
+git log
+```
+
+![image-20250318212221953](Git/image-20250318212221953.png)
+
+将Git恢复到`修改依赖名称`的阶段，使用`git reset + commit`
+
+```shell
+git reset 41fb438af114aae1f182579422c2f115a7a8148d
+```
+
+![image-20250318212348254](Git/image-20250318212348254.png)
+
+### Git分支
+
+Git分支可以用来管理项目的不版本，防止主分支版本混乱。
+
+① 查看分支列表
+
+```shell
+git branch
+```
+
+② 创建新分支
+
+```shell
+git branch rolling
+```
+
+③ 切换分支
+
+```shell
+git checkout rolling
+```
+
+两个分支修改提交互不影响，如下图：我在`main`分支提交了README更新，但`rolling`依旧是创建时候的样子。
+
+![image-20250318213558453](Git/image-20250318213558453.png)
+
+④ 合并分支
+
+将`main`分支的修改同步到`rolling`分支，此时需要用到合并分支指令。
+
+```
+git merge main
+```
+
+![image-20250318213936585](Git/image-20250318213936585.png)
+
+⑤ 删除分支
+
+```shell
+git branch -D rolling
+```
+
