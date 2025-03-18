@@ -47,6 +47,7 @@ nav:
     - ROS2常用工具:
       - 第九章 Launch启动脚本: study/ROS2/9-launch启动脚本.md
       - 第十章 TF坐标变化工具: study/ROS2/10-TF.md
+      - 第十一章 可视化工具: study/ROS2/11-可视化工具.md
     - ROS2番外篇:
       - New.ROS2与CAN总线: study/ROS2/New.ROS2使用CAN.md
   - STM32系列:
