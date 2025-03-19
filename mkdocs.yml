@@ -1,4 +1,4 @@
-site_name: 小李 的知识库
+site_name: 小李的知识库
 site_url: https://wxnlP.github.io/
 
 site_author: XiaoLi
@@ -141,7 +141,7 @@ theme:
     - navigation.instant.prefetch
     - navigation.instant.progress
     - navigation.prune
-    - navigation.sections  #左侧是否自由展开
+    # - navigation.sections  #左侧是否自由展开
     - navigation.top
     - navigation.tracking
     - search.highlight
