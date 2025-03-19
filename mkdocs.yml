@@ -141,7 +141,7 @@ theme:
     - navigation.instant.prefetch
     - navigation.instant.progress
     - navigation.prune
-    # - navigation.sections  #左侧是否自由展开
+    - navigation.sections  #左侧是否自由展开
     - navigation.top
     - navigation.tracking
     - search.highlight
