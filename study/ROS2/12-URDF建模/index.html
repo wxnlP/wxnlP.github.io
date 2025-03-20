@@ -1384,6 +1384,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#123-xacro" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3 xacro模块化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.3 xacro模块化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1231-xacro" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3.1 xacro简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1232-xacro" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3.2 xacro基础
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#124-solidworksurdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.4 solidworks导出urdf
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.4 solidworks导出urdf">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1241-sw_urdf_exporter" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.4.1 sw_urdf_exporter插件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1242-urdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.4.2 导出urdf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1993,6 +2059,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#123-xacro" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3 xacro模块化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.3 xacro模块化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1231-xacro" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3.1 xacro简介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1232-xacro" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3.2 xacro基础
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#124-solidworksurdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.4 solidworks导出urdf
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.4 solidworks导出urdf">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1241-sw_urdf_exporter" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.4.1 sw_urdf_exporter插件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1242-urdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.4.2 导出urdf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2105,8 +2237,8 @@
 <li>
 <p><kbd>type</kbd>：设置关节类型。</p>
 <ul>
-<li>continuous：旋转关节，可以绕单轴无限旋转。</li>
-</ul>
+<li>
+<p>continuous：旋转关节，可以绕单轴无限旋转。</p>
 <ul>
 <li>revolute：旋转关节，类似于 continues，但是有旋转角度限制。</li>
 </ul>
@@ -2121,6 +2253,8 @@
 </ul>
 <ul>
 <li>fixed：固定关节，不允许运动的特殊关节。</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -2439,6 +2573,216 @@
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>ros2<span class="w"> </span>launch<span class="w"> </span>genimind_description<span class="w"> </span>genimind_model.launch.py
 </span></code></pre></div>
+<h2 id="123-xacro">12.3 xacro模块化<a class="headerlink" href="#123-xacro" title="Permanent link">&para;</a></h2>
+<h3 id="1231-xacro">12.3.1 xacro简介<a class="headerlink" href="#1231-xacro" title="Permanent link">&para;</a></h3>
+<p>Xacro 是 XML Macros 的缩写，Xacro 是一种 XML 宏语言，是可编程的 XML。Xacro 可以声明变量，可以通过数学运算求解；可以使用流程控制控制执行顺序；还可以通过宏封装、复用功能，从而提高代码复用率以及程序的安全性。</p>
+<p>xacro语法的使用如下：</p>
+<p><kbd>robot</kbd>标签：</p>
+<div class="language-xml highlight"><span class="filename">XML</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&lt;robot</span><span class="w"> </span><span class="na">xmlns:xacro=</span><span class="s">&quot;http://www.ros.org/wiki/xacro&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;genimind&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></div>
+<p>声明<kbd>xacro</kbd>模块：</p>
+<div class="language-xml highlight"><span class="filename">XML</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">&lt;xacro:macro</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;imu_link&quot;</span><span class="w"> </span><span class="na">params=</span><span class="s">&quot;imu_name xyz&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></div>
+<p>使用<kbd>xacro</kbd>模块参数：</p>
+<div class="language-xml highlight"><span class="filename">XML</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&lt;joint</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;${imu_name}_joint&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;fixed&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;${xyz}&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&lt;parent</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;base_link&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="nt">&lt;child</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;${imu_name}_link&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nt">&lt;/joint&gt;</span>
+</span></code></pre></div>
+<p>使用<kbd>xacro</kbd>模块：</p>
+<div class="language-xml highlight"><span class="filename">XML</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">&lt;xacro:imu_link</span><span class="w"> </span><span class="na">imu_name=</span><span class="s">&quot;imu_main&quot;</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0.0 0.0 0.035&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p><code>xacro</code>文件包含语法，此功能可以让我们的文件更具模块化，将相机、雷达等都单独封装到一个<code>xacro</code>文件。</p>
+<div class="language-xml highlight"><span class="filename">XML</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">&lt;robot</span><span class="w"> </span><span class="na">xmlns:xacro=</span><span class="s">&quot;http://wiki.ros.org/xacro&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;genimind&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">      </span><span class="nt">&lt;xacro:include</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;base.xacro&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">      </span><span class="nt">&lt;xacro:include</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;camera.xacro&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">      </span><span class="nt">&lt;xacro:include</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;laser.xacro&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nt">&lt;/robot&gt;</span>
+</span></code></pre></div>
+<h3 id="1232-xacro">12.3.2 xacro基础<a class="headerlink" href="#1232-xacro" title="Permanent link">&para;</a></h3>
+<p>在功能包的<code>urdf</code>目录下新建<code>genimind.xacro</code>文件：</p>
+<div class="language-xml highlight"><span class="filename">XML</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">&lt;robot</span><span class="w"> </span><span class="na">xmlns:xacro=</span><span class="s">&quot;http://www.ros.org/wiki/xacro&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;genimind&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="cm">&lt;!-- 声明base_link模块 --&gt;</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="nt">&lt;xacro:macro</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;base_link&quot;</span><span class="w"> </span><span class="na">params=</span><span class="s">&quot;size &quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">        </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;base_link&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">            </span><span class="nt">&lt;visual&gt;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">                </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">                </span><span class="nt">&lt;geometry&gt;</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">                    </span><span class="nt">&lt;box</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;${size}&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">                </span><span class="nt">&lt;/geometry&gt;</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">                </span><span class="nt">&lt;material</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;carbon_fiber&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">                    </span><span class="nt">&lt;color</span><span class="w"> </span><span class="na">rgba=</span><span class="s">&quot;0.05 0.05 0.05 1.0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">                </span><span class="nt">&lt;/material&gt;</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">            </span><span class="nt">&lt;/visual&gt;</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">        </span><span class="nt">&lt;/link&gt;</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="w">    </span><span class="nt">&lt;/xacro:macro&gt;</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">    </span><span class="cm">&lt;!-- 声明imu_link模块 --&gt;</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="w">    </span><span class="nt">&lt;xacro:macro</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;imu_link&quot;</span><span class="w"> </span><span class="na">params=</span><span class="s">&quot;imu_name xyz&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="w">        </span><span class="cm">&lt;!-- link --&gt;</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="w">        </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;${imu_name}_link&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">            </span><span class="nt">&lt;visual&gt;</span>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">                </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="w">                </span><span class="nt">&lt;geometry&gt;</span>
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="w">                    </span><span class="nt">&lt;box</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;0.04 0.04 0.02&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="w">                </span><span class="nt">&lt;/geometry&gt;</span>
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="w">                </span><span class="nt">&lt;material</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;red&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="w">                    </span><span class="nt">&lt;color</span><span class="w"> </span><span class="na">rgba=</span><span class="s">&quot;1 0.0 0.0 0.8&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="w">                </span><span class="nt">&lt;/material&gt;</span>
+</span><span id="__span-18-29"><a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a><span class="w">            </span><span class="nt">&lt;/visual&gt;</span>
+</span><span id="__span-18-30"><a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a><span class="w">        </span><span class="nt">&lt;/link&gt;</span>
+</span><span id="__span-18-31"><a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a><span class="w">        </span><span class="cm">&lt;!-- joint --&gt;</span>
+</span><span id="__span-18-32"><a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a><span class="w">        </span><span class="nt">&lt;joint</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;${imu_name}_joint&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;fixed&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-33"><a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a><span class="w">            </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;${xyz}&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-34"><a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a><span class="w">            </span><span class="nt">&lt;parent</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;base_link&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-35"><a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a><span class="w">            </span><span class="nt">&lt;child</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;${imu_name}_link&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-36"><a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a><span class="w">        </span><span class="nt">&lt;/joint&gt;</span>
+</span><span id="__span-18-37"><a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a><span class="w">    </span><span class="nt">&lt;/xacro:macro&gt;</span>
+</span><span id="__span-18-38"><a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a>
+</span><span id="__span-18-39"><a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a><span class="w">    </span><span class="cm">&lt;!-- 声明wheel_link模块 --&gt;</span>
+</span><span id="__span-18-40"><a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a><span class="w">    </span><span class="nt">&lt;xacro:macro</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;wheel_link&quot;</span><span class="w"> </span><span class="na">params=</span><span class="s">&quot;wheel_name xyz&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-41"><a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a><span class="w">        </span><span class="cm">&lt;!-- link --&gt;</span>
+</span><span id="__span-18-42"><a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a><span class="w">        </span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;${wheel_name}_link&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-43"><a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a><span class="w">            </span><span class="nt">&lt;visual&gt;</span>
+</span><span id="__span-18-44"><a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a><span class="w">                </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;1.57 0.0 0.0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-45"><a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a><span class="w">                </span><span class="nt">&lt;geometry&gt;</span>
+</span><span id="__span-18-46"><a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a><span class="w">                    </span><span class="nt">&lt;cylinder</span><span class="w"> </span><span class="na">radius=</span><span class="s">&quot;0.0375&quot;</span><span class="w"> </span><span class="na">length=</span><span class="s">&quot;0.03&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-47"><a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a><span class="w">                </span><span class="nt">&lt;/geometry&gt;</span>
+</span><span id="__span-18-48"><a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a><span class="w">                </span><span class="nt">&lt;material</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;green&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-49"><a id="__codelineno-18-49" name="__codelineno-18-49" href="#__codelineno-18-49"></a><span class="w">                    </span><span class="nt">&lt;color</span><span class="w"> </span><span class="na">rgba=</span><span class="s">&quot;0.0 0.5 0.2 0.8&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-50"><a id="__codelineno-18-50" name="__codelineno-18-50" href="#__codelineno-18-50"></a><span class="w">                </span><span class="nt">&lt;/material&gt;</span>
+</span><span id="__span-18-51"><a id="__codelineno-18-51" name="__codelineno-18-51" href="#__codelineno-18-51"></a><span class="w">            </span><span class="nt">&lt;/visual&gt;</span>
+</span><span id="__span-18-52"><a id="__codelineno-18-52" name="__codelineno-18-52" href="#__codelineno-18-52"></a><span class="w">        </span><span class="nt">&lt;/link&gt;</span>
+</span><span id="__span-18-53"><a id="__codelineno-18-53" name="__codelineno-18-53" href="#__codelineno-18-53"></a><span class="w">        </span><span class="cm">&lt;!-- joint --&gt;</span>
+</span><span id="__span-18-54"><a id="__codelineno-18-54" name="__codelineno-18-54" href="#__codelineno-18-54"></a><span class="w">        </span><span class="nt">&lt;joint</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;${wheel_name}_joint&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;continuous&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-55"><a id="__codelineno-18-55" name="__codelineno-18-55" href="#__codelineno-18-55"></a><span class="w">            </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;${xyz}&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0.0 0.0 0.0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-56"><a id="__codelineno-18-56" name="__codelineno-18-56" href="#__codelineno-18-56"></a><span class="w">            </span><span class="nt">&lt;parent</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;base_link&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-57"><a id="__codelineno-18-57" name="__codelineno-18-57" href="#__codelineno-18-57"></a><span class="w">            </span><span class="nt">&lt;child</span><span class="w"> </span><span class="na">link=</span><span class="s">&quot;${wheel_name}_link&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-58"><a id="__codelineno-18-58" name="__codelineno-18-58" href="#__codelineno-18-58"></a><span class="w">        </span><span class="nt">&lt;/joint&gt;</span>
+</span><span id="__span-18-59"><a id="__codelineno-18-59" name="__codelineno-18-59" href="#__codelineno-18-59"></a><span class="w">    </span><span class="nt">&lt;/xacro:macro&gt;</span>
+</span><span id="__span-18-60"><a id="__codelineno-18-60" name="__codelineno-18-60" href="#__codelineno-18-60"></a>
+</span><span id="__span-18-61"><a id="__codelineno-18-61" name="__codelineno-18-61" href="#__codelineno-18-61"></a><span class="w">    </span><span class="cm">&lt;!-- 使用xacro模块 --&gt;</span>
+</span><span id="__span-18-62"><a id="__codelineno-18-62" name="__codelineno-18-62" href="#__codelineno-18-62"></a><span class="w">    </span><span class="nt">&lt;xacro:base_link</span><span class="w"> </span><span class="na">size=</span><span class="s">&quot;0.3 0.274 0.05&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-63"><a id="__codelineno-18-63" name="__codelineno-18-63" href="#__codelineno-18-63"></a><span class="w">    </span><span class="nt">&lt;xacro:imu_link</span><span class="w"> </span><span class="na">imu_name=</span><span class="s">&quot;imu_main&quot;</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0.0 0.0 0.035&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-64"><a id="__codelineno-18-64" name="__codelineno-18-64" href="#__codelineno-18-64"></a><span class="w">    </span><span class="nt">&lt;xacro:wheel_link</span><span class="w"> </span><span class="na">wheel_name=</span><span class="s">&quot;front_left_wheel&quot;</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0.1125 0.152 0.0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-65"><a id="__codelineno-18-65" name="__codelineno-18-65" href="#__codelineno-18-65"></a><span class="w">    </span><span class="nt">&lt;xacro:wheel_link</span><span class="w"> </span><span class="na">wheel_name=</span><span class="s">&quot;front_right_wheel&quot;</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0.1125 -0.152 0.0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-66"><a id="__codelineno-18-66" name="__codelineno-18-66" href="#__codelineno-18-66"></a><span class="w">    </span><span class="nt">&lt;xacro:wheel_link</span><span class="w"> </span><span class="na">wheel_name=</span><span class="s">&quot;back_left_wheel&quot;</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;-0.1125 0.152 0.0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-67"><a id="__codelineno-18-67" name="__codelineno-18-67" href="#__codelineno-18-67"></a><span class="w">    </span><span class="nt">&lt;xacro:wheel_link</span><span class="w"> </span><span class="na">wheel_name=</span><span class="s">&quot;back_right_wheel&quot;</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;-0.1125 -0.152 0.0&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-18-68"><a id="__codelineno-18-68" name="__codelineno-18-68" href="#__codelineno-18-68"></a><span class="nt">&lt;/robot&gt;</span>
+</span></code></pre></div>
+<p>安装工具<code>xacro</code>，类似于<code>cat</code>指令，可以将<code>xacro</code>文件的内容打印出终端。</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-xacro
+</span></code></pre></div>
+<p><img alt="image-20250320145513178" src="image-20250320145513178.png" /></p>
+<p>集成<code>xacro</code>到launch，修改文件名和<code>cat</code>指令为<code>xacro</code>。</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kn">import</span> <span class="nn">launch</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kn">import</span> <span class="nn">launch_ros</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="kn">from</span> <span class="nn">ament_index_python.packages</span> <span class="kn">import</span> <span class="n">get_package_share_directory</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="kn">import</span> <span class="nn">launch_ros.parameter_descriptions</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="k">def</span> <span class="nf">generate_launch_description</span><span class="p">():</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>    <span class="c1"># 获取urdf功能包的路径</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>    <span class="n">urdf_pkg_path</span> <span class="o">=</span> <span class="n">get_package_share_directory</span><span class="p">(</span><span class="s2">&quot;genimind_description&quot;</span><span class="p">)</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>    <span class="c1"># 获取urdf文件的路径(修改)</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>    <span class="n">urdf_file_path</span> <span class="o">=</span> <span class="n">urdf_pkg_path</span> <span class="o">+</span> <span class="s2">&quot;/urdf/genimind.xacro&quot;</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>    <span class="c1"># 获取rviz初始化文件路径</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>    <span class="n">rviz_config_path</span> <span class="o">=</span> <span class="n">urdf_pkg_path</span> <span class="o">+</span> <span class="s2">&quot;/config/rviz/genimind_descriptionconfig.rviz&quot;</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>    <span class="c1"># 声明一个urdf文件路径的参数</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>    <span class="n">action_declare_arg_urdf_path</span> <span class="o">=</span> <span class="n">launch</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">DeclareLaunchArgument</span><span class="p">(</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>        <span class="s2">&quot;urdf&quot;</span><span class="p">,</span> 
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>        <span class="n">default_value</span><span class="o">=</span><span class="n">urdf_file_path</span><span class="p">,</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;urdf文件的绝对路径&quot;</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>    <span class="p">)</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>    <span class="c1"># 1.获取指令的返回内容(修改)</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>    <span class="n">substitutions_cmd</span> <span class="o">=</span> <span class="n">launch</span><span class="o">.</span><span class="n">substitutions</span><span class="o">.</span><span class="n">Command</span><span class="p">(</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>        <span class="p">[</span><span class="s2">&quot;xacro  &quot;</span><span class="p">,</span> <span class="n">launch</span><span class="o">.</span><span class="n">substitutions</span><span class="o">.</span><span class="n">LaunchConfiguration</span><span class="p">(</span><span class="s2">&quot;urdf&quot;</span><span class="p">)]</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>    <span class="p">)</span>
+</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a>    <span class="c1"># 2.获取指令的返回内容(多一次类型转换)</span>
+</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>    <span class="n">robot_description</span> <span class="o">=</span> <span class="n">launch_ros</span><span class="o">.</span><span class="n">parameter_descriptions</span><span class="o">.</span><span class="n">ParameterValue</span><span class="p">(</span>
+</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a>        <span class="n">substitutions_cmd</span><span class="p">,</span>
+</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a>        <span class="n">value_type</span><span class="o">=</span><span class="nb">str</span>
+</span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a>    <span class="p">)</span>
+</span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a>
+</span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a>    <span class="c1"># robot_state_publisher话题节点启动</span>
+</span><span id="__span-20-33"><a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a>    <span class="n">robot_state_publisher_node</span> <span class="o">=</span> <span class="n">launch_ros</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span>
+</span><span id="__span-20-34"><a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a>        <span class="n">package</span><span class="o">=</span><span class="s2">&quot;robot_state_publisher&quot;</span><span class="p">,</span>
+</span><span id="__span-20-35"><a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a>        <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;robot_state_publisher&quot;</span><span class="p">,</span>
+</span><span id="__span-20-36"><a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a>        <span class="n">parameters</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;robot_description&quot;</span><span class="p">:</span> <span class="n">robot_description</span><span class="p">}]</span>
+</span><span id="__span-20-37"><a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a>    <span class="p">)</span>
+</span><span id="__span-20-38"><a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a>    <span class="c1"># joint_state_publisher话题节点启动</span>
+</span><span id="__span-20-39"><a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a>    <span class="n">joint_state_publisher_node</span> <span class="o">=</span> <span class="n">launch_ros</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span>
+</span><span id="__span-20-40"><a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a>        <span class="n">package</span><span class="o">=</span><span class="s2">&quot;joint_state_publisher&quot;</span><span class="p">,</span>
+</span><span id="__span-20-41"><a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a>        <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;joint_state_publisher&quot;</span><span class="p">,</span>
+</span><span id="__span-20-42"><a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a>    <span class="p">)</span>
+</span><span id="__span-20-43"><a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a>    <span class="c1"># rviz节点启动</span>
+</span><span id="__span-20-44"><a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a>    <span class="n">rviz_node</span> <span class="o">=</span> <span class="n">launch_ros</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span>
+</span><span id="__span-20-45"><a id="__codelineno-20-45" name="__codelineno-20-45" href="#__codelineno-20-45"></a>        <span class="n">package</span><span class="o">=</span><span class="s2">&quot;rviz2&quot;</span><span class="p">,</span>
+</span><span id="__span-20-46"><a id="__codelineno-20-46" name="__codelineno-20-46" href="#__codelineno-20-46"></a>        <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;rviz2&quot;</span><span class="p">,</span>
+</span><span id="__span-20-47"><a id="__codelineno-20-47" name="__codelineno-20-47" href="#__codelineno-20-47"></a>        <span class="n">arguments</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="n">rviz_config_path</span><span class="p">]</span>
+</span><span id="__span-20-48"><a id="__codelineno-20-48" name="__codelineno-20-48" href="#__codelineno-20-48"></a>    <span class="p">)</span>
+</span><span id="__span-20-49"><a id="__codelineno-20-49" name="__codelineno-20-49" href="#__codelineno-20-49"></a>
+</span><span id="__span-20-50"><a id="__codelineno-20-50" name="__codelineno-20-50" href="#__codelineno-20-50"></a>    <span class="c1"># 合成启动描述</span>
+</span><span id="__span-20-51"><a id="__codelineno-20-51" name="__codelineno-20-51" href="#__codelineno-20-51"></a>    <span class="n">launch_description</span> <span class="o">=</span> <span class="n">launch</span><span class="o">.</span><span class="n">LaunchDescription</span><span class="p">([</span>
+</span><span id="__span-20-52"><a id="__codelineno-20-52" name="__codelineno-20-52" href="#__codelineno-20-52"></a>        <span class="n">action_declare_arg_urdf_path</span><span class="p">,</span>
+</span><span id="__span-20-53"><a id="__codelineno-20-53" name="__codelineno-20-53" href="#__codelineno-20-53"></a>        <span class="n">joint_state_publisher_node</span><span class="p">,</span>
+</span><span id="__span-20-54"><a id="__codelineno-20-54" name="__codelineno-20-54" href="#__codelineno-20-54"></a>        <span class="n">robot_state_publisher_node</span><span class="p">,</span>
+</span><span id="__span-20-55"><a id="__codelineno-20-55" name="__codelineno-20-55" href="#__codelineno-20-55"></a>        <span class="n">rviz_node</span>
+</span><span id="__span-20-56"><a id="__codelineno-20-56" name="__codelineno-20-56" href="#__codelineno-20-56"></a>    <span class="p">])</span>
+</span><span id="__span-20-57"><a id="__codelineno-20-57" name="__codelineno-20-57" href="#__codelineno-20-57"></a>    <span class="k">return</span> <span class="n">launch_description</span>
+</span></code></pre></div>
+<p>编译运行效果如下。</p>
+<p><img alt="image-20250320145741595" src="image-20250320145741595.png" /></p>
+<h2 id="124-solidworksurdf">12.4 solidworks导出urdf<a class="headerlink" href="#124-solidworksurdf" title="Permanent link">&para;</a></h2>
+<h3 id="1241-sw_urdf_exporter">12.4.1 sw_urdf_exporter插件<a class="headerlink" href="#1241-sw_urdf_exporter" title="Permanent link">&para;</a></h3>
+<p>在实际的开发工作在，我们不太可能纯手敲一个机器人模型，我们一般都使用3D建模软件进行机器人的建模，因此官方也提供了一个solidworks插件可以直接导出urdf文件。</p>
+<p>下载地址：<a href="https://wiki.ros.org/sw_urdf_exporter">sw_urdf_exporter</a></p>
+<p>下载<code>.exe</code>文件然后安装就可以了。</p>
+<p><img alt="image-20250320154519232" src="image-20250320154519232.png" /></p>
+<h3 id="1242-urdf">12.4.2 导出urdf<a class="headerlink" href="#1242-urdf" title="Permanent link">&para;</a></h3>
+<p>以四轮底盘为例，当然这个模型并不完整，他缺少IMU、相机、激光雷达等，但导出流程都是类似的。</p>
+<p>🕐 首先给四个轮子添加基准轴。</p>
+<p><img alt="image-20250320162032664" src="image-20250320162032664.png" /></p>
+<p>🕑给四个轮子个和底盘中心添加点。</p>
+<p><img alt="image-20250320200122348" src="image-20250320200122348.png" /></p>
+<p>🕒添加坐标系(ROS中的坐标系为前X、左Y、上Z)。</p>
+<p><img alt="image-20250320200230492" src="image-20250320200230492.png" /></p>
+<p>🕓插件导出urdf。</p>
+<p><img alt="image-20250320162601165" src="image-20250320162601165.png" /></p>
+<p>🕔配置link，每个link对应一个坐标系，与前面自己设置的坐标系对应。</p>
+<p><img alt="image-20250320200443092" src="image-20250320200443092.png" /></p>
+<p>其余的link均一致，配置好所以link，然后<code>Export</code>导出。</p>
+<p><img alt="image-20250320200628725" src="image-20250320200628725.png" /></p>
+<p>🕕确认一下坐标系、基准轴、joint类型是否正确，仿真参数不知道可以不加，点击<code>Next</code>。</p>
+<p><img alt="image-20250320200756743" src="image-20250320200756743.png" /></p>
+<p>🕖导出功能包，名字最好和已有的功能包一致，就不用修改文件了。</p>
+<p><img alt="image-20250320200957156" src="image-20250320200957156.png" /></p>
+<p>🕗导出的功能包不要直接用，版本好像是ROS1的，我们移植几个文件到我们的功能包即可。</p>
+<p><img alt="image-20250320201312272" src="image-20250320201312272.png" /></p>
+<p>移植到我们的功能包下后，目录如下：</p>
+<p><img alt="image-20250320201455568" src="image-20250320201455568.png" /></p>
+<p>urdf文件的每个link的这个名称一定和功能包一致，按我说的导出时填功能包的名字(即genimind_description)就不会错。</p>
+<p><img alt="image-20250320201543682" src="image-20250320201543682.png" /></p>
+<p>🕘修改launch和camke。</p>
+<p><code>CmakeLists.txt</code> 中下载<code>meshes</code>目录：</p>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c"># launch</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">install</span><span class="p">(</span><span class="s">DIRECTORY</span><span class="w"> </span><span class="s">launch</span><span class="w"> </span><span class="s">urdf</span><span class="w"> </span><span class="s">config</span><span class="w"> </span><span class="s">meshes</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">share/</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><code>launch</code>修改文件名称：</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># 获取urdf文件的路径</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">urdf_file_path</span> <span class="o">=</span> <span class="n">urdf_pkg_path</span> <span class="o">+</span> <span class="s2">&quot;/urdf/genimind_description.urdf&quot;</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="c1"># 1.获取指令的返回内容</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="n">substitutions_cmd</span> <span class="o">=</span> <span class="n">launch</span><span class="o">.</span><span class="n">substitutions</span><span class="o">.</span><span class="n">Command</span><span class="p">(</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    <span class="p">[</span><span class="s2">&quot;cat  &quot;</span><span class="p">,</span> <span class="n">launch</span><span class="o">.</span><span class="n">substitutions</span><span class="o">.</span><span class="n">LaunchConfiguration</span><span class="p">(</span><span class="s2">&quot;urdf&quot;</span><span class="p">)]</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>编译运行，结果如下：</p>
+<p><img alt="image-20250320202234338" src="image-20250320202234338.png" /></p>
 
 
 
