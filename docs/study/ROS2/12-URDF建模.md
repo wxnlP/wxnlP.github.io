@@ -709,3 +709,63 @@ substitutions_cmd = launch.substitutions.Command(
 
 ![image-20250320202234338](12-URDF建模/image-20250320202234338.png)
 
+### 12.4.3 让轮子着地
+
+目前我们的全局坐标是`base_link`，因此轮子不会着地，我们添加一个虚拟link，固定到`base_link`的正下方，与轮子高度平齐。
+
+这里的高度根据自己模型大致算一下就可以。
+
+```xml
+<robot
+  name="genimind_description">
+  <!-- 添加虚拟link -->
+  <link name="base_footprint" />
+  <joint name="base_joint" type="fixed">
+      <parent link="base_footprint" />
+      <child link="base_link" />
+      <origin xyz="-0.000168546343865929 0.000259630628177465 0.057" rpy="0 0 0" />
+  </joint>
+  <!-- 添加虚拟link -->
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000168546343865929 0.000259630628177465 -0.0129346226647377"
+        rpy="0 0 0" />
+      <mass
+        value="0.493681601484372" />
+      <inertia
+        ixx="0.00132345261482042"
+        ixy="-1.9928481762346E-06"
+        ixz="4.4132768003374E-22"
+        iyy="0.00183954978750504"
+        iyz="4.72285914930666E-15"
+        izz="0.00311591135609084" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://genimind_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://genimind_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+```
+
+![image-20250320210837195](12-URDF建模/image-20250320210837195.png)
