@@ -75,21 +75,22 @@ urdf 中的 joint 标签用于描述机器人关节的运动学和动力学属�
 - <kbd>type</kbd>：设置关节类型。
 
   - continuous：旋转关节，可以绕单轴无限旋转。
-
-
-  - revolute：旋转关节，类似于 continues，但是有旋转角度限制。
-
-
-  - prismatic：滑动关节，沿某一轴线移动的关节，有位置极限。
-
-
-  - planer：平面关节，允许在平面正交方向上平移或旋转。
-
-
-  - floating：浮动关节，允许进行平移、旋转运动。
-
-
-  - fixed：固定关节，不允许运动的特殊关节。
+  
+  
+    - revolute：旋转关节，类似于 continues，但是有旋转角度限制。
+  
+  
+    - prismatic：滑动关节，沿某一轴线移动的关节，有位置极限。
+  
+  
+    - planer：平面关节，允许在平面正交方向上平移或旋转。
+  
+  
+    - floating：浮动关节，允许进行平移、旋转运动。
+  
+  
+    - fixed：固定关节，不允许运动的特殊关节。
+  
 
 子标签：
 
@@ -423,4 +424,288 @@ colcon build --packages-select genimind_description
 source install/setup.bash
 ros2 launch genimind_description genimind_model.launch.py
 ```
+
+## 12.3 xacro模块化
+
+### 12.3.1 xacro简介
+
+Xacro 是 XML Macros 的缩写，Xacro 是一种 XML 宏语言，是可编程的 XML。Xacro 可以声明变量，可以通过数学运算求解；可以使用流程控制控制执行顺序；还可以通过宏封装、复用功能，从而提高代码复用率以及程序的安全性。
+
+xacro语法的使用如下：
+
+<kbd>robot</kbd>标签：
+
+```xml
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="genimind">
+```
+
+声明<kbd>xacro</kbd>模块：
+
+```xml
+<xacro:macro name="imu_link" params="imu_name xyz">
+```
+
+使用<kbd>xacro</kbd>模块参数：
+
+```xml
+<joint name="${imu_name}_joint" type="fixed">
+    <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="${imu_name}_link"/>
+</joint>
+```
+
+使用<kbd>xacro</kbd>模块：
+
+```xml
+<xacro:imu_link imu_name="imu_main" xyz="0.0 0.0 0.035"/>
+```
+
+`xacro`文件包含语法，此功能可以让我们的文件更具模块化，将相机、雷达等都单独封装到一个`xacro`文件。
+
+```xml
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="genimind">
+      <xacro:include filename="base.xacro" />
+      <xacro:include filename="camera.xacro" />
+      <xacro:include filename="laser.xacro" />
+</robot>
+```
+
+### 12.3.2 xacro基础
+
+在功能包的`urdf`目录下新建`genimind.xacro`文件：
+
+```xml
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="genimind">
+    <!-- 声明base_link模块 -->
+    <xacro:macro name="base_link" params="size ">
+        <link name="base_link">
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <box size="${size}"/>
+                </geometry>
+                <material name="carbon_fiber">
+                    <color rgba="0.05 0.05 0.05 1.0"/>
+                </material>
+            </visual>
+        </link>
+    </xacro:macro>
+    <!-- 声明imu_link模块 -->
+    <xacro:macro name="imu_link" params="imu_name xyz">
+        <!-- link -->
+        <link name="${imu_name}_link">
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <box size="0.04 0.04 0.02"/>
+                </geometry>
+                <material name="red">
+                    <color rgba="1 0.0 0.0 0.8"/>
+                </material>
+            </visual>
+        </link>
+        <!-- joint -->
+        <joint name="${imu_name}_joint" type="fixed">
+            <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+            <parent link="base_link"/>
+            <child link="${imu_name}_link"/>
+        </joint>
+    </xacro:macro>
+
+    <!-- 声明wheel_link模块 -->
+    <xacro:macro name="wheel_link" params="wheel_name xyz">
+        <!-- link -->
+        <link name="${wheel_name}_link">
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="1.57 0.0 0.0"/>
+                <geometry>
+                    <cylinder radius="0.0375" length="0.03"/>
+                </geometry>
+                <material name="green">
+                    <color rgba="0.0 0.5 0.2 0.8"/>
+                </material>
+            </visual>
+        </link>
+        <!-- joint -->
+        <joint name="${wheel_name}_joint" type="continuous">
+            <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
+            <parent link="base_link"/>
+            <child link="${wheel_name}_link"/>
+        </joint>
+    </xacro:macro>
+
+    <!-- 使用xacro模块 -->
+    <xacro:base_link size="0.3 0.274 0.05"/>
+    <xacro:imu_link imu_name="imu_main" xyz="0.0 0.0 0.035"/>
+    <xacro:wheel_link wheel_name="front_left_wheel" xyz="0.1125 0.152 0.0"/>
+    <xacro:wheel_link wheel_name="front_right_wheel" xyz="0.1125 -0.152 0.0"/>
+    <xacro:wheel_link wheel_name="back_left_wheel" xyz="-0.1125 0.152 0.0"/>
+    <xacro:wheel_link wheel_name="back_right_wheel" xyz="-0.1125 -0.152 0.0"/>
+</robot>
+```
+
+安装工具`xacro`，类似于`cat`指令，可以将`xacro`文件的内容打印出终端。
+
+```shell
+sudo apt install ros-humble-xacro
+```
+
+![image-20250320145513178](12-URDF建模/image-20250320145513178.png)
+
+集成`xacro`到launch，修改文件名和`cat`指令为`xacro`。
+
+```python
+import launch
+import launch_ros
+from ament_index_python.packages import get_package_share_directory
+import launch_ros.parameter_descriptions
+
+
+def generate_launch_description():
+    # 获取urdf功能包的路径
+    urdf_pkg_path = get_package_share_directory("genimind_description")
+    # 获取urdf文件的路径(修改)
+    urdf_file_path = urdf_pkg_path + "/urdf/genimind.xacro"
+    # 获取rviz初始化文件路径
+    rviz_config_path = urdf_pkg_path + "/config/rviz/genimind_descriptionconfig.rviz"
+
+    # 声明一个urdf文件路径的参数
+    action_declare_arg_urdf_path = launch.actions.DeclareLaunchArgument(
+        "urdf", 
+        default_value=urdf_file_path,
+        description="urdf文件的绝对路径"
+    )
+
+    # 1.获取指令的返回内容(修改)
+    substitutions_cmd = launch.substitutions.Command(
+        ["xacro  ", launch.substitutions.LaunchConfiguration("urdf")]
+    )
+    # 2.获取指令的返回内容(多一次类型转换)
+    robot_description = launch_ros.parameter_descriptions.ParameterValue(
+        substitutions_cmd,
+        value_type=str
+    )
+
+    # robot_state_publisher话题节点启动
+    robot_state_publisher_node = launch_ros.actions.Node(
+        package="robot_state_publisher",
+        executable="robot_state_publisher",
+        parameters=[{"robot_description": robot_description}]
+    )
+    # joint_state_publisher话题节点启动
+    joint_state_publisher_node = launch_ros.actions.Node(
+        package="joint_state_publisher",
+        executable="joint_state_publisher",
+    )
+    # rviz节点启动
+    rviz_node = launch_ros.actions.Node(
+        package="rviz2",
+        executable="rviz2",
+        arguments=['-d', rviz_config_path]
+    )
+
+    # 合成启动描述
+    launch_description = launch.LaunchDescription([
+        action_declare_arg_urdf_path,
+        joint_state_publisher_node,
+        robot_state_publisher_node,
+        rviz_node
+    ])
+    return launch_description
+
+```
+
+编译运行效果如下。
+
+![image-20250320145741595](12-URDF建模/image-20250320145741595.png)
+
+## 12.4 solidworks导出urdf
+
+### 12.4.1 sw_urdf_exporter插件
+
+在实际的开发工作在，我们不太可能纯手敲一个机器人模型，我们一般都使用3D建模软件进行机器人的建模，因此官方也提供了一个solidworks插件可以直接导出urdf文件。
+
+下载地址：[sw_urdf_exporter](https://wiki.ros.org/sw_urdf_exporter)
+
+下载`.exe`文件然后安装就可以了。
+
+![image-20250320154519232](12-URDF建模/image-20250320154519232.png)
+
+
+
+### 12.4.2 导出urdf
+
+以四轮底盘为例，当然这个模型并不完整，他缺少IMU、相机、激光雷达等，但导出流程都是类似的。
+
+🕐 首先给四个轮子添加基准轴。
+
+![image-20250320162032664](12-URDF建模/image-20250320162032664.png)
+
+🕑给四个轮子个和底盘中心添加点。
+
+![image-20250320200122348](12-URDF建模/image-20250320200122348.png)
+
+🕒添加坐标系(ROS中的坐标系为前X、左Y、上Z)。
+
+![image-20250320200230492](12-URDF建模/image-20250320200230492.png)
+
+🕓插件导出urdf。
+
+![image-20250320162601165](12-URDF建模/image-20250320162601165.png)
+
+🕔配置link，每个link对应一个坐标系，与前面自己设置的坐标系对应。
+
+![image-20250320200443092](12-URDF建模/image-20250320200443092.png)
+
+其余的link均一致，配置好所以link，然后`Export`导出。
+
+![image-20250320200628725](12-URDF建模/image-20250320200628725.png)
+
+🕕确认一下坐标系、基准轴、joint类型是否正确，仿真参数不知道可以不加，点击`Next`。
+
+![image-20250320200756743](12-URDF建模/image-20250320200756743.png)
+
+🕖导出功能包，名字最好和已有的功能包一致，就不用修改文件了。
+
+![image-20250320200957156](12-URDF建模/image-20250320200957156.png)
+
+🕗导出的功能包不要直接用，版本好像是ROS1的，我们移植几个文件到我们的功能包即可。
+
+![image-20250320201312272](12-URDF建模/image-20250320201312272.png)
+
+移植到我们的功能包下后，目录如下：
+
+![image-20250320201455568](12-URDF建模/image-20250320201455568.png)
+
+urdf文件的每个link的这个名称一定和功能包一致，按我说的导出时填功能包的名字(即genimind_description)就不会错。
+
+![image-20250320201543682](12-URDF建模/image-20250320201543682.png)
+
+🕘修改launch和camke。
+
+`CmakeLists.txt` 中下载`meshes`目录：
+
+```cmake
+# launch
+install(DIRECTORY launch urdf config meshes
+  DESTINATION share/${PROJECT_NAME}
+)
+```
+
+`launch`修改文件名称：
+
+```python
+# 获取urdf文件的路径
+urdf_file_path = urdf_pkg_path + "/urdf/genimind_description.urdf"
+# 1.获取指令的返回内容
+substitutions_cmd = launch.substitutions.Command(
+    ["cat  ", launch.substitutions.LaunchConfiguration("urdf")]
+)
+```
+
+编译运行，结果如下：
+
+![image-20250320202234338](12-URDF建模/image-20250320202234338.png)
 
