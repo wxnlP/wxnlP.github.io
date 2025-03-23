@@ -4,39 +4,74 @@ comments: true
 
 ## 为理想再拼搏几年！
 
-网站学习资源分布：
 
-[OpenHarmony(持续更新中)](https://tonmoon.top/study/OpenHarmony/0.阅读前的声明/)
+<div class="grid cards" markdown>
 
-[ROS2(持续更新中)](https://tonmoon.top/study/ROS2/1.1-ROS与ROS2介绍/)
+- :fontawesome-brands-github: __Github__ 
 
-[STM32](https://tonmoon.top/study/STM32/0.阅读声明/)
+  ---
 
-[FreeRTOS](https://tonmoon.top/study/FreeRTOS/0.阅读声明/)
+  Github主页，仓库内容涉及STM32、ROS、OpenHarmony等。
 
-[控制算法合集(持续更新中)](https://tonmoon.top/study/控制算法/PID/)
+  [:octicons-arrow-right-24: 开始学习🫡](https://github.com/wxnlP)
 
-[全国大学生工程实践与创新能力大赛指导](https://tonmoon.top/study/competition/1/)
+- <img src="/assets/gitee.svg" style="width:24px;height:22px;vertical-align:middle"> __Gitee__
 
-[YOLO模型训练](https://tonmoon.top/study/yolov5/1/)
+  ---
 
-[Git简单使用](https://tonmoon.top/study/Git/Git/)
+  国内Gitee主页，不会魔法可以优先访问此仓库，内容与Github一致。
 
-[飞书学习资料分析](https://tonmoon.top/study/飞书文档/pythondata/)
+- <img src="/assets/ros.svg" style="width:39px;height:39px;vertical-align:middle"> __ROS2__
 
-Github开源仓库：
+  ---
 
-[工程实践与创新能力大赛源代码](https://github.com/wxnlP/competition2023)
+  ROS2学习笔记，参考fishros、赵虚左等教程，含通信、仿真、导航等。
 
-[yolov8和yolov5-lite的部署程序优化](https://github.com/wxnlP/optimization)
+  [:octicons-arrow-right-24: 开始学习😁](study\ROS2\0.阅读声明.md)
 
-[基于Arduino框架的ESP32代码参考](https://github.com/wxnlP/ESP32)
+- :fontawesome-solid-microchip: __STM32__ 
 
-[FreeRTOS对应源码](https://github.com/wxnlP/FreeRTOS?tab=readme-ov-file)
+  ---
 
-国内Gitee仓库：
+  STM32学习笔记，参考江科大B站视频，以HAL库为基础，理论与实践结合。
 
-[仓库 - wxnlP (wxnlP) - Gitee.com](https://gitee.com/wxnlP/projects?sort=&scope=&state=public)
+  [:octicons-arrow-right-24: 开始学习🥰](study\STM32\0.阅读声明.md)
+
+- <img src="/assets/ohos.svg" style="width:28px;height:28px;vertical-align:middle"> __OpenHarmony__
+
+  ---
+
+  OpenHarmony轻量系统开发，基于Hi3861芯片。
+  
+  [:octicons-arrow-right-24: 开始学习😃](study\OpenHarmony\0.阅读前的声明.md)
+
+- <img src="/assets/freeRTOS.svg" style="width:34px;height:32px;vertical-align:middle"> __FreeRTOS__
+
+  ---
+
+  基于STM32的FreeRTOS学习笔记。
+
+  [:octicons-arrow-right-24: 开始学习🤗](study\FreeRTOS\0.阅读声明.md)
+
+- <img src="/assets/yolo.svg" style="width:24px;height:24px;vertical-align:middle"> __YOLO__
+
+  ---
+
+  YOLOv5、YOLOv8模型训练指导，以及RDK X5的BPU模型转换教程。
+
+  [:octicons-arrow-right-24: 开始学习😋](study\FreeRTOS\0.阅读声明.md)
+
+- :fontawesome-brands-git-alt: __Git__
+
+  ---
+
+  Git基础使用，涉及本地项目管理、连接远程仓库等。
+
+  [:octicons-arrow-right-24: 开始学习😎](study/Git/Git.md)
+
+</div>
+
+
 
 ## 现实啊，莫要打击我
 

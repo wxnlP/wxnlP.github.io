@@ -30,7 +30,8 @@ nav:
       - 第八章 Wi-Fi: study/OpenHarmony/8.wifi.md
       - 第十章 MQTT: study/OpenHarmony/10.MQTT.md
   - ROS2:
-    - ROS2环境准备:
+    - 阅读声明: study/ROS2/0.阅读声明.md
+    - ROS2环境准备: 
       - 第一章 ROS与ROS2介绍: study/ROS2/1-ROS与ROS2介绍.md
       - 第二章 ROS2系统环境安装: study/ROS2/2-ROS2系统环境安装.md
       - 第三章 ROS2工具准备: study/ROS2/3-ROS2工具准备.md
