@@ -21,6 +21,8 @@ comments: true
 
   国内Gitee主页，不会魔法可以优先访问此仓库，内容与Github一致。
 
+  [:octicons-arrow-right-24: 开始学习😄](https://gitee.com/wxnlP)
+
 - <img src="/assets/ros.svg" style="width:39px;height:39px;vertical-align:middle"> __ROS2__
 
   ---
