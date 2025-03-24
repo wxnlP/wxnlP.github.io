@@ -61,7 +61,7 @@ comments: true
 
   YOLOv5、YOLOv8模型训练指导，以及RDK X5的BPU模型转换教程。
 
-  [:octicons-arrow-right-24: 开始学习😋](study\FreeRTOS\0.阅读声明.md)
+  [:octicons-arrow-right-24: 开始学习😋](study\yolov5\1.md)
 
 - :fontawesome-brands-git-alt: __Git__
 
