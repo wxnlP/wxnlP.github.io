@@ -86,7 +86,7 @@ git log
 
 想要看提交了哪些文件可以借助Vscode等编译工具。
 
-![image-20250301162703681](Git/image-20250301162703681.png)
+![image-20250301162703681](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301162703681.png)
 
 ### 忽略文件gitignore
 
@@ -112,11 +112,11 @@ ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub
 ```
 
-![image-20240915204625351](Git/image-20240915204625351.png)
+![image-20240915204625351](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20240915204625351.png)
 
 复制上述内容至GitHub
 
-![image-20240915204855019](Git/image-20240915204855019.png)
+![image-20240915204855019](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20240915204855019.png)
 
 检查配置是否完成
 
@@ -155,7 +155,7 @@ git clone <repository_url>
 
 若下图所示的ROS2仓库管理，前部分是我在RDKX5实机上做的维护，后面是用虚拟机做的维护，可以说是无缝衔接。
 
-![image-20250318203551039](Git/image-20250318203551039.png)
+![image-20250318203551039](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318203551039.png)
 
 ## Git进阶使用
 
@@ -165,7 +165,7 @@ git clone <repository_url>
 git status
 ```
 
-![image-20250318211322820](Git/image-20250318211322820.png)
+![image-20250318211322820](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318211322820.png)
 
 同时可以查看具体的修改位置
 
@@ -173,7 +173,7 @@ git status
 git diff 
 ```
 
-![image-20250318211502529](Git/image-20250318211502529.png)
+![image-20250318211502529](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318211502529.png)
 
 ### 撤销代码
 
@@ -191,21 +191,21 @@ git reset
 
 ③ 已经提交更改，为上传服务器。
 
-使用`git log`查看日志
+使用`git log`查看日志
 
 ```shell
 git log
 ```
 
-![image-20250318212221953](Git/image-20250318212221953.png)
+![image-20250318212221953](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318212221953.png)
 
-将Git恢复到`修改依赖名称`的阶段，使用`git reset + commit`
+将Git恢复到`修改依赖名称`的阶段，使用`git reset + commit`
 
 ```shell
 git reset 41fb438af114aae1f182579422c2f115a7a8148d
 ```
 
-![image-20250318212348254](Git/image-20250318212348254.png)
+![image-20250318212348254](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318212348254.png)
 
 ### Git分支
 
@@ -231,7 +231,7 @@ git checkout rolling
 
 两个分支修改提交互不影响，如下图：我在`main`分支提交了README更新，但`rolling`依旧是创建时候的样子。
 
-![image-20250318213558453](Git/image-20250318213558453.png)
+![image-20250318213558453](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318213558453.png)
 
 ④ 合并分支
 
@@ -241,7 +241,7 @@ git checkout rolling
 git merge main
 ```
 
-![image-20250318213936585](Git/image-20250318213936585.png)
+![image-20250318213936585](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318213936585.png)
 
 ⑤ 删除分支
 

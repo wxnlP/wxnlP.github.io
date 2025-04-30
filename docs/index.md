@@ -115,7 +115,7 @@ python -m mkdocs serve
 ### 图床
 
 ```shell
-https://cdn.jsdelivr.net/gh/wxnlP/pic
+https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon
 ```
 
 

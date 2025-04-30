@@ -51,7 +51,6 @@ nav:
       - 第十一章 可视化工具: study/ROS2/11-可视化工具.md
     - ROS2建模与仿真:
       - 第十二章 URDF建模: study/ROS2/12-URDF建模.md
-      
     - ROS2番外篇:
       - New.ROS2与CAN总线: study/ROS2/New.ROS2使用CAN.md
   - STM32系列:
@@ -90,6 +89,9 @@ nav:
       - 任务通知: study/FreeRTOS/8.任务通知.md
       - 软件定时器: study/FreeRTOS/9.软件定时器.md
       - 中断管理: study/FreeRTOS/10.中断管理.md
+  - Linux驱动:
+    - C语言精通之路:
+      - Linux编译工具链: study/Linux/1.Linux编译工具链.md
   - 控制算法: 
     - PID控制: study/控制算法/PID.md
   - 芯片学习系列:
