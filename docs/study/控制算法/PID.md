@@ -31,7 +31,7 @@ $$
 
 若用控制的语言表达则如下结构图：
 
-![PID](PID/PID.png)
+![PID](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/PID.png)
 
 ### 1.3 PID各项作用
 

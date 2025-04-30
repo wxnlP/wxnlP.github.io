@@ -2444,9 +2444,9 @@
 
 <h1 id="_1">第五章 话题通信<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>话题通信是ROS中使用频率最高的一种通信模式，话题通信是基于 <strong>发布订阅</strong> 模式的，也即：一个节点发布消息，另一个节点订阅该消息。如下图中，Topic模块的数据流动即是话题通信模型：</p>
-<p><img alt="Topic-SinglePublisherandSingleSubscriber" src="Topic-SinglePublisherandSingleSubscriber.gif" /></p>
+<p><img alt="Topic-SinglePublisherandSingleSubscriber" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/Topic-SinglePublisherandSingleSubscriber.gif" /></p>
 <p>节点可以将数据发布到任意数量的话题，同时订阅任意数量的话题。</p>
-<p><img alt="Topic-MultiplePublisherandMultipleSubscriber" src="Topic-MultiplePublisherandMultipleSubscriber.gif" /></p>
+<p><img alt="Topic-MultiplePublisherandMultipleSubscriber" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/Topic-MultiplePublisherandMultipleSubscriber.gif" /></p>
 <p>话题通信的特点：</p>
 <ul>
 <li>以发布订阅的方式实现不同节点的数据交流，数据发布对象称为 <strong>发布者</strong> ，数据订阅对象称之为 <strong>订阅者</strong> 。</li>
@@ -2562,7 +2562,7 @@
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ros2<span class="w"> </span>run<span class="w"> </span>py_topic<span class="w"> </span>subscriber_py
 </span></code></pre></div>
-<p><img alt="image-20241119235458712" src="image-20241119235458712.png" /></p>
+<p><img alt="image-20241119235458712" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241119235458712.png" /></p>
 <p>由于发布者并没有一直打印日志，故只有一句信息，为订阅者这是订阅到以后就打印一句。</p>
 <h2 id="53-c">5.3 C++原生数据话题示例<a class="headerlink" href="#53-c" title="Permanent link">&para;</a></h2>
 <h3 id="531">5.3.1 发布者<a class="headerlink" href="#531" title="Permanent link">&para;</a></h3>
@@ -2892,7 +2892,7 @@
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>ros2<span class="w"> </span>run<span class="w"> </span>cpp_topic<span class="w"> </span>subscriber_cpp
 </span></code></pre></div>
-<p><img alt="image-20241120170915141" src="image-20241120170915141.png" /></p>
+<p><img alt="image-20241120170915141" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241120170915141.png" /></p>
 <h2 id="54">5.4 话题自定义消息接口实践<a class="headerlink" href="#54" title="Permanent link">&para;</a></h2>
 <h3 id="541">5.4.1 案例需求<a class="headerlink" href="#541" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
@@ -2915,7 +2915,7 @@
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>status_interfaces<span class="w"> </span>--build-type<span class="w"> </span>ament_cmake<span class="w"> </span>--dependencies<span class="w"> </span>rosidl_default_generators<span class="w"> </span>builtin_interfaces<span class="w"> </span>--license<span class="w"> </span>Apache-2.0
 </span></code></pre></div>
 <p>新建<code>msg</code>文件夹，创建接口文件，使用大驼峰命名，目录如下：</p>
-<p><img alt="image-20250227144723711" src="image-20250227144723711.png" /></p>
+<p><img alt="image-20250227144723711" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250227144723711.png" /></p>
 <p><code>SystemStatus.msg</code>文件内容：</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>builtin_interfaces/Time stamp   # 时间戳
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>string host_name                # 系统名称
@@ -2950,7 +2950,7 @@
 </span></code></pre></div>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>ros2<span class="w"> </span>interface<span class="w"> </span>show<span class="w"> </span>status_interfaces/msg/SystemStatus
 </span></code></pre></div>
-<p><img alt="image-20250227150339264" src="image-20250227150339264.png" /></p>
+<p><img alt="image-20250227150339264" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250227150339264.png" /></p>
 <h3 id="544">5.4.4 功能包准备<a class="headerlink" href="#544" title="Permanent link">&para;</a></h3>
 <p>发布者功能包</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>status_publisher<span class="w"> </span>--build-type<span class="w"> </span>ament_python<span class="w"> </span>--dependencies<span class="w"> </span>rclpy<span class="w"> </span>status_interfaces<span class="w"> </span>--license<span class="w"> </span>Apache-2.0
@@ -3145,13 +3145,13 @@
 <p>运行订阅者</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>status_subscriber<span class="w"> </span>sys_status_sub
 </span></code></pre></div>
-<p><img alt="image-20250301111904543" src="image-20250301111904543.png" /></p>
+<p><img alt="image-20250301111904543" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301111904543.png" /></p>
 <p>运行发布者</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>status_publisher<span class="w"> </span>sys_status_pub
 </span></code></pre></div>
-<p><img alt="image-20250301112014220" src="image-20250301112014220.png" /></p>
+<p><img alt="image-20250301112014220" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301112014220.png" /></p>
 <p>订阅者更新</p>
-<p><img alt="image-20250301112046107" src="image-20250301112046107.png" /></p>
+<p><img alt="image-20250301112046107" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301112046107.png" /></p>
 
 
 

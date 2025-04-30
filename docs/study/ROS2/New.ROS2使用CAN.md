@@ -148,7 +148,7 @@ can_sender_cpp
 
 运行结果：
 
-![image-20250223140554986](New.ROS2%E4%BD%BF%E7%94%A8CAN/image-20250223140554986.png)
+![image-20250223140554986](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250223140554986.png)
 
 ### 2.3 CAN接收
 
@@ -227,10 +227,10 @@ int main(int argc, char *argv[])
 
 ⚠有一个问题就是，`unsigned char message[4] = {0};`接收数据的数组要和发送的字节数一致，否则会报一个错：
 
-![image-20250223170924849](New.ROS2%E4%BD%BF%E7%94%A8CAN/image-20250223170924849.png)
+![image-20250223170924849](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250223170924849.png)
 
 当然这样做个人认为并非好的处理方式，但暂时还未找到合适的解决方案。只能发送方按传统CAN协议的最大字节数 8 ，没有用的位置 `0x00`。
 
 运行结果，`291`为报文ID：
 
-![image-20250223171250116](New.ROS2%E4%BD%BF%E7%94%A8CAN/image-20250223171250116.png)
+![image-20250223171250116](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250223171250116.png)

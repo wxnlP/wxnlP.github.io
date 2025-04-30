@@ -2450,11 +2450,11 @@
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>node<span class="w"> </span>list
 </span></code></pre></div>
 <p>如下图，打开<kbd>turtlesim</kbd>下的<kbd>turtlesim_node</kbd>节点，可以查看到节点<kbd>turtlesim</kbd></p>
-<p><img alt="image-20241119164325908" src="image-20241119164325908.png" /></p>
+<p><img alt="image-20241119164325908" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241119164325908.png" /></p>
 <p>查看节点信息，注意节点名称有<code>/</code>：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>node<span class="w"> </span>info<span class="w"> </span>&lt;node_name&gt;<span class="w"> </span>
 </span></code></pre></div>
-<p><img alt="image-20241119165011698" src="image-20241119165011698.png" /></p>
+<p><img alt="image-20241119165011698" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241119165011698.png" /></p>
 <p>重映射节点名称：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node<span class="w"> </span>--ros-args<span class="w"> </span>--remap<span class="w"> </span>__node:<span class="o">=</span>my_turtle
 </span></code></pre></div>
@@ -2501,7 +2501,7 @@
 <p>！！！进入<code>wkspace1/src</code>目录</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span>src
 </span></code></pre></div>
-<p><img alt="image-20241119174905522" src="image-20241119174905522.png" /></p>
+<p><img alt="image-20241119174905522" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241119174905522.png" /></p>
 <h4 id="1">1. 创建功能包<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_py<span class="w"> </span>--build-type<span class="w"> </span>ament_python<span class="w">  </span>--dependencies<span class="w"> </span>rclpy<span class="w">  </span>--node-name<span class="w"> </span>helloworld
 </span></code></pre></div>
@@ -2513,7 +2513,7 @@
 <li><code>--node-name</code>----节点名称 ，可以在创建功能包的时候创建一个节点，也可以选择自己手动添加</li>
 </ul>
 <p>创建功能包以后会出现一个警告“未知的许可证”</p>
-<p><img alt="image-20241119174439848" src="image-20241119174439848.png" /></p>
+<p><img alt="image-20241119174439848" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241119174439848.png" /></p>
 <p>这个经过不影响后续操作，感觉不舒服，添加一个许可证即可消除警告</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_py<span class="w"> </span>--build-type<span class="w"> </span>ament_python<span class="w">  </span>--dependencies<span class="w"> </span>rclpy<span class="w">  </span>--node-name<span class="w"> </span>helloworld<span class="w"> </span>--license<span class="w"> </span>Apache-2.0
 </span></code></pre></div>
@@ -2578,12 +2578,12 @@
 </span></code></pre></div>
 <h4 id="5">5. 节点混淆错误解释<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
 <p>初学者很容易弄混，<code>setup.py</code>中的 <strong>映射名称</strong> <code>helloworld</code>，和源代码中的<code>rclpy.create_node("helloworld_node")</code>中的<code>helloworld_node</code>都是节点。但事实上，<code>helloworld</code>是映射源文件与可执行文件的一个别称，仅用于终端运行可执行文件时使用；而<code>helloworld_node</code>才是真正的节点名称，即可以用<kbd>ros2 node list</kbd>查到的节点，如下图：</p>
-<p><img alt="image-20241119182644318" src="image-20241119182644318.png" /></p>
+<p><img alt="image-20241119182644318" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241119182644318.png" /></p>
 <h3 id="434-c">4.3.4 C++示例<a class="headerlink" href="#434-c" title="Permanent link">&para;</a></h3>
 <p>！！！进入<code>wkspace1/src</code>目录</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">cd</span><span class="w"> </span>src
 </span></code></pre></div>
-<p><img alt="image-20241119174905522" src="image-20241119174905522.png" /></p>
+<p><img alt="image-20241119174905522" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241119174905522.png" /></p>
 <h4 id="1_1">1. 创建功能包<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>helloworld_cpp<span class="w"> </span>--build-type<span class="w"> </span>ament_cmake<span class="w">  </span>--dependencies<span class="w"> </span>rclcpp<span class="w">  </span>--node-name<span class="w"> </span>helloworld<span class="w"> </span>--license<span class="w"> </span>Apache-2.0
 </span></code></pre></div>
@@ -2633,7 +2633,7 @@
 </span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
 </span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><img alt="image-20250317152903802" src="image-20250317152903802.png" /></p>
+<p><img alt="image-20250317152903802" src="4-%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E4%B8%8E%E5%8A%9F%E8%83%BD%E5%8C%85/image-20250317152903802.png" /></p>
 <h4 id="3-cmakeliststxt">3. 修改CMakeLists.txt<a class="headerlink" href="#3-cmakeliststxt" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>我们创建功能包时创建了一个节点所以此部分可以忽略。</p>
@@ -2680,7 +2680,7 @@
 <p><strong>编译单个功能包</strong></p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span>helloworld_cpp
 </span></code></pre></div>
-<p><img alt="image-20241119191755520" src="image-20241119191755520.png" /></p>
+<p><img alt="image-20241119191755520" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241119191755520.png" /></p>
 <p><strong>source环境</strong></p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span></code></pre></div>
@@ -2721,7 +2721,7 @@
 </span><span id="__span-29-22"><a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a>    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="c1"># 保持节点运行，检测是否收到退出指令（Ctrl+C）</span>
 </span><span id="__span-29-23"><a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a>    <span class="n">rclpy</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span> <span class="c1"># 关闭rclpy</span>
 </span></code></pre></div>
-<p><img alt="image-20241119192952557" src="image-20241119192952557.png" /></p>
+<p><img alt="image-20241119192952557" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241119192952557.png" /></p>
 <h4 id="2-c">2. C++<a class="headerlink" href="#2-c" title="Permanent link">&para;</a></h4>
 <div class="language-cpp highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;rclcpp/rclcpp.hpp&quot;</span>
 </span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
@@ -2754,7 +2754,7 @@
 </span><span id="__span-30-29"><a id="__codelineno-30-29" name="__codelineno-30-29" href="#__codelineno-30-29"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-30-30"><a id="__codelineno-30-30" name="__codelineno-30-30" href="#__codelineno-30-30"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><img alt="image-20241119193813842" src="image-20241119193813842.png" /></p>
+<p><img alt="image-20241119193813842" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241119193813842.png" /></p>
 
 
 

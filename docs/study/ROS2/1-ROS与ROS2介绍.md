@@ -4,6 +4,12 @@ comments: true
 
 # 第一章 ROS与ROS2介绍
 
+> **机器人操作系统分为两个版本，第一代版本即ROS1通常称为ROS，而新一代的机器人操作系统称为ROS2，本文章是个人的学习笔记，用的是ROS2-Humble版本，结合各大知名教程总结学习而成，并加入个人的学习经验和对ROS2的一些看法。**
+>
+> 参考资料来源：[赵虚左老师的B站视频](https://www.bilibili.com/video/BV1VB4y137ys/?spm_id_from=333.337.search-card.all.click)	[微信ROS2文档](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU3Mjg0NDkxNw==&action=getalbum&album_id=3095145891872931841#wechat_redirect)	[鱼香ROS社区](https://fishros.com/#/fish_home)
+
+ROS是机器人操作系统(Robot Operating System)的英文缩写，是用于构建机器人应用程序的软件开发工具包。自ROS诞生以来，由于其集开源、免费、易用、低耦合、生态丰富......诸多优点于一身，迅速成为机器人行业内最受欢迎的开发框架之一，在学术、民用、商业、军事、航空航天等领域有着广泛的应用，并且随着ROS2对ROS1的全面迭代升级，也使得ROS日趋于完善，可预见的，未来很长一段时间，ROS仍将是机器人开发的中坚力量，而对于ROS自身而言，ROS1会慢慢退出，ROS2则冉冉升起。
+
 ## 1.1 ROS简介
 
 **ROS的出现场景**

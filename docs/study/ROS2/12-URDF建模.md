@@ -29,7 +29,7 @@ urdf 中为了保证 xml 语法的完整性，使用了robot标签作为根标�
 
 urdf 中的 link 标签用于描述机器人某个部件(也即刚体部分)的外观和物理属性，比如: 机器人底座、轮子、激光雷达、摄像头等。每一个部件都对应一个 link, 在 link 标签内，可以设计该部件的形状、尺寸、颜色、惯性矩阵、碰撞参数等一系列属性。
 
-![image-20250319224928546](12-URDF建模/image-20250319224928546.png)
+![image-20250319224928546](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250319224928546.png)
 
 属性：
 
@@ -66,7 +66,7 @@ urdf 中的 link 标签用于描述机器人某个部件(也即刚体部分)的�
 
 urdf 中的 joint 标签用于描述机器人关节的运动学和动力学属性，还可以指定关节运动的安全极限，机器人的两个部件(分别称之为 parent link 与 child link)以 ”关节“ 的形式相连接，不同的关节有不同的运动形式: 旋转、滑动、固定、旋转速度、旋转角度限制等。
 
-![image-20250319223346923](12-URDF建模/image-20250319223346923.png)
+![image-20250319223346923](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250319223346923.png)
 
 属性：
 
@@ -207,15 +207,15 @@ ros2 pkg create genimind_description --build-type ament_cmake --license Apache-2
 urdf_to_graphviz genimind.urdf
 ```
 
-![image-20250319231216572](12-URDF建模/image-20250319231216572.png)
+![image-20250319231216572](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250319231216572.png)
 
 新增两个文件，可以点开pdf瞅瞅，以树形结构显示了link与joint的关系。
 
-![image-20250319231256016](12-URDF建模/image-20250319231256016.png)
+![image-20250319231256016](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250319231256016.png)
 
 然后我们启动`rviz2`加载模型会发现TF错误，是因为我们写的`joint`未成功加载。
 
-![image-20250320094214981](12-URDF建模/image-20250320094214981.png)
+![image-20250320094214981](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320094214981.png)
 
 ### 12.2.2 rviz中加载模型
 
@@ -295,7 +295,7 @@ def generate_launch_description():
 
 可以使用`ros2 run robot_state_publisher robot_state_publisher --debug`查看报错输出，显示这个参数是URDF文件。
 
-![image-20250320112138142](12-URDF建模/image-20250320112138142.png)
+![image-20250320112138142](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320112138142.png)
 
 🕑`robot_description`参数并未传文件路径，而是使用`cat`指令传入了文件内容。
 
@@ -324,13 +324,13 @@ source install/setup.bash
 ros2 launch genimind_description genimind_model.launch.py
 ```
 
-![image-20250320112946017](12-URDF建模/image-20250320112946017.png)
+![image-20250320112946017](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320112946017.png)
 
 ### 12.2.3 初始化rviz
 
 🕐将添加过`TF`、`RobotModel`组件的rviz保存到功能包下config目录下。
 
-![image-20250320115414325](12-URDF建模/image-20250320115414325.png)
+![image-20250320115414325](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320115414325.png)
 
 🕑在launch中添加参数。
 
@@ -552,7 +552,7 @@ xacro语法的使用如下：
 sudo apt install ros-humble-xacro
 ```
 
-![image-20250320145513178](12-URDF建模/image-20250320145513178.png)
+![image-20250320145513178](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320145513178.png)
 
 集成`xacro`到launch，修改文件名和`cat`指令为`xacro`。
 
@@ -619,7 +619,7 @@ def generate_launch_description():
 
 编译运行效果如下。
 
-![image-20250320145741595](12-URDF建模/image-20250320145741595.png)
+![image-20250320145741595](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320145741595.png)
 
 ## 12.4 solidworks导出urdf
 
@@ -631,7 +631,7 @@ def generate_launch_description():
 
 下载`.exe`文件然后安装就可以了。
 
-![image-20250320154519232](12-URDF建模/image-20250320154519232.png)
+![image-20250320154519232](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320154519232.png)
 
 
 
@@ -641,47 +641,47 @@ def generate_launch_description():
 
 🕐 首先给四个轮子添加基准轴。
 
-![image-20250320162032664](12-URDF建模/image-20250320162032664.png)
+![image-20250320162032664](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320162032664.png)
 
 🕑给四个轮子个和底盘中心添加点。
 
-![image-20250320200122348](12-URDF建模/image-20250320200122348.png)
+![image-20250320200122348](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200122348.png)
 
 🕒添加坐标系(ROS中的坐标系为前X、左Y、上Z)。
 
-![image-20250320200230492](12-URDF建模/image-20250320200230492.png)
+![image-20250320200230492](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200230492.png)
 
 🕓插件导出urdf。
 
-![image-20250320162601165](12-URDF建模/image-20250320162601165.png)
+![image-20250320162601165](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320162601165.png)
 
 🕔配置link，每个link对应一个坐标系，与前面自己设置的坐标系对应。
 
-![image-20250320200443092](12-URDF建模/image-20250320200443092.png)
+![image-20250320200443092](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200443092.png)
 
 其余的link均一致，配置好所以link，然后`Export`导出。
 
-![image-20250320200628725](12-URDF建模/image-20250320200628725.png)
+![image-20250320200628725](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200628725.png)
 
 🕕确认一下坐标系、基准轴、joint类型是否正确，仿真参数不知道可以不加，点击`Next`。
 
-![image-20250320200756743](12-URDF建模/image-20250320200756743.png)
+![image-20250320200756743](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200756743.png)
 
 🕖导出功能包，名字最好和已有的功能包一致，就不用修改文件了。
 
-![image-20250320200957156](12-URDF建模/image-20250320200957156.png)
+![image-20250320200957156](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200957156.png)
 
 🕗导出的功能包不要直接用，版本好像是ROS1的，我们移植几个文件到我们的功能包即可。
 
-![image-20250320201312272](12-URDF建模/image-20250320201312272.png)
+![image-20250320201312272](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320201312272.png)
 
 移植到我们的功能包下后，目录如下：
 
-![image-20250320201455568](12-URDF建模/image-20250320201455568.png)
+![image-20250320201455568](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320201455568.png)
 
 urdf文件的每个link的这个名称一定和功能包一致，按我说的导出时填功能包的名字(即genimind_description)就不会错。
 
-![image-20250320201543682](12-URDF建模/image-20250320201543682.png)
+![image-20250320201543682](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320201543682.png)
 
 🕘修改launch和camke。
 
@@ -707,7 +707,7 @@ substitutions_cmd = launch.substitutions.Command(
 
 编译运行，结果如下：
 
-![image-20250320202234338](12-URDF建模/image-20250320202234338.png)
+![image-20250320202234338](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320202234338.png)
 
 ### 12.4.3 让轮子着地
 
@@ -768,4 +768,4 @@ substitutions_cmd = launch.substitutions.Command(
   </link>
 ```
 
-![image-20250320210837195](12-URDF建模/image-20250320210837195.png)
+![image-20250320210837195](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320210837195.png)

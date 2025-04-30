@@ -96,7 +96,7 @@ wget http://fishros.com/install -O fishros && . fishros
 ros2 run turtlesim turtlesim_node
 ```
 
-![image-20241114224406551](2-ROS2%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/image-20241114224527438.png)
+![image-20241114224406551](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241114224527438.png)
 
 ### 2.4.2 启动海龟键盘控制
 
@@ -106,6 +106,6 @@ ros2 run turtlesim turtlesim_node
 ros2 run turtlesim turtle_teleop_key
 ```
 
-![image-20241114224527438](2-ROS2%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/image-20241114224406551.png)
+![image-20241114224527438](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241114224406551.png)
 
 > 可以看到我有一次是输错命令，自己敲命令合理使用`Tab`键可以便捷敲出命令。

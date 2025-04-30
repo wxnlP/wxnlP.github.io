@@ -1990,7 +1990,7 @@
 
 <h2 id="111-rqt">11.1 rqt<a class="headerlink" href="#111-rqt" title="Permanent link">&para;</a></h2>
 <p>终端输入<code>rqt</code>即可启动该工具。</p>
-<p><img alt="image-20250318221658564" src="image-20250318221658564.png" /></p>
+<p><img alt="image-20250318221658564" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318221658564.png" /></p>
 <p>前面的章节我们使用过rqt的部分插件，这里介绍一下安装插件<code>rqt-tf-tree</code>和使用。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-rqt-tf-tree<span class="w"> </span>-y
 </span></code></pre></div>
@@ -1998,28 +1998,28 @@
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rm<span class="w"> </span>-rf<span class="w"> </span>~/.config/ros.org/rqt_gui.ini
 </span></code></pre></div>
 <p>在<code>Plugins</code>-&gt;<code>Visualization</code>中找到<code>tf tree</code>插件打开。</p>
-<p><img alt="image-20250318221934313" src="image-20250318221934313.png" /></p>
+<p><img alt="image-20250318221934313" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318221934313.png" /></p>
 <p>运行TF坐标转换的示例代码后：</p>
-<p><img alt="image-20250318222328243" src="image-20250318222328243.png" /></p>
+<p><img alt="image-20250318222328243" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318222328243.png" /></p>
 <h2 id="112-rviz">11.2 Rviz<a class="headerlink" href="#112-rviz" title="Permanent link">&para;</a></h2>
 <p><strong>RViz</strong> 是 ROS Visualization Tool 的缩写，直译为**ROS的三维可视化工具**。它的主要目的是以三维方式显示ROS消息，可以将数据进行可视化表达。例如：可以显示机器人模型、激光雷达数据、三维点云数据、从相机获取的图像值等。</p>
 <p>终端输入<code>rciz2</code>即可启动该工具。</p>
-<p><img alt="image-20250318222601089" src="image-20250318222601089.png" /></p>
+<p><img alt="image-20250318222601089" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318222601089.png" /></p>
 <p>左下角<code>Add</code>添加组件<code>TF</code>。</p>
-<p><img alt="image-20250318222820091" src="image-20250318222820091.png" /></p>
+<p><img alt="image-20250318222820091" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318222820091.png" /></p>
 <p>python的TF坐标变换可视化效果。</p>
-<p><img alt="image-20250318223136311" src="image-20250318223136311.png" /></p>
+<p><img alt="image-20250318223136311" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318223136311.png" /></p>
 <h2 id="113-ros2-bag">11.3 ROS2 bag<a class="headerlink" href="#113-ros2-bag" title="Permanent link">&para;</a></h2>
 <p>打开小海龟和按键控制，接着使用ros2 bag记录<code>/turtle1/cmd_vel</code>话题。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>bag<span class="w"> </span>record<span class="w"> </span>/turtle1/cmd_vel
 </span></code></pre></div>
-<p><img alt="image-20250318220431533" src="image-20250318220431533.png" /></p>
+<p><img alt="image-20250318220431533" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318220431533.png" /></p>
 <p>进行一段控制后打断记录，当前目录才会生成记录文件：</p>
-<p><img alt="image-20250318220810043" src="image-20250318220810043.png" /></p>
+<p><img alt="image-20250318220810043" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318220810043.png" /></p>
 <p>关闭键盘控制，保留小海龟模拟器，使用下列命令重播记录的内容。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>bag<span class="w"> </span>play<span class="w"> </span>rosbag2_2025_03_18-22_02_45/
 </span></code></pre></div>
-<p><img alt="image-20250318221104704" src="image-20250318221104704.png" /></p>
+<p><img alt="image-20250318221104704" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318221104704.png" /></p>
 
 
 

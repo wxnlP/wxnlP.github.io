@@ -2176,7 +2176,7 @@
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">)</span>
 </span></code></pre></div>
 <p>运行结果：</p>
-<p><img alt="image-20250223140554986" src="image-20250223140554986.png" /></p>
+<p><img alt="image-20250223140554986" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250223140554986.png" /></p>
 <h3 id="23-can">2.3 CAN接收<a class="headerlink" href="#23-can" title="Permanent link">&para;</a></h3>
 <div class="language-C++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;rclcpp/rclcpp.hpp&quot;</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ros2_socketcan/socket_can_receiver.hpp&quot;</span>
@@ -2250,10 +2250,10 @@
 </span><span id="__span-5-70"><a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>⚠有一个问题就是，<code>unsigned char message[4] = {0};</code>接收数据的数组要和发送的字节数一致，否则会报一个错：</p>
-<p><img alt="image-20250223170924849" src="image-20250223170924849.png" /></p>
+<p><img alt="image-20250223170924849" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250223170924849.png" /></p>
 <p>当然这样做个人认为并非好的处理方式，但暂时还未找到合适的解决方案。只能发送方按传统CAN协议的最大字节数 8 ，没有用的位置 <code>0x00</code>。</p>
 <p>运行结果，<code>291</code>为报文ID：</p>
-<p><img alt="image-20250223171250116" src="image-20250223171250116.png" /></p>
+<p><img alt="image-20250223171250116" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250223171250116.png" /></p>
 
 
 

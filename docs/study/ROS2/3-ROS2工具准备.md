@@ -14,7 +14,7 @@ sudo apt install terminator
 
 下载完以后<kbd>Ctrl+Alt+T</kbd> 命令就可以打开terminator终端，替换了默认的系统终端，同时在终端右键可以选择上下左右分隔多个终端。
 
-![image-20241125221219848](3-ROS2%E5%B7%A5%E5%85%B7%E5%87%86%E5%A4%87/image-20241125221219848.png)
+![image-20241125221219848](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241125221219848.png)
 
 **Terminator 常用快捷键**
 
@@ -107,11 +107,11 @@ sudo systemctl start ssh
 ifconfig
 ```
 
-![image-20241125222518979](3-ROS2%E5%B7%A5%E5%85%B7%E5%87%86%E5%A4%87/image-20241125222518979.png)
+![image-20241125222518979](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241125222518979.png)
 
 安装下图，输入自己的 **IP** 和 **用户名** 即可完成连接
 
-![image-20241125222317630](3-ROS2%E5%B7%A5%E5%85%B7%E5%87%86%E5%A4%87/image-20241125222317630.png)
+![image-20241125222317630](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241125222317630.png)
 
 
 
