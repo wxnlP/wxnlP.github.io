@@ -2125,35 +2125,35 @@
 <p>① 打开一个小海龟模拟器窗口</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node
 </span></code></pre></div>
-<p><img alt="image-20250301131313690" src="image-20250301131313690.png" /></p>
+<p><img alt="image-20250301131313690" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301131313690.png" /></p>
 <p>② 查看带有<code>parameter</code>的服务，这些是与参数相关的服务，提供参数的查询与设置</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ros2<span class="w"> </span>service<span class="w"> </span>list<span class="w"> </span>-t<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>parameter
 </span></code></pre></div>
-<p><img alt="image-20250303130210353" src="image-20250303130210353.png" /></p>
+<p><img alt="image-20250303130210353" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303130210353.png" /></p>
 <p>③ 查看参数列表，其中背景相关三个参数是显示声明的，其余是默认参数</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>param<span class="w"> </span>list
 </span></code></pre></div>
-<p><img alt="image-20250303130356817" src="image-20250303130356817.png" /></p>
+<p><img alt="image-20250303130356817" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303130356817.png" /></p>
 <p>④ 查看参数的具体描述</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>param<span class="w"> </span>describe<span class="w"> </span>/turtlesim<span class="w"> </span>background_r
 </span></code></pre></div>
-<p><img alt="image-20250303130657190" src="image-20250303130657190.png" /></p>
+<p><img alt="image-20250303130657190" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303130657190.png" /></p>
 <p>⑤ 获取当前节点的参数值</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>param<span class="w"> </span>get<span class="w"> </span>/turtlesim<span class="w"> </span>background_r
 </span></code></pre></div>
-<p><img alt="image-20250303130826125" src="image-20250303130826125.png" /></p>
+<p><img alt="image-20250303130826125" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303130826125.png" /></p>
 <p>⑥ 修改参数值</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ros2 param set /turtlesim background_r 255
 </span></code></pre></div>
-<p><img alt="image-20250303130945694" src="image-20250303130945694.png" /></p>
+<p><img alt="image-20250303130945694" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303130945694.png" /></p>
 <p>⑦ 将参数导出为<code>yaml</code>文件，以便修改多个参数</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ros2<span class="w"> </span>param<span class="w"> </span>dump<span class="w"> </span>/turtlesim<span class="w"> </span>&gt;<span class="w"> </span>turtlesim_param.yaml
 </span></code></pre></div>
-<p><img alt="image-20250303131205907" src="image-20250303131205907.png" /></p>
+<p><img alt="image-20250303131205907" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303131205907.png" /></p>
 <p>直接修改<code>yaml</code>文件，然后下次运行时带上该文件</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node<span class="w"> </span>--ros-args<span class="w"> </span>--params-file<span class="w"> </span>turtlesim_param.yaml
 </span></code></pre></div>
-<p><img alt="image-20250303131443595" src="image-20250303131443595.png" /></p>
+<p><img alt="image-20250303131443595" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303131443595.png" /></p>
 <h2 id="72-python">7.2 Python参数服务<a class="headerlink" href="#72-python" title="Permanent link">&para;</a></h2>
 <h3 id="721">7.2.1 参数声明与设置<a class="headerlink" href="#721" title="Permanent link">&para;</a></h3>
 <p>修改<code>detect_service_py/detect_service_py/detect_service.py</code>，使用参数声明：</p>
@@ -2175,7 +2175,7 @@
 <p>重新编译运行节点以后，就可以查看参数已经识别：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ros2<span class="w"> </span>param<span class="w"> </span>list
 </span></code></pre></div>
-<p><img alt="image-20250303150159980" src="image-20250303150159980.png" /></p>
+<p><img alt="image-20250303150159980" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303150159980.png" /></p>
 <p>可以在启动节点时使用参数，加上<code>--ros-args -p</code>：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>detect_service_py<span class="w"> </span>face_detect_service<span class="w"> </span>--ros-args<span class="w"> </span>-p<span class="w"> </span>face_locations_upsample_times:<span class="o">=</span><span class="m">2</span>
 </span></code></pre></div>
@@ -2209,14 +2209,14 @@
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>ros2<span class="w"> </span>param<span class="w"> </span><span class="nb">set</span><span class="w"> </span>/face_detect<span class="w"> </span>face_locations_upsample_times<span class="w"> </span><span class="m">1</span>
 </span></code></pre></div>
 <p>修改结果</p>
-<p><img alt="image-20250303153506891" src="image-20250303153506891.png" /></p>
+<p><img alt="image-20250303153506891" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303153506891.png" /></p>
 <h3 id="723">7.2.3 修改其他节点的参数<a class="headerlink" href="#723" title="Permanent link">&para;</a></h3>
 <p>修改其他节点的参数，需要用到服务通信发送请求，原因看下图，当我们运行服务端时，有很多关于参数的服务，其中我们就需要使用<code>/face_detect/set_parameters</code>服务设置参数。</p>
-<p><img alt="image-20250303155951334" src="image-20250303155951334.png" /></p>
+<p><img alt="image-20250303155951334" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303155951334.png" /></p>
 <p>查看消息接口内容</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ros2<span class="w"> </span>interface<span class="w"> </span>show<span class="w"> </span>rcl_interfaces/srv/SetParameters
 </span></code></pre></div>
-<p><img alt="image-20250303160501788" src="image-20250303160501788.png" /></p>
+<p><img alt="image-20250303160501788" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303160501788.png" /></p>
 <p>修改<code>detect_service_py/detect_service_py/detect_client.py</code></p>
 <div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># 导入设置参数的服务消息接口</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kn">from</span> <span class="nn">rcl_interfaces.srv</span> <span class="kn">import</span> <span class="n">SetParameters</span>
@@ -2281,7 +2281,7 @@
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>detect_service_py<span class="w"> </span>face_detect_client
 </span></code></pre></div>
 <p>运行结果</p>
-<p><img alt="image-20250303163307819" src="image-20250303163307819.png" /></p>
+<p><img alt="image-20250303163307819" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303163307819.png" /></p>
 <h2 id="73-c">7.3 C++参数服务<a class="headerlink" href="#73-c" title="Permanent link">&para;</a></h2>
 <h3 id="731">7.3.1 参数声明与设置<a class="headerlink" href="#731" title="Permanent link">&para;</a></h3>
 <p>修改<code>patrol_service_cpp/src/patrol_service.cpp</code>，使用参数声明：</p>
@@ -2300,7 +2300,7 @@
 </span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="p">};</span>
 </span></code></pre></div>
 <p>重新编译运行节点以后，就可以查看参数已经识别：</p>
-<p><img alt="image-20250303165611541" src="image-20250303165611541.png" /></p>
+<p><img alt="image-20250303165611541" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303165611541.png" /></p>
 <h3 id="732">7.3.2 订阅参数更新<a class="headerlink" href="#732" title="Permanent link">&para;</a></h3>
 <p>方法与Python保持一致，API名称有所不同。</p>
 <div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">TurtleController</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span>
@@ -2335,7 +2335,7 @@
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span>patrol_service_cpp
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span></code></pre></div>
-<p><img alt="image-20250303174014806" src="image-20250303174014806.png" /></p>
+<p><img alt="image-20250303174014806" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303174014806.png" /></p>
 <h3 id="733">7.3.3 修改其他节点的参数<a class="headerlink" href="#733" title="Permanent link">&para;</a></h3>
 <p>修改<code>patrol_service_cpp/src/patrol_client.cpp</code></p>
 <div class="language-c++ highlight"><span class="filename">C++</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;rcl_interfaces/msg/parameter.hpp&quot;</span>
@@ -2408,7 +2408,7 @@
 </span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span></code></pre></div>
 <p>先打开小海龟，接着打开服务端，最后打开客户端，参数修改成功：</p>
-<p><img alt="image-20250303193531008" src="image-20250303193531008.png" /></p>
+<p><img alt="image-20250303193531008" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250303193531008.png" /></p>
 
 
 

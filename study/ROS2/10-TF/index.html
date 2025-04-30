@@ -2328,16 +2328,16 @@
 <p>① 使用静态坐标变换发布<code>base_link</code>和<code>base_laser</code>之间的坐标关系。其中，<code>--frame-id</code>为父坐标系名称，<code>-child-frame-id</code>为子坐标系名称。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> </span>static_transform_publisher<span class="w"> </span>--x<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--y<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>--z<span class="w"> </span><span class="m">0</span>.2<span class="w"> </span>--roll<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>--pitch<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>--yaw<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>--frame-id<span class="w"> </span>base_link<span class="w"> </span>--child-frame-id<span class="w"> </span>base_laser
 </span></code></pre></div>
-<p><img alt="image-20250309202906783" src="image-20250309202906783.png" /></p>
+<p><img alt="image-20250309202906783" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250309202906783.png" /></p>
 <p>其中<code>--roll 0.0 --pitch 0.0 --yaw 0.0</code>是欧拉角，分别为横滚角、俯仰角、偏航角。而命令行返回的<code>rotation</code>有四个数，这里是使用四元数来表示的旋转姿态。其中ROS中使用四元数居多，且欧拉角具有万向锁等确定，但易于看出旋转变化，所以在图形化界面多采用欧拉角展示旋转姿态。</p>
 <p>② 使用静态坐标变换发布<code>base_laser</code>和<code>wall_point</code>之间的坐标关系。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> </span>static_transform_publisher<span class="w"> </span>--x<span class="w"> </span><span class="m">0</span>.3<span class="w"> </span>--y<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>--z<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>--roll<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>--pitch<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>--yaw<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>--frame-id<span class="w"> </span>base_laser<span class="w"> </span>--child-frame-id<span class="w"> </span>wall_point
 </span></code></pre></div>
-<p><img alt="image-20250309202824186" src="image-20250309202824186.png" /></p>
+<p><img alt="image-20250309202824186" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250309202824186.png" /></p>
 <p>③ 计算坐标系关系</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>tf2_ros<span class="w"> </span>tf2_echo<span class="w"> </span>base_link<span class="w"> </span>wall_point
 </span></code></pre></div>
-<p><img alt="image-20250309203249082" src="image-20250309203249082.png" /></p>
+<p><img alt="image-20250309203249082" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250309203249082.png" /></p>
 <p>其中，<code>Translation</code>即为转换结果，相对于<code>base_link</code>而言，<code>wall_point</code>的坐标位置。其余四项数据均是表示旋转姿态，<code>Quaternion</code>为四元数，<code>Matrix</code>为旋转矩阵，其他两项为弧度、角度单位下的欧拉角。</p>
 <h3 id="1012-mrpt">10.1.2 mrpt工具<a class="headerlink" href="#1012-mrpt" title="Permanent link">&para;</a></h3>
 <p><strong>mrpt</strong> 工具可以可视化的看到四元数、欧拉角下的姿态变化。</p>
@@ -2347,27 +2347,27 @@
 <p>打开工具</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>3d-rotation-converter
 </span></code></pre></div>
-<p><img alt="image-20250309211027005" src="image-20250309211027005.png" /></p>
+<p><img alt="image-20250309211027005" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250309211027005.png" /></p>
 <h3 id="1013-tf">10.1.3 TF消息接口<a class="headerlink" href="#1013-tf" title="Permanent link">&para;</a></h3>
 <p>在发布完两个坐标变换后，可以在终端查看话题。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ros2<span class="w"> </span>topic<span class="w"> </span>list
 </span></code></pre></div>
-<p><img alt="image-20250317195809263" src="image-20250317195809263.png" /></p>
+<p><img alt="image-20250317195809263" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250317195809263.png" /></p>
 <p><code>tf_static</code>是一个静态坐标变换话题，可以用来发布静态设备的坐标。例如：雷达、相机等坐标固定的设备。</p>
 <p>计算坐标系关系后，再次查看会多一个<code>tf</code>动态坐标变换话题，可以用来发布动态设备的坐标。例如：轮子这类坐标会实时变化的设备。</p>
-<p><img alt="image-20250317201444428" src="image-20250317201444428.png" /></p>
+<p><img alt="image-20250317201444428" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250317201444428.png" /></p>
 <p>使用<code>ros2 topic list -t</code>可以查看话题的消息接口，然后查看静态坐标变换话题的消息接口的具体内容。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ros2<span class="w"> </span>interface<span class="w"> </span>show<span class="w"> </span>tf2_msgs/msg/TFMessage
 </span></code></pre></div>
-<p><img alt="image-20250317201610506" src="image-20250317201610506.png" /></p>
+<p><img alt="image-20250317201610506" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250317201610506.png" /></p>
 <p>同时也可以使用命令行订阅话题获取坐标计算结果。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ros2<span class="w"> </span>topic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/tf_static<span class="w"> </span>
 </span></code></pre></div>
-<p><img alt="image-20250317201953097" src="image-20250317201953097.png" /></p>
+<p><img alt="image-20250317201953097" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250317201953097.png" /></p>
 <h2 id="102-python">10.2 Python手眼坐标变换<a class="headerlink" href="#102-python" title="Permanent link">&para;</a></h2>
 <h3 id="1021">10.2.1 案例需求<a class="headerlink" href="#1021" title="Permanent link">&para;</a></h3>
 <p>如图所示，机械臂位置<code>base_link</code>和相机位置<code>camera_link</code>固定不变，且图中有坐标关系和旋转角度。相机识别到<code>bottle_link</code>坐标，然后经过坐标变换让机械臂知道<code>bottle_link</code>与<code>base_link</code>的相对坐标关系，实现抓取工作。</p>
-<p><img alt="image-20250317202404831" src="image-20250317202404831.png" /></p>
+<p><img alt="image-20250317202404831" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250317202404831.png" /></p>
 <h3 id="1022">10.2.2 功能包准备<a class="headerlink" href="#1022" title="Permanent link">&para;</a></h3>
 <p>安装需要的库，其中<code>$ROS_DISTRO</code>指当前环境的ROS版本，无需自己替换。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-<span class="nv">$ROS_DISTRO</span>-tf-transformations
@@ -2554,11 +2554,11 @@
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span></code></pre></div>
 <p>依次运行三个节点</p>
-<p><img alt="image-20250317232424782" src="image-20250317232424782.png" /></p>
+<p><img alt="image-20250317232424782" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250317232424782.png" /></p>
 <h2 id="104-cpp">10.4 Cpp地图坐标变换<a class="headerlink" href="#104-cpp" title="Permanent link">&para;</a></h2>
 <h3 id="1041">10.4.1 案例需求<a class="headerlink" href="#1041" title="Permanent link">&para;</a></h3>
 <p>地图坐标系为<code>map</code>，机器人坐标系<code>base_link</code>，目标位置点为<code>target_point</code>。其中<code>map</code>为主坐标系，已知<code>base_link</code>、<code>target_point</code>和<code>map</code>的坐标关系，计算机器人到目标位置的坐标。</p>
-<p><img alt="image-20250318113745422" src="image-20250318113745422.png" /></p>
+<p><img alt="image-20250318113745422" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318113745422.png" /></p>
 <h3 id="1042">10.4.2 功能包准备<a class="headerlink" href="#1042" title="Permanent link">&para;</a></h3>
 <p><code>tf2_geometry_msgs</code>涉及一些类型转换。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>ros2<span class="w"> </span>pkg<span class="w"> </span>create<span class="w"> </span>cpp_tf<span class="w"> </span>--build-type<span class="w"> </span>ament_cmake<span class="w"> </span>--dependencies<span class="w"> </span>rclcpp<span class="w"> </span>geometry_msgs<span class="w"> </span>tf2_ros<span class="w"> </span>tf2_geometry_msgs<span class="w"> </span>--license<span class="w"> </span>Apache-2.0

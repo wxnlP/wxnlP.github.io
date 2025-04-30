@@ -2293,7 +2293,7 @@
 </span></code></pre></div>
 <h3 id="1213-link">12.1.3 link标签<a class="headerlink" href="#1213-link" title="Permanent link">&para;</a></h3>
 <p>urdf 中的 link 标签用于描述机器人某个部件(也即刚体部分)的外观和物理属性，比如: 机器人底座、轮子、激光雷达、摄像头等。每一个部件都对应一个 link, 在 link 标签内，可以设计该部件的形状、尺寸、颜色、惯性矩阵、碰撞参数等一系列属性。</p>
-<p><img alt="image-20250319224928546" src="image-20250319224928546.png" /></p>
+<p><img alt="image-20250319224928546" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250319224928546.png" /></p>
 <p>属性：</p>
 <ul>
 <li><kbd>name</kbd>：用于指定 link 的名称。</li>
@@ -2340,7 +2340,7 @@
 </div>
 <h3 id="1214-joint">12.1.4 joint标签<a class="headerlink" href="#1214-joint" title="Permanent link">&para;</a></h3>
 <p>urdf 中的 joint 标签用于描述机器人关节的运动学和动力学属性，还可以指定关节运动的安全极限，机器人的两个部件(分别称之为 parent link 与 child link)以 ”关节“ 的形式相连接，不同的关节有不同的运动形式: 旋转、滑动、固定、旋转速度、旋转角度限制等。</p>
-<p><img alt="image-20250319223346923" src="image-20250319223346923.png" /></p>
+<p><img alt="image-20250319223346923" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250319223346923.png" /></p>
 <p>属性：</p>
 <ul>
 <li><kbd>name</kbd>：为关节命名，名称需要唯一。</li>
@@ -2514,11 +2514,11 @@
 <p>进入<code>genimind_description/urdf</code>目录，输入以下命令：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>urdf_to_graphviz<span class="w"> </span>genimind.urdf
 </span></code></pre></div>
-<p><img alt="image-20250319231216572" src="image-20250319231216572.png" /></p>
+<p><img alt="image-20250319231216572" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250319231216572.png" /></p>
 <p>新增两个文件，可以点开pdf瞅瞅，以树形结构显示了link与joint的关系。</p>
-<p><img alt="image-20250319231256016" src="image-20250319231256016.png" /></p>
+<p><img alt="image-20250319231256016" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250319231256016.png" /></p>
 <p>然后我们启动<code>rviz2</code>加载模型会发现TF错误，是因为我们写的<code>joint</code>未成功加载。</p>
-<p><img alt="image-20250320094214981" src="image-20250320094214981.png" /></p>
+<p><img alt="image-20250320094214981" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320094214981.png" /></p>
 <h3 id="1222-rviz">12.2.2 rviz中加载模型<a class="headerlink" href="#1222-rviz" title="Permanent link">&para;</a></h3>
 <p>要成功加载urdf模型，我们需要使用两个话题，<code>robot_state_publisher</code>和<code>joint_state_publisher</code>，而话题内容无需我们自己写，安装对应的库即可。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-joint-state-publisher
@@ -2584,7 +2584,7 @@
 <p><code>rviz</code>加载<code>urdf</code>模型程序有几点需要注意：</p>
 <p>🕐<code>robot_state_publisher</code>话题需要一个<code>robot_description</code>参数。</p>
 <p>可以使用<code>ros2 run robot_state_publisher robot_state_publisher --debug</code>查看报错输出，显示这个参数是URDF文件。</p>
-<p><img alt="image-20250320112138142" src="image-20250320112138142.png" /></p>
+<p><img alt="image-20250320112138142" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320112138142.png" /></p>
 <p>🕑<code>robot_description</code>参数并未传文件路径，而是使用<code>cat</code>指令传入了文件内容。</p>
 <p>按照报错注释应是传入文件才对，但实测按照 fishros 书籍直接传入文件内容才不会报错。</p>
 <p>🕒<code>launch.substitutions.Command</code>获取命令的返回值，字符串类型。<code>launch_ros.parameter_descriptions.ParameterValue</code>可以更该参数类型，因此<code>robot_description</code>参数传入 robot_description 变量或 substitutions_cmd 变量结果均对。</p>
@@ -2601,10 +2601,10 @@
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>ros2<span class="w"> </span>launch<span class="w"> </span>genimind_description<span class="w"> </span>genimind_model.launch.py
 </span></code></pre></div>
-<p><img alt="image-20250320112946017" src="image-20250320112946017.png" /></p>
+<p><img alt="image-20250320112946017" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320112946017.png" /></p>
 <h3 id="1223-rviz">12.2.3 初始化rviz<a class="headerlink" href="#1223-rviz" title="Permanent link">&para;</a></h3>
 <p>🕐将添加过<code>TF</code>、<code>RobotModel</code>组件的rviz保存到功能包下config目录下。</p>
-<p><img alt="image-20250320115414325" src="image-20250320115414325.png" /></p>
+<p><img alt="image-20250320115414325" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320115414325.png" /></p>
 <p>🕑在launch中添加参数。</p>
 <div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># 获取rviz初始化文件路径</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">rviz_config_path</span> <span class="o">=</span> <span class="n">urdf_pkg_path</span> <span class="o">+</span> <span class="s2">&quot;/config/rviz/genimind_descriptionconfig.rviz&quot;</span>
@@ -2786,7 +2786,7 @@
 <p>安装工具<code>xacro</code>，类似于<code>cat</code>指令，可以将<code>xacro</code>文件的内容打印出终端。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-xacro
 </span></code></pre></div>
-<p><img alt="image-20250320145513178" src="image-20250320145513178.png" /></p>
+<p><img alt="image-20250320145513178" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320145513178.png" /></p>
 <p>集成<code>xacro</code>到launch，修改文件名和<code>cat</code>指令为<code>xacro</code>。</p>
 <div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kn">import</span> <span class="nn">launch</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kn">import</span> <span class="nn">launch_ros</span>
@@ -2847,37 +2847,37 @@
 </span><span id="__span-20-57"><a id="__codelineno-20-57" name="__codelineno-20-57" href="#__codelineno-20-57"></a>    <span class="k">return</span> <span class="n">launch_description</span>
 </span></code></pre></div>
 <p>编译运行效果如下。</p>
-<p><img alt="image-20250320145741595" src="image-20250320145741595.png" /></p>
+<p><img alt="image-20250320145741595" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320145741595.png" /></p>
 <h2 id="124-solidworksurdf">12.4 solidworks导出urdf<a class="headerlink" href="#124-solidworksurdf" title="Permanent link">&para;</a></h2>
 <h3 id="1241-sw_urdf_exporter">12.4.1 sw_urdf_exporter插件<a class="headerlink" href="#1241-sw_urdf_exporter" title="Permanent link">&para;</a></h3>
 <p>在实际的开发工作在，我们不太可能纯手敲一个机器人模型，我们一般都使用3D建模软件进行机器人的建模，因此官方也提供了一个solidworks插件可以直接导出urdf文件。</p>
 <p>下载地址：<a href="https://wiki.ros.org/sw_urdf_exporter">sw_urdf_exporter</a></p>
 <p>下载<code>.exe</code>文件然后安装就可以了。</p>
-<p><img alt="image-20250320154519232" src="image-20250320154519232.png" /></p>
+<p><img alt="image-20250320154519232" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320154519232.png" /></p>
 <h3 id="1242-urdf">12.4.2 导出urdf<a class="headerlink" href="#1242-urdf" title="Permanent link">&para;</a></h3>
 <p>以四轮底盘为例，当然这个模型并不完整，他缺少IMU、相机、激光雷达等，但导出流程都是类似的。</p>
 <p>🕐 首先给四个轮子添加基准轴。</p>
-<p><img alt="image-20250320162032664" src="image-20250320162032664.png" /></p>
+<p><img alt="image-20250320162032664" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320162032664.png" /></p>
 <p>🕑给四个轮子个和底盘中心添加点。</p>
-<p><img alt="image-20250320200122348" src="image-20250320200122348.png" /></p>
+<p><img alt="image-20250320200122348" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200122348.png" /></p>
 <p>🕒添加坐标系(ROS中的坐标系为前X、左Y、上Z)。</p>
-<p><img alt="image-20250320200230492" src="image-20250320200230492.png" /></p>
+<p><img alt="image-20250320200230492" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200230492.png" /></p>
 <p>🕓插件导出urdf。</p>
-<p><img alt="image-20250320162601165" src="image-20250320162601165.png" /></p>
+<p><img alt="image-20250320162601165" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320162601165.png" /></p>
 <p>🕔配置link，每个link对应一个坐标系，与前面自己设置的坐标系对应。</p>
-<p><img alt="image-20250320200443092" src="image-20250320200443092.png" /></p>
+<p><img alt="image-20250320200443092" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200443092.png" /></p>
 <p>其余的link均一致，配置好所以link，然后<code>Export</code>导出。</p>
-<p><img alt="image-20250320200628725" src="image-20250320200628725.png" /></p>
+<p><img alt="image-20250320200628725" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200628725.png" /></p>
 <p>🕕确认一下坐标系、基准轴、joint类型是否正确，仿真参数不知道可以不加，点击<code>Next</code>。</p>
-<p><img alt="image-20250320200756743" src="image-20250320200756743.png" /></p>
+<p><img alt="image-20250320200756743" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200756743.png" /></p>
 <p>🕖导出功能包，名字最好和已有的功能包一致，就不用修改文件了。</p>
-<p><img alt="image-20250320200957156" src="image-20250320200957156.png" /></p>
+<p><img alt="image-20250320200957156" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320200957156.png" /></p>
 <p>🕗导出的功能包不要直接用，版本好像是ROS1的，我们移植几个文件到我们的功能包即可。</p>
-<p><img alt="image-20250320201312272" src="image-20250320201312272.png" /></p>
+<p><img alt="image-20250320201312272" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320201312272.png" /></p>
 <p>移植到我们的功能包下后，目录如下：</p>
-<p><img alt="image-20250320201455568" src="image-20250320201455568.png" /></p>
+<p><img alt="image-20250320201455568" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320201455568.png" /></p>
 <p>urdf文件的每个link的这个名称一定和功能包一致，按我说的导出时填功能包的名字(即genimind_description)就不会错。</p>
-<p><img alt="image-20250320201543682" src="image-20250320201543682.png" /></p>
+<p><img alt="image-20250320201543682" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320201543682.png" /></p>
 <p>🕘修改launch和camke。</p>
 <p><code>CmakeLists.txt</code> 中下载<code>meshes</code>目录：</p>
 <div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c"># launch</span>
@@ -2894,7 +2894,7 @@
 </span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="p">)</span>
 </span></code></pre></div>
 <p>编译运行，结果如下：</p>
-<p><img alt="image-20250320202234338" src="image-20250320202234338.png" /></p>
+<p><img alt="image-20250320202234338" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320202234338.png" /></p>
 <h3 id="1243">12.4.3 让轮子着地<a class="headerlink" href="#1243" title="Permanent link">&para;</a></h3>
 <p>目前我们的全局坐标是<code>base_link</code>，因此轮子不会着地，我们添加一个虚拟link，固定到<code>base_link</code>的正下方，与轮子高度平齐。</p>
 <p>这里的高度根据自己模型大致算一下就可以。</p>
@@ -2949,7 +2949,7 @@
 </span><span id="__span-23-49"><a id="__codelineno-23-49" name="__codelineno-23-49" href="#__codelineno-23-49"></a><span class="w">    </span><span class="nt">&lt;/collision&gt;</span>
 </span><span id="__span-23-50"><a id="__codelineno-23-50" name="__codelineno-23-50" href="#__codelineno-23-50"></a><span class="w">  </span><span class="nt">&lt;/link&gt;</span>
 </span></code></pre></div>
-<p><img alt="image-20250320210837195" src="image-20250320210837195.png" /></p>
+<p><img alt="image-20250320210837195" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250320210837195.png" /></p>
 
 
 

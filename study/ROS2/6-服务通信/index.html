@@ -1110,7 +1110,7 @@
           <li class="md-nav__item">
   <a href="#612" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1.2 服务通信指令
+      6.1.2 使用服务通信
     </span>
   </a>
   
@@ -2133,7 +2133,7 @@
           <li class="md-nav__item">
   <a href="#612" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1.2 服务通信指令
+      6.1.2 使用服务通信
     </span>
   </a>
   
@@ -2357,29 +2357,29 @@
 <h2 id="61">6.1 服务通信<a class="headerlink" href="#61" title="Permanent link">&para;</a></h2>
 <h3 id="611">6.1.1 服务通信介绍<a class="headerlink" href="#611" title="Permanent link">&para;</a></h3>
 <p>服务通信是以请求响应的方式实现不同节点之间数据传输的通信模式。发送请求数据的对象称为客户端，接收请求并发送响应的对象称之为服务端，同话题通信一样，客户端和服务端也通过话题相关联，不同的是服务通信的数据传输是双向交互式的。</p>
-<p><img alt="../../_images/Service-SingleServiceClient.gif" src="Service-SingleServiceClient.gif" /></p>
+<p><img alt="../../_images/Service-SingleServiceClient.gif" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/Service-SingleServiceClient.gif" /></p>
 <p>服务通信中，服务端与客户端可以是一对多的关系，即同一服务话题下，存在多个客户端，每个客户端都可以向服务端发送请求。</p>
-<p><img alt="../../_images/Service-MultipleServiceClient.gif" src="Service-MultipleServiceClient.gif" /></p>
-<h3 id="612">6.1.2 服务通信指令<a class="headerlink" href="#612" title="Permanent link">&para;</a></h3>
+<p><img alt="../../_images/Service-MultipleServiceClient.gif" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/Service-MultipleServiceClient.gif" /></p>
+<h3 id="612">6.1.2 使用服务通信<a class="headerlink" href="#612" title="Permanent link">&para;</a></h3>
 <p>使用<code>ros2 service --help</code>可以查看 ROS2 与服务有关的命令行指令，我们后面会经常用到。</p>
-<p><img alt="image-20250301124436155" src="image-20250301124436155.png" /></p>
+<p><img alt="image-20250301124436155" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301124436155.png" /></p>
 <p>① 打开一个小海龟模拟器窗口</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>turtlesim<span class="w"> </span>turtlesim_node
 </span></code></pre></div>
-<p><img alt="image-20250301131313690" src="image-20250301131313690.png" /></p>
+<p><img alt="image-20250301131313690" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301131313690.png" /></p>
 <p>② 查询小海龟使用的服务</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ros2<span class="w"> </span>service<span class="w"> </span>list
 </span></code></pre></div>
-<p><img alt="image-20250301131523420" src="image-20250301131523420.png" /></p>
+<p><img alt="image-20250301131523420" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301131523420.png" /></p>
 <p>使用<code>ros2 service list --help</code>可以进一步查询可以参数指令</p>
-<p><img alt="image-20250301131624958" src="image-20250301131624958.png" /></p>
+<p><img alt="image-20250301131624958" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301131624958.png" /></p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>service<span class="w"> </span>list<span class="w"> </span>-t
 </span></code></pre></div>
-<p><img alt="image-20250301131706121" src="image-20250301131706121.png" /></p>
+<p><img alt="image-20250301131706121" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301131706121.png" /></p>
 <p>③ 查看服务的消息接口</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>interface<span class="w"> </span>show<span class="w"> </span>turtlesim/srv/Spawn
 </span></code></pre></div>
-<p><img alt="image-20250301131908911" src="image-20250301131908911.png" /></p>
+<p><img alt="image-20250301131908911" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301131908911.png" /></p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>服务的消息接口与话题不同，一个请求和一个响应两部分组成，在特别篇我们讲过。</p>
@@ -2390,13 +2390,13 @@
 </blockquote>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>service<span class="w"> </span>call<span class="w"> </span>/spawn<span class="w"> </span>turtlesim/srv/Spawn<span class="w"> </span><span class="s1">&#39;{x: 1, y: 2, theta: 1.5}&#39;</span>
 </span></code></pre></div>
-<p><img alt="image-20250301132503080" src="image-20250301132503080.png" /></p>
+<p><img alt="image-20250301132503080" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301132503080.png" /></p>
 <p>⑤ rqt使用</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rqt
 </span></code></pre></div>
 <p>rqt可视化配置服务</p>
-<p><img alt="image-20250301133233294" src="image-20250301133233294.png" /></p>
-<p><img alt="image-20250301133246174" src="image-20250301133246174.png" /></p>
+<p><img alt="image-20250301133233294" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301133233294.png" /></p>
+<p><img alt="image-20250301133246174" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301133246174.png" /></p>
 <h2 id="62-python">6.2 Python自定义服务消息接口<a class="headerlink" href="#62-python" title="Permanent link">&para;</a></h2>
 <h3 id="621">6.2.1 案例需求<a class="headerlink" href="#621" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
@@ -2474,7 +2474,7 @@
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span>detect_service_py
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span></code></pre></div>
-<p><img alt="image-20250301223345444" src="image-20250301223345444.png" /></p>
+<p><img alt="image-20250301223345444" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301223345444.png" /></p>
 <h3 id="632">6.3.2 服务端<a class="headerlink" href="#632" title="Permanent link">&para;</a></h3>
 <div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">import</span> <span class="nn">rclpy</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
@@ -2598,9 +2598,9 @@
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span></code></pre></div>
 <p><strong>服务端</strong></p>
-<p><img alt="image-20250302113900530" src="image-20250302113900530.png" /></p>
+<p><img alt="image-20250302113900530" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250302113900530.png" /></p>
 <p><strong>客户端</strong></p>
-<p><img alt="image-20250302113921031" src="image-20250302113921031.png" /></p>
+<p><img alt="image-20250302113921031" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250302113921031.png" /></p>
 <h2 id="64-c">6.4 C++自定义服务消息接口<a class="headerlink" href="#64-c" title="Permanent link">&para;</a></h2>
 <h3 id="641">6.4.1 案例需求<a class="headerlink" href="#641" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
@@ -2814,7 +2814,7 @@
 </span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nb">source</span><span class="w"> </span>install/setup.bash
 </span></code></pre></div>
 <p>先打开小海龟，接着打开服务端，最后打开客户端，运行效果如下：</p>
-<p><img alt="image-20250302171448123" src="image-20250302171448123.png" /></p>
+<p><img alt="image-20250302171448123" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250302171448123.png" /></p>
 
 
 
@@ -2822,8 +2822,65 @@
 
 
 
+  
+  
 
 
+
+
+  <!-- <h2 id="__comments"> </h2> -->
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+        data-repo="wxnlP/wxnlP.github.io"
+        data-repo-id="R_kgDOMKIl5g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMKIl5s4Cl1nL"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+    
+  </script>
 
                 
               </article>

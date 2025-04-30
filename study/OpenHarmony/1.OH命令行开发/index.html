@@ -2503,9 +2503,9 @@
 <h2 id="16">1.6 第一个程序<a class="headerlink" href="#16" title="Permanent link">&para;</a></h2>
 <h3 id="161">1.6.1 编写程序<a class="headerlink" href="#161" title="Permanent link">&para;</a></h3>
 <p>在Windows端使用Vscode打开虚拟机源码</p>
-<p><img alt="image-20241230123810497" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241230123810497.png" /></p>
+<p><img alt="image-20241230123810497" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241230123810497.png" /></p>
 <p>添加vscode的头文件引用，将图中标红处添加即可。</p>
-<p><img alt="image-20241230135211456" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241230135211456.png" /></p>
+<p><img alt="image-20241230135211456" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241230135211456.png" /></p>
 <p>找到目录<code>./applications/sample/wifi-iot/app</code>，在app文件夹下一个文件夹<code>my_first_app</code>，代码文件<code>hello_world.c</code>，编译脚本<code>BUILD.gn</code>。具体目录结构如下：</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>.
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>└── applications
@@ -2632,32 +2632,32 @@
 </ul>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>hb<span class="w"> </span>build
 </span></code></pre></div>
-<p><img alt="image-20241224233922418" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241224233922418.png" /></p>
+<p><img alt="image-20241224233922418" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241224233922418.png" /></p>
 <h3 id="163">1.6.3 烧录固件<a class="headerlink" href="#163" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>windows系统使用hiburn烧录<code>.bin</code>文件</p>
 </blockquote>
 <p>在windows系统中安装<kbd>HiBurn</kbd>软件，<a href="https://ost.51cto.com/resource/148">HiBurn资源下载</a></p>
-<p><img alt="image-20241224233130307" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241224233130307.png" /></p>
+<p><img alt="image-20241224233130307" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241224233130307.png" /></p>
 <p>插上开发板，我使用的是"小熊拍-nano"，查看端口</p>
-<p><img alt="image-20241224234210890" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241224234210890.png" /></p>
+<p><img alt="image-20241224234210890" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241224234210890.png" /></p>
 <p>打开HiBurn软件，配置串口波特率为 2000000</p>
-<p><img alt="image-20241224234353359" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241224234353359.png" /></p>
-<p><img alt="image-20241224234439374" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241224234439374.png" /></p>
+<p><img alt="image-20241224234353359" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241224234353359.png" /></p>
+<p><img alt="image-20241224234439374" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241224234439374.png" /></p>
 <p>选择自己端口，打开<code>Auto burn</code>选项</p>
-<p><img alt="image-20241224234518423" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241224234518423.png" /></p>
+<p><img alt="image-20241224234518423" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241224234518423.png" /></p>
 <p>选择虚拟机的待烧录文件，在<code>/home/username/OpenHarmony/3.0.7/out/hispark_pegasus/wifiiot_hispark_pegasus</code>目录找到<code>Hi3861_wifiiot_app_allinone.bin</code>文件</p>
-<p><img alt="image-20241224235855062" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241224235855062.png" /></p>
+<p><img alt="image-20241224235855062" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241224235855062.png" /></p>
 <p><code>\\</code>加上你的虚拟机IP地址即可选择虚拟机的文件烧录（下图有些错误，以说明为准）</p>
-<p><img alt="image-20241225000123392" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241225000123392.png" /></p>
-<p><img alt="image-20241225000236411" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241225000236411.png" /></p>
+<p><img alt="image-20241225000123392" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225000123392.png" /></p>
+<p><img alt="image-20241225000236411" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225000236411.png" /></p>
 <p>点击<code>Connect</code>，然后输出框出现“Connecting...”，点击开发板的复位按键烧录开始</p>
-<p><img alt="image-20241225000338682" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241225000338682.png" /></p>
+<p><img alt="image-20241225000338682" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225000338682.png" /></p>
 <p>烧录成功</p>
-<p><img alt="image-20241225000618274" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241225000618274.png" /></p>
+<p><img alt="image-20241225000618274" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225000618274.png" /></p>
 <h3 id="164">1.6.4 查看输出<a class="headerlink" href="#164" title="Permanent link">&para;</a></h3>
 <p>安装串口和ssh软件MobaXterm，<a href="https://tonmoon.top/study/ROS2/1.3-ROS2工具准备/#31-terminator">MobaXterm安装介绍</a>，然后打开一个串口界面，复位即可看到输出内容。</p>
-<p><img alt="image-20241225001648494" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241225001648494.png" /></p>
+<p><img alt="image-20241225001648494" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225001648494.png" /></p>
 <h2 id="17">1.7 关闭默认测试输出<a class="headerlink" href="#17" title="Permanent link">&para;</a></h2>
 <p>串口查看输出有很多测试信息，我们可以选择关闭，删除源码中<kbd>vendor\hisilicon\hispark_pegasus\config.json</kbd>的如下内容，然后<code>hb build -f</code>编译烧录。</p>
 <p><img alt="image-20241031172544684" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241031172544684.png" /></p>
@@ -2681,14 +2681,14 @@
 <p>链接: <a href="https://pan.baidu.com/s/1o-FyN4wB-fxVT8XxQ5zhlQ?pwd=hj55">https://pan.baidu.com/s/1o-FyN4wB-fxVT8XxQ5zhlQ?pwd=hj55</a> <br />
 提取码: hj55</p>
 <h3 id="191">1.9.1 快速联网脚本<a class="headerlink" href="#191" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20241228205439999" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241228205439999.png" /></p>
+<p><img alt="image-20241228205439999" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228205439999.png" /></p>
 <p>打开MobaXterm，右击添加脚本，并修改热点信息</p>
-<p><img alt="image-20241228205532367" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241228205532367.png" /></p>
-<p><img alt="image-20241228205715807" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241228205715807.png" /></p>
+<p><img alt="image-20241228205532367" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228205532367.png" /></p>
+<p><img alt="image-20241228205715807" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228205715807.png" /></p>
 <h3 id="192">1.9.2 快速烧录<a class="headerlink" href="#192" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20241228205758576" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241228205758576.png" /></p>
+<p><img alt="image-20241228205758576" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228205758576.png" /></p>
 <p>文本编辑打开修改HiBurn.exe、串口号、虚拟机IP、虚拟机文件地址，双击即可完成烧录，无需来回点击HiBurn配置参数（切记先断开MobaXterm串口）</p>
-<p><img alt="image-20241228205834038" src="1.OH%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BC%80%E5%8F%91/image-20241228205834038.png" /></p>
+<p><img alt="image-20241228205834038" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228205834038.png" /></p>
 <h2 id="_1">错误解析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>更换介质：请把标有<span class="w">                     </span>
 </span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w"> </span>“Ubuntu<span class="w"> </span><span class="m">20</span>.04.6<span class="w"> </span>LTS<span class="w"> </span>_Focal<span class="w"> </span>Fossa_<span class="w"> </span>-<span class="w"> </span>Release<span class="w"> </span>amd64<span class="w"> </span><span class="o">(</span><span class="m">20230316</span><span class="o">)</span>”
