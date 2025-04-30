@@ -2251,12 +2251,12 @@
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><img alt="image-20250113150205966" src="image-20250113150205966.png" /></p>
+<p><img alt="image-20250113150205966" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250113150205966.png" /></p>
 <h3 id="512">5.1.2 队列的本质<a class="headerlink" href="#512" title="Permanent link">&para;</a></h3>
 <p>队列中，数据的读写本质就是环形缓冲区，在这个基础上增加了互斥措施、阻塞-唤醒机制。</p>
 <p>&rarr;如果这个队列不传输数据，只调整“数据个数”，它就是信号量(semaphore)。</p>
 <p>&rarr;如果信号量中，限定“数据个数”最大值为1，它就是互斥量(mutex)。</p>
-<p><img alt="image-20250113160424926" src="image-20250113160424926.png" /></p>
+<p><img alt="image-20250113160424926" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250113160424926.png" /></p>
 <p>在队列中，① 有环形缓冲区，用于存放和读取数据。 ② 两个链表(<code>SendList</code>和<code>ReceiveList</code>)，用于指定A（或B）写（或读）时唤醒的任务。</p>
 <p>以任务B（读数列）为例，分析两种唤醒时序：</p>
 <p><strong>唤醒方式一：</strong></p>
@@ -2271,7 +2271,7 @@
 <p>TaskA并非直接唤醒TaskB，而是在 <strong>队列接收链表</strong> (<code>ReceiveList</code>)中找到第一个任务，将其放至 <strong>就绪链表</strong> (<code>pxReadyTasksLists</code>)，并从 <strong>队列接收链表</strong> (<code>ReceiveList</code>)和 <strong>延时链表</strong> (<code>pxDelayedTaskList</code>)中将TaskB删除，我们示例中只有一个TaskB，故就是唤醒TaskB。</p>
 </details>
 <p>③ TaskB执行读队列操作（此时未到超时时间）。</p>
-<p><img alt="image-20250113162301581" src="image-20250113162301581.png" /></p>
+<p><img alt="image-20250113162301581" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250113162301581.png" /></p>
 <p><strong>唤醒方式二：</strong></p>
 <p>① TaskB读队列，队列为空，进入阻塞态，设有超时时间。 </p>
 <p>② 一直没有任务写队列，通过Tick中判断达到超时时间，唤醒TaskB。    </p>
@@ -2498,7 +2498,7 @@
 </span></code></pre></div>
 <h3 id="532">5.3.2 多队列<a class="headerlink" href="#532" title="Permanent link">&para;</a></h3>
 <p>程序流程如下，两个任务两个队列：</p>
-<p><img alt="image-20250115172724004" src="image-20250115172724004.png" /></p>
+<p><img alt="image-20250115172724004" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250115172724004.png" /></p>
 <p>定义队列句柄变量：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cm">/* Private variables ---------------------------------------------------------*/</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="cm">/* USER CODE BEGIN Variables */</span>
@@ -2619,7 +2619,7 @@
 <h2 id="54">5.4 队列集<a class="headerlink" href="#54" title="Permanent link">&para;</a></h2>
 <h3 id="541">5.4.1 队列与队列集<a class="headerlink" href="#541" title="Permanent link">&para;</a></h3>
 <p>队列集可以实现硬件数据与业务应用分离，即便于添加硬件设备，又易于一直驱动程序：</p>
-<p><img alt="image-20250115210100447" src="image-20250115210100447.png" /></p>
+<p><img alt="image-20250115210100447" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250115210100447.png" /></p>
 <p><strong>队列与队列集：</strong></p>
 <ol>
 <li>创建队列A和队列B</li>
@@ -2854,7 +2854,7 @@
 <li>创建四个任务，用同一个业务函数，传入不同的参数。</li>
 <li>采用<kbd>注册队列</kbd>的方法，实现写多个队列的可移植型函数。</li>
 </ol>
-<p><img alt="image-20250116170015196" src="image-20250116170015196.png" /></p>
+<p><img alt="image-20250116170015196" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250116170015196.png" /></p>
 <p>单独创建一对源文件：</p>
 <p><code>game.c</code></p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;game.h&quot;</span>

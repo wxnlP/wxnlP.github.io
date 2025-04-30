@@ -1727,7 +1727,7 @@
 <h2 id="1-docker">1. 配置工具链Docker环境<a class="headerlink" href="#1-docker" title="Permanent link">&para;</a></h2>
 <h3 id="11">1.1 虚拟机环境<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
 <p>官方对于天工开物开发机的要求：</p>
-<p><img alt="image-20250314231457116" src="image-20250314231457116.png" /></p>
+<p><img alt="image-20250314231457116" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250314231457116.png" /></p>
 <p>使用Ubuntu20.04虚拟机即可，由于虚拟机不像物理机一样轻松调用GPU加速，所以后面均采用CPU方式。</p>
 <p>参考：<a href="https://tonmoon.top/study/ROS2/2-ROS2系统环境安装/">虚拟机安装资料</a></p>
 <h3 id="12-docker">1.2 虚拟机安装Docker<a class="headerlink" href="#12-docker" title="Permanent link">&para;</a></h3>
@@ -1792,15 +1792,15 @@
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Environment=&quot;NO_PROXY=localhost,127.0.0.1&quot;
 </span></code></pre></div>
 <p>其中<code>http://proxy.example.com</code>需要替换为自己的IP，<code>8080</code>端口也需要替换为7890。</p>
-<p><img alt="image-20250314232641974" src="image-20250314232641974.png" /></p>
+<p><img alt="image-20250314232641974" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250314232641974.png" /></p>
 <p>这样以后Docker拉去就不会出现网络问题了。</p>
 <h2 id="2-docker">2. 配置Docker镜像<a class="headerlink" href="#2-docker" title="Permanent link">&para;</a></h2>
 <h3 id="21">2.1 下载与加载镜像<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p>镜像下载地址：<a href="https://developer.horizon.auto/docs/J5/toolchain/1.1.77/download">https://developer.horizon.auto/docs/J5/toolchain/1.1.77/download</a></p>
 <p>建议离线下载，会快一些。</p>
-<p><img alt="image-20250314233027802" src="image-20250314233027802.png" /></p>
+<p><img alt="image-20250314233027802" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250314233027802.png" /></p>
 <p>开发包可以选下，我个人不会使用，我只是进行模型转化暂时也用不到。</p>
-<p><img alt="image-20250314233324976" src="image-20250314233324976.png" /></p>
+<p><img alt="image-20250314233324976" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250314233324976.png" /></p>
 <p>将镜像移动到根目录，加载镜像(虚拟机内存多一些，不然加载会出现内存不足)：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>&lt;镜像名称.tar.gz&gt;
 </span></code></pre></div>
@@ -1821,7 +1821,7 @@
 <h3 id="23">2.3 配置模型转化环境<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <p>跟着这个地平线官方博客走就行：<a href="https://blog.csdn.net/SA2672873269/article/details/142663629">YOLOv11，地瓜RDK X5开发板，TROS端到端140FPS！-CSDN博客</a></p>
 <p>一直到<code>PTQ方案量化转化</code>这一节检查模型完成，部分输出结果如下：</p>
-<p><img alt="image-20250314234231836" src="image-20250314234231836.png" /></p>
+<p><img alt="image-20250314234231836" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250314234231836.png" /></p>
 <p>关于校准数据准备博客并未提及，而是在后来的另一篇博客提到：</p>
 <p><a href="https://blog.csdn.net/SA2672873269/article/details/145742964">YOLO12在RDK X5上的部署，体验纯视觉Transformer的YOLO目标检测！_yolov12 transformer-CSDN博客</a></p>
 <p>个人认为对于我这种小白提一句还需要琢磨很久，所以把这部分大致列一下，其实有官方脚本还算容易，美中不足的就是官方的资料对小白并不友好。</p>

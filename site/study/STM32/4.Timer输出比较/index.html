@@ -1953,7 +1953,7 @@
 <blockquote>
 <p>CNT为计数值，CRR为 <kbd>捕获/比较器</kbd>，用于与CNT值比较</p>
 </blockquote>
-<p><img alt="image-20241205203021165" src="image-20241205203021165.png" /></p>
+<p><img alt="image-20241205203021165" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241205203021165.png" /></p>
 <h3 id="413">4.1.3 输出比较模式<a class="headerlink" href="#413" title="Permanent link">&para;</a></h3>
 <p><strong>输出模式控制器</strong> 的工作逻辑选择：</p>
 <table>
@@ -2004,10 +2004,10 @@
 </div>
 <h3 id="414-stm32cubemx">4.1.4 STM32CubeMX参数<a class="headerlink" href="#414-stm32cubemx" title="Permanent link">&para;</a></h3>
 <p>以TIM3通用定时器通道 1 为例：</p>
-<p><img alt="image-20241205212240021" src="image-20241205212240021.png" /></p>
+<p><img alt="image-20241205212240021" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241205212240021.png" /></p>
 <p>部分为输入捕获参数，不在此处介绍，关于输出比较参数介绍如下：</p>
 <ul>
-<li><strong>Output Compare No Output</strong> ：在此模式下，输出比较通道没有任何实际的输出作用。该模式常用于仅进行比较操作，但不驱动外部信号。</li>
+<li><strong>Output Compare No Output</strong> ：在此模式下，输出比较通道没有任何实际的输出作用。该模式常用于仅进行比较操作，但不驱动外部信号。</li>
 <li><strong>Output Compare CH1</strong> ：在这个模式下，定时器会根据设定的比较值与计数器值进行比较。如果匹配，定时器会执行相应的操作。</li>
 <li><strong>PWM Generation No Output</strong> ：在此模式下，定时器配置为 PWM 生成模式，但没有任何外部输出信号。这通常用于内部计算或调试目的。</li>
 <li><strong>PWM Generation CH1</strong> ：在此模式下，定时器会在通道 1 上生成 PWM 信号。</li>
@@ -2015,7 +2015,7 @@
 <blockquote>
 <p>其中， <strong>Output Compare CH1</strong> 和 <strong>PWM Generation CH1</strong> 为常用模式，其他了解即可。</p>
 </blockquote>
-<p>通道若选择 <strong>Output Compare CH1</strong> ，则可以选择通道工作模式为以下 6 种，一一对应 <code>4.1.3</code> 表格中的模式：</p>
+<p>通道若选择 <strong>Output Compare CH1</strong> ，则可以选择通道工作模式为以下 6 种，一一对应 <code>4.1.3</code> 表格中的模式：</p>
 <ol>
 <li>Frozen (used for Timing base)，即<kbd>冻结</kbd></li>
 <li>Active Level on match，即<kbd>匹配时置有效电平</kbd></li>
@@ -2043,17 +2043,17 @@
 <p>​      ⭐频率 = 1 / T_S            ⭐占空比 = T_ON / T_S           分辨率 = 占空比变化步距</p>
 </li>
 </ul>
-<p><img alt="1706197859960" src="1706197859960.png" /></p>
+<p><img alt="1706197859960" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706197859960.png" /></p>
 <h3 id="422-pwm">4.2.2 PWM基本结构<a class="headerlink" href="#422-pwm" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20241205210104708" src="image-20241205210104708.png" /></p>
-<p><img alt="image-20241205210039103" src="image-20241205210039103.png" /></p>
+<p><img alt="image-20241205210104708" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241205210104708.png" /></p>
+<p><img alt="image-20241205210039103" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241205210039103.png" /></p>
 <h2 id="43-stm32cubemx">4.3 STM32CubeMX配置<a class="headerlink" href="#43-stm32cubemx" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>关于RCC、SYS、LED这里不做重复配置，详情可看GPIO章节。</p>
 </div>
-<p><img alt="image-20241205223226709" src="image-20241205223226709.png" /></p>
-<p><img alt="image-20241205223717325" src="image-20241205223717325.png" /></p>
+<p><img alt="image-20241205223226709" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241205223226709.png" /></p>
+<p><img alt="image-20241205223717325" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241205223717325.png" /></p>
 <div class="arithmatex">\[
 占空比=\frac{CCR}{ARR}
 \]</div>
@@ -2062,7 +2062,7 @@
 <p>注意PSC和ARR的参数随意但要保持最后的频率不要太小，这样LED会是闪烁的，应把频率控制在100左右或以上为好，这样才能实现控制亮度，其余参数自行百度了解即可。</p>
 </div>
 <p>最后时钟配置为72MHZ，生成工程。</p>
-<p><img alt="image-20241128112459137" src="image-20241128112459137.png" /></p>
+<p><img alt="image-20241128112459137" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128112459137.png" /></p>
 <h2 id="44">4.4 呼吸灯代码<a class="headerlink" href="#44" title="Permanent link">&para;</a></h2>
 <p><code>main</code>函数中声明一个占空比变量</p>
 <div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/* USER CODE BEGIN Init */</span>

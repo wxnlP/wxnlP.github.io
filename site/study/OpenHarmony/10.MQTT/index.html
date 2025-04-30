@@ -2078,7 +2078,7 @@
 <li><strong>Publisher（发布者）</strong> ：向指定主题（Topic）发送消息的设备或应用。</li>
 <li>**Subscriber（订阅者） ** ：订阅主题以接收相关消息的终端。</li>
 </ul>
-<p><img alt="image-20250215164617707" src="image-20250215164617707.png" /></p>
+<p><img alt="image-20250215164617707" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215164617707.png" /></p>
 <h3 id="1032">10.3.2 发布订阅模式优势<a class="headerlink" href="#1032" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -2100,7 +2100,7 @@
 <h2 id="104-mqtt">10.4 MQTT发布订阅模型<a class="headerlink" href="#104-mqtt" title="Permanent link">&para;</a></h2>
 <h3 id="1041-mqtt">10.4.1 MQTT发布订阅模型<a class="headerlink" href="#1041-mqtt" title="Permanent link">&para;</a></h3>
 <p>相比于广义发布订阅模型，MQTT还有一个后端设备，它是一个数据存储服务器，他们都订阅同一个 <kbd>Address</kbd> 主题。</p>
-<p><img alt="image-20250215174350310" src="image-20250215174350310.png" /></p>
+<p><img alt="image-20250215174350310" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215174350310.png" /></p>
 <h3 id="1042-mqtt">10.4.2 MQTT基本概念<a class="headerlink" href="#1042-mqtt" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>MQTT客户端</strong> ：指连接到MQTT代理的所以设备，该设备发布消息就是发布者，订阅消息便是订阅者，也可以同时是订阅者和发布者。</li>
@@ -2158,13 +2158,13 @@
 <p>下载源码，放置在<code>applications/sample/wifi-iot/app</code>目录：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/eclipse-paho/paho.mqtt.embedded-c.git
 </span></code></pre></div>
-<p><img alt="image-20250215202559209" src="image-20250215202559209.png" /></p>
+<p><img alt="image-20250215202559209" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215202559209.png" /></p>
 <p>同时建议将文件夹名称改为<code>paho_mqtt</code>，方便后续操作。</p>
 <h3 id="1052">10.5.2 源码配置<a class="headerlink" href="#1052" title="Permanent link">&para;</a></h3>
 <p><code>MQTTClient</code>是基于C++的MQTT库，而<code>MQTTClient-C</code>则是基于C语言，故我们仅会使用到后者。</p>
-<p><img alt="image-20250215203159221" src="image-20250215203159221.png" /></p>
+<p><img alt="image-20250215203159221" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215203159221.png" /></p>
 <p>打开文件夹，我们会发现在<code>src</code>目录中有一些热门操作系统适配的MQTT库，它们均依赖于<code>MQTTPacket</code>库。不过很遗憾，并没有Open Harmony的适配，因此我们需要手动移植一些文件。</p>
-<p><img alt="image-20250215203443746" src="image-20250215203443746.png" /></p>
+<p><img alt="image-20250215203443746" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215203443746.png" /></p>
 <p>移植完成的paho-mqtt源码(来自书籍资料)：</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>链接: https://pan.baidu.com/s/1o-FyN4wB-fxVT8XxQ5zhlQ?pwd=hj55 
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>提取码: hj55
@@ -2174,9 +2174,9 @@
 <p>ohos适配部分由<kbd>江苏润开鸿数字科技有限公司</kbd>完成，其是<kbd>润和软件</kbd>投资的全资子公司，而<kbd>润和软件</kbd>与<kbd>华为</kbd>同为开源鸿蒙的<kbd>A类捐赠者</kbd>，并基于Open Harmony开发了<a href="https://mp.weixin.qq.com/s/dXY9E5jvbjt-AQaETgusGA">HiHopeOS</a> 操作系统。</p>
 </div>
 <p><code>src</code>添加了一个ohos适配目录。</p>
-<p><img alt="image-20250215212817720" src="image-20250215212817720.png" /></p>
+<p><img alt="image-20250215212817720" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215212817720.png" /></p>
 <p><code>samples</code>目录下添加了一些ohos示例程序，包括与AT命令相关的API文件，来自OpenHarmony1.0版本。</p>
-<p><img alt="image-20250215212920244" src="image-20250215212920244.png" /></p>
+<p><img alt="image-20250215212920244" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215212920244.png" /></p>
 <p>在vscode的<code>c_cpp_properties.json</code>文件添加如下<code>includePath</code>内容：</p>
 <div class="language-json highlight"><span class="filename">JSON</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="s2">&quot;${workspaceFolder}/applications/sample/wifi-iot/app/paho_mqtt/MQTTPacket/src&quot;</span><span class="p">,</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="s2">&quot;${workspaceFolder}/applications/sample/wifi-iot/app/paho_mqtt/MQTTClient-C/src&quot;</span><span class="p">,</span>
@@ -2214,7 +2214,7 @@
 <p>我们编译的ohos示例程序是对Open Harmony的AT命令的拓展。在<code>mqtt_test_cmsis.c</code>中的宏定义定义了增加的一些AT命令。</p>
 <p><strong>学习AT指令</strong></p>
 <p>在MobaXterm中输入<code>AT+MQTT_CONN=</code>，回车后使用 Ctrl+J 组合键，会得到命令的使用方法：</p>
-<p><img alt="image-20250215213516310" src="image-20250215213516310.png" /></p>
+<p><img alt="image-20250215213516310" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215213516310.png" /></p>
 <h3 id="1054-easywifi">10.5.4 EasyWiFI配置<a class="headerlink" href="#1054-easywifi" title="Permanent link">&para;</a></h3>
 <p>将EasyWiFi模块配置到MQTT中，让WiFI连接更简单。</p>
 <p>在vscode的<code>c_cpp_properties.json</code>文件添加如下<code>includePath</code>内容：</p>
@@ -2252,7 +2252,7 @@
 </span></code></pre></div>
 <p>编译以后可能会报一个错误，根本原因是OpenHarmony版本不同，目录有所变化，我的版本为 3.0.7 。</p>
 <p>在<code>//applications/sample/wifi-iot/app/easy_wifi/src</code>目录下找到编译脚本，如下图的位置，修改wifi接口的·目录为<code>//foundation/communication/wifi_lite/interfaces/wifiservice</code>，然后再次编译便没有问题。</p>
-<p><img alt="image-20250216211346254" src="image-20250216211346254.png" /></p>
+<p><img alt="image-20250216211346254" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250216211346254.png" /></p>
 <h2 id="106-mqtt">10.6 MQTT连接华为云<a class="headerlink" href="#106-mqtt" title="Permanent link">&para;</a></h2>
 <p>发布信息格式</p>
 <div class="language-json highlight"><span class="filename">JSON</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>

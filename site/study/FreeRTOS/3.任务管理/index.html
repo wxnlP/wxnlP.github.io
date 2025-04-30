@@ -2312,7 +2312,7 @@
                                                   &rarr;② 也可以由其他任务调用<code>vTaskSuspend</code>函数置一个任务为此状态</li>
 </ol>
 <p><strong>完整的状态转换图：</strong></p>
-<p><img alt="image-20250112135428803" src="image-20250112135428803.png" /></p>
+<p><img alt="image-20250112135428803" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250112135428803.png" /></p>
 <p>暂停逻辑示例：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="mo">01</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
@@ -2473,7 +2473,7 @@
 </span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="p">}</span>
 </span></code></pre></div>
-<p><img alt="image-20250112172347746" src="image-20250112172347746.png" /></p>
+<p><img alt="image-20250112172347746" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250112172347746.png" /></p>
 <h3 id="323-tick">3.2.3 Tick<a class="headerlink" href="#323-tick" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Tick 1ms 时钟中断（正常）<ul>
@@ -2498,17 +2498,17 @@
 </li>
 </ul>
 <p>关于<kbd>就绪链表</kbd>、<kbd>Delay链表</kbd>、<kbd>暂停链表</kbd>均可以在源码中找到定义位置：</p>
-<p><img alt="image-20250112182204446" src="image-20250112182204446.png" /></p>
-<p><img alt="image-20250112182230238" src="image-20250112182230238.png" /></p>
+<p><img alt="image-20250112182204446" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250112182204446.png" /></p>
+<p><img alt="image-20250112182230238" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250112182230238.png" /></p>
 <h3 id="324-tick">3.2.4 Tick中断示例<a class="headerlink" href="#324-tick" title="Permanent link">&para;</a></h3>
 <p>示例：假设有 4 个自建任务，一个调度函数创建的空闲任务；其中Task4是高优先级任务，一旦进入就绪态（Ready）立即执行。同时，示例中会用到<kbd>延迟链表</kbd>和<kbd>暂停链表</kbd>，如图中绿色字体所示。</p>
-<p><img alt="image-20250112182904890" src="image-20250112182904890.png" /></p>
+<p><img alt="image-20250112182904890" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250112182904890.png" /></p>
 <p>① 若无Task4，只有三个同优先级的任务，则任务时间轴如下：</p>
-<p><img alt="image-20250112183845600" src="image-20250112183845600.png" /></p>
+<p><img alt="image-20250112183845600" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250112183845600.png" /></p>
 <p>② 4 个任务，其中Task4中有<code>vTaskDelay(2);</code>程序，若Tick周期为1ms，则为等待 2 ms，此时Task4为阻塞态（Blocked），要从就绪链表(<code>pxReadyTasksLists</code>)删除，将任务放到延迟链表(<code>pxDelayedTaskList</code>)。</p>
-<p><img alt="image-20250112184704941" src="image-20250112184704941.png" /></p>
+<p><img alt="image-20250112184704941" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250112184704941.png" /></p>
 <p>③ 在②地基础上，为Task4添加任务暂停和任务恢复，其中任务暂停时将Task4从就绪链表(<code>pxReadyTasksLists</code>)删除，将任务放到暂停链表(<code>xSuspendedTaskList</code>)。当恢复Task4到就绪态时，即使Task3地一个Tick周期还没有执行完，也会立刻停止去执行Task4。</p>
-<p><img alt="image-20250112215917038" src="image-20250112215917038.png" /></p>
+<p><img alt="image-20250112215917038" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250112215917038.png" /></p>
 <h2 id="33-delay">3.3 空闲任务与Delay函数<a class="headerlink" href="#33-delay" title="Permanent link">&para;</a></h2>
 <h3 id="331">3.3.1 任务的退出<a class="headerlink" href="#331" title="Permanent link">&para;</a></h3>
 <p>下面一个<code>for</code>循环任务执行结束，未正确退出任务，会导致Tick中断停止，从而无法切换其他任务，原因在于触发了<code>prvTaskExitError</code>函数。</p>
@@ -2563,9 +2563,9 @@
 </span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="n">TickType_t</span><span class="w"> </span><span class="n">xTimeIncrement</span><span class="w"> </span><span class="p">);</span>
 </span></code></pre></div>
 <p><code>vTaskDelay</code>严格延时3Tick，此期间为阻塞态，3Tick后恢复就绪态。</p>
-<p><img alt="image-20250112222231769" src="image-20250112222231769.png" /></p>
+<p><img alt="image-20250112222231769" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250112222231769.png" /></p>
 <p><code>xTaskDelayUntil</code>则旨在实现周期运行，需要传入一个preTime，从preTime开始计时3Tick，后恢复就绪态。</p>
-<p><img alt="image-20250112222243320" src="image-20250112222243320.png" /></p>
+<p><img alt="image-20250112222243320" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250112222243320.png" /></p>
 
 
 

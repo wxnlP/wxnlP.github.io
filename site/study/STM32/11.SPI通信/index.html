@@ -1968,7 +1968,7 @@
 <li>主机另外引出多条SS控制线，分别接到各从机的SS引脚</li>
 <li>输出引脚配置为 <strong>推挽输出</strong> ，输入引脚配置为 <strong>浮空</strong> 或 <strong>上拉输入</strong></li>
 </ul>
-<p><img alt="1706277356750" src="1706277356750.png" /></p>
+<p><img alt="1706277356750" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706277356750.png" /></p>
 <p>关于SPI引脚：</p>
 <ol>
 <li>MOSI为主机发送从机接收；MISO则是主机接收从机发送；SCK为时钟线，与I2C的SCL功能一样，都是为了实现同步通信；SS控制线的作用是选择从机，哪根线为低电平哪根线对应的从机就与主机通信，且同一时间只能用一个从机的SS为低电平。</li>
@@ -1976,7 +1976,7 @@
 <li>有几个从机就开辟几条SS线。</li>
 </ol>
 <h3 id="1113-spi">11.1.3 SPI移位结构<a class="headerlink" href="#1113-spi" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20250104194727114" src="image-20250104194727114.png" /></p>
+<p><img alt="image-20250104194727114" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250104194727114.png" /></p>
 <p>SPI的移位原理：</p>
 <p>当SPI同时接收和发送一个字节数据时，以高位先行为例（SPI硬件外设可以配置高位先行或低位先行）；在第一个边沿，主机的最高位放到MOSI同时从机的最高位放到MISO，其他位一起往左移；在第二个边沿，主机的高位移到从机的低位，同时从机的高位移到主机的低位，依此八次仅完成一个字节数据的交换。</p>
 <p>若SPI仅接收或发送时，忽略对方发送或接受的数据即可，一般这个无用的数据位0x00或0xFF。</p>
@@ -1985,7 +1985,7 @@
 <li><strong>起始条件：</strong> SS从高电平切换到低电平</li>
 <li><strong>终止条件：</strong> SS从低电平切换到高电平</li>
 </ul>
-<p><img alt="1706280340445" src="1706280340445.png" /></p>
+<p><img alt="1706280340445" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706280340445.png" /></p>
 <p><strong>SPI交换字节有多种模式可以选择，主要取决于CPOL(时钟极性)和CPHA(时钟相位)，一个四种组合方式。</strong></p>
 <details class="danger">
 <summary>Danger</summary>
@@ -2000,30 +2000,30 @@
 <summary>Danger</summary>
 <p>由于SCK第一个边沿就要移入数据，所以在起始条件生成以后，MOSI和MISO就要立刻移位数据，从而不会使得SCK第一个边沿移入的数据为空。</p>
 </details>
-<p><img alt="1706280519452" src="1706280519452.png" /></p>
+<p><img alt="1706280519452" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706280519452.png" /></p>
 <p>交换一个字节 <strong>（模式1）</strong></p>
 <ul>
 <li>CPOL=0：空闲状态时，SCK为低电平</li>
 <li>CPHA=1：SCK第一个边沿移出数据，第二个边沿移入数据</li>
 </ul>
-<p><img alt="1706280584972" src="1706280584972.png" /></p>
+<p><img alt="1706280584972" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706280584972.png" /></p>
 <p>交换一个字节 <strong>（模式2）</strong></p>
 <ul>
 <li>CPOL=1：空闲状态时，SCK为高电平</li>
 <li>CPHA=0：SCK第一个边沿移入数据，第二个边沿移出数据</li>
 </ul>
-<p><img alt="1706280625411" src="1706280625411.png" /></p>
+<p><img alt="1706280625411" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706280625411.png" /></p>
 <p>交换一个字节 <strong>（模式3）</strong></p>
 <ul>
 <li>CPOL=1：空闲状态时，SCK为高电平</li>
 <li>CPHA=1：SCK第一个边沿移出数据，第二个边沿移入数据</li>
 </ul>
-<p><img alt="1706280660766" src="1706280660766.png" /></p>
+<p><img alt="1706280660766" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706280660766.png" /></p>
 <h3 id="1115-spi">11.1.5 SPI时序<a class="headerlink" href="#1115-spi" title="Permanent link">&para;</a></h3>
 <p>主要根据芯片手册要求。</p>
 <h2 id="112-spi">11.2 软件模拟SPI<a class="headerlink" href="#112-spi" title="Permanent link">&para;</a></h2>
 <p>GPIO引脚配置如下，三个输出为<kbd>推挽输出</kbd>，一个输入为<kbd>上拉输入</kbd>。</p>
-<p><img alt="image-20250105142619350" src="image-20250105142619350.png" /></p>
+<p><img alt="image-20250105142619350" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250105142619350.png" /></p>
 <p><code>sw_spi.c</code></p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sw_spi.h&quot;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -2092,9 +2092,9 @@
 <p>STM32F103C8T6 硬件SPI资源：SPI1、SPI2</p>
 </blockquote>
 <h3 id="1132-spi">11.3.2 SPI框图<a class="headerlink" href="#1132-spi" title="Permanent link">&para;</a></h3>
-<p><img alt="1706282048455" src="1706282048455.png" /></p>
+<p><img alt="1706282048455" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706282048455.png" /></p>
 <h3 id="1133-spi">11.3.3 SPI基本结构<a class="headerlink" href="#1133-spi" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20250104201302433" src="image-20250104201302433.png" /></p>
+<p><img alt="image-20250104201302433" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250104201302433.png" /></p>
 <p>这里的数据控制器主要时用于与<kbd>LSBFIRST</kbd>寄存器配合，实现SPI低位或高位先行的配置。</p>
 
 

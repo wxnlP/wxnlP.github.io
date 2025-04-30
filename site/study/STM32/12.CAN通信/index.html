@@ -2500,8 +2500,8 @@
 <li>高速CAN使用闭环网络，CAN_H和CAN_L两端添加120Ω的终端电阻</li>
 <li>低速CAN使用开环网络，CAN_H和CAN_L其中一端添加2.2kΩ的终端电阻</li>
 </ul>
-<p><img alt="image-20250215221756132" src="image-20250215221756132.png" /></p>
-<p><img alt="image-20250215221800648" src="image-20250215221800648.png" /></p>
+<p><img alt="image-20250215221756132" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215221756132.png" /></p>
+<p><img alt="image-20250215221800648" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215221800648.png" /></p>
 <h3 id="1213-can">12.1.3 CAN的电平标准<a class="headerlink" href="#1213-can" title="Permanent link">&para;</a></h3>
 <ul>
 <li>CAN总线采用差分信号，即两线电压差（V_H - V_L）传输数据位</li>
@@ -2522,9 +2522,9 @@
 </ul>
 </li>
 </ul>
-<p><img alt="image-20250215222004528" src="image-20250215222004528.png" /></p>
+<p><img alt="image-20250215222004528" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215222004528.png" /></p>
 <h3 id="1214-can">12.1.4 高低速CAN不同点<a class="headerlink" href="#1214-can" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20250215222427534" src="image-20250215222427534.png" /></p>
+<p><img alt="image-20250215222427534" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250215222427534.png" /></p>
 <h2 id="122-can">12.2 CAN总线协议<a class="headerlink" href="#122-can" title="Permanent link">&para;</a></h2>
 <h3 id="1221">12.2.1 帧格式<a class="headerlink" href="#1221" title="Permanent link">&para;</a></h3>
 <p>CAN总线定义了 5 种帧格式：</p>
@@ -2568,7 +2568,7 @@
 </ol>
 <p>数据帧的构成如下图，其中灰色部分(D)表示 Dominant：<kbd>显性电平 0 </kbd>；白色部分(R)表示 Recessive：<kbd>隐性电平 1 </kbd>；紫色部分为发送数据，电平高低按实际数据；数字表示该字段的数据位数(bit)。</p>
 <p>扩展格式是对标准格式的升级，用于解决ID位数不够用的情况，然标准格式的优先级要高于扩展格式。</p>
-<p><img alt="image-20250217162917605" src="image-20250217162917605.png" /></p>
+<p><img alt="image-20250217162917605" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217162917605.png" /></p>
 <p>上图中的一些重要名称含义如下：</p>
 <ul>
 <li>SOF（Start of Frame）：帧起始，表示后面一段波形为传输的数据位。</li>
@@ -2588,7 +2588,7 @@
 <li><strong>遥控帧</strong></li>
 </ol>
 <p>遥控帧用于请求式，其中与数据帧不同在于 <strong>RTR</strong> 为 <kbd>隐性电平 1 </kbd> ，接收方收到后以遥控帧格式解析，然后发送相同数据ID的数据帧。当遥控帧请求和数据帧反馈同时发生时，数据帧优先级更高。</p>
-<p><img alt="image-20250217165058377" src="image-20250217165058377.png" /></p>
+<p><img alt="image-20250217165058377" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217165058377.png" /></p>
 <ol>
 <li><strong>错误帧</strong></li>
 </ol>
@@ -2602,21 +2602,21 @@
 <li>错误标志后还有 6 位用于延时。</li>
 <li>错误界定符由 8 个位的隐性位构成。  </li>
 </ul>
-<p><img alt="image-20250217170152684" src="image-20250217170152684.png" /></p>
+<p><img alt="image-20250217170152684" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217170152684.png" /></p>
 <ol>
 <li><strong>过载帧</strong></li>
 </ol>
 <p>当接收方收到大量数据而无法处理时，其可以发出过载帧，延缓发送方的数据发送，以平衡总线负载，避免数据丢失。</p>
-<p><img alt="image-20250217170659392" src="image-20250217170659392.png" /></p>
+<p><img alt="image-20250217170659392" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217170659392.png" /></p>
 <ol>
 <li><strong>帧间隔</strong></li>
 </ol>
 <p>帧间隔是用于分隔数据帧和遥控帧的帧。数据帧和遥控帧可通过插入帧间隔将本帧与前面的任何帧（数据帧、遥控帧、错误帧、过载帧）分开。</p>
 <p><strong>过载帧和错误帧前不能插入帧间隔。</strong>  </p>
-<p><img alt="image-20250217171236044" src="image-20250217171236044.png" /></p>
+<p><img alt="image-20250217171236044" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217171236044.png" /></p>
 <h3 id="1222">12.2.2 位填充<a class="headerlink" href="#1222" title="Permanent link">&para;</a></h3>
 <p><strong>位填充规则</strong> ：发送方每发送5个相同电平后，自动追加一个相反电平的填充位，接收方会自动移除填充位，恢复原始数据。</p>
-<p><img alt="image-20250217172236233" src="image-20250217172236233.png" /></p>
+<p><img alt="image-20250217172236233" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217172236233.png" /></p>
 <p><strong>位填充的作用</strong> ：</p>
 <ul>
 <li>增加波形的定时信息，利于接收方执行 <strong>再同步</strong> ，防止波形长时间无变化，导致接收方不能精确掌握数据采样时机。</li>
@@ -2644,7 +2644,7 @@
 <li><strong>在同步补偿宽度（SJW: reSynchronization Jump Width）</strong> </li>
 </ol>
 <p>一个数据位的构成如下图：</p>
-<p><img alt="image-20250217175323310" src="image-20250217175323310.png" /></p>
+<p><img alt="image-20250217175323310" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217175323310.png" /></p>
 <table>
 <thead>
 <tr>
@@ -2694,7 +2694,7 @@
 <li>经过硬同步后，若发送方和接收方的时钟没有误差，则后续所有数据位的采样点必然都会对齐数据位中心附近。</li>
 <li>若后续再出现误差，则需要使用后面的 <strong>再同步</strong> 。</li>
 </ul>
-<p><img alt="image-20250217191646820" src="image-20250217191646820.png" /></p>
+<p><img alt="image-20250217191646820" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217191646820.png" /></p>
 <h3 id="1225">12.2.5 再同步<a class="headerlink" href="#1225" title="Permanent link">&para;</a></h3>
 <p>若发送方或接收方的时钟有误差，随着误差积累，数据位边沿逐渐偏离 SS 段，则此时接收方根据再同步补偿宽度值（SJW）通过加长  PBS1 段，或缩短 PBS2 段，以调整同步。</p>
 <p>如下图：</p>
@@ -2712,7 +2712,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="image-20250217191728127" src="image-20250217191728127.png" /></p>
+<p><img alt="image-20250217191728127" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217191728127.png" /></p>
 <h3 id="1226">12.2.6 仲裁<a class="headerlink" href="#1226" title="Permanent link">&para;</a></h3>
 <p>当多个设备同时操作总线时，会出现冲突情况，主要分为两种：</p>
 <ol>
@@ -2742,14 +2742,14 @@
 <summary>Danger</summary>
 <p>将非破坏性仲裁过程普遍化，就会得到 <strong>ID号小的设备优先级高</strong> 的结论。</p>
 </details>
-<p><img alt="image-20250217203332832" src="image-20250217203332832.png" /></p>
+<p><img alt="image-20250217203332832" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217203332832.png" /></p>
 <p>数据帧和遥控帧ID号一样时，数据帧的优先级高于遥控帧（看完图就明白了）。</p>
-<p><img alt="image-20250217204501745" src="image-20250217204501745.png" /></p>
+<p><img alt="image-20250217204501745" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217204501745.png" /></p>
 <p>标准格式11位ID号和扩展格式29位ID号的高11位一样时，标准格式的优先级高于扩展格式（SRR必须始终为1，以保证此要求）</p>
-<p><img alt="image-20250217204601726" src="image-20250217204601726.png" /></p>
+<p><img alt="image-20250217204601726" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217204601726.png" /></p>
 <h3 id="1227">12.2.7 错误处理<a class="headerlink" href="#1227" title="Permanent link">&para;</a></h3>
 <p><strong>错误类型</strong></p>
-<p><img alt="image-20250217230705683" src="image-20250217230705683.png" /></p>
+<p><img alt="image-20250217230705683" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217230705683.png" /></p>
 <p><strong>错误状态</strong></p>
 <ul>
 <li>主动错误状态的设备正常参与通信并在检测到错误时发出 <kbd>主动错误帧</kbd> 。</li>
@@ -2757,9 +2757,9 @@
 <li>总线关闭状态的设备不能参与通信。</li>
 <li>每个设备内部管理一个 TEC 和 REC ，根据 TEC 和 REC 的值确定自己的状态。</li>
 </ul>
-<p><img alt="image-20250217231344951" src="image-20250217231344951.png" /></p>
+<p><img alt="image-20250217231344951" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217231344951.png" /></p>
 <p><strong>错误计数器</strong></p>
-<p><img alt="image-20250217231429738" src="image-20250217231429738.png" /></p>
+<p><img alt="image-20250217231429738" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217231429738.png" /></p>
 <h2 id="123-can">12.3 CAN总线外设<a class="headerlink" href="#123-can" title="Permanent link">&para;</a></h2>
 <h3 id="1231-can">12.3.1 CAN外设简介<a class="headerlink" href="#1231-can" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2774,11 +2774,11 @@
 <p>STM32F103C8T6 CAN资源：CAN1</p>
 </blockquote>
 <p>STM32芯片内部仅集成了 <kbd>CAN控制器</kbd> ，但我们仍然需要外接一个 <kbd>CAN收发器</kbd> 将逻辑电平转化为CAN需要的差分信号。</p>
-<p><img alt="image-20250217235221741" src="image-20250217235221741.png" /></p>
+<p><img alt="image-20250217235221741" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217235221741.png" /></p>
 <h3 id="1232-can">12.3.2 CAN框图<a class="headerlink" href="#1232-can" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20250217235619200" src="image-20250217235619200.png" /></p>
+<p><img alt="image-20250217235619200" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250217235619200.png" /></p>
 <h3 id="1233-can">12.3.3 CAN基本结构<a class="headerlink" href="#1233-can" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20250218001440672" src="image-20250218001440672.png" /></p>
+<p><img alt="image-20250218001440672" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250218001440672.png" /></p>
 <ul>
 <li><strong>发送邮箱</strong><ul>
 <li>可以配置 <strong>先占先行</strong> 或 <strong>报文ID小的先行</strong> 。</li>
@@ -2829,7 +2829,7 @@
 <ul>
 <li><strong>禁止自动重传</strong> ：通过对<code>CAN_MCR</code>寄存器的<code>NART</code>位置 1 ，来让硬件工作在该模式。  在该模式下，发送操作只会执行一次。如果发送操作失败了，不管是由于仲裁丢失或出错，硬件都不会再自动发送该报文。  </li>
 </ul>
-<p><img alt="image-20250218145836821" src="image-20250218145836821.png" /></p>
+<p><img alt="image-20250218145836821" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250218145836821.png" /></p>
 <p><strong>⭐②接收过程</strong></p>
 <p>接收到的报文，被存储在3级邮箱深度的FIFO中。 FIFO完全由硬件来管理，从而节省了CPU的处理负荷，简化了软件并保证了数据的一致性。应用程序只能通过读取FIFO输出邮箱，来读取FIFO中最先收到的报文。  </p>
 <ul>
@@ -2855,7 +2855,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="image-20250218173648736" src="image-20250218173648736.png" /></p>
+<p><img alt="image-20250218173648736" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250218173648736.png" /></p>
 <h3 id="1235">12.3.5 标识符过滤器<a class="headerlink" href="#1235" title="Permanent link">&para;</a></h3>
 <p>STM32的CAN外设提供了 14 个位宽可变的、可配置的过滤器组，每个过滤器组由 2 个 32 位寄存器，<code>CAN_FxR0</code>和<code>CAN_FxR1</code>组成。</p>
 <p>配置一个过滤器组的工作模式的几个重要寄存器：</p>
@@ -2887,16 +2887,16 @@
 </ul>
 </li>
 </ul>
-<p><img alt="image-20250218213041509" src="image-20250218213041509.png" /></p>
+<p><img alt="image-20250218213041509" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250218213041509.png" /></p>
 <h3 id="1236">12.3.6 测试模式<a class="headerlink" href="#1236" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>静默模式</strong> ：用于分析CAN总线的活动，不会对总线造成影响。</li>
 <li><strong>环回模式</strong> ：用于自测试，同时发送的报文可以在CAN_TX引脚上检测到。</li>
 <li><strong>环回静默模式</strong> ：用于热自测试，自测的同时不会影响CAN总线。</li>
 </ul>
-<p><img alt="image-20250218231419871" src="image-20250218231419871.png" /></p>
-<p><img alt="image-20250218231433828" src="image-20250218231433828.png" /></p>
-<p><img alt="image-20250218231446390" src="image-20250218231446390.png" /></p>
+<p><img alt="image-20250218231419871" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250218231419871.png" /></p>
+<p><img alt="image-20250218231433828" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250218231433828.png" /></p>
+<p><img alt="image-20250218231446390" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250218231446390.png" /></p>
 <h3 id="1237">12.3.7 工作模式<a class="headerlink" href="#1237" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>初始化模式</strong> ：用于配置CAN外设，禁止报文的接收和发送。</li>
@@ -2904,7 +2904,7 @@
 <li><strong>睡眠模式</strong> ：低功耗，CAN外设时钟停止，可使用软件唤醒或者硬件自动唤醒。</li>
 <li><strong>AWUM</strong> ：置1，自动唤醒，一旦检测到CAN总线活动，硬件就自动清零SLEEP，唤醒CAN外设；置0，手动唤醒，软件清零SLEEP，唤醒CAN外设。</li>
 </ul>
-<p><img alt="image-20250218231622750" src="image-20250218231622750.png" /></p>
+<p><img alt="image-20250218231622750" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250218231622750.png" /></p>
 <h3 id="1238">12.3.8 位时序<a class="headerlink" href="#1238" title="Permanent link">&para;</a></h3>
 <p>STM32规定的位时序与CAN协议稍有不同，STM32将 PBS1 和 PTS 合并成 BS1 段，其余均一致。</p>
 <ul>
@@ -2912,7 +2912,7 @@
 <li>BS1段：1-16Tq</li>
 <li>BS2段：1-8Tq</li>
 </ul>
-<p><img alt="image-20250218231719296" src="image-20250218231719296.png" /></p>
+<p><img alt="image-20250218231719296" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250218231719296.png" /></p>
 <p>波特率计算公式如下：</p>
 <p><strong>波特率 = APB1时钟频率(36MHZ) / 分频系数 / 一位的Tq数量</strong></p>
 <p><strong>公式说明：</strong></p>
@@ -2930,7 +2930,7 @@
 <li>FIFO 1中断：收到一个报文/FIFO 1满/FIFO 1溢出时产生。</li>
 <li>状态改变错误中断：出错/唤醒/进入睡眠时产生。</li>
 </ul>
-<p><img alt="image-20250218232347947" src="image-20250218232347947.png" /></p>
+<p><img alt="image-20250218232347947" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250218232347947.png" /></p>
 <h3 id="12310">12.3.10 时间触发通信<a class="headerlink" href="#12310" title="Permanent link">&para;</a></h3>
 <ul>
 <li>TTCM：置1，开启时间触发通信功能；置0，关闭时间触发通信功能。</li>
@@ -2945,11 +2945,11 @@
 <li><code>ABOM</code>置 1，开启离线自动恢复，进入离线状态后，就自动开启恢复过程；</li>
 <li><code>ABOM</code>置 0，关闭离线自动恢复，软件必须先请求进入然后再退出初始化模式，随后恢复过程才被开启</li>
 </ul>
-<p><img alt="image-20250218233208874" src="image-20250218233208874.png" /></p>
+<p><img alt="image-20250218233208874" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250218233208874.png" /></p>
 <h2 id="124-stm32cubemx">12.4 STM32CubeMX参数<a class="headerlink" href="#124-stm32cubemx" title="Permanent link">&para;</a></h2>
 <h3 id="1241-can">12.4.1 CAN初始化<a class="headerlink" href="#1241-can" title="Permanent link">&para;</a></h3>
 <p>与CAN外设相关的参数配置：</p>
-<p><img alt="image-20250219191830853" src="image-20250219191830853.png" /></p>
+<p><img alt="image-20250219191830853" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250219191830853.png" /></p>
 <ul>
 <li><strong>Prescaler</strong><br />
   分频系数，用于确定一个Tq的时间、波特率。此时波特率为 500kbps，使用高速CAN波特率要大于125kbps。</li>
@@ -2987,7 +2987,7 @@
 <ul>
 <li>
 <p><strong>Automatic Retransmission = Disable</strong></p>
-<p>禁用 <strong>非自动重传</strong> ，发送失败时需应用层处理重发逻辑，适用于严格时序控制场景（如实时系统）。</p>
+<p>禁用 <strong>非自动重传</strong> ，发送失败时需应用层处理重发逻辑，适用于严格时序控制场景（如实时系统）。</p>
 </li>
 </ul>
 <ul>
@@ -3067,7 +3067,7 @@
 <h2 id="125-can">12.5 CAN实战<a class="headerlink" href="#125-can" title="Permanent link">&para;</a></h2>
 <h3 id="1251">12.5.1 单设备环回测试<a class="headerlink" href="#1251" title="Permanent link">&para;</a></h3>
 <p>修改工作模式为环回测试模式：</p>
-<p><img alt="image-20250220111320608" src="image-20250220111320608.png" /></p>
+<p><img alt="image-20250220111320608" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250220111320608.png" /></p>
 <p>添加过滤器配置(和上一节一样，不再展示)。</p>
 <p>封装CAN发送和接收函数驱动，可以单独创建一个文件，也可以直接再<code>can.c</code>中添加，我选择前者：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;can_fd.h&quot;</span>
@@ -3193,9 +3193,9 @@
 </span></code></pre></div>
 <h3 id="1252">12.5.2 多设备互相通信<a class="headerlink" href="#1252" title="Permanent link">&para;</a></h3>
 <p>CAN工作模式改为正常模式即可。</p>
-<p><img alt="image-20250220112836410" src="image-20250220112836410.png" /></p>
+<p><img alt="image-20250220112836410" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250220112836410.png" /></p>
 <p>剩下的就是将硬件连接好，一定注意STM32芯片只集成了CAN控制器，并没有CAN收发器(将逻辑电平转化为差分信号)，若使用最新系统板可以参考江科大的接线图：</p>
-<p><img alt="02-CAN总线三个设备互相通信" src="02-CAN%E6%80%BB%E7%BA%BF%E4%B8%89%E4%B8%AA%E8%AE%BE%E5%A4%87%E4%BA%92%E7%9B%B8%E9%80%9A%E4%BF%A1.jpg" /></p>
+<p><img alt="02-CAN总线三个设备互相通信" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/02-CAN%E6%80%BB%E7%BA%BF%E4%B8%89%E4%B8%AA%E8%AE%BE%E5%A4%87%E4%BA%92%E7%9B%B8%E9%80%9A%E4%BF%A1.jpg" /></p>
 <p>或者可以自己设计、购买集成CAN收发器的开发板。</p>
 <h3 id="1253">12.5.3 数据/遥控帧+标准/扩展格式<a class="headerlink" href="#1253" title="Permanent link">&para;</a></h3>
 <p>修改CAN_FD收发函数</p>
@@ -3283,8 +3283,8 @@
 </span></code></pre></div>
 <h3 id="1254">12.5.4 标识过滤器使用<a class="headerlink" href="#1254" title="Permanent link">&para;</a></h3>
 <p>根据江科大PPT中的过滤器示例，可以尝试验证这些过滤器功能：</p>
-<p><img alt="image-20250220171415451" src="image-20250220171415451.png" /></p>
-<p>需注意，使用扩展格式和遥控帧时需要配置<code>RTR</code>和<code>IDE</code>位，即遥控帧需要<code>ID | 0x10</code>，扩展格式需要<code>ID | 0x08</code>。</p>
+<p><img alt="image-20250220171415451" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250220171415451.png" /></p>
+<p>需注意，使用扩展格式和遥控帧时需要配置<code>RTR</code>和<code>IDE</code>位，即遥控帧需要<code>ID | 0x10</code>，扩展格式需要<code>ID | 0x08</code>。</p>
 <p>使用过滤器修改<code>can.c</code>的过滤器配置即可：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/* USER CODE BEGIN CAN_Init 2 */</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">// 启用CAN功能⭐</span>
@@ -3329,7 +3329,7 @@
 <li>中断接收</li>
 </ol>
 <h3 id="1256">12.5.6 中断使用<a class="headerlink" href="#1256" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20250220174345730" src="image-20250220174345730.png" /></p>
+<p><img alt="image-20250220174345730" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250220174345730.png" /></p>
 <ol>
 <li>USB high priority or CAN TX interrupts：发送中断</li>
 <li>USB low priority or CAN RX0 interrupts：FIFO0中断</li>

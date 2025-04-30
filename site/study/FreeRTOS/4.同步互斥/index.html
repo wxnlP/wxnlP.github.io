@@ -1778,7 +1778,7 @@
 <p><strong>互斥</strong> ：当A正在使用C时，B不能使用C，强调的时资源C同一时间只能有一个任务使用。</p>
 <h2 id="42">4.2 有缺陷的同步示例<a class="headerlink" href="#42" title="Permanent link">&para;</a></h2>
 <p>在创建FreeRTOS项目时，由于RTOS时钟使用的是<code>SysTick</code>，我选用的系统时钟为<code>TIM6</code>。</p>
-<p><img alt="image-20250113111220739" src="image-20250113111220739.png" /></p>
+<p><img alt="image-20250113111220739" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250113111220739.png" /></p>
 <p>借鉴<code>百问网</code>时钟驱动程序，我们以<code>TIM6</code>为时基，创建一个获取系统时间的驱动：</p>
 <p><code>timer.h</code></p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#ifndef ROBOT_TIMER_H</span>
@@ -1924,15 +1924,15 @@
 </span></code></pre></div>
 <p>然而，使用关闭中断的方法保护临界资源会出现浪费CPU资源情况：</p>
 <p>假设，两个任务调用<code>OLED_Print_Task</code>，而每次都是A成功打印，B一直判断失败，此时B一直判断失败的时间内就会造成CPU浪费。</p>
-<p><img alt="image-20250113133703505" src="image-20250113133703505.png" /></p>
+<p><img alt="image-20250113133703505" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250113133703505.png" /></p>
 <p>我们期望的结果时，B判断失败后进入阻塞态，等A执行完<code>OLED_Print_Task</code>，唤醒B。</p>
-<p><img alt="image-20250113134203586" src="image-20250113134203586.png" /></p>
+<p><img alt="image-20250113134203586" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250113134203586.png" /></p>
 <h2 id="44-freertos">4.4 FreeRTOS解决方法<a class="headerlink" href="#44-freertos" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>图片来源：<a href="https://rtos.100ask.net/zh/FreeRTOS/DShanMCU-F103/chapter10.html#_10-3-各类方法的对比">第10章 同步互斥与通信 | 百问网</a></p>
 </blockquote>
 <p>能实现同步、互斥的内核方法有： <strong>任务通知（Task Notification）</strong> 、 <strong>队列（Queue）</strong> 、 <strong>事件组（Event Group）</strong> 、 <strong>信号量（Semaphore）</strong> 和 <strong>互斥量（Mutex）</strong>。</p>
-<p><img alt="img" src="image1.png" /></p>
+<p><img alt="img" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image1.png" /></p>
 
 
 

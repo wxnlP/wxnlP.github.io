@@ -2145,7 +2145,7 @@
   f_m=\sqrt\frac{f_c}{T}
   $$</li>
 </ul>
-<p><img alt="1705737398459" src="1705737398459.png" /></p>
+<p><img alt="1705737398459" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1705737398459.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>高频适合使用测频法，低频适合使用测周法，而中界频率即使选择方法的临界频率。</p>
@@ -2156,13 +2156,13 @@
 <li><strong>工作流程：</strong> 经过输入滤波器和极性选择进入预分频器，可以选择进行触发信号分频，然后触发信号进入捕获电路工作，每来一个触发信号，CNT的值向CCR转运一次，同时<kbd>触发捕获事件</kbd>，在状态寄存器置标志位触发中断，可以设置<kbd>中断处理</kbd>。</li>
 <li><strong>测周法实现：</strong> 以上升沿为触发信号，CNT计数器由内部标准时钟驱动（驱动时钟为<span class="arithmatex">\(<span class="arithmatex">\(f_c\)</span>\)</span> ），CNT数值即可记录两个上升沿的时间间隔，即为周期，取倒数可获得测周法的频率。</li>
 </ul>
-<p><img alt="image-20241211210550007" src="image-20241211210550007.png" /></p>
+<p><img alt="image-20241211210550007" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211210550007.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>每次捕获以后要将CNT清零，可以用主从触发模式自动完成。</p>
 </div>
 <p>通道 1 和 2 互相交叉捕获可以在定时器总框图看的更清楚：</p>
-<p><img alt="image-20241211210739260" src="image-20241211210739260.png" /></p>
+<p><img alt="image-20241211210739260" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211210739260.png" /></p>
 <h2 id="52">5.2 主从触发模式<a class="headerlink" href="#52" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>这个名字是从江协科技（以前叫江科大自化协）学来的。</p>
@@ -2172,29 +2172,29 @@
 <li>主模式：将定时器内部的信号映射到TRGO引脚，用于触发别的外设。</li>
 <li>从模式：接收其他外设或自身外设的一些信号用于控制自身定时器的运行。<strong>(被其他信号控制)</strong></li>
 </ul>
-<p><img alt="1705746225685" src="1705746225685.png" /></p>
+<p><img alt="1705746225685" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1705746225685.png" /></p>
 <h3 id="522">5.2.2 主从模式选择<a class="headerlink" href="#522" title="Permanent link">&para;</a></h3>
 <p>主模式各模式的信息，与表格中一一对应</p>
-<p><img alt="image-20241211212745460" src="image-20241211212745460.png" /></p>
+<p><img alt="image-20241211212745460" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211212745460.png" /></p>
 <p>从模式触发源选择</p>
-<p><img alt="image-20241211212955071" src="image-20241211212955071.png" /></p>
+<p><img alt="image-20241211212955071" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211212955071.png" /></p>
 <p>定时器的<code>ITRx</code>引脚对应</p>
-<p><img alt="image-20241211213049917" src="image-20241211213049917.png" /></p>
+<p><img alt="image-20241211213049917" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211213049917.png" /></p>
 <p>从模式的模式选择，与表格中一一对应</p>
-<p><img alt="image-20241211213146296" src="image-20241211213146296.png" /></p>
+<p><img alt="image-20241211213146296" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211213146296.png" /></p>
 <h2 id="53">5.3 输入捕获基本结构<a class="headerlink" href="#53" title="Permanent link">&para;</a></h2>
 <h3 id="531">5.3.1 基础结构<a class="headerlink" href="#531" title="Permanent link">&para;</a></h3>
 <p>输入信号源可以自定义引脚输出一固定频率的方波，引脚接到输入捕获的引脚</p>
-<p><img alt="image-20241211221522415" src="image-20241211221522415.png" /></p>
+<p><img alt="image-20241211221522415" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211221522415.png" /></p>
 <p>执行逻辑如下：</p>
 <ul>
 <li>输入信号源经过滤波，确定极性，上升沿或下降沿触发输入捕获</li>
 <li>将CNT值写入CCR1寄存器</li>
 <li>同时TI1FP1经过触发源选择，触发<kbd>从模式 Reset</kbd>自动清零CNT</li>
 </ul>
-<p><img alt="image-20241211221335809" src="image-20241211221335809.png" /></p>
+<p><img alt="image-20241211221335809" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211221335809.png" /></p>
 <h3 id="532-pwmi">5.3.2 PWMI模式<a class="headerlink" href="#532-pwmi" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20241211222427955" src="image-20241211222427955.png" /></p>
+<p><img alt="image-20241211222427955" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211222427955.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>注意这里<code>TI1FP2</code>并没有使用从模式，这是为了后面可以实现高电平单独测量，从而得出占空比的测量。</p>
@@ -2205,12 +2205,12 @@
 <li>从第一个上升沿开始，经历第一个下降沿，将CNT值写入CCR2寄存器， <strong>此时不会触发从模式清零CNT</strong></li>
 <li>经历第二个上升沿，将CNT值写入CCR1寄存器， <strong>并触发从模式清零CNT</strong></li>
 </ul>
-<p><img alt="image-20241211222600528" src="image-20241211222600528.png" /></p>
+<p><img alt="image-20241211222600528" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211222600528.png" /></p>
 <h3 id="533-stm32cubemx">5.3.3 STM32CubeMX参数<a class="headerlink" href="#533-stm32cubemx" title="Permanent link">&para;</a></h3>
 <p><strong>各模式参数配置名称如下：</strong></p>
-<p><img alt="image-20241211234234617" src="image-20241211234234617.png" /></p>
+<p><img alt="image-20241211234234617" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211234234617.png" /></p>
 <p><strong>从模式选择：</strong></p>
-<p><img alt="image-20241211234336301" src="image-20241211234336301.png" /></p>
+<p><img alt="image-20241211234336301" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211234336301.png" /></p>
 <ul>
 <li><strong>Slave mode</strong> ：从模式，也可以选择配置为 <kbd>外部时钟 1</kbd> 。<ul>
 <li>External Clock Mode 1：外部时钟模式 1</li>
@@ -2224,7 +2224,7 @@
 <p>与前面的表格对应，具体功能上面有介绍，在此不重复。外部时钟模式 1 在定时中断同样介绍过。</p>
 </blockquote>
 <p><strong>触发源选择：</strong></p>
-<p><img alt="image-20241211235052441" src="image-20241211235052441.png" /></p>
+<p><img alt="image-20241211235052441" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211235052441.png" /></p>
 <ul>
 <li><strong>Trigger mode</strong> ：从模式触发源选择。<ul>
 <li>ITR0</li>
@@ -2243,7 +2243,7 @@
 <p>具体如何配置组合达到想要的功能，会在后面介绍，此处先熟悉各个参数与前面理论部分的对应。</p>
 </div>
 <p><strong>输入捕获的通道模式：</strong></p>
-<p><img alt="image-20241205212240021" src="image-20241205212240021.png" /></p>
+<p><img alt="image-20241205212240021" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241205212240021.png" /></p>
 <ul>
 <li><strong>Input Capture Direct Mode</strong>  ，在输入捕获直接模式下，定时器会直接捕获外部信号（例如TI1FP1）的脉冲并存储其时间戳。</li>
 </ul>
@@ -2262,7 +2262,7 @@
 <p><code>Input Capture Triggered by TRC</code> 这个模式只有在触发源为ITRx时才可以选。</p>
 </div>
 <p><strong>主模式参数选择：</strong></p>
-<p><img alt="image-20241211235509397" src="image-20241211235509397.png" /></p>
+<p><img alt="image-20241211235509397" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211235509397.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>参数与前面介绍的一致，故不做过多解释，且主模式暂时用不到。</p>
@@ -2273,20 +2273,20 @@
 </blockquote>
 <h3 id="541">5.4.1 单输入捕获通道<a class="headerlink" href="#541" title="Permanent link">&para;</a></h3>
 <p>实现基础结构，即单个输入捕获通道配合从模式自动清零CNT，结构图如下：</p>
-<p><img alt="image-20241211221522415" src="image-20241211221522415.png" /></p>
+<p><img alt="image-20241211221522415" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211221522415.png" /></p>
 <p>那么在STM32CubeMX的配置流程如下：</p>
-<p><img alt="image-20241212000507208" src="image-20241212000507208.png" /></p>
-<p><img alt="image-20241212000612755" src="image-20241212000612755.png" /></p>
+<p><img alt="image-20241212000507208" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241212000507208.png" /></p>
+<p><img alt="image-20241212000612755" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241212000612755.png" /></p>
 <p>上升沿触发，其他无需改，<code>Input Filter</code>为滤波器参数默认即可</p>
-<p><img alt="image-20241212000759737" src="image-20241212000759737.png" /></p>
+<p><img alt="image-20241212000759737" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241212000759737.png" /></p>
 <h3 id="532-pwmi_1">5.3.2 PWMI模式<a class="headerlink" href="#532-pwmi_1" title="Permanent link">&para;</a></h3>
 <p>实现PWMI结构，结构图如下：</p>
-<p><img alt="image-20241211222427955" src="image-20241211222427955.png" /></p>
+<p><img alt="image-20241211222427955" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241211222427955.png" /></p>
 <p>那么在STM32CubeMX的配置流程如下：</p>
-<p><img alt="image-20241212001243494" src="image-20241212001243494.png" /></p>
-<p><img alt="image-20241212001335663" src="image-20241212001335663.png" /></p>
+<p><img alt="image-20241212001243494" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241212001243494.png" /></p>
+<p><img alt="image-20241212001335663" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241212001335663.png" /></p>
 <p>配置通道 2 参数：</p>
-<p><img alt="image-20241212001420560" src="image-20241212001420560.png" /></p>
+<p><img alt="image-20241212001420560" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241212001420560.png" /></p>
 <h2 id="55">5.5 工程配置<a class="headerlink" href="#55" title="Permanent link">&para;</a></h2>
 <h3 id="551">5.5.1 单通道输入捕获<a class="headerlink" href="#551" title="Permanent link">&para;</a></h3>
 <p>完成<code>RCC</code>、<code>SYS</code>以及<code>5.4</code>中的单通道参数配置，另外需要完成时基单元配置，主要是选择计数最大值，以及测周法的标准频率选择</p>
@@ -2300,13 +2300,13 @@
 <blockquote>
 <p>应注意此时的标准频率为1MHZ，即一个数代表0.000001s。</p>
 </blockquote>
-<p><img alt="image-20241212122917621" src="image-20241212122917621.png" /></p>
+<p><img alt="image-20241212122917621" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241212122917621.png" /></p>
 <p>配置输入信号即PWM</p>
 <ul>
 <li>参考输出比较那一节</li>
 <li>频率自定义，注意ARR值计算占空比需要</li>
 </ul>
-<p><img alt="image-20241213230155069" src="image-20241213230155069.png" /></p>
+<p><img alt="image-20241213230155069" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241213230155069.png" /></p>
 <p><strong>下面时代码正文:</strong></p>
 <p>打开输入比较和输入捕获定时器，注意代码位置应该软件配置的初始化（xxx_Init）之后。</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
@@ -2333,8 +2333,8 @@
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="cm">/* USER CODE END 3 */</span>
 </span></code></pre></div>
 <h3 id="552-pwmi">5.5.2 PWMI模式<a class="headerlink" href="#552-pwmi" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20241213231559442" src="image-20241213231559442.png" /></p>
-<p><img alt="image-20241213231628041" src="image-20241213231628041.png" /></p>
+<p><img alt="image-20241213231559442" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241213231559442.png" /></p>
+<p><img alt="image-20241213231628041" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241213231628041.png" /></p>
 <p>添加输入捕获通道 2 时钟，配置占空比，500/1000 即 50%</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">HAL_TIM_IC_Start_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">htim3</span><span class="p">,</span><span class="w"> </span><span class="n">TIM_CHANNEL_1</span><span class="p">);</span>

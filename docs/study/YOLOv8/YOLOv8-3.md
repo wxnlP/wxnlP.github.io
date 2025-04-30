@@ -13,7 +13,7 @@ comments: true
 
 文件一览，主要配置文件在`ultralytics`文件夹
 
-![6](YOLOv8-3/6.png)
+![6](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/6.png)
 
 #### 安装依赖
 
@@ -41,21 +41,21 @@ VOCdevkit
 
 根据 **--ultralytics/cfg/datasets/coco8.yaml --** 目录，找到 **`coco8.yaml`** 文件
 
-![7](YOLOv8-3/7.png)
+![7](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/7.png)
 
 根据标签进行文件内容修改-- **添加数据集目录和标签** ，另将无用进行注释
 
-![8](YOLOv8-3/8.png)
+![8](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/8.png)
 
 #### 修改yolov8.yaml
 
 根据--**ultralytics/cfg/models/v8/yolov8.yaml**--找到`yolov8.yaml`文件
 
-![9](YOLOv8-3/9.png)
+![9](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/9.png)
 
 修改"number of classes"的数量，如下图所示
 
-![10](YOLOv8-3/10.png)
+![10](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/10.png)
 
 ### 模型训练
 
@@ -101,9 +101,9 @@ if __name__ == "__main__":
 
 #### 训练过程与结果
 
-![12](YOLOv8-3/12.png)
+![12](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/12.png)
 
-![13](YOLOv8-3/13.png)
+![13](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/13.png)
 
 #### 检测验证
 
@@ -171,7 +171,7 @@ for result in results:
 
 推理结果如下,同时返回**坐标**、**置信度**、**标签信息**：
 
-![16](YOLOv8-3/16.png)
+![16](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/16.png)
 
-![15](YOLOv8-3/15.png)
+![15](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/15.png)
 

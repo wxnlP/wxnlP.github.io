@@ -4,7 +4,7 @@
 
 官方对于天工开物开发机的要求：
 
-![image-20250314231457116](BPU%E6%A8%A1%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20250314231457116.png)
+![image-20250314231457116](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250314231457116.png)
 
 使用Ubuntu20.04虚拟机即可，由于虚拟机不像物理机一样轻松调用GPU加速，所以后面均采用CPU方式。
 
@@ -95,7 +95,7 @@ Environment="NO_PROXY=localhost,127.0.0.1"
 
 其中`http://proxy.example.com`需要替换为自己的IP，`8080`端口也需要替换为7890。
 
-![image-20250314232641974](BPU%E6%A8%A1%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20250314232641974.png)
+![image-20250314232641974](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250314232641974.png)
 
 这样以后Docker拉去就不会出现网络问题了。
 
@@ -107,11 +107,11 @@ Environment="NO_PROXY=localhost,127.0.0.1"
 
 建议离线下载，会快一些。
 
-![image-20250314233027802](BPU%E6%A8%A1%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20250314233027802.png)
+![image-20250314233027802](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250314233027802.png)
 
 开发包可以选下，我个人不会使用，我只是进行模型转化暂时也用不到。
 
-![image-20250314233324976](BPU%E6%A8%A1%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20250314233324976.png)
+![image-20250314233324976](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250314233324976.png)
 
 将镜像移动到根目录，加载镜像(虚拟机内存多一些，不然加载会出现内存不足)：
 
@@ -145,7 +145,7 @@ docker run -it --rm \
 
 一直到`PTQ方案量化转化`这一节检查模型完成，部分输出结果如下：
 
-![image-20250314234231836](BPU%E6%A8%A1%E5%9E%8B%E8%BD%AC%E6%8D%A2/image-20250314234231836.png)
+![image-20250314234231836](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250314234231836.png)
 
 关于校准数据准备博客并未提及，而是在后来的另一篇博客提到：
 

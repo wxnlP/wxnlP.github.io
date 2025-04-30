@@ -1774,7 +1774,7 @@
 
 <h2 id="11-rtos">1.1 RTOS的统一接口<a class="headerlink" href="#11-rtos" title="Permanent link">&para;</a></h2>
 <p>在<code>cmsis_os2.c</code>文件中由一个<code>osThreadNew()</code>函数，用于统一各种操作系统的任务接口，我们学习FreeRTOS所以优先使用FreeRTOS原生代码函数。</p>
-<p><img alt="image-20250110214542412" src="image-20250110214542412.png" /></p>
+<p><img alt="image-20250110214542412" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250110214542412.png" /></p>
 <h2 id="12-freertos">1.2 FreeRTOS默认任务<a class="headerlink" href="#12-freertos" title="Permanent link">&para;</a></h2>
 <p>在使用STM32CubeMX配置完FreeRTOS以后，会有一个默认任务生成，可以在<code>Core\Src\freertos.c</code>文件中找到：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">MX_FREERTOS_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>

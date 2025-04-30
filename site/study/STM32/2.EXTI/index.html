@@ -2090,12 +2090,12 @@
 </tbody>
 </table>
 <p>AFIO引脚复用，通过引脚编号直接映射，不论是<code>A0</code>还是<code>B0</code>均使用一个<kbd>EXTI0事件线</kbd>       </p>
-<p><img alt="image-20240916233559097" src="image-20240916233559097.png" /></p>
+<p><img alt="image-20240916233559097" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20240916233559097.png" /></p>
 <h2 id="23">2.3 中断相关概念<a class="headerlink" href="#23" title="Permanent link">&para;</a></h2>
 <p><strong>中断</strong>：在主程序运行过程中，出现了特定的中断触发条件（中断源），使得CPU暂停当前正在运行的程序，转而去处理中断程序，处理完成后又返回原来被暂停的位置继续运行</p>
 <p><strong>中断优先级</strong>：当有多个中断源同时申请中断时，CPU会根据中断源的轻重缓急进行裁决，优先响应更加紧急的中断源</p>
 <p><strong>中断嵌套</strong>：当一个中断程序正在运行时，又有新的更高优先级的中断源申请中断，CPU再次暂停当前中断程序，转而去处理新的中断程序，处理完成后依次进行返回</p>
-<p><img alt="image-20240916233233740" src="image-20240916233233740.png" /></p>
+<p><img alt="image-20240916233233740" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20240916233233740.png" /></p>
 <h2 id="24-nvic">2.4 NVIC优先级分组<a class="headerlink" href="#24-nvic" title="Permanent link">&para;</a></h2>
 <ul>
 <li>ARM Cortex-M 使用了 8 位宽的寄存器来配置中断的优先等级，这个寄存器就是<kbd>中断优先级配置寄存器</kbd>。但STM32，只用了中断优先级配置寄存器的高4位 [7 : 4]，所以STM32提供了最大16级的中断优先等级。</li>
@@ -2145,13 +2145,13 @@
 </tbody>
 </table>
 <p><kbd>STM32CubeMX</kbd>&gt;中对应 <strong>抢占优先级</strong> 和 <strong>子优先级</strong> 参数配置</p>
-<p><img alt="image-20240919222424896" src="image-20240919222424896.png" /></p>
+<p><img alt="image-20240919222424896" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20240919222424896.png" /></p>
 <h2 id="25-stm32cubemx">2.5 STM32CubeMX配置<a class="headerlink" href="#25-stm32cubemx" title="Permanent link">&para;</a></h2>
 <h3 id="251-sys">2.5.1 SYS配置<a class="headerlink" href="#251-sys" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20241128110251249" src="image-20241128110251249.png" /></p>
-<p><img alt="image-20241128110340962" src="image-20241128110340962.png" /></p>
+<p><img alt="image-20241128110251249" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128110251249.png" /></p>
+<p><img alt="image-20241128110340962" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128110340962.png" /></p>
 <h3 id="252-rcc">2.5.2 RCC配置<a class="headerlink" href="#252-rcc" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20241128102746910" src="image-20241128102746910.png" /></p>
+<p><img alt="image-20241128102746910" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128102746910.png" /></p>
 <h3 id="253-gpio">2.5.3 GPIO配置<a class="headerlink" href="#253-gpio" title="Permanent link">&para;</a></h3>
 <p>PB0和PB1配置为LED1、LED2</p>
 <ul>
@@ -2161,19 +2161,19 @@
 <li>输出速度按需配置</li>
 <li>用户标签，给引脚起别名，按需配置</li>
 </ul>
-<p><img alt="image-20241128111221030" src="image-20241128111221030.png" /></p>
+<p><img alt="image-20241128111221030" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128111221030.png" /></p>
 <p>PB6、PB7配置为KEY1、KEY2</p>
 <ul>
 <li>输入模式</li>
 <li>下拉电阻</li>
 </ul>
-<p><img alt="image-20241128111432549" src="image-20241128111432549.png" /></p>
+<p><img alt="image-20241128111432549" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128111432549.png" /></p>
 <h3 id="254-exti">2.5.4 EXTI配置<a class="headerlink" href="#254-exti" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20240919222942930" src="image-20240919222942930.png" /></p>
+<p><img alt="image-20240919222942930" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20240919222942930.png" /></p>
 <p>使能中断触发，否则找不到<kbd>EXTI4_IRQHandler</kbd>等中断函数</p>
-<p><img alt="image-20241124180308221" src="image-20241124180308221.png" /></p>
+<p><img alt="image-20241124180308221" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241124180308221.png" /></p>
 <h3 id="255-nvic">2.5.5 NVIC优先级配置<a class="headerlink" href="#255-nvic" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20240919223855861" src="image-20240919223855861.png" /></p>
+<p><img alt="image-20240919223855861" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20240919223855861.png" /></p>
 <h2 id="26">2.6 代码介绍<a class="headerlink" href="#26" title="Permanent link">&para;</a></h2>
 <h3 id="261">2.6.1 中断触发函数介绍<a class="headerlink" href="#261" title="Permanent link">&para;</a></h3>
 <p><kbd>stm32f1xx_it.c</kbd>文件找到中断触发函数，内容如下</p>

@@ -1891,9 +1891,9 @@
 在2.x和3.0阶段，官方对轻量级设备投入的精力比较少。已知到 2021-12-31 为止，HDF还没有一个轻量级芯片支持，包括Hi3861。</p>
 </blockquote>
 <p><strong>HAL接口</strong> 源码目录为<code>base\iot_hardware\peripheral\interfaces\kits</code>，如下图。其中有些接口从 1.0.1 版本以后已经没有了，如ADC、AT、I2S、SDIO等。</p>
-<p><img alt="image-20250204104920134" src="image-20250204104920134.png" /></p>
+<p><img alt="image-20250204104920134" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250204104920134.png" /></p>
 <p><strong>海思SDK接口</strong> 源码目录为<code>device\hisilicon\hispark_pegasus\sdk_liteos\include</code>，如下图。海思原厂接口可谓是很全面，因此在HAL接口缺失的情况下，我们就使用海思SDK接口。</p>
-<p><img alt="image-20250204105330121" src="image-20250204105330121.png" /></p>
+<p><img alt="image-20250204105330121" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250204105330121.png" /></p>
 <details class="danger">
 <summary>Danger</summary>
 <p>我们应当学会区分HAL接口和海思SDK接口，其中HAL接口以<code>IoT</code>开头，函数为大驼峰样式；而海思SDK接口以<code>hi</code>开头，函数均为小写以<code>-</code>连接。</p>

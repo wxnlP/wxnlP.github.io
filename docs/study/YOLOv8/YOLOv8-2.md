@@ -33,7 +33,7 @@ pip install labelimg
 
 根据上面标注，把照片放到`JPEGImages`文件夹，将要标注的所有类别放在`predefined_classes.txt`文件
 
-![2](YOLOv8-2/2.PNG)
+![2](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/2.PNG)
 
 **一些常用快捷键：**
 
@@ -44,7 +44,7 @@ pip install labelimg
 - Ctrl+u：选择标注的图片文件夹
 - Ctrl+r：选择标注好的label标签存在的文件夹
 
-![3](YOLOv8-2/3.png)
+![3](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/3.png)
 
 ### 划分数据集
 
@@ -66,10 +66,10 @@ pip install labelimg
 
 #### 修改参数
 
-![4](YOLOv8-2/4.png)
+![4](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/4.png)
 
 #### 检验数据
 
 划分完成以后的目录结构：
 
-![5](YOLOv8-2/5.png)
+![5](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/5.png)
