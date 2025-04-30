@@ -2066,7 +2066,7 @@
 </blockquote>
 <p>简单提一下主从触发模式中的主模式自动触发DAC原理：</p>
 <p>主模式可以将定时的 “ 更新事件 ” 映射到<code>TRGO</code>引脚，然后<code>TRGO</code>接到DAC的触发转换引脚。这样就完成了定时自动触发DAC而不需要中断触发DAC。</p>
-<p><img alt="1706254347422" src="1706254347422.png" /></p>
+<p><img alt="1706254347422" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706254347422.png" /></p>
 <blockquote>
 <p>⚠：--基本定时器仅支持向上计数--时钟选择也仅支持内部时钟，为72MHZ</p>
 </blockquote>
@@ -2093,14 +2093,14 @@
 <ul>
 <li><strong>外部时钟模式 2</strong> （TIMx_ETR 外部触发输入）</li>
 </ul>
-<p><img alt="1706255081006" src="1706255081006.png" /></p>
+<p><img alt="1706255081006" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706255081006.png" /></p>
 <p><strong>高级定时器</strong></p>
-<p><img alt="1706255487441" src="1706255487441.png" /></p>
+<p><img alt="1706255487441" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706255487441.png" /></p>
 <h3 id="313-stm32cubemx">3.1.3 STM32CubeMX参数<a class="headerlink" href="#313-stm32cubemx" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>参数很多，与上一节定时器框图对应，主从模式、输入捕获等可后续章节学习，先简单了解。</p>
 </blockquote>
-<p><img alt="image-20241127220258455" src="image-20241127220258455.png" /></p>
+<p><img alt="image-20241127220258455" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241127220258455.png" /></p>
 <p>三个参数：</p>
 <ol>
 <li>
@@ -2141,7 +2141,7 @@
 </ol>
 <h2 id="32">3.2 定时中断<a class="headerlink" href="#32" title="Permanent link">&para;</a></h2>
 <h3 id="321">3.2.1 定时中断结构<a class="headerlink" href="#321" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20241205205455076" src="image-20241205205455076.png" /></p>
+<p><img alt="image-20241205205455076" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241205205455076.png" /></p>
 <h3 id="322">3.2.2 计数频率计算<a class="headerlink" href="#322" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
 计数频率 = \frac{时钟频率}{Prescaler + 1}
@@ -2164,19 +2164,19 @@
 \]</div>
 <h3 id="323-stm32cubemx">3.2.3 STM32CubeMX配置<a class="headerlink" href="#323-stm32cubemx" title="Permanent link">&para;</a></h3>
 <h4 id="1-sys">1. SYS配置<a class="headerlink" href="#1-sys" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20241128110251249" src="image-20241128110251249.png" /></p>
-<p><img alt="image-20241128110340962" src="image-20241128110340962.png" /></p>
+<p><img alt="image-20241128110251249" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128110251249.png" /></p>
+<p><img alt="image-20241128110340962" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128110340962.png" /></p>
 <h4 id="2-rcc">2. RCC配置<a class="headerlink" href="#2-rcc" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20241128102746910" src="image-20241128102746910.png" /></p>
+<p><img alt="image-20241128102746910" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128102746910.png" /></p>
 <h4 id="3-gpio">3. GPIO配置<a class="headerlink" href="#3-gpio" title="Permanent link">&para;</a></h4>
 <p>配置PB0和PB1为输出模式</p>
-<p><img alt="image-20241128102952321" src="image-20241128102952321.png" /></p>
-<p><img alt="image-20241128103611215" src="image-20241128103611215.png" /></p>
+<p><img alt="image-20241128102952321" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128102952321.png" /></p>
+<p><img alt="image-20241128103611215" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128103611215.png" /></p>
 <h4 id="4">4. 定时器配置<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20241127230812081" src="image-20241127230812081.png" /></p>
+<p><img alt="image-20241127230812081" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241127230812081.png" /></p>
 <p><strong>auto-reload-preload</strong> ：定时器的预加载机制是否开启，即允许在计数器到达最大值之前，提前将新的值加载到 ARR 寄存器中，以便下一个计数周期可以使用新的自动重载值。这种机制可以避免定时器在溢出事件发生时出现不必要的延迟，确保定时准确度打开即可。</p>
-<p><img alt="image-20241127231307562" src="image-20241127231307562.png" /></p>
-<p><img alt="image-20241128112459137" src="image-20241128112459137.png" /></p>
+<p><img alt="image-20241127231307562" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241127231307562.png" /></p>
+<p><img alt="image-20241128112459137" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241128112459137.png" /></p>
 <h3 id="324">3.2.4 工程代码编写<a class="headerlink" href="#324" title="Permanent link">&para;</a></h3>
 <p>完成配置以后，可以在<code>stm32f1xx_it.c</code>文件找到<code>TIM2_IRQHandler</code>函数</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">TIM2_IRQHandler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>

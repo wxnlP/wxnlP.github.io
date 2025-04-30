@@ -1982,22 +1982,22 @@
 <h2 id="21-windows">2.1 Windows环境<a class="headerlink" href="#21-windows" title="Permanent link">&para;</a></h2>
 <p><a href="https://device.harmonyos.com/cn/develop/ide#download">华为集成开发环境IDE DevEco Device Tool下载 </a></p>
 <p>一路默认配置即可，然后打开Vscode即可看到插件</p>
-<p><img alt="image-20241226132019302" src="image-20241226132019302.png" /></p>
+<p><img alt="image-20241226132019302" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241226132019302.png" /></p>
 <h2 id="22-ubuntu">2.2 Ubuntu环境<a class="headerlink" href="#22-ubuntu" title="Permanent link">&para;</a></h2>
 <h3 id="221-ubuntu">2.2.1 准备Ubuntu虚拟机<a class="headerlink" href="#221-ubuntu" title="Permanent link">&para;</a></h3>
 <p>官方Ubuntu系统要求：Ubuntu18.04~21.10版本，推荐为 20.04 版本，因此我们也是有此版本。</p>
 <p><a href="https://tonmoon.top/study/ROS2/1.2-ROS2系统环境安装/">Ubuntu安装指导链接</a></p>
-<p><img alt="image-20241226132410424" src="image-20241226132410424.png" /></p>
+<p><img alt="image-20241226132410424" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241226132410424.png" /></p>
 <h3 id="222-ubuntu">2.2.2 配置Ubuntu环境<a class="headerlink" href="#222-ubuntu" title="Permanent link">&para;</a></h3>
 <p>将Ubuntu Shell环境修改为bash</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ls<span class="w"> </span>-l<span class="w"> </span>/bin/sh
 </span></code></pre></div>
-<p><img alt="image-20241226132741762" src="image-20241226132741762.png" /></p>
+<p><img alt="image-20241226132741762" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241226132741762.png" /></p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>dpkg-reconfigure<span class="w"> </span>dash
 </span></code></pre></div>
-<p><img alt="image-20241226132824430" src="image-20241226132824430.png" /></p>
+<p><img alt="image-20241226132824430" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241226132824430.png" /></p>
 <p>修改结果：</p>
-<p><img alt="image-20241226132851553" src="image-20241226132851553.png" /></p>
+<p><img alt="image-20241226132851553" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241226132851553.png" /></p>
 <p>下载<a href="https://device.harmonyos.com/cn/ide#download">DevEco Device Tool</a>最新Linux版本软件包，注意和Windows的版本一样</p>
 <p>解压DevEco Device Tool软件包并安装，第三步需要签署同意用户协议和隐私声明才能进行下一步的安装</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">#解压</span>
@@ -2019,23 +2019,23 @@
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">#查看IP</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>ifconfig
 </span></code></pre></div>
-<p><img alt="image-20241226133543727" src="image-20241226133543727.png" /></p>
+<p><img alt="image-20241226133543727" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241226133543727.png" /></p>
 <h3 id="232-windows">2.3.2 Windows配置远程访问<a class="headerlink" href="#232-windows" title="Permanent link">&para;</a></h3>
 <p>Vscode 安装 Remote SSH 插件</p>
-<p><img alt="image-20241226133719561" src="image-20241226133719561.png" /></p>
+<p><img alt="image-20241226133719561" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241226133719561.png" /></p>
 <p>连接虚拟机：<code>ssh 用户名@IP</code></p>
-<p><img alt="image-20241226133829724" src="image-20241226133829724.png" /></p>
+<p><img alt="image-20241226133829724" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241226133829724.png" /></p>
 <p>一路默认，输入密码即可成功连接，点击<kbd>打开文件</kbd>就可以选择要打开的虚拟机文件夹</p>
-<p><img alt="image-20241226134038130" src="image-20241226134038130.png" /></p>
+<p><img alt="image-20241226134038130" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241226134038130.png" /></p>
 <h2 id="24">2.4 创建工程获取源码<a class="headerlink" href="#24" title="Permanent link">&para;</a></h2>
 <p>选择源码的版本，这里我选择与官网示例同样的<kbd>OpenHarmony-v3.1-Release</kbd> ，即OpenHarmony-v3.1正式版，也可以使用其他版本一样的操作。开发板我选用的小熊派，芯片HI3861，这里SOC和开发板都选用hi3861。</p>
 <details class="danger">
 <summary>Danger</summary>
 <p>之前选用开发板为BreaPi但是串口输出结果不对，所以又改用这个比较正常，原因暂未知，所以就用hi3861吧。</p>
 </details>
-<p><img alt="image-20241228213458999" src="image-20241228213458999.png" /></p>
+<p><img alt="image-20241228213458999" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228213458999.png" /></p>
 <p>点击确定，会自动开始下载源码，源码比较大所以需要挺多的时间。</p>
-<p><img alt="" src="Snipaste_2024-12-28_10-42-56.png" /></p>
+<p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/Snipaste_2024-12-28_10-42-56.png" /></p>
 <h2 id="25-hi3861">2.5 第一个程序（基于HI3861）<a class="headerlink" href="#25-hi3861" title="Permanent link">&para;</a></h2>
 <h3 id="251">2.5.1 编写程序<a class="headerlink" href="#251" title="Permanent link">&para;</a></h3>
 <p>找到目录<code>./applications/sample/wifi-iot/app</code>，在app文件夹下一个文件夹<code>my_first_app</code>，代码文件<code>hello_world.c</code>，编译脚本<code>BUILD.gn</code>。具体目录结构如下：</p>
@@ -2151,25 +2151,25 @@
 </div>
 <h3 id="252">2.5.2 编译<a class="headerlink" href="#252" title="Permanent link">&para;</a></h3>
 <p>点击<kbd>Build</kbd>即可编译，若由工具缺失则点击<kbd>工程配置</kbd>选择缺失工具链会自动下载，一般第一次不会出错。</p>
-<p><img alt="image-20241228133912265" src="image-20241228133912265.png" /></p>
+<p><img alt="image-20241228133912265" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228133912265.png" /></p>
 <h3 id="253">2.5.3 烧录<a class="headerlink" href="#253" title="Permanent link">&para;</a></h3>
 <p>DevEco Device Tool左下角查看连接状态，若未连接则点击连接按键。</p>
 <ul>
-<li>如果Local PC右边连接按钮为<img alt="zh-cn_image_0000001326512673" src="zh-cn_image_0000001326512673.png" />，则远程计算机与本地计算机为已连接状态，不需要执行其他操作。</li>
-<li>如果Local PC右边连接按钮为<img alt="zh-cn_image_0000001275432904" src="zh-cn_image_0000001275432904.png" />，则点击绿色按钮进行连接。连接时DevEco Device Tool会重启服务，因此请不要在下载源码或源码编译过程中进行连接，否则会中断任务。</li>
+<li>如果Local PC右边连接按钮为<img alt="zh-cn_image_0000001326512673" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/zh-cn_image_0000001326512673.png" />，则远程计算机与本地计算机为已连接状态，不需要执行其他操作。</li>
+<li>如果Local PC右边连接按钮为<img alt="zh-cn_image_0000001275432904" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/zh-cn_image_0000001275432904.png" />，则点击绿色按钮进行连接。连接时DevEco Device Tool会重启服务，因此请不要在下载源码或源码编译过程中进行连接，否则会中断任务。</li>
 </ul>
-<p><img alt="image-20241228134248310" src="image-20241228134248310.png" /></p>
+<p><img alt="image-20241228134248310" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228134248310.png" /></p>
 <p>连接以后可以看到工具链是完整的，所以上一步编译，没问题。</p>
-<p><img alt="image-20241228134502873" src="image-20241228134502873.png" /></p>
+<p><img alt="image-20241228134502873" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228134502873.png" /></p>
 <p>选择烧录端口，确保自己已经安装相关开发板的串口驱动，其他默认即可。</p>
-<p><img alt="image-20241228134555975" src="image-20241228134555975.png" /></p>
+<p><img alt="image-20241228134555975" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228134555975.png" /></p>
 <p>点击<kbd>Upload</kbd>烧录，根据终端提示按一下开发板的 <strong>复位键</strong></p>
-<p><img alt="image-20241228134748970" src="image-20241228134748970.png" /></p>
+<p><img alt="image-20241228134748970" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228134748970.png" /></p>
 <p>烧录成功！</p>
-<p><img alt="image-20241228134853374" src="image-20241228134853374.png" /></p>
+<p><img alt="image-20241228134853374" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228134853374.png" /></p>
 <h3 id="254">2.5.4 运行查看程序<a class="headerlink" href="#254" title="Permanent link">&para;</a></h3>
 <p>打开串口检测器，并复位开发板。</p>
-<p><img alt="image-20241228140439463" src="image-20241228140439463.png" /></p>
+<p><img alt="image-20241228140439463" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228140439463.png" /></p>
 <p>在串口中端依次输入下列命令，注意命令前后均不可以有多余空格，返回ok即单个命令执行正确。</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>AT+STARTSTA             # 启动STA模式
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>AT+SCAN                     # 扫描周边AP
@@ -2195,9 +2195,9 @@
 </ul>
 </blockquote>
 <p>完成最后一步，即WLAN模组联网成功：</p>
-<p><img alt="image-20241228140334054" src="image-20241228140334054.png" /></p>
+<p><img alt="image-20241228140334054" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228140334054.png" /></p>
 <p>再次复位可以看到输出结果：</p>
-<p><img alt="image-20241228143201648" src="image-20241228143201648.png" /></p>
+<p><img alt="image-20241228143201648" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228143201648.png" /></p>
 
 
 

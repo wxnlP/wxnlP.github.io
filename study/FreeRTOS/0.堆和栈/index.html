@@ -1864,26 +1864,26 @@
 ④ 赋值给<code>r0</code>寄存器<code>0x1c8</code>，即 456<br />
 ⑤ 将<code>r0</code>寄存器的值写入到<code>sp</code>所指向的地址，即<code>r3</code>寄存器</p>
 <p>这便是局部变量<code>b=456;</code>分配栈空间的过程。</p>
-<p><img alt="image-20250110142605126" src="image-20250110142605126.png" /></p>
+<p><img alt="image-20250110142605126" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250110142605126.png" /></p>
 <p>实际汇编码展示（基于keil5调试）</p>
-<p><img alt="image-20250110141855045" src="image-20250110141855045.png" /></p>
+<p><img alt="image-20250110141855045" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250110141855045.png" /></p>
 <h3 id="12">1.2 局部数组栈空间分配<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <p>继续创建一个<code>volatile char name[100];</code>，观察栈空间分配：</p>
-<p><img alt="image-20250110142553964" src="image-20250110142553964.png" /></p>
+<p><img alt="image-20250110142553964" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250110142553964.png" /></p>
 <p>当我们的<code>char name[100]</code>为使用时，是不会为其分配内存的，当我们在后面使用了赋值操作，就会通过<code>SUB</code>减指令，分配<code>0x68</code>即十进制的 104 字节空间，其中包括 100 的<code>char name[100]</code>和 4 的 <code>int b</code>。同时可以看到<code>b</code>变量的赋值是将<code>r0</code>寄存器的值写入到<code>SP</code>偏移<code>0x64</code>的位置。</p>
-<p><img alt="image-20250110142836821" src="image-20250110142836821.png" /></p>
+<p><img alt="image-20250110142836821" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250110142836821.png" /></p>
 <h3 id="13">1.3 局部变量的释放<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
 <p>局部变量的释放，主要是使用<code>POP</code>指令，每回收一个寄存器<code>SP</code>指针上移一位。</p>
-<p><img alt="image-20250110144528827" src="image-20250110144528827.png" /></p>
+<p><img alt="image-20250110144528827" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250110144528827.png" /></p>
 <h2 id="2">2. 全局变量<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>全局变量和静态变量的初始化如下图所示：</p>
 <ul>
 <li>有初始值的全局变量和静态变量是通过<code>copy</code>函数，将Flash里面的数据复制到全局变量和静态变量的内存里面。</li>
 <li>没有初始值和初始值为0的全局变量和静态变量，调用memset函数将这些变量的存储空间清零，然后再调用<code>main</code>函数。</li>
 </ul>
-<p><img alt="image-20250110160445202" src="image-20250110160445202.png" /></p>
+<p><img alt="image-20250110160445202" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250110160445202.png" /></p>
 <p>其中全局变量与静态变量存放的起始地址可以自定义，在<kbd>keil5</kbd>中的连接器配置：</p>
-<p><img alt="image-20250110160647466" src="image-20250110160647466.png" /></p>
+<p><img alt="image-20250110160647466" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250110160647466.png" /></p>
 <h2 id="3">3. 堆和栈简述<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>堆是堆，栈是栈，不能混讲。</p>
 <p>栈：</p>

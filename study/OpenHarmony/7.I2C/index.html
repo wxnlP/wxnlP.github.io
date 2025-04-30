@@ -1955,9 +1955,9 @@
 <h2 id="72-oled">7.2 OLED显示屏<a class="headerlink" href="#72-oled" title="Permanent link">&para;</a></h2>
 <h3 id="721-oled">7.2.1 OLED简介<a class="headerlink" href="#721-oled" title="Permanent link">&para;</a></h3>
 <p>如图所示为一个0.96寸的OLED显示屏，其驱动芯片为SSD1306，使用I2C通信，从机地址为<code>0x78</code>。</p>
-<p><img alt="0.96寸OLED显示屏模块" src="3489833616_1065888284.jpg" /></p>
+<p><img alt="0.96寸OLED显示屏模块" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/3489833616_1065888284.jpg" /></p>
 <p>本节关于OLED的介绍全部来源于SSD1306芯片数据手册。</p>
-<p><img alt="image-20250206203148648" src="image-20250206203148648.png" /></p>
+<p><img alt="image-20250206203148648" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250206203148648.png" /></p>
 <h3 id="722">7.2.2 从机地址<a class="headerlink" href="#722" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>内容来源：SSD1306芯片数据手册 <kbd>8.1.5 MUC  I2C Interface</kbd></p>
@@ -1967,18 +1967,18 @@
 <li>“SA0” bit  是为了从机地址的灵活性，可以选择 “0111100” 或 “0111101” 为SSD1306芯片的从机地址。 </li>
 <li>“R/W#” bit 是选择读写模式，R/W#=1  为读模式，R/W#=0  为写模式。</li>
 </ol>
-<p><img alt="image-20250206203439488" src="image-20250206203439488.png" /></p>
+<p><img alt="image-20250206203439488" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250206203439488.png" /></p>
 <p>那么为什么说从机地址是<code>0x78</code>呢？  </p>
 <p>实际上我们说从机地址时，忽略最低位补零，那么默认的地址就是 0111100，也就是<code>0x78</code>。然而，在实际I2C通信中则不是直接发从机地址 ，而是加上读写位。如下图，在I2C通信时，若我们进入写模式，则末位补零，程序中可以使用<code>0x78|0x00</code>，读模式则为<code>0x78|0x01</code>。</p>
-<p><img alt="image-20250206203855149" src="image-20250206203855149.png" /></p>
+<p><img alt="image-20250206203855149" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250206203855149.png" /></p>
 <h3 id="723-gddram">7.2.3 显存(GDDRAM)<a class="headerlink" href="#723-gddram" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>内容来源：SSD1306芯片数据手册<kbd>8.7 Graphic Display Data RAM (GDDRAM)</kbd></p>
 </blockquote>
 <p>如下图 RAM 大小是 128x64 Bits，被划分为 8 个pages，一个page有8像素点。 其中，绿色的计数方式为重映射后的，默认为黑色字体样式。</p>
-<p><img alt="image-20250206211148369" src="image-20250206211148369.png" /></p>
+<p><img alt="image-20250206211148369" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250206211148369.png" /></p>
 <p>当一个字节的数据被写入 GDDRAM (也就是通过I2C发送一个字节数据)时，当前一page一列(8Bit)就会被点亮。注意低位在上，高位在下，如下图所示。</p>
-<p><img alt="image-20250206211427518" src="image-20250206211427518.png" /></p>
+<p><img alt="image-20250206211427518" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250206211427518.png" /></p>
 <h3 id="724">7.2.4 命令表<a class="headerlink" href="#724" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>内容来源：SSD1306芯片数据手册<kbd>9. COMMAND TABLE</kbd> </p>
@@ -2061,13 +2061,13 @@
 <h3 id="725">7.2.5 显存寻址模式<a class="headerlink" href="#725" title="Permanent link">&para;</a></h3>
 <p><strong>页寻址模式(0x20)</strong></p>
 <p>页寻址模式将整个显存划分为多个 “页”，每一页包含 8 行像素。同一页内的像素按列组织，写完一列的 8 个像素后，列地址自动加 1。当列地址达到该页的最大列数时，列地址会回到起始列，但页地址不会自动改变，需要通过专门的命令来切换页。对于 128x64 的 SSD1306 显示屏，会被划分为 8 页（编号 0 - 7），每页有 128 列。同时也寻址模式是 <strong>默认的寻址模式</strong> 。</p>
-<p><img alt="image-20250206215725939" src="image-20250206215725939.png" /></p>
+<p><img alt="image-20250206215725939" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250206215725939.png" /></p>
 <p><strong>水平寻址模式(0x21)</strong></p>
 <p>在水平寻址模式下，显存的读写操作是按照从左到右、从上到下的顺序逐列进行的。当写完一行的所有列后，会自动跳到下一行的起始列继续进行操作。如果到达了显存的最后一列，地址指针会自动回到第一列，同时行地址加 1；若到达最后一行，则地址指针回到第一行第一列。</p>
-<p><img alt="image-20250206215743593" src="image-20250206215743593.png" /></p>
+<p><img alt="image-20250206215743593" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250206215743593.png" /></p>
 <p><strong>垂直寻址模式(0x22)</strong></p>
 <p>垂直寻址模式下，显存的读写是按列进行的，先从上到下写完一列，再跳到下一列继续操作。当写完所有列后，列地址会回到起始列，同时行地址加 1。如果到达最后一行，则地址指针回到第一行第一列。</p>
-<p><img alt="image-20250206215758733" src="image-20250206215758733.png" /></p>
+<p><img alt="image-20250206215758733" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250206215758733.png" /></p>
 <h3 id="726">7.2.6 页寻址模式<a class="headerlink" href="#726" title="Permanent link">&para;</a></h3>
 <ul>
 <li>按列写，从列0开始，到列127结束。每列一个字节数据，低位在上，高位在下。</li>
@@ -2076,7 +2076,7 @@
 <li>设置列地址低四位，命令0x00 - 0x0F。</li>
 <li>设置列地址高四位，命令0x10 - 0x1F。</li>
 </ul>
-<p><img alt="image-20250206220342721" src="image-20250206220342721.png" /></p>
+<p><img alt="image-20250206220342721" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250206220342721.png" /></p>
 <p>封装寻址为函数，用于确定X、Y坐标：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/** </span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cm"> * @param x: 横坐标，取值范围是0~127，对应128个像素点，x的单位为bit。</span>
@@ -2107,7 +2107,7 @@
 <p><kbd>Co</kbd>位，当<code>C0=0</code>表示后续传输的信息将仅包含数据字节，即不含控制字节。</p>
 <p><kbd>D/C#</kbd>位，其中<code>D/C#=0</code>则下一个字节为命令，<code>D/C#=1</code>则下一个字节为数据。</p>
 <p>因此，发送命令的控制字节为 <strong>0x00</strong> (<code>C0=0</code>且<code>D/C#=0</code>)；发送数据的控制字节为 <strong>0x40</strong> (<code>C0=0</code>且<code>D/C#=1</code>)。</p>
-<p><img alt="image-20250207150011376" src="image-20250207150011376.png" /></p>
+<p><img alt="image-20250207150011376" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250207150011376.png" /></p>
 <h2 id="73-oled">7.3 OLED简易驱动<a class="headerlink" href="#73-oled" title="Permanent link">&para;</a></h2>
 <h3 id="731-oled">7.3.1 OLED驱动代码<a class="headerlink" href="#731-oled" title="Permanent link">&para;</a></h3>
 <p><code>oled_fonts.h</code></p>

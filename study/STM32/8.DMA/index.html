@@ -2073,7 +2073,7 @@
 <li><strong>DMA的内部通道</strong> ，DMA1有 7 个， DMA2有 5 个</li>
 <li><strong>Flash</strong> ，CPU和DMA直接访问Flash只能读而不能写，要写入数据需要使用Flash接口控制器</li>
 </ol>
-<p><img alt="image-20241227102219912" src="image-20241227102219912.png" /></p>
+<p><img alt="image-20241227102219912" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241227102219912.png" /></p>
 <h3 id="814-dma">8.1.4 DMA基本结构<a class="headerlink" href="#814-dma" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>触发模式</strong> ，M2M置 1 为软件触发，置 0 为硬件触发。</li>
@@ -2085,36 +2085,36 @@
 <summary>Danger</summary>
 <p>软件触发和循环模式不要同时使用，因为软件触发不需要时机， <strong>旨在快速将传输计数器清零</strong> ，而循环模式是 <strong>清零后自动重装</strong> ，两者逻辑叠加，DMA便会一直进行无法停止。另外，在写入传输计数器之前，需要DMA暂停工作。</p>
 </details>
-<p><img alt="image-20241227105325039" src="image-20241227105325039.png" /></p>
+<p><img alt="image-20241227105325039" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241227105325039.png" /></p>
 <h2 id="82-dma">8.2 DMA请求与数据宽度<a class="headerlink" href="#82-dma" title="Permanent link">&para;</a></h2>
 <h3 id="821-dma">8.2.1 DMA请求映像<a class="headerlink" href="#821-dma" title="Permanent link">&para;</a></h3>
 <details class="note">
 <summary>Note</summary>
 <p>仅关注各通道的外设请求信号，后部分信号看DMA基本结构图更好理解。</p>
 </details>
-<p><img alt="image-20241227112408133" src="image-20241227112408133.png" /></p>
+<p><img alt="image-20241227112408133" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241227112408133.png" /></p>
 <h3 id="822">8.2.2 数据宽度与对齐<a class="headerlink" href="#822" title="Permanent link">&para;</a></h3>
 <p>总的来说，表格的意思就是：</p>
 <ol>
 <li>小的数据转到大的里面，高位补零</li>
 <li>大的数据转到小的里面，高位舍弃</li>
 </ol>
-<p><img alt="image-20241227112945253" src="image-20241227112945253.png" /></p>
+<p><img alt="image-20241227112945253" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241227112945253.png" /></p>
 <h2 id="83-stm32cubemx">8.3 STM32CubeMX参数<a class="headerlink" href="#83-stm32cubemx" title="Permanent link">&para;</a></h2>
 <p>关于数据宽度分为 <strong>字(Word)</strong> 、 <strong>半字(Half Word)</strong> 、 <strong>字节(Byte)</strong>。另外，“Increment Address” 指地址是否自增。</p>
 <details class="waring">
 <summary>Waring</summary>
 <p>我们应了解，一个二进制位是一个 <strong>比特位(Bit)</strong> ，一个 <strong>字节(Byte)</strong> 是 8 个Bit。而 <strong>字(Word)</strong> 取决于处理器，例如：对于32位的单片机，一个 字(Word)即为 32 Bit(四个字节)，半字就是 16 Bit(两个字节)。</p>
 </details>
-<p><img alt="image-20241227115032257" src="image-20241227115032257.png" /></p>
+<p><img alt="image-20241227115032257" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241227115032257.png" /></p>
 <h2 id="84">8.4 工程配置<a class="headerlink" href="#84" title="Permanent link">&para;</a></h2>
 <h3 id="841">8.4.1 存储器到存储器<a class="headerlink" href="#841" title="Permanent link">&para;</a></h3>
 <ul>
 <li>配置一个DMA通道，勾选地址自增和数据宽度为字节</li>
 <li>配置UART输出数据</li>
 </ul>
-<p><img alt="image-20241227130438600" src="image-20241227130438600.png" /></p>
-<p><img alt="image-20241226222231023" src="image-20241226222231023.png" /></p>
+<p><img alt="image-20241227130438600" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241227130438600.png" /></p>
+<p><img alt="image-20241226222231023" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241226222231023.png" /></p>
 <p><strong>定义测试数组为全局变量</strong></p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/* USER CODE BEGIN PV */</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">DataA</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x01</span><span class="p">,</span><span class="w"> </span><span class="mh">0x02</span><span class="p">,</span><span class="w"> </span><span class="mh">0x03</span><span class="p">,</span><span class="w"> </span><span class="mh">0x04</span><span class="p">};</span><span class="w">                </span><span class="c1">//定义测试数组DataA</span>
@@ -2161,18 +2161,18 @@
 </span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="cm">/* USER CODE END 3 */</span>
 </span></code></pre></div>
 <p>测试结果：</p>
-<p><img alt="image-20241227131121937" src="image-20241227131121937.png" /></p>
+<p><img alt="image-20241227131121937" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241227131121937.png" /></p>
 <h3 id="842-adcdma">8.4.2 ADC单次转换扫描模式DMA转运<a class="headerlink" href="#842-adcdma" title="Permanent link">&para;</a></h3>
 <p>这里继续借鉴江协科技的图，我将两个电位计接在PA3和PA4，也可以节热敏电阻等可以测模拟量的传感器。</p>
-<p><img alt="7-1 AD单通道" src="7-1%20AD%E5%8D%95%E9%80%9A%E9%81%93.jpg" /></p>
+<p><img alt="7-1 AD单通道" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/7-1%20AD%E5%8D%95%E9%80%9A%E9%81%93.jpg" /></p>
 <p>STM32CubeMX配置</p>
-<p><img alt="image-20241228230805669" src="image-20241228230805669.png" /></p>
+<p><img alt="image-20241228230805669" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228230805669.png" /></p>
 <p>DMA设置，半字传输</p>
-<p><img alt="image-20241228231106505" src="image-20241228231106505.png" /></p>
+<p><img alt="image-20241228231106505" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228231106505.png" /></p>
 <p>配置串口输出</p>
-<p><img alt="image-20241228231939358" src="image-20241228231939358.png" /></p>
+<p><img alt="image-20241228231939358" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228231939358.png" /></p>
 <p>配置时钟</p>
-<p><img alt="image-20241228230840274" src="image-20241228230840274.png" /></p>
+<p><img alt="image-20241228230840274" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228230840274.png" /></p>
 <p><strong>定义数据接收数组全局变量</strong></p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">/* USER CODE BEGIN PV */</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">//接收数组</span>
@@ -2181,7 +2181,7 @@
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kt">char</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="cm">/* USER CODE END PV */</span>
 </span></code></pre></div>
-<p>在非连续模式下，一次ADC数据全部转换完成会触发中断，所以在 <strong>中断中读取数据</strong> ：</p>
+<p>在非连续模式下，一次ADC数据全部转换完成会触发中断，所以在 <strong>中断中读取数据</strong> ：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">/* USER CODE BEGIN 4 */</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">HAL_ADC_ConvCpltCallback</span><span class="p">(</span><span class="n">ADC_HandleTypeDef</span><span class="w"> </span><span class="o">*</span><span class="n">hadc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hadc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hadc1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -2207,12 +2207,12 @@
 </span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="p">}</span>
 </span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="cm">/* USER CODE END 3 */</span>
 </span></code></pre></div>
-<p><img alt="image-20241228233920303" src="image-20241228233920303.png" /></p>
+<p><img alt="image-20241228233920303" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228233920303.png" /></p>
 <h3 id="843-adcdma">8.4.3 ADC连续转换扫描模式DMA循环转运<a class="headerlink" href="#843-adcdma" title="Permanent link">&para;</a></h3>
-<p>开启ADC连续模式，经测试这里需要把 <strong>采样时间提高</strong> ，不然采不到数据。</p>
-<p><img alt="image-20241229002825401" src="image-20241229002825401.png" /></p>
+<p>开启ADC连续模式，经测试这里需要把 <strong>采样时间提高</strong> ，不然采不到数据。</p>
+<p><img alt="image-20241229002825401" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241229002825401.png" /></p>
 <p>DMA循环模式，其余与上个工程一致</p>
-<p><img alt="image-20241228234124020" src="image-20241228234124020.png" /></p>
+<p><img alt="image-20241228234124020" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241228234124020.png" /></p>
 <p>只需将ADC开始拿出循环，删除中断并把中断的程序放主循环，因为连续模式可以随时读取ADC值。</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">/* USER CODE BEGIN 2 */</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">HAL_ADCEx_Calibration_Start</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hadc1</span><span class="p">);</span>

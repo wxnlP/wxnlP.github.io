@@ -2247,8 +2247,8 @@
 <li><strong>串口是一种应用十分广泛的通讯接口，串口成本低、容易使用、通信线路简单，可实现两个设备的互相通信</strong></li>
 <li><strong>单片机的串口可以使单片机与单片机、单片机与电脑、单片机与各式各样的模块互相通信，极大地扩展了单片机的应用范围，增强了单片机系统的硬件实力</strong></li>
 </ul>
-<p><img alt="1706363962945" src="1706363962945.png" /></p>
-<p><img alt="USB转串口" src="USB%E8%BD%AC%E4%B8%B2%E5%8F%A3.png" /></p>
+<p><img alt="1706363962945" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706363962945.png" /></p>
+<p><img alt="USB转串口" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/USB%E8%BD%AC%E4%B8%B2%E5%8F%A3.png" /></p>
 <h3 id="922">9.2.2 硬件电路<a class="headerlink" href="#922" title="Permanent link">&para;</a></h3>
 <ul>
 <li>简单双向串口通信有两根通信线（发送端TX和接收端RX）</li>
@@ -2256,7 +2256,7 @@
 <li>当只需单向的数据传输时，可以只接一根通信线</li>
 <li>当电平标准不一致时，需要加电平转换芯片</li>
 </ul>
-<p><img alt="1706364052710" src="1706364052710.png" /></p>
+<p><img alt="1706364052710" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706364052710.png" /></p>
 <h3 id="923">9.2.3 电平标准<a class="headerlink" href="#923" title="Permanent link">&para;</a></h3>
 <ul>
 <li>电平标准是数据1和数据0的表达方式，是传输线缆中人为规定的电压与数据的对应关系，串口常用的电平标准有如下三种：</li>
@@ -2272,7 +2272,7 @@
 <li><strong>校验位：</strong> 用于数据验证，根据数据位计算得来(无校验、奇校验--即保持二进制数据1的个数为奇数、偶校验)</li>
 <li><strong>停止位：</strong> 用于数据帧间隔， <strong>固定为高电平</strong></li>
 </ul>
-<p><img alt="1706365185213" src="1706365185213.png" /></p>
+<p><img alt="1706365185213" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706365185213.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>校验位分为--奇校验--偶校验--无校验--三种。无校验即为上图左侧效果，奇偶校验即为判断数据高电平的个数是为奇数或是偶数，在最后补一位校验位。例如，若为奇校验且数据中有奇数个高电平，则最后一位补一个 1 ，否则补一个 0 ，偶校验则同理类似。</p>
@@ -2291,7 +2291,7 @@
 <p>STM32F103C8T6 USART资源： USART1、 USART2、 USART3</p>
 </blockquote>
 <h3 id="932-usart">9.3.2 USART框图<a class="headerlink" href="#932-usart" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20241225155702650" src="image-20241225155702650.png" /></p>
+<p><img alt="image-20241225155702650" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225155702650.png" /></p>
 <ul>
 <li><strong>硬件数据流控</strong><ul>
 <li><strong>RTS</strong>：发送端指示接收端是否准备好接收数据。</li>
@@ -2323,11 +2323,11 @@
 <li>开始读操作，把<kbd>RX</kbd>引脚接收的数据放到接收移位寄存器暂存，若接收数据寄存器为空，则将接收移位寄存器的数据转运到接收数据寄存器。</li>
 <li>当一个字节的数据发送或接收完成后，会置标志位。</li>
 </ol>
-<p><img alt="image-20241225161839838" src="image-20241225161839838.png" /></p>
+<p><img alt="image-20241225161839838" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225161839838.png" /></p>
 <h2 id="94">9.4 工程配置<a class="headerlink" href="#94" title="Permanent link">&para;</a></h2>
 <h3 id="941-stm32cubemx">9.4.1 STM32CubeMX参数<a class="headerlink" href="#941-stm32cubemx" title="Permanent link">&para;</a></h3>
 <p>USART模式选择</p>
-<p><img alt="image-20241225184519950" src="image-20241225184519950.png" /></p>
+<p><img alt="image-20241225184519950" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225184519950.png" /></p>
 <table>
 <thead>
 <tr>
@@ -2374,7 +2374,7 @@
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>只有Asynchronous为常用的，其他仅作为了解。
 </code></pre></div>
 </details>
-<p><img alt="image-20241225190418375" src="image-20241225190418375.png" /></p>
+<p><img alt="image-20241225190418375" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225190418375.png" /></p>
 <p><strong>Hardware Flow Control</strong> 即STM32 USART 的硬件数据流控选项</p>
 <table>
 <thead>
@@ -2413,9 +2413,9 @@
 </details>
 <h3 id="942-usart">9.4.2 USART标准示例<a class="headerlink" href="#942-usart" title="Permanent link">&para;</a></h3>
 <p>STM32CubeMX参数：</p>
-<p><img alt="image-20241225191240836" src="image-20241225191240836.png" /></p>
+<p><img alt="image-20241225191240836" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225191240836.png" /></p>
 <p>串口软件参数参考：</p>
-<p><img alt="image-20241225191032348" src="image-20241225191032348.png" /></p>
+<p><img alt="image-20241225191032348" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225191032348.png" /></p>
 <h3 id="943">9.4.3 串口发送代码<a class="headerlink" href="#943" title="Permanent link">&para;</a></h3>
 <p><code>HAL_UART_Transmit(&amp;huart1, text, 1, 10);</code>为发送函数</p>
 <ul>
@@ -2439,7 +2439,7 @@
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="cm">/* USER CODE END 3 */</span>
 </span></code></pre></div>
 <p>经过使用示波器观察，从左向右数据为<code>11000010</code>，然注意串口是从低位先发，所以应该反过来读即实际数据为<code>01000011</code> ，也就是16进制所表示的<code>0x43</code></p>
-<p><img alt="image-20241225210400404" src="image-20241225210400404.png" /></p>
+<p><img alt="image-20241225210400404" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225210400404.png" /></p>
 <h3 id="944">9.4.4 串口接收代码<a class="headerlink" href="#944" title="Permanent link">&para;</a></h3>
 <p><code>HAL_UART_Receive(&amp;huart1, receiver, 2, HAL_MAX_DELAY);</code> 为接收函数，</p>
 <ul>
@@ -2464,7 +2464,7 @@
 </span></code></pre></div>
 <h3 id="945">9.4.5 串口中断<a class="headerlink" href="#945" title="Permanent link">&para;</a></h3>
 <p>记得在STM32CubeMX打开中断</p>
-<p><img alt="image-20241225214115361" src="image-20241225214115361.png" /></p>
+<p><img alt="image-20241225214115361" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225214115361.png" /></p>
 <p>使用中断的接收和发送函数如下：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// 以中断方式发送数据</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">HAL_UART_Transmit_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
@@ -2496,37 +2496,37 @@
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="cm">/* USER CODE END 4 */</span>
 </span></code></pre></div>
-<p><img alt="image-20241225220603969" src="image-20241225220603969.png" /></p>
+<p><img alt="image-20241225220603969" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20241225220603969.png" /></p>
 <h2 id="95">9.5 数据包接收<a class="headerlink" href="#95" title="Permanent link">&para;</a></h2>
 <h3 id="951">9.5.1 数据模式<a class="headerlink" href="#951" title="Permanent link">&para;</a></h3>
 <ul>
 <li>HEX模式/十六进制模式/二进制模式：以原始数据的形式显示</li>
 <li>文本模式/字符模式：以原始数据编码后的形式显示</li>
 </ul>
-<p><img alt="asc" src="asc.png" /></p>
-<p><img alt="数据模式" src="%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%BC%8F.png" /></p>
+<p><img alt="asc" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/asc.png" /></p>
+<p><img alt="数据模式" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%BC%8F.png" /></p>
 <h3 id="952-hex">9.5.2 HEX数据包<a class="headerlink" href="#952-hex" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>固定包长，含包头包尾</strong></li>
 </ul>
-<p><img alt="1706366291211" src="1706366291211.png" /></p>
+<p><img alt="1706366291211" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706366291211.png" /></p>
 <ul>
 <li><strong>可变包长，含包头包尾</strong></li>
 </ul>
-<p><img alt="1706366317290" src="1706366317290.png" /></p>
+<p><img alt="1706366317290" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706366317290.png" /></p>
 <h3 id="953">9.5.3 文本数据包<a class="headerlink" href="#953" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>固定包长，含包头包尾</strong></li>
 </ul>
-<p><img alt="1706366411492" src="1706366411492.png" /></p>
+<p><img alt="1706366411492" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706366411492.png" /></p>
 <ul>
 <li><strong>可变包长，含包头包尾</strong></li>
 </ul>
-<p><img alt="1706366433207" src="1706366433207.png" /></p>
+<p><img alt="1706366433207" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/1706366433207.png" /></p>
 <h3 id="954-hex">9.5.4 HEX数据包接收<a class="headerlink" href="#954-hex" title="Permanent link">&para;</a></h3>
-<p><img alt="接收hex数据包" src="%E6%8E%A5%E6%94%B6hex%E6%95%B0%E6%8D%AE%E5%8C%85.png" /></p>
+<p><img alt="接收hex数据包" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/%E6%8E%A5%E6%94%B6hex%E6%95%B0%E6%8D%AE%E5%8C%85.png" /></p>
 <h3 id="955">9.5.5 文本数据包接收<a class="headerlink" href="#955" title="Permanent link">&para;</a></h3>
-<p><img alt="接收文本数据包" src="%E6%8E%A5%E6%94%B6%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%8C%85.png" /></p>
+<p><img alt="接收文本数据包" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/%E6%8E%A5%E6%94%B6%E6%96%87%E6%9C%AC%E6%95%B0%E6%8D%AE%E5%8C%85.png" /></p>
 
 
 

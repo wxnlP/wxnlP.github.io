@@ -1969,22 +1969,22 @@
 <li>是指具有定时功能的软件，可设置定时周期，当指定时间到达后要调用回调函数（也称超时函数），用户在回调函数中处理信息。</li>
 </ul>
 <h3 id="912">9.1.2 软件定时器特性<a class="headerlink" href="#912" title="Permanent link">&para;</a></h3>
-<p>软件定时器可以设置为 <strong>单次定时器</strong> 和 <strong>周期定时器</strong> ：</p>
+<p>软件定时器可以设置为 <strong>单次定时器</strong> 和 <strong>周期定时器</strong> ：</p>
 <ul>
-<li>单次定时器，即当指定时间到达后只调用一次超时函数，之后软件定时器不再工作，但 <strong>可以被手动重新开启</strong> 。</li>
+<li>单次定时器，即当指定时间到达后只调用一次超时函数，之后软件定时器不再工作，但 <strong>可以被手动重新开启</strong> 。</li>
 <li>周期定时器，即会周期性的循环调用超时函数。</li>
 </ul>
 <p>如下图所示：</p>
-<p><img alt="image-20250117211336719" src="image-20250117211336719.png" /></p>
-<p>软件定时器有两种状态， <strong>休眠态</strong> 和 <strong>运行态</strong> ：</p>
+<p><img alt="image-20250117211336719" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250117211336719.png" /></p>
+<p>软件定时器有两种状态， <strong>休眠态</strong> 和 <strong>运行态</strong> ：</p>
 <ul>
 <li>休眠态，即软件定时器可以通过其句柄被引用，但因为没有运行，所以其定时超时回调函数不会被执行。</li>
 <li>运行态，运行态的定时器，当指定时间到达之后，它的超时回调函数会被调用。</li>
 </ul>
 <p>单次定时器状态转换图：</p>
-<p><img alt="image-20250117211850033" src="image-20250117211850033.png" /></p>
+<p><img alt="image-20250117211850033" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250117211850033.png" /></p>
 <p>周期定时器状态转换图：</p>
-<p><img alt="image-20250117211904836" src="image-20250117211904836.png" /></p>
+<p><img alt="image-20250117211904836" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250117211904836.png" /></p>
 <h3 id="913">9.1.3 软件定时器的使用<a class="headerlink" href="#913" title="Permanent link">&para;</a></h3>
 <ul>
 <li>如果要使能软件定时器，需在<code>FreeRTOSConfig.h</code>文件中将<code>configUSE_TIMERS</code> 配置成 1 。</li>
@@ -2001,7 +2001,7 @@
 <li>定时器的超时时间是基于调用 <code>xTimerStart()</code> 的时刻，<code>xTimerStart()</code>只是把开启定时器命令发给"定时器命令队列"，至于服务任务能否马上执行，取决于它的优先级。</li>
 </ul>
 <p>用户调用FreeRTOS的软件定时器相关的 API 函数，API 函数往软件定时器命令队列中写消息，实现用户与定时器服务任务的交互：</p>
-<p><img alt="image-20250117213619523" src="image-20250117213619523.png" /></p>
+<p><img alt="image-20250117213619523" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250117213619523.png" /></p>
 <h3 id="914">9.1.4 回调函数<a class="headerlink" href="#914" title="Permanent link">&para;</a></h3>
 <p>函数原型：</p>
 <div class="language-C highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">ATimerCallback</span><span class="p">(</span><span class="w"> </span><span class="n">TimerHandle_t</span><span class="w"> </span><span class="n">xTimer</span><span class="w"> </span><span class="p">);</span>
@@ -2010,7 +2010,7 @@
 <p>所以，定时器的回调函数不要影响其他人：</p>
 <ul>
 <li>回调函数要尽快实行，不能进入阻塞状态。</li>
-<li>不要调用会导致阻塞的API函数，比如 <strong>vTaskDelay()</strong> 。</li>
+<li>不要调用会导致阻塞的API函数，比如 <strong>vTaskDelay()</strong> 。</li>
 <li>可以调用 <strong>xQueueReceive()</strong> 之类的函数，但是超时时间要设为0：即刻返回，不可阻塞。</li>
 </ul>
 <h2 id="92">9.2 软件定时器函数<a class="headerlink" href="#92" title="Permanent link">&para;</a></h2>
@@ -2148,65 +2148,8 @@
 
 
 
-  
-  
 
 
-
-
-  <!-- <h2 id="__comments"> </h2> -->
-  <!-- Insert generated snippet here -->
-  <script src="https://giscus.app/client.js"
-        data-repo="wxnlP/wxnlP.github.io"
-        data-repo-id="R_kgDOMKIl5g"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOMKIl5s4Cl1nL"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-</script>
-  <!-- Synchronize Giscus theme with palette -->
-  <script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-      var theme = palette.color.scheme === "slate"
-        ? "transparent_dark"
-        : "light"
-
-      // Instruct Giscus to set theme
-      giscus.setAttribute("data-theme", theme) 
-    }
-
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
-
-          // Instruct Giscus to change theme
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
-    
-  </script>
 
                 
               </article>
