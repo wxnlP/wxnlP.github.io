@@ -966,6 +966,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#114-vim" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.4 Vim使用练习
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -974,18 +983,66 @@
         <li class="md-nav__item">
   <a href="#12-gcc" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 gcc编译器
+      1.2 GCC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 GCC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-gcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1 GCC安装
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#13-gdb" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#122-gcc" class="md-nav__link">
     <span class="md-ellipsis">
-      1.3 gdb调试器
+      1.2.2 gcc编译器
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-gdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.3 gdb调试器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 编译过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 编译过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.3 预处理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1354,6 +1411,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#114-vim" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.4 Vim使用练习
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1362,18 +1428,66 @@
         <li class="md-nav__item">
   <a href="#12-gcc" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 gcc编译器
+      1.2 GCC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 GCC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-gcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1 GCC安装
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#13-gdb" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#122-gcc" class="md-nav__link">
     <span class="md-ellipsis">
-      1.3 gdb调试器
+      1.2.2 gcc编译器
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-gdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.3 gdb调试器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 编译过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 编译过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.3 预处理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1523,8 +1637,338 @@
 <blockquote>
 <p><code>:</code>是从普通模式进入命令行模式，后面直接跟命令，因此替换均是在命令行模式下进行的。</p>
 </blockquote>
-<h2 id="12-gcc">1.2 gcc编译器<a class="headerlink" href="#12-gcc" title="Permanent link">&para;</a></h2>
-<h2 id="13-gdb">1.3 gdb调试器<a class="headerlink" href="#13-gdb" title="Permanent link">&para;</a></h2>
+<h3 id="114-vim">1.1.4 Vim使用练习<a class="headerlink" href="#114-vim" title="Permanent link">&para;</a></h3>
+<p>新建文件夹和 C 文件：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 新建文件夹</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>c_proficient_road
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>c_proficient_road
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 新建C文件</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>touch<span class="w"> </span>vim_cmd.c
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># 打开C文件</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>vim<span class="w"> </span>vim_cmd.c
+</span></code></pre></div>
+<p>使用 Vim 命令写一个基础程序，并保存，如下图。</p>
+<p><img alt="image-20250502145605785" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502145605785.png" /></p>
+<h2 id="12-gcc">1.2 GCC<a class="headerlink" href="#12-gcc" title="Permanent link">&para;</a></h2>
+<p>GCC（GNU Compiler Collection）是 <a href="https://so.csdn.net/so/search?q=GNU&amp;spm=1001.2101.3001.7020">GNU</a> 开源项目的一套开源编译器工具集，最初仅编译 C 语言，但现在的 GCC 支持编译 C++ 、Java、GO等多种编程语言，Linux内核就是采用 GCC 搭建的编译构建系统。</p>
+<blockquote>
+<p><strong>gcc</strong> （GUN C Compiler）是GCC中的 c 编译器，而 <strong>g++</strong> （GUN C++ Compiler）是 GCC 中的 c++ 编译器。</p>
+<p>gcc 和 g++ 两者都可以编译 c 和 cpp 文件，但存在差异。gcc 在编译 cpp 时语法按照 c 来编译但默认不能链接到 c++ 的库（ gcc 默认链接 c 库， g++ 默认链接 c++ 库）。g++ 编译 <kbd>.c</kbd> 和 <kbd>.cpp</kbd> 文件都统一按 cpp 的语法规则来编译。所以一般编译 c 用 gcc ，编译 c++ 用 g++ 。</p>
+</blockquote>
+<h3 id="121-gcc">1.2.1 GCC安装<a class="headerlink" href="#121-gcc" title="Permanent link">&para;</a></h3>
+<p>GCC 是 Linux 默认的 C/C++ 编译器，大部分 Linux 发行版都默认安装。若是需要手动安装，在终端执行以下命令安装：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 更新软件包列表</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 安装 GCC 及基础开发工具（包括 make、g++、libc-dev 等）</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential
+</span></code></pre></div>
+<p>验证 gcc 和 g++ 是否安装成功：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>gcc<span class="w"> </span>-v
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>g++<span class="w"> </span>-v
+</span></code></pre></div>
+<p>单独安装特定的 GCC 组件，如 g++、cmake等。</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 安装g++</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>g++
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># 安装gdb</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gdb
+</span></code></pre></div>
+<h3 id="122-gcc">1.2.2 gcc编译器<a class="headerlink" href="#122-gcc" title="Permanent link">&para;</a></h3>
+<p>gcc （GUN C Compiler）是 GCC 中的 c 编译器。</p>
+<p>gcc 常用参数如下表：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-o</code></td>
+<td>生成可执行文件</td>
+</tr>
+<tr>
+<td><code>-E</code></td>
+<td>仅执行预处理（生成后缀为 <code>.i</code> 的预处理文件）</td>
+</tr>
+<tr>
+<td><code>-S</code></td>
+<td>执行预处理和编译（生成后缀为 <code>.s</code> 的汇编文件）</td>
+</tr>
+<tr>
+<td><code>-c</code></td>
+<td>执行预处理、编译和汇编（生成后缀为 <code>.o</code> 的二进制文件）</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>基础编译</strong></p>
+<p>编译命令格式：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># &lt;input_name&gt;是要编译的C文件名称</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># &lt;output_name&gt;是生成的可执行文件的名称（默认名称为a.out/a.exe）</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>gcc<span class="w"> </span>&lt;input_name&gt;<span class="w"> </span>-o<span class="w"> </span>&lt;output_name&gt;<span class="w"> </span>
+</span></code></pre></div>
+<p>编译命令示例：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 编译vim_cmd.c</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># 查看文件生成</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>ls
+</span></code></pre></div>
+<p>运行可执行文件：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./vim_cmd
+</span></code></pre></div>
+<p><img alt="image-20250502152712701" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502152712701.png" /></p>
+<h3 id="123-gdb">1.2.3 gdb调试器<a class="headerlink" href="#123-gdb" title="Permanent link">&para;</a></h3>
+<p>GDB（GNU Project Debugger）是 GNU 项目开发的开源调试工具，支持 <strong>C/C++</strong> 、 <strong>Fortran</strong> 、 <strong>Go</strong>  等多种编程语言，主要用于检查程序运行状态、定位崩溃原因及分析逻辑错误。其核心功能包括：</p>
+<ul>
+<li>Start your program, specifying anything that might affect its behavior.（指定一些参数）</li>
+<li>Make your program stop on specified conditions.（断点）</li>
+<li>Examine what has happened, when your program has stopped.（分析crash现场）</li>
+<li>Change things in your program, so you can experiment with correcting the effects of one bug and go on to learn about another.（直接修改程序，看结果）</li>
+</ul>
+<p>常用的 gdb 命令如下表，可以使用简写。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>缩写</th>
+<th>功能</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>run</code></td>
+<td><code>r</code></td>
+<td>启动程序</td>
+<td><code>run</code> 或 <code>r arg1</code></td>
+</tr>
+<tr>
+<td><code>break &lt;行号&gt;</code></td>
+<td><code>b</code></td>
+<td>设置断点</td>
+<td><code>b 20</code> 或 <code>b file.c:15</code></td>
+</tr>
+<tr>
+<td><code>next</code></td>
+<td><code>n</code></td>
+<td>单步执行（不进入函数）</td>
+<td><code>n</code></td>
+</tr>
+<tr>
+<td><code>step</code></td>
+<td><code>s</code></td>
+<td>单步执行（进入函数）</td>
+<td><code>s</code></td>
+</tr>
+<tr>
+<td><code>print &lt;表达式&gt;</code></td>
+<td><code>p</code></td>
+<td>打印变量值或表达式结果</td>
+<td><code>p x</code> 或 <code>p &amp;array[0]</code></td>
+</tr>
+<tr>
+<td><code>backtrace</code></td>
+<td><code>bt</code></td>
+<td>查看函数调用堆栈</td>
+<td><code>bt</code></td>
+</tr>
+<tr>
+<td><code>info locals</code></td>
+<td></td>
+<td>显示当前函数的局部变量</td>
+<td><code>info locals</code></td>
+</tr>
+<tr>
+<td><code>info breakpoints</code></td>
+<td><code>i b</code></td>
+<td>列出所有断点</td>
+<td><code>i b</code></td>
+</tr>
+<tr>
+<td><code>delete &lt;断点编号&gt;</code></td>
+<td><code>d</code></td>
+<td>删除断点</td>
+<td><code>d 2</code></td>
+</tr>
+<tr>
+<td><code>watch &lt;变量&gt;</code></td>
+<td></td>
+<td>监视变量变化时暂停</td>
+<td><code>watch x</code></td>
+</tr>
+<tr>
+<td><code>quit</code></td>
+<td><code>q</code></td>
+<td>退出 GDB</td>
+<td><code>q</code></td>
+</tr>
+<tr>
+<td><code>list &lt;行号&gt;</code></td>
+<td></td>
+<td>展示指定行号上下各 5 行程序</td>
+<td><code>list 8</code></td>
+</tr>
+<tr>
+<td><code>diaplay &lt;变量&gt;</code></td>
+<td></td>
+<td>监控变量变化，每次停下来都显示它的值**</td>
+<td><code>dispaly a</code></td>
+</tr>
+<tr>
+<td><code>undiaplay &lt;变量&gt;</code></td>
+<td></td>
+<td>取消监控变量变化</td>
+<td><code>undispaly a</code></td>
+</tr>
+<tr>
+<td><code>set var &lt;表达式&gt;</code></td>
+<td></td>
+<td>修改变量的值</td>
+<td><code>set var a=15</code></td>
+</tr>
+<tr>
+<td><code>until &lt;行号&gt;</code></td>
+<td></td>
+<td>⭐进行指定位置跳转，执行完区间代码</td>
+<td><code>until 10</code></td>
+</tr>
+<tr>
+<td><code>finish</code></td>
+<td></td>
+<td>⭐在一个函数内部，执行到当前函数返回，即快速跳出当前函数</td>
+<td><code>finish</code></td>
+</tr>
+<tr>
+<td><code>continue</code></td>
+<td><code>c</code></td>
+<td>⭐继续执行到下一个断点</td>
+<td><code>c</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>修改程序</strong></p>
+<blockquote>
+<p>在命令行模式输入命令<code>set nu</code>可以显示行数。</p>
+</blockquote>
+<p><img alt="image-20250502162041546" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502162041546.png" /></p>
+<p><strong>基础调试</strong></p>
+<p>① 编译程序生成调试信息</p>
+<p>使用 gdb 调试程序，需要在 gcc 编译时加上 <code>-g</code> 参数生成调试信息。</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd<span class="w"> </span>-g
+</span></code></pre></div>
+<p>② 启动 gdb</p>
+<p>以<code>vim_cmd.c</code>为例，启动 gdb 调试。</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># vim_cmd为可执行文件，-q用于取消gdb的一些版本信息输出</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>gdb<span class="w"> </span>./vim_cmd<span class="w"> </span>-q
+</span></code></pre></div>
+<p>启动 gdb 以后，会进入 gdb 的命令行环境，使用 gdb 的命令即可进行对应的调试工作，界面如下图所示：</p>
+<p><img alt="image-20250502162656352" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502162656352.png" /></p>
+<p>③ 查看程序</p>
+<p>查看第 8 行左右的程序。</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>list<span class="w"> </span><span class="m">8</span>
+</span></code></pre></div>
+<p><img alt="image-20250502164202113" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502164202113.png" /></p>
+<p>④ 断点</p>
+<p>在第 8 行打一个断点。</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>bread<span class="w"> </span><span class="m">8</span>
+</span></code></pre></div>
+<p><img alt="image-20250502164236053" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502164236053.png" /></p>
+<p>⑤ 运行</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>run
+</span></code></pre></div>
+<p><img alt="image-20250502164342522" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502164342522.png" /></p>
+<p>⑥ 单步执行</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>next<span class="w"> </span>
+</span></code></pre></div>
+<p>查看第 8 行运行前后，变量<code>a</code>的变化：</p>
+<p><img alt="image-20250502164530789" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502164530789.png" /></p>
+<p>⑦ 查看变量信息</p>
+<p>基于变量查看信息：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># 查看地址</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>print<span class="w"> </span><span class="p">&amp;</span>a
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># 查看值(10进制)</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>print<span class="w"> </span>a
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># 或 print/d a</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="c1"># 查看值(16进制)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>print/x<span class="w"> </span>a
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="c1"># 查看值(2进制)</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>print/t<span class="w"> </span>a
+</span></code></pre></div>
+<p><img alt="image-20250502171456909" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502171456909.png" /></p>
+<p>基于地址查看信息：</p>
+<p><code>examine</code>命令用于检查内存地址中的内容，缩写为<code>x</code>，支持多种显示格式和单位大小。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>参数</strong></th>
+<th style="text-align: left;"><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>数量</strong></td>
+<td style="text-align: left;">要显示的内存单元数量（默认为1）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>格式</strong></td>
+<td style="text-align: left;"><code>x</code>（十六进制）、<code>d</code>（十进制）、<code>u</code>（无符号十进制）、<code>t</code>（二进制）等。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>单位</strong></td>
+<td style="text-align: left;"><code>b</code>（字节）、<code>h</code>（半字，2字节）、<code>w</code>（字，4字节）、<code>g</code>（双字，8字节）。</td>
+</tr>
+</tbody>
+</table>
+<p>具体格式如下：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>x/<span class="o">[</span>数量<span class="o">][</span>格式<span class="o">][</span>单位<span class="o">]</span><span class="w"> </span>&lt;地址&gt;
+</span></code></pre></div>
+<p>为了更直观的展示<code>examine</code>命令，修改程序，添加一个数组：</p>
+<p><img alt="image-20250502172305301" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502172305301.png" /></p>
+<p>重新编译并启动调试。</p>
+<p><img alt="image-20250502172352776" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502172352776.png" /></p>
+<p>基于数组可以直观看出数量、单位的含义：</p>
+<ul>
+<li>数量：显示多少个内存单元的内容。</li>
+<li>单位：单个内存单元的字节长度。</li>
+</ul>
+<p><img alt="image-20250502172537425" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502172537425.png" /></p>
+<p>⑧ 查看寄存器</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>info<span class="w"> </span>registers
+</span></code></pre></div>
+<p><img alt="image-20250502173432090" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502173432090.png" /></p>
+<p>⑨ 反汇编</p>
+<p>反汇编当前函数</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># 完整指令disassemble</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>disas
+</span></code></pre></div>
+<p><img alt="image-20250502173812077" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502173812077.png" /></p>
+<details class="note">
+<summary>Note</summary>
+<p>更多命令可以在具体使用时再细细研究。</p>
+</details>
+<h2 id="13">1.3 编译过程<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<p>使用 gcc 对<code>vim_cmd.c</code>文件进行编译时，并非直接生成可执行文件，中间还经历了预处理、编译和汇编等过程，同时gcc 也提供了生成中间文件的命令，可以帮助我们更好的了解编译过程。</p>
+<p><img alt="image-20250502233443183" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502233443183.png" /></p>
+<h3 id="133">1.3.3 预处理<a class="headerlink" href="#133" title="Permanent link">&para;</a></h3>
+<p>预处理过程主要进行 <strong>头文件包含</strong> 、 <strong>宏定义替换</strong> 处理，最后生成<code>.i</code>后缀的文件。</p>
+<p>修改程序，添加一个宏定义并赋值给变量<code>a</code>，然后执行 gcc 命令生成预处理文件<code>vim_cmd.i</code>：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd.i<span class="w"> </span>-E
+</span></code></pre></div>
+<p>打开<code>vim_cmd.i</code>文件，可以看到调用的头文件被包含进来，并替换了宏常量和宏代码段。</p>
+<p><img alt="image-20250502235629844" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502235629844.png" /></p>
 
 
 
