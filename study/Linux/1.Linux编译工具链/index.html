@@ -1033,9 +1033,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1 预处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.2 编译和汇编
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#133" class="md-nav__link">
     <span class="md-ellipsis">
-      1.3.3 预处理
+      1.3.3 链接
     </span>
   </a>
   
@@ -1043,6 +1061,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
+    </span>
+  </a>
   
 </li>
       
@@ -1478,9 +1505,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1 预处理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.2 编译和汇编
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#133" class="md-nav__link">
     <span class="md-ellipsis">
-      1.3.3 预处理
+      1.3.3 链接
     </span>
   </a>
   
@@ -1488,6 +1533,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
+    </span>
+  </a>
   
 </li>
       
@@ -1676,44 +1730,85 @@
 <h3 id="122-gcc">1.2.2 gcc编译器<a class="headerlink" href="#122-gcc" title="Permanent link">&para;</a></h3>
 <p>gcc （GUN C Compiler）是 GCC 中的 c 编译器。</p>
 <p>gcc 常用参数如下表：</p>
-<table>
-<thead>
-<tr>
-<th>参数名称</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-o</code></td>
-<td>生成可执行文件</td>
-</tr>
-<tr>
-<td><code>-E</code></td>
-<td>仅执行预处理（生成后缀为 <code>.i</code> 的预处理文件）</td>
-</tr>
-<tr>
-<td><code>-S</code></td>
-<td>执行预处理和编译（生成后缀为 <code>.s</code> 的汇编文件）</td>
-</tr>
-<tr>
-<td><code>-c</code></td>
-<td>执行预处理、编译和汇编（生成后缀为 <code>.o</code> 的二进制文件）</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li>【编译】<ul>
+<li><code>-E</code>：仅执行预处理（生成后缀为 <code>.i</code> 的预处理文件）</li>
+<li><code>-S</code>：执行预处理和编译（生成后缀为 <code>.s</code> 的汇编文件）</li>
+<li><code>-c</code>：执行预处理、编译和汇编（生成后缀为 <code>.o</code> 的二进制文件）</li>
+<li><code>-o</code>：链接库文件，生成可执行文件</li>
+<li><code>-g</code>：嵌入调试信息，方便gdb调试</li>
+<li><code>-v</code>：查看gcc编译器的版本，显示gcc执行时的详细过程</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>【代码优化】</p>
+<ul>
+<li><code>-O0</code>：禁用所有优化，保留完整调试信息</li>
+<li><code>-O1</code>：平衡代码大小和执行速度</li>
+<li><code>-O2</code>：提升执行速度，适度增加代码体积</li>
+<li><code>-O3</code>：极致性能，显著增加代码体积</li>
+<li><code>-Os</code>：最小化代码体积</li>
+<li><code>-Ofast</code>：极致性能，忽略严格标准合规性</li>
+<li><code>-finline-functions</code>：将小函数直接嵌入调用处，减少函数调用开销</li>
+<li><code>-funroll-loops</code>：循环展开，减少循环控制开销，提升指令级并行性</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>【警告控制】</p>
+<ul>
+<li><code>-Wall</code>：打开编译告警</li>
+<li><code>-Werror</code>：将所有的警告当成错误进行处理，在所有产生警告的地方停止编译</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>【库文件链接】</p>
+<ul>
+<li><code>-static</code>：强制静态库链接</li>
+</ul>
+<ul>
+<li>
+<p><code>-l</code>：指定要链接的 <strong>库文件名称</strong></p>
+<ul>
+<li>
+<blockquote>
+<p><code>-l</code> 参数紧接着就是库名，例如：数学库为<kbd>libm.so</kbd>，参数就是<code>-lm</code>，即去掉<code>lib</code>和<code>.so</code>。此外，放在 <code>/lib</code> 、<code>/usr/lib</code>和<code>/usr/local/lib</code> 里的库直接用 -l 参数就能链接，其他位置的库文件需要指定目录路径。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>-L</code>：指定要链接的 <strong>库文件路径</strong></p>
+<ul>
+<li>
+<blockquote>
+<p>除 <code>/lib</code> 、<code>/usr/lib</code>和<code>/usr/local/lib</code>以外，其他目录的库，需要使用<code>-L</code>参数指定目录路径。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>-I</code>：指定 <strong>头文件目录</strong></p>
+<ul>
+<li>
+<blockquote>
+<p><code>/usr/include</code>目录一般是不用指定，其他目录则需要指定，可以用相对路径。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p><strong>基础编译</strong></p>
 <p>编译命令格式：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># &lt;input_name&gt;是要编译的C文件名称</span>
@@ -1731,7 +1826,7 @@
 </span></code></pre></div>
 <p><img alt="image-20250502152712701" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502152712701.png" /></p>
 <h3 id="123-gdb">1.2.3 gdb调试器<a class="headerlink" href="#123-gdb" title="Permanent link">&para;</a></h3>
-<p>GDB（GNU Project Debugger）是 GNU 项目开发的开源调试工具，支持 <strong>C/C++</strong> 、 <strong>Fortran</strong> 、 <strong>Go</strong>  等多种编程语言，主要用于检查程序运行状态、定位崩溃原因及分析逻辑错误。其核心功能包括：</p>
+<p>GDB（GNU Project Debugger）是 GNU 项目开发的开源调试工具，支持 <strong>C/C++</strong> 、 <strong>Fortran</strong> 、 <strong>Go</strong>  等多种编程语言，主要用于检查程序运行状态、定位崩溃原因及分析逻辑错误。其核心功能包括：</p>
 <ul>
 <li>Start your program, specifying anything that might affect its behavior.（指定一些参数）</li>
 <li>Make your program stop on specified conditions.（断点）</li>
@@ -1753,13 +1848,13 @@
 <td><code>run</code></td>
 <td><code>r</code></td>
 <td>启动程序</td>
-<td><code>run</code> 或 <code>r arg1</code></td>
+<td><code>run</code></td>
 </tr>
 <tr>
 <td><code>break &lt;行号&gt;</code></td>
 <td><code>b</code></td>
 <td>设置断点</td>
-<td><code>b 20</code> 或 <code>b file.c:15</code></td>
+<td><code>b 20</code></td>
 </tr>
 <tr>
 <td><code>next</code></td>
@@ -1777,7 +1872,7 @@
 <td><code>print &lt;表达式&gt;</code></td>
 <td><code>p</code></td>
 <td>打印变量值或表达式结果</td>
-<td><code>p x</code> 或 <code>p &amp;array[0]</code></td>
+<td><code>p x</code></td>
 </tr>
 <tr>
 <td><code>backtrace</code></td>
@@ -1824,7 +1919,7 @@
 <tr>
 <td><code>diaplay &lt;变量&gt;</code></td>
 <td></td>
-<td>监控变量变化，每次停下来都显示它的值**</td>
+<td>监控变量变化，每次停下来都显示它的值</td>
 <td><code>dispaly a</code></td>
 </tr>
 <tr>
@@ -1848,7 +1943,7 @@
 <tr>
 <td><code>finish</code></td>
 <td></td>
-<td>⭐在一个函数内部，执行到当前函数返回，即快速跳出当前函数</td>
+<td>⭐在一个函数内部，执行到当前函数返回</td>
 <td><code>finish</code></td>
 </tr>
 <tr>
@@ -1955,20 +2050,70 @@
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>disas
 </span></code></pre></div>
 <p><img alt="image-20250502173812077" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502173812077.png" /></p>
-<details class="note">
-<summary>Note</summary>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>更多命令可以在具体使用时再细细研究。</p>
-</details>
+</div>
 <h2 id="13">1.3 编译过程<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
 <p>使用 gcc 对<code>vim_cmd.c</code>文件进行编译时，并非直接生成可执行文件，中间还经历了预处理、编译和汇编等过程，同时gcc 也提供了生成中间文件的命令，可以帮助我们更好的了解编译过程。</p>
 <p><img alt="image-20250502233443183" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502233443183.png" /></p>
-<h3 id="133">1.3.3 预处理<a class="headerlink" href="#133" title="Permanent link">&para;</a></h3>
-<p>预处理过程主要进行 <strong>头文件包含</strong> 、 <strong>宏定义替换</strong> 处理，最后生成<code>.i</code>后缀的文件。</p>
+<h3 id="131">1.3.1 预处理<a class="headerlink" href="#131" title="Permanent link">&para;</a></h3>
+<p>预处理过程主要进行 <strong>头文件包含</strong> 、 <strong>宏定义替换</strong> 处理，最后生成<code>.i</code>后缀的文件。</p>
 <p>修改程序，添加一个宏定义并赋值给变量<code>a</code>，然后执行 gcc 命令生成预处理文件<code>vim_cmd.i</code>：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd.i<span class="w"> </span>-E
 </span></code></pre></div>
 <p>打开<code>vim_cmd.i</code>文件，可以看到调用的头文件被包含进来，并替换了宏常量和宏代码段。</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>预处理阶段不检查语法错误。</p>
+</div>
 <p><img alt="image-20250502235629844" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502235629844.png" /></p>
+<h3 id="132">1.3.2 编译和汇编<a class="headerlink" href="#132" title="Permanent link">&para;</a></h3>
+<p>编译阶段将预处理文件转化为汇编代码，生成<code>.s</code>后缀文件。汇编阶段将汇编代码转化为机器能执行的二进制机器码，生成<code>.o</code>后缀文件。</p>
+<p>① 编译</p>
+<p>执行如下命令，生成<code>vim_cmd.s</code>汇编文件，内容如下图所示。</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd.s<span class="w"> </span>-S
+</span></code></pre></div>
+<p><img alt="image-20250503004638946" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250503004638946.png" /></p>
+<p>② 汇编</p>
+<p>执行如下命令，生成<code>vim_cmd.o</code>二进制文件，内容如下图所示。</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd.o<span class="w"> </span>-c
+</span></code></pre></div>
+<p><img alt="image-20250503130230169" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250503130230169.png" /></p>
+<h3 id="133">1.3.3 链接<a class="headerlink" href="#133" title="Permanent link">&para;</a></h3>
+<p>链接过程就是找到依赖的库文件，将目标文件链接为可执行程序。</p>
+<p>库文件一般分静态库和动态库，静态库在编译链接时与可执行文件合为一体，动态库单独作为文件供可执行文件调用。</p>
+<ul>
+<li><strong>静态库</strong> ：在链接时，把库文件的代码链接到可执行文件中，更占用内存资源，但执行速度快。<ul>
+<li>Windows系统后缀：<code>.lib</code>（Library）</li>
+<li>Linux系统后缀：<code>.dll</code>（Dynamic Link Library）</li>
+</ul>
+</li>
+<li><strong>动态库/共享库</strong> ：只有在用到的时候，才去链接库文件，可以被多个不同的程序调用，因此节省资源，但调用需要一定的装载时间。 <ul>
+<li>Windows系统后缀：<code>.a</code>（Archive）</li>
+<li>Linux系统后缀：<code>.so</code>（Shared Object）</li>
+</ul>
+</li>
+</ul>
+<p>① 编写源码</p>
+<p>新建文件<code>function.c</code>、<code>function.h</code>、<code>main.c</code>，再<code>main.c</code>中调用<code>function.c</code>的函数。</p>
+<p><img alt="image-20250503214325409" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250503214325409.png" /></p>
+<p>② 编译和链接</p>
+<p>编译生成二进制文件：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># 分步编译</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>gcc<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.o<span class="w"> </span>-c
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>-o<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>-c
+</span></code></pre></div>
+<p>链接：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># 链接文件</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>gcc<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>main.o<span class="w"> </span>-o<span class="w"> </span>main
+</span></code></pre></div>
+<p>编译链接一步到位：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main_
+</span></code></pre></div>
+<h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://blog.csdn.net/qq_39872252/article/details/133309120">Linux环境下GCC基本使用详解（含实例）_linux gcc-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/qq_27870421/article/details/99682041?ops_request_misc=%7B%22request%5Fid%22%3A%22169569887416800192282218%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=169569887416800192282218&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-99682041-null-null.142^v94^insert_down1&amp;utm_term=GCC使用&amp;spm=1018.2226.3001.4187">GCC编译器详解-CSDN博客</a></p>
 
 
 
