@@ -1065,6 +1065,66 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 构建工具
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 构建工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 准备环境
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#141-make" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 Make
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-cmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.2 CMake
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-ninja" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.3 Ninja
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-gn" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.4 GN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       参考资料
@@ -1537,6 +1597,66 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 构建工具
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 构建工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 准备环境
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#141-make" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 Make
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-cmake" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.2 CMake
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-ninja" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.3 Ninja
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144-gn" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.4 GN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       参考资料
@@ -1769,7 +1889,10 @@
 <li>
 <p>【库文件链接】</p>
 <ul>
-<li><code>-static</code>：强制静态库链接</li>
+<li><code>-static</code>：链接静态库</li>
+</ul>
+<ul>
+<li><code>-share</code>：链接动态库</li>
 </ul>
 <ul>
 <li>
@@ -1777,7 +1900,7 @@
 <ul>
 <li>
 <blockquote>
-<p><code>-l</code> 参数紧接着就是库名，例如：数学库为<kbd>libm.so</kbd>，参数就是<code>-lm</code>，即去掉<code>lib</code>和<code>.so</code>。此外，放在 <code>/lib</code> 、<code>/usr/lib</code>和<code>/usr/local/lib</code> 里的库直接用 -l 参数就能链接，其他位置的库文件需要指定目录路径。</p>
+<p><code>-l</code> 参数紧接着就是库名(无空格)，例如：数学库为<kbd>libm.so</kbd>，参数就是<code>-lm</code>，即去掉<code>lib</code>和<code>.so</code>。放在 <code>/lib</code> 、<code>/usr/lib</code>和<code>/usr/local/lib</code> 里的库直接用 -l 参数就能链接，其他位置的库文件需要指定目录路径。</p>
 </blockquote>
 </li>
 </ul>
@@ -1789,7 +1912,7 @@
 <ul>
 <li>
 <blockquote>
-<p>除 <code>/lib</code> 、<code>/usr/lib</code>和<code>/usr/local/lib</code>以外，其他目录的库，需要使用<code>-L</code>参数指定目录路径。</p>
+<p><code>-L</code>参数紧接着就是目录(无空格)，除 <code>/lib</code> 、<code>/usr/lib</code>和<code>/usr/local/lib</code>以外，其他目录的库，需要使用<code>-L</code>参数指定目录路径，<code>-L.</code>即当前目录。</p>
 </blockquote>
 </li>
 </ul>
@@ -1801,7 +1924,7 @@
 <ul>
 <li>
 <blockquote>
-<p><code>/usr/include</code>目录一般是不用指定，其他目录则需要指定，可以用相对路径。</p>
+<p><code>-I</code>参数紧接着就是目录(无空格)，<code>/usr/include</code>目录一般是不用指定，其他目录则需要指定，可以用相对路径。</p>
 </blockquote>
 </li>
 </ul>
@@ -2086,11 +2209,11 @@
 <ul>
 <li><strong>静态库</strong> ：在链接时，把库文件的代码链接到可执行文件中，更占用内存资源，但执行速度快。<ul>
 <li>Windows系统后缀：<code>.lib</code>（Library）</li>
-<li>Linux系统后缀：<code>.dll</code>（Dynamic Link Library）</li>
+<li>Linux系统后缀：<code>.a</code>（Archive）</li>
 </ul>
 </li>
 <li><strong>动态库/共享库</strong> ：只有在用到的时候，才去链接库文件，可以被多个不同的程序调用，因此节省资源，但调用需要一定的装载时间。 <ul>
-<li>Windows系统后缀：<code>.a</code>（Archive）</li>
+<li>Windows系统后缀：<code>.dll</code>（Dynamic Link Library）</li>
 <li>Linux系统后缀：<code>.so</code>（Shared Object）</li>
 </ul>
 </li>
@@ -2111,6 +2234,244 @@
 <p>编译链接一步到位：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main_
 </span></code></pre></div>
+<p>③ 链接静态库</p>
+<p>强制将<code>function.c</code>链接为静态库：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># 先将function.c编译为function.o</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>-o<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>-c
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1"># 强制静态链接</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>gcc<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main_static<span class="w"> </span>-static
+</span></code></pre></div>
+<p>④ 动态链接库</p>
+<p>强制将<code>function.c</code>链接为动态库：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># 生成共享库</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>-shared<span class="w"> </span>-fPIC<span class="w"> </span>-o<span class="w"> </span>libfunc.so
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1"># 动态链接</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>gcc<span class="w"> </span>main.c<span class="w"> </span>-lfunc<span class="w"> </span>-L.<span class="w"> </span>-o<span class="w"> </span>main_share<span class="w"> </span>-Wl,-rpath<span class="o">=</span><span class="s1">&#39;$ORIGIN&#39;</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>-wl</code>用于给链接器 ld 传递参数，格式为<code>wl,&lt;linker-option&gt;</code>，<code>-rpath='$ORIGIN'</code>的功能是指定程序运行时搜索动态库的路径，<code>$ORIGIN</code> 表示可执行文件所在目录。</p>
+</div>
+<h2 id="14">1.4 构建工具<a class="headerlink" href="#14" title="Permanent link">&para;</a></h2>
+<p>在实际项目开发中，直接通过命令行逐一手动编译源代码文件的方式存在局限性，不仅需要记忆复杂的编译参数，更难以应对多文件协同编译、依赖关系管理和跨平台构建等工程化需求。为解决此问题，第一代 <strong>构建系统</strong> （如Make、Ninja）应运而生，通过声明式规则文件（Makefile/build.ninja）将编译逻辑抽象为可复用的任务流。</p>
+<p>然而随着项目的复杂度增加，手动编写和维护构建规则文件也显得效率低下。因此催生出了第二代 <strong>构建系统生成器</strong> （如CMake、GN），通过简单的配置文件自动生成不同平台的构建文件，极大地简化了项目的编译和构建过程。</p>
+<ul>
+<li><strong>构建系统生成器</strong><ul>
+<li>Cmake：通过 <code>CMakeLists.txt</code> 生成 <code>Makefile</code> 或 <code>build.ninja</code></li>
+<li>GN：生成 <code>Ninja</code> 构建文件，专为大型项目设计</li>
+</ul>
+</li>
+<li><strong>构建系统</strong><ul>
+<li>Make：根据 <code>Makefile</code> 规则调用编译器（如 GCC）完成代码构建</li>
+<li>Ninja：替代 <code>make</code>，专注于快速执行构建步骤（需输入文件如 <code>build.ninja</code>）</li>
+</ul>
+</li>
+<li><strong>编译器</strong><ul>
+<li>GCC：GNU 项目的一套编译工具</li>
+<li>Clang：LLVM 项目的编译工具</li>
+</ul>
+</li>
+</ul>
+<p><img alt="image-20250504135725498" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250504135725498.png" /></p>
+<h3 id="141">1.4.1 准备环境<a class="headerlink" href="#141" title="Permanent link">&para;</a></h3>
+<p>新建文件夹<code>2.make_cmake_gn_ninja</code>，相关文件按如下目录移植（均是编译章节用到的源文件）。</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>└──<span class="w"> </span><span class="m">2</span>.make_cmake_gn_ninja
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span>├──<span class="w"> </span>build<span class="w">           </span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span>├──<span class="w"> </span>include
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span><span class="k">function</span>.h
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span>├──<span class="w"> </span>out<span class="w">         </span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">    </span>└──<span class="w"> </span>src
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">        </span>├──<span class="w"> </span><span class="k">function</span>.c
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">        </span>└──<span class="w"> </span>main.c
+</span></code></pre></div>
+<h3 id="141-make">1.4.1 Make<a class="headerlink" href="#141-make" title="Permanent link">&para;</a></h3>
+<p>Make 是一个广泛使用的构建工具，与 GCC 一样来源于 GNU 项目，因此又称 GNU Make。Make 通过一个名为 makefile 的文件知道要如何编译你的项目，因此我们要在项目中编写一个 makefile 文件。</p>
+<p><strong>Make 的功能</strong></p>
+<ul>
+<li>Make 允许用户在不了解具体构建细节的情况下编译和安装软件包——因为这些细节已记录在你提供的 <code>makefile</code> 中。</li>
+<li>Make 能 <strong>自动确定需要更新的文件</strong> ，若某个非源文件依赖于另一个非源文件，Make 会 <strong>自动推断正确的更新顺序</strong> 。</li>
+<li>当修改部分源文件后运行 Make，它仅重新编译直接或间接依赖这些修改文件的非源文件，而非整个项目。</li>
+<li>Make 除构建软件包外，还可控制安装/卸载一个包。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><kbd>源文件</kbd>指开发者直接编写和维护的文件，如<code>.c</code>、<code>.py</code>这类文件，而<kbd>非源文件</kbd>指的是通过工具生成的中间或最终文件，如<code>.o</code>、<code>.out</code>文件。</p>
+</div>
+<p><strong>makefile 的规则</strong></p>
+<p>如下便是一个规则，而<code>makefile</code>就是有多个规则组成的。</p>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c"># target: 目标文件</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="c"># dependencies: 依赖文件</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="c"># commands: 要执行的命令</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nf">target</span><span class="o">:</span><span class="w"> </span><span class="n">dependencies</span> ...
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">        </span>commands
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">        </span>...
+</span></code></pre></div>
+<p><strong>makefile 简单应用</strong></p>
+<p>在根目录下新建<code>makefile</code>文件，文件名称就是<code>makefile</code>，无后缀。</p>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c"># 定义工程目录</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nv">SRC_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>src<span class="w"> </span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nv">INCLUDE_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>include
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="nv">OBJ_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>build
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nv">BIN_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>out<span class="w"> </span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="c"># 包含头文件路径，启动编译警告，生成调试信息</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="nv">CFLAGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-I<span class="k">$(</span>INCLUDE_DIR<span class="k">)</span><span class="w"> </span>-Wall<span class="w"> </span>-g
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="c"># 可执行文件</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="nv">TARGET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>BIN_DIR<span class="k">)</span>/main
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="c"># 获取src目录下所有.c文件列表</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="nv">SOURCES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/*.c<span class="k">)</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="c"># 将.c路径替换为.o路径</span>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="nv">OBJS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>patsubst<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/%.c,<span class="k">$(</span>OBJ_DIR<span class="k">)</span>/%.o,<span class="k">$(</span>SOURCES<span class="k">))</span>
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="c"># 默认目标</span>
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">TARGET</span><span class="k">)</span>
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>
+</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="c"># 编写编译规则</span>
+</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="nf">$(TARGET) </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">OBJS</span><span class="k">)</span>
+</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="w">    </span>gcc<span class="w"> </span>$^<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>
+</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>
+</span><span id="__span-27-25"><a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a><span class="nf">$(OBJ_DIR)/%.o </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">SRC_DIR</span><span class="k">)</span>/%.<span class="n">c</span>
+</span><span id="__span-27-26"><a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a><span class="w">    </span>gcc<span class="w"> </span>$&lt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>-c<span class="w"> </span><span class="k">$(</span>CFLAGS<span class="k">)</span>
+</span><span id="__span-27-27"><a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>
+</span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a><span class="c"># 清理规则</span>
+</span><span id="__span-27-29"><a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
+</span><span id="__span-27-30"><a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a><span class="nf">clean </span><span class="o">:</span>
+</span><span id="__span-27-31"><a id="__codelineno-27-31" name="__codelineno-27-31" href="#__codelineno-27-31"></a><span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="k">$(</span>OBJ_DIR<span class="k">)</span>/*.o
+</span></code></pre></div>
+<p>根目录执行编译</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>make
+</span></code></pre></div>
+<p>运行可执行文件</p>
+<p><img alt="image-20250504183151049" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250504183151049.png" /></p>
+<p>可以清理<code>build</code>目录下的<code>.o</code>文件</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>make<span class="w"> </span>clean
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>网上有很多简单的<code>makefile</code>示例，就是基本的根据规则赋值<code>gcc</code>命令，我认为不符合实际项目需求，因此做了一个较综合的<code>makefile</code>示例，用到了变量、通配符、函数等功能。</p>
+</div>
+<p><strong>makefile 基础</strong></p>
+<blockquote>
+<p>先较系统的介绍用到的<code>makefile</code>基础，然后再分析我们的<code>makefile</code>文件。</p>
+</blockquote>
+<ul>
+<li>【变量】<ul>
+<li><code>:=</code>：立即展开（在定义时求值）</li>
+<li><code>=</code>：延迟展开（在使用时求值）</li>
+<li><code>?=</code>：条件赋值（仅在未定义时赋值）</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>【自动变量】</p>
+<ul>
+<li><code>$@</code>：当前规则的目标文件</li>
+<li><code>$&lt;</code>：当前规则的第一个依赖文件</li>
+<li><code>$^</code>：当前规则的所有依赖文件（去重）</li>
+<li><code>$*</code>：通配符 <code>%</code> 匹配的部分</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>【通配符】</p>
+<ul>
+<li><code>%</code>：匹配任意长度的字符串，可以配合函数和模式规则使用</li>
+<li><code>*</code>：</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>【函数】</p>
+<ul>
+<li><code>$(wildcard PATTERN)</code>：获取匹配 <code>PATTERN</code> 的文件列表，<code>PATTERN</code>是通配符表达式</li>
+<li><code>$(patsubst PATTERN,REPLACEMENT,TEXT)</code>：将 <code>TEXT</code> 中匹配 <code>PATTERN</code> 的部分替换为 <code>REPLACEMENT</code><ul>
+<li><code>PATTERN</code>: 匹配模式（必须包含 <code>%</code>）</li>
+<li><code>REPLACEMENT</code>: 替换模式（<code>%</code> 对应捕获的内容）</li>
+<li><code>TEXT</code>: 待处理的文本或变量</li>
+</ul>
+</li>
+<li><code>$(shell COMMAND)</code>：执行 Shell 命令并返回结果</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>【条件判断】</p>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="cp">ifeq (ARG1, ARG2)</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="c">    # 条件成立时执行</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="cp">else</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="c">    # 条件不成立时执行</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="cp">endif</span>
+</span></code></pre></div>
+</li>
+</ul>
+<p><strong>makefile 解析</strong></p>
+<p>① 变量声明</p>
+<p>按照<code>$(&lt;变量&gt;)</code>格式使用变量：</p>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c"># 定义工程目录</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nv">SRC_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>src<span class="w"> </span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="nv">INCLUDE_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>include
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="nv">OBJ_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>build
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="nv">BIN_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>out<span class="w"> </span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="c"># 包含头文件路径，启动编译警告，生成调试信息</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="nv">CFLAGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-I<span class="k">$(</span>INCLUDE_DIR<span class="k">)</span><span class="w"> </span>-Wall<span class="w"> </span>-g
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="c"># 可执行文件</span>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="nv">TARGET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>BIN_DIR<span class="k">)</span>/main
+</span></code></pre></div>
+<p>② 函数</p>
+<ul>
+<li><code>$(wildcard PATTERN)</code>函数获取<code>src</code>目录下的所以<code>.c</code>文件</li>
+<li><code>$(patsubst PATTERN,REPLACEMENT,TEXT)</code>函数将<code>.c</code>路径替换为<code>.o</code>路径</li>
+</ul>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c"># 获取src目录下所有.c文件列表</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="nv">SOURCES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/*.c<span class="k">)</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="c"># 将.c路径替换为.o路径</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="nv">OBJS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>patsubst<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/%.c,<span class="k">$(</span>OBJ_DIR<span class="k">)</span>/%.o,<span class="k">$(</span>SOURCES<span class="k">))</span>
+</span></code></pre></div>
+<p>③ 默认目标</p>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c"># 默认目标</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">TARGET</span><span class="k">)</span>
+</span></code></pre></div>
+<p>④ 链接规则</p>
+<ul>
+<li><code>$(OBJS)</code>变量为所有<code>.o</code>依赖文件</li>
+<li><code>$(TARGET)</code>变量为目标文件</li>
+<li><code>$^</code>代指所有依赖文件，即<code>build\main.o</code>、<code>build\function.o</code></li>
+<li><code>$@</code> 代指目标文件，即<code>out\main</code></li>
+</ul>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c"># 编写编译规则</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nf">$(TARGET) </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">OBJS</span><span class="k">)</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span>gcc<span class="w"> </span>$^<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>
+</span></code></pre></div>
+<p>⑤ 模式规则</p>
+<ul>
+<li><code>%</code>通配符会动态生成目标和依赖关系<ul>
+<li>当需要构建 <code>build/main.o</code> 时，Make 检查是否存在 <code>src/main.c</code></li>
+<li><code>%</code> 捕获 main，<code>$&lt;</code> 展开为 <code>src/main.c</code>，<code>$@</code> 展开为 <code>build/main.o</code></li>
+</ul>
+</li>
+<li>此规则，逐个编译每个 <code>.c</code> 文件，生成对应的 <code>.o</code> 文件</li>
+</ul>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nf">$(OBJ_DIR)/%.o </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">SRC_DIR</span><span class="k">)</span>/%.<span class="n">c</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">    </span>gcc<span class="w"> </span>$&lt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>-c<span class="w"> </span><span class="k">$(</span>CFLAGS<span class="k">)</span>
+</span></code></pre></div>
+<p>⑥ 清理规则</p>
+<p><code>.PHONY: clean</code>声明 <code>clean</code> 为伪目标，告诉 Make 不要检查 <code>clean</code> 文件是否存在，而是直接执行其命令。</p>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c"># 清理规则</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="nf">clean </span><span class="o">:</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="k">$(</span>OBJ_DIR<span class="k">)</span>/*.o
+</span></code></pre></div>
+<h3 id="142-cmake">1.4.2 CMake<a class="headerlink" href="#142-cmake" title="Permanent link">&para;</a></h3>
+<h3 id="143-ninja">1.4.3 Ninja<a class="headerlink" href="#143-ninja" title="Permanent link">&para;</a></h3>
+<h3 id="144-gn">1.4.4 GN<a class="headerlink" href="#144-gn" title="Permanent link">&para;</a></h3>
 <h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://blog.csdn.net/qq_39872252/article/details/133309120">Linux环境下GCC基本使用详解（含实例）_linux gcc-CSDN博客</a></p>
 <p><a href="https://blog.csdn.net/qq_27870421/article/details/99682041?ops_request_misc=%7B%22request%5Fid%22%3A%22169569887416800192282218%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=169569887416800192282218&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-99682041-null-null.142^v94^insert_down1&amp;utm_term=GCC使用&amp;spm=1018.2226.3001.4187">GCC编译器详解-CSDN博客</a></p>
