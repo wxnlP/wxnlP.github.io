@@ -969,7 +969,16 @@
           <li class="md-nav__item">
   <a href="#114-vim" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1.4 Vim使用练习
+      1.1.4 Vim配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-vim" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.5 Vim使用练习
     </span>
   </a>
   
@@ -1093,18 +1102,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#142-cmake" class="md-nav__link">
+  <a href="#142-ninja" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.2 CMake
+      1.4.2 Ninja
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#143-ninja" class="md-nav__link">
+  <a href="#143-cmake" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.3 Ninja
+      1.4.3 CMake
     </span>
   </a>
   
@@ -1501,7 +1510,16 @@
           <li class="md-nav__item">
   <a href="#114-vim" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1.4 Vim使用练习
+      1.1.4 Vim配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-vim" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.5 Vim使用练习
     </span>
   </a>
   
@@ -1625,18 +1643,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#142-cmake" class="md-nav__link">
+  <a href="#142-ninja" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.2 CMake
+      1.4.2 Ninja
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#143-ninja" class="md-nav__link">
+  <a href="#143-cmake" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.3 Ninja
+      1.4.3 CMake
     </span>
   </a>
   
@@ -1800,26 +1818,40 @@
 <li><code>:wq</code>：保存文件，然后退出Vim。</li>
 </ul>
 </li>
-</ul>
-<ul>
 <li>【替换】<ul>
 <li><code>:s/旧字符串/新字符串/g</code>：可以在当前行替换所有的旧字符串为新字符串。</li>
 <li><code>:%s/旧字符串/新字符串/g</code>：整个文件范围内替换。</li>
+</ul>
+</li>
+<li>【显示行号】<ul>
+<li><code>:set nu</code></li>
 </ul>
 </li>
 </ul>
 <blockquote>
 <p><code>:</code>是从普通模式进入命令行模式，后面直接跟命令，因此替换均是在命令行模式下进行的。</p>
 </blockquote>
-<h3 id="114-vim">1.1.4 Vim使用练习<a class="headerlink" href="#114-vim" title="Permanent link">&para;</a></h3>
+<h3 id="114-vim">1.1.4 Vim配置<a class="headerlink" href="#114-vim" title="Permanent link">&para;</a></h3>
+<p>打开Vim配置文件</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/vim/vimrc
+</span></code></pre></div>
+<p>在文件末尾添加下列配置，可以永久修改<code>Tab</code>键缩进长度、显示行号，其他需要的配置可以自行添加。</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="s2">&quot; default setting</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s2">set nu</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s2">set ts=4</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s2">set shiftwidth=4</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s2">set softtabstop=4</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="s2">set softtabstop=4</span>
+</span></code></pre></div>
+<h3 id="115-vim">1.1.5 Vim使用练习<a class="headerlink" href="#115-vim" title="Permanent link">&para;</a></h3>
 <p>新建文件夹和 C 文件：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 新建文件夹</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>c_proficient_road
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>c_proficient_road
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 新建C文件</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>touch<span class="w"> </span>vim_cmd.c
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># 打开C文件</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>vim<span class="w"> </span>vim_cmd.c
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 新建文件夹</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mkdir<span class="w"> </span>c_proficient_road
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">cd</span><span class="w"> </span>c_proficient_road
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># 新建C文件</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>touch<span class="w"> </span>vim_cmd.c
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># 打开C文件</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>vim<span class="w"> </span>vim_cmd.c
 </span></code></pre></div>
 <p>使用 Vim 命令写一个基础程序，并保存，如下图。</p>
 <p><img alt="image-20250502145605785" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502145605785.png" /></p>
@@ -1831,21 +1863,21 @@
 </blockquote>
 <h3 id="121-gcc">1.2.1 GCC安装<a class="headerlink" href="#121-gcc" title="Permanent link">&para;</a></h3>
 <p>GCC 是 Linux 默认的 C/C++ 编译器，大部分 Linux 发行版都默认安装。若是需要手动安装，在终端执行以下命令安装：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 更新软件包列表</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 安装 GCC 及基础开发工具（包括 make、g++、libc-dev 等）</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 更新软件包列表</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 安装 GCC 及基础开发工具（包括 make、g++、libc-dev 等）</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential
 </span></code></pre></div>
 <p>验证 gcc 和 g++ 是否安装成功：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>gcc<span class="w"> </span>-v
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>g++<span class="w"> </span>-v
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gcc<span class="w"> </span>-v
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>g++<span class="w"> </span>-v
 </span></code></pre></div>
 <p>单独安装特定的 GCC 组件，如 g++、cmake等。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 安装g++</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>g++
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># 安装gdb</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gdb
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 安装g++</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>g++
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># 安装gdb</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gdb
 </span></code></pre></div>
 <h3 id="122-gcc">1.2.2 gcc编译器<a class="headerlink" href="#122-gcc" title="Permanent link">&para;</a></h3>
 <p>gcc （GUN C Compiler）是 GCC 中的 c 编译器。</p>
@@ -1934,18 +1966,18 @@
 </ul>
 <p><strong>基础编译</strong></p>
 <p>编译命令格式：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># &lt;input_name&gt;是要编译的C文件名称</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># &lt;output_name&gt;是生成的可执行文件的名称（默认名称为a.out/a.exe）</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>gcc<span class="w"> </span>&lt;input_name&gt;<span class="w"> </span>-o<span class="w"> </span>&lt;output_name&gt;<span class="w"> </span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># &lt;input_name&gt;是要编译的C文件名称</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># &lt;output_name&gt;是生成的可执行文件的名称（默认名称为a.out/a.exe）</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>gcc<span class="w"> </span>&lt;input_name&gt;<span class="w"> </span>-o<span class="w"> </span>&lt;output_name&gt;<span class="w"> </span>
 </span></code></pre></div>
 <p>编译命令示例：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 编译vim_cmd.c</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># 查看文件生成</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>ls
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 编译vim_cmd.c</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># 查看文件生成</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>ls
 </span></code></pre></div>
 <p>运行可执行文件：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./vim_cmd
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>./vim_cmd
 </span></code></pre></div>
 <p><img alt="image-20250502152712701" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502152712701.png" /></p>
 <h3 id="123-gdb">1.2.3 gdb调试器<a class="headerlink" href="#123-gdb" title="Permanent link">&para;</a></h3>
@@ -2085,45 +2117,45 @@
 <p><strong>基础调试</strong></p>
 <p>① 编译程序生成调试信息</p>
 <p>使用 gdb 调试程序，需要在 gcc 编译时加上 <code>-g</code> 参数生成调试信息。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd<span class="w"> </span>-g
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd<span class="w"> </span>-g
 </span></code></pre></div>
 <p>② 启动 gdb</p>
 <p>以<code>vim_cmd.c</code>为例，启动 gdb 调试。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># vim_cmd为可执行文件，-q用于取消gdb的一些版本信息输出</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>gdb<span class="w"> </span>./vim_cmd<span class="w"> </span>-q
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># vim_cmd为可执行文件，-q用于取消gdb的一些版本信息输出</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>gdb<span class="w"> </span>./vim_cmd<span class="w"> </span>-q
 </span></code></pre></div>
 <p>启动 gdb 以后，会进入 gdb 的命令行环境，使用 gdb 的命令即可进行对应的调试工作，界面如下图所示：</p>
 <p><img alt="image-20250502162656352" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502162656352.png" /></p>
 <p>③ 查看程序</p>
 <p>查看第 8 行左右的程序。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>list<span class="w"> </span><span class="m">8</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>list<span class="w"> </span><span class="m">8</span>
 </span></code></pre></div>
 <p><img alt="image-20250502164202113" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502164202113.png" /></p>
 <p>④ 断点</p>
 <p>在第 8 行打一个断点。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>bread<span class="w"> </span><span class="m">8</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>bread<span class="w"> </span><span class="m">8</span>
 </span></code></pre></div>
 <p><img alt="image-20250502164236053" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502164236053.png" /></p>
 <p>⑤ 运行</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>run
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>run
 </span></code></pre></div>
 <p><img alt="image-20250502164342522" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502164342522.png" /></p>
 <p>⑥ 单步执行</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>next<span class="w"> </span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>next<span class="w"> </span>
 </span></code></pre></div>
 <p>查看第 8 行运行前后，变量<code>a</code>的变化：</p>
 <p><img alt="image-20250502164530789" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502164530789.png" /></p>
 <p>⑦ 查看变量信息</p>
 <p>基于变量查看信息：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># 查看地址</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>print<span class="w"> </span><span class="p">&amp;</span>a
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># 查看值(10进制)</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>print<span class="w"> </span>a
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># 或 print/d a</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="c1"># 查看值(16进制)</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>print/x<span class="w"> </span>a
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="c1"># 查看值(2进制)</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>print/t<span class="w"> </span>a
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># 查看地址</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>print<span class="w"> </span><span class="p">&amp;</span>a
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="c1"># 查看值(10进制)</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>print<span class="w"> </span>a
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1"># 或 print/d a</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1"># 查看值(16进制)</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>print/x<span class="w"> </span>a
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="c1"># 查看值(2进制)</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>print/t<span class="w"> </span>a
 </span></code></pre></div>
 <p><img alt="image-20250502171456909" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502171456909.png" /></p>
 <p>基于地址查看信息：</p>
@@ -2151,7 +2183,7 @@
 </tbody>
 </table>
 <p>具体格式如下：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>x/<span class="o">[</span>数量<span class="o">][</span>格式<span class="o">][</span>单位<span class="o">]</span><span class="w"> </span>&lt;地址&gt;
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>x/<span class="o">[</span>数量<span class="o">][</span>格式<span class="o">][</span>单位<span class="o">]</span><span class="w"> </span>&lt;地址&gt;
 </span></code></pre></div>
 <p>为了更直观的展示<code>examine</code>命令，修改程序，添加一个数组：</p>
 <p><img alt="image-20250502172305301" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502172305301.png" /></p>
@@ -2164,13 +2196,13 @@
 </ul>
 <p><img alt="image-20250502172537425" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502172537425.png" /></p>
 <p>⑧ 查看寄存器</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>info<span class="w"> </span>registers
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>info<span class="w"> </span>registers
 </span></code></pre></div>
 <p><img alt="image-20250502173432090" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502173432090.png" /></p>
 <p>⑨ 反汇编</p>
 <p>反汇编当前函数</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># 完整指令disassemble</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>disas
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># 完整指令disassemble</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>disas
 </span></code></pre></div>
 <p><img alt="image-20250502173812077" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250502173812077.png" /></p>
 <div class="admonition note">
@@ -2183,7 +2215,7 @@
 <h3 id="131">1.3.1 预处理<a class="headerlink" href="#131" title="Permanent link">&para;</a></h3>
 <p>预处理过程主要进行 <strong>头文件包含</strong> 、 <strong>宏定义替换</strong> 处理，最后生成<code>.i</code>后缀的文件。</p>
 <p>修改程序，添加一个宏定义并赋值给变量<code>a</code>，然后执行 gcc 命令生成预处理文件<code>vim_cmd.i</code>：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd.i<span class="w"> </span>-E
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd.i<span class="w"> </span>-E
 </span></code></pre></div>
 <p>打开<code>vim_cmd.i</code>文件，可以看到调用的头文件被包含进来，并替换了宏常量和宏代码段。</p>
 <div class="admonition danger">
@@ -2195,12 +2227,12 @@
 <p>编译阶段将预处理文件转化为汇编代码，生成<code>.s</code>后缀文件。汇编阶段将汇编代码转化为机器能执行的二进制机器码，生成<code>.o</code>后缀文件。</p>
 <p>① 编译</p>
 <p>执行如下命令，生成<code>vim_cmd.s</code>汇编文件，内容如下图所示。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd.s<span class="w"> </span>-S
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd.s<span class="w"> </span>-S
 </span></code></pre></div>
 <p><img alt="image-20250503004638946" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250503004638946.png" /></p>
 <p>② 汇编</p>
 <p>执行如下命令，生成<code>vim_cmd.o</code>二进制文件，内容如下图所示。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd.o<span class="w"> </span>-c
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>gcc<span class="w"> </span>vim_cmd.c<span class="w"> </span>-o<span class="w"> </span>vim_cmd.o<span class="w"> </span>-c
 </span></code></pre></div>
 <p><img alt="image-20250503130230169" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250503130230169.png" /></p>
 <h3 id="133">1.3.3 链接<a class="headerlink" href="#133" title="Permanent link">&para;</a></h3>
@@ -2223,30 +2255,30 @@
 <p><img alt="image-20250503214325409" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250503214325409.png" /></p>
 <p>② 编译和链接</p>
 <p>编译生成二进制文件：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># 分步编译</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>gcc<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.o<span class="w"> </span>-c
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>-o<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>-c
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># 分步编译</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>gcc<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.o<span class="w"> </span>-c
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>-o<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>-c
 </span></code></pre></div>
 <p>链接：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># 链接文件</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>gcc<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>main.o<span class="w"> </span>-o<span class="w"> </span>main
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># 链接文件</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>gcc<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>main.o<span class="w"> </span>-o<span class="w"> </span>main
 </span></code></pre></div>
 <p>编译链接一步到位：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main_
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main_
 </span></code></pre></div>
 <p>③ 链接静态库</p>
 <p>强制将<code>function.c</code>链接为静态库：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># 先将function.c编译为function.o</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>-o<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>-c
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1"># 强制静态链接</span>
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>gcc<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main_static<span class="w"> </span>-static
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># 先将function.c编译为function.o</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>-o<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>-c
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="c1"># 强制静态链接</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>gcc<span class="w"> </span><span class="k">function</span>.o<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main_static<span class="w"> </span>-static
 </span></code></pre></div>
 <p>④ 动态链接库</p>
 <p>强制将<code>function.c</code>链接为动态库：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># 生成共享库</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>-shared<span class="w"> </span>-fPIC<span class="w"> </span>-o<span class="w"> </span>libfunc.so
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1"># 动态链接</span>
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>gcc<span class="w"> </span>main.c<span class="w"> </span>-lfunc<span class="w"> </span>-L.<span class="w"> </span>-o<span class="w"> </span>main_share<span class="w"> </span>-Wl,-rpath<span class="o">=</span><span class="s1">&#39;$ORIGIN&#39;</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># 生成共享库</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>gcc<span class="w"> </span><span class="k">function</span>.c<span class="w"> </span>-shared<span class="w"> </span>-fPIC<span class="w"> </span>-o<span class="w"> </span>libfunc.so
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="c1"># 动态链接</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>gcc<span class="w"> </span>main.c<span class="w"> </span>-lfunc<span class="w"> </span>-L.<span class="w"> </span>-o<span class="w"> </span>main_share<span class="w"> </span>-Wl,-rpath<span class="o">=</span><span class="s1">&#39;$ORIGIN&#39;</span>
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2254,7 +2286,7 @@
 </div>
 <h2 id="14">1.4 构建工具<a class="headerlink" href="#14" title="Permanent link">&para;</a></h2>
 <p>在实际项目开发中，直接通过命令行逐一手动编译源代码文件的方式存在局限性，不仅需要记忆复杂的编译参数，更难以应对多文件协同编译、依赖关系管理和跨平台构建等工程化需求。为解决此问题，第一代 <strong>构建系统</strong> （如Make、Ninja）应运而生，通过声明式规则文件（Makefile/build.ninja）将编译逻辑抽象为可复用的任务流。</p>
-<p>然而随着项目的复杂度增加，手动编写和维护构建规则文件也显得效率低下。因此催生出了第二代 <strong>构建系统生成器</strong> （如CMake、GN），通过简单的配置文件自动生成不同平台的构建文件，极大地简化了项目的编译和构建过程。</p>
+<p>然而随着项目的复杂度增加，手动编写和维护构建规则文件也显得效率低下。因此催生出了第二代 <strong>构建系统生成器</strong> （如CMake、GN），通过简单的配置文件自动生成不同平台的构建文件，极大地简化了项目的编译和构建过程。</p>
 <ul>
 <li><strong>构建系统生成器</strong><ul>
 <li>Cmake：通过 <code>CMakeLists.txt</code> 生成 <code>Makefile</code> 或 <code>build.ninja</code></li>
@@ -2275,21 +2307,21 @@
 <p><img alt="image-20250504135725498" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250504135725498.png" /></p>
 <h3 id="141">1.4.1 准备环境<a class="headerlink" href="#141" title="Permanent link">&para;</a></h3>
 <p>新建文件夹<code>2.make_cmake_gn_ninja</code>，相关文件按如下目录移植（均是编译章节用到的源文件）。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>└──<span class="w"> </span><span class="m">2</span>.make_cmake_gn_ninja
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span>├──<span class="w"> </span>build<span class="w">           </span>
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span>├──<span class="w"> </span>include
-</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span><span class="k">function</span>.h
-</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span>├──<span class="w"> </span>out<span class="w">         </span>
-</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">    </span>└──<span class="w"> </span>src
-</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">        </span>├──<span class="w"> </span><span class="k">function</span>.c
-</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">        </span>└──<span class="w"> </span>main.c
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>└──<span class="w"> </span><span class="m">2</span>.make_cmake_gn_ninja
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span>├──<span class="w"> </span>build<span class="w">           </span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span>├──<span class="w"> </span>include
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span><span class="k">function</span>.h
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span>├──<span class="w"> </span>out<span class="w">         </span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span>└──<span class="w"> </span>src
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">        </span>├──<span class="w"> </span><span class="k">function</span>.c
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">        </span>└──<span class="w"> </span>main.c
 </span></code></pre></div>
 <h3 id="141-make">1.4.1 Make<a class="headerlink" href="#141-make" title="Permanent link">&para;</a></h3>
 <p>Make 是一个广泛使用的构建工具，与 GCC 一样来源于 GNU 项目，因此又称 GNU Make。Make 通过一个名为 makefile 的文件知道要如何编译你的项目，因此我们要在项目中编写一个 makefile 文件。</p>
 <p><strong>Make 的功能</strong></p>
 <ul>
 <li>Make 允许用户在不了解具体构建细节的情况下编译和安装软件包——因为这些细节已记录在你提供的 <code>makefile</code> 中。</li>
-<li>Make 能 <strong>自动确定需要更新的文件</strong> ，若某个非源文件依赖于另一个非源文件，Make 会 <strong>自动推断正确的更新顺序</strong> 。</li>
+<li>Make 能 <strong>自动确定需要更新的文件</strong> ，若某个非源文件依赖于另一个非源文件，Make 会 <strong>自动推断正确的更新顺序</strong> 。</li>
 <li>当修改部分源文件后运行 Make，它仅重新编译直接或间接依赖这些修改文件的非源文件，而非整个项目。</li>
 <li>Make 除构建软件包外，还可控制安装/卸载一个包。</li>
 </ul>
@@ -2299,54 +2331,54 @@
 </div>
 <p><strong>makefile 的规则</strong></p>
 <p>如下便是一个规则，而<code>makefile</code>就是有多个规则组成的。</p>
-<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c"># target: 目标文件</span>
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="c"># dependencies: 依赖文件</span>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="c"># commands: 要执行的命令</span>
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nf">target</span><span class="o">:</span><span class="w"> </span><span class="n">dependencies</span> ...
-</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">        </span>commands
-</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">        </span>...
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c"># target: 目标文件</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="c"># dependencies: 依赖文件</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="c"># commands: 要执行的命令</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="nf">target</span><span class="o">:</span><span class="w"> </span><span class="n">dependencies</span> ...
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">        </span>commands
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">        </span>...
 </span></code></pre></div>
 <p><strong>makefile 简单应用</strong></p>
 <p>在根目录下新建<code>makefile</code>文件，文件名称就是<code>makefile</code>，无后缀。</p>
-<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c"># 定义工程目录</span>
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nv">SRC_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>src<span class="w"> </span>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nv">INCLUDE_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>include
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="nv">OBJ_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>build
-</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nv">BIN_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>out<span class="w"> </span>
-</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
-</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="c"># 包含头文件路径，启动编译警告，生成调试信息</span>
-</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="nv">CFLAGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-I<span class="k">$(</span>INCLUDE_DIR<span class="k">)</span><span class="w"> </span>-Wall<span class="w"> </span>-g
-</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>
-</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="c"># 可执行文件</span>
-</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="nv">TARGET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>BIN_DIR<span class="k">)</span>/main
-</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>
-</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="c"># 获取src目录下所有.c文件列表</span>
-</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="nv">SOURCES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/*.c<span class="k">)</span>
-</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="c"># 将.c路径替换为.o路径</span>
-</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="nv">OBJS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>patsubst<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/%.c,<span class="k">$(</span>OBJ_DIR<span class="k">)</span>/%.o,<span class="k">$(</span>SOURCES<span class="k">))</span>
-</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>
-</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="c"># 默认目标</span>
-</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">TARGET</span><span class="k">)</span>
-</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>
-</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="c"># 编写编译规则</span>
-</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="nf">$(TARGET) </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">OBJS</span><span class="k">)</span>
-</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="w">    </span>gcc<span class="w"> </span>$^<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>
-</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>
-</span><span id="__span-27-25"><a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a><span class="nf">$(OBJ_DIR)/%.o </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">SRC_DIR</span><span class="k">)</span>/%.<span class="n">c</span>
-</span><span id="__span-27-26"><a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a><span class="w">    </span>gcc<span class="w"> </span>$&lt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>-c<span class="w"> </span><span class="k">$(</span>CFLAGS<span class="k">)</span>
-</span><span id="__span-27-27"><a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>
-</span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a><span class="c"># 清理规则</span>
-</span><span id="__span-27-29"><a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
-</span><span id="__span-27-30"><a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a><span class="nf">clean </span><span class="o">:</span>
-</span><span id="__span-27-31"><a id="__codelineno-27-31" name="__codelineno-27-31" href="#__codelineno-27-31"></a><span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="k">$(</span>OBJ_DIR<span class="k">)</span>/*.o
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c"># 定义工程目录</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="nv">SRC_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>src<span class="w"> </span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="nv">INCLUDE_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>include
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="nv">OBJ_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>build
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="nv">BIN_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>out<span class="w"> </span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="c"># 包含头文件路径，启动编译警告，生成调试信息</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="nv">CFLAGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-I<span class="k">$(</span>INCLUDE_DIR<span class="k">)</span><span class="w"> </span>-Wall<span class="w"> </span>-g
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="c"># 可执行文件</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="nv">TARGET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>BIN_DIR<span class="k">)</span>/main
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="c"># 获取src目录下所有.c文件列表</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="nv">SOURCES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/*.c<span class="k">)</span>
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="c"># 将.c路径替换为.o路径</span>
+</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="nv">OBJS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>patsubst<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/%.c,<span class="k">$(</span>OBJ_DIR<span class="k">)</span>/%.o,<span class="k">$(</span>SOURCES<span class="k">))</span>
+</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>
+</span><span id="__span-29-18"><a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a><span class="c"># 默认目标</span>
+</span><span id="__span-29-19"><a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a><span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">TARGET</span><span class="k">)</span>
+</span><span id="__span-29-20"><a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a><span class="w">    </span>@echo<span class="w"> </span><span class="s2">&quot;all done&quot;</span>
+</span><span id="__span-29-21"><a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a><span class="c"># 编写编译规则</span>
+</span><span id="__span-29-22"><a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a><span class="nf">$(TARGET) </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">OBJS</span><span class="k">)</span>
+</span><span id="__span-29-23"><a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a><span class="w">    </span>gcc<span class="w"> </span>$^<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>
+</span><span id="__span-29-24"><a id="__codelineno-29-24" name="__codelineno-29-24" href="#__codelineno-29-24"></a>
+</span><span id="__span-29-25"><a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a><span class="nf">$(OBJ_DIR)/%.o </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">SRC_DIR</span><span class="k">)</span>/%.<span class="n">c</span>
+</span><span id="__span-29-26"><a id="__codelineno-29-26" name="__codelineno-29-26" href="#__codelineno-29-26"></a><span class="w">    </span>gcc<span class="w"> </span>$&lt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>-c<span class="w"> </span><span class="k">$(</span>CFLAGS<span class="k">)</span>
+</span><span id="__span-29-27"><a id="__codelineno-29-27" name="__codelineno-29-27" href="#__codelineno-29-27"></a>
+</span><span id="__span-29-28"><a id="__codelineno-29-28" name="__codelineno-29-28" href="#__codelineno-29-28"></a><span class="c"># 清理规则</span>
+</span><span id="__span-29-29"><a id="__codelineno-29-29" name="__codelineno-29-29" href="#__codelineno-29-29"></a><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
+</span><span id="__span-29-30"><a id="__codelineno-29-30" name="__codelineno-29-30" href="#__codelineno-29-30"></a><span class="nf">clean </span><span class="o">:</span>
+</span><span id="__span-29-31"><a id="__codelineno-29-31" name="__codelineno-29-31" href="#__codelineno-29-31"></a><span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="k">$(</span>OBJ_DIR<span class="k">)</span>/*.o
 </span></code></pre></div>
 <p>根目录执行编译</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>make
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>make
 </span></code></pre></div>
 <p>运行可执行文件</p>
 <p><img alt="image-20250504183151049" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250504183151049.png" /></p>
 <p>可以清理<code>build</code>目录下的<code>.o</code>文件</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>make<span class="w"> </span>clean
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>make<span class="w"> </span>clean
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2402,42 +2434,44 @@
 <ul>
 <li>
 <p>【条件判断】</p>
-<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="cp">ifeq (ARG1, ARG2)</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="c">    # 条件成立时执行</span>
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="cp">else</span>
-</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="c">    # 条件不成立时执行</span>
-</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="cp">endif</span>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cp">ifeq (ARG1, ARG2)</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="c">    # 条件成立时执行</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="cp">else</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="c">    # 条件不成立时执行</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="cp">endif</span>
 </span></code></pre></div>
 </li>
 </ul>
 <p><strong>makefile 解析</strong></p>
 <p>① 变量声明</p>
 <p>按照<code>$(&lt;变量&gt;)</code>格式使用变量：</p>
-<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c"># 定义工程目录</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nv">SRC_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>src<span class="w"> </span>
-</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="nv">INCLUDE_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>include
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="nv">OBJ_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>build
-</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="nv">BIN_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>out<span class="w"> </span>
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
-</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="c"># 包含头文件路径，启动编译警告，生成调试信息</span>
-</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="nv">CFLAGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-I<span class="k">$(</span>INCLUDE_DIR<span class="k">)</span><span class="w"> </span>-Wall<span class="w"> </span>-g
-</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>
-</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="c"># 可执行文件</span>
-</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="nv">TARGET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>BIN_DIR<span class="k">)</span>/main
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c"># 定义工程目录</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nv">SRC_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>src<span class="w"> </span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="nv">INCLUDE_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>include
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="nv">OBJ_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>build
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="nv">BIN_DIR</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>out<span class="w"> </span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="c"># 包含头文件路径，启动编译警告，生成调试信息</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="nv">CFLAGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-I<span class="k">$(</span>INCLUDE_DIR<span class="k">)</span><span class="w"> </span>-Wall<span class="w"> </span>-g
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="c"># 可执行文件</span>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="nv">TARGET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>BIN_DIR<span class="k">)</span>/main
 </span></code></pre></div>
 <p>② 函数</p>
 <ul>
 <li><code>$(wildcard PATTERN)</code>函数获取<code>src</code>目录下的所以<code>.c</code>文件</li>
 <li><code>$(patsubst PATTERN,REPLACEMENT,TEXT)</code>函数将<code>.c</code>路径替换为<code>.o</code>路径</li>
 </ul>
-<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c"># 获取src目录下所有.c文件列表</span>
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="nv">SOURCES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/*.c<span class="k">)</span>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="c"># 将.c路径替换为.o路径</span>
-</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="nv">OBJS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>patsubst<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/%.c,<span class="k">$(</span>OBJ_DIR<span class="k">)</span>/%.o,<span class="k">$(</span>SOURCES<span class="k">))</span>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c"># 获取src目录下所有.c文件列表</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nv">SOURCES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/*.c<span class="k">)</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="c"># 将.c路径替换为.o路径</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="nv">OBJS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>patsubst<span class="w"> </span><span class="k">$(</span>SRC_DIR<span class="k">)</span>/%.c,<span class="k">$(</span>OBJ_DIR<span class="k">)</span>/%.o,<span class="k">$(</span>SOURCES<span class="k">))</span>
 </span></code></pre></div>
 <p>③ 默认目标</p>
-<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c"># 默认目标</span>
-</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">TARGET</span><span class="k">)</span>
+<p>在命令前加上<code>$</code>，终端就不会显示输入的命令，而只显示输出结果。</p>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c"># 默认目标</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="nf">all </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">TARGET</span><span class="k">)</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">    </span>@echo<span class="w"> </span><span class="s2">&quot;all done&quot;</span>
 </span></code></pre></div>
 <p>④ 链接规则</p>
 <ul>
@@ -2446,9 +2480,9 @@
 <li><code>$^</code>代指所有依赖文件，即<code>build\main.o</code>、<code>build\function.o</code></li>
 <li><code>$@</code> 代指目标文件，即<code>out\main</code></li>
 </ul>
-<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c"># 编写编译规则</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nf">$(TARGET) </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">OBJS</span><span class="k">)</span>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span>gcc<span class="w"> </span>$^<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c"># 编写编译规则</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="nf">$(TARGET) </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">OBJS</span><span class="k">)</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">    </span>gcc<span class="w"> </span>$^<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>
 </span></code></pre></div>
 <p>⑤ 模式规则</p>
 <ul>
@@ -2459,22 +2493,147 @@
 </li>
 <li>此规则，逐个编译每个 <code>.c</code> 文件，生成对应的 <code>.o</code> 文件</li>
 </ul>
-<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nf">$(OBJ_DIR)/%.o </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">SRC_DIR</span><span class="k">)</span>/%.<span class="n">c</span>
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">    </span>gcc<span class="w"> </span>$&lt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>-c<span class="w"> </span><span class="k">$(</span>CFLAGS<span class="k">)</span>
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nf">$(OBJ_DIR)/%.o </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">SRC_DIR</span><span class="k">)</span>/%.<span class="n">c</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">    </span>gcc<span class="w"> </span>$&lt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span>-c<span class="w"> </span><span class="k">$(</span>CFLAGS<span class="k">)</span>
 </span></code></pre></div>
 <p>⑥ 清理规则</p>
 <p><code>.PHONY: clean</code>声明 <code>clean</code> 为伪目标，告诉 Make 不要检查 <code>clean</code> 文件是否存在，而是直接执行其命令。</p>
-<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c"># 清理规则</span>
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
-</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="nf">clean </span><span class="o">:</span>
-</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="k">$(</span>OBJ_DIR<span class="k">)</span>/*.o
+<div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c"># 清理规则</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="nf">.PHONY</span><span class="o">:</span><span class="w"> </span><span class="n">clean</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="nf">clean </span><span class="o">:</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="k">$(</span>OBJ_DIR<span class="k">)</span>/*.o
 </span></code></pre></div>
-<h3 id="142-cmake">1.4.2 CMake<a class="headerlink" href="#142-cmake" title="Permanent link">&para;</a></h3>
-<h3 id="143-ninja">1.4.3 Ninja<a class="headerlink" href="#143-ninja" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>更多<code>Make</code>的使用可以在实际应用中不断学习，因为我们一般不会手写<code>makefile</code>，而是使用<code>Cmake</code>自动生成<code>makefile</code>。</p>
+</div>
+<h3 id="142-ninja">1.4.2 Ninja<a class="headerlink" href="#142-ninja" title="Permanent link">&para;</a></h3>
+<p>Ninja 是由谷歌的一名程序员推出的一款注重速度的构建工具。根据官网描述，在一个超 3000 源文件的谷歌浏览器项目中，修改完一个文件后，其他构建系统需要 10s 开始构建，而 Ninja 仅需不到 1s 。</p>
+<p>Ninja有两个重要特点：</p>
+<ul>
+<li><strong>并行编译</strong> ：没有依赖的命令可以并行执行。<code>ninja</code>默认使用的并行数为CPU数量，一般不用手动设置并行数，除非想限制<code>ninja</code>使用的CPU数量。</li>
+<li><strong>增量编译</strong> ：根据文件的时间戳进行分析，如果某个文件的时间戳发生了改变，则依赖于这个文件的命令以及其他依赖于这个命令的命令都会被重新执行，以此达到增量编译的效果。</li>
+</ul>
+<p>安装 Ninja ：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ninja-build
+</span></code></pre></div>
+<p><strong>Ninja 基础语法</strong></p>
+<blockquote>
+<p>相较于 Make ，Ninja 的语法更加简单，没有复杂的条件判断和函数，都是一些直接执行的命令。</p>
+</blockquote>
+<ul>
+<li>
+<p>【变量】</p>
+<ul>
+<li>定义常量或路径，简化重复配置</li>
+<li><code>&lt;value&gt;</code>后面不要有多余的空格</li>
+</ul>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>&lt;variable_name&gt; = &lt;value&gt;
+</span></code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>【规则】</p>
+<ul>
+<li>定义如何从输入文件生成输出文件</li>
+<li><code>$in</code>：输入文件，由 <code>build</code> 语句中的输入文件自动填充</li>
+<li><code>$out</code>：输出文件，由 <code>build</code> 语句中的输出文件自动填充</li>
+</ul>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>rule &lt;rule_name&gt;
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>  command = 编译命令
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>  description = 构建描述（可选）
+</span></code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>【构建目标】</p>
+<ul>
+<li>声明文件生成规则和依赖关系</li>
+<li><code>&lt;output_file&gt;</code>自动填充到指定规则的<code>$out</code>变量中</li>
+<li><code>&lt;input_file&gt;</code>自动填充到指定规则的<code>$in</code>变量中</li>
+</ul>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>build &lt;output_file&gt; : &lt;rule_name&gt; &lt;input_file&gt;
+</span></code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>【默认模板】</p>
+<ul>
+<li>指定默认构建目标（类似 Makefile 的 <code>all</code>）</li>
+</ul>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>default &lt;target_name&gt;
+</span></code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>【伪目标】</p>
+<ul>
+<li>定义不生成文件的操作（如清理）</li>
+</ul>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>build &lt;target_name&gt; : phony
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>  command = 操作命令
+</span></code></pre></div>
+</li>
+</ul>
+<p><strong>编译文件</strong></p>
+<p>根目录新建<code>build.ninja</code>文件，添加如下内容：</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a># 变量定义
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>cc = gcc
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>cflags = -Iinclude -Wall -g
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>src_dir = src
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>obj_dir = build
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>bin_dir = out
+</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a># 规则定义
+</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a>## 编译
+</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a>rule compile
+</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a>  command = $cc $in -o $out $cflags -c
+</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a>  description = Compile $out
+</span><span id="__span-45-13"><a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a>
+</span><span id="__span-45-14"><a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a>## 链接
+</span><span id="__span-45-15"><a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a>rule link
+</span><span id="__span-45-16"><a id="__codelineno-45-16" name="__codelineno-45-16" href="#__codelineno-45-16"></a>  command = $cc $in -o $out 
+</span><span id="__span-45-17"><a id="__codelineno-45-17" name="__codelineno-45-17" href="#__codelineno-45-17"></a>  description = Link $out 
+</span><span id="__span-45-18"><a id="__codelineno-45-18" name="__codelineno-45-18" href="#__codelineno-45-18"></a>
+</span><span id="__span-45-19"><a id="__codelineno-45-19" name="__codelineno-45-19" href="#__codelineno-45-19"></a># 构建目标
+</span><span id="__span-45-20"><a id="__codelineno-45-20" name="__codelineno-45-20" href="#__codelineno-45-20"></a>## 编译源文件
+</span><span id="__span-45-21"><a id="__codelineno-45-21" name="__codelineno-45-21" href="#__codelineno-45-21"></a>build $obj_dir/main.o : compile $src_dir/main.c
+</span><span id="__span-45-22"><a id="__codelineno-45-22" name="__codelineno-45-22" href="#__codelineno-45-22"></a>build $obj_dir/function.o : compile $src_dir/function.c
+</span><span id="__span-45-23"><a id="__codelineno-45-23" name="__codelineno-45-23" href="#__codelineno-45-23"></a>## 链接目标文件
+</span><span id="__span-45-24"><a id="__codelineno-45-24" name="__codelineno-45-24" href="#__codelineno-45-24"></a>build $bin_dir/main : link $obj_dir/main.o $obj_dir/function.o
+</span><span id="__span-45-25"><a id="__codelineno-45-25" name="__codelineno-45-25" href="#__codelineno-45-25"></a>
+</span><span id="__span-45-26"><a id="__codelineno-45-26" name="__codelineno-45-26" href="#__codelineno-45-26"></a># 默认目标
+</span><span id="__span-45-27"><a id="__codelineno-45-27" name="__codelineno-45-27" href="#__codelineno-45-27"></a>default $bin_dir/main
+</span><span id="__span-45-28"><a id="__codelineno-45-28" name="__codelineno-45-28" href="#__codelineno-45-28"></a>
+</span><span id="__span-45-29"><a id="__codelineno-45-29" name="__codelineno-45-29" href="#__codelineno-45-29"></a># 清理规则
+</span><span id="__span-45-30"><a id="__codelineno-45-30" name="__codelineno-45-30" href="#__codelineno-45-30"></a>build clean: phony
+</span><span id="__span-45-31"><a id="__codelineno-45-31" name="__codelineno-45-31" href="#__codelineno-45-31"></a>  command = rm -rf $obj_dir/*.o $bin_dir/main
+</span><span id="__span-45-32"><a id="__codelineno-45-32" name="__codelineno-45-32" href="#__codelineno-45-32"></a>  description = clean done
+</span></code></pre></div>
+<p>编译构建</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>ninja
+</span></code></pre></div>
+<p>清理中间文件</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>ninja -t clean
+</span></code></pre></div>
+<p><img alt="image-20250505005633425" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250505005633425.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>以上介绍的是<code>ninja</code>的一些基础，足以编译构建简单的项目，但更多的时候我们使用<code>Cmake</code>或<code>GN</code>生成<code>ninja</code>文件。</p>
+</div>
+<h3 id="143-cmake">1.4.3 CMake<a class="headerlink" href="#143-cmake" title="Permanent link">&para;</a></h3>
 <h3 id="144-gn">1.4.4 GN<a class="headerlink" href="#144-gn" title="Permanent link">&para;</a></h3>
 <h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://blog.csdn.net/weixin_44427114/article/details/103664294">Linux（vim）更改tab键缩进设置_linux tab 空格缩进-CSDN博客</a></p>
 <p><a href="https://blog.csdn.net/qq_39872252/article/details/133309120">Linux环境下GCC基本使用详解（含实例）_linux gcc-CSDN博客</a></p>
 <p><a href="https://blog.csdn.net/qq_27870421/article/details/99682041?ops_request_misc=%7B%22request%5Fid%22%3A%22169569887416800192282218%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id=169569887416800192282218&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-99682041-null-null.142^v94^insert_down1&amp;utm_term=GCC使用&amp;spm=1018.2226.3001.4187">GCC编译器详解-CSDN博客</a></p>
+<p><a href="https://www.gnu.org/software/make/#documentation">Make - GNU Project - Free Software Foundation</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/676733751">一文读懂ninja构建系统 - 知乎</a></p>
+<p><a href="https://www.cnblogs.com/sandeepin/p/ninja.html">Ninja构建系统入门 - Sandeepin - 博客园</a></p>
 
 
 
