@@ -1093,36 +1093,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#141-make" class="md-nav__link">
+  <a href="#142-make" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.1 Make
+      1.4.2 Make
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#142-ninja" class="md-nav__link">
+  <a href="#143-ninja" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.2 Ninja
+      1.4.3 Ninja
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#143-cmake" class="md-nav__link">
+  <a href="#144-cmake" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.3 CMake
+      1.4.4 CMake
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#144-gn" class="md-nav__link">
+  <a href="#145-gn" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.4 GN
+      1.4.5 GN
     </span>
   </a>
   
@@ -1634,36 +1634,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#141-make" class="md-nav__link">
+  <a href="#142-make" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.1 Make
+      1.4.2 Make
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#142-ninja" class="md-nav__link">
+  <a href="#143-ninja" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.2 Ninja
+      1.4.3 Ninja
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#143-cmake" class="md-nav__link">
+  <a href="#144-cmake" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.3 CMake
+      1.4.4 CMake
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#144-gn" class="md-nav__link">
+  <a href="#145-gn" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.4 GN
+      1.4.5 GN
     </span>
   </a>
   
@@ -2316,7 +2316,7 @@
 </span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">        </span>├──<span class="w"> </span><span class="k">function</span>.c
 </span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">        </span>└──<span class="w"> </span>main.c
 </span></code></pre></div>
-<h3 id="141-make">1.4.1 Make<a class="headerlink" href="#141-make" title="Permanent link">&para;</a></h3>
+<h3 id="142-make">1.4.2 Make<a class="headerlink" href="#142-make" title="Permanent link">&para;</a></h3>
 <p>Make 是一个广泛使用的构建工具，与 GCC 一样来源于 GNU 项目，因此又称 GNU Make。Make 通过一个名为 makefile 的文件知道要如何编译你的项目，因此我们要在项目中编写一个 makefile 文件。</p>
 <p><strong>Make 的功能</strong></p>
 <ul>
@@ -2507,7 +2507,7 @@
 <p class="admonition-title">Note</p>
 <p>更多<code>Make</code>的使用可以在实际应用中不断学习，因为我们一般不会手写<code>makefile</code>，而是使用<code>Cmake</code>自动生成<code>makefile</code>。</p>
 </div>
-<h3 id="142-ninja">1.4.2 Ninja<a class="headerlink" href="#142-ninja" title="Permanent link">&para;</a></h3>
+<h3 id="143-ninja">1.4.3 Ninja<a class="headerlink" href="#143-ninja" title="Permanent link">&para;</a></h3>
 <p>Ninja 是由谷歌的一名程序员推出的一款注重速度的构建工具。根据官网描述，在一个超 3000 源文件的谷歌浏览器项目中，修改完一个文件后，其他构建系统需要 10s 开始构建，而 Ninja 仅需不到 1s 。</p>
 <p>Ninja有两个重要特点：</p>
 <ul>
@@ -2526,10 +2526,15 @@
 <p>【变量】</p>
 <ul>
 <li>定义常量或路径，简化重复配置</li>
-<li><code>&lt;value&gt;</code>后面不要有多余的空格</li>
 </ul>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>&lt;variable_name&gt; = &lt;value&gt;
 </span></code></pre></div>
+<ul>
+<li>注意：<ul>
+<li><code>&lt;value&gt;</code>后面不要有多余的空格</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <ul>
@@ -2537,13 +2542,18 @@
 <p>【规则】</p>
 <ul>
 <li>定义如何从输入文件生成输出文件</li>
+</ul>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>rule &lt;rule_name&gt;
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>  command = 编译命令($in|$out分别代替输入输出文件)
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>  description = 构建描述（可选）
+</span></code></pre></div>
+<ul>
+<li>注意：<ul>
 <li><code>$in</code>：输入文件，由 <code>build</code> 语句中的输入文件自动填充</li>
 <li><code>$out</code>：输出文件，由 <code>build</code> 语句中的输出文件自动填充</li>
 </ul>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>rule &lt;rule_name&gt;
-</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>  command = 编译命令
-</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>  description = 构建描述（可选）
-</span></code></pre></div>
+</li>
+</ul>
 </li>
 </ul>
 <ul>
@@ -2551,11 +2561,16 @@
 <p>【构建目标】</p>
 <ul>
 <li>声明文件生成规则和依赖关系</li>
-<li><code>&lt;output_file&gt;</code>自动填充到指定规则的<code>$out</code>变量中</li>
-<li><code>&lt;input_file&gt;</code>自动填充到指定规则的<code>$in</code>变量中</li>
 </ul>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>build &lt;output_file&gt; : &lt;rule_name&gt; &lt;input_file&gt;
 </span></code></pre></div>
+<ul>
+<li>参数：<ul>
+<li><code>&lt;output_file&gt;</code>自动填充到指定规则的<code>$out</code>变量中</li>
+<li><code>&lt;input_file&gt;</code>自动填充到指定规则的<code>$in</code>变量中</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <ul>
@@ -2625,8 +2640,163 @@
 <p class="admonition-title">Note</p>
 <p>以上介绍的是<code>ninja</code>的一些基础，足以编译构建简单的项目，但更多的时候我们使用<code>Cmake</code>或<code>GN</code>生成<code>ninja</code>文件。</p>
 </div>
-<h3 id="143-cmake">1.4.3 CMake<a class="headerlink" href="#143-cmake" title="Permanent link">&para;</a></h3>
-<h3 id="144-gn">1.4.4 GN<a class="headerlink" href="#144-gn" title="Permanent link">&para;</a></h3>
+<h3 id="144-cmake">1.4.4 CMake<a class="headerlink" href="#144-cmake" title="Permanent link">&para;</a></h3>
+<p>CMake 是个一个开源的跨平台自动化建构系统，不依赖于某特定编译器，并可支持多层目录、多个应用程序与多个函数库。CMake 通过使用简单的配置文件 <code>CMakeLists.txt</code>，自动生成不同平台的构建文件（如 Makefile、Ninja 构建文件、Visual Studio 工程文件等）。</p>
+<p><strong>CMake 的功能与优势</strong></p>
+<ul>
+<li><strong>跨平台支持</strong> ：CMake 支持多种操作系统和编译器，使得同一份构建配置可以在不同的环境中使用。</li>
+<li><strong>简化配置</strong> ：通过 <code>CMakeLists.txt</code> 文件，用户可以定义项目结构、依赖项、编译选项等，无需手动编写复杂的构建脚本。</li>
+<li><strong>自动化构建</strong> ：CMake 能够自动检测系统上的库和工具，减少手动配置的工作量。</li>
+<li><strong>灵活性</strong> ：支持多种构建类型和配置（如 Debug、Release），并允许用户自定义构建选项和模块。</li>
+</ul>
+<p>安装 CMake</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>cmake
+</span></code></pre></div>
+<p><strong>CMake 基础语法</strong></p>
+<hr />
+<p><strong>【常用语法】</strong></p>
+<ul>
+<li>指定 CMake 的最低版本要求</li>
+</ul>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">&lt;version&gt;</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li>定义项目的名称</li>
+</ul>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nb">project</span><span class="p">(</span><span class="s">&lt;PROJECT-NAME&gt;</span><span class="w"> </span><span class="s">[&lt;language-name&gt;...]</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li>指定要生成的可执行文件和源文件</li>
+</ul>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="nb">add_executable</span><span class="p">(</span><span class="s">&lt;target&gt;</span><span class="w"> </span><span class="s">&lt;source_files&gt;...</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li>添加头文件搜索路径</li>
+</ul>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="nb">include_directories</span><span class="p">(</span><span class="s">&lt;dirs&gt;...</span><span class="p">)</span>
+</span></code></pre></div>
+<blockquote>
+<p>这 4 条命令足以编译构建一些简单项目，比如我们的示例项目。</p>
+<p><code>...</code>的参数表示一个参数列表，如<code>add_executable(&lt;target&gt; &lt;source_files&gt;...)</code>中的源文件参数，可以是多个源文件；</p>
+<p><code>[ ]</code>的参数为可选参数，如<code>project(&lt;PROJECT-NAME&gt; [&lt;language-name&gt;...])</code>通常只使用必要参数<code>&lt;PROJECT-NAME&gt;</code>。</p>
+<p>不常用的可选参数将呈现，详细的参数可以看 <a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake官网</a>。</p>
+</blockquote>
+<hr />
+<p><strong>【其他基础语法】</strong></p>
+<ul>
+<li>设置变量</li>
+</ul>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="nb">set</span><span class="p">(</span><span class="s">&lt;variable&gt;</span><span class="w"> </span><span class="s">&lt;value&gt;...</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<ul>
+<li>创建一个库（动态或静态）<ul>
+<li><code>STATIC</code>：静态库</li>
+<li><code>SHARED</code>：动态库</li>
+</ul>
+</li>
+</ul>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="nb">add_library</span><span class="p">(</span><span class="s">&lt;target&gt;</span><span class="w"> </span><span class="s">[STATIC|SHARED|MODULE]</span><span class="w"> </span><span class="s">&lt;source_files&gt;...</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<ul>
+<li>链接库<ul>
+<li><code>&lt;target&gt;</code>：需链接库的目标</li>
+<li><code>&lt;library&gt;</code>：要链接的库名称</li>
+<li><code>PUBLIC</code>：依赖项既会作用于当前目标，也会传递给依赖它的其他目标</li>
+<li><code>PRIVATE</code>：依赖项仅作用于当前目标，不传递</li>
+<li><code>INTERFACE</code>：依赖项不作用于当前目标，但会传递给依赖它的其他目标</li>
+</ul>
+</li>
+</ul>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">&lt;target&gt;</span><span class="w"> </span><span class="s">&lt;PRIVATE|PUBLIC|INTERFACE&gt;</span><span class="w"> </span><span class="s">&lt;libraries&gt;...</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<ul>
+<li>寻找项目需要的包<ul>
+<li><code>REQUIRED</code>：表示这个项目要这个包才能运行，必须找到它</li>
+<li><code>&lt;version&gt;</code>：包的版本</li>
+</ul>
+</li>
+</ul>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">&lt;PackageName&gt;</span><span class="w"> </span><span class="s">[&lt;version&gt;]</span><span class="w"> </span><span class="s">[REQUIRED]</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<p><strong>【file 语法】</strong></p>
+<ul>
+<li>读取文件内容到变量<ul>
+<li><code>OFFSET &lt;offset&gt;</code>：从文件指定偏移量开始读取</li>
+<li><code>LIMIT &lt;max-in&gt;</code>：限制读取的最大字节数</li>
+<li><code>HEX</code>：可选，将内容转换为十六进制格式</li>
+</ul>
+</li>
+</ul>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="nb">file</span><span class="p">(</span><span class="s">READ</span><span class="w"> </span><span class="s">&lt;filename&gt;</span><span class="w"> </span><span class="s">&lt;variable&gt;</span><span class="w"> </span><span class="s">[OFFSET</span><span class="w"> </span><span class="s">&lt;offset&gt;]</span><span class="w"> </span><span class="s">[LIMIT</span><span class="w"> </span><span class="s">&lt;max-in&gt;]</span><span class="w"> </span><span class="s">[HEX]</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<ul>
+<li>解析来自文件的 ASCII 字符串列表到变量<ul>
+<li><code>&lt;options&gt;</code>常用选项如下：<ul>
+<li><code>LENGTH_MAXIMUM &lt;max-len&gt;</code>：仅读取长度小于等于 <code>max-len</code> 的字符串</li>
+<li><code>REGEX &lt;regex&gt;</code>：仅保留匹配正则表达式的字符串</li>
+<li><code>ENCODING &lt;encoding&gt;</code>：指定编码格式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="nb">file</span><span class="p">(</span><span class="s">STRINGS</span><span class="w"> </span><span class="s">&lt;filename&gt;</span><span class="w"> </span><span class="s">&lt;variable&gt;</span><span class="w"> </span><span class="s">&lt;options&gt;...</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<ul>
+<li>将匹配的文件列表存于变量<ul>
+<li><code>RELATIVE &lt;path&gt;</code>：返回相对于指定路径的文件路径</li>
+<li><code>&lt;globbing-expressions&gt;</code>：通配符表达式</li>
+</ul>
+</li>
+</ul>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="nb">file</span><span class="p">(</span><span class="s">GLOB</span><span class="w"> </span><span class="s">&lt;variable&gt;</span><span class="w"> </span><span class="s">&lt;globbing-expressions&gt;...</span><span class="w"> </span><span class="s">[RELATIVE</span><span class="w"> </span><span class="s">&lt;path&gt;]</span><span class="p">)</span>
+</span></code></pre></div>
+<blockquote>
+<p>更多<code>file</code>语法的使用查看<a href="https://cmake.org/cmake/help/latest/command/file.html">CMake官网</a></p>
+</blockquote>
+<hr />
+<p><strong>Cmake 构建 Makefile 文件</strong></p>
+<p>项目根目录下新建<code>CMakeLists.txt</code>文件，同时建议将先前使用的<code>makefile</code>删除或移动到其他目录，比如<code>build</code>目录，防止与<code>CMake</code>生成的<code>Makefile</code>冲突，当前目录内容如下：</p>
+<p><img alt="image-20250506010509480" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250506010509480.png" /></p>
+<p><code>CMakeLists.txt</code>内容如下：</p>
+<div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="c"># 指定Cmake的最底版本需求要求</span>
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.22</span><span class="p">)</span>
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a>
+</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a><span class="c"># 指定项目名称和变成语言</span>
+</span><span id="__span-60-5"><a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a><span class="nb">project</span><span class="p">(</span><span class="s">main</span><span class="p">)</span>
+</span><span id="__span-60-6"><a id="__codelineno-60-6" name="__codelineno-60-6" href="#__codelineno-60-6"></a>
+</span><span id="__span-60-7"><a id="__codelineno-60-7" name="__codelineno-60-7" href="#__codelineno-60-7"></a><span class="c"># 修改内置变量，以达到修改输出目录的效果</span>
+</span><span id="__span-60-8"><a id="__codelineno-60-8" name="__codelineno-60-8" href="#__codelineno-60-8"></a><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_RUNTIME_OUTPUT_DIRECTORY</span><span class="w"> </span><span class="o">${</span><span class="nv">PROJECT_SOURCE_DIR</span><span class="o">}</span><span class="s">/out</span><span class="p">)</span>
+</span><span id="__span-60-9"><a id="__codelineno-60-9" name="__codelineno-60-9" href="#__codelineno-60-9"></a>
+</span><span id="__span-60-10"><a id="__codelineno-60-10" name="__codelineno-60-10" href="#__codelineno-60-10"></a><span class="c"># 添加可执行文件</span>
+</span><span id="__span-60-11"><a id="__codelineno-60-11" name="__codelineno-60-11" href="#__codelineno-60-11"></a><span class="nb">add_executable</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">src/main.c</span><span class="w"> </span><span class="s">src/function.c</span><span class="p">)</span>
+</span><span id="__span-60-12"><a id="__codelineno-60-12" name="__codelineno-60-12" href="#__codelineno-60-12"></a>
+</span><span id="__span-60-13"><a id="__codelineno-60-13" name="__codelineno-60-13" href="#__codelineno-60-13"></a><span class="c"># 添加头文件搜索目录</span>
+</span><span id="__span-60-14"><a id="__codelineno-60-14" name="__codelineno-60-14" href="#__codelineno-60-14"></a><span class="nb">include_directories</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include</span><span class="p">)</span>
+</span></code></pre></div>
+<p><code>CMake</code>构建</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="c1"># 生成makefile</span>
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>cmake<span class="w"> </span>.
+</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="c1"># 生成build.ninja</span>
+</span><span id="__span-61-4"><a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a>cmake<span class="w"> </span>-G<span class="w"> </span>Ninja<span class="w"> </span>.
+</span></code></pre></div>
+<p>生成一系列文件和一个文件夹，其中有一个<code>Makefile</code>文件，用于使用<code>make</code>命令编译：</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="c1"># 使用make编译</span>
+</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>make
+</span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="c1"># 使用ninja编译</span>
+</span><span id="__span-62-4"><a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a>ninja
+</span></code></pre></div>
+<p><img alt="image-20250506011107346" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250506011107346.png" /></p>
+<p><img alt="image-20250506012730208" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250506012730208.png" /></p>
+<p>可执行文件在<code>out</code>目录：</p>
+<p><img alt="image-20250506011518860" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250506011518860.png" /></p>
+<h3 id="145-gn">1.4.5 GN<a class="headerlink" href="#145-gn" title="Permanent link">&para;</a></h3>
 <h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://blog.csdn.net/weixin_44427114/article/details/103664294">Linux（vim）更改tab键缩进设置_linux tab 空格缩进-CSDN博客</a></p>
 <p><a href="https://blog.csdn.net/qq_39872252/article/details/133309120">Linux环境下GCC基本使用详解（含实例）_linux gcc-CSDN博客</a></p>
@@ -2634,6 +2804,7 @@
 <p><a href="https://www.gnu.org/software/make/#documentation">Make - GNU Project - Free Software Foundation</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/676733751">一文读懂ninja构建系统 - 知乎</a></p>
 <p><a href="https://www.cnblogs.com/sandeepin/p/ninja.html">Ninja构建系统入门 - Sandeepin - 博客园</a></p>
+<p><a href="https://www.runoob.com/cmake/cmake-tutorial.html">CMake 教程 | 菜鸟教程</a></p>
 
 
 
