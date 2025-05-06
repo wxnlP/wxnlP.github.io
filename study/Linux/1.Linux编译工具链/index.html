@@ -2786,7 +2786,7 @@
 </span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="c1"># 生成build.ninja</span>
 </span><span id="__span-61-4"><a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a>cmake<span class="w"> </span>-G<span class="w"> </span>Ninja<span class="w"> </span>.
 </span></code></pre></div>
-<p>生成一系列文件和一个文件夹，其中有一个<code>Makefile</code>文件，用于使用<code>make</code>命令编译：</p>
+<p><code>CMake</code>构建以后，会生成一系列文件和一个<code>CmakeFiles</code>文件夹。其中，默认生成<code>Makefile</code>文件，用于使用<code>make</code>命令编译；若使用<code>-G</code>参数指定<code>Ninja</code>则会生成一个<code>build.ninja</code>文件，用于使用<code>ninja</code>命令编译：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="c1"># 使用make编译</span>
 </span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>make
 </span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="c1"># 使用ninja编译</span>
