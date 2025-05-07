@@ -141,9 +141,15 @@ docker run -it --rm \
 
 ### 2.3 配置模型转化环境
 
-跟着这个地平线官方博客走就行：[YOLOv11，地瓜RDK X5开发板，TROS端到端140FPS！-CSDN博客](https://blog.csdn.net/SA2672873269/article/details/142663629)
+跟着这个地平线官方博客走就行：[YOLOv11，地瓜RDK X5开发板，TROS端到端140FPS！-CSDN博客](https://blog.csdn.net/SA2672873269/article/details/142663629)，一直到`PTQ方案量化转化`这一节检查模型完成。
 
-一直到`PTQ方案量化转化`这一节检查模型完成，部分输出结果如下：
+其中，检查模型指令如下，记得替换自己的模型名称：
+
+```shell
+hb_mapper checker --model-type onnx --march bayes-e --model yolo11n.onnx
+```
+
+部分输出结果如下：
 
 ![image-20250314234231836](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250314234231836.png)
 
