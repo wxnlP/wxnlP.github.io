@@ -1537,7 +1537,7 @@
 </span></code></pre></div>
 <h3 id="_2">配置默认分支<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>默认分支一般命名为<code>main</code>或<code>master</code>，如果项目要上传到GitHub可以使用<code>main</code>好一些。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>master
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>main
 </span></code></pre></div>
 <h3 id="git_1">查看Git配置<a class="headerlink" href="#git_1" title="Permanent link">&para;</a></h3>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>config<span class="w"> </span>-l
@@ -1576,7 +1576,7 @@
 <p>想要看提交了哪些文件可以借助Vscode等编译工具。</p>
 <p><img alt="image-20250301162703681" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250301162703681.png" /></p>
 <h3 id="gitignore">忽略文件gitignore<a class="headerlink" href="#gitignore" title="Permanent link">&para;</a></h3>
-<p>在仓库根目录新建<code>.gitignore</code>文件，添加忽略的目录。</p>
+<p>在仓库根目录新建<code>.gitignore</code>文件，添加忽略的目录，这些忽略文件将不会上传到远程仓库。</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>build/
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>install/
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>log/
@@ -1597,11 +1597,15 @@
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
 </span></code></pre></div>
 <h3 id="_5">绑定仓库<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># &lt;your_repository_url&gt;是你的GitHub仓库链接（https）</span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># &lt;your_repository_url&gt;是你的GitHub仓库链接（HTTPS/SSH）</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;your_repository_url&gt;
 </span></code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>GitHub仓库链接推荐使用<code>SSH</code>，因为GitHub 已于 <strong>2021年8月13日</strong> 移除了对 <code>HTTPS</code> 密码认证的支持，使用个人访问令牌等方法则较为麻烦。</p>
+</div>
 <h3 id="_6">管理远程仓库<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>若是在另一台设备维护同一个项目，一定先拉取仓库的最新内容，然后再添加新内容。</p>
+<p>若是在另一台设备维护同一个项目，一定 <strong>先拉取仓库的最新内容</strong> ，然后再添加新内容。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># 推送仓库最新内容</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1"># 拉取仓库最新内容</span>
@@ -1614,7 +1618,7 @@
 <p>克隆代码后，在本地也可以看到作者的上传过程，特别再vscode可以看的比较清楚。因此，若是自己的项目可以克隆后在其他设备维护，但前提是当前设备具有权限。</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>clone<span class="w"> </span>&lt;repository_url&gt;
 </span></code></pre></div>
-<p>若下图所示的ROS2仓库管理，前部分是我在RDKX5实机上做的维护，后面是用虚拟机做的维护，可以说是无缝衔接。</p>
+<p>若下图所示的 <code>ROS2</code> 仓库管理，前部分是我在 <code>RDK X5</code> 实机上做的维护，后面是用虚拟机做的维护，可以说是无缝衔接。</p>
 <p><img alt="image-20250318203551039" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318203551039.png" /></p>
 <h2 id="git_2">Git进阶使用<a class="headerlink" href="#git_2" title="Permanent link">&para;</a></h2>
 <h3 id="_8">查看文件修改状态<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>

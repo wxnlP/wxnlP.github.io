@@ -20,7 +20,7 @@ git config --global user.email "<your_email>"
 默认分支一般命名为`main`或`master`，如果项目要上传到GitHub可以使用`main`好一些。
 
 ```shell
-git config --global init.defaultBranch master
+git config --global init.defaultBranch main
 ```
 
 ### 查看Git配置
@@ -90,7 +90,7 @@ git log
 
 ### 忽略文件gitignore
 
-在仓库根目录新建`.gitignore`文件，添加忽略的目录。
+在仓库根目录新建`.gitignore`文件，添加忽略的目录，这些忽略文件将不会上传到远程仓库。
 
 ```
 build/
@@ -127,13 +127,16 @@ ssh -T git@github.com
 ### 绑定仓库
 
 ```shell
-# <your_repository_url>是你的GitHub仓库链接（https）
+# <your_repository_url>是你的GitHub仓库链接（HTTPS/SSH）
 git remote add origin <your_repository_url>
 ```
 
+!!!danger  
+    GitHub仓库链接推荐使用`SSH`，因为GitHub 已于 **2021年8月13日** 移除了对 `HTTPS` 密码认证的支持，使用个人访问令牌等方法则较为麻烦。
+
 ### 管理远程仓库
 
-若是在另一台设备维护同一个项目，一定先拉取仓库的最新内容，然后再添加新内容。
+若是在另一台设备维护同一个项目，一定 **先拉取仓库的最新内容** ，然后再添加新内容。
 
 ```shell
 # 推送仓库最新内容
@@ -153,7 +156,7 @@ git branch -m master main
 git clone <repository_url>
 ```
 
-若下图所示的ROS2仓库管理，前部分是我在RDKX5实机上做的维护，后面是用虚拟机做的维护，可以说是无缝衔接。
+若下图所示的 `ROS2` 仓库管理，前部分是我在 `RDK X5` 实机上做的维护，后面是用虚拟机做的维护，可以说是无缝衔接。
 
 ![image-20250318203551039](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318203551039.png)
 
