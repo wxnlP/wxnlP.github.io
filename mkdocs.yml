@@ -92,7 +92,7 @@ nav:
   - Linux驱动:
     - C语言精通之路:
       - Linux编译工具链: study/Linux/1.Linux编译工具链.md
-      - 宏和数据类型: study/Linux/2.宏和数据类型.md
+      - 宏和关键字: study/Linux/2.宏和关键字.md
   - 控制算法: 
     - PID控制: study/控制算法/PID.md
   - 芯片学习系列:
