@@ -1097,21 +1097,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2.4.2 union">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      插入图片
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -1189,7 +1174,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       附录
     </span>
@@ -1217,7 +1202,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       大小端
     </span>
@@ -1226,7 +1211,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       函数指针与指针函数
     </span>
@@ -1731,21 +1716,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2.4.2 union">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      插入图片
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -1823,7 +1793,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       附录
     </span>
@@ -1851,7 +1821,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       大小端
     </span>
@@ -1860,7 +1830,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       函数指针与指针函数
     </span>
@@ -2440,7 +2410,7 @@
 </span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>[INFO] a: 0x2310 b: 0x10
 </span></code></pre></div>
 <p>结构体<code>Union_A</code>的成员共用一份 4 字节的内存，但是成员 b 仅占用 1 字节。因此当赋值<code>a = 0x2310</code>时，读取成员 b 仅为起始地址起一个字节的数据，如下图所示。</p>
-<h4 id="_1">插入图片<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20250525003742741" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250525003742741.png" /></p>
 <h3 id="243-enum">2.4.3 enum<a class="headerlink" href="#243-enum" title="Permanent link">&para;</a></h3>
 <p>C语言通过<code>enum</code>关键字表示 **枚举 **数据类型。内存表现为 **根据定义值的大小默认选择整数常量大小（int），如果超出int大小，编译器会选择更大的整型类型 **，比如<code>long</code>，所以内存大小不是固定的。</p>
 <div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
@@ -2577,13 +2547,15 @@
 </span><span id="__span-38-33"><a id="__codelineno-38-33" name="__codelineno-38-33" href="#__codelineno-38-33"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
-<li><code>const</code>和<code>define</code>宏的区别
-1. 编译器处理方式：<code>define</code>宏是在预处理阶段展开；<code>const</code>变量是编译运行阶段使使用。
-2. 安全检查：<code>define</code>宏不做任何类型检査，仅是文本的展开；<code>const</code>变量编译阶段会执行类型检查。
-3. 内存位置：<code>define</code>宏在代码段；<code>const</code>常量可以在静态全局数据段、栈中。</li>
+<li><code>const</code>和<code>define</code>宏的区别<ul>
+<li>编译器处理方式：<code>define</code>宏是在预处理阶段展开；<code>const</code>变量是编译运行阶段使使用。</li>
+<li>安全检查：<code>define</code>宏不做任何类型检査，仅是文本的展开；<code>const</code>变量编译阶段会执行类型检查。</li>
+<li>内存位置：<code>define</code>宏在代码段；<code>const</code>常量可以在静态全局数据段、栈中。</li>
+</ul>
+</li>
 </ul>
 <h3 id="255-volatile">2.5.5 volatile<a class="headerlink" href="#255-volatile" title="Permanent link">&para;</a></h3>
-<p>C 语言中的<code>volatile</code>是一个反编译器优化的关键字，告诉编译器："<strong>不要优化这个变量的访问，它可能随时变化！</strong><font style="color:rgb(64, 64, 64);">"</font></p>
+<p>C 语言中的<code>volatile</code>是一个反编译器优化的关键字，告诉编译器：" <strong>不要优化这个变量的访问，它可能随时变化！</strong> <font style="color:rgb(64, 64, 64);">"</font></p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong><font style="color:rgb(64, 64, 64);">为什么需要 </font></strong><code>volatile</code><strong><font style="color:rgb(64, 64, 64);">？</font></strong></li>
 </ul>
@@ -2598,7 +2570,7 @@
 <li>外设寄存器的值可能随时被硬件改变。</li>
 <li>信号处理函数可能异步修改变量。</li>
 </ul>
-<h2 id="_2">附录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_1">附录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="ascii">ASCII码表<a class="headerlink" href="#ascii" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3195,14 +3167,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="_3">大小端<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_2">大小端<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>小端存储数据，即数据低位字节（LSB）被存储在内存的低地址处，而高位字节（MSB）则存储内存的高地址处。
     - 常见于x86架构、ARM架构。</li>
 <li>大端存储数据，即数据低位字节（LSB）被存储在内存的高地址处，而高位字节（MSB）则存储内存的低地址处。
     - 常用于网络协议、某些硬件平台。</li>
 </ul>
-<h3 id="_4">函数指针与指针函数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_3">函数指针与指针函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="cm">/* 指针函数：返回值为指针类型的函数</span>
 </span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="cm"> * 返回void*，需要在接收返回值前显示声明转换的数据类型</span>
 </span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="cm"> * 需手动释放内存</span>
