@@ -95,6 +95,8 @@ nav:
       - 宏和关键字: study/Linux/2.宏和关键字.md
       - 函数: study/Linux/3.函数.md
       - 内存管理: study/Linux/4.内存管理.md
+    - 数据结构与算法:
+      - 测试: study/Linux/1.数据结构基础.md
   - 控制算法: 
     - PID控制: study/控制算法/PID.md
   - 芯片学习系列:
