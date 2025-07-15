@@ -3024,7 +3024,7 @@
 </span></code></pre></div>
 <hr />
 <ul>
-<li>添加链接器的额外选型（比如添加 GCC 的编译参数）</li>
+<li>添加链接器的额外选项（比如添加 GCC 的编译参数）</li>
 </ul>
 <div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="nb">target_link_options</span><span class="p">(</span><span class="s">&lt;target&gt;</span><span class="w"> </span><span class="s">&lt;PRIVATE|PUBLIC|INTERFACE&gt;</span><span class="w"> </span><span class="s">&lt;options&gt;...</span><span class="p">)</span>
 </span></code></pre></div>
@@ -3153,15 +3153,17 @@
 </span><span id="__span-71-4"><a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a>cmake<span class="w"> </span>-G<span class="w"> </span>Ninja<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build/
 </span></code></pre></div>
 <p><code>CMake</code>构建以后，会生成一系列文件和一个<code>CmakeFiles</code>文件夹。其中，默认生成<code>Makefile</code>文件，用于使用<code>make</code>命令编译；若使用<code>-G</code>参数指定<code>Ninja</code>则会生成一个<code>build.ninja</code>文件，用于使用<code>ninja</code>命令编译：</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="c1"># 使用make编译</span>
-</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>cmake<span class="w"> </span>--build<span class="w"> </span>build
-</span><span id="__span-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a><span class="c1"># 使用ninja编译</span>
-</span><span id="__span-72-4"><a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a>ninja
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="c1"># 使用cmake命令编译</span>
+</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>cmake<span class="w"> </span>--build<span class="w"> </span>build/
+</span><span id="__span-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a><span class="c1"># 使用make命令编译</span>
+</span><span id="__span-72-4"><a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a>make<span class="w"> </span>-C<span class="w"> </span>build/
+</span><span id="__span-72-5"><a id="__codelineno-72-5" name="__codelineno-72-5" href="#__codelineno-72-5"></a><span class="c1"># 使用ninja命令编译</span>
+</span><span id="__span-72-6"><a id="__codelineno-72-6" name="__codelineno-72-6" href="#__codelineno-72-6"></a>ninja<span class="w"> </span>-C<span class="w"> </span>build/
 </span></code></pre></div>
-<p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250506011107346.png" /></p>
-<p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250506012730208.png" /></p>
-<p>可执行文件在<code>out</code>目录：</p>
-<p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250506011518860.png" /></p>
+<p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/20250715190810663.png" /></p>
+<p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/20250715190957292.png" /></p>
+<p>可执行文件和编译构建文件都生成在<code>build</code>目录：</p>
+<p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/20250715191124139.png" /></p>
 <h3 id="145-gn">1.4.5 GN<a class="headerlink" href="#145-gn" title="Permanent link">&para;</a></h3>
 <p>待更新</p>
 <h2 id="15">1.5 编译实践<a class="headerlink" href="#15" title="Permanent link">&para;</a></h2>
