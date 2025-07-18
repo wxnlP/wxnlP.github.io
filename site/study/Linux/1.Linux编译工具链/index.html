@@ -2049,65 +2049,79 @@
 <h3 id="111">1.1.1 普通模式<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
 <p>使用<code>vim &lt;doc_name&gt;</code>命令启动Vim后，默认进入普通模式。此模式下，不能直接输入文本内容，主要进行 <strong>文本替换</strong> 、 <strong>文本查找</strong> 、 <strong>删除文字</strong>  、 <strong>复制粘贴</strong> 等操作。</p>
 <ul>
-<li>【切换模式】
-    - <code>i</code>：在光标当前位置输入。
-    - <code>a</code>：在光标后一个位置输入。
-    - <code>o</code>：在光标所在行的下一行输入。
-    - <code>:</code>：进入命令行模式。</li>
+<li>【切换模式】<ul>
+<li><code>i</code>：在光标当前位置输入。</li>
+<li><code>a</code>：在光标后一个位置输入。</li>
+<li><code>o</code>：在光标所在行的下一行输入。</li>
+<li><code>:</code>：进入命令行模式。</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p>进入命令行模式直接跟具体命令。
 </p>
 </blockquote>
 <ul>
-<li>【光标移动】
-    - <code>h</code>：光标向左移动一个字符。
-    - <code>j</code>：光标向下移动一行。
-    - <code>k</code>：光标向上移动一行。
-    - <code>l</code>：光标向右移动一个字符。</li>
+<li>【光标移动】<ul>
+<li><code>h</code>：光标向左移动一个字符。</li>
+<li><code>j</code>：光标向下移动一行。</li>
+<li><code>k</code>：光标向上移动一行。</li>
+<li><code>l</code>：光标向右移动一个字符。</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p>实际上这四个键并不好用，我们可以使用上下左右四个键更直观一些。
 </p>
 </blockquote>
 <ul>
-<li>【翻页】
-    - <code>Ctrl + f</code>：向下翻页。
-    - <code>Ctrl + b</code>：向上翻页。</li>
+<li>【翻页】<ul>
+<li><code>Ctrl + f</code>：向下翻页。</li>
+<li><code>Ctrl + b</code>：向上翻页。</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p>翻页多用于浏览文本。
 </p>
 </blockquote>
 <ul>
-<li>【删除】
-    - <code>x</code>：删除光标所在位置的字符。
-    - <code>dd</code>：删除光标所在的整行内容。
-    - <code>dw</code>：删除从光标位置开始到单词末尾的字符。</li>
+<li>【删除】<ul>
+<li><code>x</code>：删除光标所在位置的字符。</li>
+<li><code>dd</code>：删除光标所在的整行内容。</li>
+<li><code>dw</code>：删除从光标位置开始到单词末尾的字符。</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p>键盘的Delete键与x键功能一致。
 </p>
 </blockquote>
 <ul>
-<li>【撤销】
-    - <code>u</code>：撤销上一次的操作。
-    - <code>Ctrl + r</code>：重做上一次撤销的操作。</li>
-<li>【复制粘贴】
-    - <code>yy</code>：复制当前行。
-    - <code>dd</code>：剪切当前行。
-    - <code>p(小写)</code>：粘贴内容到光标的下方。
-    - <code>P(大写)</code>：粘贴内容到光标的上方。</li>
+<li>【撤销】<ul>
+<li><code>u</code>：撤销上一次的操作。</li>
+<li><code>Ctrl + r</code>：重做上一次撤销的操作。</li>
+</ul>
+</li>
+<li>【复制粘贴】<ul>
+<li><code>yy</code>：复制当前行。</li>
+<li><code>dd</code>：剪切当前行。</li>
+<li><code>p(小写)</code>：粘贴内容到光标的下方。</li>
+<li><code>P(大写)</code>：粘贴内容到光标的上方。</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p>在<code>yy</code>前加上数字，可以复制多行，如<code>3yy</code>复制光标所在行开始的 3 行内容。<code>dd</code>既是删除，也可以实现剪切。
 </p>
 </blockquote>
 <ul>
-<li>【查找】
-    - <code>/</code>：查找字符串。
-    - <code>n(小写)</code>：继续查找下一个匹配项。
-    - <code>N(大写)</code>：继续查找上一个匹配项。</li>
+<li>【查找】<ul>
+<li><code>/</code>：查找字符串。</li>
+<li><code>n(小写)</code>：继续查找下一个匹配项。</li>
+<li><code>N(大写)</code>：继续查找上一个匹配项。</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p>注意区分大小写，替换在命令行模式进行。
@@ -2122,17 +2136,23 @@
 <h3 id="113">1.1.3 命令行模式<a class="headerlink" href="#113" title="Permanent link">&para;</a></h3>
 <p>在普通模式下，按下<code>:</code>键进入命令行模式。此模式下，可以执行保存内容、退出Vim等操作，按下<code>Esc</code>键就能回到普通模式。</p>
 <ul>
-<li>【保存与退出】
-    - <code>:w</code>：保存文件。
-    - <code>:q</code>：退出Vim。
-    - <code>:q!</code>：强制退出 Vim，即使文件修改没有保存也会退出（慎用）。
-    - <code>:wq</code>：保存文件，然后退出Vim。</li>
-<li>【替换】
-    - <code>:s/旧字符串/新字符串/g</code>：可以在当前行替换所有的旧字符串为新字符串。
-    - <code>:%s/旧字符串/新字符串/g</code>：整个文件范围内替换。</li>
-<li>【行号】
-    - <code>:set nu</code> ：显示行号。
-    - <code>:set nu!</code>：取消显示行号。</li>
+<li>【保存与退出】<ul>
+<li><code>:w</code>：保存文件。</li>
+<li><code>:q</code>：退出Vim。</li>
+<li><code>:q!</code>：强制退出 Vim，即使文件修改没有保存也会退出（慎用）。</li>
+<li><code>:wq</code>：保存文件，然后退出Vim。</li>
+</ul>
+</li>
+<li>【替换】<ul>
+<li><code>:s/旧字符串/新字符串/g</code>：可以在当前行替换所有的旧字符串为新字符串。</li>
+<li><code>:%s/旧字符串/新字符串/g</code>：整个文件范围内替换。</li>
+</ul>
+</li>
+<li>【行号】<ul>
+<li><code>:set nu</code> ：显示行号。</li>
+<li><code>:set nu!</code>：取消显示行号。</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p><code>:</code>是从普通模式进入命令行模式，后面直接跟命令，因此替换均是在命令行模式下进行的。
@@ -2191,42 +2211,48 @@
 <p>gcc （GUN C Compiler）是 GCC 中的 c 编译器。</p>
 <p>gcc 常用参数如下表：</p>
 <ul>
-<li>【编译】
-    - <code>-E</code>：仅执行预处理（生成后缀为 <code>.i</code> 的预处理文件）
-    - <code>-S</code>：执行预处理和编译（生成后缀为 <code>.s</code> 的汇编文件）
-    - <code>-c</code>：执行预处理、编译和汇编（生成后缀为 <code>.o</code> 的二进制文件）
-    - <code>-o</code>：链接库文件，生成可执行文件
-    - <code>-g</code>：嵌入调试信息，方便gdb调试
-    - <code>-v</code>：查看gcc编译器的版本，显示gcc执行时的详细过程</li>
-<li>【代码优化】
-    - <code>-O0</code>：禁用所有优化，保留完整调试信息
-    - <code>-O1</code>：平衡代码大小和执行速度
-    - <code>-O2</code>：提升执行速度，适度增加代码体积
-    - <code>-O3</code>：极致性能，显著增加代码体积
-    - <code>-Os</code>：最小化代码体积
-    - <code>-Ofast</code>：极致性能，忽略严格标准合规性
-    - <code>-finline-functions</code>：将小函数直接嵌入调用处，减少函数调用开销
-    - <code>-funroll-loops</code>：循环展开，减少循环控制开销，提升指令级并行性</li>
-<li>【警告控制】
-    - <code>-Wall</code>：打开编译告警
-    - <code>-Werror</code>：将所有的警告当成错误进行处理，在所有产生警告的地方停止编译</li>
-<li>【库文件链接】
-    - <code>-static</code>：链接静态库
-    - <code>-share</code>：链接动态库
-    - <code>-l</code>：指定要链接的 <strong>库文件名称</strong></li>
+<li>【编译】<ul>
+<li><code>-E</code>：仅执行预处理（生成后缀为 <code>.i</code> 的预处理文件）</li>
+<li><code>-S</code>：执行预处理和编译（生成后缀为 <code>.s</code> 的汇编文件）</li>
+<li><code>-c</code>：执行预处理、编译和汇编（生成后缀为 <code>.o</code> 的二进制文件）</li>
+<li><code>-o</code>：链接库文件，生成可执行文件</li>
+<li><code>-g</code>：嵌入调试信息，方便gdb调试</li>
+<li><code>-v</code>：查看gcc编译器的版本，显示gcc执行时的详细过程</li>
+</ul>
+</li>
+<li>【代码优化】<ul>
+<li><code>-O0</code>：禁用所有优化，保留完整调试信息</li>
+<li><code>-O1</code>：平衡代码大小和执行速度</li>
+<li><code>-O2</code>：提升执行速度，适度增加代码体积</li>
+<li><code>-O3</code>：极致性能，显著增加代码体积</li>
+<li><code>-Os</code>：最小化代码体积</li>
+<li><code>-Ofast</code>：极致性能，忽略严格标准合规性</li>
+<li><code>-finline-functions</code>：将小函数直接嵌入调用处，减少函数调用开销</li>
+<li><code>-funroll-loops</code>：循环展开，减少循环控制开销，提升指令级并行性</li>
+</ul>
+</li>
+<li>【警告控制】<ul>
+<li><code>-Wall</code>：打开编译告警</li>
+<li><code>-Werror</code>：将所有的警告当成错误进行处理，在所有产生警告的地方停止编译</li>
+</ul>
+</li>
+<li>【库文件链接】<ul>
+<li><code>-static</code>：链接静态库</li>
+<li><code>-share</code>：链接动态库</li>
+<li><code>-l</code>：指定要链接的 <strong>库文件名称</strong></li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p><code>-l</code> 参数紧接着就是库名(无空格)，例如：数学库为libm.so，参数就是<code>-lm</code>，即去掉<code>lib</code>和<code>.so</code>。放在 <code>/lib</code> 、<code>/usr/lib</code>和<code>/usr/local/lib</code> 里的库直接用 -l 参数就能链接，其他位置的库文件需要指定目录路径。
 </p>
 </blockquote>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>- `-L`：指定要链接的 **库文件路径**
-</code></pre></div>
+<p>- <code>-L</code>：指定要链接的 <strong>库文件路径</strong></p>
 <blockquote>
 <p><code>-L</code>参数紧接着就是目录(无空格)，除 <code>/lib</code> 、<code>/usr/lib</code>和<code>/usr/local/lib</code>以外，其他目录的库，需要使用<code>-L</code>参数指定目录路径，<code>-L.</code>即当前目录。
 </p>
 </blockquote>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>- `-I`：指定 **头文件目录**
-</code></pre></div>
+<p>- <code>-I</code>：指定 <strong>头文件目录</strong></p>
 <blockquote>
 <p><code>-I</code>参数紧接着就是目录(无空格)，<code>/usr/include</code>目录一般是不用指定，其他目录则需要指定，可以用相对路径。
 </p>
@@ -2507,12 +2533,16 @@
 <p>链接过程就是找到依赖的库文件，将目标文件链接为可执行程序。</p>
 <p>库文件一般分静态库和动态库，静态库在编译链接时与可执行文件合为一体，动态库单独作为文件供可执行文件调用。</p>
 <ul>
-<li><strong>静态库</strong> ：在链接时，把库文件的代码链接到可执行文件中，更占用内存资源，但执行速度快。
-    - Windows系统后缀：<code>.lib</code>（Library）
-    - Linux系统后缀：<code>.a</code>（Archive）</li>
-<li><strong>动态库/共享库</strong> ：只有在用到的时候，才去链接库文件，可以被多个不同的程序调用，因此节省资源，但调用需要一定的装载时间。 
-    - Windows系统后缀：<code>.dll</code>（Dynamic Link Library）
-    - Linux系统后缀：<code>.so</code>（Shared Object）</li>
+<li><strong>静态库</strong> ：在链接时，把库文件的代码链接到可执行文件中，更占用内存资源，但执行速度快。<ul>
+<li>Windows系统后缀：<code>.lib</code>（Library）</li>
+<li>Linux系统后缀：<code>.a</code>（Archive）</li>
+</ul>
+</li>
+<li><strong>动态库/共享库</strong> ：只有在用到的时候，才去链接库文件，可以被多个不同的程序调用，因此节省资源，但调用需要一定的装载时间。 <ul>
+<li>Windows系统后缀：<code>.dll</code>（Dynamic Link Library）</li>
+<li>Linux系统后缀：<code>.so</code>（Shared Object）</li>
+</ul>
+</li>
 </ul>
 <p>① 编写源码</p>
 <p>新建文件<code>function.c</code>、<code>function.h</code>、<code>main.c</code>，再<code>main.c</code>中调用<code>function.c</code>的函数。</p>
@@ -2552,15 +2582,21 @@
 <p>在实际项目开发中，直接通过命令行逐一手动编译源代码文件的方式存在局限性，不仅需要记忆复杂的编译参数，更难以应对多文件协同编译、依赖关系管理和跨平台构建等工程化需求。为解决此问题，第一代 <strong>构建系统</strong> （如Make、Ninja）应运而生，通过声明式规则文件（Makefile/build.ninja）将编译逻辑抽象为可复用的任务流。</p>
 <p>然而随着项目的复杂度增加，手动编写和维护构建规则文件也显得效率低下。因此催生出了第二代 <strong>构建系统生成器</strong> （如CMake、GN），通过简单的配置文件自动生成不同平台的构建文件，极大地简化了项目的编译和构建过程。</p>
 <ul>
-<li><strong>构建系统生成器</strong>
-    - Cmake：通过 <code>CMakeLists.txt</code> 生成 <code>Makefile</code> 或 <code>build.ninja</code>
-    - GN：生成 <code>Ninja</code> 构建文件，专为大型项目设计</li>
-<li><strong>构建系统</strong>
-    - Make：根据 <code>Makefile</code> 规则调用编译器（如 GCC）完成代码构建
-    - Ninja：替代 <code>make</code>，专注于快速执行构建步骤（需输入文件如 <code>build.ninja</code>）</li>
-<li><strong>编译器</strong>
-    - GCC：GNU 项目的一套编译工具
-    - Clang：LLVM 项目的编译工具</li>
+<li><strong>构建系统生成器</strong><ul>
+<li>Cmake：通过 <code>CMakeLists.txt</code> 生成 <code>Makefile</code> 或 <code>build.ninja</code></li>
+<li>GN：生成 <code>Ninja</code> 构建文件，专为大型项目设计</li>
+</ul>
+</li>
+<li><strong>构建系统</strong><ul>
+<li>Make：根据 <code>Makefile</code> 规则调用编译器（如 GCC）完成代码构建</li>
+<li>Ninja：替代 <code>make</code>，专注于快速执行构建步骤（需输入文件如 <code>build.ninja</code>）</li>
+</ul>
+</li>
+<li><strong>编译器</strong><ul>
+<li>GCC：GNU 项目的一套编译工具</li>
+<li>Clang：LLVM 项目的编译工具</li>
+</ul>
+</li>
 </ul>
 <p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250504135725498.png" /></p>
 <h3 id="141">1.4.1 准备环境<a class="headerlink" href="#141" title="Permanent link">&para;</a></h3>
@@ -2648,25 +2684,33 @@
 </p>
 </blockquote>
 <ul>
-<li>【变量】
-    - <code>:=</code>：立即展开（在定义时求值）
-    - <code>=</code>：延迟展开（在使用时求值）
-    - <code>?=</code>：条件赋值（仅在未定义时赋值）</li>
-<li>【自动变量】
-    - <code>$@</code>：当前规则的目标文件
-    - <code>$&lt;</code>：当前规则的第一个依赖文件
-    - <code>$^</code>：当前规则的所有依赖文件（去重）
-    - <code>$*</code>：通配符 <code>%</code> 匹配的部分</li>
-<li>【通配符】
-    - <code>%</code>：匹配任意长度的字符串，可以配合函数和模式规则使用
-    - <code>*</code>：</li>
-<li>【函数】
-    - <code>$(wildcard PATTERN)</code>：获取匹配 <code>PATTERN</code> 的文件列表，<code>PATTERN</code>是通配符表达式
-    - <code>$(patsubst PATTERN,REPLACEMENT,TEXT)</code>：将 <code>TEXT</code> 中匹配 <code>PATTERN</code> 的部分替换为 <code>REPLACEMENT</code>
-        * <code>PATTERN</code>: 匹配模式（必须包含 <code>%</code>）
-        * <code>REPLACEMENT</code>: 替换模式（<code>%</code> 对应捕获的内容）
-        * <code>TEXT</code>: 待处理的文本或变量
-    - <code>$(shell COMMAND)</code>：执行 Shell 命令并返回结果</li>
+<li>【变量】<ul>
+<li><code>:=</code>：立即展开（在定义时求值）</li>
+<li><code>=</code>：延迟展开（在使用时求值）</li>
+<li><code>?=</code>：条件赋值（仅在未定义时赋值）</li>
+</ul>
+</li>
+<li>【自动变量】<ul>
+<li><code>$@</code>：当前规则的目标文件</li>
+<li><code>$&lt;</code>：当前规则的第一个依赖文件</li>
+<li><code>$^</code>：当前规则的所有依赖文件（去重）</li>
+<li><code>$*</code>：通配符 <code>%</code> 匹配的部分</li>
+</ul>
+</li>
+<li>【通配符】<ul>
+<li><code>%</code>：匹配任意长度的字符串，可以配合函数和模式规则使用</li>
+<li><code>*</code>：</li>
+</ul>
+</li>
+<li>【函数】<ul>
+<li><code>$(wildcard PATTERN)</code>：获取匹配 <code>PATTERN</code> 的文件列表，<code>PATTERN</code>是通配符表达式</li>
+<li><code>$(patsubst PATTERN,REPLACEMENT,TEXT)</code>：将 <code>TEXT</code> 中匹配 <code>PATTERN</code> 的部分替换为 <code>REPLACEMENT</code>
+      * <code>PATTERN</code>: 匹配模式（必须包含 <code>%</code>）
+      * <code>REPLACEMENT</code>: 替换模式（<code>%</code> 对应捕获的内容）
+      * <code>TEXT</code>: 待处理的文本或变量</li>
+<li><code>$(shell COMMAND)</code>：执行 Shell 命令并返回结果</li>
+</ul>
+</li>
 <li>【条件判断】</li>
 </ul>
 <div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cp">ifeq (ARG1, ARG2)</span>
@@ -2719,9 +2763,11 @@
 </span></code></pre></div>
 <p>⑤ 模式规则</p>
 <ul>
-<li><code>%</code>通配符会动态生成目标和依赖关系
-    - 当需要构建 <code>build/main.o</code> 时，Make 检查是否存在 <code>src/main.c</code>
-    - <code>%</code> 捕获 main，<code>$&lt;</code> 展开为 <code>src/main.c</code>，<code>$@</code> 展开为 <code>build/main.o</code></li>
+<li><code>%</code>通配符会动态生成目标和依赖关系<ul>
+<li>当需要构建 <code>build/main.o</code> 时，Make 检查是否存在 <code>src/main.c</code></li>
+<li><code>%</code> 捕获 main，<code>$&lt;</code> 展开为 <code>src/main.c</code>，<code>$@</code> 展开为 <code>build/main.o</code></li>
+</ul>
+</li>
 <li>此规则，逐个编译每个 <code>.c</code> 文件，生成对应的 <code>.o</code> 文件</li>
 </ul>
 <div class="language-makefile highlight"><span class="filename">Makefile</span><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nf">$(OBJ_DIR)/%.o </span><span class="o">:</span><span class="w"> </span><span class="k">$(</span><span class="nv">SRC_DIR</span><span class="k">)</span>/%.<span class="n">c</span>
@@ -2758,47 +2804,34 @@
 </ul>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>&lt;variable_name&gt; = &lt;value&gt;
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>- 定义常量或路径，简化重复配置
-- 注意：
-    * `&lt;value&gt;`后面不要有多余的空格
-</code></pre></div>
-<ul>
-<li>【规则】</li>
-</ul>
+<p>- 定义常量或路径，简化重复配置
+  - 注意：
+        * <code>&lt;value&gt;</code>后面不要有多余的空格
++ 【规则】</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>rule &lt;rule_name&gt;
 </span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>  command = 编译命令($in|$out分别代替输入输出文件)
 </span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>  description = 构建描述（可选）
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>- 定义如何从输入文件生成输出文件
-- 注意：
-    * `$in`：输入文件，由 `build` 语句中的输入文件自动填充
-    * `$out`：输出文件，由 `build` 语句中的输出文件自动填充
-</code></pre></div>
-<ul>
-<li>【构建目标】</li>
-</ul>
+<p>- 定义如何从输入文件生成输出文件
+  - 注意：
+        * <code>$in</code>：输入文件，由 <code>build</code> 语句中的输入文件自动填充
+        * <code>$out</code>：输出文件，由 <code>build</code> 语句中的输出文件自动填充
++ 【构建目标】</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>build &lt;output_file&gt; : &lt;rule_name&gt; &lt;input_file&gt;
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>- 声明文件生成规则和依赖关系
-- 参数：
-    * `&lt;output_file&gt;`自动填充到指定规则的`$out`变量中
-    * `&lt;input_file&gt;`自动填充到指定规则的`$in`变量中
-</code></pre></div>
-<ul>
-<li>【默认模板】</li>
-</ul>
+<p>- 声明文件生成规则和依赖关系
+  - 参数：
+        * <code>&lt;output_file&gt;</code>自动填充到指定规则的<code>$out</code>变量中
+        * <code>&lt;input_file&gt;</code>自动填充到指定规则的<code>$in</code>变量中
++ 【默认模板】</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>default &lt;target_name&gt;
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>- 指定默认构建目标（类似 Makefile 的 `all`）
-</code></pre></div>
-<ul>
-<li>【伪目标】</li>
-</ul>
+<p>- 指定默认构建目标（类似 Makefile 的 <code>all</code>）
++ 【伪目标】</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>build &lt;target_name&gt; : phony
 </span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>  command = 操作命令
 </span></code></pre></div>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code>- 定义不生成文件的操作（如清理）
-</code></pre></div>
+<p>- 定义不生成文件的操作（如清理）</p>
 <p><strong>编译文件</strong></p>
 <p>根目录新建<code>build.ninja</code>文件，添加如下内容：</p>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a># 变量定义
@@ -2991,10 +3024,12 @@
 </span></code></pre></div>
 <hr />
 <ul>
-<li>添加源代码到可执行文件
-    - <code>PUBLIC</code>：依赖项既会作用于当前目标，也会传递给依赖它的其他目标。
-    - <code>PRIVATE</code>：依赖项仅作用于当前目标，不传递。
-    - <code>INTERFACE</code>：依赖项不作用于当前目标，但会传递给依赖它的其他目标。</li>
+<li>添加源代码到可执行文件<ul>
+<li><code>PUBLIC</code>：依赖项既会作用于当前目标，也会传递给依赖它的其他目标。</li>
+<li><code>PRIVATE</code>：依赖项仅作用于当前目标，不传递。</li>
+<li><code>INTERFACE</code>：依赖项不作用于当前目标，但会传递给依赖它的其他目标。</li>
+</ul>
+</li>
 </ul>
 <div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nb">target_sources</span><span class="p">(</span><span class="s">&lt;PROJECT-NAME&gt;</span><span class="w"> </span><span class="s">&lt;PRIVATE|PUBLIC|INTERFACE&gt;</span><span class="w"> </span><span class="s">&lt;source_files&gt;...</span><span class="p">)</span>
 </span></code></pre></div>
@@ -3039,10 +3074,12 @@
 <p>除了上面介绍的一些简单构建系统会用到的语法，还有一些复杂构建系统会用到和在现代 CMake 被取代的语法（会标注被取代的语法）。</p>
 <p><strong>【其他常用语法】</strong></p>
 <ul>
-<li>输出信息到终端
-    - <code>STATUS</code>：输出为正常信息，不影响构建。
-    - <code>WARNING</code>：输出为黄色警告，但不终止。
-    - <code>SEND_ERROR</code>：阻止生成，但不停止配置。</li>
+<li>输出信息到终端<ul>
+<li><code>STATUS</code>：输出为正常信息，不影响构建。</li>
+<li><code>WARNING</code>：输出为黄色警告，但不终止。</li>
+<li><code>SEND_ERROR</code>：阻止生成，但不停止配置。</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p>更多<code>mode</code>可以自行查找。
@@ -3070,45 +3107,55 @@
 </span></code></pre></div>
 <hr />
 <ul>
-<li>创建一个库（动态或静态）
-    - <code>STATIC</code>：静态库
-    - <code>SHARED</code>：动态库</li>
+<li>创建一个库（动态或静态）<ul>
+<li><code>STATIC</code>：静态库</li>
+<li><code>SHARED</code>：动态库</li>
+</ul>
+</li>
 </ul>
 <div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="nb">add_library</span><span class="p">(</span><span class="s">&lt;target&gt;</span><span class="w"> </span><span class="s">[STATIC|SHARED|MODULE]</span><span class="w"> </span><span class="s">&lt;source_files&gt;...</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <ul>
-<li>寻找项目需要的包
-    - <code>REQUIRED</code>：表示这个项目要这个包才能运行，必须找到它
-    - <code>&lt;version&gt;</code>：包的版本</li>
+<li>寻找项目需要的包<ul>
+<li><code>REQUIRED</code>：表示这个项目要这个包才能运行，必须找到它</li>
+<li><code>&lt;version&gt;</code>：包的版本</li>
+</ul>
+</li>
 </ul>
 <div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">&lt;PackageName&gt;</span><span class="w"> </span><span class="s">[&lt;version&gt;]</span><span class="w"> </span><span class="s">[REQUIRED]</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <p><strong>【file 语法】</strong></p>
 <ul>
-<li>读取文件内容到变量
-    - <code>OFFSET &lt;offset&gt;</code>：从文件指定偏移量开始读取
-    - <code>LIMIT &lt;max-in&gt;</code>：限制读取的最大字节数
-    - <code>HEX</code>：可选，将内容转换为十六进制格式</li>
+<li>读取文件内容到变量<ul>
+<li><code>OFFSET &lt;offset&gt;</code>：从文件指定偏移量开始读取</li>
+<li><code>LIMIT &lt;max-in&gt;</code>：限制读取的最大字节数</li>
+<li><code>HEX</code>：可选，将内容转换为十六进制格式</li>
+</ul>
+</li>
 </ul>
 <div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="nb">file</span><span class="p">(</span><span class="s">READ</span><span class="w"> </span><span class="s">&lt;filename&gt;</span><span class="w"> </span><span class="s">&lt;variable&gt;</span><span class="w"> </span><span class="s">[OFFSET</span><span class="w"> </span><span class="s">&lt;offset&gt;]</span><span class="w"> </span><span class="s">[LIMIT</span><span class="w"> </span><span class="s">&lt;max-in&gt;]</span><span class="w"> </span><span class="s">[HEX]</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <ul>
-<li>解析来自文件的 ASCII 字符串列表到变量
-    - <code>&lt;options&gt;</code>常用选项如下：
-        * <code>LENGTH_MAXIMUM &lt;max-len&gt;</code>：仅读取长度小于等于 <code>max-len</code> 的字符串
-        * <code>REGEX &lt;regex&gt;</code>：仅保留匹配正则表达式的字符串
-        * <code>ENCODING &lt;encoding&gt;</code>：指定编码格式</li>
+<li>解析来自文件的 ASCII 字符串列表到变量<ul>
+<li><code>&lt;options&gt;</code>常用选项如下：
+      * <code>LENGTH_MAXIMUM &lt;max-len&gt;</code>：仅读取长度小于等于 <code>max-len</code> 的字符串
+      * <code>REGEX &lt;regex&gt;</code>：仅保留匹配正则表达式的字符串
+      * <code>ENCODING &lt;encoding&gt;</code>：指定编码格式</li>
+</ul>
+</li>
 </ul>
 <div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="nb">file</span><span class="p">(</span><span class="s">STRINGS</span><span class="w"> </span><span class="s">&lt;filename&gt;</span><span class="w"> </span><span class="s">&lt;variable&gt;</span><span class="w"> </span><span class="s">&lt;options&gt;...</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <ul>
-<li>将匹配的文件列表存于变量
-    - <code>RELATIVE &lt;path&gt;</code>：返回相对于指定路径的文件路径
-    - <code>&lt;globbing-expressions&gt;</code>：通配符表达式</li>
+<li>将匹配的文件列表存于变量<ul>
+<li><code>RELATIVE &lt;path&gt;</code>：返回相对于指定路径的文件路径</li>
+<li><code>&lt;globbing-expressions&gt;</code>：通配符表达式</li>
+</ul>
+</li>
 </ul>
 <div class="language-cmake highlight"><span class="filename">CMake</span><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="nb">file</span><span class="p">(</span><span class="s">GLOB</span><span class="w"> </span><span class="s">&lt;variable&gt;</span><span class="w"> </span><span class="s">&lt;globbing-expressions&gt;...</span><span class="w"> </span><span class="s">[RELATIVE</span><span class="w"> </span><span class="s">&lt;path&gt;]</span><span class="p">)</span>
 </span></code></pre></div>
@@ -3137,13 +3184,13 @@
 </span><span id="__span-70-14"><a id="__codelineno-70-14" name="__codelineno-70-14" href="#__codelineno-70-14"></a>
 </span><span id="__span-70-15"><a id="__codelineno-70-15" name="__codelineno-70-15" href="#__codelineno-70-15"></a><span class="c"># 添加编译源文件</span>
 </span><span id="__span-70-16"><a id="__codelineno-70-16" name="__codelineno-70-16" href="#__codelineno-70-16"></a><span class="nb">target_sources</span><span class="p">(</span><span class="o">${</span><span class="nv">CMAKE_PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">PRIVATE</span>
-</span><span id="__span-70-17"><a id="__codelineno-70-17" name="__codelineno-70-17" href="#__codelineno-70-17"></a><span class="w">        </span><span class="s">src/main.c</span>
-</span><span id="__span-70-18"><a id="__codelineno-70-18" name="__codelineno-70-18" href="#__codelineno-70-18"></a><span class="w">        </span><span class="s">src/function.c</span>
+</span><span id="__span-70-17"><a id="__codelineno-70-17" name="__codelineno-70-17" href="#__codelineno-70-17"></a><span class="w">      </span><span class="s">src/main.c</span>
+</span><span id="__span-70-18"><a id="__codelineno-70-18" name="__codelineno-70-18" href="#__codelineno-70-18"></a><span class="w">      </span><span class="s">src/function.c</span>
 </span><span id="__span-70-19"><a id="__codelineno-70-19" name="__codelineno-70-19" href="#__codelineno-70-19"></a><span class="p">)</span>
 </span><span id="__span-70-20"><a id="__codelineno-70-20" name="__codelineno-70-20" href="#__codelineno-70-20"></a>
 </span><span id="__span-70-21"><a id="__codelineno-70-21" name="__codelineno-70-21" href="#__codelineno-70-21"></a><span class="c"># 添加头文件搜索目录</span>
 </span><span id="__span-70-22"><a id="__codelineno-70-22" name="__codelineno-70-22" href="#__codelineno-70-22"></a><span class="nb">target_include_directories</span><span class="p">(</span><span class="o">${</span><span class="nv">CMAKE_PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">PRIVATE</span>
-</span><span id="__span-70-23"><a id="__codelineno-70-23" name="__codelineno-70-23" href="#__codelineno-70-23"></a><span class="w">        </span><span class="s">include</span>
+</span><span id="__span-70-23"><a id="__codelineno-70-23" name="__codelineno-70-23" href="#__codelineno-70-23"></a><span class="w">      </span><span class="s">include</span>
 </span><span id="__span-70-24"><a id="__codelineno-70-24" name="__codelineno-70-24" href="#__codelineno-70-24"></a><span class="p">)</span>
 </span></code></pre></div>
 <p><code>CMake</code>构建</p>
@@ -3154,15 +3201,15 @@
 </span></code></pre></div>
 <p><code>CMake</code>构建以后，会生成一系列文件和一个<code>CmakeFiles</code>文件夹。其中，默认生成<code>Makefile</code>文件，用于使用<code>make</code>命令编译；若使用<code>-G</code>参数指定<code>Ninja</code>则会生成一个<code>build.ninja</code>文件，用于使用<code>ninja</code>命令编译：</p>
 <div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="c1"># 使用cmake命令编译</span>
-</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>cmake<span class="w"> </span>--build<span class="w"> </span>build/
+</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>cmake<span class="w"> </span>--build<span class="w"> </span>build
 </span><span id="__span-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a><span class="c1"># 使用make命令编译</span>
-</span><span id="__span-72-4"><a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a>make<span class="w"> </span>-C<span class="w"> </span>build/
+</span><span id="__span-72-4"><a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a>make<span class="w"> </span>-C<span class="w"> </span>build
 </span><span id="__span-72-5"><a id="__codelineno-72-5" name="__codelineno-72-5" href="#__codelineno-72-5"></a><span class="c1"># 使用ninja命令编译</span>
-</span><span id="__span-72-6"><a id="__codelineno-72-6" name="__codelineno-72-6" href="#__codelineno-72-6"></a>ninja<span class="w"> </span>-C<span class="w"> </span>build/
+</span><span id="__span-72-6"><a id="__codelineno-72-6" name="__codelineno-72-6" href="#__codelineno-72-6"></a>ninja<span class="w"> </span>-C<span class="w"> </span>build
 </span></code></pre></div>
 <p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/20250715190810663.png" /></p>
 <p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/20250715190957292.png" /></p>
-<p>可执行文件和编译构建文件都生成在<code>build</code>目录：</p>
+<p>可执行文件在<code>out</code>目录：</p>
 <p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/20250715191124139.png" /></p>
 <h3 id="145-gn">1.4.5 GN<a class="headerlink" href="#145-gn" title="Permanent link">&para;</a></h3>
 <p>待更新</p>
