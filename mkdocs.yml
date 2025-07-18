@@ -96,7 +96,7 @@ nav:
       - 函数: study/Linux/3.函数.md
       - 内存管理: study/Linux/4.内存管理.md
     - 数据结构与算法:
-      - 测试: study/Linux/1.数据结构基础.md
+      - 测试: study/Linux/1.机器人学导论.md
   - 控制算法: 
     - PID控制: study/控制算法/PID.md
   - 芯片学习系列:
