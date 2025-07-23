@@ -27,6 +27,7 @@ nav:
       - New UART: study/OpenHarmony/New.UART.md
       - 其他外设: study/OpenHarmony/others.md
     - 无线通信:
+      - 第九章 网络编程: study/OpenHarmony/9.网络编程.md
       - 第八章 Wi-Fi: study/OpenHarmony/8.wifi.md
       - 第十章 MQTT: study/OpenHarmony/10.MQTT.md
   - ROS2:
