@@ -210,9 +210,45 @@ git reset 41fb438af114aae1f182579422c2f115a7a8148d
 
 ![image-20250318212348254](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318212348254.png)
 
-### Git分支
+## Git分支
 
-Git分支可以用来管理项目的不版本，防止主分支版本混乱。
+### Git Flow 分支模型
+
+下图是 Vincent Driessen 提出的 Git Flow 流程图，不同的分支单一处理各自任务，所有修改都应在 develop 分支或其分出的 feature 分支，最终完成产品验证发布到主分支 master/main，同时可以进行打标签处理。
+
+**`master` 分支**：
+
+- 永远保持稳定和可发布的状态。
+- 每次发布一个新的版本时，都会从 `develop` 分支合并到 `master` 分支。
+- 除发布一个新的版本外，该分支不应有任何修改。
+
+**`develop` 分支**：
+
+- 用于集成所有的开发分支。
+- 代表了最新的开发进度。
+- 功能分支、发布分支和修复分支都从这里分支出去，最终合并回这里。
+
+**`feature` 分支**：
+
+- 用于开发新功能。
+- 从 `develop` 分支创建，开发完成后合并回 `develop` 分支。
+- 命名规范：`feature/feature-name`。
+
+**`release` 分支**：
+
+- 用于准备新版本的发布。
+- 从 `develop` 分支创建，进行最后的测试和修复，然后合并回 `develop` 和 `master` 分支，并打上版本标签。
+- 命名规范：`release/release-name`。
+
+**`hotfix` 分支**：
+
+- 用于修复紧急问题。
+- 从 `master` 分支创建，修复完成后合并回 `master` 和 `develop` 分支，并打上版本标签。
+- 命名规范：`hotfix/hotfix-name`。
+
+![](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/20250822192530378.png)
+
+### 分支管理
 
 ① 查看分支列表
 
@@ -246,9 +282,87 @@ git merge main
 
 ![image-20250318213936585](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318213936585.png)
 
-⑤ 删除分支
+⑤ 分支重命名
 
-```shell
-git branch -D rolling
+```bash
+git branch -m rolling develop
+```
+
+⑥ 删除分支
+
+```bash
+git branch -D develop
+```
+
+## Git标签
+
+标签本质上是对某一次提交起一个别名，一般会在项目达到一定重要阶段以版本号为标签。
+
+### 创建标签
+
+① 为上一次提交打标签
+
+```bash
+git tag <标签名称>
+```
+
+② 指定某一次提交打标签
+
+首先通过`git log/git log --oneline`查看 commit ID：
+
+![](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/20250822201947991.png)
+
+指定 commit 打标签
+
+```bash
+git tag <标签名称> <commit id>
+```
+
+③ 注释标签
+
+```bash
+git tag <标签名称> <commit id> -a -m <comments>
+```
+
+### 查看标签
+
+① 查看当前分支的所有标签
+
+```bash
+git tag
+```
+
+② 查看标签的详细信息
+
+```bash
+git show <tag name>
+```
+
+### 推送标签
+
+① 推送单个标签
+
+```bash
+git push origin <tag name>
+```
+
+② 推送所有标签
+
+```bash
+git push origin --tags
+```
+
+### 删除标签
+
+① 删除本地标签（不会删除远程仓库的标签）
+
+```bash
+git tag -d <tag name>
+```
+
+② 删除远程仓库的标签
+
+```bash
+git push origin -d <tag name>
 ```
 
