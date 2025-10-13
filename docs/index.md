@@ -23,13 +23,21 @@ comments: true
 
   [:octicons-arrow-right-24: 开始学习😄](https://gitee.com/wxnlP)
 
-- <img src="/assets/ros.svg" style="width:39px;height:39px;vertical-align:middle"> __ROS2__
+- <img src="/assets/ros.svg" style="width:34px;height:34px;vertical-align:middle"> __ROS2__
 
   ---
 
   ROS2学习笔记，参考fishros、赵虚左等教程，含通信、仿真、导航等。
 
   [:octicons-arrow-right-24: 开始学习😁](study\ROS2\0.阅读声明.md)
+
+- <img src="/assets/语雀.svg" style="width:28px;height:28px;vertical-align:middle"> __技术文档分享__
+
+  ---
+
+  使用语雀写的技术文档，涉及机器人学、ESP-IDF、Modern C++等。
+
+  [:octicons-arrow-right-24: 开始学习😜](study/语雀文档/语雀.md)
 
 - :fontawesome-solid-microchip: __STM32__ 
 
@@ -39,7 +47,7 @@ comments: true
 
   [:octicons-arrow-right-24: 开始学习🥰](study\STM32\0.阅读声明.md)
 
-- <img src="/assets/ohos.svg" style="width:28px;height:28px;vertical-align:middle"> __OpenHarmony__
+- <img src="/assets/ohos.svg" style="width:30px;height:30px;vertical-align:middle"> __OpenHarmony__
 
   ---
 

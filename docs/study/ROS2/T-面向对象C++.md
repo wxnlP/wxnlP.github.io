@@ -9,9 +9,6 @@ comments: true
 ### 1.1 构造函数的分类和析构函数
 
 ```c++
-//
-// Created by 李志豪 on 2024/3/30.
-//
 #include <iostream>
 #include <string>
 

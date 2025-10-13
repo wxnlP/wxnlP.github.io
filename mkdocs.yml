@@ -54,7 +54,7 @@ nav:
       - 第十二章 URDF建模: study/ROS2/12-URDF建模.md
     - ROS2番外篇:
       - New.ROS2与CAN总线: study/ROS2/New.ROS2使用CAN.md
-  - STM32系列:
+  - STM32F1:
     - 阅读声明: study/STM32/0.阅读声明.md
     - 基础外设:
       - 第一章 GPIO: study/STM32/1.GPIO.md
@@ -96,10 +96,12 @@ nav:
       - 宏和关键字: study/Linux/2.宏和关键字.md
       - 函数: study/Linux/3.函数.md
       - 内存管理: study/Linux/4.内存管理.md
-    - 数据结构与算法:
-      - 测试: study/Linux/1.机器人学导论.md
   - 控制算法: 
-    - PID控制: study/控制算法/PID.md
+    - PID: study/控制算法/PID.md
+  - Git: study/Git/Git.md
+  - 技术文档分享:
+    - 语雀文档: study/语雀文档/语雀.md
+    - 飞书文档: study/飞书文档/飞书.md
   - 芯片学习系列:
     - 阅读声明: study/芯片系列/0.阅读声明.md
     - ICM20948: study/芯片系列/ICM20948.md
@@ -122,11 +124,6 @@ nav:
       - 数据集划分: study/YOLOv8/YOLOv8-2.md
       - 模型训练: study/YOLOv8/YOLOv8-3.md
     - BPU模型量化(RDK X5): study/YOLOv8/BPU模型转换.md
-    
-  - Git: study/Git/Git.md
-  - 资料分析:
-    - Python数据分析: study/飞书文档/pythondata.md
-    - 期末复习: study/飞书文档/studydata.md
 
 
 
