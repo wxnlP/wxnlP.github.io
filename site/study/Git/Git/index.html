@@ -1102,6 +1102,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#github_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Github访问问题
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1628,6 +1637,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#github_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Github访问问题
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1904,29 +1922,51 @@
 </span></code></pre></div>
 <p>若下图所示的 <code>ROS2</code> 仓库管理，前部分是我在 <code>RDK X5</code> 实机上做的维护，后面是用虚拟机做的维护，可以说是无缝衔接。</p>
 <p><img alt="image-20250318203551039" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318203551039.png" /></p>
+<h3 id="github_1">Github访问问题<a class="headerlink" href="#github_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>设置全局代理</li>
+</ul>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># 设置 HTTP 代理（7890换成实际代理端口）</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>http.proxy<span class="w"> </span>http://127.0.0.1:7890
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># 设置 HTTPS 代理</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>https.proxy<span class="w"> </span>http://127.0.0.1:7890
+</span></code></pre></div>
+<ul>
+<li>SSH 协议时撞到 <strong>22 端口被封锁</strong></li>
+</ul>
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># 测试443端口</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>ssh<span class="w"> </span>-T<span class="w"> </span>-p<span class="w"> </span><span class="m">443</span><span class="w"> </span>git@ssh.github.com
+</span></code></pre></div>
+<p>找到<code>.ssh/config</code>文件，添加如下内容：</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Host github.com
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    Hostname ssh.github.com
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    Port 443
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    User git
+</span></code></pre></div>
 <h2 id="git_2">Git进阶使用<a class="headerlink" href="#git_2" title="Permanent link">&para;</a></h2>
 <h3 id="_8">查看文件修改状态<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>git<span class="w"> </span>status
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>git<span class="w"> </span>status
 </span></code></pre></div>
 <p><img alt="image-20250318211322820" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318211322820.png" /></p>
 <p>同时可以查看具体的修改位置</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>git<span class="w"> </span>diff<span class="w"> </span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>git<span class="w"> </span>diff<span class="w"> </span>
 </span></code></pre></div>
 <p><img alt="image-20250318211502529" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318211502529.png" /></p>
 <h3 id="_9">撤销代码<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>① 并未添加到缓冲区，即未进行<code>git add</code>。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>&lt;文件&gt;
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>&lt;文件&gt;
 </span></code></pre></div>
 <p>② 已经添加到缓冲区，但为提交更改。</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>git<span class="w"> </span>reset<span class="w"> </span>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>git<span class="w"> </span>reset<span class="w"> </span>
 </span></code></pre></div>
 <p>③ 已经提交更改，为上传服务器。</p>
 <p>使用<code>git log</code>查看日志</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>git<span class="w"> </span>log
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>git<span class="w"> </span>log
 </span></code></pre></div>
 <p><img alt="image-20250318212221953" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318212221953.png" /></p>
 <p>将Git恢复到<code>修改依赖名称</code>的阶段，使用<code>git reset + commit</code></p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>git<span class="w"> </span>reset<span class="w"> </span>41fb438af114aae1f182579422c2f115a7a8148d
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>git<span class="w"> </span>reset<span class="w"> </span>41fb438af114aae1f182579422c2f115a7a8148d
 </span></code></pre></div>
 <p><img alt="image-20250318212348254" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318212348254.png" /></p>
 <h2 id="git_3">Git分支<a class="headerlink" href="#git_3" title="Permanent link">&para;</a></h2>
@@ -1965,26 +2005,26 @@
 <p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/20250822192530378.png" /></p>
 <h3 id="_10">分支管理<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>① 查看分支列表</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>git<span class="w"> </span>branch
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>git<span class="w"> </span>branch
 </span></code></pre></div>
 <p>② 创建新分支</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>git<span class="w"> </span>branch<span class="w"> </span>rolling
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>git<span class="w"> </span>branch<span class="w"> </span>rolling
 </span></code></pre></div>
 <p>③ 切换分支</p>
-<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>rolling
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>rolling
 </span></code></pre></div>
 <p>两个分支修改提交互不影响，如下图：我在<code>main</code>分支提交了README更新，但<code>rolling</code>依旧是创建时候的样子。</p>
 <p><img alt="image-20250318213558453" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318213558453.png" /></p>
 <p>④ 合并分支</p>
 <p>将<code>main</code>分支的修改同步到<code>rolling</code>分支，此时需要用到合并分支指令。</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>git merge main
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>git merge main
 </span></code></pre></div>
 <p><img alt="image-20250318213936585" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318213936585.png" /></p>
 <p>⑤ 分支重命名</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>rolling<span class="w"> </span>develop
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>rolling<span class="w"> </span>develop
 </span></code></pre></div>
 <p>⑥ 删除分支</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>develop
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>develop
 </span></code></pre></div>
 <h3 id="stash">stash<a class="headerlink" href="#stash" title="Permanent link">&para;</a></h3>
 <p><strong>使用场景</strong>：正在 <code>dev</code> 分支写代码（有未完成的修改和新文件），突然需要切到 <code>main</code> 修复紧急 Bug 或拉取最新代码。</p>
@@ -2060,46 +2100,46 @@
 </table>
 <h3 id="rebase">rebase<a class="headerlink" href="#rebase" title="Permanent link">&para;</a></h3>
 <p>把远程的更新拉下来，并把本地修改“顶”到最前端。</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>origin<span class="w"> </span>main
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span>origin<span class="w"> </span>main
 </span></code></pre></div>
 <p>合并本地的几个commit。</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>HEAD~3
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>HEAD~3
 </span></code></pre></div>
 <h2 id="git_4">Git标签<a class="headerlink" href="#git_4" title="Permanent link">&para;</a></h2>
 <p>标签本质上是对某一次提交起一个别名，一般会在项目达到一定重要阶段以版本号为标签。</p>
 <h3 id="_11">创建标签<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>① 为上一次提交打标签</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>git<span class="w"> </span>tag<span class="w"> </span>&lt;标签名称&gt;
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>git<span class="w"> </span>tag<span class="w"> </span>&lt;标签名称&gt;
 </span></code></pre></div>
 <p>② 指定某一次提交打标签</p>
 <p>首先通过<code>git log/git log --oneline</code>查看 commit ID：</p>
 <p><img alt="" src="https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/20250822201947991.png" /></p>
 <p>指定 commit 打标签</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>git<span class="w"> </span>tag<span class="w"> </span>&lt;标签名称&gt;<span class="w"> </span>&lt;commit<span class="w"> </span>id&gt;
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>git<span class="w"> </span>tag<span class="w"> </span>&lt;标签名称&gt;<span class="w"> </span>&lt;commit<span class="w"> </span>id&gt;
 </span></code></pre></div>
 <p>③ 注释标签</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>git<span class="w"> </span>tag<span class="w"> </span>&lt;标签名称&gt;<span class="w"> </span>&lt;commit<span class="w"> </span>id&gt;<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span>&lt;comments&gt;
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>git<span class="w"> </span>tag<span class="w"> </span>&lt;标签名称&gt;<span class="w"> </span>&lt;commit<span class="w"> </span>id&gt;<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span>&lt;comments&gt;
 </span></code></pre></div>
 <h3 id="_12">查看标签<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>① 查看当前分支的所有标签</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>git<span class="w"> </span>tag
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>git<span class="w"> </span>tag
 </span></code></pre></div>
 <p>② 查看标签的详细信息</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>git<span class="w"> </span>show<span class="w"> </span>&lt;tag<span class="w"> </span>name&gt;
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>git<span class="w"> </span>show<span class="w"> </span>&lt;tag<span class="w"> </span>name&gt;
 </span></code></pre></div>
 <h3 id="_13">推送标签<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>① 推送单个标签</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>&lt;tag<span class="w"> </span>name&gt;
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>&lt;tag<span class="w"> </span>name&gt;
 </span></code></pre></div>
 <p>② 推送所有标签</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--tags
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--tags
 </span></code></pre></div>
 <h3 id="_14">删除标签<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>① 删除本地标签（不会删除远程仓库的标签）</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>git<span class="w"> </span>tag<span class="w"> </span>-d<span class="w"> </span>&lt;tag<span class="w"> </span>name&gt;
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>git<span class="w"> </span>tag<span class="w"> </span>-d<span class="w"> </span>&lt;tag<span class="w"> </span>name&gt;
 </span></code></pre></div>
 <p>② 删除远程仓库的标签</p>
-<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>-d<span class="w"> </span>&lt;tag<span class="w"> </span>name&gt;
+<div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>-d<span class="w"> </span>&lt;tag<span class="w"> </span>name&gt;
 </span></code></pre></div>
 
 

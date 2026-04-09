@@ -160,6 +160,34 @@ git clone <repository_url>
 
 ![image-20250318203551039](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318203551039.png)
 
+### Github访问问题
+
+- 设置全局代理
+
+```bash
+# 设置 HTTP 代理（7890换成实际代理端口）
+git config --global http.proxy http://127.0.0.1:7890
+
+# 设置 HTTPS 代理
+git config --global https.proxy http://127.0.0.1:7890
+```
+
+-  SSH 协议时撞到 **22 端口被封锁**
+
+```bash
+# 测试443端口
+ssh -T -p 443 git@ssh.github.com
+```
+
+找到`.ssh/config`文件，添加如下内容：
+
+```
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+    User git
+```
+
 ## Git进阶使用
 
 ### 查看文件修改状态
