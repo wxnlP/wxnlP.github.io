@@ -238,6 +238,93 @@ git reset 41fb438af114aae1f182579422c2f115a7a8148d
 
 ![image-20250318212348254](https://tonmoon.obs.cn-east-3.myhuaweicloud.com/img/tonmoon/image-20250318212348254.png)
 
+### Submodule
+
+####  初始化
+
+添加 `submodule`，根目录会生成`.gitmodules`文件：
+
+```bash
+# 语法：git submodule add [-b 分支名] <仓库地址> <本地存放路径>
+git submodule add -b main git@github.com:wxnlP/s6h4d_sdk.git src/robot_arm/s6h4d_sdk
+```
+
+#### 克隆
+
+`git clone`带有`submodule`的项目时：
+
+```bash
+# 直接完整克隆
+git clone --recursive <项目>
+# 克隆后单独克隆子模块
+git submodule update --init --recursive
+```
+
+#### 更新
+
+更新项目中对应的`submodule`：
+
+```bash
+git submodule update --init --recursive
+```
+
+让子模块去拉取它自己远程跟踪分支：
+
+```bash
+git submodule update --remote --merge
+```
+
+在主项目 pull 时顺便更新子模块：
+
+```
+git pull --recurse-submodules
+```
+
+#### 修改与推送
+
+主项目中更新子模块的伪流程操作：
+
+```bash
+# 进入子模块目录
+cd src/robot_arm/s6h4d_sdk
+git checkout main
+
+# 提交commit
+git add .
+git commmit -m "update"
+git push origin main
+
+# 更新主项目
+cd ../../../
+git add src/robot_arm/s6h4d_sdk
+git commit -m "chore: update submodule pointer"
+git push origin dev
+```
+
+#### 删除
+
+```bash
+# 1. 彻底逆向注册子模块（这会删除本地子模块文件夹和 Git 配置）
+git submodule deinit -f src/robot_arm/s6h4d_sdk
+
+# 2. 从 Git 缓存中删除该子模块文件夹
+git rm -f src/robot_arm/s6h4d_sdk
+
+# 3. 手动删除可能残留的 Git 内部隐藏数据（非必须，但干净）
+rm -rf .git/modules/src/robot_arm/s6h4d_sdk
+
+# 4. 提交删除变动
+git commit -m "refactor: remove s6h4d_sdk submodule"
+```
+
+#### 修改子模块的远程 URL / 分支
+
+直接在`.gitmodules`文件里修改，然后执行：
+
+```bash
+git submodule sync
+```
+
 ## Git分支
 
 ### Git Flow 分支模型
