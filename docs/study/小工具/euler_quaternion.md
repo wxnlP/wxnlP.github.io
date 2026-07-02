@@ -57,24 +57,36 @@
     </div>
     
     <h3>齐次变换矩阵</h3>
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; background: rgba(0,0,0,0.05); padding: 15px; border-radius: 6px;">
-        <input type="number" id="m00" value="1" step="any" style="text-align:center; padding:6px;">
-        <input type="number" id="m01" value="0" step="any" style="text-align:center; padding:6px;">
-        <input type="number" id="m02" value="0" step="any" style="text-align:center; padding:6px;">
-        <input type="number" id="m03" value="0" step="any" style="text-align:center; padding:6px; font-weight:bold; background:#e0f7fa;">
-        <input type="number" id="m10" value="0" step="any" style="text-align:center; padding:6px;">
-        <input type="number" id="m11" value="1" step="any" style="text-align:center; padding:6px;">
-        <input type="number" id="m12" value="0" step="any" style="text-align:center; padding:6px;">
-        <input type="number" id="m13" value="0" step="any" style="text-align:center; padding:6px; font-weight:bold; background:#e0f7fa;">
-        <input type="number" id="m20" value="0" step="any" style="text-align:center; padding:6px;">
-        <input type="number" id="m21" value="0" step="any" style="text-align:center; padding:6px;">
-        <input type="number" id="m22" value="1" step="any" style="text-align:center; padding:6px;">
-        <input type="number" id="m23" value="0" step="any" style="text-align:center; padding:6px; font-weight:bold; background:#e0f7fa;">
-        <input type="number" id="m30" value="0" step="any" style="text-align:center; padding:6px;" disabled>
-        <input type="number" id="m31" value="0" step="any" style="text-align:center; padding:6px;" disabled>
-        <input type="number" id="m32" value="0" step="any" style="text-align:center; padding:6px;" disabled>
-        <input type="number" id="m33" value="1" step="any" style="text-align:center; padding:6px;" disabled>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; background: rgba(0,0,0,0.05); padding: 15px; border-radius: 6px; box-sizing: border-box;">
+        <input type="number" id="m00" value="1" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;">
+        <input type="number" id="m01" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;">
+        <input type="number" id="m02" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;">
+        <input type="number" id="m03" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box; font-weight:bold; background:#e0f7fa;">
+        <input type="number" id="m10" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;">
+        <input type="number" id="m11" value="1" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;">
+        <input type="number" id="m12" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;">
+        <input type="number" id="m13" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box; font-weight:bold; background:#e0f7fa;">
+        <input type="number" id="m20" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;">
+        <input type="number" id="m21" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;">
+        <input type="number" id="m22" value="1" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;">
+        <input type="number" id="m23" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box; font-weight:bold; background:#e0f7fa;">
+        <input type="number" id="m30" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;" disabled>
+        <input type="number" id="m31" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;" disabled>
+        <input type="number" id="m32" value="0" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;" disabled>
+        <input type="number" id="m33" value="1" step="any" style="text-align:center; padding:6px; width:100%; box-sizing:border-box;" disabled>
     </div>
+    
+    <style>
+    /* 隐藏输入框右侧会撑破布局的上下微调箭头 */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+    </style>
 </div>
 
 <script>
