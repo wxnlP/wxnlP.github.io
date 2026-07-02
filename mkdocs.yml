@@ -102,6 +102,9 @@ nav:
   - 技术文档分享:
     - 语雀文档: study/语雀文档/语雀.md
     - 飞书文档: study/飞书文档/飞书.md
+  - 小工具: 
+    - 弧度角度: study/小工具/rad_deg.md
+    - 欧拉角四元数: study/小工具/euler_quaternion.md
   - 芯片学习系列:
     - 阅读声明: study/芯片系列/0.阅读声明.md
     - ICM20948: study/芯片系列/ICM20948.md
