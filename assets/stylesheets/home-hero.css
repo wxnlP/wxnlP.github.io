@@ -4,8 +4,10 @@
 }
 
 .md-main__inner {
-  margin: 0 auto !important;   
-  max-width: 100% !important; 
+  margin-left: auto !important;  
+  margin-right: auto !important; 
+  max-width: 100% !important;  
+  width: 100% !important;        
   display: block !important;   
 }
 .md-content {
