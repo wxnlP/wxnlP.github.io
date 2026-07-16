@@ -4,3 +4,41 @@
     --md-primary-fg-color--dark: #000000;
 }
 
+/* .md-landing-container {
+  position: relative;
+  height: 100vh; 
+  display: flex;
+  align-items: flex-end; 
+  overflow: hidden;
+} */
+
+/* Safety overrides to ensure custom hero CSS doesn't hide page content
+   These are intentionally conservative and placed in extra.css so we don't
+   modify overrides/assets/stylesheets/home-hero.css directly. */
+.md-content {
+  display: block !important;
+}
+.mdx-hero {
+  /* Make hero occupy the full viewport height so it owns one page */
+  min-height: 100vh !important;
+  display: block;
+}
+.mdx-hero__image {
+  position: relative !important;
+  overflow: hidden;
+}
+.mdx-hero__image img {
+  width: 100% !important;
+  height: 100vh !important; /* fill viewport */
+  object-fit: cover !important;
+}
+
+/* Card enhancements for document links */
+.grid.cards ol li a.doc-card { display:block; text-decoration:none; color:inherit }
+.doc-card-inner{display:flex;align-items:center;gap:1rem;padding:1rem}
+.doc-icon{font-size:1.6rem;flex:0 0 48px;text-align:center}
+.doc-title{margin:0;font-size:1.05rem;color:#0b1620}
+.doc-desc{margin:0;margin-top:.25rem;font-size:.9rem;color:#6b7280}
+.doc-count{background:#f1f5f9;padding:.25rem .5rem;border-radius:.5rem;font-size:.8rem;color:#334155}
+.doc-card-right{margin-left:auto}
+.grid.cards ol li a.doc-card:hover .doc-title{color:#1e6fd8;font-weight:700}

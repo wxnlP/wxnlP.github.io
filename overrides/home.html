@@ -1,0 +1,199 @@
+{#-
+This file was automatically generated - do not edit
+-#}
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+<link rel="stylesheet" href="{{ 'assets/stylesheets/home-hero.css' | url }}">
+<section class="mdx-container">
+  <div class="md-grid md-typeset">
+    <div class="mdx-hero">
+      <div class="mdx-hero__image">
+        <img src="assets/images/1.webp" alt="hero" width="1659" height="1200" draggable="false">
+      </div>
+      <div class="mdx-hero__content">
+        <div class="hero-badge"><span class="badge-prompt">&gt;_</span> <span class="badge-path">~/tech-notes $ cat
+            readme.md</span></div>
+        <h1>小李的知识库</h1>
+        <p class="hero-subtitle">从嵌入式出发，往机器人深处走</p>
+        <p class="hero-desc">迷茫无措时，学习就是最好的方向，路就在你迈出的每一步里</p>
+        <div class="hero-actions">
+          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}"
+            class="md-button md-button--primary">浏览文章</a>
+          <a href="https://github.com/wxnlP" class="md-button">关于我</a>
+        </div>
+        <div class="hero-stats">
+          <span><strong>10+</strong> 知识库</span>
+          <span><strong>39+</strong> 技术笔记</span>
+          <span><strong>5+</strong> 技术方向</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block content %}
+<section class="mdx-container">
+  <div class="mdx-full-bleed-grid md-typeset">
+    <h2>在线文档</h2>
+    <div class="custom-docs-section">
+      <ol>
+        {%- for item in nav -%}
+        {%- if not (item.title == '主页' or item.title == 'Getting Started') -%}
+        {%- if item.children and item.children|length > 0 -%}
+        {%- set target = item.children[0].url -%}
+        {%- set cnt = item.children|length -%}
+        {%- else -%}
+        {%- set target = item.url -%}
+        {%- set cnt = 0 -%}
+        {%- endif -%}
+
+        {# determine icon and description based on title keywords #}
+        {%- set icon = '' -%}
+        {%- set desc = '' -%}
+        {%- if 'OpenHarmony' in item.title -%}
+        {%- set icon = '🔧' -%}
+        {%- set desc = 'OHOS 命令行、内核与外设开发' -%}
+        {%- elif 'ROS2' in item.title -%}
+        {%- set icon = '🤖' -%}
+        {%- set desc = 'ROS2 系统与话题、服务等通信' -%}
+        {%- elif 'STM32' in item.title -%}
+        {%- set icon = '🔌' -%}
+        {%- set desc = 'STM32 外设与驱动实战' -%}
+        {%- elif 'FreeRTOS' in item.title -%}
+        {%- set icon = '🧠' -%}
+        {%- set desc = '实时操作系统与任务、队列、信号量' -%}
+        {%- elif 'Linux' in item.title -%}
+        {%- set icon = '🐧' -%}
+        {%- set desc = 'Linux 驱动与系统编程' -%}
+        {%- elif 'Git' in item.title -%}
+        {%- set icon = '🔗' -%}
+        {%- set desc = '版本控制与工作流' -%}
+        {%- elif 'YOLO' in item.title -%}
+        {%- set icon = '📷' -%}
+        {%- set desc = '目标检测与模型训练' -%}
+        {%- elif '芯片' in item.title or 'ICM' in item.title -%}
+        {%- set icon = '🧩' -%}
+        {%- set desc = '芯片学习与驱动实战' -%}
+        {%- elif '控制' in item.title -%}
+        {%- set icon = '📐' -%}
+        {%- set desc = '控制算法与理论' -%}
+        {%- elif '小工具' in item.title -%}
+        {%- set icon = '🧰' -%}
+        {%- set desc = '便捷的小工具与脚本' -%}
+        {%- elif '技术文档' in item.title or '文档分享' in item.title -%}
+        {%- set icon = '📚' -%}
+        {%- set desc = '技术文档与知识整理' -%}
+        {%- elif '工创' in item.title or '比赛' in item.title -%}
+        {%- set icon = '🏆' -%}
+        {%- set desc = '竞赛与方案分享' -%}
+        {%- endif -%}
+
+        <li>
+          <a href="{{ target | url }}" class="doc-card">
+            <div class="doc-card-inner">
+              <div class="doc-card-left">
+                <span class="doc-icon">{{ icon }}</span>
+              </div>
+              <div class="doc-card-mid">
+                <h3 class="doc-title">{{ item.title }}</h3>
+                <p class="doc-desc">{{ desc }}</p>
+              </div>
+              <div class="doc-card-right">
+                <span class="doc-count">{{ cnt }} 篇</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        {%- endif -%}
+        {%- endfor -%}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="mdx-container">
+  <div class="md-grid md-typeset">
+    <h2>飞书知识库</h2>
+    <div id="knowledge-cards" class="custom-docs-section">
+      <ol id="knowledge-cards-list">
+        <!-- Cards will be populated from assets/data/knowledge-links.json -->
+      </ol>
+    </div>
+    <pre style="display:none" id="knowledge-json-example">[
+  { "title": "My KB 1", "url": "https://example.com/kb1" },
+  { "title": "My KB 2", "url": "https://example.com/kb2" }
+]</pre>
+  </div>
+</section>
+
+<script>
+  // Load user-provided knowledge links JSON and render as cards
+  (function () {
+    const url = "{{ 'assets/data/knowledge-links.json' | url }}";
+    fetch(url).then(r => {
+      if (!r.ok) return Promise.reject();
+      return r.json();
+    }).then(list => {
+      const ol = document.getElementById('knowledge-cards-list');
+      if (!Array.isArray(list) || list.length === 0) {
+        ol.innerHTML = '<li><div class="md-block">（暂无知识库卡片 — 将 JSON 放到 overrides/assets/data/knowledge-links.json）</div></li>';
+        return;
+      }
+      ol.innerHTML = '';
+      list.forEach(item=>{
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = item.url || '#';
+        a.className = 'doc-card';
+
+        // defaults
+        const iconHtml = (item.icon !== undefined) ? item.icon : '📚';
+        const descText = (item.desc !== undefined) ? item.desc : '查看外部核心技术知识库';
+        const countText = (item.count !== undefined) ? item.count : '外部';
+
+        const inner = document.createElement('div');
+        inner.className = 'doc-card-inner';
+
+        const left = document.createElement('div');
+        left.className = 'doc-card-left';
+        const iconSpan = document.createElement('span');
+        iconSpan.className = 'doc-icon';
+        iconSpan.textContent = iconHtml;
+        left.appendChild(iconSpan);
+
+        const mid = document.createElement('div');
+        mid.className = 'doc-card-mid';
+        const h3 = document.createElement('h3');
+        h3.className = 'doc-title';
+        h3.textContent = item.title || 'untitled';
+        const p = document.createElement('p');
+        p.className = 'doc-desc';
+        p.textContent = descText;
+        mid.appendChild(h3);
+        mid.appendChild(p);
+
+        const right = document.createElement('div');
+        right.className = 'doc-card-right';
+        const spanCount = document.createElement('span');
+        spanCount.className = 'doc-count';
+        spanCount.textContent = countText;
+        right.appendChild(spanCount);
+
+        inner.appendChild(left);
+        inner.appendChild(mid);
+        inner.appendChild(right);
+
+        a.appendChild(inner);
+        li.appendChild(a);
+        ol.appendChild(li);
+      });
+    }).catch(() => {
+      const ol = document.getElementById('knowledge-cards-list');
+      ol.innerHTML = '<li><div class="md-block">无法加载知识库 JSON（浏览器可能拦截本地文件），请将 JSON 上传到仓库： overrides/assets/data/knowledge-links.json</div></li>';
+    });
+  })();
+</script>
+{% endblock %}

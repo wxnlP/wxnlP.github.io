@@ -1,0 +1,267 @@
+.md-header {
+  position: initial;
+  z-index: 3;
+}
+
+.md-main__inner {
+  margin: 0 auto !important;   
+  max-width: 100% !important; 
+  display: block !important;   
+}
+.md-content {
+  display: none;
+}
+
+@media screen and (min-width: 60em) {
+  .md-sidebar--secondary { display: none; }
+}
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary { display: none; }
+}
+
+.mdx-container {
+  padding-top: 0;
+  background: transparent;
+}
+
+.mdx-container .md-grid {
+  max-width: none;
+  width: 100%;
+  padding: 0;
+}
+
+
+.mdx-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0;
+  margin-top: 0;
+  color: var(--md-primary-bg-color);
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.mdx-hero__image {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.mdx-hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  filter: contrast(1.06) saturate(0.96) brightness(0.98);
+}
+
+.mdx-hero__image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to top right,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,0.9) 25%,
+    rgba(255,255,255,0.7) 55%,
+    rgba(255,255,255,0.4) 100%
+  );
+  pointer-events: none;
+}
+
+.mdx-hero__image::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22vh;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.35) 40%, rgba(255,255,255,0.75) 75%, rgba(255,255,255,1) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.mdx-hero__content {
+  position: relative;
+  z-index: 3;
+  max-width: 560px;
+  padding: 2.6rem 1.4rem;
+  background: transparent;
+  border-radius: 0.25rem;
+  color: #0b1620;
+}
+
+@media (min-width: 768px) {
+  .mdx-hero { align-items: flex-start; }
+  .mdx-hero__content { margin-left: 6vw; margin-top: 4.5rem; }
+  .mdx-hero__image img { object-position: center right; }
+  .mdx-hero__content { padding: 4rem 2rem; }
+  .mdx-hero h1 { font-size: 3.6rem; line-height: 1.02; }
+}
+
+@media (min-width: 1200px) {
+  .mdx-hero h1 { font-size: 4.4rem; }
+}
+
+.mdx-hero .md-button { margin-top: .8rem; margin-right: .75rem }
+.mdx-hero .md-button--primary{
+  background: linear-gradient(90deg,#2e6fb8,#3f78c8);
+  color:#fff;border:none;padding:.65rem 1.05rem;border-radius:.35rem;box-shadow:0 6px 18px rgba(46,111,184,0.18)
+}
+.mdx-hero .md-button--secondary{background:transparent;border:1px solid rgba(11,22,32,0.08);color:#0b1620;padding:.62rem .95rem;border-radius:.35rem}
+
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.88);color:#96989a;padding:.225rem .4rem;border-radius:999px;margin-bottom:1rem;font-size:.475rem;font-family: 'SFMono-Regular','Menlo','Monaco','Consolas','Liberation Mono','Courier New',monospace;font-weight:600;letter-spacing:0.02em}
+.hero-badge .badge-prompt{ color: #7fb3ff; /* 淡蓝 */ font-weight:700; margin-right:0.28rem }
+.hero-badge .badge-path{ color: #6b7280; /* 灰色 */ opacity:0.95 }
+.mdx-hero__content{font-family: 'Inter', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', Arial, sans-serif}
+.mdx-hero h1{font-size:2.6rem;margin:0 0 .45rem;color:#0b1620;font-weight:800;letter-spacing:-0.02em}
+.hero-subtitle{margin:0 0 .6rem;color:#324a56;font-weight:500}
+.hero-desc{margin:0 0 1rem;color:#5a6b74;font-weight:400}
+.hero-actions{margin-top:1rem}
+.hero-stats{display:flex;gap:2rem;margin-top:2rem;color:#536478}
+.hero-stats strong{font-weight:700;margin-right:.35rem}
+
+:root { --site-header-height: 64px; }
+
+.md-header {
+  position: relative !important;
+  z-index: 40 !important;
+}
+
+.md-main__inner, .md-main, .mdx-hero {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.mdx-hero__image {
+  position: absolute !important;
+  inset: 0 !important;
+  top: 0 !important;
+}
+.mdx-hero__image img {
+  object-fit: cover !important;
+  object-position: center top !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (min-width: 768px) {
+  .mdx-hero__content { margin-top: calc(var(--site-header-height) * 0.55); }
+}
+
+
+
+/* ==========================================================================
+   文档卡片居中与现代感美化
+   ========================================================================== */
+
+/* 标题完美居中 */
+.md-grid h2 {
+  text-align: left !important;  
+  margin-top: 3rem !important;
+  margin-bottom: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #0b1620 !important;
+}
+
+/* 有序列表 ol 容器居中：整体居中，但内部卡片从左开始放置 */
+.custom-docs-section ol {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start !important; 
+  gap: 1.2rem !important;                
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  width: 100% !important;
+}
+
+/* 卡片宿主 li 样式：调小卡片大小，增大每行容纳数量，减少两侧留白 */
+.custom-docs-section li {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  flex: 1 1 calc(25% - 1.2rem) !important; 
+  min-width: 280px !important;            
+  max-width: 340px !important;            
+}
+/* 优化后的卡片主体 */
+.doc-card {
+  display: block !important;
+  text-decoration: none !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important; 
+  border-radius: 14px !important;       
+  padding: 1.5rem 1.2rem !important;
+  height: 100% !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
+}
+
+.doc-card:hover {
+  transform: translateY(-4px) !important; 
+  border-color: #2e6fb8 !important; 
+  box-shadow: 0 12px 24px rgba(46, 111, 184, 0.12) !important; 
+}
+
+.doc-card-inner {
+  display: grid !important;
+  grid-template-columns: 40px 1fr auto !important;
+  grid-template-rows: auto auto auto !important;
+  grid-template-areas: "left . right" "title title title" "desc desc desc" !important;
+  gap: .25rem .75rem !important;
+  width: 100% !important;
+  align-items: start !important;
+}
+
+.doc-icon {
+  font-size: 1.0rem !important; 
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 34px !important;
+  background: #f3f4f6 !important; 
+  border-radius: 10px !important;
+  grid-area: left !important;
+}
+
+.doc-card-mid {
+  display: contents !important;
+  min-width: 0 !important;
+}
+
+.doc-title {
+  margin: 0.25rem 0 0.15rem 0 !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  grid-area: title !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+.doc-desc {
+  margin: 0.15rem 0 0 0 !important;
+  font-size: 0.82rem !important;
+  color: #6b7280 !important;
+  grid-area: desc !important;
+  line-height: 1.4 !important;
+}
+
+.doc-count {
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  color: #4b5563 !important;
+  background: #f3f4f6 !important; 
+  padding: 0.18rem 0.45rem !important;
+  border-radius: 6px !important;
+  white-space: nowrap !important;
+  grid-area: right !important;
+}
